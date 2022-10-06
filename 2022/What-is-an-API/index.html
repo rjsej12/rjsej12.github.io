@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 6.3.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha256-AbA177XfpSnFEvgpYu1jMygiLabzPCJCRIBtR5jGc0k=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"rjsej12.github.io","root":"/","images":"/images","scheme":"Pisces","darkmode":true,"version":"8.13.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="JavaScript 구현공부를 시작하며 API를 이용하는 일이 많아졌다. API라는 용어에 대해 많이 들어보기도 했고 API가 무엇인지에 대해 대략적으로 알고 있다고 생각했었지만 막상 API에 대해 구체적으로 설명해보려고 하니 표현하기가 어려웠다. 그래서 API에 대해 정리해보면서 정확히 무엇인지 알아보고자 했다.   API먼저 API의 정의를 알아보았다.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="API란 무엇일까?">
+<meta property="og:url" content="https://rjsej12.github.io/2022/What-is-an-API/index.html">
+<meta property="og:site_name" content="롱롱의 일기장">
+<meta property="og:description" content="JavaScript 구현공부를 시작하며 API를 이용하는 일이 많아졌다. API라는 용어에 대해 많이 들어보기도 했고 API가 무엇인지에 대해 대략적으로 알고 있다고 생각했었지만 막상 API에 대해 구체적으로 설명해보려고 하니 표현하기가 어려웠다. 그래서 API에 대해 정리해보면서 정확히 무엇인지 알아보고자 했다.   API먼저 API의 정의를 알아보았다.">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2022-08-14T10:29:18.000Z">
+<meta property="article:modified_time" content="2022-10-06T10:32:48.149Z">
+<meta property="article:author" content="rongrong">
+<meta property="article:tag" content="개발">
+<meta property="article:tag" content="용어정리">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://rjsej12.github.io/2022/What-is-an-API/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://rjsej12.github.io/2022/What-is-an-API/","path":"2022/What-is-an-API/","title":"API란 무엇일까?"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>API란 무엇일까? | 롱롱의 일기장</title>
+  
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">롱롱의 일기장</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#API"><span class="nav-number">1.</span> <span class="nav-text">API</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#API%EB%8A%94-%EC%96%B4%EB%96%BB%EA%B2%8C-%EC%9E%91%EB%8F%99%ED%95%98%EB%8A%94%EA%B0%80"><span class="nav-number">2.</span> <span class="nav-text">API는 어떻게 작동하는가?</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">rongrong</p>
+  <div class="site-description" itemprop="description">주니어 개발자 롱롱의 성장일기</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">3</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-name">tags</span>
+      </div>
+  </nav>
+</div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="Back to top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://rjsej12.github.io/2022/What-is-an-API/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="rongrong">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="롱롱의 일기장">
+      <meta itemprop="description" content="주니어 개발자 롱롱의 성장일기">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="API란 무엇일까? | 롱롱의 일기장">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          API란 무엇일까?
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2022-08-14 19:29:18" itemprop="dateCreated datePublished" datetime="2022-08-14T19:29:18+09:00">2022-08-14</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2022-10-06 19:32:48" itemprop="dateModified" datetime="2022-10-06T19:32:48+09:00">2022-10-06</time>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2022/What-is-an-API/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2022/What-is-an-API/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p>JavaScript 구현공부를 시작하며 API를 이용하는 일이 많아졌다. API라는 용어에 대해 많이 들어보기도 했고 API가 무엇인지에 대해 대략적으로 알고 있다고 생각했었지만 막상 API에 대해 구체적으로 설명해보려고 하니 표현하기가 어려웠다. 그래서 API에 대해 정리해보면서 정확히 무엇인지 알아보고자 했다.</p>
+<hr>
+
+<h2 id="API"><a href="#API" class="headerlink" title="API"></a>API</h2><p>먼저 API의 정의를 알아보았다. </p>
+<blockquote>
+<p><strong>API</strong>는 Application Programming Inerface의 줄임말로 응용 프로그램에서 사용할 수 있도록 운영체제나 프로그래밍 언어가 제공하는 기능을 제어할 수 있게 만든 인터페이스를 뜻한다. </p>
+</blockquote>
+<p>다른 부분들은 쉽게 이해가 갔지만 인터페이스가 무엇을 말하는지 모호했다. 그럼 인터페이스는 무엇일까?</p>
+<blockquote>
+<p><strong>인터페이스(interface)</strong> 는 컴퓨터 시스템끼리 정보를 교환하는 공유 경계를 의미한다. 터치 스크린과 같은 일부 컴퓨터 하드웨어 장치들은 인터페이스를 통해 데이터를 송수신 할 수 있으며, 마우스나 마이크와 같은 장치들은 오직 시스템에 데이터를 전송만 하는 인터페이스를 제공한다.</p>
+</blockquote>
+<p>쉽게 정리해 인터페이스는 시스템끼리 데이터를 주고받도록 하는 물리적, 가상적인 매개체를 뜻한다.</p>
+<p>조금 더 이해하기 쉽게 실생활에서 예를 들어보면 우리가 자판기를 통해 음료수를 사먹는다라고 할 때 실제 자판기가 어떻게 내부적으로 동작하는지는 몰라도 동전이나 지폐를 넣고 원하는 음료 버튼을 눌러 음료수가 나오게하는 과정을 쉽게 수행한다. 이때 동전과 지폐를 넣고 음료 버튼을 클릭하는등 사물과 사물 또는 사물과 인간 간의 의사소통이 가능하도록하는 물리적, 가상적인 매개체를 인터페이스라고 할 수 있다.</p>
+<p>즉 API는 응용 프로그램 (우리가 만든 앱과 같은 서비스)에서 운영체제나 프로그래밍 언어가 제공하는 기능(지도, 날씨, 페이기능등)을 제어할 수 있게 만든 매개체라고 볼 수 있다.<br>API 문서에는 개발자가 이러한 요청과 응답을 구성하는 방법에 대한 정보가 들어 있어 API를 사용하기 이전에 API 문서를 통해 API의 사용법을 알 수 있다.</p>
+<hr>
+
+<h2 id="API는-어떻게-작동하는가"><a href="#API는-어떻게-작동하는가" class="headerlink" title="API는 어떻게 작동하는가?"></a>API는 어떻게 작동하는가?</h2><blockquote>
+<p>API 아키텍처는 일반적으로 클라이언트와 서버 측면에서 설명된다. 요청을 보내는 애플리케이션을 클라이언트라고 하고 응답을 보내는 애플리케이션을 서버라고 한다. 따라서 날씨 예에서 기상청의 날씨 데이터베이스는 서버이고 모바일 앱은 클라이언트이다. </p>
+</blockquote>
+<p>API가 생성된 시기와 이유에 따라 API는 네 가지 방식으로 작동할 수 있다.</p>
+<p>API라는 단어는 1964년부터 등장하기 시작했다. 이때는 하드웨어 독립성을 위해서 많이 사용되어 졌는데, 예를 들어 서로 다른 하드웨어마다 개발자가 일일이 프로그래밍을 하기보단 HAL이라는 하드웨어 추상화 계층을 통해 한번만 display라는 함수를 작성하고 이를 이용해 각기 다른 모니터에 출력을 쉽게 할수 있었고 이것이 API의 시초라고 할 수 있다.</p>
+<p>1980년대 중반 Mac OS와 Windows가 등장하면서 그래픽이 좋은 컴퓨터가 등장하기 시작했다. 이런 각각의 운영체제에서 동작하는 어플리케이션을 만들기 위해서 운영체제에서 제공하는 API를 이용했다. </p>
+<p>그리고 1990년도 인터넷이 보편적으로 대중화되기 시작하면서 컴퓨터와 컴퓨터 다양한 기기들이 인터넷을 통해서 의사소통을 할 수 있게 되었다. 이때 다양한 기기에서 서버에 있는 데이터를 읽고 쓰기 위해서는 서버에서 제공하는 WEB APIs를 이용해서 처리 할 수 있었다.</p>
+<p>네트워크에서 기기들간에 의사소통 해나가는 규격사항을 HTTP(s)라고 부르며 이런 WEB API를 어떻게 디자인해서 만들건지 정의하는 것이 있다. 예전에는 SOAP(Simple Object Access Protocol)이라는 모든 네트워크 요청과 반응을 XML이라는 데이터 포맷에 저장해 주고 받았다면 요즘에는 REST(Representational State Transfer)이 보편적으로 많이 사용된다.</p>
+<p>REST는 총 4가지로 구성되어 있는데 새로운 데이터를 만들고(POST, create), 읽고(GET, read), 업데이트하고(PUT, update), 삭제(DELETE, delete)할 수 있다. 예를 들어 GET을 이용해 유저에 대한 정보를 요청하면 서버로부터 유저에 대한 데이터를 JSON이라는 포맷을 통해 받아 올 수 있다. 이처럼 서버에서 제공하는 WEB API를 통해 서버에 있는 데이터를 읽어오거나 업데이트 할 수 있다.</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%EA%B0%9C%EB%B0%9C/" rel="tag"># 개발</a>
+              <a href="/tags/%EC%9A%A9%EC%96%B4%EC%A0%95%EB%A6%AC/" rel="tag"># 용어정리</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2022/Node-js-input-and-output-in-Baekjoon-Online-Judge/" rel="prev" title="백준 Node.js 입출력법">
+                  <i class="fa fa-chevron-left"></i> 백준 Node.js 입출력법
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2022/Create-hexo-blog/" rel="next" title="헥소로 블로그 옮기기">
+                  헥소로 블로그 옮기기 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    
+  <div class="comments" id="disqus_thread">
+    <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+  </div>
+  
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">rongrong</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/pisces/" rel="noopener" target="_blank">NexT.Pisces</a>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+  
+
+
+
+
+<script class="next-config" data-name="disqus" type="application/json">{"enable":true,"shortname":"rongrongs-diary","count":true,"lazyload":false,"i18n":{"disqus":"disqus"}}</script>
+<script src="/js/third-party/comments/disqus.js"></script>
+
+</body>
+</html>
