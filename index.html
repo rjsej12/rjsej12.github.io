@@ -120,12 +120,12 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">7</span>
+          <span class="site-state-item-count">8</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-tags">
-        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-count">10</span>
         <span class="site-state-item-name">tags</span>
       </div>
   </nav>
@@ -223,6 +223,180 @@
           <p>커넥to git 수업동안 hexo와 Github pages를 이용해 블로그를 만들어보았다.</p>
 <p>원래는 velog를 통해 여러 글들을 포스팅 하고 있었는데 디자인에 대한 커스텀이나 지속적인 관리가 (특히 github 잔디를 지속해서 심을 수 있다는 점) 수월해 보여 블로그를 옮겨보기로 결정했다.</p>
 <p>그동안 썼던 글들도 차근차근 옮기며 잘 관리해봐야겠다!</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://rjsej12.github.io/2022/Sass-Basic/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="rongrong">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="롱롱의 일기장">
+      <meta itemprop="description" content="주니어 개발자 롱롱의 성장일기">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 롱롱의 일기장">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2022/Sass-Basic/" class="post-title-link" itemprop="url">Sass Basic</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2022-09-13 23:05:15" itemprop="dateCreated datePublished" datetime="2022-09-13T23:05:15+09:00">2022-09-13</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2022-10-11 23:06:51" itemprop="dateModified" datetime="2022-10-11T23:06:51+09:00">2022-10-11</time>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2022/Sass-Basic/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2022/Sass-Basic/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="Sass"><a href="#Sass" class="headerlink" title="Sass?"></a>Sass?</h1><p>CSS를 사용해 웹 애플리케이션 스타일을 관리하는 것은 애플리케이션 규모가 커지고 복잡해질수록 매우 어렵다.</p>
+<p>반면 Sass와 같은 프리프로세서(Pre-Processor, 전처리기)를 사용하면 매우 효과적으로 복잡한 애플리케이션 스타일을 관리할 수 있다.</p>
+<p>Sass란 Syntactically Awesome Style Sheets의 준말로 CSS가 아직은 할 수 없는 다양한 기능(중첩, 함수, 믹스인, 상속 등)을 제공한다.</p>
+<p>Sass말고도 Stylus, Less와 같은 전처리기가 존재하지만 현재 Sass가 통계상 가장 사용자가 많으면서 만족도가 높아 배웠을 때 가장 유용하다고 할 수 있다. (<a target="_blank" rel="noopener" href="https://2021.stateofcss.com/ko-KR/technologies/#scatterplot_overview">설문결과</a>)</p>
+<hr>
+
+<h2 id="설치"><a href="#설치" class="headerlink" title="설치"></a>설치</h2><p>Sass를 이용하기 위해선 먼저 설치를 해야한다. <a target="_blank" rel="noopener" href="https://sass-lang.com/install">공식사이트</a>를 참고해 다양한 방식으로 설치가 가능하다. 나는 Node.js를 이용하고 있기에 npm을 통해 설치해 주었다.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g sass</span><br></pre></td></tr></table></figure>
+
+<h2 id="컴파일"><a href="#컴파일" class="headerlink" title="컴파일"></a>컴파일</h2><p>Sass를 설치해 이용하고자 할 때, 웹 브라우저는 Sass파일을 해석할 수 없기에 Sass파일을 CSS파일로 변경해야 한다. 이를 컴파일이라 하는데 다음과 같이 사용 가능하다.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sass input.scss output.css</span><br></pre></td></tr></table></figure>
+<p>단일 파일이 아니라 폴더 단위의 변경을 처리한다면 <code>:</code>을 이용할 수 있다.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sass src/scss:public/css</span><br></pre></td></tr></table></figure>
+<p>더 많은 옵션은 <a target="_blank" rel="noopener" href="https://sass-lang.com/documentation/cli/dart-sass">Dart Sass CLI</a>를 참고할 수 있다.</p>
+<hr>
+
+<h2 id="문법"><a href="#문법" class="headerlink" title="문법"></a>문법</h2><p>Sass파일은 사용하는 문법에 따라 <code>.scss</code>의 확장자를 가진 SCSS 구문과 <code>.sass</code>를 가진 Sass구문 2가지로 나뉜다.</p>
+<h3 id="Sass-구문"><a href="#Sass-구문" class="headerlink" title="Sass 구문"></a>Sass 구문</h3><p>Sass 구문은 중괄호, 세미콜론을 생략하고 들여쓰기 문법을 사용한다. 좀 더 간결하고 작성하기 편리하며 <code>&#123;&#125;</code>나 <code>;</code>를 사용하지 않아도 되어 코드가 깔끔하다.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">.button</span><br><span class="line">	cursor: pointer</span><br><span class="line">	&amp;:disabled</span><br><span class="line">		cursor: not-allowed</span><br></pre></td></tr></table></figure>
+
+<h3 id="SCSS-구문"><a href="#SCSS-구문" class="headerlink" title="SCSS 구문"></a>SCSS 구문</h3><p>SCSS 구문은 CSS와 유사한 문법을 사용한다. 인라인 코드를 작성할 수 있고, CSS와 유사한 문법을 가지기 때문에 코드 통합이 훨씬 쉽다.</p>
+<figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.button</span> &#123;</span><br><span class="line">	<span class="attribute">cursor</span>: pointer;</span><br><span class="line">	&amp;<span class="selector-pseudo">:disabled</span> &#123;</span><br><span class="line">	  <span class="attribute">cursor</span>: not-allowed;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>서로 장단점이 있기 때문에 회사나 팀에서 원하는 방식 혹은 개인의 취향에 따라서 선택할 수 있다. 일반적으로 CSS 구문과 문제없이 호환되는 SCSS구문이 많이 사용된다.</p>
+<hr>
+
+<h2 id="Sass-Basics"><a href="#Sass-Basics" class="headerlink" title="Sass Basics"></a>Sass Basics</h2><p>수업을 들으면서 Sass의 두 가지 구문중 SCSS를 사용했기에 Sass Basics에 대해 SCSS를 이용한 방법으로 정리하겠다.</p>
+<h3 id="변수-Variables"><a href="#변수-Variables" class="headerlink" title="변수(Variables)"></a>변수(Variables)</h3><p>CSS도 변수 사용이 가능하지만 Sass에서는 <code>$</code>를 이용해 더 쉽게 변수를 사용할 수 있다.</p>
+<p><strong>CSS 변수</strong></p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-pseudo">:root</span> &#123;</span><br><span class="line">  <span class="attr">--spacing-1</span>: <span class="number">4px</span>;</span><br><span class="line">  <span class="attr">--spacing-2</span>: <span class="number">8px</span>;</span><br><span class="line">  <span class="attr">--primary-400</span>: <span class="built_in">hsl</span>(<span class="number">250</span>, <span class="number">75%</span>, <span class="number">60%</span>);</span><br><span class="line">  <span class="attr">--primary-500</span>: <span class="built_in">hsl</span>(<span class="number">250</span>, <span class="number">75%</span>, <span class="number">50%</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">  <span class="attribute">margin-top</span>: <span class="built_in">var</span>(--spacing-<span class="number">2</span>);</span><br><span class="line">  <span class="attribute">color</span>: <span class="built_in">var</span>(--primary-<span class="number">500</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>SCSS 변수</strong></p>
+<figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$spacing-1</span>: <span class="number">4px</span>;</span><br><span class="line"><span class="variable">$spacing-2</span>: <span class="number">8px</span>;</span><br><span class="line"><span class="variable">$primary-400</span>: <span class="built_in">hsl</span>(<span class="number">250</span>, <span class="number">75%</span>, <span class="number">60%</span>);</span><br><span class="line"><span class="variable">$primary-500</span>: <span class="built_in">hsl</span>(<span class="number">250</span>, <span class="number">75%</span>, <span class="number">50%</span>);</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">  <span class="attribute">margin-top</span>: <span class="variable">$spacing-2</span>;</span><br><span class="line">  <span class="attribute">color</span>: <span class="variable">$primary-500</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="중첩-Nesting"><a href="#중첩-Nesting" class="headerlink" title="중첩(Nesting)"></a>중첩(Nesting)</h3><p>CSS는 HTML과 달리 시각적인 계층 구조와 명확히 중첩된 구문을 작성할 수 없다. 하지만 Sass는 HTML과 동일하게 시각적 계층 구조를 따르는 방식으로 스타일을 작성하는 방법을 지원한다.</p>
+<p><strong>CSS 구문</strong></p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">nav</span> <span class="selector-tag">ul</span> &#123;</span><br><span class="line">  <span class="attribute">margin</span>: <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">padding</span>: <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">list-style</span>: none;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">nav</span> <span class="selector-tag">li</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: inline-block;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">nav</span> <span class="selector-tag">a</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: block;</span><br><span class="line">  <span class="attribute">padding</span>: <span class="number">6px</span> <span class="number">12px</span>;</span><br><span class="line">  <span class="attribute">text-decoration</span>: none;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>SCSS 구문</strong></p>
+<figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">nav</span> &#123;</span><br><span class="line">  <span class="selector-tag">ul</span> &#123;</span><br><span class="line">    <span class="attribute">margin</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">padding</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">list-style</span>: none;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="selector-tag">li</span> &#123; <span class="attribute">display</span>: inline-block; &#125;</span><br><span class="line"></span><br><span class="line">  <span class="selector-tag">a</span> &#123;</span><br><span class="line">    <span class="attribute">display</span>: block;</span><br><span class="line">    <span class="attribute">padding</span>: <span class="number">6px</span> <span class="number">12px</span>;</span><br><span class="line">    <span class="attribute">text-decoration</span>: none;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>Sass 중첩 구문은 시각적으로 계층 구조를 파악할 수 있어 CSS 보다 직관성이 높다. 하지만 많은 중첩은 오히려 복잡성을 증가시켜 가독성이 떨어지므로 피해야한다.</p>
+<h3 id="모듈-modules"><a href="#모듈-modules" class="headerlink" title="모듈(modules)"></a>모듈(modules)</h3><p>모듈은 독립적으로 묶인 작은 코드 조각으로, Sass는 관심사에 따라 여러 조각의 코드로 묶인 파일을 관리할 수 있는 기능인 모듈화를 제공한다. 모듈은 애플리케이션 스타일을 유지 관리하기 쉽게 만들어 주는 매우 효과적인 방법이다.</p>
+<p>Sass(정확히는 Dart Sass)에서는 <code>@import rule</code>대신 <code>@use</code>를 이용해 다른 스타일 모듈을 불러올 수 있다. Sass 파일 확장자와 언더스코어(_)는 생략 가능하다.</p>
+<p><strong>_base.scss</strong></p>
+<figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$font-stack</span>: Helvetica, sans-serif;</span><br><span class="line"><span class="variable">$primary-color</span>: <span class="number">#333</span>;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">body</span> &#123;</span><br><span class="line">  <span class="attribute">font</span>: <span class="number">100%</span> <span class="variable">$font-stack</span>;</span><br><span class="line">  <span class="attribute">color</span>: <span class="variable">$primary-color</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>불러온 모듈은 기본적으로 파일 이름을 네임스페이스(namespace)로 가지며 점(.) 문법을 사용해 모듈의 변수 등에 접근할 수 있다.</p>
+<p><strong>styles.scss</strong></p>
+<figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">@use</span> <span class="string">&#x27;base&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.inverse</span> &#123;</span><br><span class="line">  <span class="attribute">background-color</span>: base.<span class="variable">$primary-color</span>;</span><br><span class="line">  <span class="attribute">color</span>: white;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>네임스페이스 이름을 다른 이름으로 변경해 사용하고자 할 경우 as를 사용한다. 특히 as에 별(*) 기호를 사용할 경우 네임스페이스 없이 바로 모듈에서 내보낸 변수를 사용할 수 있다.</p>
+<figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">@use</span> <span class="string">&#x27;base&#x27;</span> as *;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.inverse</span> &#123;</span><br><span class="line">  <span class="attribute">background-color</span>: <span class="variable">$primary-color</span>;</span><br><span class="line">  <span class="attribute">color</span>: white;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+<p><strong>CSS</strong></p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">body</span> &#123;</span><br><span class="line">  <span class="attribute">font</span>: <span class="number">100%</span> Helvetica, sans-serif;</span><br><span class="line">  <span class="attribute">color</span>: <span class="number">#333</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.inverse</span> &#123;</span><br><span class="line">  <span class="attribute">background-color</span>: <span class="number">#333</span>;</span><br><span class="line">  <span class="attribute">color</span>: white;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="믹스인-mixins"><a href="#믹스인-mixins" class="headerlink" title="믹스인(mixins)"></a>믹스인(mixins)</h3><p>CSS는 코드를 재사용 할 수 있는 기능이 제공되지 않기 때문에 코드 중복이 잦은 언어이다. 하지만 Sass는 코드를 효율적으로 재사용할 수 있도록 믹스인 기능을 제공한다. 믹스인을 이용해 재사용할 코드 그룹을  선언할 수 있다.</p>
+<p><strong>SCSS</strong></p>
+<figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">@mixin</span> theme(<span class="variable">$theme</span>: DarkGray) &#123;</span><br><span class="line">  <span class="attribute">background</span>: <span class="variable">$theme</span>;</span><br><span class="line">  <span class="attribute">box-shadow</span>: <span class="number">0</span> <span class="number">0</span> <span class="number">1px</span> <span class="built_in">rgba</span>(<span class="variable">$theme</span>, .<span class="number">25</span>);</span><br><span class="line">  <span class="attribute">color</span>: <span class="number">#fff</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.info</span> &#123;</span><br><span class="line">  <span class="keyword">@include</span> theme;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.alert</span> &#123;</span><br><span class="line">  <span class="keyword">@include</span> theme(<span class="variable">$theme</span>: DarkRed);</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.success</span> &#123;</span><br><span class="line">  <span class="keyword">@include</span> theme(<span class="variable">$theme</span>: DarkGreen);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>CSS</strong></p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.info</span> &#123;</span><br><span class="line">  <span class="attribute">background</span>: DarkGray;</span><br><span class="line">  <span class="attribute">box-shadow</span>: <span class="number">0</span> <span class="number">0</span> <span class="number">1px</span> <span class="built_in">rgba</span>(<span class="number">169</span>, <span class="number">169</span>, <span class="number">169</span>, <span class="number">0.25</span>);</span><br><span class="line">  <span class="attribute">color</span>: <span class="number">#fff</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.alert</span> &#123;</span><br><span class="line">  <span class="attribute">background</span>: DarkRed;</span><br><span class="line">  <span class="attribute">box-shadow</span>: <span class="number">0</span> <span class="number">0</span> <span class="number">1px</span> <span class="built_in">rgba</span>(<span class="number">139</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0.25</span>);</span><br><span class="line">  <span class="attribute">color</span>: <span class="number">#fff</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.success</span> &#123;</span><br><span class="line">  <span class="attribute">background</span>: DarkGreen;</span><br><span class="line">  <span class="attribute">box-shadow</span>: <span class="number">0</span> <span class="number">0</span> <span class="number">1px</span> <span class="built_in">rgba</span>(<span class="number">0</span>, <span class="number">100</span>, <span class="number">0</span>, <span class="number">0.25</span>);</span><br><span class="line">  <span class="attribute">color</span>: <span class="number">#fff</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><code>@mixin</code>과 이름을 통해 믹스인을 만들 수 있다. 믹스인을 만든 후에는 <code>@include</code>와 이름을 선언해 믹스인을 이용 할 수 있다. 또한 믹스인은 JavaScript 함수처럼 매개변수를 설정할 수 있는데, 매개변수를 사용하면 믹스인 외부에서 사용자가 전달한 값을 믹스인 내부에서 사용해 재사용성을 더 높여줄 수 있다.</p>
+<h3 id="확장-x2F-상속-extend-x2F-inheritance"><a href="#확장-x2F-상속-extend-x2F-inheritance" class="headerlink" title="확장&#x2F;상속 (extend&#x2F;inheritance)"></a>확장&#x2F;상속 (extend&#x2F;inheritance)</h3><p>선택자 이름 앞에 <code>%</code>를 사용해 선언한 플레이스홀더 클래스는 스타일을 확장할 때만 사용되는 특수한 유형의 클래스로 여러 선택자에서 공유할 수 있다. 스타일 집합을 공유할 때는 <code>@extend</code>를 사용한다.</p>
+<p>이 방법은 스타일 코드를 반복 생성하는 믹스인과 달리, 스타일 코드 집합 하나를 재사용하는데 목적을 두고 있어 보다 코드를 깨끗하게 유지하는데 도움이 될 수 있다.</p>
+<p><strong>SCSS</strong></p>
+<figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">%message-shared &#123;</span><br><span class="line">  <span class="attribute">border</span>: <span class="number">1px</span> solid <span class="number">#ccc</span>;</span><br><span class="line">  <span class="attribute">padding</span>: <span class="number">10px</span>;</span><br><span class="line">  <span class="attribute">color</span>: <span class="number">#333</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.message</span> &#123;</span><br><span class="line">  <span class="keyword">@extend</span> %message-shared;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.success</span> &#123;</span><br><span class="line">  <span class="keyword">@extend</span> %message-shared;</span><br><span class="line">  <span class="attribute">border-color</span>: green;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.error</span> &#123;</span><br><span class="line">  <span class="keyword">@extend</span> %message-shared;</span><br><span class="line">  <span class="attribute">border-color</span>: red;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.warning</span> &#123;</span><br><span class="line">  <span class="keyword">@extend</span> %message-shared;</span><br><span class="line">  <span class="attribute">border-color</span>: yellow;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>CSS</strong></p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.message</span>, <span class="selector-class">.success</span>, <span class="selector-class">.error</span>, <span class="selector-class">.warning</span> &#123;</span><br><span class="line">  <span class="attribute">border</span>: <span class="number">1px</span> solid <span class="number">#ccc</span>;</span><br><span class="line">  <span class="attribute">padding</span>: <span class="number">10px</span>;</span><br><span class="line">  <span class="attribute">color</span>: <span class="number">#333</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.success</span> &#123;</span><br><span class="line">  <span class="attribute">border-color</span>: green;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.error</span> &#123;</span><br><span class="line">  <span class="attribute">border-color</span>: red;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.warning</span> &#123;</span><br><span class="line">  <span class="attribute">border-color</span>: yellow;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="연산자-operators"><a href="#연산자-operators" class="headerlink" title="연산자 (operators)"></a>연산자 (operators)</h3><p>CSS에서 수학은 매우 유용하다. Sass는 산술연산자(<code>+</code>, <code>-</code>, <code>*</code>, <code>%</code>) 및 수학 함수(예: <code>math.div()</code>)를 제공한다.</p>
+<p><strong>SCSS</strong></p>
+<figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">@use</span> <span class="string">&quot;sass:math&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">article</span><span class="selector-attr">[role=<span class="string">&quot;main&quot;</span>]</span> &#123;</span><br><span class="line">  <span class="attribute">width</span>: math.<span class="built_in">div</span>(<span class="number">600px</span>, <span class="number">960px</span>) * <span class="number">100%</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">aside</span><span class="selector-attr">[role=<span class="string">&quot;complementary&quot;</span>]</span> &#123;</span><br><span class="line">  <span class="attribute">width</span>: math.<span class="built_in">div</span>(<span class="number">300px</span>, <span class="number">960px</span>) * <span class="number">100%</span>;</span><br><span class="line">  <span class="attribute">margin-left</span>: auto;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>CSS</strong></p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">article</span><span class="selector-attr">[role=<span class="string">&quot;main&quot;</span>]</span> &#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">62.5%</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">aside</span><span class="selector-attr">[role=<span class="string">&quot;complementary&quot;</span>]</span> &#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">31.25%</span>;</span><br><span class="line">  <span class="attribute">margin-left</span>: auto;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>특히 <code>math.div()</code>를 이용하기 위해서는 <code>@use &quot;sass:math&quot;</code>를 이용해 Sass에서 기본으로 제공하는 math 모듈을 불러와야 한다. 이때 as *를 이용해 사용한다면 div 태그와 구분이 가지 않으므로 <code>math.div()</code>의 기본 형태로 사용하는 것이 추천된다.</p>
+<hr>
+
+<h1 id="참고"><a href="#참고" class="headerlink" title="참고"></a>참고</h1><ul>
+<li><a target="_blank" rel="noopener" href="https://sass-lang.com/guide">https://sass-lang.com/guide</a></li>
+<li><a target="_blank" rel="noopener" href="https://euid.notion.site/euid/Sass-04a97ad611cc4436a9f09e9ff052b183">https://euid.notion.site/euid/Sass-04a97ad611cc4436a9f09e9ff052b183</a></li>
+<li><a target="_blank" rel="noopener" href="https://heropy.blog/2018/01/31/sass/">https://heropy.blog/2018/01/31/sass/</a></li>
+</ul>
 
       
     </div>
