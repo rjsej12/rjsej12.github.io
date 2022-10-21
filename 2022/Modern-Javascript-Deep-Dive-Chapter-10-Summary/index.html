@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 6.3.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha256-AbA177XfpSnFEvgpYu1jMygiLabzPCJCRIBtR5jGc0k=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"rjsej12.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":true,"version":"8.13.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="객체란?자바스크립트는 객체 기반의 프로그래밍 언어이며, 자바스크립트를 구성하는 거의 모든것이 객체이다.원시 값을 제외한 나머지 값(함수, 배열, 정규 표현식 등)은 모두 객체다. 원시 타입은 단 하나의 값만 나타내지만 객체타입은 다양한 타입의 값을 하나의 단위로 구성한 복합적인 자료구조다.원시 타입의 값은 변경 불가능한 값이지만 객체 타입의 값은 변경 가능">
+<meta property="og:type" content="article">
+<meta property="og:title" content="[Deep Dive] 객체 리터럴">
+<meta property="og:url" content="https://rjsej12.github.io/2022/Modern-Javascript-Deep-Dive-Chapter-10-Summary/index.html">
+<meta property="og:site_name" content="롱롱의 일기장">
+<meta property="og:description" content="객체란?자바스크립트는 객체 기반의 프로그래밍 언어이며, 자바스크립트를 구성하는 거의 모든것이 객체이다.원시 값을 제외한 나머지 값(함수, 배열, 정규 표현식 등)은 모두 객체다. 원시 타입은 단 하나의 값만 나타내지만 객체타입은 다양한 타입의 값을 하나의 단위로 구성한 복합적인 자료구조다.원시 타입의 값은 변경 불가능한 값이지만 객체 타입의 값은 변경 가능">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2022-10-21T12:38:37.000Z">
+<meta property="article:modified_time" content="2022-10-21T12:39:27.462Z">
+<meta property="article:author" content="rongrong">
+<meta property="article:tag" content="개발">
+<meta property="article:tag" content="자바스크립트">
+<meta property="article:tag" content="모던 자바스크립트 Deep Dive">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://rjsej12.github.io/2022/Modern-Javascript-Deep-Dive-Chapter-10-Summary/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://rjsej12.github.io/2022/Modern-Javascript-Deep-Dive-Chapter-10-Summary/","path":"2022/Modern-Javascript-Deep-Dive-Chapter-10-Summary/","title":"[Deep Dive] 객체 리터럴"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>[Deep Dive] 객체 리터럴 | 롱롱의 일기장</title>
+  
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">롱롱의 일기장</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%EA%B0%9D%EC%B2%B4%EB%9E%80"><span class="nav-number">1.</span> <span class="nav-text">객체란?</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%EA%B0%9D%EC%B2%B4-%EB%A6%AC%ED%84%B0%EB%9F%B4%EC%97%90-%EC%9D%98%ED%95%9C-%EA%B0%9D%EC%B2%B4-%EC%83%9D%EC%84%B1"><span class="nav-number">1.1.</span> <span class="nav-text">객체 리터럴에 의한 객체 생성</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%ED%94%84%EB%A1%9C%ED%8D%BC%ED%8B%B0"><span class="nav-number">1.2.</span> <span class="nav-text">프로퍼티</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%EB%A9%94%EC%84%9C%EB%93%9C"><span class="nav-number">1.3.</span> <span class="nav-text">메서드</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%ED%94%84%EB%A1%9C%ED%8D%BC%ED%8B%B0-%EC%A0%91%EA%B7%BC"><span class="nav-number">1.4.</span> <span class="nav-text">프로퍼티 접근</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%ED%94%84%EB%A1%9C%ED%8D%BC%ED%8B%B0-%EA%B0%92-%EA%B0%B1%EC%8B%A0"><span class="nav-number">1.5.</span> <span class="nav-text">프로퍼티 값 갱신</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%ED%94%84%EB%A1%9C%ED%8D%BC%ED%8B%B0-%EB%8F%99%EC%A0%81-%EC%83%9D%EC%84%B1"><span class="nav-number">1.6.</span> <span class="nav-text">프로퍼티 동적 생성</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%ED%94%84%EB%A1%9C%ED%8D%BC%ED%8B%B0-%EC%82%AD%EC%A0%9C"><span class="nav-number">1.7.</span> <span class="nav-text">프로퍼티 삭제</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ES6%EC%97%90%EC%84%9C-%EC%B6%94%EA%B0%80%EB%90%9C-%EA%B0%9D%EC%B2%B4-%EB%A6%AC%ED%84%B0%EB%9F%B4%EC%9D%98-%ED%99%95%EC%9E%A5-%EA%B8%B0%EB%8A%A5"><span class="nav-number">1.8.</span> <span class="nav-text">ES6에서 추가된 객체 리터럴의 확장 기능</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%ED%94%84%EB%A1%9C%ED%8D%BC%ED%8B%B0-%EC%B6%95%EC%95%BD-%ED%91%9C%ED%98%84"><span class="nav-number">1.8.1.</span> <span class="nav-text">프로퍼티 축약 표현</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%EB%A9%94%EC%84%9C%EB%93%9C-%EC%B6%95%EC%95%BD-%ED%91%9C%ED%98%84"><span class="nav-number">1.8.2.</span> <span class="nav-text">메서드 축약 표현</span></a></li></ol></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">rongrong</p>
+  <div class="site-description" itemprop="description">주니어 개발자 롱롱의 성장일기</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">16</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">13</span>
+        <span class="site-state-item-name">tags</span>
+      </div>
+  </nav>
+</div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="Back to top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://rjsej12.github.io/2022/Modern-Javascript-Deep-Dive-Chapter-10-Summary/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="rongrong">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="롱롱의 일기장">
+      <meta itemprop="description" content="주니어 개발자 롱롱의 성장일기">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="[Deep Dive] 객체 리터럴 | 롱롱의 일기장">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          [Deep Dive] 객체 리터럴
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2022-10-21 21:38:37 / Modified: 21:39:27" itemprop="dateCreated datePublished" datetime="2022-10-21T21:38:37+09:00">2022-10-21</time>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2022/Modern-Javascript-Deep-Dive-Chapter-10-Summary/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2022/Modern-Javascript-Deep-Dive-Chapter-10-Summary/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h1 id="객체란"><a href="#객체란" class="headerlink" title="객체란?"></a>객체란?</h1><p>자바스크립트는 객체 기반의 프로그래밍 언어이며, 자바스크립트를 구성하는 거의 모든것이 객체이다.<br>원시 값을 제외한 나머지 값(함수, 배열, 정규 표현식 등)은 모두 객체다.</p>
+<p>원시 타입은 단 하나의 값만 나타내지만 객체타입은 다양한 타입의 값을 하나의 단위로 구성한 복합적인 자료구조다.<br>원시 타입의 값은 변경 불가능한 값이지만 객체 타입의 값은 변경 가능한 값이다.</p>
+<p>객체는 0개 이상의 프로퍼티로 구성된 집합이며, 프로퍼티는 키와 값으로 구성된다.</p>
+<p>자바스크립트에서 사용할 수 있는 모든 값은 프로퍼티 값이 될 수 있다. 자바스크립트의 함수는 일급 객체로 값으로 취급할 수 있다.<br>따라서 함수도 프로퍼티 값으로 사용 가능한데, 프로퍼티 값이 함수일 경우 일반 함수와 구분하기 위해 메서드라 한다.</p>
+<p>이처럼 객체는 프로퍼티와 메서드로 구성된 집합체이며 프로퍼티와 메서드의 역할은 다음과 같다.</p>
+<ul>
+<li>프로퍼티: 객체의 상태를 나타내는 값(data)</li>
+<li>메서드: 프로퍼티(상태 데이터)를 참조하고 조작할 수 있는 동작(behavior)</li>
+</ul>
+<p>객체는 프로퍼티와 메서드를 통해 상태와 동작을 하나의 단위로 구조화할 수 있어 유용하다.</p>
+<h2 id="객체-리터럴에-의한-객체-생성"><a href="#객체-리터럴에-의한-객체-생성" class="headerlink" title="객체 리터럴에 의한 객체 생성"></a>객체 리터럴에 의한 객체 생성</h2><p>C++이나 자바와 같은 클래스 기반 객체지향 언어는 클래스를 사전에 정의하고 필요한 시점에 new 연산자와 함께 생성자를 호출하여 인스턴스를 생성하는 방식으로 객체를 생성한다.</p>
+<p>자바스크립트는 프로토타입 기반 객체지향 언어로 클래스 기반 객체지향 언어와는 달리 다양한 객체 생성 방법을 지원한다.</p>
+<ul>
+<li>객체 리터럴</li>
+<li>Object 생성자 함수</li>
+<li>생성자 함수</li>
+<li>Object.create 메서드</li>
+<li>클래스(ES6)</li>
+</ul>
+<p>객체 생성 방법 중에서 가장 일반적이고 간단한 방법은 객체 리터럴을 사용하는 방법이다.<br>객체 리터럴은 중괄호({…}) 내에 0개 이상의 프로퍼티를 정의한다. 자바스크립트 엔진은 변수에 할당되는 시점에 객체 리터럴을 해석해 객체를 생성한다.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> person = &#123;</span><br><span class="line">  <span class="attr">name</span>: <span class="string">&#x27;rongrong&#x27;</span>,</span><br><span class="line">  <span class="attr">sayHello</span>: <span class="keyword">function</span> (<span class="params"></span>) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`Hello! my name is <span class="subst">$&#123;<span class="variable language_">this</span>.name&#125;</span>.`</span>);</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="keyword">typeof</span> person); <span class="comment">// object</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(person); <span class="comment">// &#123;name: &#x27;rongrong&#x27;, sayHello: f&#125;</span></span><br></pre></td></tr></table></figure>
+
+<p>객체 리터럴의 중괄호는 코드 블록을 의미하지 않는다는것에 주의하자. 코드 블록의 닫는 중괄호 뒤에는 세미콜론을 붙이지 않는다.<br>하지만 객체 리터럴은 값으로 평가되는 표현식으로 객체 리터럴의 닫는 괄호 뒤에는 세미콜론을 붙인다.</p>
+<p>객체 리터럴은 자바스크립트의 유연함과 강력함을 대표하는 객체 생성 방식으로 객체 리터럴에 프로퍼티를 포함시켜 객체를 생성함과 동시에 프로퍼티를 만들 수도 있고, 객체를 생성한 이후에 프로퍼티를 동적으로 추가할 수도 있다.</p>
+<p>그렇다면 프로퍼티에 대해 자세히 알아보자.</p>
+<h2 id="프로퍼티"><a href="#프로퍼티" class="headerlink" title="프로퍼티"></a>프로퍼티</h2><p>객체는 프로퍼티의 집합이며, 프로퍼티는 키와 값으로 구성된다.<br>프로퍼티를 나열할 때는 쉼표로 구분한다. 일반적으로 마지막 프로퍼티 뒤에는 쉼표를 사용하지 않지만 사용해도 괜찮다.</p>
+<p>프로퍼티 키와 프로퍼티 값으로 사용할 수 있는 값은 다음과 같다.</p>
+<ul>
+<li>프로퍼티 키: 빈 문자열을 포함하는 모든 문자열 또는 심벌 값</li>
+<li>프로퍼티 값: 자바스크립트에서 사용할 수 있는 모든 값</li>
+</ul>
+<p>프로퍼티 키는 프로퍼티 값에 접근할 수 있는 이름으로 식별자의 역할을 한다. 하지만 반드시 식별자 네이밍규칙을 따라야 하는 것은 아니다.<br>단, 식별자 네이밍 규칙을 준수하는 프로퍼티 키와 그렇지 않은 키에는 차이가 존재한다.</p>
+<p>심벌 값도 프로퍼티 키로 사용할 수 있지만 일반적으로 문자열을 사용한다. 이때 프로퍼티 키는 문자열이므로 따옴표로 묶어야 한다.<br>하지만 식별자 네이밍 규칙을 준수하는 이름은 따옴표를 생략할 수 있다. 반대로 식별자 네이밍 규칙을 따르지 않는 이름에는 반드시 따옴표를 사용해야 한다.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> person = &#123;</span><br><span class="line">  <span class="attr">firstName</span>: <span class="string">&#x27;rong&#x27;</span>, <span class="comment">// 식별자 네이밍 규칙을 준수한 프로퍼티 키</span></span><br><span class="line">  <span class="string">&#x27;last-name&#x27;</span>: <span class="string">&#x27;rong&#x27;</span>, <span class="comment">// 식별자 네이밍 규칙을 준수하지 않은 프로퍼티 키</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(person); <span class="comment">// &#123;firstName: &#x27;rong&#x27;, last-name: &#x27;rong&#x27;&#125;</span></span><br></pre></td></tr></table></figure>
+
+<p>프로퍼티 키로 사용한 firstName은 식별자 네이밍 규칙을 준수하므로 따옴표를 생략할 수 있다.<br>하지만 last-name은 식별자 네이밍 규칙을 주수하지 않으므로 따옴표를 생략할 수 없다. 자바스크립트 엔진은 따옴표를 생략한 last-name을 - 연산자가 있는 표현식으로 해석한다.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> person = &#123;</span><br><span class="line">  <span class="attr">firstName</span>: <span class="string">&#x27;rong&#x27;</span>,</span><br><span class="line">  last-<span class="attr">name</span>: <span class="string">&#x27;rong&#x27;</span>, <span class="comment">// SyntaxError: Unexpected token -</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>문자열 또는 문자열로 평가할 수 있는 표현식을 사용해 프로퍼티 키를 동적으로 생성 가능하다. 이 경우에는 프로퍼티 키로 사용할 표현식을 대괄호로 묶어야 한다.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = &#123;&#125;;</span><br><span class="line"><span class="keyword">var</span> key = <span class="string">&#x27;hello&#x27;</span>;</span><br><span class="line"></span><br><span class="line">obj[key] = <span class="string">&#x27;world&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(obj); <span class="comment">// &#123;hello: &#x27;world&#x27;&#125;</span></span><br></pre></td></tr></table></figure>
+
+<p>이미 존재하는 프로퍼티 키를 중복 선언하면 나중에 선언한 프로퍼티가 먼저 선언한 프로퍼티를 덮어쓴다.<br>이때 에러가 발생하지 않으니 주의해야 한다.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> foo = &#123;</span><br><span class="line">  <span class="attr">name</span>: <span class="string">&#x27;Lee&#x27;</span>,</span><br><span class="line">  <span class="attr">name</span>: <span class="string">&#x27;Kim&#x27;</span>,</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(foo); <span class="comment">// &#123;name: &#x27;Kim&#x27;&#125;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="메서드"><a href="#메서드" class="headerlink" title="메서드"></a>메서드</h2><p>자바스크립트에서 사용할 수 있는 모든 값은 프로퍼티 값으로 사용할 수 있다고 했다.<br>자바스크립트의 함수는 일급객체로 값으로 취급할 수 있기 때문에 프로퍼티 값으로 사용 가능하다.</p>
+<p>프로퍼티 값이 함수일 경우 일반 함수와 구분하기 위해 메서드라 부르는데 즉 메서드는 객체에 묶여 있는 함수를 의미한다.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> circle = &#123;</span><br><span class="line">  <span class="attr">radius</span>: <span class="number">5</span>, <span class="comment">// 프로퍼티</span></span><br><span class="line">  <span class="comment">// 원의 지름을 구하는 메서드</span></span><br><span class="line">  <span class="attr">getDiameter</span>: <span class="keyword">function</span> (<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">2</span> * <span class="variable language_">this</span>.<span class="property">radius</span>;</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(circle.<span class="title function_">getDiameter</span>()); <span class="comment">// 10</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="프로퍼티-접근"><a href="#프로퍼티-접근" class="headerlink" title="프로퍼티 접근"></a>프로퍼티 접근</h2><p>프로퍼티에 접근하는 방법은 다음과 같이 두 가지이다.</p>
+<ul>
+<li>마침표 프로퍼티 접근 연산자(.)를 사용하는 마침표 표기법</li>
+<li>대괄호 프로퍼티 접근 연산자([…])를 사용하는 대괄호 표기법</li>
+</ul>
+<p>프로퍼티 키가 식별자 네이밍 규칙을 준수하는 이름이면 마침표 표기법과 대괄호 표기법을 모두 사용할 수 있다.</p>
+<p>대괄호 표기법을 사용하는 경우 대괄호 프로퍼티 접근 연산자 내부에 지정하는 프로퍼티 키는 반드시 따옴표로 감싼 문자열이어야 한다.<br>대괄호 프로퍼티 접근 연산자 내에 따옴표로 감싸지 않은 이름을 프로퍼티 키로 사용하면 자바스크립트 엔진은 식별자로 해석한다.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> person = &#123;</span><br><span class="line">  <span class="attr">name</span>: <span class="string">&#x27;rongrong&#x27;</span>,</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(person.<span class="property">name</span>); <span class="comment">// &#x27;rongrong&#x27;</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(person[<span class="string">&#x27;name&#x27;</span>]); <span class="comment">// &#x27;rongrong&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(person[name]); <span class="comment">// ReferenceError: name is not defined</span></span><br></pre></td></tr></table></figure>
+
+<p>위 코드에서 ReferenceError가 발생한 이유는 대괄호 연산자 내의 따옴표로 감싸지 않은 이름, 즉 식별자 name을 평가하기 위해 선언된 name을 찾았지만 찾지 못했기 때문이다.</p>
+<p>객체에 존재하지 않는 프로퍼티에 접근하면 undefined를 반환한다. 이때 ReferenceError가 발생하지 않는데에 주의하자</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> person = &#123;</span><br><span class="line">  <span class="attr">name</span>: <span class="string">&#x27;rongrong&#x27;</span>,</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(person.<span class="property">age</span>); <span class="comment">// undefined</span></span><br></pre></td></tr></table></figure>
+
+<p>프로퍼티 키가 식별자 네이밍 규칙을 준수하지 않으면 반드시 대괄호 표기법을 사용해야 한다.<br>단 프로퍼티 키가 숫자로 이루어진 문자열인 경우 따옴표를 생략할 수 있다.</p>
+<h2 id="프로퍼티-값-갱신"><a href="#프로퍼티-값-갱신" class="headerlink" title="프로퍼티 값 갱신"></a>프로퍼티 값 갱신</h2><p>이미 존재하는 프로퍼티에 값을 할당하면 프로퍼티 값이 갱신된다</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> person = &#123;</span><br><span class="line">  <span class="attr">name</span>: <span class="string">&#x27;Lee&#x27;</span>,</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">person.<span class="property">name</span> = <span class="string">&#x27;Kim&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(person); <span class="comment">// &#123;name: &quot;Kim&quot;&#125;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="프로퍼티-동적-생성"><a href="#프로퍼티-동적-생성" class="headerlink" title="프로퍼티 동적 생성"></a>프로퍼티 동적 생성</h2><p>존재하지 않는 프로퍼티에 값을 할당하면 프로퍼티가 동적으로 생성되어 추가되고 프로퍼티 값이 할당된다.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> person = &#123;</span><br><span class="line">  <span class="attr">name</span>: <span class="string">&#x27;rongrong&#x27;</span>,</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">person.<span class="property">age</span> = <span class="number">25</span>;</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(person); <span class="comment">// &#123;name: &#x27;rongrong&#x27;, age: 25&#125;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="프로퍼티-삭제"><a href="#프로퍼티-삭제" class="headerlink" title="프로퍼티 삭제"></a>프로퍼티 삭제</h2><p>delete 연산자는 객체의 프로퍼티를 삭제한다. 이때 delete 연산자의 피연산자는 프로퍼티 값에 접근할 수 있는 표현식이어야 한다.<br>이때 존재하지 않는 프로퍼티를 삭제해도 아무런 에러 없이 무시된다.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> person = &#123;</span><br><span class="line">  <span class="attr">name</span>: <span class="string">&#x27;rongrong&#x27;</span>,</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">person.<span class="property">age</span> = <span class="number">25</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">delete</span> person.<span class="property">age</span>; <span class="comment">// 프로퍼티 동적 생성 후 삭제</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">delete</span> person.<span class="property">address</span>; <span class="comment">// 존재하지 않는 프로퍼티 삭제, 에러 없이 무시</span></span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(person); <span class="comment">// &#123;name: &#x27;rongrong&#x27;&#125;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="ES6에서-추가된-객체-리터럴의-확장-기능"><a href="#ES6에서-추가된-객체-리터럴의-확장-기능" class="headerlink" title="ES6에서 추가된 객체 리터럴의 확장 기능"></a>ES6에서 추가된 객체 리터럴의 확장 기능</h2><p>ES6에서는 더욱 간편하고 표현력 있는 객체 리터럴의 확장 기능을 제공한다.</p>
+<h3 id="프로퍼티-축약-표현"><a href="#프로퍼티-축약-표현" class="headerlink" title="프로퍼티 축약 표현"></a>프로퍼티 축약 표현</h3><p>객체 리터럴의 프로퍼티는 프로퍼티 키와 프로퍼티 값으로 구성된다. 프로퍼티 값은 변수에 할당된 값, 즉 식별자 표현식일 수도 있다.</p>
+<p>ES6에서는 프로퍼티 값으로 변수를 사용하는 경우 변수 이름과 프로퍼티 키가 동일한 이름일 때 프로퍼티 키를 생략할 수 있다.<br>이때 프로퍼티 키는 변수 이름으로 자동 생성된다.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> x = <span class="number">1</span>,</span><br><span class="line">  y = <span class="number">2</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> obj = &#123; x, y &#125;;</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(obj); &#123;<span class="attr">x</span>: <span class="number">1</span>, <span class="attr">y</span>: <span class="number">2</span>&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="메서드-축약-표현"><a href="#메서드-축약-표현" class="headerlink" title="메서드 축약 표현"></a>메서드 축약 표현</h3><p>ES5에서 메서드를 정의하려면 프로퍼티 값으로 함수를 할당한다.</p>
+<p>ES6에서는 메서드를 정의할 때 function 키워드를 생략한 축약 표현을 사용할 수 있다.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> obj = &#123;</span><br><span class="line">  <span class="attr">name</span>: <span class="string">&#x27;rongrong&#x27;</span>,</span><br><span class="line">  <span class="title function_">sayHi</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;Hi! &#x27;</span> + <span class="variable language_">this</span>.<span class="property">name</span>);</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">obj.<span class="title function_">sayHi</span>(); <span class="comment">// &#x27;Hi! rongrong&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<p>ES6의 메서드 축약 표현으로 정의한 메서드는 프로퍼티에 할당한 함수와 다르게 동작한다.</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%EA%B0%9C%EB%B0%9C/" rel="tag"># 개발</a>
+              <a href="/tags/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8/" rel="tag"># 자바스크립트</a>
+              <a href="/tags/%EB%AA%A8%EB%8D%98-%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-Deep-Dive/" rel="tag"># 모던 자바스크립트 Deep Dive</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2022/Modern-Javascript-Deep-Dive-Chapter-9-Summary/" rel="prev" title="[Deep Dive] 타입 변환과 단축 평가">
+                  <i class="fa fa-chevron-left"></i> [Deep Dive] 타입 변환과 단축 평가
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    
+  <div class="comments" id="disqus_thread">
+    <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+  </div>
+  
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">rongrong</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+  
+
+
+
+
+<script class="next-config" data-name="disqus" type="application/json">{"enable":true,"shortname":"rongrongs-diary","count":true,"lazyload":false,"i18n":{"disqus":"disqus"}}</script>
+<script src="/js/third-party/comments/disqus.js"></script>
+
+</body>
+</html>
