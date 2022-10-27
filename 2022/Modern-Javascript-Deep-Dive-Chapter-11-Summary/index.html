@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 6.3.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha256-AbA177XfpSnFEvgpYu1jMygiLabzPCJCRIBtR5jGc0k=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"rjsej12.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":true,"version":"8.13.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="원시 값 vs 객체 값앞서 데이터 타입에서 살펴보았듯이 자바스크립트가 제공하는 데이터타입은 크게 원시 타입과 객체 타입으로 구분할 수 있다. 데이터 타입을 원시 타입과 객체 타입으로 구분하는 이유는 무엇일까?원시 타입과 객체 타입은 근본적으로 다르다는 의미일 것이다. 원시타입과 객체 타입은 크게 세 가지 측면에서 다르다.  원시 타입의 값은 변경 불가능한">
+<meta property="og:type" content="article">
+<meta property="og:title" content="[Deep Dive] 원시 값과 객체의 비교">
+<meta property="og:url" content="https://rjsej12.github.io/2022/Modern-Javascript-Deep-Dive-Chapter-11-Summary/index.html">
+<meta property="og:site_name" content="롱롱의 일기장">
+<meta property="og:description" content="원시 값 vs 객체 값앞서 데이터 타입에서 살펴보았듯이 자바스크립트가 제공하는 데이터타입은 크게 원시 타입과 객체 타입으로 구분할 수 있다. 데이터 타입을 원시 타입과 객체 타입으로 구분하는 이유는 무엇일까?원시 타입과 객체 타입은 근본적으로 다르다는 의미일 것이다. 원시타입과 객체 타입은 크게 세 가지 측면에서 다르다.  원시 타입의 값은 변경 불가능한">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2022-10-27T07:03:22.000Z">
+<meta property="article:modified_time" content="2022-10-27T07:04:08.743Z">
+<meta property="article:author" content="rongrong">
+<meta property="article:tag" content="개발">
+<meta property="article:tag" content="자바스크립트">
+<meta property="article:tag" content="모던 자바스크립트 Deep Dive">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://rjsej12.github.io/2022/Modern-Javascript-Deep-Dive-Chapter-11-Summary/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://rjsej12.github.io/2022/Modern-Javascript-Deep-Dive-Chapter-11-Summary/","path":"2022/Modern-Javascript-Deep-Dive-Chapter-11-Summary/","title":"[Deep Dive] 원시 값과 객체의 비교"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>[Deep Dive] 원시 값과 객체의 비교 | 롱롱의 일기장</title>
+  
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">롱롱의 일기장</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%EC%9B%90%EC%8B%9C-%EA%B0%92-vs-%EA%B0%9D%EC%B2%B4-%EA%B0%92"><span class="nav-number">1.</span> <span class="nav-text">원시 값 vs 객체 값</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%EC%9B%90%EC%8B%9C-%EA%B0%92"><span class="nav-number">1.1.</span> <span class="nav-text">원시 값</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%EB%B3%80%EA%B2%BD-%EB%B6%88%EA%B0%80%EB%8A%A5%ED%95%9C-%EA%B0%92"><span class="nav-number">1.1.1.</span> <span class="nav-text">변경 불가능한 값</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%EA%B0%92%EC%97%90-%EC%9D%98%ED%95%9C-%EC%A0%84%EB%8B%AC"><span class="nav-number">1.1.2.</span> <span class="nav-text">값에 의한 전달</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%EA%B0%9D%EC%B2%B4"><span class="nav-number">1.2.</span> <span class="nav-text">객체</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%EB%B3%80%EA%B2%BD-%EA%B0%80%EB%8A%A5%ED%95%9C-%EA%B0%92"><span class="nav-number">1.2.1.</span> <span class="nav-text">변경 가능한 값</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%EC%B0%B8%EC%A1%B0%EC%97%90-%EC%9D%98%ED%95%9C-%EC%A0%84%EB%8B%AC"><span class="nav-number">1.2.2.</span> <span class="nav-text">참조에 의한 전달</span></a></li></ol></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">rongrong</p>
+  <div class="site-description" itemprop="description">주니어 개발자 롱롱의 성장일기</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">17</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">13</span>
+        <span class="site-state-item-name">tags</span>
+      </div>
+  </nav>
+</div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="Back to top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://rjsej12.github.io/2022/Modern-Javascript-Deep-Dive-Chapter-11-Summary/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="rongrong">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="롱롱의 일기장">
+      <meta itemprop="description" content="주니어 개발자 롱롱의 성장일기">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="[Deep Dive] 원시 값과 객체의 비교 | 롱롱의 일기장">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          [Deep Dive] 원시 값과 객체의 비교
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2022-10-27 16:03:22 / Modified: 16:04:08" itemprop="dateCreated datePublished" datetime="2022-10-27T16:03:22+09:00">2022-10-27</time>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2022/Modern-Javascript-Deep-Dive-Chapter-11-Summary/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2022/Modern-Javascript-Deep-Dive-Chapter-11-Summary/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h1 id="원시-값-vs-객체-값"><a href="#원시-값-vs-객체-값" class="headerlink" title="원시 값 vs 객체 값"></a>원시 값 vs 객체 값</h1><p>앞서 데이터 타입에서 살펴보았듯이 자바스크립트가 제공하는 데이터타입은 크게 원시 타입과 객체 타입으로 구분할 수 있다.</p>
+<p>데이터 타입을 원시 타입과 객체 타입으로 구분하는 이유는 무엇일까?<br>원시 타입과 객체 타입은 근본적으로 다르다는 의미일 것이다. 원시타입과 객체 타입은 크게 세 가지 측면에서 다르다.</p>
+<ul>
+<li>원시 타입의 값은 변경 불가능한 값이다. 반면 객체(참조) 타입의 값은 변경 가능한 값이다.</li>
+<li>원시 값을 변수에 할당하면 변수(확보된 메모리 공간)에는 실제 값이 저장된다. 반면 객체를 변수에 할당하면 변수에는 참조 값이 저장된다.</li>
+<li>원시 값을 갖는 변수를 다른 변수에 할당하면 원본의 원시 값이 복사되어 전달된다. 이를 값에 의한 전달이라고 한다. 반면 객체를 가리키는 변수를 다른 변수에 할당하면 원본의 참조 값이 복사되어 전달된다. 이를 참조에 의한 전달이라고 한다.</li>
+</ul>
+<p>원시 타입과 객체 타입에 대해 조금 더 자세히 살펴보자</p>
+<h2 id="원시-값"><a href="#원시-값" class="headerlink" title="원시 값"></a>원시 값</h2><h3 id="변경-불가능한-값"><a href="#변경-불가능한-값" class="headerlink" title="변경 불가능한 값"></a>변경 불가능한 값</h3><p>원시 타입의 값은 변경 불가능한 값이다. 다시 말해, 한번 생성된 원시 값은 읽기 전용 값으로 변경할 수 없다.</p>
+<p>값을 변경할 수 없다는 것이 어떤 의미일까? 먼저 변수와 값을 정확히 구분해야 한다.<br>변수란 하나의 값을 저장하기 위해 확보한 메모리 공간 자체 또는 그 메모리 공간을 식별하기 위해 붙인 이름이고, 값이란 변수에 저장된 데이터로 표현식이 평가되어 생성된 결과이다. 값을 변경할 수 없다는 것은 변수에 관한 것이 아닌 값에 대한 진술이다.</p>
+<p>즉 원시 값을 변경할 수 없다는 것은 원시 값 자체를 변경할 수 없다는 것이지 변수 값을 변경할 수 없다는 것이 아니다. 변수 값은 재할당을 통해 언제든지 변경 가능하다. 단 상수는 재할당이 금지된 변수이므로 변수 값을 변경할 수 없다.</p>
+<p>원시 값은 변경 불가능한 값이므로 데이터의 신뢰성을 보장한다.</p>
+<p>변수에서 살펴보았듯이 원시 값을 할당한 변수에 새로운 원시 값을 재할당하면 메모리 공간에 저장되어 있는 재할당 이전의 원시 값을 변경하는 것이 아니라 새로운 메모리 공간을 확보하고 재할당할 값을 저장한 후 변수가 새롭게 재할당한 원시 값을 가리킨다.</p>
+<p>변수가 참조하던 메모리 공간의 주소가 변경된 이유는 변수에 할당된 원시 값이 변경 불가능한 값이기 때문이다.<br>만약 원시 값이 변경 가능한 값이라면 변수에 새로운 원시 값을 재할당했을 때 변수가 가리키던 메모리 공간의 주소를 바꿀 필요 없이 원시 값 자체를 변경하면 될 것이다.</p>
+<p>하지만 원시 값은 불변성을 가지므로 원시 값을 할당한 변수는 재할당 이외에 변수 값을 변경할 수 있는 방법이 없다.</p>
+<h3 id="값에-의한-전달"><a href="#값에-의한-전달" class="headerlink" title="값에 의한 전달"></a>값에 의한 전달</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> score = <span class="number">80</span>;</span><br><span class="line"><span class="keyword">var</span> copy = score;</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(score); <span class="comment">// 80</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(copy); <span class="comment">// 80</span></span><br><span class="line"></span><br><span class="line">score = <span class="number">100</span>;</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(score); <span class="comment">// 100</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(copy); <span class="comment">// ?</span></span><br></pre></td></tr></table></figure>
+
+<p>score 변수에 숫자 값 80을 할당 한 후 copy 변수에 score 변수를 할당했다. 그 후, score 변수에 새로운 숫자 값 100을 재할당하면 copy 변수의 값은 어떻게 될까?</p>
+<p>이 질문은 결국 “변수에 변수를 할당했을 때 무엇이 어떻게 전달되는가?”이다. copy &#x3D; score에서 score는 변수 값 80으로 평가되므로 copy 변수에도 80이 할당된다. 이처럼 변수에 원시 값을 갖는 변수를 할당하면 할당받는 변수(copy)에는 할당되는 변수(score)의 원시 값이 복사되어 전달되는데 이를 값에 의한 전달이라 한다.</p>
+<p>score 변수와 copy 변수는 숫자 값 80을 갖는다는 점은 동일하지만 score 변수와 copy 변수의 값 80은 다른 메모리 공간에 저장된 별개의 값이다.<br>따라서 score변수의 값을 변경하더라도 copy 변수의 값은 어떠한 영향을 주지 않는다. 즉 마지막 <code>console.log(copy)</code>의 결과는 80이다.</p>
+<p>사실 이는 실제 자바스크립트 엔진의 내부 동작과 정확히 일치하지 않을 수 있다. ECMAScript 사양에는 변수를 통해 메모리를 어떻게 관리해야 하는지 명확하게 정의되어 있지 않다. 따라서 실제 자바스크립트 엔진을 구현하는 제조사에 따라 내부 동작은 차이가 있을 수 있다.</p>
+<p>위에서는 변수에 원시 값을 갖는 변수를 할당하면 원시 값이 복사되어 새로운 메모리 공간에 할당한다고 설명했지만, 변수에 원시 값을 갖는 변수를 할당하는 시점에는 두 변수가 같은 원시 값을 참조하다가 어느 한쪽의 변수에 재할당이 이뤄졌을 때 비로소 새로운 메모리 공간에 재할당된 값을 저장하도록 동작할 수도 있다.</p>
+<p>또한 엄격히 말하자면 변수와 같은 식별자는 값이 아니라 메모리 주소를 기억하기에 변수에는 값이 전달되는 것이 아니라 메모리 주소가 전달된다. 따라서 “값에 의한 전달”이라는 용어도 사실 오해가 있을 수 있다.</p>
+<p>결국 “값에 의한 전달”도 사실은 값이 아니라 메모리 주소를 전달한다. 단 전달된 메모리 주소를 통해 메모리 공간에 접근하면 값을 참조할 수 있다.<br>중요한 것은 변수에 원시 값을 갖는 변수를 할당하면 변수 할당 시점이든, 두 변수 중 어느 하나의 변수에 값을 재할당하는 시점이든 결국은 두 변수의 원시 값은 서로 다른 메모리 공간에 저장된 별개의 값이 되어 어느 한쪽에서 재할당을 통해 값을 변경하더라도 서로 간섭할 수 없다는 것이다.</p>
+<h2 id="객체"><a href="#객체" class="headerlink" title="객체"></a>객체</h2><p>객체는 프로퍼티의 개수가 정해져 있지 않으며, 동적으로 추가되고 삭제할 수 있다. 또 프로퍼티의 값에도 제약이 없다.<br>즉 객체는 원시 값과는 다르게 확보해야 할 메모리 공간의 크기를 사전에 정해 둘 수 없다.</p>
+<p>따라서 객체는 원시 값과는 다른 방식으로 동작하도록 설계되어 있다. 원시 값과의 차이를 통해 객체에 대해 이해해보자.</p>
+<h3 id="변경-가능한-값"><a href="#변경-가능한-값" class="headerlink" title="변경 가능한 값"></a>변경 가능한 값</h3><p>객체 타입의 값은 변경 가능한 값이다. 이게 어떤 의미일까? 먼저 변수에 객체를 할당하면 어떤 일이 일어나는지 살펴보자</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> person = &#123;</span><br><span class="line">  <span class="attr">name</span>: <span class="string">&#x27;Lee&#x27;</span>,</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>원시 값을 할당한 변수가 기억하는 메모리 주소를 통해 메모리 공간에 접근하면 원시 값에 접근할 수 있다.<br>즉, 원시 값을 할당한 변수는 원시 값 자체를 값으로 갖는다. 하지만 객체를 할당한 변수가 기억하는 메모리 주소를 통해 메모리 공간에 접근하면 참조 값에 접근할 수 있다. 참조 값은 생성된 객체가 저장된 메모리 공간의 주소이다.</p>
+<p>원시 값을 할당한 변수를 참조하면 메모리에 저장되어 있는 원시 값에 접근한다. 하지만 객체를 할당한 변수를 참조하면 메모리에 저장되어 있는 참조 값을 통해 실제 객체에 접근한다.</p>
+<p>원시 값은 변경 불가능한 값이므로 원시 값을 갖는 변수의 값을 변경하려면 재할당 외에는 방법이 없다. 하지만 객체는 변경 가능한 값이므로 객체를 할당한 변수는 재할당 없이 객체를 직접 변경할 수 있다. 재할당 없이 프로퍼티를 동적으로 추가할 수도 있고 프로퍼티 값을 갱신할 수도 있으며 프로퍼티 자체를 삭제할 수도 있다.</p>
+<p>이때 객체를 할당한 변수에 재할당을 하지 않았으므로 객체를 할당한 변수의 참조 값은 변경되지 않는다.<br>이는 메모리 사용의 효율성과 성능을 위해 어느 정도의 구조적인 단점을 감안한 설계라고 할 수 있다.</p>
+<p>객체는 이러한 구조적 단점에 따른 부작용이 존재한다. 원시 값과는 다르게 여러 개의 식별자가 하나의 객체를 공유할 수 있다는 것이다.</p>
+<h3 id="참조에-의한-전달"><a href="#참조에-의한-전달" class="headerlink" title="참조에 의한 전달"></a>참조에 의한 전달</h3><p>여러 개의 식별자가 하나의 객체를 공유할 수 있다는 것이 무슨 의미인지, 어떤 부작용이 발생하는지 알아보자.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> person = &#123;</span><br><span class="line">  <span class="attr">name</span>: <span class="string">&#x27;Lee&#x27;</span>;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> copy = person;</span><br></pre></td></tr></table></figure>
+
+<p>객체를 가리키는 변수(원본, person)을 다른 변수(사본, copy)에 할당하면 원본의 참조 값이 복사되어 전달되는데 이를 참조에 의한 전달이라 한다.</p>
+<p>원본 person과 사본 copy는 저장된 메모리 주소는 다르지만 동일한 참조 값을 가지므로 원본 person과 사본 copy 모두 동일한 객체를 가리키게 된다.<br>이것이 두 개의 식별자가 하나의 객체를 공유한다는 것을 의미한다. 따라서 원본 또는 사본 중 어느 한 쪽에서 객체를 변경하면 서로 영향을 주고받는다.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> person = &#123;</span><br><span class="line">  <span class="attr">name</span>: <span class="string">&#x27;Lee&#x27;</span>,</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> copy = person;</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(copy === person); <span class="comment">// true</span></span><br><span class="line"></span><br><span class="line">copy.<span class="property">name</span> = <span class="string">&#x27;Kim&#x27;</span>;</span><br><span class="line">person.<span class="property">address</span> = <span class="string">&#x27;Seoul&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// copy와 person은 동일한 객체를 가리키므로 서로 영향을 주고 받는다.</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(person); <span class="comment">// &#123;name: &#x27;Kim&#x27;, address: &#x27;Seoul&#x27;&#125;</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(copy); <span class="comment">// &#123;name: &#x27;Kim&#x27;, address: &#x27;Seoul&#x27;&#125;</span></span><br></pre></td></tr></table></figure>
+
+<p>결국 “값에 의한 전달”과 “참조에 의한 전달”은 식별자가 기억하는 메모리 공간에 저장되어 있는 값을 복사해 전달한다는 면에서 동일하다.<br>다만 식별자가 기억하는 메모리 공간, 즉 변수에 저장되어 있는 값이 원시 값이냐 참조 값이냐의 차이만 있을 뿐이다. 따라서 자바스크립트에는 “참조에 의한 전달”은 존재하지 않고 “값에 의한 전달”만이 존재한다고 말할 수 있지만 전달되는 값이 원시 값인지 참조 값인지 구별해 강조하는 의미로 구분해 부른다고 할 수 있다.</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%EA%B0%9C%EB%B0%9C/" rel="tag"># 개발</a>
+              <a href="/tags/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8/" rel="tag"># 자바스크립트</a>
+              <a href="/tags/%EB%AA%A8%EB%8D%98-%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-Deep-Dive/" rel="tag"># 모던 자바스크립트 Deep Dive</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2022/Modern-Javascript-Deep-Dive-Chapter-10-Summary/" rel="prev" title="[Deep Dive] 객체 리터럴">
+                  <i class="fa fa-chevron-left"></i> [Deep Dive] 객체 리터럴
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    
+  <div class="comments" id="disqus_thread">
+    <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+  </div>
+  
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">rongrong</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+  
+
+
+
+
+<script class="next-config" data-name="disqus" type="application/json">{"enable":true,"shortname":"rongrongs-diary","count":true,"lazyload":false,"i18n":{"disqus":"disqus"}}</script>
+<script src="/js/third-party/comments/disqus.js"></script>
+
+</body>
+</html>
