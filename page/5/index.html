@@ -154,13 +154,13 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">17</span>
+          <span class="site-state-item-count">18</span>
           <span class="site-state-item-name">포스트</span>
         </a>
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">13</span>
+        <span class="site-state-item-count">14</span>
         <span class="site-state-item-name">태그</span></a>
       </div>
   </nav>
@@ -189,6 +189,107 @@
 
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://rjsej12.github.io/2022/Image-Sprite/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="rongrong">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="롱롱의 일기장">
+      <meta itemprop="description" content="주니어 개발자 롱롱의 성장일기">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 롱롱의 일기장">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2022/Image-Sprite/" class="post-title-link" itemprop="url">이미지 스프라이트(Image Sprite)</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">작성일</span>
+
+      <time title="Post created: 2022-09-08 23:25:20" itemprop="dateCreated datePublished" datetime="2022-09-08T23:25:20+09:00">2022-09-08</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Updated at: 2022-10-10 23:27:00" itemprop="dateModified" datetime="2022-10-10T23:27:00+09:00">2022-10-10</time>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2022/Image-Sprite/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2022/Image-Sprite/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>이미지 스프라이트란 여러 개의 이미지를 하나로 합쳐서 관리하는 이미지를 의미한다.</p>
+<p>웹 페이지에 이미지를 사용한다면 웹 브라우저는 해당 이미지의 다운로드를 위해 서버에 요청을 보낸다. 만약 사용된 이미지가 많을 경우 요청 하는 횟수가 많아지므로 웹 페이지의 로딩 시간이 오래 걸리게 된다. 하지만 만약 이미지 스프라이트를 사용한다면 스프라이트 이미지 파일 하나가 여러 이미지를 가지고 있기에 서버 요청 횟수를 줄일 수 있다.</p>
+<p>개인적인 블로그와 같은 일반적인 사이트에서는 굳이 이미지 스프라이트를 사용 할 필요가 없지만, 트래픽이 매우 많거나 많은 사람이 이용하는 검색포털과 같은 사이트에서는 이미지 스프라이트를 사용하여 서버 요청을 줄이고 웹 페이지의 로딩 시간을 단축시켜 사이트의 품질을 높일 수 있다.</p>
+<p>다음은 네이버 메인페이지의 스프라이트 이미지이다.<br><img src="https://velog.velcdn.com/images/rjsej12/post/34bfd37f-ea3a-4073-8a76-7c5cfbf8b1fc/image.png"></p>
+<p>이처럼 여러개의 이미지를 하나로 합쳐두고 CSS의 <code>background-position</code>을 이용해 사용하려는 이미지만을 보여 줄 수 있다. 이 때 <code>background-position</code>의 값은 하나씩 position값을 변경해보며 찾을 수 도 있지만 <a target="_blank" rel="noopener" href="http://www.spritecow.com/">Sprite Cow</a>와 같은 사이트를 이용 할 수 있다.</p>
+<p>추가적으로 스프라이트 이미지를 만들기 위해 포토샵, 피그마 등으로 에디팅 할 수 도 있지만 <a target="_blank" rel="noopener" href="https://www.toptal.com/developers/css/sprite-generator/">CSS Sprites Generator</a>라는 사이트를 이용 가능하다.</p>
+<hr>
+
+<h1 id="참고"><a href="#참고" class="headerlink" title="참고"></a>참고</h1><ul>
+<li><a target="_blank" rel="noopener" href="https://creativestudio.kr/1653">https://creativestudio.kr/1653</a></li>
+<li><a target="_blank" rel="noopener" href="http://www.tcpschool.com/css/css_basic_imageSprites">http://www.tcpschool.com/css/css_basic_imageSprites</a></li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -463,124 +564,6 @@
 <li><a target="_blank" rel="noopener" href="http://www.kwacc.or.kr/WAI/wcag21/">http://www.kwacc.or.kr/WAI/wcag21/</a></li>
 <li><a target="_blank" rel="noopener" href="http://www.websoul.co.kr/accessibility/WA_guide21.asp">http://www.websoul.co.kr/accessibility/WA_guide21.asp</a></li>
 </ul>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://rjsej12.github.io/2022/Don-t-be-sure-of-MDN-always/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="rongrong">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="롱롱의 일기장">
-      <meta itemprop="description" content="주니어 개발자 롱롱의 성장일기">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 롱롱의 일기장">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2022/Don-t-be-sure-of-MDN-always/" class="post-title-link" itemprop="url">MDN을 확신하지는 말자.</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">작성일</span>
-
-      <time title="Post created: 2022-09-01 09:37:03" itemprop="dateCreated datePublished" datetime="2022-09-01T09:37:03+09:00">2022-09-01</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">Edited on</span>
-      <time title="Updated at: 2022-10-07 09:38:14" itemprop="dateModified" datetime="2022-10-07T09:38:14+09:00">2022-10-07</time>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/2022/Don-t-be-sure-of-MDN-always/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2022/Don-t-be-sure-of-MDN-always/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>어제에 이어 position에 대해 공부하면서 position이 absolute인 경우 containing block은 가장 가까운 position이 static이 아닌 부모요소 외에도 다른 조건들이 있다고 해 MDN을 통해 공부를 하던 중 이상하다고 생각되는 점이 생겼다.</p>
-<hr>
-
-<h1 id="👀"><a href="#👀" class="headerlink" title="👀"></a>👀</h1><p><a target="_blank" rel="noopener" href="https://developer.mozilla.org/ko/docs/Web/CSS/Containing_block">컨테이닝 블록의 모든것</a>이라는 MDN 문서에서 컨테이닝 블록 식별 항목을 읽어보면 다음과 같이 설명하고 있다. </p>
-<blockquote>
-<p>position 속성이 <strong>absolute</strong>나 <strong>fixed</strong>인 경우, 다음 조건 중 하나를 만족하는 가장 가까운 조상의 내부 여백 영역이 컨테이닝 블록이 될 수도 있습니다.</p>
-</blockquote>
-<ul>
-<li>transform이나 perspective (en-US) 속성이 none이 아님.</li>
-<li>will-change 속성이 transform이나 perspective임.</li>
-<li>filter 속성이 none임. (Firefox에선 will-change가 filter일 때도 적용)</li>
-<li>contain 속성이 paint임.</li>
-</ul>
-<p>각 속성들이 어떤 역할을 하는지 찾아보던 중 filter 속성을 검색해 보았는데 default value가 none임을 알았다. 그러자 다음과 같은 의문이 생겼다.</p>
-<h1 id="🤔"><a href="#🤔" class="headerlink" title="🤔"></a>🤔</h1><p>음 이상한데? filter 속성이 none이면 containing block이 될 수 있고 filter 속성의 default value가 none이면 거의 모든것이 containing block이 될 수 있다는 소리인가? 그건 아닌것 같은데…<br>아 된다가 아니라 될 수도 있다네? 그러면 될 수 있는 조건과 안되는 조건은 무엇이지? </p>
-<p>그러다 [position] (<a target="_blank" rel="noopener" href="https://developer.mozilla.org/ko/docs/Web/CSS/position">https://developer.mozilla.org/ko/docs/Web/CSS/position</a>) MDN을 들어가 보니 fixed 항목이 이렇게 나와 있었다.</p>
-<blockquote>
-<p>요소를 일반적인 문서 흐름에서 제거하고, 페이지 레이아웃에 공간도 배정하지 않습니다. 대신 뷰포트의 초기 컨테이닝 블록을 기준으로 삼아 배치합니다. 단, 요소의 조상 중 하나가 transform, perspective, filter 속성 중 어느 하나라도 none이 아니라면 (CSS Transforms 명세 참조) 뷰포트 대신 그 조상을 컨테이닝 블록으로 삼습니다. (perspective와 filter의 경우 브라우저별로 결과가 다름에 유의) 최종 위치는 top, right, bottom, left 값이 지정합니다.</p>
-</blockquote>
-<p>앗 여기에는 filter 속성이 none이 아니라고 되어있네 뭐가 맞는거지? transform이나 perspective가 none이 아니여야 했으니 filter도 none이 아닌게 맞는것 같은데.. 라며 계속 고민하다 같이 공부하시는 분들의 도움을 받아 궁금증을 해결했다.</p>
-<h1 id="✔"><a href="#✔" class="headerlink" title="✔"></a>✔</h1><p>바로 <a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/CSS/Containing_block">영문 MDN 사이트</a>에는 filter 속성이 none이 아니라고 나와있던것! 사이트 번역과정에서 오류가 있었던것이다. </p>
-<blockquote>
-<ul>
-<li>A filter value other than none or a will-change value of filter (only works on Firefox).</li>
-</ul>
-</blockquote>
-<hr>
-
-<p>MDN이 거의 공식문서 혹은 표준처럼 여겨지기는 하지만 번역문서 그리고 원문 역시도 contributor분들에 의해 쓰여지는 것이기 때문에 확신을 하지는 말고 여러 레퍼런스들을 통해 교차검증해야되겠다고 깨달았다.</p>
 
       
     </div>

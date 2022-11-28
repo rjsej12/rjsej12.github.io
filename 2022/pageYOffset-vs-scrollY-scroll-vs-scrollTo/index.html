@@ -21,31 +21,28 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"rjsej12.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":true,"version":"8.13.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="이미지 스프라이트란 여러 개의 이미지를 하나로 합쳐서 관리하는 이미지를 의미한다. 웹 페이지에 이미지를 사용한다면 웹 브라우저는 해당 이미지의 다운로드를 위해 서버에 요청을 보낸다. 만약 사용된 이미지가 많을 경우 요청 하는 횟수가 많아지므로 웹 페이지의 로딩 시간이 오래 걸리게 된다. 하지만 만약 이미지 스프라이트를 사용한다면 스프라이트 이미지 파일 하나">
+    <meta name="description" content="🤔What is Problem?페어 프로그래밍을 진행하면서 수직으로 스크롤한 거리에 따라 숨겨진 버튼을 활성화 하고, 스크롤 버튼을 클릭했을 때 맨 위로 스크롤하는 예제를 해결해야했다. 이를 위해 수직으로 스크롤한 거리를 측정하는 방법과 스크롤을 시키는 방법이 필요해 이에 대해 알아보았는데, 같은 기능을 하는 프로퍼티와 메서드가 중복으로 존재해 어떤것을">
 <meta property="og:type" content="article">
-<meta property="og:title" content="이미지 스프라이트(Image Sprite)">
-<meta property="og:url" content="https://rjsej12.github.io/2022/Image-Sprite/index.html">
+<meta property="og:title" content="pageYOffset vs scrollY, scroll() vs scrollTo()">
+<meta property="og:url" content="https://rjsej12.github.io/2022/pageYOffset-vs-scrollY-scroll-vs-scrollTo/index.html">
 <meta property="og:site_name" content="롱롱의 일기장">
-<meta property="og:description" content="이미지 스프라이트란 여러 개의 이미지를 하나로 합쳐서 관리하는 이미지를 의미한다. 웹 페이지에 이미지를 사용한다면 웹 브라우저는 해당 이미지의 다운로드를 위해 서버에 요청을 보낸다. 만약 사용된 이미지가 많을 경우 요청 하는 횟수가 많아지므로 웹 페이지의 로딩 시간이 오래 걸리게 된다. 하지만 만약 이미지 스프라이트를 사용한다면 스프라이트 이미지 파일 하나">
+<meta property="og:description" content="🤔What is Problem?페어 프로그래밍을 진행하면서 수직으로 스크롤한 거리에 따라 숨겨진 버튼을 활성화 하고, 스크롤 버튼을 클릭했을 때 맨 위로 스크롤하는 예제를 해결해야했다. 이를 위해 수직으로 스크롤한 거리를 측정하는 방법과 스크롤을 시키는 방법이 필요해 이에 대해 알아보았는데, 같은 기능을 하는 프로퍼티와 메서드가 중복으로 존재해 어떤것을">
 <meta property="og:locale" content="ko_KR">
-<meta property="og:image" content="https://velog.velcdn.com/images/rjsej12/post/34bfd37f-ea3a-4073-8a76-7c5cfbf8b1fc/image.png">
-<meta property="article:published_time" content="2022-09-08T14:25:20.000Z">
-<meta property="article:modified_time" content="2022-10-10T14:27:00.103Z">
+<meta property="article:published_time" content="2022-11-28T03:31:26.000Z">
+<meta property="article:modified_time" content="2022-11-28T03:32:14.646Z">
 <meta property="article:author" content="rongrong">
-<meta property="article:tag" content="개발">
-<meta property="article:tag" content="CSS">
+<meta property="article:tag" content="JS">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://velog.velcdn.com/images/rjsej12/post/34bfd37f-ea3a-4073-8a76-7c5cfbf8b1fc/image.png">
 
 
-<link rel="canonical" href="https://rjsej12.github.io/2022/Image-Sprite/">
+<link rel="canonical" href="https://rjsej12.github.io/2022/pageYOffset-vs-scrollY-scroll-vs-scrollTo/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"ko","comments":true,"permalink":"https://rjsej12.github.io/2022/Image-Sprite/","path":"2022/Image-Sprite/","title":"이미지 스프라이트(Image Sprite)"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"ko","comments":true,"permalink":"https://rjsej12.github.io/2022/pageYOffset-vs-scrollY-scroll-vs-scrollTo/","path":"2022/pageYOffset-vs-scrollY-scroll-vs-scrollTo/","title":"pageYOffset vs scrollY, scroll() vs scrollTo()"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>이미지 스프라이트(Image Sprite) | 롱롱의 일기장</title>
+<title>pageYOffset vs scrollY, scroll() vs scrollTo() | 롱롱의 일기장</title>
   
 
 
@@ -148,7 +145,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%EC%B0%B8%EA%B3%A0"><span class="nav-number">1.</span> <span class="nav-text">참고</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%F0%9F%A4%94What-is-Problem"><span class="nav-number">1.</span> <span class="nav-text">🤔What is Problem?</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Window-pageYOffset-vs-Window-scrollY"><span class="nav-number">1.1.</span> <span class="nav-text">Window.pageYOffset vs Window.scrollY</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Window-scroll-vs-Window-scrollTo"><span class="nav-number">1.2.</span> <span class="nav-text">Window.scroll() vs Window.scrollTo()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%EC%B0%B8%EA%B3%A0"><span class="nav-number">1.3.</span> <span class="nav-text">참고</span></a></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -206,7 +203,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="ko">
-    <link itemprop="mainEntityOfPage" href="https://rjsej12.github.io/2022/Image-Sprite/">
+    <link itemprop="mainEntityOfPage" href="https://rjsej12.github.io/2022/pageYOffset-vs-scrollY-scroll-vs-scrollTo/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -219,12 +216,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="이미지 스프라이트(Image Sprite) | 롱롱의 일기장">
+      <meta itemprop="name" content="pageYOffset vs scrollY, scroll() vs scrollTo() | 롱롱의 일기장">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          이미지 스프라이트(Image Sprite)
+          pageYOffset vs scrollY, scroll() vs scrollTo()
         </h1>
 
         <div class="post-meta-container">
@@ -234,15 +231,9 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">작성일</span>
+      
 
-      <time title="Post created: 2022-09-08 23:25:20" itemprop="dateCreated datePublished" datetime="2022-09-08T23:25:20+09:00">2022-09-08</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">Edited on</span>
-      <time title="Updated at: 2022-10-10 23:27:00" itemprop="dateModified" datetime="2022-10-10T23:27:00+09:00">2022-10-10</time>
+      <time title="Post created: 2022-11-28 12:31:26 / Updated at: 12:32:14" itemprop="dateCreated datePublished" datetime="2022-11-28T12:31:26+09:00">2022-11-28</time>
     </span>
 
   
@@ -254,8 +245,8 @@
       </span>
       <span class="post-meta-item-text">Disqus: </span>
     
-    <a title="disqus" href="/2022/Image-Sprite/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2022/Image-Sprite/" itemprop="commentCount"></span>
+    <a title="disqus" href="/2022/pageYOffset-vs-scrollY-scroll-vs-scrollTo/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2022/pageYOffset-vs-scrollY-scroll-vs-scrollTo/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -269,17 +260,18 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <p>이미지 스프라이트란 여러 개의 이미지를 하나로 합쳐서 관리하는 이미지를 의미한다.</p>
-<p>웹 페이지에 이미지를 사용한다면 웹 브라우저는 해당 이미지의 다운로드를 위해 서버에 요청을 보낸다. 만약 사용된 이미지가 많을 경우 요청 하는 횟수가 많아지므로 웹 페이지의 로딩 시간이 오래 걸리게 된다. 하지만 만약 이미지 스프라이트를 사용한다면 스프라이트 이미지 파일 하나가 여러 이미지를 가지고 있기에 서버 요청 횟수를 줄일 수 있다.</p>
-<p>개인적인 블로그와 같은 일반적인 사이트에서는 굳이 이미지 스프라이트를 사용 할 필요가 없지만, 트래픽이 매우 많거나 많은 사람이 이용하는 검색포털과 같은 사이트에서는 이미지 스프라이트를 사용하여 서버 요청을 줄이고 웹 페이지의 로딩 시간을 단축시켜 사이트의 품질을 높일 수 있다.</p>
-<p>다음은 네이버 메인페이지의 스프라이트 이미지이다.<br><img src="https://velog.velcdn.com/images/rjsej12/post/34bfd37f-ea3a-4073-8a76-7c5cfbf8b1fc/image.png"></p>
-<p>이처럼 여러개의 이미지를 하나로 합쳐두고 CSS의 <code>background-position</code>을 이용해 사용하려는 이미지만을 보여 줄 수 있다. 이 때 <code>background-position</code>의 값은 하나씩 position값을 변경해보며 찾을 수 도 있지만 <a target="_blank" rel="noopener" href="http://www.spritecow.com/">Sprite Cow</a>와 같은 사이트를 이용 할 수 있다.</p>
-<p>추가적으로 스프라이트 이미지를 만들기 위해 포토샵, 피그마 등으로 에디팅 할 수 도 있지만 <a target="_blank" rel="noopener" href="https://www.toptal.com/developers/css/sprite-generator/">CSS Sprites Generator</a>라는 사이트를 이용 가능하다.</p>
-<hr>
-
-<h1 id="참고"><a href="#참고" class="headerlink" title="참고"></a>참고</h1><ul>
-<li><a target="_blank" rel="noopener" href="https://creativestudio.kr/1653">https://creativestudio.kr/1653</a></li>
-<li><a target="_blank" rel="noopener" href="http://www.tcpschool.com/css/css_basic_imageSprites">http://www.tcpschool.com/css/css_basic_imageSprites</a></li>
+        <h1 id="🤔What-is-Problem"><a href="#🤔What-is-Problem" class="headerlink" title="🤔What is Problem?"></a>🤔What is Problem?</h1><p>페어 프로그래밍을 진행하면서 수직으로 스크롤한 거리에 따라 숨겨진 버튼을 활성화 하고, 스크롤 버튼을 클릭했을 때 맨 위로 스크롤하는 예제를 해결해야했다.</p>
+<p>이를 위해 수직으로 스크롤한 거리를 측정하는 방법과 스크롤을 시키는 방법이 필요해 이에 대해 알아보았는데, 같은 기능을 하는 프로퍼티와 메서드가 중복으로 존재해 어떤것을 사용해야하는지 고민이 되었다.</p>
+<h2 id="Window-pageYOffset-vs-Window-scrollY"><a href="#Window-pageYOffset-vs-Window-scrollY" class="headerlink" title="Window.pageYOffset vs Window.scrollY"></a>Window.pageYOffset vs Window.scrollY</h2><p>먼저 수직으로 스크롤한 거리를 측정하는 방법에는 Window.pageYOffset와 Window.scrollY가 존재했다. MDN에서는 pageYOffset이 scrollY의 다른이름이라고 했지만, 두 프로퍼티에는 브라우저 호환성의 차이가 존재했다.</p>
+<p>일부 오래된 브라우저는 scrollY 대신 pageYOffset만 지원했고 노후 환경을 신경쓰지 않아도 된다면 둘 중 아무거나 사용해도 괜찮지만, 별다른 요구조건이 없다면 하위호환성을 위해 pageYOffset을 사용하는 것이 더 좋은 코드라고 판단했다.</p>
+<h2 id="Window-scroll-vs-Window-scrollTo"><a href="#Window-scroll-vs-Window-scrollTo" class="headerlink" title="Window.scroll() vs Window.scrollTo()"></a>Window.scroll() vs Window.scrollTo()</h2><p>다음으로 맨 위로 스크롤하기 위해서는 Window.scroll() 이나 Window.scrollTo() 메서드를 사용할 수 있었다. 이 두 메서드는 차이 없이 동일해 둘 중 아무거나 사용해도 괜찮았다. 다만 scroll 메서드가 더 먼저 나왔기 때문에 실제로 사용된 코드도 많고 혹여나 버그등이 발생해 검색을 해야한다면 검색 결과도 많아 scroll을 사용하는것이 더 좋을 것이라고 판단했다.</p>
+<p>또 단순히 메서드의 인자로 x-좌표와 y-좌표를 주는것 이외에도 options를 통해 top, left, behavior를 줄 수 있다는 것을 알았다. 특히 behavior: smooth를 사용해 애니메이션을 따로 만들지 않더라도 부드럽게 이동할 수 있는점이 유용해 꼭 기억하자 생각했다.</p>
+<h2 id="참고"><a href="#참고" class="headerlink" title="참고"></a>참고</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://developer.mozilla.org/ko/docs/Web/API/Window/pageYOffset">https://developer.mozilla.org/ko/docs/Web/API/Window/pageYOffset</a></li>
+<li><a target="_blank" rel="noopener" href="https://developer.mozilla.org/ko/docs/Web/API/Window/scrollY">https://developer.mozilla.org/ko/docs/Web/API/Window/scrollY</a></li>
+<li><a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/API/Window/scroll">https://developer.mozilla.org/en-US/docs/Web/API/Window/scroll</a></li>
+<li><a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/API/Window/scrollTo">https://developer.mozilla.org/en-US/docs/Web/API/Window/scrollTo</a></li>
+<li><a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/1925671/javascript-window-scroll-vs-window-scrollto">https://stackoverflow.com/questions/1925671/javascript-window-scroll-vs-window-scrollto</a></li>
 </ul>
 
     </div>
@@ -290,22 +282,18 @@
 
     <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/%EA%B0%9C%EB%B0%9C/" rel="tag"># 개발</a>
-              <a href="/tags/CSS/" rel="tag"># CSS</a>
+              <a href="/tags/JS/" rel="tag"># JS</a>
           </div>
 
         
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/2022/Image-Replacement/" rel="prev" title="IR기법 (Image Replacement)">
-                  <i class="fa fa-chevron-left"></i> IR기법 (Image Replacement)
+                <a href="/2022/Modern-Javascript-Deep-Dive-Chapter-11-Summary/" rel="prev" title="[Deep Dive] 원시 값과 객체의 비교">
+                  <i class="fa fa-chevron-left"></i> [Deep Dive] 원시 값과 객체의 비교
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/2022/Sass-Basic/" rel="next" title="Sass Basic">
-                  Sass Basic <i class="fa fa-chevron-right"></i>
-                </a>
             </div>
           </div>
     </footer>
