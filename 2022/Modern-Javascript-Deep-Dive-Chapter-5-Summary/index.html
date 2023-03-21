@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 6.3.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha256-AbA177XfpSnFEvgpYu1jMygiLabzPCJCRIBtR5jGc0k=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"rjsej12.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":true,"version":"8.13.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="변수에 대해 살펴보면서 지속적으로 값이라는 용어가 등장했다. 표현식과 문에 대해 알아보기 이전에 값이란 무엇인지 알아보자.   값값이란 (표현)식이 평가되어 생성된 결과를 말한다.평가란 식을 해석해서 값을 생성하거나 참조하는 것을 의미한다. 변수란 하나의 값을 저장하기 위해 확보한 메모리 공간 자체 또는 그 메모리 공간을 식별하기 위해 붙인 이름이였다. 즉">
+<meta property="og:type" content="article">
+<meta property="og:title" content="[Deep Dive] 표현식과 문">
+<meta property="og:url" content="https://rjsej12.github.io/2022/Modern-Javascript-Deep-Dive-Chapter-5-Summary/index.html">
+<meta property="og:site_name" content="롱롱의 일기장">
+<meta property="og:description" content="변수에 대해 살펴보면서 지속적으로 값이라는 용어가 등장했다. 표현식과 문에 대해 알아보기 이전에 값이란 무엇인지 알아보자.   값값이란 (표현)식이 평가되어 생성된 결과를 말한다.평가란 식을 해석해서 값을 생성하거나 참조하는 것을 의미한다. 변수란 하나의 값을 저장하기 위해 확보한 메모리 공간 자체 또는 그 메모리 공간을 식별하기 위해 붙인 이름이였다. 즉">
+<meta property="og:locale" content="ko_KR">
+<meta property="article:published_time" content="2022-10-18T11:52:43.000Z">
+<meta property="article:modified_time" content="2023-03-21T19:17:24.420Z">
+<meta property="article:author" content="rongrong">
+<meta property="article:tag" content="개발">
+<meta property="article:tag" content="자바스크립트">
+<meta property="article:tag" content="모던 자바스크립트 Deep Dive">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://rjsej12.github.io/2022/Modern-Javascript-Deep-Dive-Chapter-5-Summary/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"ko","comments":true,"permalink":"https://rjsej12.github.io/2022/Modern-Javascript-Deep-Dive-Chapter-5-Summary/","path":"2022/Modern-Javascript-Deep-Dive-Chapter-5-Summary/","title":"[Deep Dive] 표현식과 문"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>[Deep Dive] 표현식과 문 | 롱롱의 일기장</title>
+  
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">롱롱의 일기장</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>홈</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>태그</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>아카이브</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>검색
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          목차
+        </li>
+        <li class="sidebar-nav-overview">
+          흝어보기
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%EA%B0%92"><span class="nav-number">1.</span> <span class="nav-text">값</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%EB%A6%AC%ED%84%B0%EB%9F%B4"><span class="nav-number">2.</span> <span class="nav-text">리터럴</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%EC%97%94%EC%A7%84%EC%9D%80-%EC%96%B4%EB%96%BB%EA%B2%8C-%EB%A6%AC%ED%84%B0%EB%9F%B4%EC%9D%84-%EA%B5%AC%EB%B3%84%ED%95%A0%EA%B9%8C"><span class="nav-number">2.1.</span> <span class="nav-text">엔진은 어떻게 리터럴을 구별할까?</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%ED%91%9C%ED%98%84%EC%8B%9D"><span class="nav-number">3.</span> <span class="nav-text">표현식</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%EB%AC%B8"><span class="nav-number">4.</span> <span class="nav-text">문</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%ED%91%9C%ED%98%84%EC%8B%9D%EC%9D%B8-%EB%AC%B8%EA%B3%BC-%ED%91%9C%ED%98%84%EC%8B%9D%EC%9D%B4-%EC%95%84%EB%8B%8C-%EB%AC%B8"><span class="nav-number">5.</span> <span class="nav-text">표현식인 문과 표현식이 아닌 문</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">rongrong</p>
+  <div class="site-description" itemprop="description">주니어 개발자 롱롱의 성장일기</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">18</span>
+          <span class="site-state-item-name">포스트</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">14</span>
+        <span class="site-state-item-name">태그</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="Back to top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="ko">
+    <link itemprop="mainEntityOfPage" href="https://rjsej12.github.io/2022/Modern-Javascript-Deep-Dive-Chapter-5-Summary/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="rongrong">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="롱롱의 일기장">
+      <meta itemprop="description" content="주니어 개발자 롱롱의 성장일기">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="[Deep Dive] 표현식과 문 | 롱롱의 일기장">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          [Deep Dive] 표현식과 문
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">작성일</span>
+
+      <time title="Post created: 2022-10-18 20:52:43" itemprop="dateCreated datePublished" datetime="2022-10-18T20:52:43+09:00">2022-10-18</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Updated at: 2023-03-22 04:17:24" itemprop="dateModified" datetime="2023-03-22T04:17:24+09:00">2023-03-22</time>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2022/Modern-Javascript-Deep-Dive-Chapter-5-Summary/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2022/Modern-Javascript-Deep-Dive-Chapter-5-Summary/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p>변수에 대해 살펴보면서 지속적으로 값이라는 용어가 등장했다. 표현식과 문에 대해 알아보기 이전에 값이란 무엇인지 알아보자.</p>
+<hr>
+
+<h1 id="값"><a href="#값" class="headerlink" title="값"></a>값</h1><p>값이란 (표현)식이 평가되어 생성된 결과를 말한다.<br>평가란 식을 해석해서 값을 생성하거나 참조하는 것을 의미한다.</p>
+<p>변수란 하나의 값을 저장하기 위해 확보한 메모리 공간 자체 또는 그 메모리 공간을 식별하기 위해 붙인 이름이였다. 즉 변수에 할당되는 것은 값이다.</p>
+<p>값이란 어떻게 생성할 수 있을까? 가장 기본적인 방법은 리터럴을 사용하는 것이다.</p>
+<hr>
+
+<h1 id="리터럴"><a href="#리터럴" class="headerlink" title="리터럴"></a>리터럴</h1><p>리터럴은 사람이 이해할 수 있는 문자 또는 약속된 기호를 사용해 값을 생성하는 표기법이다.</p>
+<p>리터럴은 문자 또는 미리 약속된 기호로 표기한 코드이며 자바스크립트 엔진은 코드가 실행되는 시점인 런타임에 리터럴을 평가해 값을 생성한다.</p>
+<p>리터럴을 사용해 다양한 종류의 값을 생성할 수 있다.</p>
+<h2 id="엔진은-어떻게-리터럴을-구별할까"><a href="#엔진은-어떻게-리터럴을-구별할까" class="headerlink" title="엔진은 어떻게 리터럴을 구별할까?"></a>엔진은 어떻게 리터럴을 구별할까?</h2><p>리터럴은 값을 생성하기 위해 미리 약속한 표기법으로 자바스크립트 엔진 내부에 리터럴을 구분해 값을 생성 할 수 있도록 하드코딩 되어있다.</p>
+<hr>
+
+<p>리터럴 이외에 값을 생성하는 또 다른 방법에는 무엇이 있을까? 값에 대해 살펴보면서 언급했듯이 표현식이 존재한다.</p>
+<h1 id="표현식"><a href="#표현식" class="headerlink" title="표현식"></a>표현식</h1><p>표현식은 값으로 평가될 수 있는 문이다. 즉 표현식이 평가되면 새로운 값을 생성하거나 값을 참조한다.</p>
+<p>앞서 살펴본 리터럴은 값으로 평가된다. 그러므로 리터럴도 사실 표현식이다.</p>
+<p>표현식은 값으로 평가되는데, 이때 표현식과 표현식이 평가된 값은 동등한 관계이다.</p>
+<p>다음 예시를 살펴보자. 예를들어, 산술 연산자 + 의 좌항과 우항에는 숫자 값이 위치해야 한다. 이 때 표현식이 숫자 값으로 평가될 수 있다면 숫자 값 대신 사용할 수 있다.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> x = <span class="number">1</span> + <span class="number">2</span>;</span><br><span class="line"></span><br><span class="line">x + <span class="number">3</span>; <span class="comment">// 6</span></span><br></pre></td></tr></table></figure>
+
+<p>위 코드의 x + 3에서 + 연산자의 좌항과 우항에는 숫자 값이 위치해야 한다. 이 때 좌항 x 는 식별자 표현식이다. 즉 x는 할당되어 있는 숫자 값 3 으로 평가된다. 즉 표현식과 표현식이 평가된 값은 동치이며 이처럼 표현식은 다른 표현식의 일부가 되어 새로운 값을 만들어 낼 수 있다.</p>
+<hr>
+
+<p>앞서 표현식은 값으로 평가될 수 있는 문이라고 했다. 그럼 문이란 무엇일까?</p>
+<h1 id="문"><a href="#문" class="headerlink" title="문"></a>문</h1><p>문은 프로그램을 구성하는 기본 단위이자 최소 실행 단위이다. 문은 여러 토큰으로 구성되는데, 토큰이란 문법적인 의미를 가지며, 문법적으로 더 이상 나눌 수 없는 코드의 기본 요소를 의미한다.</p>
+<p>문을 명령문이라고도 부른다. 문이 실행되면 명령이 실행되고 무슨 일인가가 일어나게 된다.</p>
+<p>문은 선언문, 할당문, 조건문, 반복문등 다양한 종류로 나누어진다.</p>
+<p>세미콜론을 통해 문의 종료를 나타낼 수 있다. 즉 자바스크립트 엔진은 세미콜론으로 문이 종료한 위치를 파악하고 순차적으로 하나씩 문을 실행한다. 단 중괄호로 묶은 코드 블록은 자체 종결성을 가지므로 세미콜론을 붙이지 않는다.</p>
+<p>문의 끝에 붙이는 세미콜론은 옵션이다. 이는 자바스크립트 엔진이 소스코드를 해석하며 문의 끝이라고 예측되는 지점에 세미콜론을 자동으로 삽입하는 ASI를 수행하기 때문이다.</p>
+<hr>
+
+<p>그렇다면 표현식과 문은 어떻게 구별 할 수 있을까? 표현식도 문의 일부니 정확히 말하자면 표현식인 문과 표현식이 아닌 문을 어떻게 구별 할 수 있을까?</p>
+<h1 id="표현식인-문과-표현식이-아닌-문"><a href="#표현식인-문과-표현식이-아닌-문" class="headerlink" title="표현식인 문과 표현식이 아닌 문"></a>표현식인 문과 표현식이 아닌 문</h1><p>표현식인 문은 값으로 평가될 수 있는 문이며, 표현식이 아닌 문은 값으로 평가될 수 없는 문을 말한다. 예를들어, 변수 선언문은 값으로 평가될 수 없으므로 표현식이 아닌 문이다.</p>
+<p>표현식인 문과 표현식이 아닌 문을 구별하는 가장 간단한 방법은 변수에 할당해 보는 것이다.</p>
+<p>변수는 값을 저장하기 위한 메모리 공간이였으므로 변수에 할당할 수 있는 문은 즉 값으로 평가된는 표현식이라고 볼 수 있다.</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%EA%B0%9C%EB%B0%9C/" rel="tag"># 개발</a>
+              <a href="/tags/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8/" rel="tag"># 자바스크립트</a>
+              <a href="/tags/%EB%AA%A8%EB%8D%98-%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-Deep-Dive/" rel="tag"># 모던 자바스크립트 Deep Dive</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2022/Modern-JavaScript-Deep-Dive-Chapter-4-Variable-Summary/" rel="prev" title="[Deep Dive] 변수">
+                  <i class="fa fa-chevron-left"></i> [Deep Dive] 변수
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2022/Modern-Javascript-Deep-Dive-Chapter-6-Data-Type-Summary/" rel="next" title="[Deep Dive] 데이터 타입">
+                  [Deep Dive] 데이터 타입 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    
+  <div class="comments" id="disqus_thread">
+    <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+  </div>
+  
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">rongrong</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+
+  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.0/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+
+
+  
+
+
+
+
+<script class="next-config" data-name="disqus" type="application/json">{"enable":true,"shortname":"rongrongs-diary","count":true,"lazyload":false,"i18n":{"disqus":"disqus"}}</script>
+<script src="/js/third-party/comments/disqus.js"></script>
+
+</body>
+</html>

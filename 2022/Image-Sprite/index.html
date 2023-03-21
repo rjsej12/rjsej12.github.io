@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 6.3.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha256-AbA177XfpSnFEvgpYu1jMygiLabzPCJCRIBtR5jGc0k=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"rjsej12.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":true,"version":"8.13.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="이미지 스프라이트란 여러 개의 이미지를 하나로 합쳐서 관리하는 이미지를 의미한다. 웹 페이지에 이미지를 사용한다면 웹 브라우저는 해당 이미지의 다운로드를 위해 서버에 요청을 보낸다. 만약 사용된 이미지가 많을 경우 요청 하는 횟수가 많아지므로 웹 페이지의 로딩 시간이 오래 걸리게 된다. 하지만 만약 이미지 스프라이트를 사용한다면 스프라이트 이미지 파일 하나">
+<meta property="og:type" content="article">
+<meta property="og:title" content="이미지 스프라이트(Image Sprite)">
+<meta property="og:url" content="https://rjsej12.github.io/2022/Image-Sprite/index.html">
+<meta property="og:site_name" content="롱롱의 일기장">
+<meta property="og:description" content="이미지 스프라이트란 여러 개의 이미지를 하나로 합쳐서 관리하는 이미지를 의미한다. 웹 페이지에 이미지를 사용한다면 웹 브라우저는 해당 이미지의 다운로드를 위해 서버에 요청을 보낸다. 만약 사용된 이미지가 많을 경우 요청 하는 횟수가 많아지므로 웹 페이지의 로딩 시간이 오래 걸리게 된다. 하지만 만약 이미지 스프라이트를 사용한다면 스프라이트 이미지 파일 하나">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:image" content="https://velog.velcdn.com/images/rjsej12/post/34bfd37f-ea3a-4073-8a76-7c5cfbf8b1fc/image.png">
+<meta property="article:published_time" content="2022-09-08T14:25:20.000Z">
+<meta property="article:modified_time" content="2023-03-21T19:17:24.418Z">
+<meta property="article:author" content="rongrong">
+<meta property="article:tag" content="개발">
+<meta property="article:tag" content="CSS">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://velog.velcdn.com/images/rjsej12/post/34bfd37f-ea3a-4073-8a76-7c5cfbf8b1fc/image.png">
+
+
+<link rel="canonical" href="https://rjsej12.github.io/2022/Image-Sprite/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"ko","comments":true,"permalink":"https://rjsej12.github.io/2022/Image-Sprite/","path":"2022/Image-Sprite/","title":"이미지 스프라이트(Image Sprite)"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>이미지 스프라이트(Image Sprite) | 롱롱의 일기장</title>
+  
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">롱롱의 일기장</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>홈</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>태그</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>아카이브</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>검색
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          목차
+        </li>
+        <li class="sidebar-nav-overview">
+          흝어보기
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%EC%B0%B8%EA%B3%A0"><span class="nav-number">1.</span> <span class="nav-text">참고</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">rongrong</p>
+  <div class="site-description" itemprop="description">주니어 개발자 롱롱의 성장일기</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">18</span>
+          <span class="site-state-item-name">포스트</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">14</span>
+        <span class="site-state-item-name">태그</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="Back to top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="ko">
+    <link itemprop="mainEntityOfPage" href="https://rjsej12.github.io/2022/Image-Sprite/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="rongrong">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="롱롱의 일기장">
+      <meta itemprop="description" content="주니어 개발자 롱롱의 성장일기">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="이미지 스프라이트(Image Sprite) | 롱롱의 일기장">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          이미지 스프라이트(Image Sprite)
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">작성일</span>
+
+      <time title="Post created: 2022-09-08 23:25:20" itemprop="dateCreated datePublished" datetime="2022-09-08T23:25:20+09:00">2022-09-08</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Updated at: 2023-03-22 04:17:24" itemprop="dateModified" datetime="2023-03-22T04:17:24+09:00">2023-03-22</time>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2022/Image-Sprite/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2022/Image-Sprite/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p>이미지 스프라이트란 여러 개의 이미지를 하나로 합쳐서 관리하는 이미지를 의미한다.</p>
+<p>웹 페이지에 이미지를 사용한다면 웹 브라우저는 해당 이미지의 다운로드를 위해 서버에 요청을 보낸다. 만약 사용된 이미지가 많을 경우 요청 하는 횟수가 많아지므로 웹 페이지의 로딩 시간이 오래 걸리게 된다. 하지만 만약 이미지 스프라이트를 사용한다면 스프라이트 이미지 파일 하나가 여러 이미지를 가지고 있기에 서버 요청 횟수를 줄일 수 있다.</p>
+<p>개인적인 블로그와 같은 일반적인 사이트에서는 굳이 이미지 스프라이트를 사용 할 필요가 없지만, 트래픽이 매우 많거나 많은 사람이 이용하는 검색포털과 같은 사이트에서는 이미지 스프라이트를 사용하여 서버 요청을 줄이고 웹 페이지의 로딩 시간을 단축시켜 사이트의 품질을 높일 수 있다.</p>
+<p>다음은 네이버 메인페이지의 스프라이트 이미지이다.<br><img src="https://velog.velcdn.com/images/rjsej12/post/34bfd37f-ea3a-4073-8a76-7c5cfbf8b1fc/image.png"></p>
+<p>이처럼 여러개의 이미지를 하나로 합쳐두고 CSS의 <code>background-position</code>을 이용해 사용하려는 이미지만을 보여 줄 수 있다. 이 때 <code>background-position</code>의 값은 하나씩 position값을 변경해보며 찾을 수 도 있지만 <a target="_blank" rel="noopener" href="http://www.spritecow.com/">Sprite Cow</a>와 같은 사이트를 이용 할 수 있다.</p>
+<p>추가적으로 스프라이트 이미지를 만들기 위해 포토샵, 피그마 등으로 에디팅 할 수 도 있지만 <a target="_blank" rel="noopener" href="https://www.toptal.com/developers/css/sprite-generator/">CSS Sprites Generator</a>라는 사이트를 이용 가능하다.</p>
+<hr>
+
+<h1 id="참고"><a href="#참고" class="headerlink" title="참고"></a>참고</h1><ul>
+<li><a target="_blank" rel="noopener" href="https://creativestudio.kr/1653">https://creativestudio.kr/1653</a></li>
+<li><a target="_blank" rel="noopener" href="http://www.tcpschool.com/css/css_basic_imageSprites">http://www.tcpschool.com/css/css_basic_imageSprites</a></li>
+</ul>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%EA%B0%9C%EB%B0%9C/" rel="tag"># 개발</a>
+              <a href="/tags/CSS/" rel="tag"># CSS</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2022/Image-Replacement/" rel="prev" title="IR기법 (Image Replacement)">
+                  <i class="fa fa-chevron-left"></i> IR기법 (Image Replacement)
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2022/Sass-Basic/" rel="next" title="Sass Basic">
+                  Sass Basic <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    
+  <div class="comments" id="disqus_thread">
+    <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+  </div>
+  
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">rongrong</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+
+  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.0/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+
+
+  
+
+
+
+
+<script class="next-config" data-name="disqus" type="application/json">{"enable":true,"shortname":"rongrongs-diary","count":true,"lazyload":false,"i18n":{"disqus":"disqus"}}</script>
+<script src="/js/third-party/comments/disqus.js"></script>
+
+</body>
+</html>

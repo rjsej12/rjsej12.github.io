@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 6.3.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha256-AbA177XfpSnFEvgpYu1jMygiLabzPCJCRIBtR5jGc0k=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"rjsej12.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":true,"version":"8.13.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="제어문제어문은 조건에 따라 코드 블록을 실행(조건문)하거나 반복 실행(반복문)할 때 사용한다.일반적으로 코드는 위에서 아래 방향으로 순차적으로 실행된다.제어문을 사용하면 코드의 실행 흐름을 인위적으로 제어할 수 있다. 하지만 코드의 실행 순서가 변경되는 것은 코드의 흐름을 혼란스럽게 만들어 가독성을 해치는 단점이 있다.가독성이 좋지 않은 코드는 오류를 발생">
+<meta property="og:type" content="article">
+<meta property="og:title" content="[Deep Dive] 제어문">
+<meta property="og:url" content="https://rjsej12.github.io/2022/Modern-JavaScript-Deep-Dive-Chapter-8-Control-Flow-Statement/index.html">
+<meta property="og:site_name" content="롱롱의 일기장">
+<meta property="og:description" content="제어문제어문은 조건에 따라 코드 블록을 실행(조건문)하거나 반복 실행(반복문)할 때 사용한다.일반적으로 코드는 위에서 아래 방향으로 순차적으로 실행된다.제어문을 사용하면 코드의 실행 흐름을 인위적으로 제어할 수 있다. 하지만 코드의 실행 순서가 변경되는 것은 코드의 흐름을 혼란스럽게 만들어 가독성을 해치는 단점이 있다.가독성이 좋지 않은 코드는 오류를 발생">
+<meta property="og:locale" content="ko_KR">
+<meta property="article:published_time" content="2022-10-20T12:26:32.000Z">
+<meta property="article:modified_time" content="2023-03-21T19:17:24.419Z">
+<meta property="article:author" content="rongrong">
+<meta property="article:tag" content="개발">
+<meta property="article:tag" content="자바스크립트">
+<meta property="article:tag" content="모던 자바스크립트 Deep Dive">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://rjsej12.github.io/2022/Modern-JavaScript-Deep-Dive-Chapter-8-Control-Flow-Statement/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"ko","comments":true,"permalink":"https://rjsej12.github.io/2022/Modern-JavaScript-Deep-Dive-Chapter-8-Control-Flow-Statement/","path":"2022/Modern-JavaScript-Deep-Dive-Chapter-8-Control-Flow-Statement/","title":"[Deep Dive] 제어문"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>[Deep Dive] 제어문 | 롱롱의 일기장</title>
+  
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">롱롱의 일기장</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>홈</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>태그</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>아카이브</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>검색
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          목차
+        </li>
+        <li class="sidebar-nav-overview">
+          흝어보기
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%EC%A0%9C%EC%96%B4%EB%AC%B8"><span class="nav-number">1.</span> <span class="nav-text">제어문</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%EB%B8%94%EB%A1%9D%EB%AC%B8"><span class="nav-number">1.1.</span> <span class="nav-text">블록문</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%EC%A1%B0%EA%B1%B4%EB%AC%B8"><span class="nav-number">1.2.</span> <span class="nav-text">조건문</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#if%E2%80%A6else-%EB%AC%B8"><span class="nav-number">1.2.1.</span> <span class="nav-text">if…else 문</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#switch-%EB%AC%B8"><span class="nav-number">1.2.2.</span> <span class="nav-text">switch 문</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%EB%B0%98%EB%B3%B5%EB%AC%B8"><span class="nav-number">1.3.</span> <span class="nav-text">반복문</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#for-%EB%AC%B8"><span class="nav-number">1.3.1.</span> <span class="nav-text">for 문</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#while-%EB%AC%B8"><span class="nav-number">1.3.2.</span> <span class="nav-text">while 문</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#do%E2%80%A6while-%EB%AC%B8"><span class="nav-number">1.3.3.</span> <span class="nav-text">do…while 문</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#break-%EB%AC%B8"><span class="nav-number">1.4.</span> <span class="nav-text">break 문</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#continue-%EB%AC%B8"><span class="nav-number">1.5.</span> <span class="nav-text">continue 문</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">rongrong</p>
+  <div class="site-description" itemprop="description">주니어 개발자 롱롱의 성장일기</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">18</span>
+          <span class="site-state-item-name">포스트</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">14</span>
+        <span class="site-state-item-name">태그</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="Back to top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="ko">
+    <link itemprop="mainEntityOfPage" href="https://rjsej12.github.io/2022/Modern-JavaScript-Deep-Dive-Chapter-8-Control-Flow-Statement/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="rongrong">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="롱롱의 일기장">
+      <meta itemprop="description" content="주니어 개발자 롱롱의 성장일기">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="[Deep Dive] 제어문 | 롱롱의 일기장">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          [Deep Dive] 제어문
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">작성일</span>
+
+      <time title="Post created: 2022-10-20 21:26:32" itemprop="dateCreated datePublished" datetime="2022-10-20T21:26:32+09:00">2022-10-20</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Updated at: 2023-03-22 04:17:24" itemprop="dateModified" datetime="2023-03-22T04:17:24+09:00">2023-03-22</time>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2022/Modern-JavaScript-Deep-Dive-Chapter-8-Control-Flow-Statement/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2022/Modern-JavaScript-Deep-Dive-Chapter-8-Control-Flow-Statement/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h1 id="제어문"><a href="#제어문" class="headerlink" title="제어문"></a>제어문</h1><p>제어문은 조건에 따라 코드 블록을 실행(조건문)하거나 반복 실행(반복문)할 때 사용한다.<br>일반적으로 코드는 위에서 아래 방향으로 순차적으로 실행된다.<br>제어문을 사용하면 코드의 실행 흐름을 인위적으로 제어할 수 있다.</p>
+<p>하지만 코드의 실행 순서가 변경되는 것은 코드의 흐름을 혼란스럽게 만들어 가독성을 해치는 단점이 있다.<br>가독성이 좋지 않은 코드는 오류를 발생시키는 원인이 되므로 forEach, map, filter, reduce 같은 고차 함수를 사용한 함수형 프로그래밍 기법에서는 제어문의 사용을 억제하여 복잡성을 해결하려고 노력한다.</p>
+<p>하지만 제어문을 바르게 이해하는 것은 코딩 스킬에 많은 영향을 준다.<br>특히 for 문은 매우 중요하므로 확실히 살펴보도록 하자.</p>
+<h2 id="블록문"><a href="#블록문" class="headerlink" title="블록문"></a>블록문</h2><p>블록문은 0개 이상의 문을 중괄호로 묶은 것으로, 코드 블록 또는 블록이라고 부르기도 한다.<br>자바스크립트는 블록문을 하나의 실행 단위로 취급한다.<br>블록문은 단독으로 사용 가능하나 일반적으로 제어문이나 함수를 정의할 때 사용한다.</p>
+<p>문의 끝에는 세미콜론을 붙이는 것이 일반적이나 블록문은 자체 종결성을 갖기 때문에 블록문의 끝에는 세미콜론을 붙이지 않는다.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 블록문</span></span><br><span class="line">&#123;</span><br><span class="line">  <span class="keyword">var</span> foo = <span class="number">10</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 제어문</span></span><br><span class="line"><span class="keyword">var</span> x = <span class="number">1</span>;</span><br><span class="line"><span class="keyword">if</span> (x &lt; <span class="number">10</span>) &#123;</span><br><span class="line">  x++;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 함수 선언문</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">sum</span>(<span class="params">a, b</span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> a + b;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="조건문"><a href="#조건문" class="headerlink" title="조건문"></a>조건문</h2><p>조건문은 주어진 조건식의 평가 결과에 따라 코드 블록의 실행을 결정한다.<br>조건식은 불리언 값으로 평가될 수 있는 표현식이다.</p>
+<p>자바스크립트는 if…else 문과 switch 문의 두 가지 조건문을 제공한다.</p>
+<h3 id="if…else-문"><a href="#if…else-문" class="headerlink" title="if…else 문"></a>if…else 문</h3><p>if…else 문은 주어진 조건식의 평가 결과에 따라 실행할 코드 블록을 결정한다.<br>조건식의 평가 결과가 true일 경우 if 문의 코드 블록이 실행되고 false일 경우 else 문의 코드 블록이 실행된다.</p>
+<pre>
+if (조건식) {
+  // 조건식이 참이면 이 코드 블록이 실행
+} else {
+  // 조건식이 거짓이면 이 코드 블록이 실행
+}
+</pre>
+
+<p>if 문의 조건식은 불리언 값으로 평가되어야 한다. 만약 if 문의 조건식이 불리언 값이 아닌 값으로 평가되면 자바스크립트 엔진에 의해 암묵적으로 불리언 값으로 강제 변환되어 실행할 코드 블록을 결정한다.</p>
+<p>만약 코드 블록 내의 문이 하나라면 중괄호를 생략할 수 있다.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> num = <span class="number">2</span>;</span><br><span class="line"><span class="keyword">var</span> kind;</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> (num &gt; <span class="number">0</span>) kind = <span class="string">&#x27;양수&#x27;</span>;</span><br><span class="line"><span class="keyword">else</span> <span class="keyword">if</span> (num &lt; <span class="number">0</span>) kind = <span class="string">&#x27;음수&#x27;</span>;</span><br><span class="line"><span class="keyword">else</span> kind = <span class="string">&#x27;영&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(kind); <span class="comment">// 양수</span></span><br></pre></td></tr></table></figure>
+
+<p>대부분의 if…else 문은 삼항 조건 연산자로 바꿔 쓸 수 있다.<br>연산자에서도 살펴보았듯이 조건에 따라 단순히 값을 결정하여 변수에 할당하는 경우 if…else 문보다 삼항 조건 연산자를 사용하는 편이 가독성이 좋다.<br>하지만 조건에 따라 실행해야 할 내용이 복잡하여 여러 줄의 문이 필요하다면 if…else 문을 사용하는 편이 가독성이 좋다.</p>
+<h3 id="switch-문"><a href="#switch-문" class="headerlink" title="switch 문"></a>switch 문</h3><p>switch 문은 주어진 표현식을 평가하여 그 값과 일치하는 표현식을 갖는 case 문으로 실행 흐름을 옮긴다.<br>case 문은 상황을 의미하는 표현식을 지정하고 콜론으로 마친다. 그리고 그 뒤에 실행할 문들을 위치시킨다.</p>
+<p>switch 문의 표현식과 일치하는 case 문이 없다면 실행 순서는 default 문으로 이동한다. default 문은 선택사항이다.</p>
+<pre>
+switch (표현식) {
+ case 표현식1:
+  switch 문의 표현식과 표현식 1이 일치하면 실행될 문;
+  break;
+ case 표현식2:
+  switch 문의 표현식과 표현식 2가 일치하면 실행될 문;
+  break;
+ default:
+  switch 문의 표현식과 일치하는 case 문이 없을 때 실행될 문;
+}
+</pre>
+
+<p>if…else 문의 조건식은 불리언 값으로 평가되어야 하지만 switch 문의 표현식은 불리언 값보다는 문자열이나 숫자 값인 경우가 많다.<br>즉 switch 문은 논리적 참, 거짓보다는 다양한 상황(case)에 따라 실행할 코드 블록을 결정할 때 사용한다.</p>
+<p>swtich 문은 case, default, break 등 다양한 키워드를 사용해야 하고 폴스루가 발생한느 등 문법도 복잡하다.<br>따라서 C 언어를 기반으로 하는 프로그래밍 언어는 대부분 switch 문을 지원하지만 파이썬과 같이 switch 문ㅇ을 지원하지 않는 프로그래밍 언어도 있다.</p>
+<p>만약 if…else 문으로 해결할 수 있다면 switch 문보다 if…else 문을 사용하는 편이 좋다.<br>하지만 조건이 너무 많아 if…else 문보다 switch 문을 사용했을 때 가독성이 더 좋다면 switch문을 사용하는 편이 좋다.</p>
+<h2 id="반복문"><a href="#반복문" class="headerlink" title="반복문"></a>반복문</h2><p>반복문은 조건식의 평가 결과가 참인 경우 코드 블록을 실행한다. 그 후 조건식을 다시 평가하여 여전히 참인 경우 코드 블록을 다시 실행한다.<br>이는 조건식이 거짓일 때까지 반복된다.</p>
+<p>자바스크립트는 for 문, while 문, do…while 문의 세 가지 반복문을 제공한다</p>
+<h3 id="for-문"><a href="#for-문" class="headerlink" title="for 문"></a>for 문</h3><p>for 문은 조건식이 거짓으로 평가될 때까지 코드 블록을 반복 실행한다. 가장 일반적으로 사용되는 for 문의 형태는 다음과 같다.</p>
+<pre>
+for (변수 선언문 또는 할당문; 조건식; 증감식) {
+ 조건식이 참인 경우 반복 실행될 문;
+}
+</pre>
+
+<p>for 문은 매우 중요하므로 어떻게 동작하는지 많은 연습을 통해 확실히 이해해야 한다.</p>
+<p>for 문의 변수 선언문, 조건식, 증감식은 모두 옵션이므로 반드시 사용할 필요는 없다. 단, 어떤 식도 선언하지 않으면 무한루프가 된다.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (;;) &#123;...&#125; <span class="comment">// 무한루프</span></span><br></pre></td></tr></table></figure>
+
+<p>for 문 내에 for 문을 중첩해 사용할 수 있다. 이를 중첩 for 문이라 한다. 다음은 두 개의 주사위를 던졌을 때 두 눈의 합이 6이 되는 모든 경우의 수를 출력하기 위해 이중 중첩 for 문을 사용한 예다.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">1</span>; i &lt;= <span class="number">6</span>; i++) &#123;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">var</span> j = <span class="number">1</span>; j &lt;= <span class="number">6</span>; j++) &#123;</span><br><span class="line">    <span class="keyword">if</span> (i + j === <span class="number">6</span>) <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`[<span class="subst">$&#123;i&#125;</span>, <span class="subst">$&#123;j&#125;</span>]`</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// [1, 5] [2, 4] [3, 3] [4, 2] [5, 1]</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="while-문"><a href="#while-문" class="headerlink" title="while 문"></a>while 문</h3><p>while 문은 주어진 조건식의 평가 결과가 참이면 코드 블록을 계속해서 반복 실행한다.<br>for 문은 반복 횟수가 명확할 때 주로 사용하고 while 문은 반복 횟수가 불명확할 때 주로 사용한다.</p>
+<p>while 문은 조건문의 평가 결과가 거짓이 되면 코드 블록을 실행하지 않고 종료한다. 만약 조건식의 평가 결과가 불리언 값이 아니면 불리언 값으로 강제 변환하여 논리적 참, 거짓을 구별한다.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> count = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span> (count &lt; <span class="number">3</span>) &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(count); <span class="comment">// 0 1 2</span></span><br><span class="line">  count++;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>조건식의 평가 결과가 언제나 참이면 무한루프가 된다.<br>무한루프에서 탈출하기 위해서는 코드 블록 내에 if 문으로 탈출 조건을 만들고 break 문으로 코드 블록을 탈출한다.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> count = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 무한루프</span></span><br><span class="line"><span class="keyword">while</span> (<span class="literal">true</span>) &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(count); <span class="comment">// 0 1 2</span></span><br><span class="line">  count++;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">if</span> (count === <span class="number">3</span>) <span class="keyword">break</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="do…while-문"><a href="#do…while-문" class="headerlink" title="do…while 문"></a>do…while 문</h3><p>do…while 문은 코드 블록을 먼저 실행하고 조건식을 평가한다. 따라서 코드 블록은 무조건 한 번 이상 실행된다.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> count = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">do</span> &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(count); <span class="comment">// 0 1 2</span></span><br><span class="line">  count++;</span><br><span class="line">&#125; <span class="keyword">while</span> (count &lt; <span class="number">3</span>);</span><br></pre></td></tr></table></figure>
+
+<h2 id="break-문"><a href="#break-문" class="headerlink" title="break 문"></a>break 문</h2><p>switch 문과 while 문에서 살펴보았듯이 break 문은 코드 블록을 탈출한다.<br>더 정확히 말하자면 레이블 문, 반복문 또는 switch 문의 코드 블록을 탈출한다. 레이블 문, 반복문, switch 문의 코드 블록 외에 break 문을 사용하면 SyntaxError가 발생한다.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (<span class="literal">true</span>) &#123;</span><br><span class="line">  <span class="keyword">break</span>; <span class="comment">// Uncaught SyntaxError: Illegal break statement</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>참고로 레이블 문은 식별자가 붙은 문을 말한다.<br>레이블 문은 프로그램의 실행 순서를 제어하는데 사용한다. 사실 switch 문의 case 문과 default 문 역시 레이블 문이다.<br>레이블 문을 탈출하려면 break 문에 레이블 식별자를 지정한다.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">foo</span>: &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="number">1</span>);</span><br><span class="line">  <span class="keyword">break</span> foo;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="number">2</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;Done!&#x27;</span>);</span><br><span class="line"><span class="comment">// 1</span></span><br><span class="line"><span class="comment">// Done!</span></span><br></pre></td></tr></table></figure>
+
+<p>레이블 문을 사용하면 프로그램의 흐름이 복잡해져서 가독성이 나빠지고 오류를 발생시킬 가능성이 높아지기 때문에 일반적으로 권장하지 않는다.</p>
+</blockquote>
+<h2 id="continue-문"><a href="#continue-문" class="headerlink" title="continue 문"></a>continue 문</h2><p>continue 문은 반복문의 코드 블록 실행을 현 지점에서 중단하고 반복문의 증감식으로 실행 흐름을 이동시킨다.<br>break 문처럼 반복문을 탈출하지는 않는다.</p>
+<p>다음은 문자열에서 특정 문자의 개수를 세는 예다.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> string = <span class="string">&#x27;Hello World.&#x27;</span>;</span><br><span class="line"><span class="keyword">var</span> search = <span class="string">&#x27;l&#x27;</span>;</span><br><span class="line"><span class="keyword">var</span> count = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; string.<span class="property">length</span>; i++) &#123;</span><br><span class="line">  <span class="keyword">if</span> (string[i] !== search) <span class="keyword">continue</span>; <span class="comment">// &#x27;l&#x27;이 아니면 현 지점에서 실행을 중단하고 반복문의 증감식으로 이동한다.</span></span><br><span class="line">  count++; <span class="comment">// continue 문이 실행되면 이 문은 실행되지 않는다.</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(count); <span class="comment">// 3</span></span><br></pre></td></tr></table></figure>
+
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%EA%B0%9C%EB%B0%9C/" rel="tag"># 개발</a>
+              <a href="/tags/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8/" rel="tag"># 자바스크립트</a>
+              <a href="/tags/%EB%AA%A8%EB%8D%98-%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-Deep-Dive/" rel="tag"># 모던 자바스크립트 Deep Dive</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2022/Modern-Javascript-Deep-Dive-Chapter-7-Operator-Summary/" rel="prev" title="[Deep Dive] 연산자">
+                  <i class="fa fa-chevron-left"></i> [Deep Dive] 연산자
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2022/Modern-Javascript-Deep-Dive-Chapter-9-Summary/" rel="next" title="[Deep Dive] 타입 변환과 단축 평가">
+                  [Deep Dive] 타입 변환과 단축 평가 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    
+  <div class="comments" id="disqus_thread">
+    <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+  </div>
+  
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">rongrong</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+
+  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.0/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+
+
+  
+
+
+
+
+<script class="next-config" data-name="disqus" type="application/json">{"enable":true,"shortname":"rongrongs-diary","count":true,"lazyload":false,"i18n":{"disqus":"disqus"}}</script>
+<script src="/js/third-party/comments/disqus.js"></script>
+
+</body>
+</html>
