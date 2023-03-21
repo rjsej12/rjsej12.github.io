@@ -1,15 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>헥소로 블로그 옮기기</title>
-    <url>/2022/Create-hexo-blog/</url>
-    <content><![CDATA[<p>커넥to git 수업동안 hexo와 Github pages를 이용해 블로그를 만들어보았다.</p>
-<p>원래는 velog를 통해 여러 글들을 포스팅 하고 있었는데 디자인에 대한 커스텀이나 지속적인 관리가 (특히 github 잔디를 지속해서 심을 수 있다는 점) 수월해 보여 블로그를 옮겨보기로 결정했다.</p>
-<p>그동안 썼던 글들도 차근차근 옮기며 잘 관리해봐야겠다!</p>
+    <title>두번째 프로젝트와 커넥to과정을 마치고</title>
+    <url>/2022/After-Second-Project/</url>
+    <content><![CDATA[<h1 id="들어가며"><a href="#들어가며" class="headerlink" title="들어가며"></a>들어가며</h1><p>약 2주동안의 프로젝트가 종료되었다. 벌써 4개월간의 커넥to 과정이 끝났다는게 믿기지 않을 정도로 시간이 너무 빨리 흘러간 것 같다. 프로젝트를 시작하면서 갑자기 허리디스크가 생겨서 프로젝트에 집중하기가 어려웠는데, 그래도 좋은 팀원들 덕분에 잘 마무리한 것 같다. 이번 프로젝트 역시 배운점도 많았고 아쉬운점도 많았는데 회고를 하며 정리해보려고 한다.</p>
+<hr>
+
+<h1 id="프로젝트-DUI"><a href="#프로젝트-DUI" class="headerlink" title="프로젝트 DUI"></a>프로젝트 DUI</h1><p>이번 프로젝트는 주어진 조건이 몇가지가 존재했다.</p>
+<ol>
+<li>바닐라 JS를 사용해 구현한 SPA(Single Page Application)일 것.</li>
+<li>CRUD를 구현할 것.</li>
+<li>Routing 기능을 구현할 것.</li>
+<li>JWT를 사용해 로그인 기능을 구현할 것.</li>
+</ol>
+<p>이 조건들을 만족시킬 프로젝트 주제가 무엇인지 고민하다가, 다른 팀원분이 블로그를 구현하는 것이 어떻겠냐고 제안하셨고 다들 적절하다고 생각해 Draw yoUr Idea 의 줄임말인 DUI라는 이름으로 프로젝트를 진행하게 되었다.</p>
+<p>개발 기간은 2022-12-12 ~ 2022-12-23로 약 2주 동안 진행되었고, 팀원은 총 3명이었다.</p>
+<p>좀 더 자세한 사항은 <a href="https://github.com/rjsej12/public-DUI">https://github.com/rjsej12/public-DUI</a> 에서 확인 가능하다.</p>
+<hr>
+
+<h2 id="KPT"><a href="#KPT" class="headerlink" title="KPT"></a>KPT</h2><h3 id="Keep"><a href="#Keep" class="headerlink" title="Keep"></a>Keep</h3><ul>
+<li><p>이번에도 프로젝트를 시작하기 전에 환경설정을 중요시 여기고 이 부분에 대해 많이 논의 했는데 그 결과 폴더구조가 깔끔하게 구성된것 같아서 만족스러웠다.</p>
+</li>
+<li><p>저번 프로젝트를 진행하면서 다음번엔 꼭 문서화를 잘 해보자 생각했었는데, 만족스러울 만큼은 아니지만 저번보다는 결과물이 좋게 나왔다고 생각되었다.</p>
+</li>
+</ul>
+<h3 id="Problem"><a href="#Problem" class="headerlink" title="Problem"></a>Problem</h3><ul>
+<li><p>프로젝트 시작때부터 갑자기 허리 디스크가 생겨서 프로젝트에 집중하기 어려웠다.</p>
+</li>
+<li><p>이번 프로젝트에서는 History API를 이용해 Routing 기능을 구현했는데, History API를 보완한 Navigation API를 사용해보고 싶다.</p>
+</li>
+<li><p>정확하게 코딩 컨벤션을 설정하고 시작하지 않아 처음에 서로의 코드 구조가 일치하지 않았던게 아쉬웠다.</p>
+</li>
+</ul>
+<h3 id="Try"><a href="#Try" class="headerlink" title="Try"></a>Try</h3><ul>
+<li>소통하자! - 프로젝트를 시작하기 전 각자가 사용하길 원하는 기술 스택을 상의하면서 팀원 중 한 분이 tailwind의 편의성을 설명하였고, 빠른 적용에 모두 동의하여 프로젝트의 스타일 프레임워크로 Tailwind CSS를 사용하기로 결정했다. 또한 적극적인 class 이름을 활용해 작은 컴포넌트 단위의 완성된 스타일을 대표하기를 원하셨는데 그 분을 제외한 우리 둘은 정확한 이해를 하지 못했었고 이게 맞는지 고민하며 작업을 수행했고 결과물은 역시 원하는 바와 달랐다. 이전 우아할 프로젝트때는 이해가 안되는 부분이 존재할 때 계속해서 소통하며 이해가 될 때까지 넘어가지 않았었는데, 이번에는 건강 문제를 핑계로 소통에 소홀했던 것 같다. 협업에서 가장 중요한 것이 다른 사람의 생각을 이해하는 것이니 만큼 소통하는데에 있어서 적극적이어야할 필요를 다시 한 번 느꼈다.</li>
+</ul>
+<hr>
+
+<h1 id="마치며"><a href="#마치며" class="headerlink" title="마치며"></a>마치며</h1><p>이번 프로젝트를 끝으로 약 4개월간의 긴(?) 과정이 종료되었다. 커넥to 과정을 시작할때와 비교해보면 스스로 정말 많이 성장했음을 느끼는것 같다. 단순히 새로운 지식을 배웠기 때문이 아니라, 모르는 부분이 생겼을때 그것을 찾아 나가는 방법과 더 나은 코드를 위해 어떠한 고민을 해야 하는지 또 다른 사람과 협업을 할 때 어떻게 커뮤니케이션 해야 할 지 등 앞으로 개발자로 살아가면서 가져야 할 마인드, 태도가 달라졌다고 느끼기 때문이다. 아직 많이 부족하지만, 이렇게 지속해서 공부해 나간다면 그래도 좋은 개발자가 될 수 있지 않을까 하는 일말의 자신감도 생긴것 같다.</p>
+<p>사실 개발자로의 취직을 준비하면서 가장 걱정되었던 부분은 (많이 고민하고 결정하기는 했지만) ‘내가 지속해서 공부를 잘 할수 있을까?’ 였다. 어릴 때 부터 흥미를 못 느끼는 일에는 집중을 잘 하지 못하던 터라 겉핥기만 했을때는 재미있다 느꼈지만 깊게 공부하게 되었을때도 재미가 유지될지에 대해 의심이 존재했다. 하지만 4개월 동안 느낀 것은 ‘재밌다’였다. 뭐 아직도 깊게 파고든것은 아니라고 할 수 있겠지만, 문제를 만나고 해결하고 결과물을 실제로 볼 수 있는등 여러 부분들이 오랜만에 ‘공부를 해야해서 하는게 아니라 재밌어서 하는 경우도 있었지’라고 생각하게 했다.</p>
+<p>여전히 부족함을 느끼는 만큼, 또 프로젝트를 하면서 vanilla js의 불편함을 느꼈어서 얼른 react와 같은 프레임워크도 공부하고 싶고 vue는 또 뭐가 다를지 등등 배움에 대한 욕구가 생기는 것 같다. 과정이 끝나더라도 열심히 해서 지속적으로 성장할 수 있는 기반을 쌓아야겠다.</p>
 ]]></content>
       <tags>
-        <tag>일상</tag>
         <tag>개발</tag>
+        <tag>회고</tag>
       </tags>
   </entry>
   <entry>
@@ -48,6 +82,39 @@
       <tags>
         <tag>개발</tag>
         <tag>MDN</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>헥소로 블로그 옮기기</title>
+    <url>/2022/Create-hexo-blog/</url>
+    <content><![CDATA[<p>커넥to git 수업동안 hexo와 Github pages를 이용해 블로그를 만들어보았다.</p>
+<p>원래는 velog를 통해 여러 글들을 포스팅 하고 있었는데 디자인에 대한 커스텀이나 지속적인 관리가 (특히 github 잔디를 지속해서 심을 수 있다는 점) 수월해 보여 블로그를 옮겨보기로 결정했다.</p>
+<p>그동안 썼던 글들도 차근차근 옮기며 잘 관리해봐야겠다!</p>
+]]></content>
+      <tags>
+        <tag>개발</tag>
+        <tag>일상</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>이미지 스프라이트(Image Sprite)</title>
+    <url>/2022/Image-Sprite/</url>
+    <content><![CDATA[<p>이미지 스프라이트란 여러 개의 이미지를 하나로 합쳐서 관리하는 이미지를 의미한다.</p>
+<p>웹 페이지에 이미지를 사용한다면 웹 브라우저는 해당 이미지의 다운로드를 위해 서버에 요청을 보낸다. 만약 사용된 이미지가 많을 경우 요청 하는 횟수가 많아지므로 웹 페이지의 로딩 시간이 오래 걸리게 된다. 하지만 만약 이미지 스프라이트를 사용한다면 스프라이트 이미지 파일 하나가 여러 이미지를 가지고 있기에 서버 요청 횟수를 줄일 수 있다.</p>
+<p>개인적인 블로그와 같은 일반적인 사이트에서는 굳이 이미지 스프라이트를 사용 할 필요가 없지만, 트래픽이 매우 많거나 많은 사람이 이용하는 검색포털과 같은 사이트에서는 이미지 스프라이트를 사용하여 서버 요청을 줄이고 웹 페이지의 로딩 시간을 단축시켜 사이트의 품질을 높일 수 있다.</p>
+<p>다음은 네이버 메인페이지의 스프라이트 이미지이다.<br><img src="https://velog.velcdn.com/images/rjsej12/post/34bfd37f-ea3a-4073-8a76-7c5cfbf8b1fc/image.png"></p>
+<p>이처럼 여러개의 이미지를 하나로 합쳐두고 CSS의 <code>background-position</code>을 이용해 사용하려는 이미지만을 보여 줄 수 있다. 이 때 <code>background-position</code>의 값은 하나씩 position값을 변경해보며 찾을 수 도 있지만 <a href="http://www.spritecow.com/">Sprite Cow</a>와 같은 사이트를 이용 할 수 있다.</p>
+<p>추가적으로 스프라이트 이미지를 만들기 위해 포토샵, 피그마 등으로 에디팅 할 수 도 있지만 <a href="https://www.toptal.com/developers/css/sprite-generator/">CSS Sprites Generator</a>라는 사이트를 이용 가능하다.</p>
+<hr>
+
+<h1 id="참고"><a href="#참고" class="headerlink" title="참고"></a>참고</h1><ul>
+<li><a href="https://creativestudio.kr/1653">https://creativestudio.kr/1653</a></li>
+<li><a href="http://www.tcpschool.com/css/css_basic_imageSprites">http://www.tcpschool.com/css/css_basic_imageSprites</a></li>
+</ul>
+]]></content>
+      <tags>
+        <tag>개발</tag>
+        <tag>CSS</tag>
       </tags>
   </entry>
   <entry>
@@ -107,76 +174,93 @@
       </tags>
   </entry>
   <entry>
-    <title>[Deep Dive] 변수</title>
-    <url>/2022/Modern-JavaScript-Deep-Dive-Chapter-4-Variable-Summary/</url>
-    <content><![CDATA[<p>모던 자바스크립트 Deep Dive에 대한 러버덕을 진행하면서 각 장에 대해 중요하다고 생각되는 부분들에 대해 정리해보고자 한다. </p>
-<hr>
+    <title>[Deep Dive] 제어문</title>
+    <url>/2022/Modern-JavaScript-Deep-Dive-Chapter-8-Control-Flow-Statement/</url>
+    <content><![CDATA[<h1 id="제어문"><a href="#제어문" class="headerlink" title="제어문"></a>제어문</h1><p>제어문은 조건에 따라 코드 블록을 실행(조건문)하거나 반복 실행(반복문)할 때 사용한다.<br>일반적으로 코드는 위에서 아래 방향으로 순차적으로 실행된다.<br>제어문을 사용하면 코드의 실행 흐름을 인위적으로 제어할 수 있다.</p>
+<p>하지만 코드의 실행 순서가 변경되는 것은 코드의 흐름을 혼란스럽게 만들어 가독성을 해치는 단점이 있다.<br>가독성이 좋지 않은 코드는 오류를 발생시키는 원인이 되므로 forEach, map, filter, reduce 같은 고차 함수를 사용한 함수형 프로그래밍 기법에서는 제어문의 사용을 억제하여 복잡성을 해결하려고 노력한다.</p>
+<p>하지만 제어문을 바르게 이해하는 것은 코딩 스킬에 많은 영향을 준다.<br>특히 for 문은 매우 중요하므로 확실히 살펴보도록 하자.</p>
+<h2 id="블록문"><a href="#블록문" class="headerlink" title="블록문"></a>블록문</h2><p>블록문은 0개 이상의 문을 중괄호로 묶은 것으로, 코드 블록 또는 블록이라고 부르기도 한다.<br>자바스크립트는 블록문을 하나의 실행 단위로 취급한다.<br>블록문은 단독으로 사용 가능하나 일반적으로 제어문이나 함수를 정의할 때 사용한다.</p>
+<p>문의 끝에는 세미콜론을 붙이는 것이 일반적이나 블록문은 자체 종결성을 갖기 때문에 블록문의 끝에는 세미콜론을 붙이지 않는다.</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 블록문</span></span><br><span class="line">&#123;</span><br><span class="line">  <span class="keyword">var</span> foo = <span class="number">10</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 제어문</span></span><br><span class="line"><span class="keyword">var</span> x = <span class="number">1</span>;</span><br><span class="line"><span class="keyword">if</span> (x &lt; <span class="number">10</span>) &#123;</span><br><span class="line">  x++;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 함수 선언문</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">sum</span>(<span class="params">a, b</span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> a + b;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<h1 id="변수의-정의"><a href="#변수의-정의" class="headerlink" title="변수의 정의"></a>변수의 정의</h1><p>변수란 하나의 값을 저장하기 위해 확보한 메모리 공간 자체 또는 그 메모리 공간을 식별하기 위해 붙인 이름을 말한다.</p>
-<hr>
+<h2 id="조건문"><a href="#조건문" class="headerlink" title="조건문"></a>조건문</h2><p>조건문은 주어진 조건식의 평가 결과에 따라 코드 블록의 실행을 결정한다.<br>조건식은 불리언 값으로 평가될 수 있는 표현식이다.</p>
+<p>자바스크립트는 if…else 문과 switch 문의 두 가지 조건문을 제공한다.</p>
+<h3 id="if…else-문"><a href="#if…else-문" class="headerlink" title="if…else 문"></a>if…else 문</h3><p>if…else 문은 주어진 조건식의 평가 결과에 따라 실행할 코드 블록을 결정한다.<br>조건식의 평가 결과가 true일 경우 if 문의 코드 블록이 실행되고 false일 경우 else 문의 코드 블록이 실행된다.</p>
+<pre>
+if (조건식) {
+  // 조건식이 참이면 이 코드 블록이 실행
+} else {
+  // 조건식이 거짓이면 이 코드 블록이 실행
+}
+</pre>
 
-<h1 id="변수는-왜-필요할까"><a href="#변수는-왜-필요할까" class="headerlink" title="변수는 왜 필요할까?"></a>변수는 왜 필요할까?</h1><p>예를들어 10 + 20이라는 식을 생각해보자. 사람이 위 식을 계산하려면 10, 20을 기억하고 + 연산을 진행해 30이라는 값을 얻어야한다.<br>컴퓨터는 CPU를 사용해 연산하고, 메모리를 사용해 데이터를 기억한다.<br>메모리는 데이터를 저장할 수 있는 메모리 셀의 집합체이다. 메모리 셀 하나의 크기는 기기 사양마다 다르지만 보통 1바이트이다.<br>각 셀은 고유의 메모리 주소를 가진다.</p>
-<p>다시 식으로 돌아가보면 숫자 값 10과 20은 메모리 상의 임의의 위치에 저장되고 CPU는 이 값을 읽어 연산한다.<br>결과인 30이라는 숫자 값 역시 메모리 상의 임의의 위치에 저장된다.</p>
-<p>이때 30이라는 숫자값을 어떻게 재사용 할 수 있을까?<br>값이 저장된 메모리 주소를 통해 값에 접근할 수 있다.<br>하지만 이 경우는 실수로 운영체제가 사용하고 있는 값을 변경할수도 있고, 값이 저장될 메모리 주소 또한 임의로 결정되기에 올바른 방법이 아니다.</p>
-<p>프로그래밍 언어는 기억하고 싶은 값을 메모리에 저장하고, 저장된 값을 읽어 들여 재사용하기 위해 변수라는 메커니즘을 제공한다.</p>
-<p>결국 값을 저장할 수 있도록 하나의 값을 저장하기 위해 확보한 메모리 공간에 상징적인 이름을 붙인 것이 변수이다.</p>
-<hr>
+<p>if 문의 조건식은 불리언 값으로 평가되어야 한다. 만약 if 문의 조건식이 불리언 값이 아닌 값으로 평가되면 자바스크립트 엔진에 의해 암묵적으로 불리언 값으로 강제 변환되어 실행할 코드 블록을 결정한다.</p>
+<p>만약 코드 블록 내의 문이 하나라면 중괄호를 생략할 수 있다.</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> num = <span class="number">2</span>;</span><br><span class="line"><span class="keyword">var</span> kind;</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> (num &gt; <span class="number">0</span>) kind = <span class="string">&#x27;양수&#x27;</span>;</span><br><span class="line"><span class="keyword">else</span> <span class="keyword">if</span> (num &lt; <span class="number">0</span>) kind = <span class="string">&#x27;음수&#x27;</span>;</span><br><span class="line"><span class="keyword">else</span> kind = <span class="string">&#x27;영&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(kind); <span class="comment">// 양수</span></span><br></pre></td></tr></table></figure>
 
-<h1 id="변수는-어떻게-생성하는가"><a href="#변수는-어떻게-생성하는가" class="headerlink" title="변수는 어떻게 생성하는가?"></a>변수는 어떻게 생성하는가?</h1><p>변수의 생성은 선언을 통해 일어난다.</p>
-<p>변수 선언은 변수를 선언하는 var, let, const의 키워드와 변수 이름을 사용한다.<br>이 때 변수 이름을 식별자라고도 하는데, 식별자는 어떤 값을 구별해서 식별할 수 있는 고유한 이름을 말한다.<br>식별자라는 용어는 변수 이름에만 국한되지 않고 변수, 함수, 클래스 등의 이름 모두를 식별자라 한다.<br>즉 메모리 상에 존재하는 어떤 값을 식별할 수 있는 이름 모두가 식별자이다.</p>
-<p>자바스크립트 엔진은 변수 선언을 선언 단계와 초기화 단계로 나누어 수행한다.<br>선언 단계는 변수 이름을 등록해 자바스크립트 엔진에 변수의 존재를 알리고 메모리 공간을 확보하는 것이며, 초기화 단계에서는 확보한 메모리 공간에 최초로 값을 할당하는 것을 말한다.</p>
-<p>var 키워드의 경우 선언 단계와 초기화 단계가 동시에 진행 되는데, 변수 선언 후 암묵적으로 undefined값을 넣어 초기화를 수행한다. 따라서 var 키워드로 선언한 변수는 어떠한 값을 할당하지 않아도 undefined라는 값을 갖는다.</p>
-<p>왜 undefined 값을 통해 초기화를 진행하는 것일까?<br>변수가 선언되어 확보된 메모리 공간에는 이전에 다른 애플리케이션이 사용했던 값이 남아 있을 수 있다. 이러한 값을 쓰레기 값이라 하는데, 만약 초기화가 진행되지 않은 상태에서 변수를 참조한다면 쓰레기 값이 나올 위험성이 있다. 이러한 위험을 피하기 위해 자바스크립트의 var 키워드는 undefined를 통해 암묵적인 초기화를 수행한다.</p>
-<h2 id="메모리-확보란-무엇인가"><a href="#메모리-확보란-무엇인가" class="headerlink" title="메모리 확보란 무엇인가?"></a>메모리 확보란 무엇인가?</h2><p>메모리 확보란 변수가 사용할 메모리 공간을 지정하고 변수 이름과 그 공간을 연결해 값을 저장할 수 있도록 준비하는 것이다. 이 때 중요한 점은 확보된 메모리 공간은 확보가 해제 되기 전까지 누구도 사용할 수 없도록 보호된다는 점이다.</p>
-<h2 id="변수-이름은-어디에-등록되는가"><a href="#변수-이름은-어디에-등록되는가" class="headerlink" title="변수 이름은 어디에 등록되는가"></a>변수 이름은 어디에 등록되는가</h2><p>변수 이름 또한 어딘가에 등록이 되어 있어야 읽어서 사용 할 수 있을 것이다. 변수 이름을 비롯한 모든 식별자는 바로 실행 컨텍스트에 등록된다. 실행 컨텍스트란 자바스크립트 엔진이 소스코드를 평가하고 실행하기 위해 필요한 환겨을 제공하고 코드의 실행결과를 실제로 관리하는 영역이다.</p>
-<hr>
+<p>대부분의 if…else 문은 삼항 조건 연산자로 바꿔 쓸 수 있다.<br>연산자에서도 살펴보았듯이 조건에 따라 단순히 값을 결정하여 변수에 할당하는 경우 if…else 문보다 삼항 조건 연산자를 사용하는 편이 가독성이 좋다.<br>하지만 조건에 따라 실행해야 할 내용이 복잡하여 여러 줄의 문이 필요하다면 if…else 문을 사용하는 편이 가독성이 좋다.</p>
+<h3 id="switch-문"><a href="#switch-문" class="headerlink" title="switch 문"></a>switch 문</h3><p>switch 문은 주어진 표현식을 평가하여 그 값과 일치하는 표현식을 갖는 case 문으로 실행 흐름을 옮긴다.<br>case 문은 상황을 의미하는 표현식을 지정하고 콜론으로 마친다. 그리고 그 뒤에 실행할 문들을 위치시킨다.</p>
+<p>switch 문의 표현식과 일치하는 case 문이 없다면 실행 순서는 default 문으로 이동한다. default 문은 선택사항이다.</p>
+<pre>
+switch (표현식) {
+ case 표현식1:
+  switch 문의 표현식과 표현식 1이 일치하면 실행될 문;
+  break;
+ case 표현식2:
+  switch 문의 표현식과 표현식 2가 일치하면 실행될 문;
+  break;
+ default:
+  switch 문의 표현식과 일치하는 case 문이 없을 때 실행될 문;
+}
+</pre>
 
-<h1 id="변수-선언의-실행-시점"><a href="#변수-선언의-실행-시점" class="headerlink" title="변수 선언의 실행 시점"></a>변수 선언의 실행 시점</h1><p>변수 선언은 소스코드가 한 줄씩 순차적으로 실행되는 시점인 런타임이 아니라 그 이전에 먼저 실행된다.</p>
-<p>자바스크립트 엔진은 소스코드를 한 줄씩 순차적으로 실행하기에 앞서 먼저 소스코드의 평가 과정을 거치는데, 이 때 변수 선언을 포함한 모든 선언문을 소스코드에서 뽑아내 먼저 실행한다. 그리고 소스코드의 평가 과정이 끝나면 선언문을 제외한 소스코드를 한 줄씩 순차적으로 실행한다.</p>
-<p>즉 자바스크립트 엔진은 변수 선언이 소스코드의 어느 위치에 있던 다른 코드보다 먼저 실행하는데, 이처럼 변수 선언문이 코드의 최상단으로 끌어 올려진 것처럼 동작하는 것을 변수 호이스팅이라 한다.</p>
-<p>변수 호이스팅에 의해 다음과 같은 현상이 일어날 수 있다.</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(score); <span class="comment">// undefined</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> score;</span><br></pre></td></tr></table></figure>
+<p>if…else 문의 조건식은 불리언 값으로 평가되어야 하지만 switch 문의 표현식은 불리언 값보다는 문자열이나 숫자 값인 경우가 많다.<br>즉 switch 문은 논리적 참, 거짓보다는 다양한 상황(case)에 따라 실행할 코드 블록을 결정할 때 사용한다.</p>
+<p>swtich 문은 case, default, break 등 다양한 키워드를 사용해야 하고 폴스루가 발생한느 등 문법도 복잡하다.<br>따라서 C 언어를 기반으로 하는 프로그래밍 언어는 대부분 switch 문을 지원하지만 파이썬과 같이 switch 문ㅇ을 지원하지 않는 프로그래밍 언어도 있다.</p>
+<p>만약 if…else 문으로 해결할 수 있다면 switch 문보다 if…else 문을 사용하는 편이 좋다.<br>하지만 조건이 너무 많아 if…else 문보다 switch 문을 사용했을 때 가독성이 더 좋다면 switch문을 사용하는 편이 좋다.</p>
+<h2 id="반복문"><a href="#반복문" class="headerlink" title="반복문"></a>반복문</h2><p>반복문은 조건식의 평가 결과가 참인 경우 코드 블록을 실행한다. 그 후 조건식을 다시 평가하여 여전히 참인 경우 코드 블록을 다시 실행한다.<br>이는 조건식이 거짓일 때까지 반복된다.</p>
+<p>자바스크립트는 for 문, while 문, do…while 문의 세 가지 반복문을 제공한다</p>
+<h3 id="for-문"><a href="#for-문" class="headerlink" title="for 문"></a>for 문</h3><p>for 문은 조건식이 거짓으로 평가될 때까지 코드 블록을 반복 실행한다. 가장 일반적으로 사용되는 for 문의 형태는 다음과 같다.</p>
+<pre>
+for (변수 선언문 또는 할당문; 조건식; 증감식) {
+ 조건식이 참인 경우 반복 실행될 문;
+}
+</pre>
 
-<hr>
+<p>for 문은 매우 중요하므로 어떻게 동작하는지 많은 연습을 통해 확실히 이해해야 한다.</p>
+<p>for 문의 변수 선언문, 조건식, 증감식은 모두 옵션이므로 반드시 사용할 필요는 없다. 단, 어떤 식도 선언하지 않으면 무한루프가 된다.</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span> (;;) &#123;...&#125; <span class="comment">// 무한루프</span></span><br></pre></td></tr></table></figure>
 
-<h1 id="할당이-일어나는-시점"><a href="#할당이-일어나는-시점" class="headerlink" title="할당이 일어나는 시점"></a>할당이 일어나는 시점</h1><p>변수는 값을 저장해 재사용 하기 위한 메커니즘이므로 일반적으로 선언 이후 재사용 할 값을 할당하게 된다.</p>
-<p>이 때 변수의 선언과 값의 할당은 실행 시점이 다른데, 변수 선언은 런타임 이전에 실행되는 반면 값의 할당은 런타임에 실행된다.</p>
-<p>일반적으로 변수를 다음과 같이 2개의 문으로 사용하지만 하나의 문으로 단축 표현 할 수도 있다.</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> score;</span><br><span class="line">score = <span class="number">80</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> score = <span class="number">80</span>; <span class="comment">// 단축 표현</span></span><br></pre></td></tr></table></figure>
+<p>for 문 내에 for 문을 중첩해 사용할 수 있다. 이를 중첩 for 문이라 한다. 다음은 두 개의 주사위를 던졌을 때 두 눈의 합이 6이 되는 모든 경우의 수를 출력하기 위해 이중 중첩 for 문을 사용한 예다.</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">1</span>; i &lt;= <span class="number">6</span>; i++) &#123;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">var</span> j = <span class="number">1</span>; j &lt;= <span class="number">6</span>; j++) &#123;</span><br><span class="line">    <span class="keyword">if</span> (i + j === <span class="number">6</span>) <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`[<span class="subst">$&#123;i&#125;</span>, <span class="subst">$&#123;j&#125;</span>]`</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// [1, 5] [2, 4] [3, 3] [4, 2] [5, 1]</span></span><br></pre></td></tr></table></figure>
 
-<p>변수 선언과 값의 할당을 2개의 문으로 나눈 코드와 하나의 문으로 단축 표현한 코드는 정확히 동일하게 동작한다.</p>
-<hr>
+<h3 id="while-문"><a href="#while-문" class="headerlink" title="while 문"></a>while 문</h3><p>while 문은 주어진 조건식의 평가 결과가 참이면 코드 블록을 계속해서 반복 실행한다.<br>for 문은 반복 횟수가 명확할 때 주로 사용하고 while 문은 반복 횟수가 불명확할 때 주로 사용한다.</p>
+<p>while 문은 조건문의 평가 결과가 거짓이 되면 코드 블록을 실행하지 않고 종료한다. 만약 조건식의 평가 결과가 불리언 값이 아니면 불리언 값으로 강제 변환하여 논리적 참, 거짓을 구별한다.</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> count = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span> (count &lt; <span class="number">3</span>) &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(count); <span class="comment">// 0 1 2</span></span><br><span class="line">  count++;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<h1 id="재할당"><a href="#재할당" class="headerlink" title="재할당"></a>재할당</h1><p>var 키워드로 선언한 변수는 값을 재할당할 수 있다. 재할당은 현재 변수에 저장된 값을 버리고 새로운 값을 저장하는 것이다. var 키워드는 선언시 undefined로 초기화되기 때문에 변수에 처음으로 값을 할당하는 것도 사실 재할당이다.</p>
-<p>만약 재할당이 불가능해 변수에 저장된 값을 변경할 수 없다면 이를 상수라고 한다. 즉 상수는 단 한번만 할당이 가능한 변수이다.</p>
-<p>만약 변수에 값을 재할당 하면 변수의 값을 이전 값에서 재할당한 값으로 변하게 된다. 이때 메모리에서는 어떤 일이 일어날까? 재할당시에는 메모리 공간에서 이전 값을 지우고 새로운 값을 할당하는것이 아닌 변수가 새로운 메모리 공간을 확보하고 그 공간에 새로운 값을 저장하게 된다.</p>
-<p>이 때 이전 값이 들어 있던 메모리 공간은 어떤 식별자와도 연결되어 있지 않으므로 불필요한 값이 된다.<br>이 경우 가비지 콜렉터에 의해서 메모리에서 자동 해제되지만 언저 해제될지 예측은 불가능하다.</p>
+<p>조건식의 평가 결과가 언제나 참이면 무한루프가 된다.<br>무한루프에서 탈출하기 위해서는 코드 블록 내에 if 문으로 탈출 조건을 만들고 break 문으로 코드 블록을 탈출한다.</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> count = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 무한루프</span></span><br><span class="line"><span class="keyword">while</span> (<span class="literal">true</span>) &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(count); <span class="comment">// 0 1 2</span></span><br><span class="line">  count++;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">if</span> (count === <span class="number">3</span>) <span class="keyword">break</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="do…while-문"><a href="#do…while-문" class="headerlink" title="do…while 문"></a>do…while 문</h3><p>do…while 문은 코드 블록을 먼저 실행하고 조건식을 평가한다. 따라서 코드 블록은 무조건 한 번 이상 실행된다.</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> count = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">do</span> &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(count); <span class="comment">// 0 1 2</span></span><br><span class="line">  count++;</span><br><span class="line">&#125; <span class="keyword">while</span> (count &lt; <span class="number">3</span>);</span><br></pre></td></tr></table></figure>
+
+<h2 id="break-문"><a href="#break-문" class="headerlink" title="break 문"></a>break 문</h2><p>switch 문과 while 문에서 살펴보았듯이 break 문은 코드 블록을 탈출한다.<br>더 정확히 말하자면 레이블 문, 반복문 또는 switch 문의 코드 블록을 탈출한다. 레이블 문, 반복문, switch 문의 코드 블록 외에 break 문을 사용하면 SyntaxError가 발생한다.</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> (<span class="literal">true</span>) &#123;</span><br><span class="line">  <span class="keyword">break</span>; <span class="comment">// Uncaught SyntaxError: Illegal break statement</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>참고로 레이블 문은 식별자가 붙은 문을 말한다.<br>레이블 문은 프로그램의 실행 순서를 제어하는데 사용한다. 사실 switch 문의 case 문과 default 문 역시 레이블 문이다.<br>레이블 문을 탈출하려면 break 문에 레이블 식별자를 지정한다.</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="attr">foo</span>: &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="number">1</span>);</span><br><span class="line">  <span class="keyword">break</span> foo;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="number">2</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;Done!&#x27;</span>);</span><br><span class="line"><span class="comment">// 1</span></span><br><span class="line"><span class="comment">// Done!</span></span><br></pre></td></tr></table></figure>
+
+<p>레이블 문을 사용하면 프로그램의 흐름이 복잡해져서 가독성이 나빠지고 오류를 발생시킬 가능성이 높아지기 때문에 일반적으로 권장하지 않는다.</p>
+</blockquote>
+<h2 id="continue-문"><a href="#continue-문" class="headerlink" title="continue 문"></a>continue 문</h2><p>continue 문은 반복문의 코드 블록 실행을 현 지점에서 중단하고 반복문의 증감식으로 실행 흐름을 이동시킨다.<br>break 문처럼 반복문을 탈출하지는 않는다.</p>
+<p>다음은 문자열에서 특정 문자의 개수를 세는 예다.</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> string = <span class="string">&#x27;Hello World.&#x27;</span>;</span><br><span class="line"><span class="keyword">var</span> search = <span class="string">&#x27;l&#x27;</span>;</span><br><span class="line"><span class="keyword">var</span> count = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; string.<span class="property">length</span>; i++) &#123;</span><br><span class="line">  <span class="keyword">if</span> (string[i] !== search) <span class="keyword">continue</span>; <span class="comment">// &#x27;l&#x27;이 아니면 현 지점에서 실행을 중단하고 반복문의 증감식으로 이동한다.</span></span><br><span class="line">  count++; <span class="comment">// continue 문이 실행되면 이 문은 실행되지 않는다.</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(count); <span class="comment">// 3</span></span><br></pre></td></tr></table></figure>
+
 ]]></content>
       <tags>
         <tag>개발</tag>
         <tag>자바스크립트</tag>
         <tag>모던 자바스크립트 Deep Dive</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>이미지 스프라이트(Image Sprite)</title>
-    <url>/2022/Image-Sprite/</url>
-    <content><![CDATA[<p>이미지 스프라이트란 여러 개의 이미지를 하나로 합쳐서 관리하는 이미지를 의미한다.</p>
-<p>웹 페이지에 이미지를 사용한다면 웹 브라우저는 해당 이미지의 다운로드를 위해 서버에 요청을 보낸다. 만약 사용된 이미지가 많을 경우 요청 하는 횟수가 많아지므로 웹 페이지의 로딩 시간이 오래 걸리게 된다. 하지만 만약 이미지 스프라이트를 사용한다면 스프라이트 이미지 파일 하나가 여러 이미지를 가지고 있기에 서버 요청 횟수를 줄일 수 있다.</p>
-<p>개인적인 블로그와 같은 일반적인 사이트에서는 굳이 이미지 스프라이트를 사용 할 필요가 없지만, 트래픽이 매우 많거나 많은 사람이 이용하는 검색포털과 같은 사이트에서는 이미지 스프라이트를 사용하여 서버 요청을 줄이고 웹 페이지의 로딩 시간을 단축시켜 사이트의 품질을 높일 수 있다.</p>
-<p>다음은 네이버 메인페이지의 스프라이트 이미지이다.<br><img src="https://velog.velcdn.com/images/rjsej12/post/34bfd37f-ea3a-4073-8a76-7c5cfbf8b1fc/image.png"></p>
-<p>이처럼 여러개의 이미지를 하나로 합쳐두고 CSS의 <code>background-position</code>을 이용해 사용하려는 이미지만을 보여 줄 수 있다. 이 때 <code>background-position</code>의 값은 하나씩 position값을 변경해보며 찾을 수 도 있지만 <a href="http://www.spritecow.com/">Sprite Cow</a>와 같은 사이트를 이용 할 수 있다.</p>
-<p>추가적으로 스프라이트 이미지를 만들기 위해 포토샵, 피그마 등으로 에디팅 할 수 도 있지만 <a href="https://www.toptal.com/developers/css/sprite-generator/">CSS Sprites Generator</a>라는 사이트를 이용 가능하다.</p>
-<hr>
-
-<h1 id="참고"><a href="#참고" class="headerlink" title="참고"></a>참고</h1><ul>
-<li><a href="https://creativestudio.kr/1653">https://creativestudio.kr/1653</a></li>
-<li><a href="http://www.tcpschool.com/css/css_basic_imageSprites">http://www.tcpschool.com/css/css_basic_imageSprites</a></li>
-</ul>
-]]></content>
-      <tags>
-        <tag>개발</tag>
-        <tag>CSS</tag>
       </tags>
   </entry>
   <entry>
@@ -224,6 +308,104 @@
 <figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> person = &#123;</span><br><span class="line">  <span class="attr">name</span>: <span class="string">&#x27;Lee&#x27;</span>,</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> copy = person;</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(copy === person); <span class="comment">// true</span></span><br><span class="line"></span><br><span class="line">copy.<span class="property">name</span> = <span class="string">&#x27;Kim&#x27;</span>;</span><br><span class="line">person.<span class="property">address</span> = <span class="string">&#x27;Seoul&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// copy와 person은 동일한 객체를 가리키므로 서로 영향을 주고 받는다.</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(person); <span class="comment">// &#123;name: &#x27;Kim&#x27;, address: &#x27;Seoul&#x27;&#125;</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(copy); <span class="comment">// &#123;name: &#x27;Kim&#x27;, address: &#x27;Seoul&#x27;&#125;</span></span><br></pre></td></tr></table></figure>
 
 <p>결국 “값에 의한 전달”과 “참조에 의한 전달”은 식별자가 기억하는 메모리 공간에 저장되어 있는 값을 복사해 전달한다는 면에서 동일하다.<br>다만 식별자가 기억하는 메모리 공간, 즉 변수에 저장되어 있는 값이 원시 값이냐 참조 값이냐의 차이만 있을 뿐이다. 따라서 자바스크립트에는 “참조에 의한 전달”은 존재하지 않고 “값에 의한 전달”만이 존재한다고 말할 수 있지만 전달되는 값이 원시 값인지 참조 값인지 구별해 강조하는 의미로 구분해 부른다고 할 수 있다.</p>
+]]></content>
+      <tags>
+        <tag>개발</tag>
+        <tag>자바스크립트</tag>
+        <tag>모던 자바스크립트 Deep Dive</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>[Deep Dive] 표현식과 문</title>
+    <url>/2022/Modern-Javascript-Deep-Dive-Chapter-5-Summary/</url>
+    <content><![CDATA[<p>변수에 대해 살펴보면서 지속적으로 값이라는 용어가 등장했다. 표현식과 문에 대해 알아보기 이전에 값이란 무엇인지 알아보자.</p>
+<hr>
+
+<h1 id="값"><a href="#값" class="headerlink" title="값"></a>값</h1><p>값이란 (표현)식이 평가되어 생성된 결과를 말한다.<br>평가란 식을 해석해서 값을 생성하거나 참조하는 것을 의미한다.</p>
+<p>변수란 하나의 값을 저장하기 위해 확보한 메모리 공간 자체 또는 그 메모리 공간을 식별하기 위해 붙인 이름이였다. 즉 변수에 할당되는 것은 값이다.</p>
+<p>값이란 어떻게 생성할 수 있을까? 가장 기본적인 방법은 리터럴을 사용하는 것이다.</p>
+<hr>
+
+<h1 id="리터럴"><a href="#리터럴" class="headerlink" title="리터럴"></a>리터럴</h1><p>리터럴은 사람이 이해할 수 있는 문자 또는 약속된 기호를 사용해 값을 생성하는 표기법이다.</p>
+<p>리터럴은 문자 또는 미리 약속된 기호로 표기한 코드이며 자바스크립트 엔진은 코드가 실행되는 시점인 런타임에 리터럴을 평가해 값을 생성한다.</p>
+<p>리터럴을 사용해 다양한 종류의 값을 생성할 수 있다.</p>
+<h2 id="엔진은-어떻게-리터럴을-구별할까"><a href="#엔진은-어떻게-리터럴을-구별할까" class="headerlink" title="엔진은 어떻게 리터럴을 구별할까?"></a>엔진은 어떻게 리터럴을 구별할까?</h2><p>리터럴은 값을 생성하기 위해 미리 약속한 표기법으로 자바스크립트 엔진 내부에 리터럴을 구분해 값을 생성 할 수 있도록 하드코딩 되어있다.</p>
+<hr>
+
+<p>리터럴 이외에 값을 생성하는 또 다른 방법에는 무엇이 있을까? 값에 대해 살펴보면서 언급했듯이 표현식이 존재한다.</p>
+<h1 id="표현식"><a href="#표현식" class="headerlink" title="표현식"></a>표현식</h1><p>표현식은 값으로 평가될 수 있는 문이다. 즉 표현식이 평가되면 새로운 값을 생성하거나 값을 참조한다.</p>
+<p>앞서 살펴본 리터럴은 값으로 평가된다. 그러므로 리터럴도 사실 표현식이다.</p>
+<p>표현식은 값으로 평가되는데, 이때 표현식과 표현식이 평가된 값은 동등한 관계이다.</p>
+<p>다음 예시를 살펴보자. 예를들어, 산술 연산자 + 의 좌항과 우항에는 숫자 값이 위치해야 한다. 이 때 표현식이 숫자 값으로 평가될 수 있다면 숫자 값 대신 사용할 수 있다.</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> x = <span class="number">1</span> + <span class="number">2</span>;</span><br><span class="line"></span><br><span class="line">x + <span class="number">3</span>; <span class="comment">// 6</span></span><br></pre></td></tr></table></figure>
+
+<p>위 코드의 x + 3에서 + 연산자의 좌항과 우항에는 숫자 값이 위치해야 한다. 이 때 좌항 x 는 식별자 표현식이다. 즉 x는 할당되어 있는 숫자 값 3 으로 평가된다. 즉 표현식과 표현식이 평가된 값은 동치이며 이처럼 표현식은 다른 표현식의 일부가 되어 새로운 값을 만들어 낼 수 있다.</p>
+<hr>
+
+<p>앞서 표현식은 값으로 평가될 수 있는 문이라고 했다. 그럼 문이란 무엇일까?</p>
+<h1 id="문"><a href="#문" class="headerlink" title="문"></a>문</h1><p>문은 프로그램을 구성하는 기본 단위이자 최소 실행 단위이다. 문은 여러 토큰으로 구성되는데, 토큰이란 문법적인 의미를 가지며, 문법적으로 더 이상 나눌 수 없는 코드의 기본 요소를 의미한다.</p>
+<p>문을 명령문이라고도 부른다. 문이 실행되면 명령이 실행되고 무슨 일인가가 일어나게 된다.</p>
+<p>문은 선언문, 할당문, 조건문, 반복문등 다양한 종류로 나누어진다.</p>
+<p>세미콜론을 통해 문의 종료를 나타낼 수 있다. 즉 자바스크립트 엔진은 세미콜론으로 문이 종료한 위치를 파악하고 순차적으로 하나씩 문을 실행한다. 단 중괄호로 묶은 코드 블록은 자체 종결성을 가지므로 세미콜론을 붙이지 않는다.</p>
+<p>문의 끝에 붙이는 세미콜론은 옵션이다. 이는 자바스크립트 엔진이 소스코드를 해석하며 문의 끝이라고 예측되는 지점에 세미콜론을 자동으로 삽입하는 ASI를 수행하기 때문이다.</p>
+<hr>
+
+<p>그렇다면 표현식과 문은 어떻게 구별 할 수 있을까? 표현식도 문의 일부니 정확히 말하자면 표현식인 문과 표현식이 아닌 문을 어떻게 구별 할 수 있을까?</p>
+<h1 id="표현식인-문과-표현식이-아닌-문"><a href="#표현식인-문과-표현식이-아닌-문" class="headerlink" title="표현식인 문과 표현식이 아닌 문"></a>표현식인 문과 표현식이 아닌 문</h1><p>표현식인 문은 값으로 평가될 수 있는 문이며, 표현식이 아닌 문은 값으로 평가될 수 없는 문을 말한다. 예를들어, 변수 선언문은 값으로 평가될 수 없으므로 표현식이 아닌 문이다.</p>
+<p>표현식인 문과 표현식이 아닌 문을 구별하는 가장 간단한 방법은 변수에 할당해 보는 것이다.</p>
+<p>변수는 값을 저장하기 위한 메모리 공간이였으므로 변수에 할당할 수 있는 문은 즉 값으로 평가된는 표현식이라고 볼 수 있다.</p>
+]]></content>
+      <tags>
+        <tag>개발</tag>
+        <tag>자바스크립트</tag>
+        <tag>모던 자바스크립트 Deep Dive</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>[Deep Dive] 변수</title>
+    <url>/2022/Modern-JavaScript-Deep-Dive-Chapter-4-Variable-Summary/</url>
+    <content><![CDATA[<p>모던 자바스크립트 Deep Dive에 대한 러버덕을 진행하면서 각 장에 대해 중요하다고 생각되는 부분들에 대해 정리해보고자 한다. </p>
+<hr>
+
+<h1 id="변수의-정의"><a href="#변수의-정의" class="headerlink" title="변수의 정의"></a>변수의 정의</h1><p>변수란 하나의 값을 저장하기 위해 확보한 메모리 공간 자체 또는 그 메모리 공간을 식별하기 위해 붙인 이름을 말한다.</p>
+<hr>
+
+<h1 id="변수는-왜-필요할까"><a href="#변수는-왜-필요할까" class="headerlink" title="변수는 왜 필요할까?"></a>변수는 왜 필요할까?</h1><p>예를들어 10 + 20이라는 식을 생각해보자. 사람이 위 식을 계산하려면 10, 20을 기억하고 + 연산을 진행해 30이라는 값을 얻어야한다.<br>컴퓨터는 CPU를 사용해 연산하고, 메모리를 사용해 데이터를 기억한다.<br>메모리는 데이터를 저장할 수 있는 메모리 셀의 집합체이다. 메모리 셀 하나의 크기는 기기 사양마다 다르지만 보통 1바이트이다.<br>각 셀은 고유의 메모리 주소를 가진다.</p>
+<p>다시 식으로 돌아가보면 숫자 값 10과 20은 메모리 상의 임의의 위치에 저장되고 CPU는 이 값을 읽어 연산한다.<br>결과인 30이라는 숫자 값 역시 메모리 상의 임의의 위치에 저장된다.</p>
+<p>이때 30이라는 숫자값을 어떻게 재사용 할 수 있을까?<br>값이 저장된 메모리 주소를 통해 값에 접근할 수 있다.<br>하지만 이 경우는 실수로 운영체제가 사용하고 있는 값을 변경할수도 있고, 값이 저장될 메모리 주소 또한 임의로 결정되기에 올바른 방법이 아니다.</p>
+<p>프로그래밍 언어는 기억하고 싶은 값을 메모리에 저장하고, 저장된 값을 읽어 들여 재사용하기 위해 변수라는 메커니즘을 제공한다.</p>
+<p>결국 값을 저장할 수 있도록 하나의 값을 저장하기 위해 확보한 메모리 공간에 상징적인 이름을 붙인 것이 변수이다.</p>
+<hr>
+
+<h1 id="변수는-어떻게-생성하는가"><a href="#변수는-어떻게-생성하는가" class="headerlink" title="변수는 어떻게 생성하는가?"></a>변수는 어떻게 생성하는가?</h1><p>변수의 생성은 선언을 통해 일어난다.</p>
+<p>변수 선언은 변수를 선언하는 var, let, const의 키워드와 변수 이름을 사용한다.<br>이 때 변수 이름을 식별자라고도 하는데, 식별자는 어떤 값을 구별해서 식별할 수 있는 고유한 이름을 말한다.<br>식별자라는 용어는 변수 이름에만 국한되지 않고 변수, 함수, 클래스 등의 이름 모두를 식별자라 한다.<br>즉 메모리 상에 존재하는 어떤 값을 식별할 수 있는 이름 모두가 식별자이다.</p>
+<p>자바스크립트 엔진은 변수 선언을 선언 단계와 초기화 단계로 나누어 수행한다.<br>선언 단계는 변수 이름을 등록해 자바스크립트 엔진에 변수의 존재를 알리고 메모리 공간을 확보하는 것이며, 초기화 단계에서는 확보한 메모리 공간에 최초로 값을 할당하는 것을 말한다.</p>
+<p>var 키워드의 경우 선언 단계와 초기화 단계가 동시에 진행 되는데, 변수 선언 후 암묵적으로 undefined값을 넣어 초기화를 수행한다. 따라서 var 키워드로 선언한 변수는 어떠한 값을 할당하지 않아도 undefined라는 값을 갖는다.</p>
+<p>왜 undefined 값을 통해 초기화를 진행하는 것일까?<br>변수가 선언되어 확보된 메모리 공간에는 이전에 다른 애플리케이션이 사용했던 값이 남아 있을 수 있다. 이러한 값을 쓰레기 값이라 하는데, 만약 초기화가 진행되지 않은 상태에서 변수를 참조한다면 쓰레기 값이 나올 위험성이 있다. 이러한 위험을 피하기 위해 자바스크립트의 var 키워드는 undefined를 통해 암묵적인 초기화를 수행한다.</p>
+<h2 id="메모리-확보란-무엇인가"><a href="#메모리-확보란-무엇인가" class="headerlink" title="메모리 확보란 무엇인가?"></a>메모리 확보란 무엇인가?</h2><p>메모리 확보란 변수가 사용할 메모리 공간을 지정하고 변수 이름과 그 공간을 연결해 값을 저장할 수 있도록 준비하는 것이다. 이 때 중요한 점은 확보된 메모리 공간은 확보가 해제 되기 전까지 누구도 사용할 수 없도록 보호된다는 점이다.</p>
+<h2 id="변수-이름은-어디에-등록되는가"><a href="#변수-이름은-어디에-등록되는가" class="headerlink" title="변수 이름은 어디에 등록되는가"></a>변수 이름은 어디에 등록되는가</h2><p>변수 이름 또한 어딘가에 등록이 되어 있어야 읽어서 사용 할 수 있을 것이다. 변수 이름을 비롯한 모든 식별자는 바로 실행 컨텍스트에 등록된다. 실행 컨텍스트란 자바스크립트 엔진이 소스코드를 평가하고 실행하기 위해 필요한 환겨을 제공하고 코드의 실행결과를 실제로 관리하는 영역이다.</p>
+<hr>
+
+<h1 id="변수-선언의-실행-시점"><a href="#변수-선언의-실행-시점" class="headerlink" title="변수 선언의 실행 시점"></a>변수 선언의 실행 시점</h1><p>변수 선언은 소스코드가 한 줄씩 순차적으로 실행되는 시점인 런타임이 아니라 그 이전에 먼저 실행된다.</p>
+<p>자바스크립트 엔진은 소스코드를 한 줄씩 순차적으로 실행하기에 앞서 먼저 소스코드의 평가 과정을 거치는데, 이 때 변수 선언을 포함한 모든 선언문을 소스코드에서 뽑아내 먼저 실행한다. 그리고 소스코드의 평가 과정이 끝나면 선언문을 제외한 소스코드를 한 줄씩 순차적으로 실행한다.</p>
+<p>즉 자바스크립트 엔진은 변수 선언이 소스코드의 어느 위치에 있던 다른 코드보다 먼저 실행하는데, 이처럼 변수 선언문이 코드의 최상단으로 끌어 올려진 것처럼 동작하는 것을 변수 호이스팅이라 한다.</p>
+<p>변수 호이스팅에 의해 다음과 같은 현상이 일어날 수 있다.</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(score); <span class="comment">// undefined</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> score;</span><br></pre></td></tr></table></figure>
+
+<hr>
+
+<h1 id="할당이-일어나는-시점"><a href="#할당이-일어나는-시점" class="headerlink" title="할당이 일어나는 시점"></a>할당이 일어나는 시점</h1><p>변수는 값을 저장해 재사용 하기 위한 메커니즘이므로 일반적으로 선언 이후 재사용 할 값을 할당하게 된다.</p>
+<p>이 때 변수의 선언과 값의 할당은 실행 시점이 다른데, 변수 선언은 런타임 이전에 실행되는 반면 값의 할당은 런타임에 실행된다.</p>
+<p>일반적으로 변수를 다음과 같이 2개의 문으로 사용하지만 하나의 문으로 단축 표현 할 수도 있다.</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> score;</span><br><span class="line">score = <span class="number">80</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> score = <span class="number">80</span>; <span class="comment">// 단축 표현</span></span><br></pre></td></tr></table></figure>
+
+<p>변수 선언과 값의 할당을 2개의 문으로 나눈 코드와 하나의 문으로 단축 표현한 코드는 정확히 동일하게 동작한다.</p>
+<hr>
+
+<h1 id="재할당"><a href="#재할당" class="headerlink" title="재할당"></a>재할당</h1><p>var 키워드로 선언한 변수는 값을 재할당할 수 있다. 재할당은 현재 변수에 저장된 값을 버리고 새로운 값을 저장하는 것이다. var 키워드는 선언시 undefined로 초기화되기 때문에 변수에 처음으로 값을 할당하는 것도 사실 재할당이다.</p>
+<p>만약 재할당이 불가능해 변수에 저장된 값을 변경할 수 없다면 이를 상수라고 한다. 즉 상수는 단 한번만 할당이 가능한 변수이다.</p>
+<p>만약 변수에 값을 재할당 하면 변수의 값을 이전 값에서 재할당한 값으로 변하게 된다. 이때 메모리에서는 어떤 일이 일어날까? 재할당시에는 메모리 공간에서 이전 값을 지우고 새로운 값을 할당하는것이 아닌 변수가 새로운 메모리 공간을 확보하고 그 공간에 새로운 값을 저장하게 된다.</p>
+<p>이 때 이전 값이 들어 있던 메모리 공간은 어떤 식별자와도 연결되어 있지 않으므로 불필요한 값이 된다.<br>이 경우 가비지 콜렉터에 의해서 메모리에서 자동 해제되지만 언저 해제될지 예측은 불가능하다.</p>
 ]]></content>
       <tags>
         <tag>개발</tag>
@@ -327,52 +509,6 @@
 <p>연산자는 종류가 많아 연산자 우선순위를 모두 기억하기 어렵고 실수하기도 쉽다.<br>따라서 기억해 사용하기 보다는 연산자 우선순위가 높은 그룹 연산자를 사용하여 우선순위를 명시적으로 조절하는 것이 좋다.</p>
 <figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="number">10</span> * (<span class="number">2</span> + <span class="number">3</span>); <span class="comment">// 50</span></span><br></pre></td></tr></table></figure>
 
-]]></content>
-      <tags>
-        <tag>개발</tag>
-        <tag>자바스크립트</tag>
-        <tag>모던 자바스크립트 Deep Dive</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>[Deep Dive] 표현식과 문</title>
-    <url>/2022/Modern-Javascript-Deep-Dive-Chapter-5-Summary/</url>
-    <content><![CDATA[<p>변수에 대해 살펴보면서 지속적으로 값이라는 용어가 등장했다. 표현식과 문에 대해 알아보기 이전에 값이란 무엇인지 알아보자.</p>
-<hr>
-
-<h1 id="값"><a href="#값" class="headerlink" title="값"></a>값</h1><p>값이란 (표현)식이 평가되어 생성된 결과를 말한다.<br>평가란 식을 해석해서 값을 생성하거나 참조하는 것을 의미한다.</p>
-<p>변수란 하나의 값을 저장하기 위해 확보한 메모리 공간 자체 또는 그 메모리 공간을 식별하기 위해 붙인 이름이였다. 즉 변수에 할당되는 것은 값이다.</p>
-<p>값이란 어떻게 생성할 수 있을까? 가장 기본적인 방법은 리터럴을 사용하는 것이다.</p>
-<hr>
-
-<h1 id="리터럴"><a href="#리터럴" class="headerlink" title="리터럴"></a>리터럴</h1><p>리터럴은 사람이 이해할 수 있는 문자 또는 약속된 기호를 사용해 값을 생성하는 표기법이다.</p>
-<p>리터럴은 문자 또는 미리 약속된 기호로 표기한 코드이며 자바스크립트 엔진은 코드가 실행되는 시점인 런타임에 리터럴을 평가해 값을 생성한다.</p>
-<p>리터럴을 사용해 다양한 종류의 값을 생성할 수 있다.</p>
-<h2 id="엔진은-어떻게-리터럴을-구별할까"><a href="#엔진은-어떻게-리터럴을-구별할까" class="headerlink" title="엔진은 어떻게 리터럴을 구별할까?"></a>엔진은 어떻게 리터럴을 구별할까?</h2><p>리터럴은 값을 생성하기 위해 미리 약속한 표기법으로 자바스크립트 엔진 내부에 리터럴을 구분해 값을 생성 할 수 있도록 하드코딩 되어있다.</p>
-<hr>
-
-<p>리터럴 이외에 값을 생성하는 또 다른 방법에는 무엇이 있을까? 값에 대해 살펴보면서 언급했듯이 표현식이 존재한다.</p>
-<h1 id="표현식"><a href="#표현식" class="headerlink" title="표현식"></a>표현식</h1><p>표현식은 값으로 평가될 수 있는 문이다. 즉 표현식이 평가되면 새로운 값을 생성하거나 값을 참조한다.</p>
-<p>앞서 살펴본 리터럴은 값으로 평가된다. 그러므로 리터럴도 사실 표현식이다.</p>
-<p>표현식은 값으로 평가되는데, 이때 표현식과 표현식이 평가된 값은 동등한 관계이다.</p>
-<p>다음 예시를 살펴보자. 예를들어, 산술 연산자 + 의 좌항과 우항에는 숫자 값이 위치해야 한다. 이 때 표현식이 숫자 값으로 평가될 수 있다면 숫자 값 대신 사용할 수 있다.</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> x = <span class="number">1</span> + <span class="number">2</span>;</span><br><span class="line"></span><br><span class="line">x + <span class="number">3</span>; <span class="comment">// 6</span></span><br></pre></td></tr></table></figure>
-
-<p>위 코드의 x + 3에서 + 연산자의 좌항과 우항에는 숫자 값이 위치해야 한다. 이 때 좌항 x 는 식별자 표현식이다. 즉 x는 할당되어 있는 숫자 값 3 으로 평가된다. 즉 표현식과 표현식이 평가된 값은 동치이며 이처럼 표현식은 다른 표현식의 일부가 되어 새로운 값을 만들어 낼 수 있다.</p>
-<hr>
-
-<p>앞서 표현식은 값으로 평가될 수 있는 문이라고 했다. 그럼 문이란 무엇일까?</p>
-<h1 id="문"><a href="#문" class="headerlink" title="문"></a>문</h1><p>문은 프로그램을 구성하는 기본 단위이자 최소 실행 단위이다. 문은 여러 토큰으로 구성되는데, 토큰이란 문법적인 의미를 가지며, 문법적으로 더 이상 나눌 수 없는 코드의 기본 요소를 의미한다.</p>
-<p>문을 명령문이라고도 부른다. 문이 실행되면 명령이 실행되고 무슨 일인가가 일어나게 된다.</p>
-<p>문은 선언문, 할당문, 조건문, 반복문등 다양한 종류로 나누어진다.</p>
-<p>세미콜론을 통해 문의 종료를 나타낼 수 있다. 즉 자바스크립트 엔진은 세미콜론으로 문이 종료한 위치를 파악하고 순차적으로 하나씩 문을 실행한다. 단 중괄호로 묶은 코드 블록은 자체 종결성을 가지므로 세미콜론을 붙이지 않는다.</p>
-<p>문의 끝에 붙이는 세미콜론은 옵션이다. 이는 자바스크립트 엔진이 소스코드를 해석하며 문의 끝이라고 예측되는 지점에 세미콜론을 자동으로 삽입하는 ASI를 수행하기 때문이다.</p>
-<hr>
-
-<p>그렇다면 표현식과 문은 어떻게 구별 할 수 있을까? 표현식도 문의 일부니 정확히 말하자면 표현식인 문과 표현식이 아닌 문을 어떻게 구별 할 수 있을까?</p>
-<h1 id="표현식인-문과-표현식이-아닌-문"><a href="#표현식인-문과-표현식이-아닌-문" class="headerlink" title="표현식인 문과 표현식이 아닌 문"></a>표현식인 문과 표현식이 아닌 문</h1><p>표현식인 문은 값으로 평가될 수 있는 문이며, 표현식이 아닌 문은 값으로 평가될 수 없는 문을 말한다. 예를들어, 변수 선언문은 값으로 평가될 수 없으므로 표현식이 아닌 문이다.</p>
-<p>표현식인 문과 표현식이 아닌 문을 구별하는 가장 간단한 방법은 변수에 할당해 보는 것이다.</p>
-<p>변수는 값을 저장하기 위한 메모리 공간이였으므로 변수에 할당할 수 있는 문은 즉 값으로 평가된는 표현식이라고 볼 수 있다.</p>
 ]]></content>
       <tags>
         <tag>개발</tag>
@@ -485,93 +621,285 @@
       </tags>
   </entry>
   <entry>
-    <title>[Deep Dive] 제어문</title>
-    <url>/2022/Modern-JavaScript-Deep-Dive-Chapter-8-Control-Flow-Statement/</url>
-    <content><![CDATA[<h1 id="제어문"><a href="#제어문" class="headerlink" title="제어문"></a>제어문</h1><p>제어문은 조건에 따라 코드 블록을 실행(조건문)하거나 반복 실행(반복문)할 때 사용한다.<br>일반적으로 코드는 위에서 아래 방향으로 순차적으로 실행된다.<br>제어문을 사용하면 코드의 실행 흐름을 인위적으로 제어할 수 있다.</p>
-<p>하지만 코드의 실행 순서가 변경되는 것은 코드의 흐름을 혼란스럽게 만들어 가독성을 해치는 단점이 있다.<br>가독성이 좋지 않은 코드는 오류를 발생시키는 원인이 되므로 forEach, map, filter, reduce 같은 고차 함수를 사용한 함수형 프로그래밍 기법에서는 제어문의 사용을 억제하여 복잡성을 해결하려고 노력한다.</p>
-<p>하지만 제어문을 바르게 이해하는 것은 코딩 스킬에 많은 영향을 준다.<br>특히 for 문은 매우 중요하므로 확실히 살펴보도록 하자.</p>
-<h2 id="블록문"><a href="#블록문" class="headerlink" title="블록문"></a>블록문</h2><p>블록문은 0개 이상의 문을 중괄호로 묶은 것으로, 코드 블록 또는 블록이라고 부르기도 한다.<br>자바스크립트는 블록문을 하나의 실행 단위로 취급한다.<br>블록문은 단독으로 사용 가능하나 일반적으로 제어문이나 함수를 정의할 때 사용한다.</p>
-<p>문의 끝에는 세미콜론을 붙이는 것이 일반적이나 블록문은 자체 종결성을 갖기 때문에 블록문의 끝에는 세미콜론을 붙이지 않는다.</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 블록문</span></span><br><span class="line">&#123;</span><br><span class="line">  <span class="keyword">var</span> foo = <span class="number">10</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 제어문</span></span><br><span class="line"><span class="keyword">var</span> x = <span class="number">1</span>;</span><br><span class="line"><span class="keyword">if</span> (x &lt; <span class="number">10</span>) &#123;</span><br><span class="line">  x++;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 함수 선언문</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">sum</span>(<span class="params">a, b</span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> a + b;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+    <title>백준 Node.js 입출력법</title>
+    <url>/2022/Node-js-input-and-output-in-Baekjoon-Online-Judge/</url>
+    <content><![CDATA[<p>지금까지 leetcode와 프로그래머스를 통해 코딩테스트 공부를 하고 있었는데 leetcode는 영어 해석의, 프로그래머스는 적은 문제수의 단점을 가지고 있어 백준을 통해 코딩테스트 연습을 시작해보았다.</p>
+<p>백준에서는 javascript로 코딩테스트를 준비하기 위해 node.js를 선택해야 했는데 프로그래머스에서는 함수만 작성하면 되었던 반면에 백준에서는 입출력을 직접 해주어야 했다.</p>
+<p>백준에서 node.js로 입력을 받는 방법은 크게 두가지로 readline 모듈을 사용하는 것과 fs 모듈을 사용하는 것이다. fs 모듈의 경우 readline 모듈보다 코드가 간단하고 더 빠르다고 해 fs 모듈의 대해 찾아보았다.</p>
+<hr>
 
-<h2 id="조건문"><a href="#조건문" class="headerlink" title="조건문"></a>조건문</h2><p>조건문은 주어진 조건식의 평가 결과에 따라 코드 블록의 실행을 결정한다.<br>조건식은 불리언 값으로 평가될 수 있는 표현식이다.</p>
-<p>자바스크립트는 if…else 문과 switch 문의 두 가지 조건문을 제공한다.</p>
-<h3 id="if…else-문"><a href="#if…else-문" class="headerlink" title="if…else 문"></a>if…else 문</h3><p>if…else 문은 주어진 조건식의 평가 결과에 따라 실행할 코드 블록을 결정한다.<br>조건식의 평가 결과가 true일 경우 if 문의 코드 블록이 실행되고 false일 경우 else 문의 코드 블록이 실행된다.</p>
-<pre>
-if (조건식) {
-  // 조건식이 참이면 이 코드 블록이 실행
-} else {
-  // 조건식이 거짓이면 이 코드 블록이 실행
-}
-</pre>
+<h1 id="fs"><a href="#fs" class="headerlink" title="fs"></a><strong>fs</strong></h1><p>FileSystem의 약자인 fs 모듈은 파일 처리와 관련된 모듈이다. <a href="https://help.acmicpc.net/">BOJ 도움말</a>에서는 다음과 같은 코드로 fs 모듈을 통한 입력을 소개하고 있다.</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> fs = <span class="built_in">require</span>(<span class="string">&#x27;fs&#x27;</span>);</span><br><span class="line"><span class="keyword">let</span> input = fs.<span class="title function_">readFileSync</span>(<span class="string">&#x27;/dev/stdin&#x27;</span>).<span class="title function_">toString</span>().<span class="title function_">split</span>(<span class="string">&#x27; &#x27;</span>);</span><br><span class="line"><span class="keyword">let</span> a = <span class="built_in">parseInt</span>(input[<span class="number">0</span>]);</span><br><span class="line"><span class="keyword">let</span> b = <span class="built_in">parseInt</span>(input[<span class="number">1</span>]);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(a+b);</span><br></pre></td></tr></table></figure>
 
-<p>if 문의 조건식은 불리언 값으로 평가되어야 한다. 만약 if 문의 조건식이 불리언 값이 아닌 값으로 평가되면 자바스크립트 엔진에 의해 암묵적으로 불리언 값으로 강제 변환되어 실행할 코드 블록을 결정한다.</p>
-<p>만약 코드 블록 내의 문이 하나라면 중괄호를 생략할 수 있다.</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> num = <span class="number">2</span>;</span><br><span class="line"><span class="keyword">var</span> kind;</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> (num &gt; <span class="number">0</span>) kind = <span class="string">&#x27;양수&#x27;</span>;</span><br><span class="line"><span class="keyword">else</span> <span class="keyword">if</span> (num &lt; <span class="number">0</span>) kind = <span class="string">&#x27;음수&#x27;</span>;</span><br><span class="line"><span class="keyword">else</span> kind = <span class="string">&#x27;영&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(kind); <span class="comment">// 양수</span></span><br></pre></td></tr></table></figure>
+<p>하지만 위 코드를 이용할때에도 입력되는 값에 따라 에러가 발생하는 경우가 있어 다양한 방식의 입력법에 대해 정리해 보았다.</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="number">1.</span> 하나의 값을 입력받을 때</span><br><span class="line"><span class="keyword">const</span> fs = <span class="built_in">require</span>(<span class="string">&#x27;fs&#x27;</span>);</span><br><span class="line"><span class="keyword">const</span> input = fs.<span class="title function_">readFileSync</span>(<span class="string">&quot;/dev/stdin&quot;</span>).<span class="title function_">toString</span>().<span class="title function_">trim</span>();</span><br><span class="line"></span><br><span class="line"><span class="number">2.</span> 공백으로 구분된 한 줄의 값들을 입력받을 때</span><br><span class="line"><span class="keyword">const</span> fs = <span class="built_in">require</span>(<span class="string">&#x27;fs&#x27;</span>);</span><br><span class="line"><span class="keyword">const</span> input = fs.<span class="title function_">readFileSync</span>(<span class="string">&quot;/dev/stdin&quot;</span>).<span class="title function_">toString</span>().<span class="title function_">trim</span>().<span class="title function_">split</span>(<span class="string">&quot; &quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="number">3.</span> 여러 줄의 값들을 입력받을 때</span><br><span class="line"><span class="keyword">const</span> fs = <span class="built_in">require</span>(<span class="string">&#x27;fs&#x27;</span>);</span><br><span class="line"><span class="keyword">const</span> input = fs.<span class="title function_">readFileSync</span>(<span class="string">&quot;/dev/stdin&quot;</span>).<span class="title function_">toString</span>().<span class="title function_">trim</span>().<span class="title function_">split</span>(<span class="string">&quot;\n&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="number">4.</span> 첫 번째 줄에 자연수 n을 입력받고, 그 다음줄에 공백으로 구분된 n개의 값들을 입력받을 때</span><br><span class="line"><span class="keyword">const</span> fs = <span class="built_in">require</span>(<span class="string">&#x27;fs&#x27;</span>);</span><br><span class="line"><span class="keyword">const</span> [n, ...arr] = fs.<span class="title function_">readFileSync</span>(<span class="string">&quot;/dev/stdin&quot;</span>).<span class="title function_">toString</span>().<span class="title function_">trim</span>().<span class="title function_">split</span>(<span class="regexp">/\s/</span>);</span><br><span class="line"></span><br><span class="line"><span class="number">5.</span> 첫 번째 줄에 자연수 n을 입력받고, 그 다음줄부터 n개의 줄에 걸쳐 한 줄에 하나의 값을 입력받을 때</span><br><span class="line"><span class="keyword">const</span> fs = <span class="built_in">require</span>(<span class="string">&#x27;fs&#x27;</span>);</span><br><span class="line"><span class="keyword">const</span> [n, ...arr] = fs.<span class="title function_">readFileSync</span>(<span class="string">&quot;/dev/stdin&quot;</span>).<span class="title function_">toString</span>().<span class="title function_">trim</span>().<span class="title function_">split</span>(<span class="string">&quot;\n&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="number">6.</span> 하나의 값 또는 공백으로 구분된 여러 값들을 여러 줄에 걸쳐 뒤죽박죽 섞여서 입력받을 때</span><br><span class="line">  ex) n 입력 - 공백으로 구분된 n개의 값 입력 - m 입력 - 여러 줄에 걸쳐 m개의 값 입력</span><br><span class="line"><span class="keyword">const</span> fs = <span class="built_in">require</span>(<span class="string">&#x27;fs&#x27;</span>);</span><br><span class="line"><span class="keyword">const</span> input = fs.<span class="title function_">readFileSync</span>(<span class="string">&quot;/dev/stdin&quot;</span>).<span class="title function_">toString</span>().<span class="title function_">trim</span>().<span class="title function_">split</span>(<span class="regexp">/\s/</span>);</span><br><span class="line"><span class="keyword">const</span> n = input[<span class="number">0</span>];</span><br><span class="line"><span class="keyword">const</span> n_arr = input.<span class="title function_">slice</span>(<span class="number">1</span>, n+<span class="number">1</span>);</span><br><span class="line"><span class="keyword">const</span> [m, ...m_arr] = input.<span class="title function_">slice</span>(n+<span class="number">1</span>);</span><br></pre></td></tr></table></figure>
+<p>최종 결과 확인을 위해선 <strong>console.log()</strong> 를 통해 값을 출력해주면 된다.</p>
+<hr>
 
-<p>대부분의 if…else 문은 삼항 조건 연산자로 바꿔 쓸 수 있다.<br>연산자에서도 살펴보았듯이 조건에 따라 단순히 값을 결정하여 변수에 할당하는 경우 if…else 문보다 삼항 조건 연산자를 사용하는 편이 가독성이 좋다.<br>하지만 조건에 따라 실행해야 할 내용이 복잡하여 여러 줄의 문이 필요하다면 if…else 문을 사용하는 편이 가독성이 좋다.</p>
-<h3 id="switch-문"><a href="#switch-문" class="headerlink" title="switch 문"></a>switch 문</h3><p>switch 문은 주어진 표현식을 평가하여 그 값과 일치하는 표현식을 갖는 case 문으로 실행 흐름을 옮긴다.<br>case 문은 상황을 의미하는 표현식을 지정하고 콜론으로 마친다. 그리고 그 뒤에 실행할 문들을 위치시킨다.</p>
-<p>switch 문의 표현식과 일치하는 case 문이 없다면 실행 순서는 default 문으로 이동한다. default 문은 선택사항이다.</p>
-<pre>
-switch (표현식) {
- case 표현식1:
-  switch 문의 표현식과 표현식 1이 일치하면 실행될 문;
-  break;
- case 표현식2:
-  switch 문의 표현식과 표현식 2가 일치하면 실행될 문;
-  break;
- default:
-  switch 문의 표현식과 일치하는 case 문이 없을 때 실행될 문;
-}
-</pre>
-
-<p>if…else 문의 조건식은 불리언 값으로 평가되어야 하지만 switch 문의 표현식은 불리언 값보다는 문자열이나 숫자 값인 경우가 많다.<br>즉 switch 문은 논리적 참, 거짓보다는 다양한 상황(case)에 따라 실행할 코드 블록을 결정할 때 사용한다.</p>
-<p>swtich 문은 case, default, break 등 다양한 키워드를 사용해야 하고 폴스루가 발생한느 등 문법도 복잡하다.<br>따라서 C 언어를 기반으로 하는 프로그래밍 언어는 대부분 switch 문을 지원하지만 파이썬과 같이 switch 문ㅇ을 지원하지 않는 프로그래밍 언어도 있다.</p>
-<p>만약 if…else 문으로 해결할 수 있다면 switch 문보다 if…else 문을 사용하는 편이 좋다.<br>하지만 조건이 너무 많아 if…else 문보다 switch 문을 사용했을 때 가독성이 더 좋다면 switch문을 사용하는 편이 좋다.</p>
-<h2 id="반복문"><a href="#반복문" class="headerlink" title="반복문"></a>반복문</h2><p>반복문은 조건식의 평가 결과가 참인 경우 코드 블록을 실행한다. 그 후 조건식을 다시 평가하여 여전히 참인 경우 코드 블록을 다시 실행한다.<br>이는 조건식이 거짓일 때까지 반복된다.</p>
-<p>자바스크립트는 for 문, while 문, do…while 문의 세 가지 반복문을 제공한다</p>
-<h3 id="for-문"><a href="#for-문" class="headerlink" title="for 문"></a>for 문</h3><p>for 문은 조건식이 거짓으로 평가될 때까지 코드 블록을 반복 실행한다. 가장 일반적으로 사용되는 for 문의 형태는 다음과 같다.</p>
-<pre>
-for (변수 선언문 또는 할당문; 조건식; 증감식) {
- 조건식이 참인 경우 반복 실행될 문;
-}
-</pre>
-
-<p>for 문은 매우 중요하므로 어떻게 동작하는지 많은 연습을 통해 확실히 이해해야 한다.</p>
-<p>for 문의 변수 선언문, 조건식, 증감식은 모두 옵션이므로 반드시 사용할 필요는 없다. 단, 어떤 식도 선언하지 않으면 무한루프가 된다.</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span> (;;) &#123;...&#125; <span class="comment">// 무한루프</span></span><br></pre></td></tr></table></figure>
-
-<p>for 문 내에 for 문을 중첩해 사용할 수 있다. 이를 중첩 for 문이라 한다. 다음은 두 개의 주사위를 던졌을 때 두 눈의 합이 6이 되는 모든 경우의 수를 출력하기 위해 이중 중첩 for 문을 사용한 예다.</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">1</span>; i &lt;= <span class="number">6</span>; i++) &#123;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">var</span> j = <span class="number">1</span>; j &lt;= <span class="number">6</span>; j++) &#123;</span><br><span class="line">    <span class="keyword">if</span> (i + j === <span class="number">6</span>) <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`[<span class="subst">$&#123;i&#125;</span>, <span class="subst">$&#123;j&#125;</span>]`</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// [1, 5] [2, 4] [3, 3] [4, 2] [5, 1]</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="while-문"><a href="#while-문" class="headerlink" title="while 문"></a>while 문</h3><p>while 문은 주어진 조건식의 평가 결과가 참이면 코드 블록을 계속해서 반복 실행한다.<br>for 문은 반복 횟수가 명확할 때 주로 사용하고 while 문은 반복 횟수가 불명확할 때 주로 사용한다.</p>
-<p>while 문은 조건문의 평가 결과가 거짓이 되면 코드 블록을 실행하지 않고 종료한다. 만약 조건식의 평가 결과가 불리언 값이 아니면 불리언 값으로 강제 변환하여 논리적 참, 거짓을 구별한다.</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> count = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span> (count &lt; <span class="number">3</span>) &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(count); <span class="comment">// 0 1 2</span></span><br><span class="line">  count++;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>조건식의 평가 결과가 언제나 참이면 무한루프가 된다.<br>무한루프에서 탈출하기 위해서는 코드 블록 내에 if 문으로 탈출 조건을 만들고 break 문으로 코드 블록을 탈출한다.</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> count = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 무한루프</span></span><br><span class="line"><span class="keyword">while</span> (<span class="literal">true</span>) &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(count); <span class="comment">// 0 1 2</span></span><br><span class="line">  count++;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">if</span> (count === <span class="number">3</span>) <span class="keyword">break</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="do…while-문"><a href="#do…while-문" class="headerlink" title="do…while 문"></a>do…while 문</h3><p>do…while 문은 코드 블록을 먼저 실행하고 조건식을 평가한다. 따라서 코드 블록은 무조건 한 번 이상 실행된다.</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> count = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">do</span> &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(count); <span class="comment">// 0 1 2</span></span><br><span class="line">  count++;</span><br><span class="line">&#125; <span class="keyword">while</span> (count &lt; <span class="number">3</span>);</span><br></pre></td></tr></table></figure>
-
-<h2 id="break-문"><a href="#break-문" class="headerlink" title="break 문"></a>break 문</h2><p>switch 문과 while 문에서 살펴보았듯이 break 문은 코드 블록을 탈출한다.<br>더 정확히 말하자면 레이블 문, 반복문 또는 switch 문의 코드 블록을 탈출한다. 레이블 문, 반복문, switch 문의 코드 블록 외에 break 문을 사용하면 SyntaxError가 발생한다.</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> (<span class="literal">true</span>) &#123;</span><br><span class="line">  <span class="keyword">break</span>; <span class="comment">// Uncaught SyntaxError: Illegal break statement</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>참고로 레이블 문은 식별자가 붙은 문을 말한다.<br>레이블 문은 프로그램의 실행 순서를 제어하는데 사용한다. 사실 switch 문의 case 문과 default 문 역시 레이블 문이다.<br>레이블 문을 탈출하려면 break 문에 레이블 식별자를 지정한다.</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="attr">foo</span>: &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="number">1</span>);</span><br><span class="line">  <span class="keyword">break</span> foo;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="number">2</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;Done!&#x27;</span>);</span><br><span class="line"><span class="comment">// 1</span></span><br><span class="line"><span class="comment">// Done!</span></span><br></pre></td></tr></table></figure>
-
-<p>레이블 문을 사용하면 프로그램의 흐름이 복잡해져서 가독성이 나빠지고 오류를 발생시킬 가능성이 높아지기 때문에 일반적으로 권장하지 않는다.</p>
-</blockquote>
-<h2 id="continue-문"><a href="#continue-문" class="headerlink" title="continue 문"></a>continue 문</h2><p>continue 문은 반복문의 코드 블록 실행을 현 지점에서 중단하고 반복문의 증감식으로 실행 흐름을 이동시킨다.<br>break 문처럼 반복문을 탈출하지는 않는다.</p>
-<p>다음은 문자열에서 특정 문자의 개수를 세는 예다.</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> string = <span class="string">&#x27;Hello World.&#x27;</span>;</span><br><span class="line"><span class="keyword">var</span> search = <span class="string">&#x27;l&#x27;</span>;</span><br><span class="line"><span class="keyword">var</span> count = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; string.<span class="property">length</span>; i++) &#123;</span><br><span class="line">  <span class="keyword">if</span> (string[i] !== search) <span class="keyword">continue</span>; <span class="comment">// &#x27;l&#x27;이 아니면 현 지점에서 실행을 중단하고 반복문의 증감식으로 이동한다.</span></span><br><span class="line">  count++; <span class="comment">// continue 문이 실행되면 이 문은 실행되지 않는다.</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(count); <span class="comment">// 3</span></span><br></pre></td></tr></table></figure>
-
+<h2 id="참고"><a href="#참고" class="headerlink" title="참고"></a>참고</h2><p><a href="https://overcome-the-limits.tistory.com/25">[알고리즘] 백준 0.nodejs 입력하기</a><br><a href="https://tesseractjh.tistory.com/39">Node.js로 백준(BOJ) 문제 풀 때 유의할 점들</a></p>
 ]]></content>
       <tags>
         <tag>개발</tag>
-        <tag>자바스크립트</tag>
-        <tag>모던 자바스크립트 Deep Dive</tag>
+        <tag>JavaScript</tag>
+        <tag>코딩테스트</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>첫 프로젝트를 마치고</title>
+    <url>/2022/Retrospective-about-my-first-project/</url>
+    <content><![CDATA[<h1 id="들어가며"><a href="#들어가며" class="headerlink" title="들어가며"></a>들어가며</h1><p>약 2주동안 진행했던 프로젝트가 종료되었다. 개발 공부를 시작한지도 얼마 안 되었고 처음으로 해본 프로젝트인지라 2주가 정말 정신없이 지나가버렸다. 배운점도 많았고 아쉬운점도 많았는데 회고를 하며 정리해보려고 한다.</p>
+<p>완성된 결과물은 <a href="https://woowahal-6go5.vercel.app/">https://woowahal-6go5.vercel.app/</a> 에서 확인 가능하다.</p>
+<hr>
+
+<h1 id="프로젝트-우아할"><a href="#프로젝트-우아할" class="headerlink" title="프로젝트 우아할"></a>프로젝트 우아할</h1><p>이전글에서 언급했듯이 우리 팀은 배달의 민족 앱을 웹 페이지로 클론하기로 했다(그래서 팀명도 <strong>우아할</strong>형제들로 정했다).</p>
+<p>개발 기간은 2022-09-19 ~ 2022-09-30로 약 2주 동안 진행되었고, 팀원은 나를 포함해 총 3명이었다.</p>
+<p>프로젝트 기간이나 인원에 비해 배달의 민족이 가지고 있는 콘텐츠가 너무 많아 모든 페이지를 클론 할 수는 없었고 배달의 민족에서 배달하기 까지의 주요 프로세스를 메인,카테고리, 리스트, 디테일, 오더, 장바구니, 결과의 7개 페이지로 나누어 구현해 보았다.</p>
+<p>나는 그 중 메인페이지와 카테고리 페이지를 주로 담당했다.</p>
+<hr>
+
+<h2 id="기술-스택"><a href="#기술-스택" class="headerlink" title="기술 스택"></a>기술 스택</h2><p>페이지를 구현하면서 Figma, Git, npm, HTML, CSS, Sass, JS, Vercel을 이용했다.</p>
+<h3 id="Figma"><a href="#Figma" class="headerlink" title="Figma"></a>Figma</h3><p>구현해야 하는 페이지들의 와이어프레임 및 컴포넌트들을 시각적으로 구성해보기 위해 Figma를 이용했다.</p>
+<p>페이지에서 주사용되는 컬러를 시스템화해서 플러그인을 통해 변수로 쉽게 추출할 수 있었다.</p>
+<p>아직 툴 사용이 미숙해 많은 기능을 활용하지는 못한것 같아 아쉽다</p>
+<h3 id="Git-Github"><a href="#Git-Github" class="headerlink" title="Git, Github"></a>Git, Github</h3><p>프로젝트의 버전관리를 위해 Git을 이용했다. Git flow 전략을 모방해 메인을 제외한 develop, subdev, release 3개의 branch를 만들었다.</p>
+<p>기본적으로 모든 변경사항을 subdev에 push하였고, merge가 잘 완료되면 log를 추가해 develop으로 옮겼다. 최종적으로 public 폴더만 build해 release에 저장했다.</p>
+<h3 id="npm"><a href="#npm" class="headerlink" title="npm"></a>npm</h3><p>개발환경 세팅과 최종적인 프로젝트 파일의 최적화를 위해 npm을 이용했다.</p>
+<p>rimraf, npm-run-all, live-server, sass는 개발환경 세팅을 위해 webpack, postcss는 최적화를 위해 사용해 보았다.</p>
+<h3 id="HTML"><a href="#HTML" class="headerlink" title="HTML"></a>HTML</h3><p>HTML의 경우 시맨틱 마크업을 제일 중요시 여겼는데 먼저 손으로 페이지의 구조를 설계 한 후 코드로 작성했다. 그 후 코드리뷰를 시간을 가져 팀원들끼리 왜 그렇게 코드를 작성했는지, 구조가 논리적인지 설득하는 시간을 가졌다.</p>
+<h3 id="CSS-Sass"><a href="#CSS-Sass" class="headerlink" title="CSS, Sass"></a>CSS, Sass</h3><p>CSS를 효과적으로 사용하기 위해 Sass를 이용했고 이 때 가장 중요시 여긴점은 컨벤션이였다. 기본적으로 BEM 방식을 이용한 Naming과 최대한 구체적인 클래스명을 사용하기로 정했다.</p>
+<hr>
+
+<h2 id="KPT"><a href="#KPT" class="headerlink" title="KPT"></a>KPT</h2><h3 id="Keep"><a href="#Keep" class="headerlink" title="Keep"></a>Keep</h3><ul>
+<li><p>프로젝트를 시작하기 전 환경설정을 중요시 여기고 이 부분에 대해 많이 논의 했는데 그 결과 git 충돌도 거의 없었고 일어난 충돌도 금방 해결 할 수 있었다.</p>
+</li>
+<li><p>1차적인 프로젝트 결과물을 가지고 lighthouse 검사를 통해 부족한 부분을 찾고 개선하기 위해 노력했다. 실질적인 성능 향상을 볼 수 있어서 좋았다.</p>
+</li>
+<li><p>의견충돌이 있을때 그냥 넘어가지 않고 서로를 설득하기 위해 노력했는데 생각에 대한 근거를 찾고 정리해보며 의견을 구체화 시킬 수 있었다.</p>
+</li>
+</ul>
+<h3 id="Problem"><a href="#Problem" class="headerlink" title="Problem"></a>Problem</h3><ul>
+<li><p>Sass 사용의 아쉬움 - Sass 를 사용하기 위해 폴더 구조를 잘 분리한것은 좋았으나 중첩규칙, 변수 이외에는 잘 사용하지 못했다. 특히 중복적으로 사용되는 코드들을 믹스인으로 분리했어야 했는데 그러지 못했다.</p>
+</li>
+<li><p>미숙했던 초반 소통</p>
+</li>
+</ul>
+<h3 id="Try"><a href="#Try" class="headerlink" title="Try"></a>Try</h3><ul>
+<li>문서화의 중요성 - 서로 상의해 결정했던 부분들이나 컴포넌트에 대한 문서들을 남겨 서로 참고할 수 있도록 하자고 말했었지만 실제 프로젝트를 진행하면서 잘 수행되지 못했다. 문서화가 잘 되어 있는 다른 프로젝트 조의 경우 전체적인 프로젝트 상황에 대한 파악이 수월해 보였다. 다음 프로젝트를 진행할 때에는 꼭 문서화에 신경써봐야겠다.</li>
+</ul>
+<hr>
+
+<h1 id="마치며"><a href="#마치며" class="headerlink" title="마치며"></a>마치며</h1><p>첫 프로젝트를 진행하며 많은 것을 배울 수 있어 정말 좋았다. 하지만 역시 머리에 계속해서 남는것은 아쉬운 점들인 것 같다.</p>
+<p>평소 배달의 민족을 많이 사용하면서 이런 기능이 있으면 좋겠다고 생각해 오던것이 있다. 나는 결정장애가 심한 편이라 어떤것을 먹을지, 또 메뉴를 정해도 어디서 시킬지 정말 많이 고민한다. 그래서 카테고리만 선택하면 룰렛이 돌아가듯이 랜덤으로 가게와 메뉴가 선택되면 좋겠다고 생각했다.</p>
+<p>마침 배달의 민족을 웹으로 구현하기로 결정해서 이 기능도 추가해 보려고 했는데 막상 스스로의 자바스크립트 실력도 너무 부족하고 어떤 데이터베이스를 기반으로 정보를 가져와야 할지 아이디어 역시도 너무 구체적이지 않아 쉽지 않았다.</p>
+<p>스스로 많이 부족하다고 느끼는 점이 가장 아쉬웠다.<br>다만 앞으로 3개월 동안 커넥to 과정을 통해 모던 자바스크립트 Deep Dive의 저자이신 이웅모 강사님에게 자바스크립트 강의를 듣게 되었는데, 정말 좋은 기회이니 만큼 열심히 배우고 또 평상시 가지고 있던 아이디어들에 대해서도 구체화해 프로젝트를 리팩토링해봐야 겠다.</p>
+]]></content>
+      <tags>
+        <tag>개발</tag>
+        <tag>회고</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Sass Basic</title>
+    <url>/2022/Sass-Basic/</url>
+    <content><![CDATA[<h1 id="Sass"><a href="#Sass" class="headerlink" title="Sass?"></a>Sass?</h1><p>CSS를 사용해 웹 애플리케이션 스타일을 관리하는 것은 애플리케이션 규모가 커지고 복잡해질수록 매우 어렵다.</p>
+<p>반면 Sass와 같은 프리프로세서(Pre-Processor, 전처리기)를 사용하면 매우 효과적으로 복잡한 애플리케이션 스타일을 관리할 수 있다.</p>
+<p>Sass란 Syntactically Awesome Style Sheets의 준말로 CSS가 아직은 할 수 없는 다양한 기능(중첩, 함수, 믹스인, 상속 등)을 제공한다.</p>
+<p>Sass말고도 Stylus, Less와 같은 전처리기가 존재하지만 현재 Sass가 통계상 가장 사용자가 많으면서 만족도가 높아 배웠을 때 가장 유용하다고 할 수 있다. (<a href="https://2021.stateofcss.com/ko-KR/technologies/#scatterplot_overview">설문결과</a>)</p>
+<hr>
+
+<h2 id="설치"><a href="#설치" class="headerlink" title="설치"></a>설치</h2><p>Sass를 이용하기 위해선 먼저 설치를 해야한다. <a href="https://sass-lang.com/install">공식사이트</a>를 참고해 다양한 방식으로 설치가 가능하다. 나는 Node.js를 이용하고 있기에 npm을 통해 설치해 주었다.</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install -g sass</span><br></pre></td></tr></table></figure>
+
+<h2 id="컴파일"><a href="#컴파일" class="headerlink" title="컴파일"></a>컴파일</h2><p>Sass를 설치해 이용하고자 할 때, 웹 브라우저는 Sass파일을 해석할 수 없기에 Sass파일을 CSS파일로 변경해야 한다. 이를 컴파일이라 하는데 다음과 같이 사용 가능하다.</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sass input.scss output.css</span><br></pre></td></tr></table></figure>
+<p>단일 파일이 아니라 폴더 단위의 변경을 처리한다면 <code>:</code>을 이용할 수 있다.</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sass src/scss:public/css</span><br></pre></td></tr></table></figure>
+<p>더 많은 옵션은 <a href="https://sass-lang.com/documentation/cli/dart-sass">Dart Sass CLI</a>를 참고할 수 있다.</p>
+<hr>
+
+<h2 id="문법"><a href="#문법" class="headerlink" title="문법"></a>문법</h2><p>Sass파일은 사용하는 문법에 따라 <code>.scss</code>의 확장자를 가진 SCSS 구문과 <code>.sass</code>를 가진 Sass구문 2가지로 나뉜다.</p>
+<h3 id="Sass-구문"><a href="#Sass-구문" class="headerlink" title="Sass 구문"></a>Sass 구문</h3><p>Sass 구문은 중괄호, 세미콜론을 생략하고 들여쓰기 문법을 사용한다. 좀 더 간결하고 작성하기 편리하며 <code>&#123;&#125;</code>나 <code>;</code>를 사용하지 않아도 되어 코드가 깔끔하다.</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">.button</span><br><span class="line">	cursor: pointer</span><br><span class="line">	&amp;:disabled</span><br><span class="line">		cursor: not-allowed</span><br></pre></td></tr></table></figure>
+
+<h3 id="SCSS-구문"><a href="#SCSS-구문" class="headerlink" title="SCSS 구문"></a>SCSS 구문</h3><p>SCSS 구문은 CSS와 유사한 문법을 사용한다. 인라인 코드를 작성할 수 있고, CSS와 유사한 문법을 가지기 때문에 코드 통합이 훨씬 쉽다.</p>
+<figure class="highlight scss"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.button</span> &#123;</span><br><span class="line">	<span class="attribute">cursor</span>: pointer;</span><br><span class="line">	&amp;<span class="selector-pseudo">:disabled</span> &#123;</span><br><span class="line">	  <span class="attribute">cursor</span>: not-allowed;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>서로 장단점이 있기 때문에 회사나 팀에서 원하는 방식 혹은 개인의 취향에 따라서 선택할 수 있다. 일반적으로 CSS 구문과 문제없이 호환되는 SCSS구문이 많이 사용된다.</p>
+<hr>
+
+<h2 id="Sass-Basics"><a href="#Sass-Basics" class="headerlink" title="Sass Basics"></a>Sass Basics</h2><p>수업을 들으면서 Sass의 두 가지 구문중 SCSS를 사용했기에 Sass Basics에 대해 SCSS를 이용한 방법으로 정리하겠다.</p>
+<h3 id="변수-Variables"><a href="#변수-Variables" class="headerlink" title="변수(Variables)"></a>변수(Variables)</h3><p>CSS도 변수 사용이 가능하지만 Sass에서는 <code>$</code>를 이용해 더 쉽게 변수를 사용할 수 있다.</p>
+<p><strong>CSS 변수</strong></p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-pseudo">:root</span> &#123;</span><br><span class="line">  <span class="attr">--spacing-1</span>: <span class="number">4px</span>;</span><br><span class="line">  <span class="attr">--spacing-2</span>: <span class="number">8px</span>;</span><br><span class="line">  <span class="attr">--primary-400</span>: <span class="built_in">hsl</span>(<span class="number">250</span>, <span class="number">75%</span>, <span class="number">60%</span>);</span><br><span class="line">  <span class="attr">--primary-500</span>: <span class="built_in">hsl</span>(<span class="number">250</span>, <span class="number">75%</span>, <span class="number">50%</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">  <span class="attribute">margin-top</span>: <span class="built_in">var</span>(--spacing-<span class="number">2</span>);</span><br><span class="line">  <span class="attribute">color</span>: <span class="built_in">var</span>(--primary-<span class="number">500</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>SCSS 변수</strong></p>
+<figure class="highlight scss"><table><tr><td class="code"><pre><span class="line"><span class="variable">$spacing-1</span>: <span class="number">4px</span>;</span><br><span class="line"><span class="variable">$spacing-2</span>: <span class="number">8px</span>;</span><br><span class="line"><span class="variable">$primary-400</span>: <span class="built_in">hsl</span>(<span class="number">250</span>, <span class="number">75%</span>, <span class="number">60%</span>);</span><br><span class="line"><span class="variable">$primary-500</span>: <span class="built_in">hsl</span>(<span class="number">250</span>, <span class="number">75%</span>, <span class="number">50%</span>);</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">  <span class="attribute">margin-top</span>: <span class="variable">$spacing-2</span>;</span><br><span class="line">  <span class="attribute">color</span>: <span class="variable">$primary-500</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="중첩-Nesting"><a href="#중첩-Nesting" class="headerlink" title="중첩(Nesting)"></a>중첩(Nesting)</h3><p>CSS는 HTML과 달리 시각적인 계층 구조와 명확히 중첩된 구문을 작성할 수 없다. 하지만 Sass는 HTML과 동일하게 시각적 계층 구조를 따르는 방식으로 스타일을 작성하는 방법을 지원한다.</p>
+<p><strong>CSS 구문</strong></p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">nav</span> <span class="selector-tag">ul</span> &#123;</span><br><span class="line">  <span class="attribute">margin</span>: <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">padding</span>: <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">list-style</span>: none;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">nav</span> <span class="selector-tag">li</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: inline-block;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">nav</span> <span class="selector-tag">a</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: block;</span><br><span class="line">  <span class="attribute">padding</span>: <span class="number">6px</span> <span class="number">12px</span>;</span><br><span class="line">  <span class="attribute">text-decoration</span>: none;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>SCSS 구문</strong></p>
+<figure class="highlight scss"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">nav</span> &#123;</span><br><span class="line">  <span class="selector-tag">ul</span> &#123;</span><br><span class="line">    <span class="attribute">margin</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">padding</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">list-style</span>: none;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="selector-tag">li</span> &#123; <span class="attribute">display</span>: inline-block; &#125;</span><br><span class="line"></span><br><span class="line">  <span class="selector-tag">a</span> &#123;</span><br><span class="line">    <span class="attribute">display</span>: block;</span><br><span class="line">    <span class="attribute">padding</span>: <span class="number">6px</span> <span class="number">12px</span>;</span><br><span class="line">    <span class="attribute">text-decoration</span>: none;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>Sass 중첩 구문은 시각적으로 계층 구조를 파악할 수 있어 CSS 보다 직관성이 높다. 하지만 많은 중첩은 오히려 복잡성을 증가시켜 가독성이 떨어지므로 피해야한다.</p>
+<h3 id="모듈-modules"><a href="#모듈-modules" class="headerlink" title="모듈(modules)"></a>모듈(modules)</h3><p>모듈은 독립적으로 묶인 작은 코드 조각으로, Sass는 관심사에 따라 여러 조각의 코드로 묶인 파일을 관리할 수 있는 기능인 모듈화를 제공한다. 모듈은 애플리케이션 스타일을 유지 관리하기 쉽게 만들어 주는 매우 효과적인 방법이다.</p>
+<p>Sass(정확히는 Dart Sass)에서는 <code>@import rule</code>대신 <code>@use</code>를 이용해 다른 스타일 모듈을 불러올 수 있다. Sass 파일 확장자와 언더스코어(_)는 생략 가능하다.</p>
+<p><strong>_base.scss</strong></p>
+<figure class="highlight scss"><table><tr><td class="code"><pre><span class="line"><span class="variable">$font-stack</span>: Helvetica, sans-serif;</span><br><span class="line"><span class="variable">$primary-color</span>: <span class="number">#333</span>;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">body</span> &#123;</span><br><span class="line">  <span class="attribute">font</span>: <span class="number">100%</span> <span class="variable">$font-stack</span>;</span><br><span class="line">  <span class="attribute">color</span>: <span class="variable">$primary-color</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>불러온 모듈은 기본적으로 파일 이름을 네임스페이스(namespace)로 가지며 점(.) 문법을 사용해 모듈의 변수 등에 접근할 수 있다.</p>
+<p><strong>styles.scss</strong></p>
+<figure class="highlight scss"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@use</span> <span class="string">&#x27;base&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.inverse</span> &#123;</span><br><span class="line">  <span class="attribute">background-color</span>: base.<span class="variable">$primary-color</span>;</span><br><span class="line">  <span class="attribute">color</span>: white;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>네임스페이스 이름을 다른 이름으로 변경해 사용하고자 할 경우 as를 사용한다. 특히 as에 별(*) 기호를 사용할 경우 네임스페이스 없이 바로 모듈에서 내보낸 변수를 사용할 수 있다.</p>
+<figure class="highlight scss"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@use</span> <span class="string">&#x27;base&#x27;</span> as *;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.inverse</span> &#123;</span><br><span class="line">  <span class="attribute">background-color</span>: <span class="variable">$primary-color</span>;</span><br><span class="line">  <span class="attribute">color</span>: white;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+<p><strong>CSS</strong></p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">body</span> &#123;</span><br><span class="line">  <span class="attribute">font</span>: <span class="number">100%</span> Helvetica, sans-serif;</span><br><span class="line">  <span class="attribute">color</span>: <span class="number">#333</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.inverse</span> &#123;</span><br><span class="line">  <span class="attribute">background-color</span>: <span class="number">#333</span>;</span><br><span class="line">  <span class="attribute">color</span>: white;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="믹스인-mixins"><a href="#믹스인-mixins" class="headerlink" title="믹스인(mixins)"></a>믹스인(mixins)</h3><p>CSS는 코드를 재사용 할 수 있는 기능이 제공되지 않기 때문에 코드 중복이 잦은 언어이다. 하지만 Sass는 코드를 효율적으로 재사용할 수 있도록 믹스인 기능을 제공한다. 믹스인을 이용해 재사용할 코드 그룹을  선언할 수 있다.</p>
+<p><strong>SCSS</strong></p>
+<figure class="highlight scss"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@mixin</span> theme(<span class="variable">$theme</span>: DarkGray) &#123;</span><br><span class="line">  <span class="attribute">background</span>: <span class="variable">$theme</span>;</span><br><span class="line">  <span class="attribute">box-shadow</span>: <span class="number">0</span> <span class="number">0</span> <span class="number">1px</span> <span class="built_in">rgba</span>(<span class="variable">$theme</span>, .<span class="number">25</span>);</span><br><span class="line">  <span class="attribute">color</span>: <span class="number">#fff</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.info</span> &#123;</span><br><span class="line">  <span class="keyword">@include</span> theme;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.alert</span> &#123;</span><br><span class="line">  <span class="keyword">@include</span> theme(<span class="variable">$theme</span>: DarkRed);</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.success</span> &#123;</span><br><span class="line">  <span class="keyword">@include</span> theme(<span class="variable">$theme</span>: DarkGreen);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>CSS</strong></p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.info</span> &#123;</span><br><span class="line">  <span class="attribute">background</span>: DarkGray;</span><br><span class="line">  <span class="attribute">box-shadow</span>: <span class="number">0</span> <span class="number">0</span> <span class="number">1px</span> <span class="built_in">rgba</span>(<span class="number">169</span>, <span class="number">169</span>, <span class="number">169</span>, <span class="number">0.25</span>);</span><br><span class="line">  <span class="attribute">color</span>: <span class="number">#fff</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.alert</span> &#123;</span><br><span class="line">  <span class="attribute">background</span>: DarkRed;</span><br><span class="line">  <span class="attribute">box-shadow</span>: <span class="number">0</span> <span class="number">0</span> <span class="number">1px</span> <span class="built_in">rgba</span>(<span class="number">139</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0.25</span>);</span><br><span class="line">  <span class="attribute">color</span>: <span class="number">#fff</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.success</span> &#123;</span><br><span class="line">  <span class="attribute">background</span>: DarkGreen;</span><br><span class="line">  <span class="attribute">box-shadow</span>: <span class="number">0</span> <span class="number">0</span> <span class="number">1px</span> <span class="built_in">rgba</span>(<span class="number">0</span>, <span class="number">100</span>, <span class="number">0</span>, <span class="number">0.25</span>);</span><br><span class="line">  <span class="attribute">color</span>: <span class="number">#fff</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><code>@mixin</code>과 이름을 통해 믹스인을 만들 수 있다. 믹스인을 만든 후에는 <code>@include</code>와 이름을 선언해 믹스인을 이용 할 수 있다. 또한 믹스인은 JavaScript 함수처럼 매개변수를 설정할 수 있는데, 매개변수를 사용하면 믹스인 외부에서 사용자가 전달한 값을 믹스인 내부에서 사용해 재사용성을 더 높여줄 수 있다.</p>
+<h3 id="확장-x2F-상속-extend-x2F-inheritance"><a href="#확장-x2F-상속-extend-x2F-inheritance" class="headerlink" title="확장&#x2F;상속 (extend&#x2F;inheritance)"></a>확장&#x2F;상속 (extend&#x2F;inheritance)</h3><p>선택자 이름 앞에 <code>%</code>를 사용해 선언한 플레이스홀더 클래스는 스타일을 확장할 때만 사용되는 특수한 유형의 클래스로 여러 선택자에서 공유할 수 있다. 스타일 집합을 공유할 때는 <code>@extend</code>를 사용한다.</p>
+<p>이 방법은 스타일 코드를 반복 생성하는 믹스인과 달리, 스타일 코드 집합 하나를 재사용하는데 목적을 두고 있어 보다 코드를 깨끗하게 유지하는데 도움이 될 수 있다.</p>
+<p><strong>SCSS</strong></p>
+<figure class="highlight scss"><table><tr><td class="code"><pre><span class="line">%message-shared &#123;</span><br><span class="line">  <span class="attribute">border</span>: <span class="number">1px</span> solid <span class="number">#ccc</span>;</span><br><span class="line">  <span class="attribute">padding</span>: <span class="number">10px</span>;</span><br><span class="line">  <span class="attribute">color</span>: <span class="number">#333</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.message</span> &#123;</span><br><span class="line">  <span class="keyword">@extend</span> %message-shared;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.success</span> &#123;</span><br><span class="line">  <span class="keyword">@extend</span> %message-shared;</span><br><span class="line">  <span class="attribute">border-color</span>: green;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.error</span> &#123;</span><br><span class="line">  <span class="keyword">@extend</span> %message-shared;</span><br><span class="line">  <span class="attribute">border-color</span>: red;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.warning</span> &#123;</span><br><span class="line">  <span class="keyword">@extend</span> %message-shared;</span><br><span class="line">  <span class="attribute">border-color</span>: yellow;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>CSS</strong></p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.message</span>, <span class="selector-class">.success</span>, <span class="selector-class">.error</span>, <span class="selector-class">.warning</span> &#123;</span><br><span class="line">  <span class="attribute">border</span>: <span class="number">1px</span> solid <span class="number">#ccc</span>;</span><br><span class="line">  <span class="attribute">padding</span>: <span class="number">10px</span>;</span><br><span class="line">  <span class="attribute">color</span>: <span class="number">#333</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.success</span> &#123;</span><br><span class="line">  <span class="attribute">border-color</span>: green;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.error</span> &#123;</span><br><span class="line">  <span class="attribute">border-color</span>: red;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.warning</span> &#123;</span><br><span class="line">  <span class="attribute">border-color</span>: yellow;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="연산자-operators"><a href="#연산자-operators" class="headerlink" title="연산자 (operators)"></a>연산자 (operators)</h3><p>CSS에서 수학은 매우 유용하다. Sass는 산술연산자(<code>+</code>, <code>-</code>, <code>*</code>, <code>%</code>) 및 수학 함수(예: <code>math.div()</code>)를 제공한다.</p>
+<p><strong>SCSS</strong></p>
+<figure class="highlight scss"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@use</span> <span class="string">&quot;sass:math&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">article</span><span class="selector-attr">[role=<span class="string">&quot;main&quot;</span>]</span> &#123;</span><br><span class="line">  <span class="attribute">width</span>: math.<span class="built_in">div</span>(<span class="number">600px</span>, <span class="number">960px</span>) * <span class="number">100%</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">aside</span><span class="selector-attr">[role=<span class="string">&quot;complementary&quot;</span>]</span> &#123;</span><br><span class="line">  <span class="attribute">width</span>: math.<span class="built_in">div</span>(<span class="number">300px</span>, <span class="number">960px</span>) * <span class="number">100%</span>;</span><br><span class="line">  <span class="attribute">margin-left</span>: auto;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>CSS</strong></p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">article</span><span class="selector-attr">[role=<span class="string">&quot;main&quot;</span>]</span> &#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">62.5%</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">aside</span><span class="selector-attr">[role=<span class="string">&quot;complementary&quot;</span>]</span> &#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">31.25%</span>;</span><br><span class="line">  <span class="attribute">margin-left</span>: auto;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>특히 <code>math.div()</code>를 이용하기 위해서는 <code>@use &quot;sass:math&quot;</code>를 이용해 Sass에서 기본으로 제공하는 math 모듈을 불러와야 한다. 이때 as *를 이용해 사용한다면 div 태그와 구분이 가지 않으므로 <code>math.div()</code>의 기본 형태로 사용하는 것이 추천된다.</p>
+<hr>
+
+<h1 id="참고"><a href="#참고" class="headerlink" title="참고"></a>참고</h1><ul>
+<li><a href="https://sass-lang.com/guide">https://sass-lang.com/guide</a></li>
+<li><a href="https://euid.notion.site/euid/Sass-04a97ad611cc4436a9f09e9ff052b183">https://euid.notion.site/euid/Sass-04a97ad611cc4436a9f09e9ff052b183</a></li>
+<li><a href="https://heropy.blog/2018/01/31/sass/">https://heropy.blog/2018/01/31/sass/</a></li>
+</ul>
+]]></content>
+      <tags>
+        <tag>개발</tag>
+        <tag>Sass</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>WCAG 2.1 정리</title>
+    <url>/2022/WCAG-2-1-organization/</url>
+    <content><![CDATA[<h1 id="👀-WCAG"><a href="#👀-WCAG" class="headerlink" title="👀 WCAG?"></a>👀 WCAG?</h1><blockquote>
+<ul>
+<li>WCAG는 Web Content Accessibility Guideline의 줄임말로 웹 콘텐츠를 접근성 있게 만들기 위한 권장 표준</li>
+</ul>
+</blockquote>
+<ul>
+<li>이 표준을 준수함을 통해 시각, 청각, 운동장애 등 광범위한 장애에 대한 접근성 있는 콘텐츠를 만들 수 있음</li>
+<li>웹 접근성의 기초를 제공하는 4가지 원칙인 인식의 용이성(Perceivable), 운용의 용이성(Operable), 이해의 용이성(Understandable), 견고성(Robust)에 기반을 두고 있음</li>
+<li>원칙을 기반으로 접근성을 위해 어떠한 목표를 달성해야 하는지에 대한 지침과 또 그 지침에 대한 검증가능한 성공기준을 제시하고 있음</li>
+<li>성공기준은 최저수준인 level A 부터 최고수준인 level AAA까지 3단계로 나누어짐</li>
+</ul>
+<hr>
+
+<h1 id="WCAG-2-0-VS-WCAG-2-1"><a href="#WCAG-2-0-VS-WCAG-2-1" class="headerlink" title="WCAG 2.0 VS WCAG 2.1"></a>WCAG 2.0 VS WCAG 2.1</h1><p>WCAG 2.0 이 만들어졌을때는 주로 데스크탑 환경만을 고려했지만 그 후 모바일 산업의 폭발적인 확장으로 모바일 환경을 필수적으로 고려해야하는 상황이 찾아왔다.</p>
+<p>WCAG 2.1은 WCAG 2.0의 요구사항들을 상속하면서 추가적으로 인지나 학습장애가 있는 사용자, 저시력자, 모바일 기기를 사용하는데 장애가 있는 사용자의 접근성 지침을 개선하는 데 목표를 두고있다.</p>
+<p>즉 WCAG 2.1은 새로운 성공기준, 이를 지원하기 위한 정의, 추가사항을 조직하기 위한 지침, 그리고 준수 절(section)에 대한 몇 가지 사항을 추가하여 WCAG 2.0을 확장한 것이다.</p>
+<hr>
+
+<h2 id="1-인식의-용이성-Perceivable"><a href="#1-인식의-용이성-Perceivable" class="headerlink" title="1. 인식의 용이성(Perceivable)"></a>1. 인식의 용이성(Perceivable)</h2><ul>
+<li>정보와 사용자 인터페이스 요소는 사용자가 인식할 수 있는 방법으로 제시되어야 한다.</li>
+<li>4가지 지침과 그에 대한 29가지 성공기준을 가지고 있다.</li>
+</ul>
+<h3 id="지침-1-1-대체텍스트"><a href="#지침-1-1-대체텍스트" class="headerlink" title="지침 1.1 대체텍스트"></a>지침 1.1 대체텍스트</h3><ul>
+<li><p>텍스트가 아닌 콘텐츠의 경우 목적에 상응하는 대체 텍스트를 제공해야 한다. (ex - img alt속성)</p>
+</li>
+<li><p>단 시력검사, 받아쓰기와 같은 Test나 특정 감각을 위한 악기연주 등 텍스트만으로 그 내용을 설명하기에 애매한 경우 콘텐츠의 용도만을 기술하는 것도 괜찮다.</p>
+</li>
+<li><p>텍스트 아닌 콘텐츠가 순수한 장식이거나, 보이지 않는경우 대체텍스트를 제공하지 않는 편이 합리적이다</p>
+</li>
+</ul>
+<h3 id="지침-1-2-시간기반-미디어"><a href="#지침-1-2-시간기반-미디어" class="headerlink" title="지침 1.2 시간기반 미디어"></a>지침 1.2 시간기반 미디어</h3><ul>
+<li><p>시간기반 미디어에 대한 대체수단을 제공해야 한다</p>
+</li>
+<li><p>달성하기 비교적 쉬운 level A 부터 어려운 level AAA 까지 총 9개의 기준을 가지고 있다.</p>
+</li>
+<li><p>level이 올라갈수록 더 자세하고 많은 정보를 실시간으로 제공하는 것을 기준으로 삼고 있다.</p>
+</li>
+</ul>
+<h3 id="지침-1-3-적응가능"><a href="#지침-1-3-적응가능" class="headerlink" title="지침 1.3 적응가능"></a>지침 1.3 적응가능</h3><ul>
+<li><p>콘텐츠가 정보나 구조의 손실 없이 다른 방법들로 표시될 수 있도록 제작되어야 한다.</p>
+</li>
+<li><p>콘텐츠의 정보, 구조, 관계는 프로그래밍 방식으로 결정되어야 하고 또 콘텐츠가 표시되는 순서가 의미에 영향을 주는 경우 올바른 읽기 순서 역시 프로그래밍 방식으로 결정되어야 한다.</p>
+<blockquote>
+<p>프로그래밍 방식으로 결정된다는 것은 확대기, 음성 인식 소프트웨어와 같은 보조공학을 포함한 user agent(웹 브라우저)가 개발자 제공 데이터로부터 정보를 추출해 사용자에게 다른 형식으로 제공할 수 있음을 뜻한다 - 대체텍스트의 img alt 속성 처럼</p>
+</blockquote>
+</li>
+<li><p>콘텐츠를 이해하고 작동하기 위해 제공된 지시문은 모양, 색상, 크기, 시각적 위치 등 구성요소의 감각적 특성에 전적으로 의존해서는 안 된다.</p>
+</li>
+</ul>
+<h3 id="지침-1-4-식별-가능"><a href="#지침-1-4-식별-가능" class="headerlink" title="지침 1.4 식별 가능"></a>지침 1.4 식별 가능</h3><ul>
+<li><p>색상은 시각적 요소 구별을 위한 유일한 시각적 수단으로만 사용되어서는 안된다.</p>
+</li>
+<li><p>웹 페이지에 있는 오디오를 컨트롤 할수 있어야 하고, 배경음이 낮거나 없어야한다 - 스크린리더 사용자를 위한 항목으로, 스크린리더 사용자는 청각을 통해 정보를 받아들이기 때문에 다른 오디오나 배경음이 지속된다면 콘텐츠를 이용하는데 불편함을 겪을 수 있음.</p>
+</li>
+<li><p>텍스트 이미지 보다는 텍스트를 사용해야 하고, 텍스트의 명도대비, 크기 조정등을 통해 가시성을 높여야한다.</p>
+</li>
+</ul>
+<hr>
+
+<p>추가중…</p>
+<hr>
+
+<h1 id="참고"><a href="#참고" class="headerlink" title="참고"></a>참고</h1><ul>
+<li><a href="https://www.w3.org/TR/WCAG21/">https://www.w3.org/TR/WCAG21/</a></li>
+<li><a href="http://www.kwacc.or.kr/WAI/wcag21/">http://www.kwacc.or.kr/WAI/wcag21/</a></li>
+<li><a href="http://www.websoul.co.kr/accessibility/WA_guide21.asp">http://www.websoul.co.kr/accessibility/WA_guide21.asp</a></li>
+</ul>
+]]></content>
+      <tags>
+        <tag>개발</tag>
+        <tag>WCAG</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>API란 무엇일까?</title>
+    <url>/2022/What-is-an-API/</url>
+    <content><![CDATA[<p>JavaScript 구현공부를 시작하며 API를 이용하는 일이 많아졌다. API라는 용어에 대해 많이 들어보기도 했고 API가 무엇인지에 대해 대략적으로 알고 있다고 생각했었지만 막상 API에 대해 구체적으로 설명해보려고 하니 표현하기가 어려웠다. 그래서 API에 대해 정리해보면서 정확히 무엇인지 알아보고자 했다.</p>
+<hr>
+
+<h2 id="API"><a href="#API" class="headerlink" title="API"></a>API</h2><p>먼저 API의 정의를 알아보았다. </p>
+<blockquote>
+<p><strong>API</strong>는 Application Programming Inerface의 줄임말로 응용 프로그램에서 사용할 수 있도록 운영체제나 프로그래밍 언어가 제공하는 기능을 제어할 수 있게 만든 인터페이스를 뜻한다. </p>
+</blockquote>
+<p>다른 부분들은 쉽게 이해가 갔지만 인터페이스가 무엇을 말하는지 모호했다. 그럼 인터페이스는 무엇일까?</p>
+<blockquote>
+<p><strong>인터페이스(interface)</strong> 는 컴퓨터 시스템끼리 정보를 교환하는 공유 경계를 의미한다. 터치 스크린과 같은 일부 컴퓨터 하드웨어 장치들은 인터페이스를 통해 데이터를 송수신 할 수 있으며, 마우스나 마이크와 같은 장치들은 오직 시스템에 데이터를 전송만 하는 인터페이스를 제공한다.</p>
+</blockquote>
+<p>쉽게 정리해 인터페이스는 시스템끼리 데이터를 주고받도록 하는 물리적, 가상적인 매개체를 뜻한다.</p>
+<p>조금 더 이해하기 쉽게 실생활에서 예를 들어보면 우리가 자판기를 통해 음료수를 사먹는다라고 할 때 실제 자판기가 어떻게 내부적으로 동작하는지는 몰라도 동전이나 지폐를 넣고 원하는 음료 버튼을 눌러 음료수가 나오게하는 과정을 쉽게 수행한다. 이때 동전과 지폐를 넣고 음료 버튼을 클릭하는등 사물과 사물 또는 사물과 인간 간의 의사소통이 가능하도록하는 물리적, 가상적인 매개체를 인터페이스라고 할 수 있다.</p>
+<p>즉 API는 응용 프로그램 (우리가 만든 앱과 같은 서비스)에서 운영체제나 프로그래밍 언어가 제공하는 기능(지도, 날씨, 페이기능등)을 제어할 수 있게 만든 매개체라고 볼 수 있다.<br>API 문서에는 개발자가 이러한 요청과 응답을 구성하는 방법에 대한 정보가 들어 있어 API를 사용하기 이전에 API 문서를 통해 API의 사용법을 알 수 있다.</p>
+<hr>
+
+<h2 id="API는-어떻게-작동하는가"><a href="#API는-어떻게-작동하는가" class="headerlink" title="API는 어떻게 작동하는가?"></a>API는 어떻게 작동하는가?</h2><blockquote>
+<p>API 아키텍처는 일반적으로 클라이언트와 서버 측면에서 설명된다. 요청을 보내는 애플리케이션을 클라이언트라고 하고 응답을 보내는 애플리케이션을 서버라고 한다. 따라서 날씨 예에서 기상청의 날씨 데이터베이스는 서버이고 모바일 앱은 클라이언트이다. </p>
+</blockquote>
+<p>API가 생성된 시기와 이유에 따라 API는 네 가지 방식으로 작동할 수 있다.</p>
+<p>API라는 단어는 1964년부터 등장하기 시작했다. 이때는 하드웨어 독립성을 위해서 많이 사용되어 졌는데, 예를 들어 서로 다른 하드웨어마다 개발자가 일일이 프로그래밍을 하기보단 HAL이라는 하드웨어 추상화 계층을 통해 한번만 display라는 함수를 작성하고 이를 이용해 각기 다른 모니터에 출력을 쉽게 할수 있었고 이것이 API의 시초라고 할 수 있다.</p>
+<p>1980년대 중반 Mac OS와 Windows가 등장하면서 그래픽이 좋은 컴퓨터가 등장하기 시작했다. 이런 각각의 운영체제에서 동작하는 어플리케이션을 만들기 위해서 운영체제에서 제공하는 API를 이용했다. </p>
+<p>그리고 1990년도 인터넷이 보편적으로 대중화되기 시작하면서 컴퓨터와 컴퓨터 다양한 기기들이 인터넷을 통해서 의사소통을 할 수 있게 되었다. 이때 다양한 기기에서 서버에 있는 데이터를 읽고 쓰기 위해서는 서버에서 제공하는 WEB APIs를 이용해서 처리 할 수 있었다.</p>
+<p>네트워크에서 기기들간에 의사소통 해나가는 규격사항을 HTTP(s)라고 부르며 이런 WEB API를 어떻게 디자인해서 만들건지 정의하는 것이 있다. 예전에는 SOAP(Simple Object Access Protocol)이라는 모든 네트워크 요청과 반응을 XML이라는 데이터 포맷에 저장해 주고 받았다면 요즘에는 REST(Representational State Transfer)이 보편적으로 많이 사용된다.</p>
+<p>REST는 총 4가지로 구성되어 있는데 새로운 데이터를 만들고(POST, create), 읽고(GET, read), 업데이트하고(PUT, update), 삭제(DELETE, delete)할 수 있다. 예를 들어 GET을 이용해 유저에 대한 정보를 요청하면 서버로부터 유저에 대한 데이터를 JSON이라는 포맷을 통해 받아 올 수 있다. 이처럼 서버에서 제공하는 WEB API를 통해 서버에 있는 데이터를 읽어오거나 업데이트 할 수 있다.</p>
+]]></content>
+      <tags>
+        <tag>개발</tag>
+        <tag>용어정리</tag>
       </tags>
   </entry>
   <entry>
@@ -684,178 +1012,6 @@ for (변수 선언문 또는 할당문; 조건식; 증감식) {
       </tags>
   </entry>
   <entry>
-    <title>첫 프로젝트를 마치고</title>
-    <url>/2022/Retrospective-about-my-first-project/</url>
-    <content><![CDATA[<h1 id="들어가며"><a href="#들어가며" class="headerlink" title="들어가며"></a>들어가며</h1><p>약 2주동안 진행했던 프로젝트가 종료되었다. 개발 공부를 시작한지도 얼마 안 되었고 처음으로 해본 프로젝트인지라 2주가 정말 정신없이 지나가버렸다. 배운점도 많았고 아쉬운점도 많았는데 회고를 하며 정리해보려고 한다.</p>
-<p>완성된 결과물은 <a href="https://woowahal-6go5.vercel.app/">https://woowahal-6go5.vercel.app/</a> 에서 확인 가능하다.</p>
-<hr>
-
-<h1 id="프로젝트-우아할"><a href="#프로젝트-우아할" class="headerlink" title="프로젝트 우아할"></a>프로젝트 우아할</h1><p>이전글에서 언급했듯이 우리 팀은 배달의 민족 앱을 웹 페이지로 클론하기로 했다(그래서 팀명도 <strong>우아할</strong>형제들로 정했다).</p>
-<p>개발 기간은 2022-09-19 ~ 2022-09-30로 약 2주 동안 진행되었고, 팀원은 나를 포함해 총 3명이었다.</p>
-<p>프로젝트 기간이나 인원에 비해 배달의 민족이 가지고 있는 콘텐츠가 너무 많아 모든 페이지를 클론 할 수는 없었고 배달의 민족에서 배달하기 까지의 주요 프로세스를 메인,카테고리, 리스트, 디테일, 오더, 장바구니, 결과의 7개 페이지로 나누어 구현해 보았다.</p>
-<p>나는 그 중 메인페이지와 카테고리 페이지를 주로 담당했다.</p>
-<hr>
-
-<h2 id="기술-스택"><a href="#기술-스택" class="headerlink" title="기술 스택"></a>기술 스택</h2><p>페이지를 구현하면서 Figma, Git, npm, HTML, CSS, Sass, JS, Vercel을 이용했다.</p>
-<h3 id="Figma"><a href="#Figma" class="headerlink" title="Figma"></a>Figma</h3><p>구현해야 하는 페이지들의 와이어프레임 및 컴포넌트들을 시각적으로 구성해보기 위해 Figma를 이용했다.</p>
-<p>페이지에서 주사용되는 컬러를 시스템화해서 플러그인을 통해 변수로 쉽게 추출할 수 있었다.</p>
-<p>아직 툴 사용이 미숙해 많은 기능을 활용하지는 못한것 같아 아쉽다</p>
-<h3 id="Git-Github"><a href="#Git-Github" class="headerlink" title="Git, Github"></a>Git, Github</h3><p>프로젝트의 버전관리를 위해 Git을 이용했다. Git flow 전략을 모방해 메인을 제외한 develop, subdev, release 3개의 branch를 만들었다.</p>
-<p>기본적으로 모든 변경사항을 subdev에 push하였고, merge가 잘 완료되면 log를 추가해 develop으로 옮겼다. 최종적으로 public 폴더만 build해 release에 저장했다.</p>
-<h3 id="npm"><a href="#npm" class="headerlink" title="npm"></a>npm</h3><p>개발환경 세팅과 최종적인 프로젝트 파일의 최적화를 위해 npm을 이용했다.</p>
-<p>rimraf, npm-run-all, live-server, sass는 개발환경 세팅을 위해 webpack, postcss는 최적화를 위해 사용해 보았다.</p>
-<h3 id="HTML"><a href="#HTML" class="headerlink" title="HTML"></a>HTML</h3><p>HTML의 경우 시맨틱 마크업을 제일 중요시 여겼는데 먼저 손으로 페이지의 구조를 설계 한 후 코드로 작성했다. 그 후 코드리뷰를 시간을 가져 팀원들끼리 왜 그렇게 코드를 작성했는지, 구조가 논리적인지 설득하는 시간을 가졌다.</p>
-<h3 id="CSS-Sass"><a href="#CSS-Sass" class="headerlink" title="CSS, Sass"></a>CSS, Sass</h3><p>CSS를 효과적으로 사용하기 위해 Sass를 이용했고 이 때 가장 중요시 여긴점은 컨벤션이였다. 기본적으로 BEM 방식을 이용한 Naming과 최대한 구체적인 클래스명을 사용하기로 정했다.</p>
-<hr>
-
-<h2 id="KPT"><a href="#KPT" class="headerlink" title="KPT"></a>KPT</h2><h3 id="Keep"><a href="#Keep" class="headerlink" title="Keep"></a>Keep</h3><ul>
-<li><p>프로젝트를 시작하기 전 환경설정을 중요시 여기고 이 부분에 대해 많이 논의 했는데 그 결과 git 충돌도 거의 없었고 일어난 충돌도 금방 해결 할 수 있었다.</p>
-</li>
-<li><p>1차적인 프로젝트 결과물을 가지고 lighthouse 검사를 통해 부족한 부분을 찾고 개선하기 위해 노력했다. 실질적인 성능 향상을 볼 수 있어서 좋았다.</p>
-</li>
-<li><p>의견충돌이 있을때 그냥 넘어가지 않고 서로를 설득하기 위해 노력했는데 생각에 대한 근거를 찾고 정리해보며 의견을 구체화 시킬 수 있었다.</p>
-</li>
-</ul>
-<h3 id="Problem"><a href="#Problem" class="headerlink" title="Problem"></a>Problem</h3><ul>
-<li><p>Sass 사용의 아쉬움 - Sass 를 사용하기 위해 폴더 구조를 잘 분리한것은 좋았으나 중첩규칙, 변수 이외에는 잘 사용하지 못했다. 특히 중복적으로 사용되는 코드들을 믹스인으로 분리했어야 했는데 그러지 못했다.</p>
-</li>
-<li><p>미숙했던 초반 소통</p>
-</li>
-</ul>
-<h3 id="Try"><a href="#Try" class="headerlink" title="Try"></a>Try</h3><ul>
-<li>문서화의 중요성 - 서로 상의해 결정했던 부분들이나 컴포넌트에 대한 문서들을 남겨 서로 참고할 수 있도록 하자고 말했었지만 실제 프로젝트를 진행하면서 잘 수행되지 못했다. 문서화가 잘 되어 있는 다른 프로젝트 조의 경우 전체적인 프로젝트 상황에 대한 파악이 수월해 보였다. 다음 프로젝트를 진행할 때에는 꼭 문서화에 신경써봐야겠다.</li>
-</ul>
-<hr>
-
-<h1 id="마치며"><a href="#마치며" class="headerlink" title="마치며"></a>마치며</h1><p>첫 프로젝트를 진행하며 많은 것을 배울 수 있어 정말 좋았다. 하지만 역시 머리에 계속해서 남는것은 아쉬운 점들인 것 같다.</p>
-<p>평소 배달의 민족을 많이 사용하면서 이런 기능이 있으면 좋겠다고 생각해 오던것이 있다. 나는 결정장애가 심한 편이라 어떤것을 먹을지, 또 메뉴를 정해도 어디서 시킬지 정말 많이 고민한다. 그래서 카테고리만 선택하면 룰렛이 돌아가듯이 랜덤으로 가게와 메뉴가 선택되면 좋겠다고 생각했다.</p>
-<p>마침 배달의 민족을 웹으로 구현하기로 결정해서 이 기능도 추가해 보려고 했는데 막상 스스로의 자바스크립트 실력도 너무 부족하고 어떤 데이터베이스를 기반으로 정보를 가져와야 할지 아이디어 역시도 너무 구체적이지 않아 쉽지 않았다.</p>
-<p>스스로 많이 부족하다고 느끼는 점이 가장 아쉬웠다.<br>다만 앞으로 3개월 동안 커넥to 과정을 통해 모던 자바스크립트 Deep Dive의 저자이신 이웅모 강사님에게 자바스크립트 강의를 듣게 되었는데, 정말 좋은 기회이니 만큼 열심히 배우고 또 평상시 가지고 있던 아이디어들에 대해서도 구체화해 프로젝트를 리팩토링해봐야 겠다.</p>
-]]></content>
-      <tags>
-        <tag>개발</tag>
-        <tag>회고</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>백준 Node.js 입출력법</title>
-    <url>/2022/Node-js-input-and-output-in-Baekjoon-Online-Judge/</url>
-    <content><![CDATA[<p>지금까지 leetcode와 프로그래머스를 통해 코딩테스트 공부를 하고 있었는데 leetcode는 영어 해석의, 프로그래머스는 적은 문제수의 단점을 가지고 있어 백준을 통해 코딩테스트 연습을 시작해보았다.</p>
-<p>백준에서는 javascript로 코딩테스트를 준비하기 위해 node.js를 선택해야 했는데 프로그래머스에서는 함수만 작성하면 되었던 반면에 백준에서는 입출력을 직접 해주어야 했다.</p>
-<p>백준에서 node.js로 입력을 받는 방법은 크게 두가지로 readline 모듈을 사용하는 것과 fs 모듈을 사용하는 것이다. fs 모듈의 경우 readline 모듈보다 코드가 간단하고 더 빠르다고 해 fs 모듈의 대해 찾아보았다.</p>
-<hr>
-
-<h1 id="fs"><a href="#fs" class="headerlink" title="fs"></a><strong>fs</strong></h1><p>FileSystem의 약자인 fs 모듈은 파일 처리와 관련된 모듈이다. <a href="https://help.acmicpc.net/">BOJ 도움말</a>에서는 다음과 같은 코드로 fs 모듈을 통한 입력을 소개하고 있다.</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> fs = <span class="built_in">require</span>(<span class="string">&#x27;fs&#x27;</span>);</span><br><span class="line"><span class="keyword">let</span> input = fs.<span class="title function_">readFileSync</span>(<span class="string">&#x27;/dev/stdin&#x27;</span>).<span class="title function_">toString</span>().<span class="title function_">split</span>(<span class="string">&#x27; &#x27;</span>);</span><br><span class="line"><span class="keyword">let</span> a = <span class="built_in">parseInt</span>(input[<span class="number">0</span>]);</span><br><span class="line"><span class="keyword">let</span> b = <span class="built_in">parseInt</span>(input[<span class="number">1</span>]);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(a+b);</span><br></pre></td></tr></table></figure>
-
-<p>하지만 위 코드를 이용할때에도 입력되는 값에 따라 에러가 발생하는 경우가 있어 다양한 방식의 입력법에 대해 정리해 보았다.</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="number">1.</span> 하나의 값을 입력받을 때</span><br><span class="line"><span class="keyword">const</span> fs = <span class="built_in">require</span>(<span class="string">&#x27;fs&#x27;</span>);</span><br><span class="line"><span class="keyword">const</span> input = fs.<span class="title function_">readFileSync</span>(<span class="string">&quot;/dev/stdin&quot;</span>).<span class="title function_">toString</span>().<span class="title function_">trim</span>();</span><br><span class="line"></span><br><span class="line"><span class="number">2.</span> 공백으로 구분된 한 줄의 값들을 입력받을 때</span><br><span class="line"><span class="keyword">const</span> fs = <span class="built_in">require</span>(<span class="string">&#x27;fs&#x27;</span>);</span><br><span class="line"><span class="keyword">const</span> input = fs.<span class="title function_">readFileSync</span>(<span class="string">&quot;/dev/stdin&quot;</span>).<span class="title function_">toString</span>().<span class="title function_">trim</span>().<span class="title function_">split</span>(<span class="string">&quot; &quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="number">3.</span> 여러 줄의 값들을 입력받을 때</span><br><span class="line"><span class="keyword">const</span> fs = <span class="built_in">require</span>(<span class="string">&#x27;fs&#x27;</span>);</span><br><span class="line"><span class="keyword">const</span> input = fs.<span class="title function_">readFileSync</span>(<span class="string">&quot;/dev/stdin&quot;</span>).<span class="title function_">toString</span>().<span class="title function_">trim</span>().<span class="title function_">split</span>(<span class="string">&quot;\n&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="number">4.</span> 첫 번째 줄에 자연수 n을 입력받고, 그 다음줄에 공백으로 구분된 n개의 값들을 입력받을 때</span><br><span class="line"><span class="keyword">const</span> fs = <span class="built_in">require</span>(<span class="string">&#x27;fs&#x27;</span>);</span><br><span class="line"><span class="keyword">const</span> [n, ...arr] = fs.<span class="title function_">readFileSync</span>(<span class="string">&quot;/dev/stdin&quot;</span>).<span class="title function_">toString</span>().<span class="title function_">trim</span>().<span class="title function_">split</span>(<span class="regexp">/\s/</span>);</span><br><span class="line"></span><br><span class="line"><span class="number">5.</span> 첫 번째 줄에 자연수 n을 입력받고, 그 다음줄부터 n개의 줄에 걸쳐 한 줄에 하나의 값을 입력받을 때</span><br><span class="line"><span class="keyword">const</span> fs = <span class="built_in">require</span>(<span class="string">&#x27;fs&#x27;</span>);</span><br><span class="line"><span class="keyword">const</span> [n, ...arr] = fs.<span class="title function_">readFileSync</span>(<span class="string">&quot;/dev/stdin&quot;</span>).<span class="title function_">toString</span>().<span class="title function_">trim</span>().<span class="title function_">split</span>(<span class="string">&quot;\n&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="number">6.</span> 하나의 값 또는 공백으로 구분된 여러 값들을 여러 줄에 걸쳐 뒤죽박죽 섞여서 입력받을 때</span><br><span class="line">  ex) n 입력 - 공백으로 구분된 n개의 값 입력 - m 입력 - 여러 줄에 걸쳐 m개의 값 입력</span><br><span class="line"><span class="keyword">const</span> fs = <span class="built_in">require</span>(<span class="string">&#x27;fs&#x27;</span>);</span><br><span class="line"><span class="keyword">const</span> input = fs.<span class="title function_">readFileSync</span>(<span class="string">&quot;/dev/stdin&quot;</span>).<span class="title function_">toString</span>().<span class="title function_">trim</span>().<span class="title function_">split</span>(<span class="regexp">/\s/</span>);</span><br><span class="line"><span class="keyword">const</span> n = input[<span class="number">0</span>];</span><br><span class="line"><span class="keyword">const</span> n_arr = input.<span class="title function_">slice</span>(<span class="number">1</span>, n+<span class="number">1</span>);</span><br><span class="line"><span class="keyword">const</span> [m, ...m_arr] = input.<span class="title function_">slice</span>(n+<span class="number">1</span>);</span><br></pre></td></tr></table></figure>
-<p>최종 결과 확인을 위해선 <strong>console.log()</strong> 를 통해 값을 출력해주면 된다.</p>
-<hr>
-
-<h2 id="참고"><a href="#참고" class="headerlink" title="참고"></a>참고</h2><p><a href="https://overcome-the-limits.tistory.com/25">[알고리즘] 백준 0.nodejs 입력하기</a><br><a href="https://tesseractjh.tistory.com/39">Node.js로 백준(BOJ) 문제 풀 때 유의할 점들</a></p>
-]]></content>
-      <tags>
-        <tag>개발</tag>
-        <tag>JavaScript</tag>
-        <tag>코딩테스트</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Sass Basic</title>
-    <url>/2022/Sass-Basic/</url>
-    <content><![CDATA[<h1 id="Sass"><a href="#Sass" class="headerlink" title="Sass?"></a>Sass?</h1><p>CSS를 사용해 웹 애플리케이션 스타일을 관리하는 것은 애플리케이션 규모가 커지고 복잡해질수록 매우 어렵다.</p>
-<p>반면 Sass와 같은 프리프로세서(Pre-Processor, 전처리기)를 사용하면 매우 효과적으로 복잡한 애플리케이션 스타일을 관리할 수 있다.</p>
-<p>Sass란 Syntactically Awesome Style Sheets의 준말로 CSS가 아직은 할 수 없는 다양한 기능(중첩, 함수, 믹스인, 상속 등)을 제공한다.</p>
-<p>Sass말고도 Stylus, Less와 같은 전처리기가 존재하지만 현재 Sass가 통계상 가장 사용자가 많으면서 만족도가 높아 배웠을 때 가장 유용하다고 할 수 있다. (<a href="https://2021.stateofcss.com/ko-KR/technologies/#scatterplot_overview">설문결과</a>)</p>
-<hr>
-
-<h2 id="설치"><a href="#설치" class="headerlink" title="설치"></a>설치</h2><p>Sass를 이용하기 위해선 먼저 설치를 해야한다. <a href="https://sass-lang.com/install">공식사이트</a>를 참고해 다양한 방식으로 설치가 가능하다. 나는 Node.js를 이용하고 있기에 npm을 통해 설치해 주었다.</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install -g sass</span><br></pre></td></tr></table></figure>
-
-<h2 id="컴파일"><a href="#컴파일" class="headerlink" title="컴파일"></a>컴파일</h2><p>Sass를 설치해 이용하고자 할 때, 웹 브라우저는 Sass파일을 해석할 수 없기에 Sass파일을 CSS파일로 변경해야 한다. 이를 컴파일이라 하는데 다음과 같이 사용 가능하다.</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sass input.scss output.css</span><br></pre></td></tr></table></figure>
-<p>단일 파일이 아니라 폴더 단위의 변경을 처리한다면 <code>:</code>을 이용할 수 있다.</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sass src/scss:public/css</span><br></pre></td></tr></table></figure>
-<p>더 많은 옵션은 <a href="https://sass-lang.com/documentation/cli/dart-sass">Dart Sass CLI</a>를 참고할 수 있다.</p>
-<hr>
-
-<h2 id="문법"><a href="#문법" class="headerlink" title="문법"></a>문법</h2><p>Sass파일은 사용하는 문법에 따라 <code>.scss</code>의 확장자를 가진 SCSS 구문과 <code>.sass</code>를 가진 Sass구문 2가지로 나뉜다.</p>
-<h3 id="Sass-구문"><a href="#Sass-구문" class="headerlink" title="Sass 구문"></a>Sass 구문</h3><p>Sass 구문은 중괄호, 세미콜론을 생략하고 들여쓰기 문법을 사용한다. 좀 더 간결하고 작성하기 편리하며 <code>&#123;&#125;</code>나 <code>;</code>를 사용하지 않아도 되어 코드가 깔끔하다.</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">.button</span><br><span class="line">	cursor: pointer</span><br><span class="line">	&amp;:disabled</span><br><span class="line">		cursor: not-allowed</span><br></pre></td></tr></table></figure>
-
-<h3 id="SCSS-구문"><a href="#SCSS-구문" class="headerlink" title="SCSS 구문"></a>SCSS 구문</h3><p>SCSS 구문은 CSS와 유사한 문법을 사용한다. 인라인 코드를 작성할 수 있고, CSS와 유사한 문법을 가지기 때문에 코드 통합이 훨씬 쉽다.</p>
-<figure class="highlight scss"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.button</span> &#123;</span><br><span class="line">	<span class="attribute">cursor</span>: pointer;</span><br><span class="line">	&amp;<span class="selector-pseudo">:disabled</span> &#123;</span><br><span class="line">	  <span class="attribute">cursor</span>: not-allowed;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>서로 장단점이 있기 때문에 회사나 팀에서 원하는 방식 혹은 개인의 취향에 따라서 선택할 수 있다. 일반적으로 CSS 구문과 문제없이 호환되는 SCSS구문이 많이 사용된다.</p>
-<hr>
-
-<h2 id="Sass-Basics"><a href="#Sass-Basics" class="headerlink" title="Sass Basics"></a>Sass Basics</h2><p>수업을 들으면서 Sass의 두 가지 구문중 SCSS를 사용했기에 Sass Basics에 대해 SCSS를 이용한 방법으로 정리하겠다.</p>
-<h3 id="변수-Variables"><a href="#변수-Variables" class="headerlink" title="변수(Variables)"></a>변수(Variables)</h3><p>CSS도 변수 사용이 가능하지만 Sass에서는 <code>$</code>를 이용해 더 쉽게 변수를 사용할 수 있다.</p>
-<p><strong>CSS 변수</strong></p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-pseudo">:root</span> &#123;</span><br><span class="line">  <span class="attr">--spacing-1</span>: <span class="number">4px</span>;</span><br><span class="line">  <span class="attr">--spacing-2</span>: <span class="number">8px</span>;</span><br><span class="line">  <span class="attr">--primary-400</span>: <span class="built_in">hsl</span>(<span class="number">250</span>, <span class="number">75%</span>, <span class="number">60%</span>);</span><br><span class="line">  <span class="attr">--primary-500</span>: <span class="built_in">hsl</span>(<span class="number">250</span>, <span class="number">75%</span>, <span class="number">50%</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">  <span class="attribute">margin-top</span>: <span class="built_in">var</span>(--spacing-<span class="number">2</span>);</span><br><span class="line">  <span class="attribute">color</span>: <span class="built_in">var</span>(--primary-<span class="number">500</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p><strong>SCSS 변수</strong></p>
-<figure class="highlight scss"><table><tr><td class="code"><pre><span class="line"><span class="variable">$spacing-1</span>: <span class="number">4px</span>;</span><br><span class="line"><span class="variable">$spacing-2</span>: <span class="number">8px</span>;</span><br><span class="line"><span class="variable">$primary-400</span>: <span class="built_in">hsl</span>(<span class="number">250</span>, <span class="number">75%</span>, <span class="number">60%</span>);</span><br><span class="line"><span class="variable">$primary-500</span>: <span class="built_in">hsl</span>(<span class="number">250</span>, <span class="number">75%</span>, <span class="number">50%</span>);</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">  <span class="attribute">margin-top</span>: <span class="variable">$spacing-2</span>;</span><br><span class="line">  <span class="attribute">color</span>: <span class="variable">$primary-500</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="중첩-Nesting"><a href="#중첩-Nesting" class="headerlink" title="중첩(Nesting)"></a>중첩(Nesting)</h3><p>CSS는 HTML과 달리 시각적인 계층 구조와 명확히 중첩된 구문을 작성할 수 없다. 하지만 Sass는 HTML과 동일하게 시각적 계층 구조를 따르는 방식으로 스타일을 작성하는 방법을 지원한다.</p>
-<p><strong>CSS 구문</strong></p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">nav</span> <span class="selector-tag">ul</span> &#123;</span><br><span class="line">  <span class="attribute">margin</span>: <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">padding</span>: <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">list-style</span>: none;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">nav</span> <span class="selector-tag">li</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: inline-block;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">nav</span> <span class="selector-tag">a</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: block;</span><br><span class="line">  <span class="attribute">padding</span>: <span class="number">6px</span> <span class="number">12px</span>;</span><br><span class="line">  <span class="attribute">text-decoration</span>: none;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p><strong>SCSS 구문</strong></p>
-<figure class="highlight scss"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">nav</span> &#123;</span><br><span class="line">  <span class="selector-tag">ul</span> &#123;</span><br><span class="line">    <span class="attribute">margin</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">padding</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">list-style</span>: none;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="selector-tag">li</span> &#123; <span class="attribute">display</span>: inline-block; &#125;</span><br><span class="line"></span><br><span class="line">  <span class="selector-tag">a</span> &#123;</span><br><span class="line">    <span class="attribute">display</span>: block;</span><br><span class="line">    <span class="attribute">padding</span>: <span class="number">6px</span> <span class="number">12px</span>;</span><br><span class="line">    <span class="attribute">text-decoration</span>: none;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>Sass 중첩 구문은 시각적으로 계층 구조를 파악할 수 있어 CSS 보다 직관성이 높다. 하지만 많은 중첩은 오히려 복잡성을 증가시켜 가독성이 떨어지므로 피해야한다.</p>
-<h3 id="모듈-modules"><a href="#모듈-modules" class="headerlink" title="모듈(modules)"></a>모듈(modules)</h3><p>모듈은 독립적으로 묶인 작은 코드 조각으로, Sass는 관심사에 따라 여러 조각의 코드로 묶인 파일을 관리할 수 있는 기능인 모듈화를 제공한다. 모듈은 애플리케이션 스타일을 유지 관리하기 쉽게 만들어 주는 매우 효과적인 방법이다.</p>
-<p>Sass(정확히는 Dart Sass)에서는 <code>@import rule</code>대신 <code>@use</code>를 이용해 다른 스타일 모듈을 불러올 수 있다. Sass 파일 확장자와 언더스코어(_)는 생략 가능하다.</p>
-<p><strong>_base.scss</strong></p>
-<figure class="highlight scss"><table><tr><td class="code"><pre><span class="line"><span class="variable">$font-stack</span>: Helvetica, sans-serif;</span><br><span class="line"><span class="variable">$primary-color</span>: <span class="number">#333</span>;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">body</span> &#123;</span><br><span class="line">  <span class="attribute">font</span>: <span class="number">100%</span> <span class="variable">$font-stack</span>;</span><br><span class="line">  <span class="attribute">color</span>: <span class="variable">$primary-color</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>불러온 모듈은 기본적으로 파일 이름을 네임스페이스(namespace)로 가지며 점(.) 문법을 사용해 모듈의 변수 등에 접근할 수 있다.</p>
-<p><strong>styles.scss</strong></p>
-<figure class="highlight scss"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@use</span> <span class="string">&#x27;base&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.inverse</span> &#123;</span><br><span class="line">  <span class="attribute">background-color</span>: base.<span class="variable">$primary-color</span>;</span><br><span class="line">  <span class="attribute">color</span>: white;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>네임스페이스 이름을 다른 이름으로 변경해 사용하고자 할 경우 as를 사용한다. 특히 as에 별(*) 기호를 사용할 경우 네임스페이스 없이 바로 모듈에서 내보낸 변수를 사용할 수 있다.</p>
-<figure class="highlight scss"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@use</span> <span class="string">&#x27;base&#x27;</span> as *;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.inverse</span> &#123;</span><br><span class="line">  <span class="attribute">background-color</span>: <span class="variable">$primary-color</span>;</span><br><span class="line">  <span class="attribute">color</span>: white;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-<p><strong>CSS</strong></p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">body</span> &#123;</span><br><span class="line">  <span class="attribute">font</span>: <span class="number">100%</span> Helvetica, sans-serif;</span><br><span class="line">  <span class="attribute">color</span>: <span class="number">#333</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.inverse</span> &#123;</span><br><span class="line">  <span class="attribute">background-color</span>: <span class="number">#333</span>;</span><br><span class="line">  <span class="attribute">color</span>: white;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="믹스인-mixins"><a href="#믹스인-mixins" class="headerlink" title="믹스인(mixins)"></a>믹스인(mixins)</h3><p>CSS는 코드를 재사용 할 수 있는 기능이 제공되지 않기 때문에 코드 중복이 잦은 언어이다. 하지만 Sass는 코드를 효율적으로 재사용할 수 있도록 믹스인 기능을 제공한다. 믹스인을 이용해 재사용할 코드 그룹을  선언할 수 있다.</p>
-<p><strong>SCSS</strong></p>
-<figure class="highlight scss"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@mixin</span> theme(<span class="variable">$theme</span>: DarkGray) &#123;</span><br><span class="line">  <span class="attribute">background</span>: <span class="variable">$theme</span>;</span><br><span class="line">  <span class="attribute">box-shadow</span>: <span class="number">0</span> <span class="number">0</span> <span class="number">1px</span> <span class="built_in">rgba</span>(<span class="variable">$theme</span>, .<span class="number">25</span>);</span><br><span class="line">  <span class="attribute">color</span>: <span class="number">#fff</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.info</span> &#123;</span><br><span class="line">  <span class="keyword">@include</span> theme;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.alert</span> &#123;</span><br><span class="line">  <span class="keyword">@include</span> theme(<span class="variable">$theme</span>: DarkRed);</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.success</span> &#123;</span><br><span class="line">  <span class="keyword">@include</span> theme(<span class="variable">$theme</span>: DarkGreen);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p><strong>CSS</strong></p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.info</span> &#123;</span><br><span class="line">  <span class="attribute">background</span>: DarkGray;</span><br><span class="line">  <span class="attribute">box-shadow</span>: <span class="number">0</span> <span class="number">0</span> <span class="number">1px</span> <span class="built_in">rgba</span>(<span class="number">169</span>, <span class="number">169</span>, <span class="number">169</span>, <span class="number">0.25</span>);</span><br><span class="line">  <span class="attribute">color</span>: <span class="number">#fff</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.alert</span> &#123;</span><br><span class="line">  <span class="attribute">background</span>: DarkRed;</span><br><span class="line">  <span class="attribute">box-shadow</span>: <span class="number">0</span> <span class="number">0</span> <span class="number">1px</span> <span class="built_in">rgba</span>(<span class="number">139</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0.25</span>);</span><br><span class="line">  <span class="attribute">color</span>: <span class="number">#fff</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.success</span> &#123;</span><br><span class="line">  <span class="attribute">background</span>: DarkGreen;</span><br><span class="line">  <span class="attribute">box-shadow</span>: <span class="number">0</span> <span class="number">0</span> <span class="number">1px</span> <span class="built_in">rgba</span>(<span class="number">0</span>, <span class="number">100</span>, <span class="number">0</span>, <span class="number">0.25</span>);</span><br><span class="line">  <span class="attribute">color</span>: <span class="number">#fff</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><code>@mixin</code>과 이름을 통해 믹스인을 만들 수 있다. 믹스인을 만든 후에는 <code>@include</code>와 이름을 선언해 믹스인을 이용 할 수 있다. 또한 믹스인은 JavaScript 함수처럼 매개변수를 설정할 수 있는데, 매개변수를 사용하면 믹스인 외부에서 사용자가 전달한 값을 믹스인 내부에서 사용해 재사용성을 더 높여줄 수 있다.</p>
-<h3 id="확장-x2F-상속-extend-x2F-inheritance"><a href="#확장-x2F-상속-extend-x2F-inheritance" class="headerlink" title="확장&#x2F;상속 (extend&#x2F;inheritance)"></a>확장&#x2F;상속 (extend&#x2F;inheritance)</h3><p>선택자 이름 앞에 <code>%</code>를 사용해 선언한 플레이스홀더 클래스는 스타일을 확장할 때만 사용되는 특수한 유형의 클래스로 여러 선택자에서 공유할 수 있다. 스타일 집합을 공유할 때는 <code>@extend</code>를 사용한다.</p>
-<p>이 방법은 스타일 코드를 반복 생성하는 믹스인과 달리, 스타일 코드 집합 하나를 재사용하는데 목적을 두고 있어 보다 코드를 깨끗하게 유지하는데 도움이 될 수 있다.</p>
-<p><strong>SCSS</strong></p>
-<figure class="highlight scss"><table><tr><td class="code"><pre><span class="line">%message-shared &#123;</span><br><span class="line">  <span class="attribute">border</span>: <span class="number">1px</span> solid <span class="number">#ccc</span>;</span><br><span class="line">  <span class="attribute">padding</span>: <span class="number">10px</span>;</span><br><span class="line">  <span class="attribute">color</span>: <span class="number">#333</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.message</span> &#123;</span><br><span class="line">  <span class="keyword">@extend</span> %message-shared;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.success</span> &#123;</span><br><span class="line">  <span class="keyword">@extend</span> %message-shared;</span><br><span class="line">  <span class="attribute">border-color</span>: green;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.error</span> &#123;</span><br><span class="line">  <span class="keyword">@extend</span> %message-shared;</span><br><span class="line">  <span class="attribute">border-color</span>: red;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.warning</span> &#123;</span><br><span class="line">  <span class="keyword">@extend</span> %message-shared;</span><br><span class="line">  <span class="attribute">border-color</span>: yellow;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p><strong>CSS</strong></p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.message</span>, <span class="selector-class">.success</span>, <span class="selector-class">.error</span>, <span class="selector-class">.warning</span> &#123;</span><br><span class="line">  <span class="attribute">border</span>: <span class="number">1px</span> solid <span class="number">#ccc</span>;</span><br><span class="line">  <span class="attribute">padding</span>: <span class="number">10px</span>;</span><br><span class="line">  <span class="attribute">color</span>: <span class="number">#333</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.success</span> &#123;</span><br><span class="line">  <span class="attribute">border-color</span>: green;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.error</span> &#123;</span><br><span class="line">  <span class="attribute">border-color</span>: red;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.warning</span> &#123;</span><br><span class="line">  <span class="attribute">border-color</span>: yellow;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="연산자-operators"><a href="#연산자-operators" class="headerlink" title="연산자 (operators)"></a>연산자 (operators)</h3><p>CSS에서 수학은 매우 유용하다. Sass는 산술연산자(<code>+</code>, <code>-</code>, <code>*</code>, <code>%</code>) 및 수학 함수(예: <code>math.div()</code>)를 제공한다.</p>
-<p><strong>SCSS</strong></p>
-<figure class="highlight scss"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@use</span> <span class="string">&quot;sass:math&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">article</span><span class="selector-attr">[role=<span class="string">&quot;main&quot;</span>]</span> &#123;</span><br><span class="line">  <span class="attribute">width</span>: math.<span class="built_in">div</span>(<span class="number">600px</span>, <span class="number">960px</span>) * <span class="number">100%</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">aside</span><span class="selector-attr">[role=<span class="string">&quot;complementary&quot;</span>]</span> &#123;</span><br><span class="line">  <span class="attribute">width</span>: math.<span class="built_in">div</span>(<span class="number">300px</span>, <span class="number">960px</span>) * <span class="number">100%</span>;</span><br><span class="line">  <span class="attribute">margin-left</span>: auto;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p><strong>CSS</strong></p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">article</span><span class="selector-attr">[role=<span class="string">&quot;main&quot;</span>]</span> &#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">62.5%</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">aside</span><span class="selector-attr">[role=<span class="string">&quot;complementary&quot;</span>]</span> &#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">31.25%</span>;</span><br><span class="line">  <span class="attribute">margin-left</span>: auto;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>특히 <code>math.div()</code>를 이용하기 위해서는 <code>@use &quot;sass:math&quot;</code>를 이용해 Sass에서 기본으로 제공하는 math 모듈을 불러와야 한다. 이때 as *를 이용해 사용한다면 div 태그와 구분이 가지 않으므로 <code>math.div()</code>의 기본 형태로 사용하는 것이 추천된다.</p>
-<hr>
-
-<h1 id="참고"><a href="#참고" class="headerlink" title="참고"></a>참고</h1><ul>
-<li><a href="https://sass-lang.com/guide">https://sass-lang.com/guide</a></li>
-<li><a href="https://euid.notion.site/euid/Sass-04a97ad611cc4436a9f09e9ff052b183">https://euid.notion.site/euid/Sass-04a97ad611cc4436a9f09e9ff052b183</a></li>
-<li><a href="https://heropy.blog/2018/01/31/sass/">https://heropy.blog/2018/01/31/sass/</a></li>
-</ul>
-]]></content>
-      <tags>
-        <tag>개발</tag>
-        <tag>Sass</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>[Deep Dive] 객체 리터럴</title>
     <url>/2022/Modern-Javascript-Deep-Dive-Chapter-10-Summary/</url>
     <content><![CDATA[<h1 id="객체란"><a href="#객체란" class="headerlink" title="객체란?"></a>객체란?</h1><p>자바스크립트는 객체 기반의 프로그래밍 언어이며, 자바스크립트를 구성하는 거의 모든것이 객체이다.<br>원시 값을 제외한 나머지 값(함수, 배열, 정규 표현식 등)은 모두 객체다.</p>
@@ -965,116 +1121,6 @@ for (변수 선언문 또는 할당문; 조건식; 증감식) {
 ]]></content>
       <tags>
         <tag>JS</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>API란 무엇일까?</title>
-    <url>/2022/What-is-an-API/</url>
-    <content><![CDATA[<p>JavaScript 구현공부를 시작하며 API를 이용하는 일이 많아졌다. API라는 용어에 대해 많이 들어보기도 했고 API가 무엇인지에 대해 대략적으로 알고 있다고 생각했었지만 막상 API에 대해 구체적으로 설명해보려고 하니 표현하기가 어려웠다. 그래서 API에 대해 정리해보면서 정확히 무엇인지 알아보고자 했다.</p>
-<hr>
-
-<h2 id="API"><a href="#API" class="headerlink" title="API"></a>API</h2><p>먼저 API의 정의를 알아보았다. </p>
-<blockquote>
-<p><strong>API</strong>는 Application Programming Inerface의 줄임말로 응용 프로그램에서 사용할 수 있도록 운영체제나 프로그래밍 언어가 제공하는 기능을 제어할 수 있게 만든 인터페이스를 뜻한다. </p>
-</blockquote>
-<p>다른 부분들은 쉽게 이해가 갔지만 인터페이스가 무엇을 말하는지 모호했다. 그럼 인터페이스는 무엇일까?</p>
-<blockquote>
-<p><strong>인터페이스(interface)</strong> 는 컴퓨터 시스템끼리 정보를 교환하는 공유 경계를 의미한다. 터치 스크린과 같은 일부 컴퓨터 하드웨어 장치들은 인터페이스를 통해 데이터를 송수신 할 수 있으며, 마우스나 마이크와 같은 장치들은 오직 시스템에 데이터를 전송만 하는 인터페이스를 제공한다.</p>
-</blockquote>
-<p>쉽게 정리해 인터페이스는 시스템끼리 데이터를 주고받도록 하는 물리적, 가상적인 매개체를 뜻한다.</p>
-<p>조금 더 이해하기 쉽게 실생활에서 예를 들어보면 우리가 자판기를 통해 음료수를 사먹는다라고 할 때 실제 자판기가 어떻게 내부적으로 동작하는지는 몰라도 동전이나 지폐를 넣고 원하는 음료 버튼을 눌러 음료수가 나오게하는 과정을 쉽게 수행한다. 이때 동전과 지폐를 넣고 음료 버튼을 클릭하는등 사물과 사물 또는 사물과 인간 간의 의사소통이 가능하도록하는 물리적, 가상적인 매개체를 인터페이스라고 할 수 있다.</p>
-<p>즉 API는 응용 프로그램 (우리가 만든 앱과 같은 서비스)에서 운영체제나 프로그래밍 언어가 제공하는 기능(지도, 날씨, 페이기능등)을 제어할 수 있게 만든 매개체라고 볼 수 있다.<br>API 문서에는 개발자가 이러한 요청과 응답을 구성하는 방법에 대한 정보가 들어 있어 API를 사용하기 이전에 API 문서를 통해 API의 사용법을 알 수 있다.</p>
-<hr>
-
-<h2 id="API는-어떻게-작동하는가"><a href="#API는-어떻게-작동하는가" class="headerlink" title="API는 어떻게 작동하는가?"></a>API는 어떻게 작동하는가?</h2><blockquote>
-<p>API 아키텍처는 일반적으로 클라이언트와 서버 측면에서 설명된다. 요청을 보내는 애플리케이션을 클라이언트라고 하고 응답을 보내는 애플리케이션을 서버라고 한다. 따라서 날씨 예에서 기상청의 날씨 데이터베이스는 서버이고 모바일 앱은 클라이언트이다. </p>
-</blockquote>
-<p>API가 생성된 시기와 이유에 따라 API는 네 가지 방식으로 작동할 수 있다.</p>
-<p>API라는 단어는 1964년부터 등장하기 시작했다. 이때는 하드웨어 독립성을 위해서 많이 사용되어 졌는데, 예를 들어 서로 다른 하드웨어마다 개발자가 일일이 프로그래밍을 하기보단 HAL이라는 하드웨어 추상화 계층을 통해 한번만 display라는 함수를 작성하고 이를 이용해 각기 다른 모니터에 출력을 쉽게 할수 있었고 이것이 API의 시초라고 할 수 있다.</p>
-<p>1980년대 중반 Mac OS와 Windows가 등장하면서 그래픽이 좋은 컴퓨터가 등장하기 시작했다. 이런 각각의 운영체제에서 동작하는 어플리케이션을 만들기 위해서 운영체제에서 제공하는 API를 이용했다. </p>
-<p>그리고 1990년도 인터넷이 보편적으로 대중화되기 시작하면서 컴퓨터와 컴퓨터 다양한 기기들이 인터넷을 통해서 의사소통을 할 수 있게 되었다. 이때 다양한 기기에서 서버에 있는 데이터를 읽고 쓰기 위해서는 서버에서 제공하는 WEB APIs를 이용해서 처리 할 수 있었다.</p>
-<p>네트워크에서 기기들간에 의사소통 해나가는 규격사항을 HTTP(s)라고 부르며 이런 WEB API를 어떻게 디자인해서 만들건지 정의하는 것이 있다. 예전에는 SOAP(Simple Object Access Protocol)이라는 모든 네트워크 요청과 반응을 XML이라는 데이터 포맷에 저장해 주고 받았다면 요즘에는 REST(Representational State Transfer)이 보편적으로 많이 사용된다.</p>
-<p>REST는 총 4가지로 구성되어 있는데 새로운 데이터를 만들고(POST, create), 읽고(GET, read), 업데이트하고(PUT, update), 삭제(DELETE, delete)할 수 있다. 예를 들어 GET을 이용해 유저에 대한 정보를 요청하면 서버로부터 유저에 대한 데이터를 JSON이라는 포맷을 통해 받아 올 수 있다. 이처럼 서버에서 제공하는 WEB API를 통해 서버에 있는 데이터를 읽어오거나 업데이트 할 수 있다.</p>
-]]></content>
-      <tags>
-        <tag>개발</tag>
-        <tag>용어정리</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>WCAG 2.1 정리</title>
-    <url>/2022/WCAG-2-1-organization/</url>
-    <content><![CDATA[<h1 id="👀-WCAG"><a href="#👀-WCAG" class="headerlink" title="👀 WCAG?"></a>👀 WCAG?</h1><blockquote>
-<ul>
-<li>WCAG는 Web Content Accessibility Guideline의 줄임말로 웹 콘텐츠를 접근성 있게 만들기 위한 권장 표준</li>
-</ul>
-</blockquote>
-<ul>
-<li>이 표준을 준수함을 통해 시각, 청각, 운동장애 등 광범위한 장애에 대한 접근성 있는 콘텐츠를 만들 수 있음</li>
-<li>웹 접근성의 기초를 제공하는 4가지 원칙인 인식의 용이성(Perceivable), 운용의 용이성(Operable), 이해의 용이성(Understandable), 견고성(Robust)에 기반을 두고 있음</li>
-<li>원칙을 기반으로 접근성을 위해 어떠한 목표를 달성해야 하는지에 대한 지침과 또 그 지침에 대한 검증가능한 성공기준을 제시하고 있음</li>
-<li>성공기준은 최저수준인 level A 부터 최고수준인 level AAA까지 3단계로 나누어짐</li>
-</ul>
-<hr>
-
-<h1 id="WCAG-2-0-VS-WCAG-2-1"><a href="#WCAG-2-0-VS-WCAG-2-1" class="headerlink" title="WCAG 2.0 VS WCAG 2.1"></a>WCAG 2.0 VS WCAG 2.1</h1><p>WCAG 2.0 이 만들어졌을때는 주로 데스크탑 환경만을 고려했지만 그 후 모바일 산업의 폭발적인 확장으로 모바일 환경을 필수적으로 고려해야하는 상황이 찾아왔다.</p>
-<p>WCAG 2.1은 WCAG 2.0의 요구사항들을 상속하면서 추가적으로 인지나 학습장애가 있는 사용자, 저시력자, 모바일 기기를 사용하는데 장애가 있는 사용자의 접근성 지침을 개선하는 데 목표를 두고있다.</p>
-<p>즉 WCAG 2.1은 새로운 성공기준, 이를 지원하기 위한 정의, 추가사항을 조직하기 위한 지침, 그리고 준수 절(section)에 대한 몇 가지 사항을 추가하여 WCAG 2.0을 확장한 것이다.</p>
-<hr>
-
-<h2 id="1-인식의-용이성-Perceivable"><a href="#1-인식의-용이성-Perceivable" class="headerlink" title="1. 인식의 용이성(Perceivable)"></a>1. 인식의 용이성(Perceivable)</h2><ul>
-<li>정보와 사용자 인터페이스 요소는 사용자가 인식할 수 있는 방법으로 제시되어야 한다.</li>
-<li>4가지 지침과 그에 대한 29가지 성공기준을 가지고 있다.</li>
-</ul>
-<h3 id="지침-1-1-대체텍스트"><a href="#지침-1-1-대체텍스트" class="headerlink" title="지침 1.1 대체텍스트"></a>지침 1.1 대체텍스트</h3><ul>
-<li><p>텍스트가 아닌 콘텐츠의 경우 목적에 상응하는 대체 텍스트를 제공해야 한다. (ex - img alt속성)</p>
-</li>
-<li><p>단 시력검사, 받아쓰기와 같은 Test나 특정 감각을 위한 악기연주 등 텍스트만으로 그 내용을 설명하기에 애매한 경우 콘텐츠의 용도만을 기술하는 것도 괜찮다.</p>
-</li>
-<li><p>텍스트 아닌 콘텐츠가 순수한 장식이거나, 보이지 않는경우 대체텍스트를 제공하지 않는 편이 합리적이다</p>
-</li>
-</ul>
-<h3 id="지침-1-2-시간기반-미디어"><a href="#지침-1-2-시간기반-미디어" class="headerlink" title="지침 1.2 시간기반 미디어"></a>지침 1.2 시간기반 미디어</h3><ul>
-<li><p>시간기반 미디어에 대한 대체수단을 제공해야 한다</p>
-</li>
-<li><p>달성하기 비교적 쉬운 level A 부터 어려운 level AAA 까지 총 9개의 기준을 가지고 있다.</p>
-</li>
-<li><p>level이 올라갈수록 더 자세하고 많은 정보를 실시간으로 제공하는 것을 기준으로 삼고 있다.</p>
-</li>
-</ul>
-<h3 id="지침-1-3-적응가능"><a href="#지침-1-3-적응가능" class="headerlink" title="지침 1.3 적응가능"></a>지침 1.3 적응가능</h3><ul>
-<li><p>콘텐츠가 정보나 구조의 손실 없이 다른 방법들로 표시될 수 있도록 제작되어야 한다.</p>
-</li>
-<li><p>콘텐츠의 정보, 구조, 관계는 프로그래밍 방식으로 결정되어야 하고 또 콘텐츠가 표시되는 순서가 의미에 영향을 주는 경우 올바른 읽기 순서 역시 프로그래밍 방식으로 결정되어야 한다.</p>
-<blockquote>
-<p>프로그래밍 방식으로 결정된다는 것은 확대기, 음성 인식 소프트웨어와 같은 보조공학을 포함한 user agent(웹 브라우저)가 개발자 제공 데이터로부터 정보를 추출해 사용자에게 다른 형식으로 제공할 수 있음을 뜻한다 - 대체텍스트의 img alt 속성 처럼</p>
-</blockquote>
-</li>
-<li><p>콘텐츠를 이해하고 작동하기 위해 제공된 지시문은 모양, 색상, 크기, 시각적 위치 등 구성요소의 감각적 특성에 전적으로 의존해서는 안 된다.</p>
-</li>
-</ul>
-<h3 id="지침-1-4-식별-가능"><a href="#지침-1-4-식별-가능" class="headerlink" title="지침 1.4 식별 가능"></a>지침 1.4 식별 가능</h3><ul>
-<li><p>색상은 시각적 요소 구별을 위한 유일한 시각적 수단으로만 사용되어서는 안된다.</p>
-</li>
-<li><p>웹 페이지에 있는 오디오를 컨트롤 할수 있어야 하고, 배경음이 낮거나 없어야한다 - 스크린리더 사용자를 위한 항목으로, 스크린리더 사용자는 청각을 통해 정보를 받아들이기 때문에 다른 오디오나 배경음이 지속된다면 콘텐츠를 이용하는데 불편함을 겪을 수 있음.</p>
-</li>
-<li><p>텍스트 이미지 보다는 텍스트를 사용해야 하고, 텍스트의 명도대비, 크기 조정등을 통해 가시성을 높여야한다.</p>
-</li>
-</ul>
-<hr>
-
-<p>추가중…</p>
-<hr>
-
-<h1 id="참고"><a href="#참고" class="headerlink" title="참고"></a>참고</h1><ul>
-<li><a href="https://www.w3.org/TR/WCAG21/">https://www.w3.org/TR/WCAG21/</a></li>
-<li><a href="http://www.kwacc.or.kr/WAI/wcag21/">http://www.kwacc.or.kr/WAI/wcag21/</a></li>
-<li><a href="http://www.websoul.co.kr/accessibility/WA_guide21.asp">http://www.websoul.co.kr/accessibility/WA_guide21.asp</a></li>
-</ul>
-]]></content>
-      <tags>
-        <tag>개발</tag>
-        <tag>WCAG</tag>
       </tags>
   </entry>
 </search>
