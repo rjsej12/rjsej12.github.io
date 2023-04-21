@@ -154,7 +154,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">19</span>
+          <span class="site-state-item-count">20</span>
           <span class="site-state-item-name">포스트</span>
         </a>
       </div>
@@ -189,6 +189,141 @@
 
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://rjsej12.github.io/2022/Image-Replacement/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="rongrong">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="롱롱의 일기장">
+      <meta itemprop="description" content="주니어 개발자 롱롱의 성장일기">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 롱롱의 일기장">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2022/Image-Replacement/" class="post-title-link" itemprop="url">IR기법 (Image Replacement)</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">작성일</span>
+
+      <time title="Post created: 2022-09-07 22:21:22" itemprop="dateCreated datePublished" datetime="2022-09-07T22:21:22+09:00">2022-09-07</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Updated at: 2023-03-22 04:17:24" itemprop="dateModified" datetime="2023-03-22T04:17:24+09:00">2023-03-22</time>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2022/Image-Replacement/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2022/Image-Replacement/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="👀"><a href="#👀" class="headerlink" title="👀"></a>👀</h1><p>WCAG 2.1에 웹 콘텐츠의 접근성을 향상시키기 위해 텍스트 아닌 콘텐츠에 대해 대체 텍스트를 제공해주어야 한다는 지침이 있다. 이미지 역시 텍스트가 아닌 콘텐츠이기 때문에 대체 텍스트를 제공해주어야 하는데, 이는 접근성의 향상 뿐만 아니라 SEO(검색 엔진 최적화)와도 관련이 있어 중요하다.</p>
+<p>이렇게 사용자에게 대체 텍스트를 제공하는 것을 IR(Image Replacement)이라고 하는데, HTML의 요소를 사용할 경우 alt 속성을 통해 대체 텍스트를 제공하는것이 일반적이다.</p>
+<p>하지만 CSS를 이용해 background-image를 넣는 경우도 많기에 어떻게 대체 텍스트를 제공하는지 정리해보자.</p>
+<hr>
+
+<h1 id="😒-visibility-hidden-display-none"><a href="#😒-visibility-hidden-display-none" class="headerlink" title="😒 visibility: hidden, display: none"></a>😒 visibility: hidden, display: none</h1><p>먼저 IR기법으로 잘못 사용되고 있는 대표적인 예가 있는데 visibility: hidden과 display: none이다.</p>
+<p>이 두 방법은 모두 적용된 요소가 화면에서 보이지 않게 하기 때문에 스크린리더 사용자를 위한 텍스트를 제공하기 위해 사용되는 경우를 발견할 수 있다. 하지만 이 두 방법은 스크린리더에서도 읽지 않는것을 원칙으로 한다.</p>
+<p>IR기법의 목표는 대체 텍스트를 시각적으는 숨기지만 스크린 리더 사용자는 읽을 수 있어야 하기 때문에 이 두가지 방법은 옳지 않다.</p>
+<hr>
+
+<h1 id="😊-올바른-IR-기법"><a href="#😊-올바른-IR-기법" class="headerlink" title="😊 올바른 IR 기법"></a>😊 올바른 IR 기법</h1><h2 id="Phark-Method"><a href="#Phark-Method" class="headerlink" title="Phark Method"></a>Phark Method</h2><ul>
+<li><p>가장 널리 사용되는 방법으로 이미지로 대체할 엘리먼트에 배경이미지를 설정하고 글자는 text-indent를 이용하여 화면 바깥으로 빼내어 보이지 않게 하는 방법이다.</p>
+</li>
+<li><p>의미있는 이미지의 대체 텍스트를 제공하는 경우에 사용한다.</p>
+</li>
+<li><p>Text-indent 속성은 사용하기 간편하지만 단점 또한 존재한다. 만약 이미지가 제대로 로드되지 않으면 텍스트가 보이지 않기 때문에 스크린리더 사용자가 아닌 경우 이미지를 설명하는 텍스트를 보고 콘텐츠의 내용을 확인 할 수 없다. 또한, 웹페이지에 text-indent 스타일 속성이 적용된 요소가 많으면 성능 저하를 불러올 수 있다.</p>
+</li>
+</ul>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.ir_pm</span>&#123;</span><br><span class="line"><span class="attribute">width</span>: <span class="number">995px</span>;</span><br><span class="line"><span class="attribute">height</span>: <span class="number">1441px</span>;</span><br><span class="line"><span class="attribute">text-indent</span>: -<span class="number">9999px</span>;</span><br><span class="line"><span class="attribute">background</span> : <span class="built_in">url</span>(<span class="string">&quot;rocketgril_poster.jpg&quot;</span>) no-repeat;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Dwyer-Method"><a href="#Dwyer-Method" class="headerlink" title="Dwyer Method"></a>Dwyer Method</h2><ul>
+<li><p>이미지로 대체할 엘리먼트에 배경이미지를 설정하고 글자는 span태그로 감싼 후 width와 height를 각각 0으로 하여 넘치는 글자를 숨기는 방법이다.</p>
+</li>
+<li><p>추가적인 tag를 사용하고, Phark Method와 마찬가지로 이미지가 제대로 로드되지 않으면 텍스트가 보이지 않아 콘텐츠 내용 확인이 어렵다는 단점이 존재한다.</p>
+</li>
+</ul>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.ir_dm</span>&#123;</span><br><span class="line"><span class="attribute">width</span>: <span class="number">995px</span>;</span><br><span class="line"><span class="attribute">height</span>: <span class="number">1441px</span>;</span><br><span class="line"><span class="attribute">background</span> : <span class="built_in">url</span>(<span class="string">&quot;rocketgril_poster.jpg&quot;</span>) no-repeat;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.ir_dm</span> <span class="selector-tag">span</span>&#123;</span><br><span class="line"><span class="attribute">display</span> :block;</span><br><span class="line"><span class="attribute">overflow</span>: hidden;</span><br><span class="line"><span class="attribute">width</span>: <span class="number">0px</span>;</span><br><span class="line"><span class="attribute">height</span>: <span class="number">0px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="WA-IR"><a href="#WA-IR" class="headerlink" title="WA IR"></a>WA IR</h2><ul>
+<li><p>접근성 및 UX(User Experience) 향상을 위한 화면읽기프로그램 활용 기법으로 권장되는 방법이다.</p>
+</li>
+<li><p>의미있는 이미지의 대체 텍스트로 이미지가 없어도 대체 텍스트를 보여주고자 할 때 사용한다.</p>
+</li>
+<li><p>이미지로 대체할 엘리먼트에 배경이미지를 설정하고 글자는 span 태그로 감싼 후 z-index:-1을 이용하여 배치순서를 뒤로 보내어 화면에 안보이게 처리한다.</p>
+</li>
+<li><p>만약 브라우저에서 CSS를 끄거나, 웹 페이지에 적용된 CSS가 정상적으로 로드되지 않을 때 숨겨진 텍스트가 화면에 출력된다. 또한, position 속성을 사용하기 때문에 성능에 영향을 줄 수 있다.</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.ir_wa</span>&#123;</span><br><span class="line"><span class="attribute">width</span>: <span class="number">995px</span>;</span><br><span class="line"><span class="attribute">height</span>: <span class="number">1441px</span>;</span><br><span class="line"><span class="attribute">background</span> : <span class="built_in">url</span>(<span class="string">&quot;rockegril_poster.jpg&quot;</span>) no-repeat;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.ir_wa</span> <span class="selector-tag">span</span>&#123;</span><br><span class="line"><span class="attribute">display</span>:block;</span><br><span class="line"><span class="attribute">position</span>:relative;</span><br><span class="line"><span class="attribute">z-index</span>:-<span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<p>이 외에도 CSS의 위치 속성과 overflow: hidden을 사용하는 방법, 자바스크립트를 이용하여 이미지로 대체할 엘리먼트의 텍스트를 img태그로 교체하는 방법등 다양한 방법이 존재한다.</p>
+<hr>
+
+<h1 id="참고"><a href="#참고" class="headerlink" title="참고"></a>참고</h1><ul>
+<li><a target="_blank" rel="noopener" href="https://m.blog.naver.com/eirene100999/221686480420">https://m.blog.naver.com/eirene100999/221686480420</a></li>
+<li><a target="_blank" rel="noopener" href="https://nuli.navercorp.com/community/article/1132804?email=true">https://nuli.navercorp.com/community/article/1132804?email=true</a></li>
+<li><a target="_blank" rel="noopener" href="https://alonehistory.tistory.com/14">https://alonehistory.tistory.com/14</a></li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -446,120 +581,6 @@
 <hr>
 
 <p>MDN이 거의 공식문서 혹은 표준처럼 여겨지기는 하지만 번역문서 그리고 원문 역시도 contributor분들에 의해 쓰여지는 것이기 때문에 확신을 하지는 말고 여러 레퍼런스들을 통해 교차검증해야되겠다고 깨달았다.</p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://rjsej12.github.io/2022/What-is-an-API/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="rongrong">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="롱롱의 일기장">
-      <meta itemprop="description" content="주니어 개발자 롱롱의 성장일기">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 롱롱의 일기장">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2022/What-is-an-API/" class="post-title-link" itemprop="url">API란 무엇일까?</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">작성일</span>
-
-      <time title="Post created: 2022-08-14 19:29:18" itemprop="dateCreated datePublished" datetime="2022-08-14T19:29:18+09:00">2022-08-14</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">Edited on</span>
-      <time title="Updated at: 2023-03-22 04:17:24" itemprop="dateModified" datetime="2023-03-22T04:17:24+09:00">2023-03-22</time>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/2022/What-is-an-API/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2022/What-is-an-API/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>JavaScript 구현공부를 시작하며 API를 이용하는 일이 많아졌다. API라는 용어에 대해 많이 들어보기도 했고 API가 무엇인지에 대해 대략적으로 알고 있다고 생각했었지만 막상 API에 대해 구체적으로 설명해보려고 하니 표현하기가 어려웠다. 그래서 API에 대해 정리해보면서 정확히 무엇인지 알아보고자 했다.</p>
-<hr>
-
-<h2 id="API"><a href="#API" class="headerlink" title="API"></a>API</h2><p>먼저 API의 정의를 알아보았다. </p>
-<blockquote>
-<p><strong>API</strong>는 Application Programming Inerface의 줄임말로 응용 프로그램에서 사용할 수 있도록 운영체제나 프로그래밍 언어가 제공하는 기능을 제어할 수 있게 만든 인터페이스를 뜻한다. </p>
-</blockquote>
-<p>다른 부분들은 쉽게 이해가 갔지만 인터페이스가 무엇을 말하는지 모호했다. 그럼 인터페이스는 무엇일까?</p>
-<blockquote>
-<p><strong>인터페이스(interface)</strong> 는 컴퓨터 시스템끼리 정보를 교환하는 공유 경계를 의미한다. 터치 스크린과 같은 일부 컴퓨터 하드웨어 장치들은 인터페이스를 통해 데이터를 송수신 할 수 있으며, 마우스나 마이크와 같은 장치들은 오직 시스템에 데이터를 전송만 하는 인터페이스를 제공한다.</p>
-</blockquote>
-<p>쉽게 정리해 인터페이스는 시스템끼리 데이터를 주고받도록 하는 물리적, 가상적인 매개체를 뜻한다.</p>
-<p>조금 더 이해하기 쉽게 실생활에서 예를 들어보면 우리가 자판기를 통해 음료수를 사먹는다라고 할 때 실제 자판기가 어떻게 내부적으로 동작하는지는 몰라도 동전이나 지폐를 넣고 원하는 음료 버튼을 눌러 음료수가 나오게하는 과정을 쉽게 수행한다. 이때 동전과 지폐를 넣고 음료 버튼을 클릭하는등 사물과 사물 또는 사물과 인간 간의 의사소통이 가능하도록하는 물리적, 가상적인 매개체를 인터페이스라고 할 수 있다.</p>
-<p>즉 API는 응용 프로그램 (우리가 만든 앱과 같은 서비스)에서 운영체제나 프로그래밍 언어가 제공하는 기능(지도, 날씨, 페이기능등)을 제어할 수 있게 만든 매개체라고 볼 수 있다.<br>API 문서에는 개발자가 이러한 요청과 응답을 구성하는 방법에 대한 정보가 들어 있어 API를 사용하기 이전에 API 문서를 통해 API의 사용법을 알 수 있다.</p>
-<hr>
-
-<h2 id="API는-어떻게-작동하는가"><a href="#API는-어떻게-작동하는가" class="headerlink" title="API는 어떻게 작동하는가?"></a>API는 어떻게 작동하는가?</h2><blockquote>
-<p>API 아키텍처는 일반적으로 클라이언트와 서버 측면에서 설명된다. 요청을 보내는 애플리케이션을 클라이언트라고 하고 응답을 보내는 애플리케이션을 서버라고 한다. 따라서 날씨 예에서 기상청의 날씨 데이터베이스는 서버이고 모바일 앱은 클라이언트이다. </p>
-</blockquote>
-<p>API가 생성된 시기와 이유에 따라 API는 네 가지 방식으로 작동할 수 있다.</p>
-<p>API라는 단어는 1964년부터 등장하기 시작했다. 이때는 하드웨어 독립성을 위해서 많이 사용되어 졌는데, 예를 들어 서로 다른 하드웨어마다 개발자가 일일이 프로그래밍을 하기보단 HAL이라는 하드웨어 추상화 계층을 통해 한번만 display라는 함수를 작성하고 이를 이용해 각기 다른 모니터에 출력을 쉽게 할수 있었고 이것이 API의 시초라고 할 수 있다.</p>
-<p>1980년대 중반 Mac OS와 Windows가 등장하면서 그래픽이 좋은 컴퓨터가 등장하기 시작했다. 이런 각각의 운영체제에서 동작하는 어플리케이션을 만들기 위해서 운영체제에서 제공하는 API를 이용했다. </p>
-<p>그리고 1990년도 인터넷이 보편적으로 대중화되기 시작하면서 컴퓨터와 컴퓨터 다양한 기기들이 인터넷을 통해서 의사소통을 할 수 있게 되었다. 이때 다양한 기기에서 서버에 있는 데이터를 읽고 쓰기 위해서는 서버에서 제공하는 WEB APIs를 이용해서 처리 할 수 있었다.</p>
-<p>네트워크에서 기기들간에 의사소통 해나가는 규격사항을 HTTP(s)라고 부르며 이런 WEB API를 어떻게 디자인해서 만들건지 정의하는 것이 있다. 예전에는 SOAP(Simple Object Access Protocol)이라는 모든 네트워크 요청과 반응을 XML이라는 데이터 포맷에 저장해 주고 받았다면 요즘에는 REST(Representational State Transfer)이 보편적으로 많이 사용된다.</p>
-<p>REST는 총 4가지로 구성되어 있는데 새로운 데이터를 만들고(POST, create), 읽고(GET, read), 업데이트하고(PUT, update), 삭제(DELETE, delete)할 수 있다. 예를 들어 GET을 이용해 유저에 대한 정보를 요청하면 서버로부터 유저에 대한 데이터를 JSON이라는 포맷을 통해 받아 올 수 있다. 이처럼 서버에서 제공하는 WEB API를 통해 서버에 있는 데이터를 읽어오거나 업데이트 할 수 있다.</p>
 
       
     </div>
