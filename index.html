@@ -154,13 +154,13 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">20</span>
+          <span class="site-state-item-count">21</span>
           <span class="site-state-item-name">포스트</span>
         </a>
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">14</span>
+        <span class="site-state-item-count">15</span>
         <span class="site-state-item-name">태그</span></a>
       </div>
   </nav>
@@ -288,6 +288,117 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://rjsej12.github.io/2023/Transfer-hexo-blog-to-new-device/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="rongrong">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="롱롱의 일기장">
+      <meta itemprop="description" content="주니어 개발자 롱롱의 성장일기">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 롱롱의 일기장">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2023/Transfer-hexo-blog-to-new-device/" class="post-title-link" itemprop="url">새로운 컴퓨터로 Hexo 블로그 옮기기</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">작성일</span>
+
+      <time title="Post created: 2023-03-21 21:15:56" itemprop="dateCreated datePublished" datetime="2023-03-21T21:15:56+09:00">2023-03-21</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Updated at: 2023-04-22 21:54:25" itemprop="dateModified" datetime="2023-04-22T21:54:25+09:00">2023-04-22</time>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2023/Transfer-hexo-blog-to-new-device/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2023/Transfer-hexo-blog-to-new-device/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>나는 이 블로그를 Hexo라는 프레임워크를 이용해 작년 8월에 만들었었고 나름대로 계속해서 포스팅을 하고 있었다. 그러다 1월 말에 원래 사용하던 Windows 갤럭시북에서 MacOs의 맥북 M1으로 갈아타게 되었는데 깃허브에서 repository를 clone하고 hexo 명령어를 입력해도 작동하지 않는 문제가 생겼다.</p>
+<p>처음부터 블로그를 다시 세팅해야하나 아니면 다른 플랫폼으로 이사를 갈까 고민하며 해결방법을 찾던 중 다음 글을 발견했다. <a target="_blank" rel="noopener" href="https://jqxiao.tech/2020/07/17/Transfer-Hexo-Blog-to-New-Device/">Transfer Hexo Blog to New Device</a></p>
+<p>위 블로그 게시글의 내용을 따라 수행하니 맥북에서도 다시 블로그 포스팅을 진행할 수 있게 되었고, 혹시라도 다음에 또 컴퓨터를 바꿀 수 있으니 방법을 정리해두어야겠다고 마음먹었다.</p>
+<h1 id="새로운-branch-만들기"><a href="#새로운-branch-만들기" class="headerlink" title="새로운 branch 만들기"></a>새로운 branch 만들기</h1><ul>
+<li>hexo blog repository를 git clone 한다.</li>
+<li>clone한 repositroy에서 <code>git checkout -b branch명</code>로 새로운 branch를 만든다.</li>
+<li>새로운 branch에서 .git 폴더를 제외한 모든 파일들을 삭제한다.</li>
+<li>원래 사용하던 기기의 hexo blog 폴더를 복사해온다.</li>
+<li>이전 기기의 .git 관련 폴더들은 삭제한다.</li>
+<li>새로운 branch를 Github에 push한다.</li>
+</ul>
+<h1 id="새-기기에-Hexo-설치하기"><a href="#새-기기에-Hexo-설치하기" class="headerlink" title="새 기기에 Hexo 설치하기"></a>새 기기에 Hexo 설치하기</h1><ul>
+<li><code>npm install hexo --save</code>로 Hexo를 설치한다.</li>
+<li><code>npm install hexo-deployer-git --save</code>로 git deployer plugin를 설치한다.</li>
+</ul>
+<h1 id="블로그-Deploy하기"><a href="#블로그-Deploy하기" class="headerlink" title="블로그 Deploy하기"></a>블로그 Deploy하기</h1><ul>
+<li>새로 만든 branch에 .gitigonre 파일을 추가한다.</li>
+<li>.gitignore 파일에 <code>.deploy_git/*</code>과 <code>public/*</code>을 추가한다</li>
+<li><code>hexo clean</code>을 통해 이전 웹페이지를 삭제한다.</li>
+<li><code>hexo generate</code>와 <code>hexo deploy</code>로 새로운 웹페이지를 만들 수 있다.</li>
+</ul>
+<h1 id="무엇이-문제였을까"><a href="#무엇이-문제였을까" class="headerlink" title="무엇이 문제였을까?"></a>무엇이 문제였을까?</h1><p>hexo deploy시 만들어진 정적 웹페이지가 자동으로 Github의 default branch에 push되었던 것이지 hexo를 설치했던 기존 폴더 자체를 Github에 push한것은 아니었기 때문에 git clone을 해도 hexo 명령어가 작동하지 않았다.<br>따라서 새로운 branch에 원본 기기의 폴더를 복사해옴으써 문제를 해결할 수 있었다.</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
     <link itemprop="mainEntityOfPage" href="https://rjsej12.github.io/2022/After-Second-Project/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -388,108 +499,6 @@
 <h1 id="마치며"><a href="#마치며" class="headerlink" title="마치며"></a>마치며</h1><p>이번 프로젝트를 끝으로 약 4개월간의 긴(?) 과정이 종료되었다. 커넥to 과정을 시작할때와 비교해보면 스스로 정말 많이 성장했음을 느끼는것 같다. 단순히 새로운 지식을 배웠기 때문이 아니라, 모르는 부분이 생겼을때 그것을 찾아 나가는 방법과 더 나은 코드를 위해 어떠한 고민을 해야 하는지 또 다른 사람과 협업을 할 때 어떻게 커뮤니케이션 해야 할 지 등 앞으로 개발자로 살아가면서 가져야 할 마인드, 태도가 달라졌다고 느끼기 때문이다. 아직 많이 부족하지만, 이렇게 지속해서 공부해 나간다면 그래도 좋은 개발자가 될 수 있지 않을까 하는 일말의 자신감도 생긴것 같다.</p>
 <p>사실 개발자로의 취직을 준비하면서 가장 걱정되었던 부분은 (많이 고민하고 결정하기는 했지만) ‘내가 지속해서 공부를 잘 할수 있을까?’ 였다. 어릴 때 부터 흥미를 못 느끼는 일에는 집중을 잘 하지 못하던 터라 겉핥기만 했을때는 재미있다 느꼈지만 깊게 공부하게 되었을때도 재미가 유지될지에 대해 의심이 존재했다. 하지만 4개월 동안 느낀 것은 ‘재밌다’였다. 뭐 아직도 깊게 파고든것은 아니라고 할 수 있겠지만, 문제를 만나고 해결하고 결과물을 실제로 볼 수 있는등 여러 부분들이 오랜만에 ‘공부를 해야해서 하는게 아니라 재밌어서 하는 경우도 있었지’라고 생각하게 했다.</p>
 <p>여전히 부족함을 느끼는 만큼, 또 프로젝트를 하면서 vanilla js의 불편함을 느꼈어서 얼른 react와 같은 프레임워크도 공부하고 싶고 vue는 또 뭐가 다를지 등등 배움에 대한 욕구가 생기는 것 같다. 과정이 끝나더라도 열심히 해서 지속적으로 성장할 수 있는 기반을 쌓아야겠다.</p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://rjsej12.github.io/2022/pageYOffset-vs-scrollY-scroll-vs-scrollTo/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="rongrong">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="롱롱의 일기장">
-      <meta itemprop="description" content="주니어 개발자 롱롱의 성장일기">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 롱롱의 일기장">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2022/pageYOffset-vs-scrollY-scroll-vs-scrollTo/" class="post-title-link" itemprop="url">pageYOffset vs scrollY, scroll() vs scrollTo()</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">작성일</span>
-
-      <time title="Post created: 2022-11-28 12:31:26" itemprop="dateCreated datePublished" datetime="2022-11-28T12:31:26+09:00">2022-11-28</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">Edited on</span>
-      <time title="Updated at: 2023-03-22 04:17:24" itemprop="dateModified" datetime="2023-03-22T04:17:24+09:00">2023-03-22</time>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/2022/pageYOffset-vs-scrollY-scroll-vs-scrollTo/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2022/pageYOffset-vs-scrollY-scroll-vs-scrollTo/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="🤔What-is-Problem"><a href="#🤔What-is-Problem" class="headerlink" title="🤔What is Problem?"></a>🤔What is Problem?</h1><p>페어 프로그래밍을 진행하면서 수직으로 스크롤한 거리에 따라 숨겨진 버튼을 활성화 하고, 스크롤 버튼을 클릭했을 때 맨 위로 스크롤하는 예제를 해결해야했다.</p>
-<p>이를 위해 수직으로 스크롤한 거리를 측정하는 방법과 스크롤을 시키는 방법이 필요해 이에 대해 알아보았는데, 같은 기능을 하는 프로퍼티와 메서드가 중복으로 존재해 어떤것을 사용해야하는지 고민이 되었다.</p>
-<h2 id="Window-pageYOffset-vs-Window-scrollY"><a href="#Window-pageYOffset-vs-Window-scrollY" class="headerlink" title="Window.pageYOffset vs Window.scrollY"></a>Window.pageYOffset vs Window.scrollY</h2><p>먼저 수직으로 스크롤한 거리를 측정하는 방법에는 Window.pageYOffset와 Window.scrollY가 존재했다. MDN에서는 pageYOffset이 scrollY의 다른이름이라고 했지만, 두 프로퍼티에는 브라우저 호환성의 차이가 존재했다.</p>
-<p>일부 오래된 브라우저는 scrollY 대신 pageYOffset만 지원했고 노후 환경을 신경쓰지 않아도 된다면 둘 중 아무거나 사용해도 괜찮지만, 별다른 요구조건이 없다면 하위호환성을 위해 pageYOffset을 사용하는 것이 더 좋은 코드라고 판단했다.</p>
-<h2 id="Window-scroll-vs-Window-scrollTo"><a href="#Window-scroll-vs-Window-scrollTo" class="headerlink" title="Window.scroll() vs Window.scrollTo()"></a>Window.scroll() vs Window.scrollTo()</h2><p>다음으로 맨 위로 스크롤하기 위해서는 Window.scroll() 이나 Window.scrollTo() 메서드를 사용할 수 있었다. 이 두 메서드는 차이 없이 동일해 둘 중 아무거나 사용해도 괜찮았다. 다만 scroll 메서드가 더 먼저 나왔기 때문에 실제로 사용된 코드도 많고 혹여나 버그등이 발생해 검색을 해야한다면 검색 결과도 많아 scroll을 사용하는것이 더 좋을 것이라고 판단했다.</p>
-<p>또 단순히 메서드의 인자로 x-좌표와 y-좌표를 주는것 이외에도 options를 통해 top, left, behavior를 줄 수 있다는 것을 알았다. 특히 behavior: smooth를 사용해 애니메이션을 따로 만들지 않더라도 부드럽게 이동할 수 있는점이 유용해 꼭 기억하자 생각했다.</p>
-<h2 id="참고"><a href="#참고" class="headerlink" title="참고"></a>참고</h2><ul>
-<li><a target="_blank" rel="noopener" href="https://developer.mozilla.org/ko/docs/Web/API/Window/pageYOffset">https://developer.mozilla.org/ko/docs/Web/API/Window/pageYOffset</a></li>
-<li><a target="_blank" rel="noopener" href="https://developer.mozilla.org/ko/docs/Web/API/Window/scrollY">https://developer.mozilla.org/ko/docs/Web/API/Window/scrollY</a></li>
-<li><a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/API/Window/scroll">https://developer.mozilla.org/en-US/docs/Web/API/Window/scroll</a></li>
-<li><a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/API/Window/scrollTo">https://developer.mozilla.org/en-US/docs/Web/API/Window/scrollTo</a></li>
-<li><a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/1925671/javascript-window-scroll-vs-window-scrollto">https://stackoverflow.com/questions/1925671/javascript-window-scroll-vs-window-scrollto</a></li>
-</ul>
 
       
     </div>
