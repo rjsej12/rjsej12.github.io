@@ -154,13 +154,13 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">21</span>
+          <span class="site-state-item-count">22</span>
           <span class="site-state-item-name">포스트</span>
         </a>
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">15</span>
+        <span class="site-state-item-count">16</span>
         <span class="site-state-item-name">태그</span></a>
       </div>
   </nav>
@@ -189,6 +189,119 @@
 
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://rjsej12.github.io/2023/New-things-I-learned-about-the-regExp-test-method/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="rongrong">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="롱롱의 일기장">
+      <meta itemprop="description" content="주니어 개발자 롱롱의 성장일기">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 롱롱의 일기장">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2023/New-things-I-learned-about-the-regExp-test-method/" class="post-title-link" itemprop="url">정규식 Test Method에 대해 새롭게 알게된 점</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">작성일</span>
+
+      <time title="Post created: 2023-04-27 14:35:23" itemprop="dateCreated datePublished" datetime="2023-04-27T14:35:23+09:00">2023-04-27</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Updated at: 2023-04-30 23:51:15" itemprop="dateModified" datetime="2023-04-30T23:51:15+09:00">2023-04-30</time>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2023/New-things-I-learned-about-the-regExp-test-method/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2023/New-things-I-learned-about-the-regExp-test-method/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="😱문제발생"><a href="#😱문제발생" class="headerlink" title="😱문제발생"></a>😱문제발생</h1><p>원티드 프리온보딩 프론트엔드 인턴십에 참여하여 1주차 과제를 진행하던 중이었다.<br>1주차 과제는 인턴십에 참여하기 위해 수행했던 사전과제를 동료학습을 통해 리팩토링 하는 것이였고, 나는 팀원들과의 토의로 얻은 Best Practice의 기준을 가지고 Assignment1의 기능 구현을 맡아 코드를 작성하고 있었다.</p>
+<ul>
+<li>Assignment 1<ul>
+<li>회원가입과 로그인 페이지에 이메일과 비밀번호의 유효성 검사기능을 구현해주세요<ul>
+<li>이메일 조건: @ 포함, 비밀번호 조건: 8자 이상</li>
+</ul>
+</li>
+<li>입력된 이메일과 비밀번호가 유효성 검사를 통과하지 못한다면 button에 disabled 속성을 부여해주세요</li>
+</ul>
+</li>
+</ul>
+<p>Assignment 1의 유효성 검증을 구현하기 위해 정규식을 이용하는게 좋을 것 같다라는 의견을 수용해, <code>password: /^.&#123;8,&#125;$/g</code>의 정규식을 통해 코드를 작성하고 정상적으로 동작하는지 확인을 하는데 갑자기 다음과 같은 문제가 발생했다.</p>
+<p><img src="/../images/reg-test-problem.gif" alt="문제"></p>
+<p>8자리의 비밀번호를 입력했을때 error message가 정상적으로 사라지길래 검증이 잘 되는구나 생각했는데, 추가적으로 비밀번호를 입력할때 마다 error message가 생겼다 없어졌다 하는 것이다. 즉 비밀번호를 입력할때마다 정규식으로 검증한 결과가 바뀐다는 것이였는데, 혹시나해서 정규식으로 검증한 결과를 개발자 도구를 통해 살펴보았다.</p>
+<p><img src="/../images/reg-test-console.png" alt="개발자도구로 찍어본 정규식 테스트"></p>
+<p>같은 정규식으로 같은 값을 검사했는데도 그 결과가 계속해서 바뀌는 현상이 일어났는데, 아무리 생각해도 이해가 되지 않아 ChatGPT를 통해 질문을 해 본 결과 다음과 같은 답을 받을 수 있었다.</p>
+<p><img src="/../images/reg-test-gpt.png" alt="ChatGPT 답변"></p>
+<h1 id="😊문제해결"><a href="#😊문제해결" class="headerlink" title="😊문제해결"></a>😊문제해결</h1><p>ChatGPT 답변을 바탕으로 조금 더 이해를 위해 검색을 해보니 <code>RegExp.prototype.test()</code>의 대한 MDN 문서에서 <code>전역 플래그와 test()</code>라는 항목으로 예시를 들어주며 설명을 해주고 있어 왜 이런 현상이 발생했는지 알 수 있었다.</p>
+<p>정규 표현식에 전역 플래그를 설정한 경우, <code>test()</code> 메서드는 정규 표현식의 <code>lastIndex</code>를 업데이트하고 <code>test()</code>을 다시 호출하면 str 검색을 <code>lastIndex</code>부터 계속 진행하는데, <code>lastIndex</code> 속성은 <code>test()</code>가 true를 반환할 때마다 증가하고 test()가 false를 반환할 땐 0으로 초기화되어 결과가 계속해서 바뀌던 것이였다.</p>
+<p><code>exec()</code> 메서드도 <code>test()</code> 메서드처럼 전역 탐색 플래그를 제공한 정규 표현식에서 여러 번 호출하면 이전 일치 이후부터 탐색한다고 하니 정규식을 사용할 때 주의해야 할 것 같다.</p>
+<p>정규식이 정말 유용한것은 알지만 항상 어렵게 느껴지는 것 같다. 그래도 이렇게 정규식에 대해 알아볼 기회가 있을 때 마다 잘 정리해서 능숙해지려고 노력해야겠다!</p>
+<h1 id="참고"><a href="#참고" class="headerlink" title="참고"></a>참고</h1><ul>
+<li><a target="_blank" rel="noopener" href="https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/RegExp/test">https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/RegExp/test</a></li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -324,7 +437,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">Edited on</span>
-      <time title="Updated at: 2023-04-22 21:54:25" itemprop="dateModified" datetime="2023-04-22T21:54:25+09:00">2023-04-22</time>
+      <time title="Updated at: 2023-04-22 21:56:13" itemprop="dateModified" datetime="2023-04-22T21:56:13+09:00">2023-04-22</time>
     </span>
 
   
@@ -391,134 +504,8 @@
 
 
 
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://rjsej12.github.io/2022/After-Second-Project/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="rongrong">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="롱롱의 일기장">
-      <meta itemprop="description" content="주니어 개발자 롱롱의 성장일기">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 롱롱의 일기장">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2022/After-Second-Project/" class="post-title-link" itemprop="url">두번째 프로젝트와 커넥to과정을 마치고</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">작성일</span>
-
-      <time title="Post created: 2022-12-23 16:27:11" itemprop="dateCreated datePublished" datetime="2022-12-23T16:27:11+09:00">2022-12-23</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">Edited on</span>
-      <time title="Updated at: 2023-03-22 04:48:22" itemprop="dateModified" datetime="2023-03-22T04:48:22+09:00">2023-03-22</time>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/2022/After-Second-Project/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2022/After-Second-Project/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="들어가며"><a href="#들어가며" class="headerlink" title="들어가며"></a>들어가며</h1><p>약 2주동안의 프로젝트가 종료되었다. 벌써 4개월간의 커넥to 과정이 끝났다는게 믿기지 않을 정도로 시간이 너무 빨리 흘러간 것 같다. 프로젝트를 시작하면서 갑자기 허리디스크가 생겨서 프로젝트에 집중하기가 어려웠는데, 그래도 좋은 팀원들 덕분에 잘 마무리한 것 같다. 이번 프로젝트 역시 배운점도 많았고 아쉬운점도 많았는데 회고를 하며 정리해보려고 한다.</p>
-<hr>
-
-<h1 id="프로젝트-DUI"><a href="#프로젝트-DUI" class="headerlink" title="프로젝트 DUI"></a>프로젝트 DUI</h1><p>이번 프로젝트는 주어진 조건이 몇가지가 존재했다.</p>
-<ol>
-<li>바닐라 JS를 사용해 구현한 SPA(Single Page Application)일 것.</li>
-<li>CRUD를 구현할 것.</li>
-<li>Routing 기능을 구현할 것.</li>
-<li>JWT를 사용해 로그인 기능을 구현할 것.</li>
-</ol>
-<p>이 조건들을 만족시킬 프로젝트 주제가 무엇인지 고민하다가, 다른 팀원분이 블로그를 구현하는 것이 어떻겠냐고 제안하셨고 다들 적절하다고 생각해 Draw yoUr Idea 의 줄임말인 DUI라는 이름으로 프로젝트를 진행하게 되었다.</p>
-<p>개발 기간은 2022-12-12 ~ 2022-12-23로 약 2주 동안 진행되었고, 팀원은 총 3명이었다.</p>
-<p>좀 더 자세한 사항은 <a target="_blank" rel="noopener" href="https://github.com/rjsej12/public-DUI">https://github.com/rjsej12/public-DUI</a> 에서 확인 가능하다.</p>
-<hr>
-
-<h2 id="KPT"><a href="#KPT" class="headerlink" title="KPT"></a>KPT</h2><h3 id="Keep"><a href="#Keep" class="headerlink" title="Keep"></a>Keep</h3><ul>
-<li><p>이번에도 프로젝트를 시작하기 전에 환경설정을 중요시 여기고 이 부분에 대해 많이 논의 했는데 그 결과 폴더구조가 깔끔하게 구성된것 같아서 만족스러웠다.</p>
-</li>
-<li><p>저번 프로젝트를 진행하면서 다음번엔 꼭 문서화를 잘 해보자 생각했었는데, 만족스러울 만큼은 아니지만 저번보다는 결과물이 좋게 나왔다고 생각되었다.</p>
-</li>
-</ul>
-<h3 id="Problem"><a href="#Problem" class="headerlink" title="Problem"></a>Problem</h3><ul>
-<li><p>프로젝트 시작때부터 갑자기 허리 디스크가 생겨서 프로젝트에 집중하기 어려웠다.</p>
-</li>
-<li><p>이번 프로젝트에서는 History API를 이용해 Routing 기능을 구현했는데, History API를 보완한 Navigation API를 사용해보고 싶다.</p>
-</li>
-<li><p>정확하게 코딩 컨벤션을 설정하고 시작하지 않아 처음에 서로의 코드 구조가 일치하지 않았던게 아쉬웠다.</p>
-</li>
-</ul>
-<h3 id="Try"><a href="#Try" class="headerlink" title="Try"></a>Try</h3><ul>
-<li>소통하자! - 프로젝트를 시작하기 전 각자가 사용하길 원하는 기술 스택을 상의하면서 팀원 중 한 분이 tailwind의 편의성을 설명하였고, 빠른 적용에 모두 동의하여 프로젝트의 스타일 프레임워크로 Tailwind CSS를 사용하기로 결정했다. 또한 적극적인 class 이름을 활용해 작은 컴포넌트 단위의 완성된 스타일을 대표하기를 원하셨는데 그 분을 제외한 우리 둘은 정확한 이해를 하지 못했었고 이게 맞는지 고민하며 작업을 수행했고 결과물은 역시 원하는 바와 달랐다. 이전 우아할 프로젝트때는 이해가 안되는 부분이 존재할 때 계속해서 소통하며 이해가 될 때까지 넘어가지 않았었는데, 이번에는 건강 문제를 핑계로 소통에 소홀했던 것 같다. 협업에서 가장 중요한 것이 다른 사람의 생각을 이해하는 것이니 만큼 소통하는데에 있어서 적극적이어야할 필요를 다시 한 번 느꼈다.</li>
-</ul>
-<hr>
-
-<h1 id="마치며"><a href="#마치며" class="headerlink" title="마치며"></a>마치며</h1><p>이번 프로젝트를 끝으로 약 4개월간의 긴(?) 과정이 종료되었다. 커넥to 과정을 시작할때와 비교해보면 스스로 정말 많이 성장했음을 느끼는것 같다. 단순히 새로운 지식을 배웠기 때문이 아니라, 모르는 부분이 생겼을때 그것을 찾아 나가는 방법과 더 나은 코드를 위해 어떠한 고민을 해야 하는지 또 다른 사람과 협업을 할 때 어떻게 커뮤니케이션 해야 할 지 등 앞으로 개발자로 살아가면서 가져야 할 마인드, 태도가 달라졌다고 느끼기 때문이다. 아직 많이 부족하지만, 이렇게 지속해서 공부해 나간다면 그래도 좋은 개발자가 될 수 있지 않을까 하는 일말의 자신감도 생긴것 같다.</p>
-<p>사실 개발자로의 취직을 준비하면서 가장 걱정되었던 부분은 (많이 고민하고 결정하기는 했지만) ‘내가 지속해서 공부를 잘 할수 있을까?’ 였다. 어릴 때 부터 흥미를 못 느끼는 일에는 집중을 잘 하지 못하던 터라 겉핥기만 했을때는 재미있다 느꼈지만 깊게 공부하게 되었을때도 재미가 유지될지에 대해 의심이 존재했다. 하지만 4개월 동안 느낀 것은 ‘재밌다’였다. 뭐 아직도 깊게 파고든것은 아니라고 할 수 있겠지만, 문제를 만나고 해결하고 결과물을 실제로 볼 수 있는등 여러 부분들이 오랜만에 ‘공부를 해야해서 하는게 아니라 재밌어서 하는 경우도 있었지’라고 생각하게 했다.</p>
-<p>여전히 부족함을 느끼는 만큼, 또 프로젝트를 하면서 vanilla js의 불편함을 느꼈어서 얼른 react와 같은 프레임워크도 공부하고 싶고 vue는 또 뭐가 다를지 등등 배움에 대한 욕구가 생기는 것 같다. 과정이 끝나더라도 열심히 해서 지속적으로 성장할 수 있는 기반을 쌓아야겠다.</p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="다음 페이지"></i></a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="다음 페이지"></i></a>
   </nav>
 
 </div>

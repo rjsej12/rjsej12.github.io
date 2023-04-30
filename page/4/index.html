@@ -154,13 +154,13 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">21</span>
+          <span class="site-state-item-count">22</span>
           <span class="site-state-item-name">포스트</span>
         </a>
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">15</span>
+        <span class="site-state-item-count">16</span>
         <span class="site-state-item-name">태그</span></a>
       </div>
   </nav>
@@ -189,6 +189,188 @@
 
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://rjsej12.github.io/2022/Modern-Javascript-Deep-Dive-Chapter-7-Operator-Summary/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="rongrong">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="롱롱의 일기장">
+      <meta itemprop="description" content="주니어 개발자 롱롱의 성장일기">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 롱롱의 일기장">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2022/Modern-Javascript-Deep-Dive-Chapter-7-Operator-Summary/" class="post-title-link" itemprop="url">[Deep Dive] 연산자</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">작성일</span>
+
+      <time title="Post created: 2022-10-20 17:47:21" itemprop="dateCreated datePublished" datetime="2022-10-20T17:47:21+09:00">2022-10-20</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Updated at: 2023-03-22 04:17:24" itemprop="dateModified" datetime="2023-03-22T04:17:24+09:00">2023-03-22</time>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2022/Modern-Javascript-Deep-Dive-Chapter-7-Operator-Summary/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2022/Modern-Javascript-Deep-Dive-Chapter-7-Operator-Summary/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="연산자"><a href="#연산자" class="headerlink" title="연산자"></a>연산자</h1><p>연산자는 하나 이상의 표현식을 대상으로 산술, 할당, 비교, 논리, 타입, 지수 연산 등을 수행해 하나의 값을 만든다.</p>
+<p>이 때 연산의 대상을 피연산자라 한다. 피연산자는 값으로 평가될 수 있는 표현식이어야 한다.<br>그리고 피연산자와 연산자의 조합으로 이뤄진 연산자 표현식도 값으로 평가될 수 있는 표현식이다.</p>
+<p>자바스크립트가 제공하는 다양한 연산자에 대해 살펴보자.</p>
+<h2 id="산술-연산자"><a href="#산술-연산자" class="headerlink" title="산술 연산자"></a>산술 연산자</h2><p>산술 연산자는 피연산자를 대상으로 수학적 계산을 수행해 새로운 숫자 값을 만든다.<br>산술 연산이 불가능한 경우, NaN을 반환한다.</p>
+<p>산술 연산자는 피연산자의 개수에 따라 이항 산술 연산자와 단항 산술 연산자로 구분할 수 있다.</p>
+<h3 id="이항-산술-연산자"><a href="#이항-산술-연산자" class="headerlink" title="이항 산술 연산자"></a>이항 산술 연산자</h3><p>이항 산술 연산자는 2개의 피연산자를 산술 연산하여 숫자 값을 만든다.</p>
+<p>모든 이항 산술 연산자는 피연산자의 값을 변경하는 부수효과가 없다.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">5</span> + <span class="number">2</span>; <span class="comment">// 7</span></span><br><span class="line"><span class="number">5</span> - <span class="number">2</span>; <span class="comment">// 3</span></span><br><span class="line"><span class="number">5</span> * <span class="number">2</span>; <span class="comment">// 10</span></span><br><span class="line"><span class="number">5</span> / <span class="number">2</span>; <span class="comment">// 2.5</span></span><br><span class="line"><span class="number">5</span> % <span class="number">2</span>; <span class="comment">// 1</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="단항-산술-연산자"><a href="#단항-산술-연산자" class="headerlink" title="단항 산술 연산자"></a>단항 산술 연산자</h3><p>단항 산술 연산자는 1개의 피연산자를 산술 연산하여 숫자 값을 만든다.</p>
+<p>이 때 증가&#x2F;감소(++&#x2F;–) 연산자는 피연산자의 값을 변경한느 부수 효과가 있어 주의해야 한다.<br>즉 증가&#x2F;감소 연산을 하면 피연산자의 값을 변경하는 암묵적 할당이 이뤄진다.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> x = <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">x++; <span class="comment">// x = x + 1;</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(x); <span class="comment">// 2</span></span><br><span class="line"></span><br><span class="line">x--; <span class="comment">// x = x - 1;</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(x); <span class="comment">// 1</span></span><br></pre></td></tr></table></figure>
+
+<p>또한 증가&#x2F;감소 연산자는 위치에 따라 선 할당후 연산이 이루어지는지, 연산이 수행되고 할당이 이루어지는지 다르므로 주의해야 한다.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> x = <span class="number">5</span>,</span><br><span class="line">  result;</span><br><span class="line"></span><br><span class="line">result = x++; <span class="comment">// 선할당 후증가</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(result, x); <span class="comment">// 5 6</span></span><br><span class="line"></span><br><span class="line">result = ++x; <span class="comment">// 선증가 후할당</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(result, x); <span class="comment">// 7 7</span></span><br><span class="line"></span><br><span class="line">result = x--; <span class="comment">// 선할당 후감소</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(result, x); <span class="comment">// 7 6</span></span><br><span class="line"></span><br><span class="line">result = --x; <span class="comment">// 선감소 후할당</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(result, x); <span class="comment">// 5 5</span></span><br></pre></td></tr></table></figure>
+
+<p>+ 단항 연산자는 피연산자에 어떠한 효과도 없다.<br>다만 숫자 타입이 아닌 피연산자에 + 단항 연산자를 사용하면 피연산자를 숫자 타입으로 변환하여 반환한다.<br>이때 피연산자를 변경하는 것은 아니고 숫자 타입으로 변환한 값을 생성해서 반환한다. 즉 부수 효과가 없다.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> x = <span class="string">&#x27;1&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(+x); <span class="comment">// 1</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(x); <span class="comment">// &quot;1&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>- 단항 연산자는 피연산자에 부호를 반전한 값을 반환한다.<br>+ 단항 연산자와 마찬가지로 숫자타입이 아닌 피연산자에 사용하면 피연산자를 숫자 타입으로 변환하여 반환한다.<br>이때 피연산자를 변경하는 것은 아니고 숫자 타입으로 변환한 값을 생성해서 반환한다. 즉 부수 효과가 없다.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">-(-<span class="number">10</span>); <span class="comment">// 10 (부호 반전)</span></span><br><span class="line">-<span class="literal">true</span>; <span class="comment">// -1 (타입 변환)</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="문자열-연결-연산자"><a href="#문자열-연결-연산자" class="headerlink" title="문자열 연결 연산자"></a>문자열 연결 연산자</h3><p>+ 연산자는 피연산자 중 하나 이상이 문자열인 경우 문자열 연결 연산자로 동작한다.<br>그 외의 경우는 산술 연산자로 동작한다.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 문자열 연결 연산자</span></span><br><span class="line"><span class="string">&#x27;1&#x27;</span> + <span class="number">2</span>; <span class="comment">// &quot;12&quot;</span></span><br><span class="line"><span class="number">2</span> + <span class="string">&#x27;1&#x27;</span>; <span class="comment">// &quot;12&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 산술 연산자</span></span><br><span class="line"><span class="number">1</span> + <span class="number">2</span>; <span class="comment">// 3</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 타입 변환이 일어나는 경우</span></span><br><span class="line"><span class="number">1</span> + <span class="literal">true</span>; <span class="comment">// 2</span></span><br><span class="line"><span class="number">1</span> + <span class="literal">undefined</span>; <span class="comment">// NaN</span></span><br></pre></td></tr></table></figure>
+
+<p>이 때 주목할 점은 개발자의 의도와는 상관 없이 자바스크립트 엔진에 의해 암묵적으로 타입이 자동 변환되기도 한다는 것이다.<br>1 + true를 연산하면 자바스크립트 엔진은 암묵적으로 불리언 타입 값인 true를 숫자 탕비인 1로 강제로 변환한 후 연산을 수행한다.</p>
+<p>이를 암묵적 타입 변환이라고 한다. 앞서 살펴본 +&#x2F;- 단항 연산자도 암묵적 타입 변환이 발생한 것이다</p>
+<h2 id="할당-연산자"><a href="#할당-연산자" class="headerlink" title="할당 연산자"></a>할당 연산자</h2><p>할당 연산자는 우항에 있는 피연산자의 평가 결과를 좌항에 있는 변수에 할당한다.<br>할당 연산자는 좌항의 변수에 값을 할당하므로 변수 값이 변하는 부수 효과가 존재한다.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> x;</span><br><span class="line"></span><br><span class="line">x = <span class="number">10</span>;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(x); <span class="comment">// 10</span></span><br><span class="line"></span><br><span class="line">x += <span class="number">5</span>; <span class="comment">// x = x + 5;</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(x); <span class="comment">// 15</span></span><br><span class="line"></span><br><span class="line">x -= <span class="number">5</span>; <span class="comment">// x = x - 5;</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(x); <span class="comment">// 10</span></span><br><span class="line"></span><br><span class="line">x *= <span class="number">5</span>; <span class="comment">// x = x * 5;</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(x); <span class="comment">// 50</span></span><br><span class="line"></span><br><span class="line">x /= <span class="number">5</span>; <span class="comment">// x = x / 5;</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(x); <span class="comment">// 10</span></span><br><span class="line"></span><br><span class="line">x %= <span class="number">5</span>; <span class="comment">// x = x % 5;</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(x); <span class="comment">// 0</span></span><br></pre></td></tr></table></figure>
+
+<p>표현식은 값으로 평가 될 수 있는 문이고, 문에는 표현식인 문과 표현식이 아닌 문이 존재한다.<br>그렇다면 할당문은 표현식인 문일까, 표현식이 아닌 문일까?</p>
+<p>할당문은 변수에 값을 할당하는 부수 효과만 있을 뿐 값으로 평가되지 않을 것처럼 보인다.<br>하지만 할당문은 값으로 평가되는 표현식인 문으로서 할당된 값으로 평가된다. 즉 변수에 할당할 수 있다.<br>이러한 특징을 활용해 여러 변수에 동일한 값을 연쇄 할당할 수 있다.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a, b, c;</span><br><span class="line"></span><br><span class="line">a = b = c = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(a, b, c); <span class="comment">// 0 0 0</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="비교-연산자"><a href="#비교-연산자" class="headerlink" title="비교 연산자"></a>비교 연산자</h2><p>비교 연산자는 좌항과 우항의 피연산자를 비교한 다음 그 결과를 불리언 값으로 반환한다.<br>비교 연산자는 if 문이나 for 문과 같은 제어문의 조건식에서 주로 사용한다.</p>
+<h3 id="동등-x2F-일치-비교-연산자"><a href="#동등-x2F-일치-비교-연산자" class="headerlink" title="동등&#x2F;일치 비교 연산자"></a>동등&#x2F;일치 비교 연산자</h3><p>동등 비교 연산자와 일치 비교 연산자는 좌항과 우항의 피연산자가 같은 값으로 평가되는지 비교해 불리언 값을 반환한다.<br>하지만 비교하는 엄격성의 정도가 다르다.</p>
+<p>동등 비교(&#x3D;&#x3D;) 연산자는 좌항과 우항의 피연산자를 비교할 때 먼저 암묵적 타입 변환을 통해 타입을 일치시킨 후 같은 값인지 비교한다.<br>다시 말해 동등 비교 연산자는 좌항과 우항의 피연산자가 타입은 다르더라도 암묵적 타입 변환 후에 같은 값일 수 있다면 true를 반환한다.</p>
+<p>동등 비교 연산자는 편리한 경우도 있지만 결과를 예측하기 어렵고 실수하기 쉬우므로 사용하지 않는 편이 좋다.</p>
+<p>반면 일치 비교(&#x3D;&#x3D;&#x3D;) 연산자는 좌항과 우항의 피연산자가 타입도 같고 값도 같은 경우에 한하여 true를 반환한다. 따라서 일치 비교 연산자는 예측하기 쉽다.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">5</span> == <span class="number">5</span>; <span class="comment">// true</span></span><br><span class="line"><span class="number">5</span> == <span class="string">&#x27;5&#x27;</span>; <span class="comment">// true (암묵적 타입 변환)</span></span><br><span class="line"></span><br><span class="line"><span class="number">5</span> === <span class="number">5</span>; <span class="comment">// true</span></span><br><span class="line"><span class="number">5</span> === <span class="string">&#x27;5&#x27;</span>; <span class="comment">// false (타입 변환 X)</span></span><br></pre></td></tr></table></figure>
+
+<p>일치 비교 연산자에서 주의할 것은 NaN이다.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="title class_">NaN</span> === <span class="title class_">NaN</span>; <span class="comment">// false</span></span><br></pre></td></tr></table></figure>
+
+<p>NaN은 자신과 일치하지 않는 유일한 값이다. 숫자가 NaN인지 조사하기 위해서는 빌트인 함수 Number.isNaN을 사용한다.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="title class_">Number</span>.<span class="built_in">isNaN</span>(<span class="title class_">NaN</span>); <span class="comment">// true</span></span><br><span class="line"><span class="title class_">Number</span>.<span class="built_in">isNaN</span>(<span class="number">10</span>); <span class="comment">// false</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>ES6에서 도입된 Object.is 메서드를 이용하면 예측 가능한 정확한 비교 결과를 얻을 수 있다.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">-<span class="number">0</span> === +<span class="number">0</span>; <span class="comment">// true</span></span><br><span class="line"><span class="title class_">Object</span>.<span class="title function_">is</span>(-<span class="number">0</span>, +<span class="number">0</span>); <span class="comment">// false</span></span><br><span class="line"></span><br><span class="line"><span class="title class_">NaN</span> === <span class="title class_">NaN</span>; <span class="comment">// false</span></span><br><span class="line"><span class="title class_">Object</span>.<span class="title function_">is</span>(<span class="title class_">NaN</span>, <span class="title class_">NaN</span>); <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
+</blockquote>
+<p>부동등 비교 연산자(!&#x3D;)와 불일치 비교 연산자(!&#x3D;&#x3D;)는 각각 동등 비교(&#x3D;&#x3D;) 연산자와 일치 비교(&#x3D;&#x3D;&#x3D;) 연산자의 반대 개념이다.</p>
+<h3 id="대소-관계-비교-연산자"><a href="#대소-관계-비교-연산자" class="headerlink" title="대소 관계 비교 연산자"></a>대소 관계 비교 연산자</h3><p>대소 관계 비교 연산자는 피연산자의 크기를 비교하여 불리언 값을 반환한다.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">5</span> &gt; <span class="number">0</span>; <span class="comment">// true</span></span><br><span class="line"><span class="number">5</span> &gt; <span class="number">5</span>; <span class="comment">// false</span></span><br><span class="line"><span class="number">5</span> &gt;= <span class="number">5</span>; <span class="comment">// true</span></span><br><span class="line"><span class="number">5</span> &lt;= <span class="number">5</span>; <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="삼항-조건-연산자"><a href="#삼항-조건-연산자" class="headerlink" title="삼항 조건 연산자"></a>삼항 조건 연산자</h2><p>삼항 조건 연산자는 조건식의 평가 결과에 따라 반환할 값을 결정한다.<br>자바스크립트의 유일한 삼항 연산자이며, 부수 효과는 없다.</p>
+<p>삼항 조건 연산자의 표현식은 다음과 같다.</p>
+<blockquote>
+<p>조건식 ? 조건식이 true일 때 반환할 값 : 조건식이 false일 때 반환할 값</p>
+</blockquote>
+<p>삼항 조건 연산자는 첫 번째 피연산자가 true로 평가되면 두 번째 피연산자를 반환하고, 첫 번째 피연산자가 false로 평가되면 세 번째 피연산자를 반환한다.<br>즉 삼항 조건 연산자는 두 번째 피연산자 또는 세 번째 피연산자로 평가되는 표현식이다.</p>
+<p>삼항 조건 연산자는 if…else 문을 사용해도 유사하게 처리 가능하다. 하지만 삼항 조건 연산자 표현식은 값처럼 사용할 수 있는 반면 if…else 문은 값처럼 사용할 수 없다는 차이가 있다.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> x = <span class="number">10</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> result1 = x % <span class="number">2</span> ? <span class="string">&#x27;홀수&#x27;</span> : <span class="string">&#x27;짝수&#x27;</span>;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(result1); <span class="comment">// 짝수</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> result2 = <span class="keyword">if</span> (x % <span class="number">2</span>) &#123; result2 = <span class="string">&#x27;홀수&#x27;</span>; &#125; <span class="keyword">else</span> &#123; result2 = <span class="string">&#x27;짝수&#x27;</span>; &#125;; <span class="comment">// SyntaxError: Unexpected token if</span></span><br></pre></td></tr></table></figure>
+
+<p>조건에 따라 어떤 값을 결정해야 한다면 if…else 문보다 삼항 조건 연산자 표현식을 사용하는 편이 유리하다.<br>하지만 조건에 따라 수행해야 할 문이 하나가 아니리 여러 개라면 if…else 문의 가독성이 더 좋다.</p>
+<h2 id="논리-연산자"><a href="#논리-연산자" class="headerlink" title="논리 연산자"></a>논리 연산자</h2><p>논리 연산자는 우항과 좌항의 피연산자(부정 논리 연산자의 경우 우항의 피연산자)를 논리 연산 한다.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 논리합(||) 연산자</span></span><br><span class="line"><span class="literal">true</span> || <span class="literal">true</span>; <span class="comment">// true</span></span><br><span class="line"><span class="literal">true</span> || <span class="literal">false</span>; <span class="comment">// true</span></span><br><span class="line"><span class="literal">false</span> || <span class="literal">true</span>; <span class="comment">// true</span></span><br><span class="line"><span class="literal">false</span> || <span class="literal">false</span>; <span class="comment">// false</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 논리곱(&amp;&amp;) 연산자</span></span><br><span class="line"><span class="literal">true</span> &amp;&amp; <span class="literal">true</span>; <span class="comment">// true</span></span><br><span class="line"><span class="literal">true</span> &amp;&amp; <span class="literal">false</span>; <span class="comment">// false</span></span><br><span class="line"><span class="literal">false</span> &amp;&amp; <span class="literal">true</span>; <span class="comment">// false</span></span><br><span class="line"><span class="literal">false</span> &amp;&amp; <span class="literal">false</span>; <span class="comment">// false</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 논리 부정(!) 연산자</span></span><br><span class="line">!<span class="literal">true</span>; <span class="comment">// false</span></span><br><span class="line">!<span class="literal">false</span>; <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
+
+<p>논리 부정(!) 연산자는 언제나 불리언 값을 반환한다. 단 피연산자가 반드시 불리언 값일 필요는 없다.<br>피연산자가 불리언 값이 아니라면 불리언 타입으로 암묵적 타입 변환된다.</p>
+<h2 id="쉼표-연산자"><a href="#쉼표-연산자" class="headerlink" title="쉼표 연산자"></a>쉼표 연산자</h2><p>쉼표(,) 연산자는 왼쪽 피연산자부터 차레대로 피연산자를 평가하고 마지막 피연산자의 평가가 끝나면 마지막 피연산자의 평가 결과를 반환한다.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> x, y, z;</span><br><span class="line"></span><br><span class="line">x = <span class="number">1</span>, y = <span class="number">2</span>, z = <span class="number">3</span>; <span class="comment">// 3</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="그룹-연산자"><a href="#그룹-연산자" class="headerlink" title="그룹 연산자"></a>그룹 연산자</h2><p>소괄호(())로 피연산자를 감싸는 그룹 연산자는 자신의 피연산자인 표현식을 가장 먼저 평가한다. 따라서 그룹 연산자를 사용하면 연산자의 우선순위를 조절할 수 있다. 그룹 연산자는 연산자 우선순위가 가장 높다.</p>
+<h2 id="typeof-연산자"><a href="#typeof-연산자" class="headerlink" title="typeof 연산자"></a>typeof 연산자</h2><p>typeof 연산자는 피연산자의 데이터 타입을 문자열로 반환한다.<br>typeof 연산자는 “number”, “bigint”, “string”, “boolean”, “undefined”, “symbol”, “object”, “function” 중 하나를 반환한다.<br>typeof 연산자가 반환하는 문자열이 데이터 타입과 정확히 일치하지는 않는다.</p>
+<p>typeof 연산자로 null 값을 연산해 보면 “null”이 아닌 “object”를 반환하는데 이는 하위 호환성을 위해 수정되지 않고 있는 버그이다.<br>따라서 값이 null 타입인지 확인할 때는 typeof 연산자가 아닌 일치(&#x3D;&#x3D;&#x3D;) 연산자를 사용해야 한다.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> foo = <span class="literal">null</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">typeof</span> foo === <span class="literal">null</span>; <span class="comment">// false</span></span><br><span class="line">foo === <span class="literal">null</span>; <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
+
+<p>또한 선언하지 않은 식별자를 typeof 연산자로 연산해 보면 ReferenceError가 발생하지 않고 undefined를 반환하는것도 주의하자.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// undeclared 식별자를 선언하지 않았다.</span></span><br><span class="line"><span class="keyword">typeof</span> undeclared; <span class="comment">// undefined</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="지수-연산자"><a href="#지수-연산자" class="headerlink" title="지수 연산자"></a>지수 연산자</h2><p>ES7에서 도입된 지수 연산자는 좌항의 피연산자를 밑으로, 우항의 피연산자를 지수로 거듭 제곱한 숫자 값을 반환한다.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">2</span> ** <span class="number">2</span>; <span class="comment">// 4</span></span><br><span class="line"><span class="number">2</span> * <span class="number">0</span>; <span class="comment">// 1</span></span><br><span class="line"><span class="number">2</span> ** -<span class="number">2</span>; <span class="comment">// 0.25</span></span><br></pre></td></tr></table></figure>
+
+<p>지수 연산자가 도입되기 이전에는 Math.pow 메서드를 사용했다.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="title class_">Math</span>.<span class="title function_">pow</span>(<span class="number">2</span>, <span class="number">2</span>); <span class="comment">// 4</span></span><br><span class="line"><span class="title class_">Math</span>.<span class="title function_">pow</span>(<span class="number">2</span>, <span class="number">0</span>); <span class="comment">// 1</span></span><br><span class="line"><span class="title class_">Math</span>.<span class="title function_">pow</span>(<span class="number">2</span>, -<span class="number">2</span>); <span class="comment">// 0.25</span></span><br></pre></td></tr></table></figure>
+
+<p>음수를 거듭제곱의 밑으로 사용해 계산하려면 괄호로 묶어주어야 한다.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">-<span class="number">5</span> ** <span class="number">2</span>;</span><br><span class="line"><span class="comment">// SyntaxError: Unary operator used immediately before exponentiation expression. Parenthesis must be used to disambiguate operator precedence</span></span><br><span class="line"></span><br><span class="line">(-<span class="number">5</span>) ** <span class="number">2</span>; <span class="comment">// 25</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="연산자-우선순위"><a href="#연산자-우선순위" class="headerlink" title="연산자 우선순위"></a>연산자 우선순위</h2><p>연산자 우선순위란 여러 개의 연산자로 이뤄진 문이 실행될 때 연산자가 실행되는 순서를 말한다. 우선순위가 높을수록 먼저 실행된다.</p>
+<p>연산자는 종류가 많아 연산자 우선순위를 모두 기억하기 어렵고 실수하기도 쉽다.<br>따라서 기억해 사용하기 보다는 연산자 우선순위가 높은 그룹 연산자를 사용하여 우선순위를 명시적으로 조절하는 것이 좋다.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">10</span> * (<span class="number">2</span> + <span class="number">3</span>); <span class="comment">// 50</span></span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -503,139 +685,8 @@
 
 
 
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://rjsej12.github.io/2022/Modern-JavaScript-Deep-Dive-Chapter-4-Variable-Summary/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="rongrong">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="롱롱의 일기장">
-      <meta itemprop="description" content="주니어 개발자 롱롱의 성장일기">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 롱롱의 일기장">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2022/Modern-JavaScript-Deep-Dive-Chapter-4-Variable-Summary/" class="post-title-link" itemprop="url">[Deep Dive] 변수</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">작성일</span>
-
-      <time title="Post created: 2022-10-18 19:51:18" itemprop="dateCreated datePublished" datetime="2022-10-18T19:51:18+09:00">2022-10-18</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">Edited on</span>
-      <time title="Updated at: 2023-03-22 04:17:24" itemprop="dateModified" datetime="2023-03-22T04:17:24+09:00">2023-03-22</time>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/2022/Modern-JavaScript-Deep-Dive-Chapter-4-Variable-Summary/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2022/Modern-JavaScript-Deep-Dive-Chapter-4-Variable-Summary/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>모던 자바스크립트 Deep Dive에 대한 러버덕을 진행하면서 각 장에 대해 중요하다고 생각되는 부분들에 대해 정리해보고자 한다. </p>
-<hr>
-
-<h1 id="변수의-정의"><a href="#변수의-정의" class="headerlink" title="변수의 정의"></a>변수의 정의</h1><p>변수란 하나의 값을 저장하기 위해 확보한 메모리 공간 자체 또는 그 메모리 공간을 식별하기 위해 붙인 이름을 말한다.</p>
-<hr>
-
-<h1 id="변수는-왜-필요할까"><a href="#변수는-왜-필요할까" class="headerlink" title="변수는 왜 필요할까?"></a>변수는 왜 필요할까?</h1><p>예를들어 10 + 20이라는 식을 생각해보자. 사람이 위 식을 계산하려면 10, 20을 기억하고 + 연산을 진행해 30이라는 값을 얻어야한다.<br>컴퓨터는 CPU를 사용해 연산하고, 메모리를 사용해 데이터를 기억한다.<br>메모리는 데이터를 저장할 수 있는 메모리 셀의 집합체이다. 메모리 셀 하나의 크기는 기기 사양마다 다르지만 보통 1바이트이다.<br>각 셀은 고유의 메모리 주소를 가진다.</p>
-<p>다시 식으로 돌아가보면 숫자 값 10과 20은 메모리 상의 임의의 위치에 저장되고 CPU는 이 값을 읽어 연산한다.<br>결과인 30이라는 숫자 값 역시 메모리 상의 임의의 위치에 저장된다.</p>
-<p>이때 30이라는 숫자값을 어떻게 재사용 할 수 있을까?<br>값이 저장된 메모리 주소를 통해 값에 접근할 수 있다.<br>하지만 이 경우는 실수로 운영체제가 사용하고 있는 값을 변경할수도 있고, 값이 저장될 메모리 주소 또한 임의로 결정되기에 올바른 방법이 아니다.</p>
-<p>프로그래밍 언어는 기억하고 싶은 값을 메모리에 저장하고, 저장된 값을 읽어 들여 재사용하기 위해 변수라는 메커니즘을 제공한다.</p>
-<p>결국 값을 저장할 수 있도록 하나의 값을 저장하기 위해 확보한 메모리 공간에 상징적인 이름을 붙인 것이 변수이다.</p>
-<hr>
-
-<h1 id="변수는-어떻게-생성하는가"><a href="#변수는-어떻게-생성하는가" class="headerlink" title="변수는 어떻게 생성하는가?"></a>변수는 어떻게 생성하는가?</h1><p>변수의 생성은 선언을 통해 일어난다.</p>
-<p>변수 선언은 변수를 선언하는 var, let, const의 키워드와 변수 이름을 사용한다.<br>이 때 변수 이름을 식별자라고도 하는데, 식별자는 어떤 값을 구별해서 식별할 수 있는 고유한 이름을 말한다.<br>식별자라는 용어는 변수 이름에만 국한되지 않고 변수, 함수, 클래스 등의 이름 모두를 식별자라 한다.<br>즉 메모리 상에 존재하는 어떤 값을 식별할 수 있는 이름 모두가 식별자이다.</p>
-<p>자바스크립트 엔진은 변수 선언을 선언 단계와 초기화 단계로 나누어 수행한다.<br>선언 단계는 변수 이름을 등록해 자바스크립트 엔진에 변수의 존재를 알리고 메모리 공간을 확보하는 것이며, 초기화 단계에서는 확보한 메모리 공간에 최초로 값을 할당하는 것을 말한다.</p>
-<p>var 키워드의 경우 선언 단계와 초기화 단계가 동시에 진행 되는데, 변수 선언 후 암묵적으로 undefined값을 넣어 초기화를 수행한다. 따라서 var 키워드로 선언한 변수는 어떠한 값을 할당하지 않아도 undefined라는 값을 갖는다.</p>
-<p>왜 undefined 값을 통해 초기화를 진행하는 것일까?<br>변수가 선언되어 확보된 메모리 공간에는 이전에 다른 애플리케이션이 사용했던 값이 남아 있을 수 있다. 이러한 값을 쓰레기 값이라 하는데, 만약 초기화가 진행되지 않은 상태에서 변수를 참조한다면 쓰레기 값이 나올 위험성이 있다. 이러한 위험을 피하기 위해 자바스크립트의 var 키워드는 undefined를 통해 암묵적인 초기화를 수행한다.</p>
-<h2 id="메모리-확보란-무엇인가"><a href="#메모리-확보란-무엇인가" class="headerlink" title="메모리 확보란 무엇인가?"></a>메모리 확보란 무엇인가?</h2><p>메모리 확보란 변수가 사용할 메모리 공간을 지정하고 변수 이름과 그 공간을 연결해 값을 저장할 수 있도록 준비하는 것이다. 이 때 중요한 점은 확보된 메모리 공간은 확보가 해제 되기 전까지 누구도 사용할 수 없도록 보호된다는 점이다.</p>
-<h2 id="변수-이름은-어디에-등록되는가"><a href="#변수-이름은-어디에-등록되는가" class="headerlink" title="변수 이름은 어디에 등록되는가"></a>변수 이름은 어디에 등록되는가</h2><p>변수 이름 또한 어딘가에 등록이 되어 있어야 읽어서 사용 할 수 있을 것이다. 변수 이름을 비롯한 모든 식별자는 바로 실행 컨텍스트에 등록된다. 실행 컨텍스트란 자바스크립트 엔진이 소스코드를 평가하고 실행하기 위해 필요한 환겨을 제공하고 코드의 실행결과를 실제로 관리하는 영역이다.</p>
-<hr>
-
-<h1 id="변수-선언의-실행-시점"><a href="#변수-선언의-실행-시점" class="headerlink" title="변수 선언의 실행 시점"></a>변수 선언의 실행 시점</h1><p>변수 선언은 소스코드가 한 줄씩 순차적으로 실행되는 시점인 런타임이 아니라 그 이전에 먼저 실행된다.</p>
-<p>자바스크립트 엔진은 소스코드를 한 줄씩 순차적으로 실행하기에 앞서 먼저 소스코드의 평가 과정을 거치는데, 이 때 변수 선언을 포함한 모든 선언문을 소스코드에서 뽑아내 먼저 실행한다. 그리고 소스코드의 평가 과정이 끝나면 선언문을 제외한 소스코드를 한 줄씩 순차적으로 실행한다.</p>
-<p>즉 자바스크립트 엔진은 변수 선언이 소스코드의 어느 위치에 있던 다른 코드보다 먼저 실행하는데, 이처럼 변수 선언문이 코드의 최상단으로 끌어 올려진 것처럼 동작하는 것을 변수 호이스팅이라 한다.</p>
-<p>변수 호이스팅에 의해 다음과 같은 현상이 일어날 수 있다.</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(score); <span class="comment">// undefined</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> score;</span><br></pre></td></tr></table></figure>
-
-<hr>
-
-<h1 id="할당이-일어나는-시점"><a href="#할당이-일어나는-시점" class="headerlink" title="할당이 일어나는 시점"></a>할당이 일어나는 시점</h1><p>변수는 값을 저장해 재사용 하기 위한 메커니즘이므로 일반적으로 선언 이후 재사용 할 값을 할당하게 된다.</p>
-<p>이 때 변수의 선언과 값의 할당은 실행 시점이 다른데, 변수 선언은 런타임 이전에 실행되는 반면 값의 할당은 런타임에 실행된다.</p>
-<p>일반적으로 변수를 다음과 같이 2개의 문으로 사용하지만 하나의 문으로 단축 표현 할 수도 있다.</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> score;</span><br><span class="line">score = <span class="number">80</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> score = <span class="number">80</span>; <span class="comment">// 단축 표현</span></span><br></pre></td></tr></table></figure>
-
-<p>변수 선언과 값의 할당을 2개의 문으로 나눈 코드와 하나의 문으로 단축 표현한 코드는 정확히 동일하게 동작한다.</p>
-<hr>
-
-<h1 id="재할당"><a href="#재할당" class="headerlink" title="재할당"></a>재할당</h1><p>var 키워드로 선언한 변수는 값을 재할당할 수 있다. 재할당은 현재 변수에 저장된 값을 버리고 새로운 값을 저장하는 것이다. var 키워드는 선언시 undefined로 초기화되기 때문에 변수에 처음으로 값을 할당하는 것도 사실 재할당이다.</p>
-<p>만약 재할당이 불가능해 변수에 저장된 값을 변경할 수 없다면 이를 상수라고 한다. 즉 상수는 단 한번만 할당이 가능한 변수이다.</p>
-<p>만약 변수에 값을 재할당 하면 변수의 값을 이전 값에서 재할당한 값으로 변하게 된다. 이때 메모리에서는 어떤 일이 일어날까? 재할당시에는 메모리 공간에서 이전 값을 지우고 새로운 값을 할당하는것이 아닌 변수가 새로운 메모리 공간을 확보하고 그 공간에 새로운 값을 저장하게 된다.</p>
-<p>이 때 이전 값이 들어 있던 메모리 공간은 어떤 식별자와도 연결되어 있지 않으므로 불필요한 값이 된다.<br>이 경우 가비지 콜렉터에 의해서 메모리에서 자동 해제되지만 언저 해제될지 예측은 불가능하다.</p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/3/"><i class="fa fa-angle-left" aria-label="이전 페이지"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><a class="extend next" rel="next" href="/page/5/"><i class="fa fa-angle-right" aria-label="다음 페이지"></i></a>
+    <a class="extend prev" rel="prev" href="/page/3/"><i class="fa fa-angle-left" aria-label="이전 페이지"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><a class="extend next" rel="next" href="/page/5/"><i class="fa fa-angle-right" aria-label="다음 페이지"></i></a>
   </nav>
 
 </div>

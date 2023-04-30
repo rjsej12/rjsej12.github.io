@@ -1,18 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>헥소로 블로그 옮기기</title>
-    <url>/2022/Create-hexo-blog/</url>
-    <content><![CDATA[<p>커넥to git 수업동안 hexo와 Github pages를 이용해 블로그를 만들어보았다.</p>
-<p>원래는 velog를 통해 여러 글들을 포스팅 하고 있었는데 디자인에 대한 커스텀이나 지속적인 관리가 (특히 github 잔디를 지속해서 심을 수 있다는 점) 수월해 보여 블로그를 옮겨보기로 결정했다.</p>
-<p>그동안 썼던 글들도 차근차근 옮기며 잘 관리해봐야겠다!</p>
-]]></content>
-      <tags>
-        <tag>일상</tag>
-        <tag>개발</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>원티드 프리온보딩 프론트엔드 인턴십을 참가하며</title>
     <url>/2023/Accepted-Wanted-Pre-Onboarding-Frontend-InternShip/</url>
     <content><![CDATA[<p><img src="/images/wanted-preonboarding.jpeg" alt="원티드 프리온보딩 프론트엔드 인턴십"></p>
@@ -75,6 +63,18 @@
       </tags>
   </entry>
   <entry>
+    <title>헥소로 블로그 옮기기</title>
+    <url>/2022/Create-hexo-blog/</url>
+    <content><![CDATA[<p>커넥to git 수업동안 hexo와 Github pages를 이용해 블로그를 만들어보았다.</p>
+<p>원래는 velog를 통해 여러 글들을 포스팅 하고 있었는데 디자인에 대한 커스텀이나 지속적인 관리가 (특히 github 잔디를 지속해서 심을 수 있다는 점) 수월해 보여 블로그를 옮겨보기로 결정했다.</p>
+<p>그동안 썼던 글들도 차근차근 옮기며 잘 관리해봐야겠다!</p>
+]]></content>
+      <tags>
+        <tag>개발</tag>
+        <tag>일상</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>MDN을 확신하지는 말자.</title>
     <url>/2022/Don-t-be-sure-of-MDN-always/</url>
     <content><![CDATA[<p>어제에 이어 position에 대해 공부하면서 position이 absolute인 경우 containing block은 가장 가까운 position이 static이 아닌 부모요소 외에도 다른 조건들이 있다고 해 MDN을 통해 공부를 하던 중 이상하다고 생각되는 점이 생겼다.</p>
@@ -110,118 +110,6 @@
       <tags>
         <tag>개발</tag>
         <tag>MDN</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>이미지 스프라이트(Image Sprite)</title>
-    <url>/2022/Image-Sprite/</url>
-    <content><![CDATA[<p>이미지 스프라이트란 여러 개의 이미지를 하나로 합쳐서 관리하는 이미지를 의미한다.</p>
-<p>웹 페이지에 이미지를 사용한다면 웹 브라우저는 해당 이미지의 다운로드를 위해 서버에 요청을 보낸다. 만약 사용된 이미지가 많을 경우 요청 하는 횟수가 많아지므로 웹 페이지의 로딩 시간이 오래 걸리게 된다. 하지만 만약 이미지 스프라이트를 사용한다면 스프라이트 이미지 파일 하나가 여러 이미지를 가지고 있기에 서버 요청 횟수를 줄일 수 있다.</p>
-<p>개인적인 블로그와 같은 일반적인 사이트에서는 굳이 이미지 스프라이트를 사용 할 필요가 없지만, 트래픽이 매우 많거나 많은 사람이 이용하는 검색포털과 같은 사이트에서는 이미지 스프라이트를 사용하여 서버 요청을 줄이고 웹 페이지의 로딩 시간을 단축시켜 사이트의 품질을 높일 수 있다.</p>
-<p>다음은 네이버 메인페이지의 스프라이트 이미지이다.<br><img src="https://velog.velcdn.com/images/rjsej12/post/34bfd37f-ea3a-4073-8a76-7c5cfbf8b1fc/image.png"></p>
-<p>이처럼 여러개의 이미지를 하나로 합쳐두고 CSS의 <code>background-position</code>을 이용해 사용하려는 이미지만을 보여 줄 수 있다. 이 때 <code>background-position</code>의 값은 하나씩 position값을 변경해보며 찾을 수 도 있지만 <a href="http://www.spritecow.com/">Sprite Cow</a>와 같은 사이트를 이용 할 수 있다.</p>
-<p>추가적으로 스프라이트 이미지를 만들기 위해 포토샵, 피그마 등으로 에디팅 할 수 도 있지만 <a href="https://www.toptal.com/developers/css/sprite-generator/">CSS Sprites Generator</a>라는 사이트를 이용 가능하다.</p>
-<hr>
-
-<h1 id="참고"><a href="#참고" class="headerlink" title="참고"></a>참고</h1><ul>
-<li><a href="https://creativestudio.kr/1653">https://creativestudio.kr/1653</a></li>
-<li><a href="http://www.tcpschool.com/css/css_basic_imageSprites">http://www.tcpschool.com/css/css_basic_imageSprites</a></li>
-</ul>
-]]></content>
-      <tags>
-        <tag>개발</tag>
-        <tag>CSS</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>[Deep Dive] 객체 리터럴</title>
-    <url>/2022/Modern-Javascript-Deep-Dive-Chapter-10-Summary/</url>
-    <content><![CDATA[<h1 id="객체란"><a href="#객체란" class="headerlink" title="객체란?"></a>객체란?</h1><p>자바스크립트는 객체 기반의 프로그래밍 언어이며, 자바스크립트를 구성하는 거의 모든것이 객체이다.<br>원시 값을 제외한 나머지 값(함수, 배열, 정규 표현식 등)은 모두 객체다.</p>
-<p>원시 타입은 단 하나의 값만 나타내지만 객체타입은 다양한 타입의 값을 하나의 단위로 구성한 복합적인 자료구조다.<br>원시 타입의 값은 변경 불가능한 값이지만 객체 타입의 값은 변경 가능한 값이다.</p>
-<p>객체는 0개 이상의 프로퍼티로 구성된 집합이며, 프로퍼티는 키와 값으로 구성된다.</p>
-<p>자바스크립트에서 사용할 수 있는 모든 값은 프로퍼티 값이 될 수 있다. 자바스크립트의 함수는 일급 객체로 값으로 취급할 수 있다.<br>따라서 함수도 프로퍼티 값으로 사용 가능한데, 프로퍼티 값이 함수일 경우 일반 함수와 구분하기 위해 메서드라 한다.</p>
-<p>이처럼 객체는 프로퍼티와 메서드로 구성된 집합체이며 프로퍼티와 메서드의 역할은 다음과 같다.</p>
-<ul>
-<li>프로퍼티: 객체의 상태를 나타내는 값(data)</li>
-<li>메서드: 프로퍼티(상태 데이터)를 참조하고 조작할 수 있는 동작(behavior)</li>
-</ul>
-<p>객체는 프로퍼티와 메서드를 통해 상태와 동작을 하나의 단위로 구조화할 수 있어 유용하다.</p>
-<h2 id="객체-리터럴에-의한-객체-생성"><a href="#객체-리터럴에-의한-객체-생성" class="headerlink" title="객체 리터럴에 의한 객체 생성"></a>객체 리터럴에 의한 객체 생성</h2><p>C++이나 자바와 같은 클래스 기반 객체지향 언어는 클래스를 사전에 정의하고 필요한 시점에 new 연산자와 함께 생성자를 호출하여 인스턴스를 생성하는 방식으로 객체를 생성한다.</p>
-<p>자바스크립트는 프로토타입 기반 객체지향 언어로 클래스 기반 객체지향 언어와는 달리 다양한 객체 생성 방법을 지원한다.</p>
-<ul>
-<li>객체 리터럴</li>
-<li>Object 생성자 함수</li>
-<li>생성자 함수</li>
-<li>Object.create 메서드</li>
-<li>클래스(ES6)</li>
-</ul>
-<p>객체 생성 방법 중에서 가장 일반적이고 간단한 방법은 객체 리터럴을 사용하는 방법이다.<br>객체 리터럴은 중괄호({…}) 내에 0개 이상의 프로퍼티를 정의한다. 자바스크립트 엔진은 변수에 할당되는 시점에 객체 리터럴을 해석해 객체를 생성한다.</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> person = &#123;</span><br><span class="line">  <span class="attr">name</span>: <span class="string">&#x27;rongrong&#x27;</span>,</span><br><span class="line">  <span class="attr">sayHello</span>: <span class="keyword">function</span> (<span class="params"></span>) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`Hello! my name is <span class="subst">$&#123;<span class="variable language_">this</span>.name&#125;</span>.`</span>);</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="keyword">typeof</span> person); <span class="comment">// object</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(person); <span class="comment">// &#123;name: &#x27;rongrong&#x27;, sayHello: f&#125;</span></span><br></pre></td></tr></table></figure>
-
-<p>객체 리터럴의 중괄호는 코드 블록을 의미하지 않는다는것에 주의하자. 코드 블록의 닫는 중괄호 뒤에는 세미콜론을 붙이지 않는다.<br>하지만 객체 리터럴은 값으로 평가되는 표현식으로 객체 리터럴의 닫는 괄호 뒤에는 세미콜론을 붙인다.</p>
-<p>객체 리터럴은 자바스크립트의 유연함과 강력함을 대표하는 객체 생성 방식으로 객체 리터럴에 프로퍼티를 포함시켜 객체를 생성함과 동시에 프로퍼티를 만들 수도 있고, 객체를 생성한 이후에 프로퍼티를 동적으로 추가할 수도 있다.</p>
-<p>그렇다면 프로퍼티에 대해 자세히 알아보자.</p>
-<h2 id="프로퍼티"><a href="#프로퍼티" class="headerlink" title="프로퍼티"></a>프로퍼티</h2><p>객체는 프로퍼티의 집합이며, 프로퍼티는 키와 값으로 구성된다.<br>프로퍼티를 나열할 때는 쉼표로 구분한다. 일반적으로 마지막 프로퍼티 뒤에는 쉼표를 사용하지 않지만 사용해도 괜찮다.</p>
-<p>프로퍼티 키와 프로퍼티 값으로 사용할 수 있는 값은 다음과 같다.</p>
-<ul>
-<li>프로퍼티 키: 빈 문자열을 포함하는 모든 문자열 또는 심벌 값</li>
-<li>프로퍼티 값: 자바스크립트에서 사용할 수 있는 모든 값</li>
-</ul>
-<p>프로퍼티 키는 프로퍼티 값에 접근할 수 있는 이름으로 식별자의 역할을 한다. 하지만 반드시 식별자 네이밍규칙을 따라야 하는 것은 아니다.<br>단, 식별자 네이밍 규칙을 준수하는 프로퍼티 키와 그렇지 않은 키에는 차이가 존재한다.</p>
-<p>심벌 값도 프로퍼티 키로 사용할 수 있지만 일반적으로 문자열을 사용한다. 이때 프로퍼티 키는 문자열이므로 따옴표로 묶어야 한다.<br>하지만 식별자 네이밍 규칙을 준수하는 이름은 따옴표를 생략할 수 있다. 반대로 식별자 네이밍 규칙을 따르지 않는 이름에는 반드시 따옴표를 사용해야 한다.</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> person = &#123;</span><br><span class="line">  <span class="attr">firstName</span>: <span class="string">&#x27;rong&#x27;</span>, <span class="comment">// 식별자 네이밍 규칙을 준수한 프로퍼티 키</span></span><br><span class="line">  <span class="string">&#x27;last-name&#x27;</span>: <span class="string">&#x27;rong&#x27;</span>, <span class="comment">// 식별자 네이밍 규칙을 준수하지 않은 프로퍼티 키</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(person); <span class="comment">// &#123;firstName: &#x27;rong&#x27;, last-name: &#x27;rong&#x27;&#125;</span></span><br></pre></td></tr></table></figure>
-
-<p>프로퍼티 키로 사용한 firstName은 식별자 네이밍 규칙을 준수하므로 따옴표를 생략할 수 있다.<br>하지만 last-name은 식별자 네이밍 규칙을 주수하지 않으므로 따옴표를 생략할 수 없다. 자바스크립트 엔진은 따옴표를 생략한 last-name을 - 연산자가 있는 표현식으로 해석한다.</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> person = &#123;</span><br><span class="line">  <span class="attr">firstName</span>: <span class="string">&#x27;rong&#x27;</span>,</span><br><span class="line">  last-<span class="attr">name</span>: <span class="string">&#x27;rong&#x27;</span>, <span class="comment">// SyntaxError: Unexpected token -</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-<p>문자열 또는 문자열로 평가할 수 있는 표현식을 사용해 프로퍼티 키를 동적으로 생성 가능하다. 이 경우에는 프로퍼티 키로 사용할 표현식을 대괄호로 묶어야 한다.</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = &#123;&#125;;</span><br><span class="line"><span class="keyword">var</span> key = <span class="string">&#x27;hello&#x27;</span>;</span><br><span class="line"></span><br><span class="line">obj[key] = <span class="string">&#x27;world&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(obj); <span class="comment">// &#123;hello: &#x27;world&#x27;&#125;</span></span><br></pre></td></tr></table></figure>
-
-<p>이미 존재하는 프로퍼티 키를 중복 선언하면 나중에 선언한 프로퍼티가 먼저 선언한 프로퍼티를 덮어쓴다.<br>이때 에러가 발생하지 않으니 주의해야 한다.</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> foo = &#123;</span><br><span class="line">  <span class="attr">name</span>: <span class="string">&#x27;Lee&#x27;</span>,</span><br><span class="line">  <span class="attr">name</span>: <span class="string">&#x27;Kim&#x27;</span>,</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(foo); <span class="comment">// &#123;name: &#x27;Kim&#x27;&#125;</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="메서드"><a href="#메서드" class="headerlink" title="메서드"></a>메서드</h2><p>자바스크립트에서 사용할 수 있는 모든 값은 프로퍼티 값으로 사용할 수 있다고 했다.<br>자바스크립트의 함수는 일급객체로 값으로 취급할 수 있기 때문에 프로퍼티 값으로 사용 가능하다.</p>
-<p>프로퍼티 값이 함수일 경우 일반 함수와 구분하기 위해 메서드라 부르는데 즉 메서드는 객체에 묶여 있는 함수를 의미한다.</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> circle = &#123;</span><br><span class="line">  <span class="attr">radius</span>: <span class="number">5</span>, <span class="comment">// 프로퍼티</span></span><br><span class="line">  <span class="comment">// 원의 지름을 구하는 메서드</span></span><br><span class="line">  <span class="attr">getDiameter</span>: <span class="keyword">function</span> (<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">2</span> * <span class="variable language_">this</span>.<span class="property">radius</span>;</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(circle.<span class="title function_">getDiameter</span>()); <span class="comment">// 10</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="프로퍼티-접근"><a href="#프로퍼티-접근" class="headerlink" title="프로퍼티 접근"></a>프로퍼티 접근</h2><p>프로퍼티에 접근하는 방법은 다음과 같이 두 가지이다.</p>
-<ul>
-<li>마침표 프로퍼티 접근 연산자(.)를 사용하는 마침표 표기법</li>
-<li>대괄호 프로퍼티 접근 연산자([…])를 사용하는 대괄호 표기법</li>
-</ul>
-<p>프로퍼티 키가 식별자 네이밍 규칙을 준수하는 이름이면 마침표 표기법과 대괄호 표기법을 모두 사용할 수 있다.</p>
-<p>대괄호 표기법을 사용하는 경우 대괄호 프로퍼티 접근 연산자 내부에 지정하는 프로퍼티 키는 반드시 따옴표로 감싼 문자열이어야 한다.<br>대괄호 프로퍼티 접근 연산자 내에 따옴표로 감싸지 않은 이름을 프로퍼티 키로 사용하면 자바스크립트 엔진은 식별자로 해석한다.</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> person = &#123;</span><br><span class="line">  <span class="attr">name</span>: <span class="string">&#x27;rongrong&#x27;</span>,</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(person.<span class="property">name</span>); <span class="comment">// &#x27;rongrong&#x27;</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(person[<span class="string">&#x27;name&#x27;</span>]); <span class="comment">// &#x27;rongrong&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(person[name]); <span class="comment">// ReferenceError: name is not defined</span></span><br></pre></td></tr></table></figure>
-
-<p>위 코드에서 ReferenceError가 발생한 이유는 대괄호 연산자 내의 따옴표로 감싸지 않은 이름, 즉 식별자 name을 평가하기 위해 선언된 name을 찾았지만 찾지 못했기 때문이다.</p>
-<p>객체에 존재하지 않는 프로퍼티에 접근하면 undefined를 반환한다. 이때 ReferenceError가 발생하지 않는데에 주의하자</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> person = &#123;</span><br><span class="line">  <span class="attr">name</span>: <span class="string">&#x27;rongrong&#x27;</span>,</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(person.<span class="property">age</span>); <span class="comment">// undefined</span></span><br></pre></td></tr></table></figure>
-
-<p>프로퍼티 키가 식별자 네이밍 규칙을 준수하지 않으면 반드시 대괄호 표기법을 사용해야 한다.<br>단 프로퍼티 키가 숫자로 이루어진 문자열인 경우 따옴표를 생략할 수 있다.</p>
-<h2 id="프로퍼티-값-갱신"><a href="#프로퍼티-값-갱신" class="headerlink" title="프로퍼티 값 갱신"></a>프로퍼티 값 갱신</h2><p>이미 존재하는 프로퍼티에 값을 할당하면 프로퍼티 값이 갱신된다</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> person = &#123;</span><br><span class="line">  <span class="attr">name</span>: <span class="string">&#x27;Lee&#x27;</span>,</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">person.<span class="property">name</span> = <span class="string">&#x27;Kim&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(person); <span class="comment">// &#123;name: &quot;Kim&quot;&#125;</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="프로퍼티-동적-생성"><a href="#프로퍼티-동적-생성" class="headerlink" title="프로퍼티 동적 생성"></a>프로퍼티 동적 생성</h2><p>존재하지 않는 프로퍼티에 값을 할당하면 프로퍼티가 동적으로 생성되어 추가되고 프로퍼티 값이 할당된다.</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> person = &#123;</span><br><span class="line">  <span class="attr">name</span>: <span class="string">&#x27;rongrong&#x27;</span>,</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">person.<span class="property">age</span> = <span class="number">25</span>;</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(person); <span class="comment">// &#123;name: &#x27;rongrong&#x27;, age: 25&#125;</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="프로퍼티-삭제"><a href="#프로퍼티-삭제" class="headerlink" title="프로퍼티 삭제"></a>프로퍼티 삭제</h2><p>delete 연산자는 객체의 프로퍼티를 삭제한다. 이때 delete 연산자의 피연산자는 프로퍼티 값에 접근할 수 있는 표현식이어야 한다.<br>이때 존재하지 않는 프로퍼티를 삭제해도 아무런 에러 없이 무시된다.</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> person = &#123;</span><br><span class="line">  <span class="attr">name</span>: <span class="string">&#x27;rongrong&#x27;</span>,</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">person.<span class="property">age</span> = <span class="number">25</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">delete</span> person.<span class="property">age</span>; <span class="comment">// 프로퍼티 동적 생성 후 삭제</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">delete</span> person.<span class="property">address</span>; <span class="comment">// 존재하지 않는 프로퍼티 삭제, 에러 없이 무시</span></span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(person); <span class="comment">// &#123;name: &#x27;rongrong&#x27;&#125;</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="ES6에서-추가된-객체-리터럴의-확장-기능"><a href="#ES6에서-추가된-객체-리터럴의-확장-기능" class="headerlink" title="ES6에서 추가된 객체 리터럴의 확장 기능"></a>ES6에서 추가된 객체 리터럴의 확장 기능</h2><p>ES6에서는 더욱 간편하고 표현력 있는 객체 리터럴의 확장 기능을 제공한다.</p>
-<h3 id="프로퍼티-축약-표현"><a href="#프로퍼티-축약-표현" class="headerlink" title="프로퍼티 축약 표현"></a>프로퍼티 축약 표현</h3><p>객체 리터럴의 프로퍼티는 프로퍼티 키와 프로퍼티 값으로 구성된다. 프로퍼티 값은 변수에 할당된 값, 즉 식별자 표현식일 수도 있다.</p>
-<p>ES6에서는 프로퍼티 값으로 변수를 사용하는 경우 변수 이름과 프로퍼티 키가 동일한 이름일 때 프로퍼티 키를 생략할 수 있다.<br>이때 프로퍼티 키는 변수 이름으로 자동 생성된다.</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> x = <span class="number">1</span>,</span><br><span class="line">  y = <span class="number">2</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> obj = &#123; x, y &#125;;</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(obj); &#123;<span class="attr">x</span>: <span class="number">1</span>, <span class="attr">y</span>: <span class="number">2</span>&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="메서드-축약-표현"><a href="#메서드-축약-표현" class="headerlink" title="메서드 축약 표현"></a>메서드 축약 표현</h3><p>ES5에서 메서드를 정의하려면 프로퍼티 값으로 함수를 할당한다.</p>
-<p>ES6에서는 메서드를 정의할 때 function 키워드를 생략한 축약 표현을 사용할 수 있다.</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> obj = &#123;</span><br><span class="line">  <span class="attr">name</span>: <span class="string">&#x27;rongrong&#x27;</span>,</span><br><span class="line">  <span class="title function_">sayHi</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;Hi! &#x27;</span> + <span class="variable language_">this</span>.<span class="property">name</span>);</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">obj.<span class="title function_">sayHi</span>(); <span class="comment">// &#x27;Hi! rongrong&#x27;</span></span><br></pre></td></tr></table></figure>
-
-<p>ES6의 메서드 축약 표현으로 정의한 메서드는 프로퍼티에 할당한 함수와 다르게 동작한다.</p>
-]]></content>
-      <tags>
-        <tag>개발</tag>
-        <tag>자바스크립트</tag>
-        <tag>모던 자바스크립트 Deep Dive</tag>
       </tags>
   </entry>
   <entry>
@@ -281,50 +169,50 @@
       </tags>
   </entry>
   <entry>
-    <title>[Deep Dive] 원시 값과 객체의 비교</title>
-    <url>/2022/Modern-Javascript-Deep-Dive-Chapter-11-Summary/</url>
-    <content><![CDATA[<h1 id="원시-값-vs-객체-값"><a href="#원시-값-vs-객체-값" class="headerlink" title="원시 값 vs 객체 값"></a>원시 값 vs 객체 값</h1><p>앞서 데이터 타입에서 살펴보았듯이 자바스크립트가 제공하는 데이터타입은 크게 원시 타입과 객체 타입으로 구분할 수 있다.</p>
-<p>데이터 타입을 원시 타입과 객체 타입으로 구분하는 이유는 무엇일까?<br>원시 타입과 객체 타입은 근본적으로 다르다는 의미일 것이다. 원시타입과 객체 타입은 크게 세 가지 측면에서 다르다.</p>
-<ul>
-<li>원시 타입의 값은 변경 불가능한 값이다. 반면 객체(참조) 타입의 값은 변경 가능한 값이다.</li>
-<li>원시 값을 변수에 할당하면 변수(확보된 메모리 공간)에는 실제 값이 저장된다. 반면 객체를 변수에 할당하면 변수에는 참조 값이 저장된다.</li>
-<li>원시 값을 갖는 변수를 다른 변수에 할당하면 원본의 원시 값이 복사되어 전달된다. 이를 값에 의한 전달이라고 한다. 반면 객체를 가리키는 변수를 다른 변수에 할당하면 원본의 참조 값이 복사되어 전달된다. 이를 참조에 의한 전달이라고 한다.</li>
-</ul>
-<p>원시 타입과 객체 타입에 대해 조금 더 자세히 살펴보자</p>
-<h2 id="원시-값"><a href="#원시-값" class="headerlink" title="원시 값"></a>원시 값</h2><h3 id="변경-불가능한-값"><a href="#변경-불가능한-값" class="headerlink" title="변경 불가능한 값"></a>변경 불가능한 값</h3><p>원시 타입의 값은 변경 불가능한 값이다. 다시 말해, 한번 생성된 원시 값은 읽기 전용 값으로 변경할 수 없다.</p>
-<p>값을 변경할 수 없다는 것이 어떤 의미일까? 먼저 변수와 값을 정확히 구분해야 한다.<br>변수란 하나의 값을 저장하기 위해 확보한 메모리 공간 자체 또는 그 메모리 공간을 식별하기 위해 붙인 이름이고, 값이란 변수에 저장된 데이터로 표현식이 평가되어 생성된 결과이다. 값을 변경할 수 없다는 것은 변수에 관한 것이 아닌 값에 대한 진술이다.</p>
-<p>즉 원시 값을 변경할 수 없다는 것은 원시 값 자체를 변경할 수 없다는 것이지 변수 값을 변경할 수 없다는 것이 아니다. 변수 값은 재할당을 통해 언제든지 변경 가능하다. 단 상수는 재할당이 금지된 변수이므로 변수 값을 변경할 수 없다.</p>
-<p>원시 값은 변경 불가능한 값이므로 데이터의 신뢰성을 보장한다.</p>
-<p>변수에서 살펴보았듯이 원시 값을 할당한 변수에 새로운 원시 값을 재할당하면 메모리 공간에 저장되어 있는 재할당 이전의 원시 값을 변경하는 것이 아니라 새로운 메모리 공간을 확보하고 재할당할 값을 저장한 후 변수가 새롭게 재할당한 원시 값을 가리킨다.</p>
-<p>변수가 참조하던 메모리 공간의 주소가 변경된 이유는 변수에 할당된 원시 값이 변경 불가능한 값이기 때문이다.<br>만약 원시 값이 변경 가능한 값이라면 변수에 새로운 원시 값을 재할당했을 때 변수가 가리키던 메모리 공간의 주소를 바꿀 필요 없이 원시 값 자체를 변경하면 될 것이다.</p>
-<p>하지만 원시 값은 불변성을 가지므로 원시 값을 할당한 변수는 재할당 이외에 변수 값을 변경할 수 있는 방법이 없다.</p>
-<h3 id="값에-의한-전달"><a href="#값에-의한-전달" class="headerlink" title="값에 의한 전달"></a>값에 의한 전달</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> score = <span class="number">80</span>;</span><br><span class="line"><span class="keyword">var</span> copy = score;</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(score); <span class="comment">// 80</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(copy); <span class="comment">// 80</span></span><br><span class="line"></span><br><span class="line">score = <span class="number">100</span>;</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(score); <span class="comment">// 100</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(copy); <span class="comment">// ?</span></span><br></pre></td></tr></table></figure>
+    <title>[Deep Dive] 변수</title>
+    <url>/2022/Modern-JavaScript-Deep-Dive-Chapter-4-Variable-Summary/</url>
+    <content><![CDATA[<p>모던 자바스크립트 Deep Dive에 대한 러버덕을 진행하면서 각 장에 대해 중요하다고 생각되는 부분들에 대해 정리해보고자 한다. </p>
+<hr>
 
-<p>score 변수에 숫자 값 80을 할당 한 후 copy 변수에 score 변수를 할당했다. 그 후, score 변수에 새로운 숫자 값 100을 재할당하면 copy 변수의 값은 어떻게 될까?</p>
-<p>이 질문은 결국 “변수에 변수를 할당했을 때 무엇이 어떻게 전달되는가?”이다. copy &#x3D; score에서 score는 변수 값 80으로 평가되므로 copy 변수에도 80이 할당된다. 이처럼 변수에 원시 값을 갖는 변수를 할당하면 할당받는 변수(copy)에는 할당되는 변수(score)의 원시 값이 복사되어 전달되는데 이를 값에 의한 전달이라 한다.</p>
-<p>score 변수와 copy 변수는 숫자 값 80을 갖는다는 점은 동일하지만 score 변수와 copy 변수의 값 80은 다른 메모리 공간에 저장된 별개의 값이다.<br>따라서 score변수의 값을 변경하더라도 copy 변수의 값은 어떠한 영향을 주지 않는다. 즉 마지막 <code>console.log(copy)</code>의 결과는 80이다.</p>
-<p>사실 이는 실제 자바스크립트 엔진의 내부 동작과 정확히 일치하지 않을 수 있다. ECMAScript 사양에는 변수를 통해 메모리를 어떻게 관리해야 하는지 명확하게 정의되어 있지 않다. 따라서 실제 자바스크립트 엔진을 구현하는 제조사에 따라 내부 동작은 차이가 있을 수 있다.</p>
-<p>위에서는 변수에 원시 값을 갖는 변수를 할당하면 원시 값이 복사되어 새로운 메모리 공간에 할당한다고 설명했지만, 변수에 원시 값을 갖는 변수를 할당하는 시점에는 두 변수가 같은 원시 값을 참조하다가 어느 한쪽의 변수에 재할당이 이뤄졌을 때 비로소 새로운 메모리 공간에 재할당된 값을 저장하도록 동작할 수도 있다.</p>
-<p>또한 엄격히 말하자면 변수와 같은 식별자는 값이 아니라 메모리 주소를 기억하기에 변수에는 값이 전달되는 것이 아니라 메모리 주소가 전달된다. 따라서 “값에 의한 전달”이라는 용어도 사실 오해가 있을 수 있다.</p>
-<p>결국 “값에 의한 전달”도 사실은 값이 아니라 메모리 주소를 전달한다. 단 전달된 메모리 주소를 통해 메모리 공간에 접근하면 값을 참조할 수 있다.<br>중요한 것은 변수에 원시 값을 갖는 변수를 할당하면 변수 할당 시점이든, 두 변수 중 어느 하나의 변수에 값을 재할당하는 시점이든 결국은 두 변수의 원시 값은 서로 다른 메모리 공간에 저장된 별개의 값이 되어 어느 한쪽에서 재할당을 통해 값을 변경하더라도 서로 간섭할 수 없다는 것이다.</p>
-<h2 id="객체"><a href="#객체" class="headerlink" title="객체"></a>객체</h2><p>객체는 프로퍼티의 개수가 정해져 있지 않으며, 동적으로 추가되고 삭제할 수 있다. 또 프로퍼티의 값에도 제약이 없다.<br>즉 객체는 원시 값과는 다르게 확보해야 할 메모리 공간의 크기를 사전에 정해 둘 수 없다.</p>
-<p>따라서 객체는 원시 값과는 다른 방식으로 동작하도록 설계되어 있다. 원시 값과의 차이를 통해 객체에 대해 이해해보자.</p>
-<h3 id="변경-가능한-값"><a href="#변경-가능한-값" class="headerlink" title="변경 가능한 값"></a>변경 가능한 값</h3><p>객체 타입의 값은 변경 가능한 값이다. 이게 어떤 의미일까? 먼저 변수에 객체를 할당하면 어떤 일이 일어나는지 살펴보자</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> person = &#123;</span><br><span class="line">  <span class="attr">name</span>: <span class="string">&#x27;Lee&#x27;</span>,</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h1 id="변수의-정의"><a href="#변수의-정의" class="headerlink" title="변수의 정의"></a>변수의 정의</h1><p>변수란 하나의 값을 저장하기 위해 확보한 메모리 공간 자체 또는 그 메모리 공간을 식별하기 위해 붙인 이름을 말한다.</p>
+<hr>
 
-<p>원시 값을 할당한 변수가 기억하는 메모리 주소를 통해 메모리 공간에 접근하면 원시 값에 접근할 수 있다.<br>즉, 원시 값을 할당한 변수는 원시 값 자체를 값으로 갖는다. 하지만 객체를 할당한 변수가 기억하는 메모리 주소를 통해 메모리 공간에 접근하면 참조 값에 접근할 수 있다. 참조 값은 생성된 객체가 저장된 메모리 공간의 주소이다.</p>
-<p>원시 값을 할당한 변수를 참조하면 메모리에 저장되어 있는 원시 값에 접근한다. 하지만 객체를 할당한 변수를 참조하면 메모리에 저장되어 있는 참조 값을 통해 실제 객체에 접근한다.</p>
-<p>원시 값은 변경 불가능한 값이므로 원시 값을 갖는 변수의 값을 변경하려면 재할당 외에는 방법이 없다. 하지만 객체는 변경 가능한 값이므로 객체를 할당한 변수는 재할당 없이 객체를 직접 변경할 수 있다. 재할당 없이 프로퍼티를 동적으로 추가할 수도 있고 프로퍼티 값을 갱신할 수도 있으며 프로퍼티 자체를 삭제할 수도 있다.</p>
-<p>이때 객체를 할당한 변수에 재할당을 하지 않았으므로 객체를 할당한 변수의 참조 값은 변경되지 않는다.<br>이는 메모리 사용의 효율성과 성능을 위해 어느 정도의 구조적인 단점을 감안한 설계라고 할 수 있다.</p>
-<p>객체는 이러한 구조적 단점에 따른 부작용이 존재한다. 원시 값과는 다르게 여러 개의 식별자가 하나의 객체를 공유할 수 있다는 것이다.</p>
-<h3 id="참조에-의한-전달"><a href="#참조에-의한-전달" class="headerlink" title="참조에 의한 전달"></a>참조에 의한 전달</h3><p>여러 개의 식별자가 하나의 객체를 공유할 수 있다는 것이 무슨 의미인지, 어떤 부작용이 발생하는지 알아보자.</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> person = &#123;</span><br><span class="line">  <span class="attr">name</span>: <span class="string">&#x27;Lee&#x27;</span>;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> copy = person;</span><br></pre></td></tr></table></figure>
+<h1 id="변수는-왜-필요할까"><a href="#변수는-왜-필요할까" class="headerlink" title="변수는 왜 필요할까?"></a>변수는 왜 필요할까?</h1><p>예를들어 10 + 20이라는 식을 생각해보자. 사람이 위 식을 계산하려면 10, 20을 기억하고 + 연산을 진행해 30이라는 값을 얻어야한다.<br>컴퓨터는 CPU를 사용해 연산하고, 메모리를 사용해 데이터를 기억한다.<br>메모리는 데이터를 저장할 수 있는 메모리 셀의 집합체이다. 메모리 셀 하나의 크기는 기기 사양마다 다르지만 보통 1바이트이다.<br>각 셀은 고유의 메모리 주소를 가진다.</p>
+<p>다시 식으로 돌아가보면 숫자 값 10과 20은 메모리 상의 임의의 위치에 저장되고 CPU는 이 값을 읽어 연산한다.<br>결과인 30이라는 숫자 값 역시 메모리 상의 임의의 위치에 저장된다.</p>
+<p>이때 30이라는 숫자값을 어떻게 재사용 할 수 있을까?<br>값이 저장된 메모리 주소를 통해 값에 접근할 수 있다.<br>하지만 이 경우는 실수로 운영체제가 사용하고 있는 값을 변경할수도 있고, 값이 저장될 메모리 주소 또한 임의로 결정되기에 올바른 방법이 아니다.</p>
+<p>프로그래밍 언어는 기억하고 싶은 값을 메모리에 저장하고, 저장된 값을 읽어 들여 재사용하기 위해 변수라는 메커니즘을 제공한다.</p>
+<p>결국 값을 저장할 수 있도록 하나의 값을 저장하기 위해 확보한 메모리 공간에 상징적인 이름을 붙인 것이 변수이다.</p>
+<hr>
 
-<p>객체를 가리키는 변수(원본, person)을 다른 변수(사본, copy)에 할당하면 원본의 참조 값이 복사되어 전달되는데 이를 참조에 의한 전달이라 한다.</p>
-<p>원본 person과 사본 copy는 저장된 메모리 주소는 다르지만 동일한 참조 값을 가지므로 원본 person과 사본 copy 모두 동일한 객체를 가리키게 된다.<br>이것이 두 개의 식별자가 하나의 객체를 공유한다는 것을 의미한다. 따라서 원본 또는 사본 중 어느 한 쪽에서 객체를 변경하면 서로 영향을 주고받는다.</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> person = &#123;</span><br><span class="line">  <span class="attr">name</span>: <span class="string">&#x27;Lee&#x27;</span>,</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> copy = person;</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(copy === person); <span class="comment">// true</span></span><br><span class="line"></span><br><span class="line">copy.<span class="property">name</span> = <span class="string">&#x27;Kim&#x27;</span>;</span><br><span class="line">person.<span class="property">address</span> = <span class="string">&#x27;Seoul&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// copy와 person은 동일한 객체를 가리키므로 서로 영향을 주고 받는다.</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(person); <span class="comment">// &#123;name: &#x27;Kim&#x27;, address: &#x27;Seoul&#x27;&#125;</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(copy); <span class="comment">// &#123;name: &#x27;Kim&#x27;, address: &#x27;Seoul&#x27;&#125;</span></span><br></pre></td></tr></table></figure>
+<h1 id="변수는-어떻게-생성하는가"><a href="#변수는-어떻게-생성하는가" class="headerlink" title="변수는 어떻게 생성하는가?"></a>변수는 어떻게 생성하는가?</h1><p>변수의 생성은 선언을 통해 일어난다.</p>
+<p>변수 선언은 변수를 선언하는 var, let, const의 키워드와 변수 이름을 사용한다.<br>이 때 변수 이름을 식별자라고도 하는데, 식별자는 어떤 값을 구별해서 식별할 수 있는 고유한 이름을 말한다.<br>식별자라는 용어는 변수 이름에만 국한되지 않고 변수, 함수, 클래스 등의 이름 모두를 식별자라 한다.<br>즉 메모리 상에 존재하는 어떤 값을 식별할 수 있는 이름 모두가 식별자이다.</p>
+<p>자바스크립트 엔진은 변수 선언을 선언 단계와 초기화 단계로 나누어 수행한다.<br>선언 단계는 변수 이름을 등록해 자바스크립트 엔진에 변수의 존재를 알리고 메모리 공간을 확보하는 것이며, 초기화 단계에서는 확보한 메모리 공간에 최초로 값을 할당하는 것을 말한다.</p>
+<p>var 키워드의 경우 선언 단계와 초기화 단계가 동시에 진행 되는데, 변수 선언 후 암묵적으로 undefined값을 넣어 초기화를 수행한다. 따라서 var 키워드로 선언한 변수는 어떠한 값을 할당하지 않아도 undefined라는 값을 갖는다.</p>
+<p>왜 undefined 값을 통해 초기화를 진행하는 것일까?<br>변수가 선언되어 확보된 메모리 공간에는 이전에 다른 애플리케이션이 사용했던 값이 남아 있을 수 있다. 이러한 값을 쓰레기 값이라 하는데, 만약 초기화가 진행되지 않은 상태에서 변수를 참조한다면 쓰레기 값이 나올 위험성이 있다. 이러한 위험을 피하기 위해 자바스크립트의 var 키워드는 undefined를 통해 암묵적인 초기화를 수행한다.</p>
+<h2 id="메모리-확보란-무엇인가"><a href="#메모리-확보란-무엇인가" class="headerlink" title="메모리 확보란 무엇인가?"></a>메모리 확보란 무엇인가?</h2><p>메모리 확보란 변수가 사용할 메모리 공간을 지정하고 변수 이름과 그 공간을 연결해 값을 저장할 수 있도록 준비하는 것이다. 이 때 중요한 점은 확보된 메모리 공간은 확보가 해제 되기 전까지 누구도 사용할 수 없도록 보호된다는 점이다.</p>
+<h2 id="변수-이름은-어디에-등록되는가"><a href="#변수-이름은-어디에-등록되는가" class="headerlink" title="변수 이름은 어디에 등록되는가"></a>변수 이름은 어디에 등록되는가</h2><p>변수 이름 또한 어딘가에 등록이 되어 있어야 읽어서 사용 할 수 있을 것이다. 변수 이름을 비롯한 모든 식별자는 바로 실행 컨텍스트에 등록된다. 실행 컨텍스트란 자바스크립트 엔진이 소스코드를 평가하고 실행하기 위해 필요한 환겨을 제공하고 코드의 실행결과를 실제로 관리하는 영역이다.</p>
+<hr>
 
-<p>결국 “값에 의한 전달”과 “참조에 의한 전달”은 식별자가 기억하는 메모리 공간에 저장되어 있는 값을 복사해 전달한다는 면에서 동일하다.<br>다만 식별자가 기억하는 메모리 공간, 즉 변수에 저장되어 있는 값이 원시 값이냐 참조 값이냐의 차이만 있을 뿐이다. 따라서 자바스크립트에는 “참조에 의한 전달”은 존재하지 않고 “값에 의한 전달”만이 존재한다고 말할 수 있지만 전달되는 값이 원시 값인지 참조 값인지 구별해 강조하는 의미로 구분해 부른다고 할 수 있다.</p>
+<h1 id="변수-선언의-실행-시점"><a href="#변수-선언의-실행-시점" class="headerlink" title="변수 선언의 실행 시점"></a>변수 선언의 실행 시점</h1><p>변수 선언은 소스코드가 한 줄씩 순차적으로 실행되는 시점인 런타임이 아니라 그 이전에 먼저 실행된다.</p>
+<p>자바스크립트 엔진은 소스코드를 한 줄씩 순차적으로 실행하기에 앞서 먼저 소스코드의 평가 과정을 거치는데, 이 때 변수 선언을 포함한 모든 선언문을 소스코드에서 뽑아내 먼저 실행한다. 그리고 소스코드의 평가 과정이 끝나면 선언문을 제외한 소스코드를 한 줄씩 순차적으로 실행한다.</p>
+<p>즉 자바스크립트 엔진은 변수 선언이 소스코드의 어느 위치에 있던 다른 코드보다 먼저 실행하는데, 이처럼 변수 선언문이 코드의 최상단으로 끌어 올려진 것처럼 동작하는 것을 변수 호이스팅이라 한다.</p>
+<p>변수 호이스팅에 의해 다음과 같은 현상이 일어날 수 있다.</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(score); <span class="comment">// undefined</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> score;</span><br></pre></td></tr></table></figure>
+
+<hr>
+
+<h1 id="할당이-일어나는-시점"><a href="#할당이-일어나는-시점" class="headerlink" title="할당이 일어나는 시점"></a>할당이 일어나는 시점</h1><p>변수는 값을 저장해 재사용 하기 위한 메커니즘이므로 일반적으로 선언 이후 재사용 할 값을 할당하게 된다.</p>
+<p>이 때 변수의 선언과 값의 할당은 실행 시점이 다른데, 변수 선언은 런타임 이전에 실행되는 반면 값의 할당은 런타임에 실행된다.</p>
+<p>일반적으로 변수를 다음과 같이 2개의 문으로 사용하지만 하나의 문으로 단축 표현 할 수도 있다.</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> score;</span><br><span class="line">score = <span class="number">80</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> score = <span class="number">80</span>; <span class="comment">// 단축 표현</span></span><br></pre></td></tr></table></figure>
+
+<p>변수 선언과 값의 할당을 2개의 문으로 나눈 코드와 하나의 문으로 단축 표현한 코드는 정확히 동일하게 동작한다.</p>
+<hr>
+
+<h1 id="재할당"><a href="#재할당" class="headerlink" title="재할당"></a>재할당</h1><p>var 키워드로 선언한 변수는 값을 재할당할 수 있다. 재할당은 현재 변수에 저장된 값을 버리고 새로운 값을 저장하는 것이다. var 키워드는 선언시 undefined로 초기화되기 때문에 변수에 처음으로 값을 할당하는 것도 사실 재할당이다.</p>
+<p>만약 재할당이 불가능해 변수에 저장된 값을 변경할 수 없다면 이를 상수라고 한다. 즉 상수는 단 한번만 할당이 가능한 변수이다.</p>
+<p>만약 변수에 값을 재할당 하면 변수의 값을 이전 값에서 재할당한 값으로 변하게 된다. 이때 메모리에서는 어떤 일이 일어날까? 재할당시에는 메모리 공간에서 이전 값을 지우고 새로운 값을 할당하는것이 아닌 변수가 새로운 메모리 공간을 확보하고 그 공간에 새로운 값을 저장하게 된다.</p>
+<p>이 때 이전 값이 들어 있던 메모리 공간은 어떤 식별자와도 연결되어 있지 않으므로 불필요한 값이 된다.<br>이 경우 가비지 콜렉터에 의해서 메모리에서 자동 해제되지만 언저 해제될지 예측은 불가능하다.</p>
 ]]></content>
       <tags>
         <tag>개발</tag>
@@ -423,50 +311,50 @@ for (변수 선언문 또는 할당문; 조건식; 증감식) {
       </tags>
   </entry>
   <entry>
-    <title>[Deep Dive] 변수</title>
-    <url>/2022/Modern-JavaScript-Deep-Dive-Chapter-4-Variable-Summary/</url>
-    <content><![CDATA[<p>모던 자바스크립트 Deep Dive에 대한 러버덕을 진행하면서 각 장에 대해 중요하다고 생각되는 부분들에 대해 정리해보고자 한다. </p>
-<hr>
+    <title>[Deep Dive] 원시 값과 객체의 비교</title>
+    <url>/2022/Modern-Javascript-Deep-Dive-Chapter-11-Summary/</url>
+    <content><![CDATA[<h1 id="원시-값-vs-객체-값"><a href="#원시-값-vs-객체-값" class="headerlink" title="원시 값 vs 객체 값"></a>원시 값 vs 객체 값</h1><p>앞서 데이터 타입에서 살펴보았듯이 자바스크립트가 제공하는 데이터타입은 크게 원시 타입과 객체 타입으로 구분할 수 있다.</p>
+<p>데이터 타입을 원시 타입과 객체 타입으로 구분하는 이유는 무엇일까?<br>원시 타입과 객체 타입은 근본적으로 다르다는 의미일 것이다. 원시타입과 객체 타입은 크게 세 가지 측면에서 다르다.</p>
+<ul>
+<li>원시 타입의 값은 변경 불가능한 값이다. 반면 객체(참조) 타입의 값은 변경 가능한 값이다.</li>
+<li>원시 값을 변수에 할당하면 변수(확보된 메모리 공간)에는 실제 값이 저장된다. 반면 객체를 변수에 할당하면 변수에는 참조 값이 저장된다.</li>
+<li>원시 값을 갖는 변수를 다른 변수에 할당하면 원본의 원시 값이 복사되어 전달된다. 이를 값에 의한 전달이라고 한다. 반면 객체를 가리키는 변수를 다른 변수에 할당하면 원본의 참조 값이 복사되어 전달된다. 이를 참조에 의한 전달이라고 한다.</li>
+</ul>
+<p>원시 타입과 객체 타입에 대해 조금 더 자세히 살펴보자</p>
+<h2 id="원시-값"><a href="#원시-값" class="headerlink" title="원시 값"></a>원시 값</h2><h3 id="변경-불가능한-값"><a href="#변경-불가능한-값" class="headerlink" title="변경 불가능한 값"></a>변경 불가능한 값</h3><p>원시 타입의 값은 변경 불가능한 값이다. 다시 말해, 한번 생성된 원시 값은 읽기 전용 값으로 변경할 수 없다.</p>
+<p>값을 변경할 수 없다는 것이 어떤 의미일까? 먼저 변수와 값을 정확히 구분해야 한다.<br>변수란 하나의 값을 저장하기 위해 확보한 메모리 공간 자체 또는 그 메모리 공간을 식별하기 위해 붙인 이름이고, 값이란 변수에 저장된 데이터로 표현식이 평가되어 생성된 결과이다. 값을 변경할 수 없다는 것은 변수에 관한 것이 아닌 값에 대한 진술이다.</p>
+<p>즉 원시 값을 변경할 수 없다는 것은 원시 값 자체를 변경할 수 없다는 것이지 변수 값을 변경할 수 없다는 것이 아니다. 변수 값은 재할당을 통해 언제든지 변경 가능하다. 단 상수는 재할당이 금지된 변수이므로 변수 값을 변경할 수 없다.</p>
+<p>원시 값은 변경 불가능한 값이므로 데이터의 신뢰성을 보장한다.</p>
+<p>변수에서 살펴보았듯이 원시 값을 할당한 변수에 새로운 원시 값을 재할당하면 메모리 공간에 저장되어 있는 재할당 이전의 원시 값을 변경하는 것이 아니라 새로운 메모리 공간을 확보하고 재할당할 값을 저장한 후 변수가 새롭게 재할당한 원시 값을 가리킨다.</p>
+<p>변수가 참조하던 메모리 공간의 주소가 변경된 이유는 변수에 할당된 원시 값이 변경 불가능한 값이기 때문이다.<br>만약 원시 값이 변경 가능한 값이라면 변수에 새로운 원시 값을 재할당했을 때 변수가 가리키던 메모리 공간의 주소를 바꿀 필요 없이 원시 값 자체를 변경하면 될 것이다.</p>
+<p>하지만 원시 값은 불변성을 가지므로 원시 값을 할당한 변수는 재할당 이외에 변수 값을 변경할 수 있는 방법이 없다.</p>
+<h3 id="값에-의한-전달"><a href="#값에-의한-전달" class="headerlink" title="값에 의한 전달"></a>값에 의한 전달</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> score = <span class="number">80</span>;</span><br><span class="line"><span class="keyword">var</span> copy = score;</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(score); <span class="comment">// 80</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(copy); <span class="comment">// 80</span></span><br><span class="line"></span><br><span class="line">score = <span class="number">100</span>;</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(score); <span class="comment">// 100</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(copy); <span class="comment">// ?</span></span><br></pre></td></tr></table></figure>
 
-<h1 id="변수의-정의"><a href="#변수의-정의" class="headerlink" title="변수의 정의"></a>변수의 정의</h1><p>변수란 하나의 값을 저장하기 위해 확보한 메모리 공간 자체 또는 그 메모리 공간을 식별하기 위해 붙인 이름을 말한다.</p>
-<hr>
+<p>score 변수에 숫자 값 80을 할당 한 후 copy 변수에 score 변수를 할당했다. 그 후, score 변수에 새로운 숫자 값 100을 재할당하면 copy 변수의 값은 어떻게 될까?</p>
+<p>이 질문은 결국 “변수에 변수를 할당했을 때 무엇이 어떻게 전달되는가?”이다. copy &#x3D; score에서 score는 변수 값 80으로 평가되므로 copy 변수에도 80이 할당된다. 이처럼 변수에 원시 값을 갖는 변수를 할당하면 할당받는 변수(copy)에는 할당되는 변수(score)의 원시 값이 복사되어 전달되는데 이를 값에 의한 전달이라 한다.</p>
+<p>score 변수와 copy 변수는 숫자 값 80을 갖는다는 점은 동일하지만 score 변수와 copy 변수의 값 80은 다른 메모리 공간에 저장된 별개의 값이다.<br>따라서 score변수의 값을 변경하더라도 copy 변수의 값은 어떠한 영향을 주지 않는다. 즉 마지막 <code>console.log(copy)</code>의 결과는 80이다.</p>
+<p>사실 이는 실제 자바스크립트 엔진의 내부 동작과 정확히 일치하지 않을 수 있다. ECMAScript 사양에는 변수를 통해 메모리를 어떻게 관리해야 하는지 명확하게 정의되어 있지 않다. 따라서 실제 자바스크립트 엔진을 구현하는 제조사에 따라 내부 동작은 차이가 있을 수 있다.</p>
+<p>위에서는 변수에 원시 값을 갖는 변수를 할당하면 원시 값이 복사되어 새로운 메모리 공간에 할당한다고 설명했지만, 변수에 원시 값을 갖는 변수를 할당하는 시점에는 두 변수가 같은 원시 값을 참조하다가 어느 한쪽의 변수에 재할당이 이뤄졌을 때 비로소 새로운 메모리 공간에 재할당된 값을 저장하도록 동작할 수도 있다.</p>
+<p>또한 엄격히 말하자면 변수와 같은 식별자는 값이 아니라 메모리 주소를 기억하기에 변수에는 값이 전달되는 것이 아니라 메모리 주소가 전달된다. 따라서 “값에 의한 전달”이라는 용어도 사실 오해가 있을 수 있다.</p>
+<p>결국 “값에 의한 전달”도 사실은 값이 아니라 메모리 주소를 전달한다. 단 전달된 메모리 주소를 통해 메모리 공간에 접근하면 값을 참조할 수 있다.<br>중요한 것은 변수에 원시 값을 갖는 변수를 할당하면 변수 할당 시점이든, 두 변수 중 어느 하나의 변수에 값을 재할당하는 시점이든 결국은 두 변수의 원시 값은 서로 다른 메모리 공간에 저장된 별개의 값이 되어 어느 한쪽에서 재할당을 통해 값을 변경하더라도 서로 간섭할 수 없다는 것이다.</p>
+<h2 id="객체"><a href="#객체" class="headerlink" title="객체"></a>객체</h2><p>객체는 프로퍼티의 개수가 정해져 있지 않으며, 동적으로 추가되고 삭제할 수 있다. 또 프로퍼티의 값에도 제약이 없다.<br>즉 객체는 원시 값과는 다르게 확보해야 할 메모리 공간의 크기를 사전에 정해 둘 수 없다.</p>
+<p>따라서 객체는 원시 값과는 다른 방식으로 동작하도록 설계되어 있다. 원시 값과의 차이를 통해 객체에 대해 이해해보자.</p>
+<h3 id="변경-가능한-값"><a href="#변경-가능한-값" class="headerlink" title="변경 가능한 값"></a>변경 가능한 값</h3><p>객체 타입의 값은 변경 가능한 값이다. 이게 어떤 의미일까? 먼저 변수에 객체를 할당하면 어떤 일이 일어나는지 살펴보자</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> person = &#123;</span><br><span class="line">  <span class="attr">name</span>: <span class="string">&#x27;Lee&#x27;</span>,</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
-<h1 id="변수는-왜-필요할까"><a href="#변수는-왜-필요할까" class="headerlink" title="변수는 왜 필요할까?"></a>변수는 왜 필요할까?</h1><p>예를들어 10 + 20이라는 식을 생각해보자. 사람이 위 식을 계산하려면 10, 20을 기억하고 + 연산을 진행해 30이라는 값을 얻어야한다.<br>컴퓨터는 CPU를 사용해 연산하고, 메모리를 사용해 데이터를 기억한다.<br>메모리는 데이터를 저장할 수 있는 메모리 셀의 집합체이다. 메모리 셀 하나의 크기는 기기 사양마다 다르지만 보통 1바이트이다.<br>각 셀은 고유의 메모리 주소를 가진다.</p>
-<p>다시 식으로 돌아가보면 숫자 값 10과 20은 메모리 상의 임의의 위치에 저장되고 CPU는 이 값을 읽어 연산한다.<br>결과인 30이라는 숫자 값 역시 메모리 상의 임의의 위치에 저장된다.</p>
-<p>이때 30이라는 숫자값을 어떻게 재사용 할 수 있을까?<br>값이 저장된 메모리 주소를 통해 값에 접근할 수 있다.<br>하지만 이 경우는 실수로 운영체제가 사용하고 있는 값을 변경할수도 있고, 값이 저장될 메모리 주소 또한 임의로 결정되기에 올바른 방법이 아니다.</p>
-<p>프로그래밍 언어는 기억하고 싶은 값을 메모리에 저장하고, 저장된 값을 읽어 들여 재사용하기 위해 변수라는 메커니즘을 제공한다.</p>
-<p>결국 값을 저장할 수 있도록 하나의 값을 저장하기 위해 확보한 메모리 공간에 상징적인 이름을 붙인 것이 변수이다.</p>
-<hr>
+<p>원시 값을 할당한 변수가 기억하는 메모리 주소를 통해 메모리 공간에 접근하면 원시 값에 접근할 수 있다.<br>즉, 원시 값을 할당한 변수는 원시 값 자체를 값으로 갖는다. 하지만 객체를 할당한 변수가 기억하는 메모리 주소를 통해 메모리 공간에 접근하면 참조 값에 접근할 수 있다. 참조 값은 생성된 객체가 저장된 메모리 공간의 주소이다.</p>
+<p>원시 값을 할당한 변수를 참조하면 메모리에 저장되어 있는 원시 값에 접근한다. 하지만 객체를 할당한 변수를 참조하면 메모리에 저장되어 있는 참조 값을 통해 실제 객체에 접근한다.</p>
+<p>원시 값은 변경 불가능한 값이므로 원시 값을 갖는 변수의 값을 변경하려면 재할당 외에는 방법이 없다. 하지만 객체는 변경 가능한 값이므로 객체를 할당한 변수는 재할당 없이 객체를 직접 변경할 수 있다. 재할당 없이 프로퍼티를 동적으로 추가할 수도 있고 프로퍼티 값을 갱신할 수도 있으며 프로퍼티 자체를 삭제할 수도 있다.</p>
+<p>이때 객체를 할당한 변수에 재할당을 하지 않았으므로 객체를 할당한 변수의 참조 값은 변경되지 않는다.<br>이는 메모리 사용의 효율성과 성능을 위해 어느 정도의 구조적인 단점을 감안한 설계라고 할 수 있다.</p>
+<p>객체는 이러한 구조적 단점에 따른 부작용이 존재한다. 원시 값과는 다르게 여러 개의 식별자가 하나의 객체를 공유할 수 있다는 것이다.</p>
+<h3 id="참조에-의한-전달"><a href="#참조에-의한-전달" class="headerlink" title="참조에 의한 전달"></a>참조에 의한 전달</h3><p>여러 개의 식별자가 하나의 객체를 공유할 수 있다는 것이 무슨 의미인지, 어떤 부작용이 발생하는지 알아보자.</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> person = &#123;</span><br><span class="line">  <span class="attr">name</span>: <span class="string">&#x27;Lee&#x27;</span>;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> copy = person;</span><br></pre></td></tr></table></figure>
 
-<h1 id="변수는-어떻게-생성하는가"><a href="#변수는-어떻게-생성하는가" class="headerlink" title="변수는 어떻게 생성하는가?"></a>변수는 어떻게 생성하는가?</h1><p>변수의 생성은 선언을 통해 일어난다.</p>
-<p>변수 선언은 변수를 선언하는 var, let, const의 키워드와 변수 이름을 사용한다.<br>이 때 변수 이름을 식별자라고도 하는데, 식별자는 어떤 값을 구별해서 식별할 수 있는 고유한 이름을 말한다.<br>식별자라는 용어는 변수 이름에만 국한되지 않고 변수, 함수, 클래스 등의 이름 모두를 식별자라 한다.<br>즉 메모리 상에 존재하는 어떤 값을 식별할 수 있는 이름 모두가 식별자이다.</p>
-<p>자바스크립트 엔진은 변수 선언을 선언 단계와 초기화 단계로 나누어 수행한다.<br>선언 단계는 변수 이름을 등록해 자바스크립트 엔진에 변수의 존재를 알리고 메모리 공간을 확보하는 것이며, 초기화 단계에서는 확보한 메모리 공간에 최초로 값을 할당하는 것을 말한다.</p>
-<p>var 키워드의 경우 선언 단계와 초기화 단계가 동시에 진행 되는데, 변수 선언 후 암묵적으로 undefined값을 넣어 초기화를 수행한다. 따라서 var 키워드로 선언한 변수는 어떠한 값을 할당하지 않아도 undefined라는 값을 갖는다.</p>
-<p>왜 undefined 값을 통해 초기화를 진행하는 것일까?<br>변수가 선언되어 확보된 메모리 공간에는 이전에 다른 애플리케이션이 사용했던 값이 남아 있을 수 있다. 이러한 값을 쓰레기 값이라 하는데, 만약 초기화가 진행되지 않은 상태에서 변수를 참조한다면 쓰레기 값이 나올 위험성이 있다. 이러한 위험을 피하기 위해 자바스크립트의 var 키워드는 undefined를 통해 암묵적인 초기화를 수행한다.</p>
-<h2 id="메모리-확보란-무엇인가"><a href="#메모리-확보란-무엇인가" class="headerlink" title="메모리 확보란 무엇인가?"></a>메모리 확보란 무엇인가?</h2><p>메모리 확보란 변수가 사용할 메모리 공간을 지정하고 변수 이름과 그 공간을 연결해 값을 저장할 수 있도록 준비하는 것이다. 이 때 중요한 점은 확보된 메모리 공간은 확보가 해제 되기 전까지 누구도 사용할 수 없도록 보호된다는 점이다.</p>
-<h2 id="변수-이름은-어디에-등록되는가"><a href="#변수-이름은-어디에-등록되는가" class="headerlink" title="변수 이름은 어디에 등록되는가"></a>변수 이름은 어디에 등록되는가</h2><p>변수 이름 또한 어딘가에 등록이 되어 있어야 읽어서 사용 할 수 있을 것이다. 변수 이름을 비롯한 모든 식별자는 바로 실행 컨텍스트에 등록된다. 실행 컨텍스트란 자바스크립트 엔진이 소스코드를 평가하고 실행하기 위해 필요한 환겨을 제공하고 코드의 실행결과를 실제로 관리하는 영역이다.</p>
-<hr>
+<p>객체를 가리키는 변수(원본, person)을 다른 변수(사본, copy)에 할당하면 원본의 참조 값이 복사되어 전달되는데 이를 참조에 의한 전달이라 한다.</p>
+<p>원본 person과 사본 copy는 저장된 메모리 주소는 다르지만 동일한 참조 값을 가지므로 원본 person과 사본 copy 모두 동일한 객체를 가리키게 된다.<br>이것이 두 개의 식별자가 하나의 객체를 공유한다는 것을 의미한다. 따라서 원본 또는 사본 중 어느 한 쪽에서 객체를 변경하면 서로 영향을 주고받는다.</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> person = &#123;</span><br><span class="line">  <span class="attr">name</span>: <span class="string">&#x27;Lee&#x27;</span>,</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> copy = person;</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(copy === person); <span class="comment">// true</span></span><br><span class="line"></span><br><span class="line">copy.<span class="property">name</span> = <span class="string">&#x27;Kim&#x27;</span>;</span><br><span class="line">person.<span class="property">address</span> = <span class="string">&#x27;Seoul&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// copy와 person은 동일한 객체를 가리키므로 서로 영향을 주고 받는다.</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(person); <span class="comment">// &#123;name: &#x27;Kim&#x27;, address: &#x27;Seoul&#x27;&#125;</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(copy); <span class="comment">// &#123;name: &#x27;Kim&#x27;, address: &#x27;Seoul&#x27;&#125;</span></span><br></pre></td></tr></table></figure>
 
-<h1 id="변수-선언의-실행-시점"><a href="#변수-선언의-실행-시점" class="headerlink" title="변수 선언의 실행 시점"></a>변수 선언의 실행 시점</h1><p>변수 선언은 소스코드가 한 줄씩 순차적으로 실행되는 시점인 런타임이 아니라 그 이전에 먼저 실행된다.</p>
-<p>자바스크립트 엔진은 소스코드를 한 줄씩 순차적으로 실행하기에 앞서 먼저 소스코드의 평가 과정을 거치는데, 이 때 변수 선언을 포함한 모든 선언문을 소스코드에서 뽑아내 먼저 실행한다. 그리고 소스코드의 평가 과정이 끝나면 선언문을 제외한 소스코드를 한 줄씩 순차적으로 실행한다.</p>
-<p>즉 자바스크립트 엔진은 변수 선언이 소스코드의 어느 위치에 있던 다른 코드보다 먼저 실행하는데, 이처럼 변수 선언문이 코드의 최상단으로 끌어 올려진 것처럼 동작하는 것을 변수 호이스팅이라 한다.</p>
-<p>변수 호이스팅에 의해 다음과 같은 현상이 일어날 수 있다.</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(score); <span class="comment">// undefined</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> score;</span><br></pre></td></tr></table></figure>
-
-<hr>
-
-<h1 id="할당이-일어나는-시점"><a href="#할당이-일어나는-시점" class="headerlink" title="할당이 일어나는 시점"></a>할당이 일어나는 시점</h1><p>변수는 값을 저장해 재사용 하기 위한 메커니즘이므로 일반적으로 선언 이후 재사용 할 값을 할당하게 된다.</p>
-<p>이 때 변수의 선언과 값의 할당은 실행 시점이 다른데, 변수 선언은 런타임 이전에 실행되는 반면 값의 할당은 런타임에 실행된다.</p>
-<p>일반적으로 변수를 다음과 같이 2개의 문으로 사용하지만 하나의 문으로 단축 표현 할 수도 있다.</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> score;</span><br><span class="line">score = <span class="number">80</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> score = <span class="number">80</span>; <span class="comment">// 단축 표현</span></span><br></pre></td></tr></table></figure>
-
-<p>변수 선언과 값의 할당을 2개의 문으로 나눈 코드와 하나의 문으로 단축 표현한 코드는 정확히 동일하게 동작한다.</p>
-<hr>
-
-<h1 id="재할당"><a href="#재할당" class="headerlink" title="재할당"></a>재할당</h1><p>var 키워드로 선언한 변수는 값을 재할당할 수 있다. 재할당은 현재 변수에 저장된 값을 버리고 새로운 값을 저장하는 것이다. var 키워드는 선언시 undefined로 초기화되기 때문에 변수에 처음으로 값을 할당하는 것도 사실 재할당이다.</p>
-<p>만약 재할당이 불가능해 변수에 저장된 값을 변경할 수 없다면 이를 상수라고 한다. 즉 상수는 단 한번만 할당이 가능한 변수이다.</p>
-<p>만약 변수에 값을 재할당 하면 변수의 값을 이전 값에서 재할당한 값으로 변하게 된다. 이때 메모리에서는 어떤 일이 일어날까? 재할당시에는 메모리 공간에서 이전 값을 지우고 새로운 값을 할당하는것이 아닌 변수가 새로운 메모리 공간을 확보하고 그 공간에 새로운 값을 저장하게 된다.</p>
-<p>이 때 이전 값이 들어 있던 메모리 공간은 어떤 식별자와도 연결되어 있지 않으므로 불필요한 값이 된다.<br>이 경우 가비지 콜렉터에 의해서 메모리에서 자동 해제되지만 언저 해제될지 예측은 불가능하다.</p>
+<p>결국 “값에 의한 전달”과 “참조에 의한 전달”은 식별자가 기억하는 메모리 공간에 저장되어 있는 값을 복사해 전달한다는 면에서 동일하다.<br>다만 식별자가 기억하는 메모리 공간, 즉 변수에 저장되어 있는 값이 원시 값이냐 참조 값이냐의 차이만 있을 뿐이다. 따라서 자바스크립트에는 “참조에 의한 전달”은 존재하지 않고 “값에 의한 전달”만이 존재한다고 말할 수 있지만 전달되는 값이 원시 값인지 참조 값인지 구별해 강조하는 의미로 구분해 부른다고 할 수 있다.</p>
 ]]></content>
       <tags>
         <tag>개발</tag>
@@ -513,6 +401,97 @@ for (변수 선언문 또는 할당문; 조건식; 증감식) {
 <h1 id="표현식인-문과-표현식이-아닌-문"><a href="#표현식인-문과-표현식이-아닌-문" class="headerlink" title="표현식인 문과 표현식이 아닌 문"></a>표현식인 문과 표현식이 아닌 문</h1><p>표현식인 문은 값으로 평가될 수 있는 문이며, 표현식이 아닌 문은 값으로 평가될 수 없는 문을 말한다. 예를들어, 변수 선언문은 값으로 평가될 수 없으므로 표현식이 아닌 문이다.</p>
 <p>표현식인 문과 표현식이 아닌 문을 구별하는 가장 간단한 방법은 변수에 할당해 보는 것이다.</p>
 <p>변수는 값을 저장하기 위한 메모리 공간이였으므로 변수에 할당할 수 있는 문은 즉 값으로 평가된는 표현식이라고 볼 수 있다.</p>
+]]></content>
+      <tags>
+        <tag>개발</tag>
+        <tag>자바스크립트</tag>
+        <tag>모던 자바스크립트 Deep Dive</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>[Deep Dive] 객체 리터럴</title>
+    <url>/2022/Modern-Javascript-Deep-Dive-Chapter-10-Summary/</url>
+    <content><![CDATA[<h1 id="객체란"><a href="#객체란" class="headerlink" title="객체란?"></a>객체란?</h1><p>자바스크립트는 객체 기반의 프로그래밍 언어이며, 자바스크립트를 구성하는 거의 모든것이 객체이다.<br>원시 값을 제외한 나머지 값(함수, 배열, 정규 표현식 등)은 모두 객체다.</p>
+<p>원시 타입은 단 하나의 값만 나타내지만 객체타입은 다양한 타입의 값을 하나의 단위로 구성한 복합적인 자료구조다.<br>원시 타입의 값은 변경 불가능한 값이지만 객체 타입의 값은 변경 가능한 값이다.</p>
+<p>객체는 0개 이상의 프로퍼티로 구성된 집합이며, 프로퍼티는 키와 값으로 구성된다.</p>
+<p>자바스크립트에서 사용할 수 있는 모든 값은 프로퍼티 값이 될 수 있다. 자바스크립트의 함수는 일급 객체로 값으로 취급할 수 있다.<br>따라서 함수도 프로퍼티 값으로 사용 가능한데, 프로퍼티 값이 함수일 경우 일반 함수와 구분하기 위해 메서드라 한다.</p>
+<p>이처럼 객체는 프로퍼티와 메서드로 구성된 집합체이며 프로퍼티와 메서드의 역할은 다음과 같다.</p>
+<ul>
+<li>프로퍼티: 객체의 상태를 나타내는 값(data)</li>
+<li>메서드: 프로퍼티(상태 데이터)를 참조하고 조작할 수 있는 동작(behavior)</li>
+</ul>
+<p>객체는 프로퍼티와 메서드를 통해 상태와 동작을 하나의 단위로 구조화할 수 있어 유용하다.</p>
+<h2 id="객체-리터럴에-의한-객체-생성"><a href="#객체-리터럴에-의한-객체-생성" class="headerlink" title="객체 리터럴에 의한 객체 생성"></a>객체 리터럴에 의한 객체 생성</h2><p>C++이나 자바와 같은 클래스 기반 객체지향 언어는 클래스를 사전에 정의하고 필요한 시점에 new 연산자와 함께 생성자를 호출하여 인스턴스를 생성하는 방식으로 객체를 생성한다.</p>
+<p>자바스크립트는 프로토타입 기반 객체지향 언어로 클래스 기반 객체지향 언어와는 달리 다양한 객체 생성 방법을 지원한다.</p>
+<ul>
+<li>객체 리터럴</li>
+<li>Object 생성자 함수</li>
+<li>생성자 함수</li>
+<li>Object.create 메서드</li>
+<li>클래스(ES6)</li>
+</ul>
+<p>객체 생성 방법 중에서 가장 일반적이고 간단한 방법은 객체 리터럴을 사용하는 방법이다.<br>객체 리터럴은 중괄호({…}) 내에 0개 이상의 프로퍼티를 정의한다. 자바스크립트 엔진은 변수에 할당되는 시점에 객체 리터럴을 해석해 객체를 생성한다.</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> person = &#123;</span><br><span class="line">  <span class="attr">name</span>: <span class="string">&#x27;rongrong&#x27;</span>,</span><br><span class="line">  <span class="attr">sayHello</span>: <span class="keyword">function</span> (<span class="params"></span>) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`Hello! my name is <span class="subst">$&#123;<span class="variable language_">this</span>.name&#125;</span>.`</span>);</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="keyword">typeof</span> person); <span class="comment">// object</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(person); <span class="comment">// &#123;name: &#x27;rongrong&#x27;, sayHello: f&#125;</span></span><br></pre></td></tr></table></figure>
+
+<p>객체 리터럴의 중괄호는 코드 블록을 의미하지 않는다는것에 주의하자. 코드 블록의 닫는 중괄호 뒤에는 세미콜론을 붙이지 않는다.<br>하지만 객체 리터럴은 값으로 평가되는 표현식으로 객체 리터럴의 닫는 괄호 뒤에는 세미콜론을 붙인다.</p>
+<p>객체 리터럴은 자바스크립트의 유연함과 강력함을 대표하는 객체 생성 방식으로 객체 리터럴에 프로퍼티를 포함시켜 객체를 생성함과 동시에 프로퍼티를 만들 수도 있고, 객체를 생성한 이후에 프로퍼티를 동적으로 추가할 수도 있다.</p>
+<p>그렇다면 프로퍼티에 대해 자세히 알아보자.</p>
+<h2 id="프로퍼티"><a href="#프로퍼티" class="headerlink" title="프로퍼티"></a>프로퍼티</h2><p>객체는 프로퍼티의 집합이며, 프로퍼티는 키와 값으로 구성된다.<br>프로퍼티를 나열할 때는 쉼표로 구분한다. 일반적으로 마지막 프로퍼티 뒤에는 쉼표를 사용하지 않지만 사용해도 괜찮다.</p>
+<p>프로퍼티 키와 프로퍼티 값으로 사용할 수 있는 값은 다음과 같다.</p>
+<ul>
+<li>프로퍼티 키: 빈 문자열을 포함하는 모든 문자열 또는 심벌 값</li>
+<li>프로퍼티 값: 자바스크립트에서 사용할 수 있는 모든 값</li>
+</ul>
+<p>프로퍼티 키는 프로퍼티 값에 접근할 수 있는 이름으로 식별자의 역할을 한다. 하지만 반드시 식별자 네이밍규칙을 따라야 하는 것은 아니다.<br>단, 식별자 네이밍 규칙을 준수하는 프로퍼티 키와 그렇지 않은 키에는 차이가 존재한다.</p>
+<p>심벌 값도 프로퍼티 키로 사용할 수 있지만 일반적으로 문자열을 사용한다. 이때 프로퍼티 키는 문자열이므로 따옴표로 묶어야 한다.<br>하지만 식별자 네이밍 규칙을 준수하는 이름은 따옴표를 생략할 수 있다. 반대로 식별자 네이밍 규칙을 따르지 않는 이름에는 반드시 따옴표를 사용해야 한다.</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> person = &#123;</span><br><span class="line">  <span class="attr">firstName</span>: <span class="string">&#x27;rong&#x27;</span>, <span class="comment">// 식별자 네이밍 규칙을 준수한 프로퍼티 키</span></span><br><span class="line">  <span class="string">&#x27;last-name&#x27;</span>: <span class="string">&#x27;rong&#x27;</span>, <span class="comment">// 식별자 네이밍 규칙을 준수하지 않은 프로퍼티 키</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(person); <span class="comment">// &#123;firstName: &#x27;rong&#x27;, last-name: &#x27;rong&#x27;&#125;</span></span><br></pre></td></tr></table></figure>
+
+<p>프로퍼티 키로 사용한 firstName은 식별자 네이밍 규칙을 준수하므로 따옴표를 생략할 수 있다.<br>하지만 last-name은 식별자 네이밍 규칙을 주수하지 않으므로 따옴표를 생략할 수 없다. 자바스크립트 엔진은 따옴표를 생략한 last-name을 - 연산자가 있는 표현식으로 해석한다.</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> person = &#123;</span><br><span class="line">  <span class="attr">firstName</span>: <span class="string">&#x27;rong&#x27;</span>,</span><br><span class="line">  last-<span class="attr">name</span>: <span class="string">&#x27;rong&#x27;</span>, <span class="comment">// SyntaxError: Unexpected token -</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>문자열 또는 문자열로 평가할 수 있는 표현식을 사용해 프로퍼티 키를 동적으로 생성 가능하다. 이 경우에는 프로퍼티 키로 사용할 표현식을 대괄호로 묶어야 한다.</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = &#123;&#125;;</span><br><span class="line"><span class="keyword">var</span> key = <span class="string">&#x27;hello&#x27;</span>;</span><br><span class="line"></span><br><span class="line">obj[key] = <span class="string">&#x27;world&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(obj); <span class="comment">// &#123;hello: &#x27;world&#x27;&#125;</span></span><br></pre></td></tr></table></figure>
+
+<p>이미 존재하는 프로퍼티 키를 중복 선언하면 나중에 선언한 프로퍼티가 먼저 선언한 프로퍼티를 덮어쓴다.<br>이때 에러가 발생하지 않으니 주의해야 한다.</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> foo = &#123;</span><br><span class="line">  <span class="attr">name</span>: <span class="string">&#x27;Lee&#x27;</span>,</span><br><span class="line">  <span class="attr">name</span>: <span class="string">&#x27;Kim&#x27;</span>,</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(foo); <span class="comment">// &#123;name: &#x27;Kim&#x27;&#125;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="메서드"><a href="#메서드" class="headerlink" title="메서드"></a>메서드</h2><p>자바스크립트에서 사용할 수 있는 모든 값은 프로퍼티 값으로 사용할 수 있다고 했다.<br>자바스크립트의 함수는 일급객체로 값으로 취급할 수 있기 때문에 프로퍼티 값으로 사용 가능하다.</p>
+<p>프로퍼티 값이 함수일 경우 일반 함수와 구분하기 위해 메서드라 부르는데 즉 메서드는 객체에 묶여 있는 함수를 의미한다.</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> circle = &#123;</span><br><span class="line">  <span class="attr">radius</span>: <span class="number">5</span>, <span class="comment">// 프로퍼티</span></span><br><span class="line">  <span class="comment">// 원의 지름을 구하는 메서드</span></span><br><span class="line">  <span class="attr">getDiameter</span>: <span class="keyword">function</span> (<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">2</span> * <span class="variable language_">this</span>.<span class="property">radius</span>;</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(circle.<span class="title function_">getDiameter</span>()); <span class="comment">// 10</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="프로퍼티-접근"><a href="#프로퍼티-접근" class="headerlink" title="프로퍼티 접근"></a>프로퍼티 접근</h2><p>프로퍼티에 접근하는 방법은 다음과 같이 두 가지이다.</p>
+<ul>
+<li>마침표 프로퍼티 접근 연산자(.)를 사용하는 마침표 표기법</li>
+<li>대괄호 프로퍼티 접근 연산자([…])를 사용하는 대괄호 표기법</li>
+</ul>
+<p>프로퍼티 키가 식별자 네이밍 규칙을 준수하는 이름이면 마침표 표기법과 대괄호 표기법을 모두 사용할 수 있다.</p>
+<p>대괄호 표기법을 사용하는 경우 대괄호 프로퍼티 접근 연산자 내부에 지정하는 프로퍼티 키는 반드시 따옴표로 감싼 문자열이어야 한다.<br>대괄호 프로퍼티 접근 연산자 내에 따옴표로 감싸지 않은 이름을 프로퍼티 키로 사용하면 자바스크립트 엔진은 식별자로 해석한다.</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> person = &#123;</span><br><span class="line">  <span class="attr">name</span>: <span class="string">&#x27;rongrong&#x27;</span>,</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(person.<span class="property">name</span>); <span class="comment">// &#x27;rongrong&#x27;</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(person[<span class="string">&#x27;name&#x27;</span>]); <span class="comment">// &#x27;rongrong&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(person[name]); <span class="comment">// ReferenceError: name is not defined</span></span><br></pre></td></tr></table></figure>
+
+<p>위 코드에서 ReferenceError가 발생한 이유는 대괄호 연산자 내의 따옴표로 감싸지 않은 이름, 즉 식별자 name을 평가하기 위해 선언된 name을 찾았지만 찾지 못했기 때문이다.</p>
+<p>객체에 존재하지 않는 프로퍼티에 접근하면 undefined를 반환한다. 이때 ReferenceError가 발생하지 않는데에 주의하자</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> person = &#123;</span><br><span class="line">  <span class="attr">name</span>: <span class="string">&#x27;rongrong&#x27;</span>,</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(person.<span class="property">age</span>); <span class="comment">// undefined</span></span><br></pre></td></tr></table></figure>
+
+<p>프로퍼티 키가 식별자 네이밍 규칙을 준수하지 않으면 반드시 대괄호 표기법을 사용해야 한다.<br>단 프로퍼티 키가 숫자로 이루어진 문자열인 경우 따옴표를 생략할 수 있다.</p>
+<h2 id="프로퍼티-값-갱신"><a href="#프로퍼티-값-갱신" class="headerlink" title="프로퍼티 값 갱신"></a>프로퍼티 값 갱신</h2><p>이미 존재하는 프로퍼티에 값을 할당하면 프로퍼티 값이 갱신된다</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> person = &#123;</span><br><span class="line">  <span class="attr">name</span>: <span class="string">&#x27;Lee&#x27;</span>,</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">person.<span class="property">name</span> = <span class="string">&#x27;Kim&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(person); <span class="comment">// &#123;name: &quot;Kim&quot;&#125;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="프로퍼티-동적-생성"><a href="#프로퍼티-동적-생성" class="headerlink" title="프로퍼티 동적 생성"></a>프로퍼티 동적 생성</h2><p>존재하지 않는 프로퍼티에 값을 할당하면 프로퍼티가 동적으로 생성되어 추가되고 프로퍼티 값이 할당된다.</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> person = &#123;</span><br><span class="line">  <span class="attr">name</span>: <span class="string">&#x27;rongrong&#x27;</span>,</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">person.<span class="property">age</span> = <span class="number">25</span>;</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(person); <span class="comment">// &#123;name: &#x27;rongrong&#x27;, age: 25&#125;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="프로퍼티-삭제"><a href="#프로퍼티-삭제" class="headerlink" title="프로퍼티 삭제"></a>프로퍼티 삭제</h2><p>delete 연산자는 객체의 프로퍼티를 삭제한다. 이때 delete 연산자의 피연산자는 프로퍼티 값에 접근할 수 있는 표현식이어야 한다.<br>이때 존재하지 않는 프로퍼티를 삭제해도 아무런 에러 없이 무시된다.</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> person = &#123;</span><br><span class="line">  <span class="attr">name</span>: <span class="string">&#x27;rongrong&#x27;</span>,</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">person.<span class="property">age</span> = <span class="number">25</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">delete</span> person.<span class="property">age</span>; <span class="comment">// 프로퍼티 동적 생성 후 삭제</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">delete</span> person.<span class="property">address</span>; <span class="comment">// 존재하지 않는 프로퍼티 삭제, 에러 없이 무시</span></span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(person); <span class="comment">// &#123;name: &#x27;rongrong&#x27;&#125;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="ES6에서-추가된-객체-리터럴의-확장-기능"><a href="#ES6에서-추가된-객체-리터럴의-확장-기능" class="headerlink" title="ES6에서 추가된 객체 리터럴의 확장 기능"></a>ES6에서 추가된 객체 리터럴의 확장 기능</h2><p>ES6에서는 더욱 간편하고 표현력 있는 객체 리터럴의 확장 기능을 제공한다.</p>
+<h3 id="프로퍼티-축약-표현"><a href="#프로퍼티-축약-표현" class="headerlink" title="프로퍼티 축약 표현"></a>프로퍼티 축약 표현</h3><p>객체 리터럴의 프로퍼티는 프로퍼티 키와 프로퍼티 값으로 구성된다. 프로퍼티 값은 변수에 할당된 값, 즉 식별자 표현식일 수도 있다.</p>
+<p>ES6에서는 프로퍼티 값으로 변수를 사용하는 경우 변수 이름과 프로퍼티 키가 동일한 이름일 때 프로퍼티 키를 생략할 수 있다.<br>이때 프로퍼티 키는 변수 이름으로 자동 생성된다.</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> x = <span class="number">1</span>,</span><br><span class="line">  y = <span class="number">2</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> obj = &#123; x, y &#125;;</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(obj); &#123;<span class="attr">x</span>: <span class="number">1</span>, <span class="attr">y</span>: <span class="number">2</span>&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="메서드-축약-표현"><a href="#메서드-축약-표현" class="headerlink" title="메서드 축약 표현"></a>메서드 축약 표현</h3><p>ES5에서 메서드를 정의하려면 프로퍼티 값으로 함수를 할당한다.</p>
+<p>ES6에서는 메서드를 정의할 때 function 키워드를 생략한 축약 표현을 사용할 수 있다.</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> obj = &#123;</span><br><span class="line">  <span class="attr">name</span>: <span class="string">&#x27;rongrong&#x27;</span>,</span><br><span class="line">  <span class="title function_">sayHi</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;Hi! &#x27;</span> + <span class="variable language_">this</span>.<span class="property">name</span>);</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">obj.<span class="title function_">sayHi</span>(); <span class="comment">// &#x27;Hi! rongrong&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<p>ES6의 메서드 축약 표현으로 정의한 메서드는 프로퍼티에 할당한 함수와 다르게 동작한다.</p>
 ]]></content>
       <tags>
         <tag>개발</tag>
@@ -837,6 +816,39 @@ for (변수 선언문 또는 할당문; 조건식; 증감식) {
       </tags>
   </entry>
   <entry>
+    <title>정규식 Test Method에 대해 새롭게 알게된 점</title>
+    <url>/2023/New-things-I-learned-about-the-regExp-test-method/</url>
+    <content><![CDATA[<h1 id="😱문제발생"><a href="#😱문제발생" class="headerlink" title="😱문제발생"></a>😱문제발생</h1><p>원티드 프리온보딩 프론트엔드 인턴십에 참여하여 1주차 과제를 진행하던 중이었다.<br>1주차 과제는 인턴십에 참여하기 위해 수행했던 사전과제를 동료학습을 통해 리팩토링 하는 것이였고, 나는 팀원들과의 토의로 얻은 Best Practice의 기준을 가지고 Assignment1의 기능 구현을 맡아 코드를 작성하고 있었다.</p>
+<ul>
+<li>Assignment 1<ul>
+<li>회원가입과 로그인 페이지에 이메일과 비밀번호의 유효성 검사기능을 구현해주세요<ul>
+<li>이메일 조건: @ 포함, 비밀번호 조건: 8자 이상</li>
+</ul>
+</li>
+<li>입력된 이메일과 비밀번호가 유효성 검사를 통과하지 못한다면 button에 disabled 속성을 부여해주세요</li>
+</ul>
+</li>
+</ul>
+<p>Assignment 1의 유효성 검증을 구현하기 위해 정규식을 이용하는게 좋을 것 같다라는 의견을 수용해, <code>password: /^.&#123;8,&#125;$/g</code>의 정규식을 통해 코드를 작성하고 정상적으로 동작하는지 확인을 하는데 갑자기 다음과 같은 문제가 발생했다.</p>
+<p><img src="/../images/reg-test-problem.gif" alt="문제"></p>
+<p>8자리의 비밀번호를 입력했을때 error message가 정상적으로 사라지길래 검증이 잘 되는구나 생각했는데, 추가적으로 비밀번호를 입력할때 마다 error message가 생겼다 없어졌다 하는 것이다. 즉 비밀번호를 입력할때마다 정규식으로 검증한 결과가 바뀐다는 것이였는데, 혹시나해서 정규식으로 검증한 결과를 개발자 도구를 통해 살펴보았다.</p>
+<p><img src="/../images/reg-test-console.png" alt="개발자도구로 찍어본 정규식 테스트"></p>
+<p>같은 정규식으로 같은 값을 검사했는데도 그 결과가 계속해서 바뀌는 현상이 일어났는데, 아무리 생각해도 이해가 되지 않아 ChatGPT를 통해 질문을 해 본 결과 다음과 같은 답을 받을 수 있었다.</p>
+<p><img src="/../images/reg-test-gpt.png" alt="ChatGPT 답변"></p>
+<h1 id="😊문제해결"><a href="#😊문제해결" class="headerlink" title="😊문제해결"></a>😊문제해결</h1><p>ChatGPT 답변을 바탕으로 조금 더 이해를 위해 검색을 해보니 <code>RegExp.prototype.test()</code>의 대한 MDN 문서에서 <code>전역 플래그와 test()</code>라는 항목으로 예시를 들어주며 설명을 해주고 있어 왜 이런 현상이 발생했는지 알 수 있었다.</p>
+<p>정규 표현식에 전역 플래그를 설정한 경우, <code>test()</code> 메서드는 정규 표현식의 <code>lastIndex</code>를 업데이트하고 <code>test()</code>을 다시 호출하면 str 검색을 <code>lastIndex</code>부터 계속 진행하는데, <code>lastIndex</code> 속성은 <code>test()</code>가 true를 반환할 때마다 증가하고 test()가 false를 반환할 땐 0으로 초기화되어 결과가 계속해서 바뀌던 것이였다.</p>
+<p><code>exec()</code> 메서드도 <code>test()</code> 메서드처럼 전역 탐색 플래그를 제공한 정규 표현식에서 여러 번 호출하면 이전 일치 이후부터 탐색한다고 하니 정규식을 사용할 때 주의해야 할 것 같다.</p>
+<p>정규식이 정말 유용한것은 알지만 항상 어렵게 느껴지는 것 같다. 그래도 이렇게 정규식에 대해 알아볼 기회가 있을 때 마다 잘 정리해서 능숙해지려고 노력해야겠다!</p>
+<h1 id="참고"><a href="#참고" class="headerlink" title="참고"></a>참고</h1><ul>
+<li><a href="https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/RegExp/test">https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/RegExp/test</a></li>
+</ul>
+]]></content>
+      <tags>
+        <tag>개발</tag>
+        <tag>정규식</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>첫 프로젝트를 마치고</title>
     <url>/2022/Retrospective-about-my-first-project/</url>
     <content><![CDATA[<h1 id="들어가며"><a href="#들어가며" class="headerlink" title="들어가며"></a>들어가며</h1><p>약 2주동안 진행했던 프로젝트가 종료되었다. 개발 공부를 시작한지도 얼마 안 되었고 처음으로 해본 프로젝트인지라 2주가 정말 정신없이 지나가버렸다. 배운점도 많았고 아쉬운점도 많았는데 회고를 하며 정리해보려고 한다.</p>
@@ -888,30 +900,6 @@ for (변수 선언문 또는 할당문; 조건식; 증감식) {
       <tags>
         <tag>개발</tag>
         <tag>회고</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>백준 Node.js 입출력법</title>
-    <url>/2022/Node-js-input-and-output-in-Baekjoon-Online-Judge/</url>
-    <content><![CDATA[<p>지금까지 leetcode와 프로그래머스를 통해 코딩테스트 공부를 하고 있었는데 leetcode는 영어 해석의, 프로그래머스는 적은 문제수의 단점을 가지고 있어 백준을 통해 코딩테스트 연습을 시작해보았다.</p>
-<p>백준에서는 javascript로 코딩테스트를 준비하기 위해 node.js를 선택해야 했는데 프로그래머스에서는 함수만 작성하면 되었던 반면에 백준에서는 입출력을 직접 해주어야 했다.</p>
-<p>백준에서 node.js로 입력을 받는 방법은 크게 두가지로 readline 모듈을 사용하는 것과 fs 모듈을 사용하는 것이다. fs 모듈의 경우 readline 모듈보다 코드가 간단하고 더 빠르다고 해 fs 모듈의 대해 찾아보았다.</p>
-<hr>
-
-<h1 id="fs"><a href="#fs" class="headerlink" title="fs"></a><strong>fs</strong></h1><p>FileSystem의 약자인 fs 모듈은 파일 처리와 관련된 모듈이다. <a href="https://help.acmicpc.net/">BOJ 도움말</a>에서는 다음과 같은 코드로 fs 모듈을 통한 입력을 소개하고 있다.</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> fs = <span class="built_in">require</span>(<span class="string">&#x27;fs&#x27;</span>);</span><br><span class="line"><span class="keyword">let</span> input = fs.<span class="title function_">readFileSync</span>(<span class="string">&#x27;/dev/stdin&#x27;</span>).<span class="title function_">toString</span>().<span class="title function_">split</span>(<span class="string">&#x27; &#x27;</span>);</span><br><span class="line"><span class="keyword">let</span> a = <span class="built_in">parseInt</span>(input[<span class="number">0</span>]);</span><br><span class="line"><span class="keyword">let</span> b = <span class="built_in">parseInt</span>(input[<span class="number">1</span>]);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(a+b);</span><br></pre></td></tr></table></figure>
-
-<p>하지만 위 코드를 이용할때에도 입력되는 값에 따라 에러가 발생하는 경우가 있어 다양한 방식의 입력법에 대해 정리해 보았다.</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="number">1.</span> 하나의 값을 입력받을 때</span><br><span class="line"><span class="keyword">const</span> fs = <span class="built_in">require</span>(<span class="string">&#x27;fs&#x27;</span>);</span><br><span class="line"><span class="keyword">const</span> input = fs.<span class="title function_">readFileSync</span>(<span class="string">&quot;/dev/stdin&quot;</span>).<span class="title function_">toString</span>().<span class="title function_">trim</span>();</span><br><span class="line"></span><br><span class="line"><span class="number">2.</span> 공백으로 구분된 한 줄의 값들을 입력받을 때</span><br><span class="line"><span class="keyword">const</span> fs = <span class="built_in">require</span>(<span class="string">&#x27;fs&#x27;</span>);</span><br><span class="line"><span class="keyword">const</span> input = fs.<span class="title function_">readFileSync</span>(<span class="string">&quot;/dev/stdin&quot;</span>).<span class="title function_">toString</span>().<span class="title function_">trim</span>().<span class="title function_">split</span>(<span class="string">&quot; &quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="number">3.</span> 여러 줄의 값들을 입력받을 때</span><br><span class="line"><span class="keyword">const</span> fs = <span class="built_in">require</span>(<span class="string">&#x27;fs&#x27;</span>);</span><br><span class="line"><span class="keyword">const</span> input = fs.<span class="title function_">readFileSync</span>(<span class="string">&quot;/dev/stdin&quot;</span>).<span class="title function_">toString</span>().<span class="title function_">trim</span>().<span class="title function_">split</span>(<span class="string">&quot;\n&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="number">4.</span> 첫 번째 줄에 자연수 n을 입력받고, 그 다음줄에 공백으로 구분된 n개의 값들을 입력받을 때</span><br><span class="line"><span class="keyword">const</span> fs = <span class="built_in">require</span>(<span class="string">&#x27;fs&#x27;</span>);</span><br><span class="line"><span class="keyword">const</span> [n, ...arr] = fs.<span class="title function_">readFileSync</span>(<span class="string">&quot;/dev/stdin&quot;</span>).<span class="title function_">toString</span>().<span class="title function_">trim</span>().<span class="title function_">split</span>(<span class="regexp">/\s/</span>);</span><br><span class="line"></span><br><span class="line"><span class="number">5.</span> 첫 번째 줄에 자연수 n을 입력받고, 그 다음줄부터 n개의 줄에 걸쳐 한 줄에 하나의 값을 입력받을 때</span><br><span class="line"><span class="keyword">const</span> fs = <span class="built_in">require</span>(<span class="string">&#x27;fs&#x27;</span>);</span><br><span class="line"><span class="keyword">const</span> [n, ...arr] = fs.<span class="title function_">readFileSync</span>(<span class="string">&quot;/dev/stdin&quot;</span>).<span class="title function_">toString</span>().<span class="title function_">trim</span>().<span class="title function_">split</span>(<span class="string">&quot;\n&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="number">6.</span> 하나의 값 또는 공백으로 구분된 여러 값들을 여러 줄에 걸쳐 뒤죽박죽 섞여서 입력받을 때</span><br><span class="line">  ex) n 입력 - 공백으로 구분된 n개의 값 입력 - m 입력 - 여러 줄에 걸쳐 m개의 값 입력</span><br><span class="line"><span class="keyword">const</span> fs = <span class="built_in">require</span>(<span class="string">&#x27;fs&#x27;</span>);</span><br><span class="line"><span class="keyword">const</span> input = fs.<span class="title function_">readFileSync</span>(<span class="string">&quot;/dev/stdin&quot;</span>).<span class="title function_">toString</span>().<span class="title function_">trim</span>().<span class="title function_">split</span>(<span class="regexp">/\s/</span>);</span><br><span class="line"><span class="keyword">const</span> n = input[<span class="number">0</span>];</span><br><span class="line"><span class="keyword">const</span> n_arr = input.<span class="title function_">slice</span>(<span class="number">1</span>, n+<span class="number">1</span>);</span><br><span class="line"><span class="keyword">const</span> [m, ...m_arr] = input.<span class="title function_">slice</span>(n+<span class="number">1</span>);</span><br></pre></td></tr></table></figure>
-<p>최종 결과 확인을 위해선 <strong>console.log()</strong> 를 통해 값을 출력해주면 된다.</p>
-<hr>
-
-<h2 id="참고"><a href="#참고" class="headerlink" title="참고"></a>참고</h2><p><a href="https://overcome-the-limits.tistory.com/25">[알고리즘] 백준 0.nodejs 입력하기</a><br><a href="https://tesseractjh.tistory.com/39">Node.js로 백준(BOJ) 문제 풀 때 유의할 점들</a></p>
-]]></content>
-      <tags>
-        <tag>개발</tag>
-        <tag>JavaScript</tag>
-        <tag>코딩테스트</tag>
       </tags>
   </entry>
   <entry>
@@ -1009,68 +997,24 @@ for (변수 선언문 또는 할당문; 조건식; 증감식) {
       </tags>
   </entry>
   <entry>
-    <title>새로운 컴퓨터로 Hexo 블로그 옮기기</title>
-    <url>/2023/Transfer-hexo-blog-to-new-device/</url>
-    <content><![CDATA[<p>나는 이 블로그를 Hexo라는 프레임워크를 이용해 작년 8월에 만들었었고 나름대로 계속해서 포스팅을 하고 있었다. 그러다 1월 말에 원래 사용하던 Windows 갤럭시북에서 MacOs의 맥북 M1으로 갈아타게 되었는데 깃허브에서 repository를 clone하고 hexo 명령어를 입력해도 작동하지 않는 문제가 생겼다.</p>
-<p>처음부터 블로그를 다시 세팅해야하나 아니면 다른 플랫폼으로 이사를 갈까 고민하며 해결방법을 찾던 중 다음 글을 발견했다. <a href="https://jqxiao.tech/2020/07/17/Transfer-Hexo-Blog-to-New-Device/">Transfer Hexo Blog to New Device</a></p>
-<p>위 블로그 게시글의 내용을 따라 수행하니 맥북에서도 다시 블로그 포스팅을 진행할 수 있게 되었고, 혹시라도 다음에 또 컴퓨터를 바꿀 수 있으니 방법을 정리해두어야겠다고 마음먹었다.</p>
-<h1 id="새로운-branch-만들기"><a href="#새로운-branch-만들기" class="headerlink" title="새로운 branch 만들기"></a>새로운 branch 만들기</h1><ul>
-<li>hexo blog repository를 git clone 한다.</li>
-<li>clone한 repositroy에서 <code>git checkout -b branch명</code>로 새로운 branch를 만든다.</li>
-<li>새로운 branch에서 .git 폴더를 제외한 모든 파일들을 삭제한다.</li>
-<li>원래 사용하던 기기의 hexo blog 폴더를 복사해온다.</li>
-<li>이전 기기의 .git 관련 폴더들은 삭제한다.</li>
-<li>새로운 branch를 Github에 push한다.</li>
+    <title>이미지 스프라이트(Image Sprite)</title>
+    <url>/2022/Image-Sprite/</url>
+    <content><![CDATA[<p>이미지 스프라이트란 여러 개의 이미지를 하나로 합쳐서 관리하는 이미지를 의미한다.</p>
+<p>웹 페이지에 이미지를 사용한다면 웹 브라우저는 해당 이미지의 다운로드를 위해 서버에 요청을 보낸다. 만약 사용된 이미지가 많을 경우 요청 하는 횟수가 많아지므로 웹 페이지의 로딩 시간이 오래 걸리게 된다. 하지만 만약 이미지 스프라이트를 사용한다면 스프라이트 이미지 파일 하나가 여러 이미지를 가지고 있기에 서버 요청 횟수를 줄일 수 있다.</p>
+<p>개인적인 블로그와 같은 일반적인 사이트에서는 굳이 이미지 스프라이트를 사용 할 필요가 없지만, 트래픽이 매우 많거나 많은 사람이 이용하는 검색포털과 같은 사이트에서는 이미지 스프라이트를 사용하여 서버 요청을 줄이고 웹 페이지의 로딩 시간을 단축시켜 사이트의 품질을 높일 수 있다.</p>
+<p>다음은 네이버 메인페이지의 스프라이트 이미지이다.<br><img src="https://velog.velcdn.com/images/rjsej12/post/34bfd37f-ea3a-4073-8a76-7c5cfbf8b1fc/image.png"></p>
+<p>이처럼 여러개의 이미지를 하나로 합쳐두고 CSS의 <code>background-position</code>을 이용해 사용하려는 이미지만을 보여 줄 수 있다. 이 때 <code>background-position</code>의 값은 하나씩 position값을 변경해보며 찾을 수 도 있지만 <a href="http://www.spritecow.com/">Sprite Cow</a>와 같은 사이트를 이용 할 수 있다.</p>
+<p>추가적으로 스프라이트 이미지를 만들기 위해 포토샵, 피그마 등으로 에디팅 할 수 도 있지만 <a href="https://www.toptal.com/developers/css/sprite-generator/">CSS Sprites Generator</a>라는 사이트를 이용 가능하다.</p>
+<hr>
+
+<h1 id="참고"><a href="#참고" class="headerlink" title="참고"></a>참고</h1><ul>
+<li><a href="https://creativestudio.kr/1653">https://creativestudio.kr/1653</a></li>
+<li><a href="http://www.tcpschool.com/css/css_basic_imageSprites">http://www.tcpschool.com/css/css_basic_imageSprites</a></li>
 </ul>
-<h1 id="새-기기에-Hexo-설치하기"><a href="#새-기기에-Hexo-설치하기" class="headerlink" title="새 기기에 Hexo 설치하기"></a>새 기기에 Hexo 설치하기</h1><ul>
-<li><code>npm install hexo --save</code>로 Hexo를 설치한다.</li>
-<li><code>npm install hexo-deployer-git --save</code>로 git deployer plugin를 설치한다.</li>
-</ul>
-<h1 id="블로그-Deploy하기"><a href="#블로그-Deploy하기" class="headerlink" title="블로그 Deploy하기"></a>블로그 Deploy하기</h1><ul>
-<li>새로 만든 branch에 .gitigonre 파일을 추가한다.</li>
-<li>.gitignore 파일에 <code>.deploy_git/*</code>과 <code>public/*</code>을 추가한다</li>
-<li><code>hexo clean</code>을 통해 이전 웹페이지를 삭제한다.</li>
-<li><code>hexo generate</code>와 <code>hexo deploy</code>로 새로운 웹페이지를 만들 수 있다.</li>
-</ul>
-<h1 id="무엇이-문제였을까"><a href="#무엇이-문제였을까" class="headerlink" title="무엇이 문제였을까?"></a>무엇이 문제였을까?</h1><p>hexo deploy시 만들어진 정적 웹페이지가 자동으로 Github의 default branch에 push되었던 것이지 hexo를 설치했던 기존 폴더 자체를 Github에 push한것은 아니었기 때문에 git clone을 해도 hexo 명령어가 작동하지 않았다.<br>따라서 새로운 branch에 원본 기기의 폴더를 복사해옴으써 문제를 해결할 수 있었다.</p>
 ]]></content>
       <tags>
         <tag>개발</tag>
-        <tag>Hexo</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>API란 무엇일까?</title>
-    <url>/2022/What-is-an-API/</url>
-    <content><![CDATA[<p>JavaScript 구현공부를 시작하며 API를 이용하는 일이 많아졌다. API라는 용어에 대해 많이 들어보기도 했고 API가 무엇인지에 대해 대략적으로 알고 있다고 생각했었지만 막상 API에 대해 구체적으로 설명해보려고 하니 표현하기가 어려웠다. 그래서 API에 대해 정리해보면서 정확히 무엇인지 알아보고자 했다.</p>
-<hr>
-
-<h2 id="API"><a href="#API" class="headerlink" title="API"></a>API</h2><p>먼저 API의 정의를 알아보았다. </p>
-<blockquote>
-<p><strong>API</strong>는 Application Programming Inerface의 줄임말로 응용 프로그램에서 사용할 수 있도록 운영체제나 프로그래밍 언어가 제공하는 기능을 제어할 수 있게 만든 인터페이스를 뜻한다. </p>
-</blockquote>
-<p>다른 부분들은 쉽게 이해가 갔지만 인터페이스가 무엇을 말하는지 모호했다. 그럼 인터페이스는 무엇일까?</p>
-<blockquote>
-<p><strong>인터페이스(interface)</strong> 는 컴퓨터 시스템끼리 정보를 교환하는 공유 경계를 의미한다. 터치 스크린과 같은 일부 컴퓨터 하드웨어 장치들은 인터페이스를 통해 데이터를 송수신 할 수 있으며, 마우스나 마이크와 같은 장치들은 오직 시스템에 데이터를 전송만 하는 인터페이스를 제공한다.</p>
-</blockquote>
-<p>쉽게 정리해 인터페이스는 시스템끼리 데이터를 주고받도록 하는 물리적, 가상적인 매개체를 뜻한다.</p>
-<p>조금 더 이해하기 쉽게 실생활에서 예를 들어보면 우리가 자판기를 통해 음료수를 사먹는다라고 할 때 실제 자판기가 어떻게 내부적으로 동작하는지는 몰라도 동전이나 지폐를 넣고 원하는 음료 버튼을 눌러 음료수가 나오게하는 과정을 쉽게 수행한다. 이때 동전과 지폐를 넣고 음료 버튼을 클릭하는등 사물과 사물 또는 사물과 인간 간의 의사소통이 가능하도록하는 물리적, 가상적인 매개체를 인터페이스라고 할 수 있다.</p>
-<p>즉 API는 응용 프로그램 (우리가 만든 앱과 같은 서비스)에서 운영체제나 프로그래밍 언어가 제공하는 기능(지도, 날씨, 페이기능등)을 제어할 수 있게 만든 매개체라고 볼 수 있다.<br>API 문서에는 개발자가 이러한 요청과 응답을 구성하는 방법에 대한 정보가 들어 있어 API를 사용하기 이전에 API 문서를 통해 API의 사용법을 알 수 있다.</p>
-<hr>
-
-<h2 id="API는-어떻게-작동하는가"><a href="#API는-어떻게-작동하는가" class="headerlink" title="API는 어떻게 작동하는가?"></a>API는 어떻게 작동하는가?</h2><blockquote>
-<p>API 아키텍처는 일반적으로 클라이언트와 서버 측면에서 설명된다. 요청을 보내는 애플리케이션을 클라이언트라고 하고 응답을 보내는 애플리케이션을 서버라고 한다. 따라서 날씨 예에서 기상청의 날씨 데이터베이스는 서버이고 모바일 앱은 클라이언트이다. </p>
-</blockquote>
-<p>API가 생성된 시기와 이유에 따라 API는 네 가지 방식으로 작동할 수 있다.</p>
-<p>API라는 단어는 1964년부터 등장하기 시작했다. 이때는 하드웨어 독립성을 위해서 많이 사용되어 졌는데, 예를 들어 서로 다른 하드웨어마다 개발자가 일일이 프로그래밍을 하기보단 HAL이라는 하드웨어 추상화 계층을 통해 한번만 display라는 함수를 작성하고 이를 이용해 각기 다른 모니터에 출력을 쉽게 할수 있었고 이것이 API의 시초라고 할 수 있다.</p>
-<p>1980년대 중반 Mac OS와 Windows가 등장하면서 그래픽이 좋은 컴퓨터가 등장하기 시작했다. 이런 각각의 운영체제에서 동작하는 어플리케이션을 만들기 위해서 운영체제에서 제공하는 API를 이용했다. </p>
-<p>그리고 1990년도 인터넷이 보편적으로 대중화되기 시작하면서 컴퓨터와 컴퓨터 다양한 기기들이 인터넷을 통해서 의사소통을 할 수 있게 되었다. 이때 다양한 기기에서 서버에 있는 데이터를 읽고 쓰기 위해서는 서버에서 제공하는 WEB APIs를 이용해서 처리 할 수 있었다.</p>
-<p>네트워크에서 기기들간에 의사소통 해나가는 규격사항을 HTTP(s)라고 부르며 이런 WEB API를 어떻게 디자인해서 만들건지 정의하는 것이 있다. 예전에는 SOAP(Simple Object Access Protocol)이라는 모든 네트워크 요청과 반응을 XML이라는 데이터 포맷에 저장해 주고 받았다면 요즘에는 REST(Representational State Transfer)이 보편적으로 많이 사용된다.</p>
-<p>REST는 총 4가지로 구성되어 있는데 새로운 데이터를 만들고(POST, create), 읽고(GET, read), 업데이트하고(PUT, update), 삭제(DELETE, delete)할 수 있다. 예를 들어 GET을 이용해 유저에 대한 정보를 요청하면 서버로부터 유저에 대한 데이터를 JSON이라는 포맷을 통해 받아 올 수 있다. 이처럼 서버에서 제공하는 WEB API를 통해 서버에 있는 데이터를 읽어오거나 업데이트 할 수 있다.</p>
-]]></content>
-      <tags>
-        <tag>개발</tag>
-        <tag>용어정리</tag>
+        <tag>CSS</tag>
       </tags>
   </entry>
   <entry>
@@ -1147,6 +1091,95 @@ for (변수 선언문 또는 할당문; 조건식; 증감식) {
       <tags>
         <tag>개발</tag>
         <tag>WCAG</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>API란 무엇일까?</title>
+    <url>/2022/What-is-an-API/</url>
+    <content><![CDATA[<p>JavaScript 구현공부를 시작하며 API를 이용하는 일이 많아졌다. API라는 용어에 대해 많이 들어보기도 했고 API가 무엇인지에 대해 대략적으로 알고 있다고 생각했었지만 막상 API에 대해 구체적으로 설명해보려고 하니 표현하기가 어려웠다. 그래서 API에 대해 정리해보면서 정확히 무엇인지 알아보고자 했다.</p>
+<hr>
+
+<h2 id="API"><a href="#API" class="headerlink" title="API"></a>API</h2><p>먼저 API의 정의를 알아보았다. </p>
+<blockquote>
+<p><strong>API</strong>는 Application Programming Inerface의 줄임말로 응용 프로그램에서 사용할 수 있도록 운영체제나 프로그래밍 언어가 제공하는 기능을 제어할 수 있게 만든 인터페이스를 뜻한다. </p>
+</blockquote>
+<p>다른 부분들은 쉽게 이해가 갔지만 인터페이스가 무엇을 말하는지 모호했다. 그럼 인터페이스는 무엇일까?</p>
+<blockquote>
+<p><strong>인터페이스(interface)</strong> 는 컴퓨터 시스템끼리 정보를 교환하는 공유 경계를 의미한다. 터치 스크린과 같은 일부 컴퓨터 하드웨어 장치들은 인터페이스를 통해 데이터를 송수신 할 수 있으며, 마우스나 마이크와 같은 장치들은 오직 시스템에 데이터를 전송만 하는 인터페이스를 제공한다.</p>
+</blockquote>
+<p>쉽게 정리해 인터페이스는 시스템끼리 데이터를 주고받도록 하는 물리적, 가상적인 매개체를 뜻한다.</p>
+<p>조금 더 이해하기 쉽게 실생활에서 예를 들어보면 우리가 자판기를 통해 음료수를 사먹는다라고 할 때 실제 자판기가 어떻게 내부적으로 동작하는지는 몰라도 동전이나 지폐를 넣고 원하는 음료 버튼을 눌러 음료수가 나오게하는 과정을 쉽게 수행한다. 이때 동전과 지폐를 넣고 음료 버튼을 클릭하는등 사물과 사물 또는 사물과 인간 간의 의사소통이 가능하도록하는 물리적, 가상적인 매개체를 인터페이스라고 할 수 있다.</p>
+<p>즉 API는 응용 프로그램 (우리가 만든 앱과 같은 서비스)에서 운영체제나 프로그래밍 언어가 제공하는 기능(지도, 날씨, 페이기능등)을 제어할 수 있게 만든 매개체라고 볼 수 있다.<br>API 문서에는 개발자가 이러한 요청과 응답을 구성하는 방법에 대한 정보가 들어 있어 API를 사용하기 이전에 API 문서를 통해 API의 사용법을 알 수 있다.</p>
+<hr>
+
+<h2 id="API는-어떻게-작동하는가"><a href="#API는-어떻게-작동하는가" class="headerlink" title="API는 어떻게 작동하는가?"></a>API는 어떻게 작동하는가?</h2><blockquote>
+<p>API 아키텍처는 일반적으로 클라이언트와 서버 측면에서 설명된다. 요청을 보내는 애플리케이션을 클라이언트라고 하고 응답을 보내는 애플리케이션을 서버라고 한다. 따라서 날씨 예에서 기상청의 날씨 데이터베이스는 서버이고 모바일 앱은 클라이언트이다. </p>
+</blockquote>
+<p>API가 생성된 시기와 이유에 따라 API는 네 가지 방식으로 작동할 수 있다.</p>
+<p>API라는 단어는 1964년부터 등장하기 시작했다. 이때는 하드웨어 독립성을 위해서 많이 사용되어 졌는데, 예를 들어 서로 다른 하드웨어마다 개발자가 일일이 프로그래밍을 하기보단 HAL이라는 하드웨어 추상화 계층을 통해 한번만 display라는 함수를 작성하고 이를 이용해 각기 다른 모니터에 출력을 쉽게 할수 있었고 이것이 API의 시초라고 할 수 있다.</p>
+<p>1980년대 중반 Mac OS와 Windows가 등장하면서 그래픽이 좋은 컴퓨터가 등장하기 시작했다. 이런 각각의 운영체제에서 동작하는 어플리케이션을 만들기 위해서 운영체제에서 제공하는 API를 이용했다. </p>
+<p>그리고 1990년도 인터넷이 보편적으로 대중화되기 시작하면서 컴퓨터와 컴퓨터 다양한 기기들이 인터넷을 통해서 의사소통을 할 수 있게 되었다. 이때 다양한 기기에서 서버에 있는 데이터를 읽고 쓰기 위해서는 서버에서 제공하는 WEB APIs를 이용해서 처리 할 수 있었다.</p>
+<p>네트워크에서 기기들간에 의사소통 해나가는 규격사항을 HTTP(s)라고 부르며 이런 WEB API를 어떻게 디자인해서 만들건지 정의하는 것이 있다. 예전에는 SOAP(Simple Object Access Protocol)이라는 모든 네트워크 요청과 반응을 XML이라는 데이터 포맷에 저장해 주고 받았다면 요즘에는 REST(Representational State Transfer)이 보편적으로 많이 사용된다.</p>
+<p>REST는 총 4가지로 구성되어 있는데 새로운 데이터를 만들고(POST, create), 읽고(GET, read), 업데이트하고(PUT, update), 삭제(DELETE, delete)할 수 있다. 예를 들어 GET을 이용해 유저에 대한 정보를 요청하면 서버로부터 유저에 대한 데이터를 JSON이라는 포맷을 통해 받아 올 수 있다. 이처럼 서버에서 제공하는 WEB API를 통해 서버에 있는 데이터를 읽어오거나 업데이트 할 수 있다.</p>
+]]></content>
+      <tags>
+        <tag>개발</tag>
+        <tag>용어정리</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>새로운 컴퓨터로 Hexo 블로그 옮기기</title>
+    <url>/2023/Transfer-hexo-blog-to-new-device/</url>
+    <content><![CDATA[<p>나는 이 블로그를 Hexo라는 프레임워크를 이용해 작년 8월에 만들었었고 나름대로 계속해서 포스팅을 하고 있었다. 그러다 1월 말에 원래 사용하던 Windows 갤럭시북에서 MacOs의 맥북 M1으로 갈아타게 되었는데 깃허브에서 repository를 clone하고 hexo 명령어를 입력해도 작동하지 않는 문제가 생겼다.</p>
+<p>처음부터 블로그를 다시 세팅해야하나 아니면 다른 플랫폼으로 이사를 갈까 고민하며 해결방법을 찾던 중 다음 글을 발견했다. <a href="https://jqxiao.tech/2020/07/17/Transfer-Hexo-Blog-to-New-Device/">Transfer Hexo Blog to New Device</a></p>
+<p>위 블로그 게시글의 내용을 따라 수행하니 맥북에서도 다시 블로그 포스팅을 진행할 수 있게 되었고, 혹시라도 다음에 또 컴퓨터를 바꿀 수 있으니 방법을 정리해두어야겠다고 마음먹었다.</p>
+<h1 id="새로운-branch-만들기"><a href="#새로운-branch-만들기" class="headerlink" title="새로운 branch 만들기"></a>새로운 branch 만들기</h1><ul>
+<li>hexo blog repository를 git clone 한다.</li>
+<li>clone한 repositroy에서 <code>git checkout -b branch명</code>로 새로운 branch를 만든다.</li>
+<li>새로운 branch에서 .git 폴더를 제외한 모든 파일들을 삭제한다.</li>
+<li>원래 사용하던 기기의 hexo blog 폴더를 복사해온다.</li>
+<li>이전 기기의 .git 관련 폴더들은 삭제한다.</li>
+<li>새로운 branch를 Github에 push한다.</li>
+</ul>
+<h1 id="새-기기에-Hexo-설치하기"><a href="#새-기기에-Hexo-설치하기" class="headerlink" title="새 기기에 Hexo 설치하기"></a>새 기기에 Hexo 설치하기</h1><ul>
+<li><code>npm install hexo --save</code>로 Hexo를 설치한다.</li>
+<li><code>npm install hexo-deployer-git --save</code>로 git deployer plugin를 설치한다.</li>
+</ul>
+<h1 id="블로그-Deploy하기"><a href="#블로그-Deploy하기" class="headerlink" title="블로그 Deploy하기"></a>블로그 Deploy하기</h1><ul>
+<li>새로 만든 branch에 .gitigonre 파일을 추가한다.</li>
+<li>.gitignore 파일에 <code>.deploy_git/*</code>과 <code>public/*</code>을 추가한다</li>
+<li><code>hexo clean</code>을 통해 이전 웹페이지를 삭제한다.</li>
+<li><code>hexo generate</code>와 <code>hexo deploy</code>로 새로운 웹페이지를 만들 수 있다.</li>
+</ul>
+<h1 id="무엇이-문제였을까"><a href="#무엇이-문제였을까" class="headerlink" title="무엇이 문제였을까?"></a>무엇이 문제였을까?</h1><p>hexo deploy시 만들어진 정적 웹페이지가 자동으로 Github의 default branch에 push되었던 것이지 hexo를 설치했던 기존 폴더 자체를 Github에 push한것은 아니었기 때문에 git clone을 해도 hexo 명령어가 작동하지 않았다.<br>따라서 새로운 branch에 원본 기기의 폴더를 복사해옴으써 문제를 해결할 수 있었다.</p>
+]]></content>
+      <tags>
+        <tag>개발</tag>
+        <tag>Hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>백준 Node.js 입출력법</title>
+    <url>/2022/Node-js-input-and-output-in-Baekjoon-Online-Judge/</url>
+    <content><![CDATA[<p>지금까지 leetcode와 프로그래머스를 통해 코딩테스트 공부를 하고 있었는데 leetcode는 영어 해석의, 프로그래머스는 적은 문제수의 단점을 가지고 있어 백준을 통해 코딩테스트 연습을 시작해보았다.</p>
+<p>백준에서는 javascript로 코딩테스트를 준비하기 위해 node.js를 선택해야 했는데 프로그래머스에서는 함수만 작성하면 되었던 반면에 백준에서는 입출력을 직접 해주어야 했다.</p>
+<p>백준에서 node.js로 입력을 받는 방법은 크게 두가지로 readline 모듈을 사용하는 것과 fs 모듈을 사용하는 것이다. fs 모듈의 경우 readline 모듈보다 코드가 간단하고 더 빠르다고 해 fs 모듈의 대해 찾아보았다.</p>
+<hr>
+
+<h1 id="fs"><a href="#fs" class="headerlink" title="fs"></a><strong>fs</strong></h1><p>FileSystem의 약자인 fs 모듈은 파일 처리와 관련된 모듈이다. <a href="https://help.acmicpc.net/">BOJ 도움말</a>에서는 다음과 같은 코드로 fs 모듈을 통한 입력을 소개하고 있다.</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> fs = <span class="built_in">require</span>(<span class="string">&#x27;fs&#x27;</span>);</span><br><span class="line"><span class="keyword">let</span> input = fs.<span class="title function_">readFileSync</span>(<span class="string">&#x27;/dev/stdin&#x27;</span>).<span class="title function_">toString</span>().<span class="title function_">split</span>(<span class="string">&#x27; &#x27;</span>);</span><br><span class="line"><span class="keyword">let</span> a = <span class="built_in">parseInt</span>(input[<span class="number">0</span>]);</span><br><span class="line"><span class="keyword">let</span> b = <span class="built_in">parseInt</span>(input[<span class="number">1</span>]);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(a+b);</span><br></pre></td></tr></table></figure>
+
+<p>하지만 위 코드를 이용할때에도 입력되는 값에 따라 에러가 발생하는 경우가 있어 다양한 방식의 입력법에 대해 정리해 보았다.</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="number">1.</span> 하나의 값을 입력받을 때</span><br><span class="line"><span class="keyword">const</span> fs = <span class="built_in">require</span>(<span class="string">&#x27;fs&#x27;</span>);</span><br><span class="line"><span class="keyword">const</span> input = fs.<span class="title function_">readFileSync</span>(<span class="string">&quot;/dev/stdin&quot;</span>).<span class="title function_">toString</span>().<span class="title function_">trim</span>();</span><br><span class="line"></span><br><span class="line"><span class="number">2.</span> 공백으로 구분된 한 줄의 값들을 입력받을 때</span><br><span class="line"><span class="keyword">const</span> fs = <span class="built_in">require</span>(<span class="string">&#x27;fs&#x27;</span>);</span><br><span class="line"><span class="keyword">const</span> input = fs.<span class="title function_">readFileSync</span>(<span class="string">&quot;/dev/stdin&quot;</span>).<span class="title function_">toString</span>().<span class="title function_">trim</span>().<span class="title function_">split</span>(<span class="string">&quot; &quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="number">3.</span> 여러 줄의 값들을 입력받을 때</span><br><span class="line"><span class="keyword">const</span> fs = <span class="built_in">require</span>(<span class="string">&#x27;fs&#x27;</span>);</span><br><span class="line"><span class="keyword">const</span> input = fs.<span class="title function_">readFileSync</span>(<span class="string">&quot;/dev/stdin&quot;</span>).<span class="title function_">toString</span>().<span class="title function_">trim</span>().<span class="title function_">split</span>(<span class="string">&quot;\n&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="number">4.</span> 첫 번째 줄에 자연수 n을 입력받고, 그 다음줄에 공백으로 구분된 n개의 값들을 입력받을 때</span><br><span class="line"><span class="keyword">const</span> fs = <span class="built_in">require</span>(<span class="string">&#x27;fs&#x27;</span>);</span><br><span class="line"><span class="keyword">const</span> [n, ...arr] = fs.<span class="title function_">readFileSync</span>(<span class="string">&quot;/dev/stdin&quot;</span>).<span class="title function_">toString</span>().<span class="title function_">trim</span>().<span class="title function_">split</span>(<span class="regexp">/\s/</span>);</span><br><span class="line"></span><br><span class="line"><span class="number">5.</span> 첫 번째 줄에 자연수 n을 입력받고, 그 다음줄부터 n개의 줄에 걸쳐 한 줄에 하나의 값을 입력받을 때</span><br><span class="line"><span class="keyword">const</span> fs = <span class="built_in">require</span>(<span class="string">&#x27;fs&#x27;</span>);</span><br><span class="line"><span class="keyword">const</span> [n, ...arr] = fs.<span class="title function_">readFileSync</span>(<span class="string">&quot;/dev/stdin&quot;</span>).<span class="title function_">toString</span>().<span class="title function_">trim</span>().<span class="title function_">split</span>(<span class="string">&quot;\n&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="number">6.</span> 하나의 값 또는 공백으로 구분된 여러 값들을 여러 줄에 걸쳐 뒤죽박죽 섞여서 입력받을 때</span><br><span class="line">  ex) n 입력 - 공백으로 구분된 n개의 값 입력 - m 입력 - 여러 줄에 걸쳐 m개의 값 입력</span><br><span class="line"><span class="keyword">const</span> fs = <span class="built_in">require</span>(<span class="string">&#x27;fs&#x27;</span>);</span><br><span class="line"><span class="keyword">const</span> input = fs.<span class="title function_">readFileSync</span>(<span class="string">&quot;/dev/stdin&quot;</span>).<span class="title function_">toString</span>().<span class="title function_">trim</span>().<span class="title function_">split</span>(<span class="regexp">/\s/</span>);</span><br><span class="line"><span class="keyword">const</span> n = input[<span class="number">0</span>];</span><br><span class="line"><span class="keyword">const</span> n_arr = input.<span class="title function_">slice</span>(<span class="number">1</span>, n+<span class="number">1</span>);</span><br><span class="line"><span class="keyword">const</span> [m, ...m_arr] = input.<span class="title function_">slice</span>(n+<span class="number">1</span>);</span><br></pre></td></tr></table></figure>
+<p>최종 결과 확인을 위해선 <strong>console.log()</strong> 를 통해 값을 출력해주면 된다.</p>
+<hr>
+
+<h2 id="참고"><a href="#참고" class="headerlink" title="참고"></a>참고</h2><p><a href="https://overcome-the-limits.tistory.com/25">[알고리즘] 백준 0.nodejs 입력하기</a><br><a href="https://tesseractjh.tistory.com/39">Node.js로 백준(BOJ) 문제 풀 때 유의할 점들</a></p>
+]]></content>
+      <tags>
+        <tag>개발</tag>
+        <tag>JavaScript</tag>
+        <tag>코딩테스트</tag>
       </tags>
   </entry>
   <entry>
