@@ -29,65 +29,6 @@
       </tags>
   </entry>
   <entry>
-    <title>MDN을 확신하지는 말자.</title>
-    <url>/2022/Don-t-be-sure-of-MDN-always/</url>
-    <content><![CDATA[<p>어제에 이어 position에 대해 공부하면서 position이 absolute인 경우 containing block은 가장 가까운 position이 static이 아닌 부모요소 외에도 다른 조건들이 있다고 해 MDN을 통해 공부를 하던 중 이상하다고 생각되는 점이 생겼다.</p>
-<hr>
-
-<h1 id="👀"><a href="#👀" class="headerlink" title="👀"></a>👀</h1><p><a href="https://developer.mozilla.org/ko/docs/Web/CSS/Containing_block">컨테이닝 블록의 모든것</a>이라는 MDN 문서에서 컨테이닝 블록 식별 항목을 읽어보면 다음과 같이 설명하고 있다. </p>
-<blockquote>
-<p>position 속성이 <strong>absolute</strong>나 <strong>fixed</strong>인 경우, 다음 조건 중 하나를 만족하는 가장 가까운 조상의 내부 여백 영역이 컨테이닝 블록이 될 수도 있습니다.</p>
-</blockquote>
-<ul>
-<li>transform이나 perspective (en-US) 속성이 none이 아님.</li>
-<li>will-change 속성이 transform이나 perspective임.</li>
-<li>filter 속성이 none임. (Firefox에선 will-change가 filter일 때도 적용)</li>
-<li>contain 속성이 paint임.</li>
-</ul>
-<p>각 속성들이 어떤 역할을 하는지 찾아보던 중 filter 속성을 검색해 보았는데 default value가 none임을 알았다. 그러자 다음과 같은 의문이 생겼다.</p>
-<h1 id="🤔"><a href="#🤔" class="headerlink" title="🤔"></a>🤔</h1><p>음 이상한데? filter 속성이 none이면 containing block이 될 수 있고 filter 속성의 default value가 none이면 거의 모든것이 containing block이 될 수 있다는 소리인가? 그건 아닌것 같은데…<br>아 된다가 아니라 될 수도 있다네? 그러면 될 수 있는 조건과 안되는 조건은 무엇이지? </p>
-<p>그러다 [position] (<a href="https://developer.mozilla.org/ko/docs/Web/CSS/position">https://developer.mozilla.org/ko/docs/Web/CSS/position</a>) MDN을 들어가 보니 fixed 항목이 이렇게 나와 있었다.</p>
-<blockquote>
-<p>요소를 일반적인 문서 흐름에서 제거하고, 페이지 레이아웃에 공간도 배정하지 않습니다. 대신 뷰포트의 초기 컨테이닝 블록을 기준으로 삼아 배치합니다. 단, 요소의 조상 중 하나가 transform, perspective, filter 속성 중 어느 하나라도 none이 아니라면 (CSS Transforms 명세 참조) 뷰포트 대신 그 조상을 컨테이닝 블록으로 삼습니다. (perspective와 filter의 경우 브라우저별로 결과가 다름에 유의) 최종 위치는 top, right, bottom, left 값이 지정합니다.</p>
-</blockquote>
-<p>앗 여기에는 filter 속성이 none이 아니라고 되어있네 뭐가 맞는거지? transform이나 perspective가 none이 아니여야 했으니 filter도 none이 아닌게 맞는것 같은데.. 라며 계속 고민하다 같이 공부하시는 분들의 도움을 받아 궁금증을 해결했다.</p>
-<h1 id="✔"><a href="#✔" class="headerlink" title="✔"></a>✔</h1><p>바로 <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Containing_block">영문 MDN 사이트</a>에는 filter 속성이 none이 아니라고 나와있던것! 사이트 번역과정에서 오류가 있었던것이다. </p>
-<blockquote>
-<ul>
-<li>A filter value other than none or a will-change value of filter (only works on Firefox).</li>
-</ul>
-</blockquote>
-<hr>
-
-<p>MDN이 거의 공식문서 혹은 표준처럼 여겨지기는 하지만 번역문서 그리고 원문 역시도 contributor분들에 의해 쓰여지는 것이기 때문에 확신을 하지는 말고 여러 레퍼런스들을 통해 교차검증해야되겠다고 깨달았다.</p>
-]]></content>
-      <tags>
-        <tag>개발</tag>
-        <tag>MDN</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>이미지 스프라이트(Image Sprite)</title>
-    <url>/2022/Image-Sprite/</url>
-    <content><![CDATA[<p>이미지 스프라이트란 여러 개의 이미지를 하나로 합쳐서 관리하는 이미지를 의미한다.</p>
-<p>웹 페이지에 이미지를 사용한다면 웹 브라우저는 해당 이미지의 다운로드를 위해 서버에 요청을 보낸다. 만약 사용된 이미지가 많을 경우 요청 하는 횟수가 많아지므로 웹 페이지의 로딩 시간이 오래 걸리게 된다. 하지만 만약 이미지 스프라이트를 사용한다면 스프라이트 이미지 파일 하나가 여러 이미지를 가지고 있기에 서버 요청 횟수를 줄일 수 있다.</p>
-<p>개인적인 블로그와 같은 일반적인 사이트에서는 굳이 이미지 스프라이트를 사용 할 필요가 없지만, 트래픽이 매우 많거나 많은 사람이 이용하는 검색포털과 같은 사이트에서는 이미지 스프라이트를 사용하여 서버 요청을 줄이고 웹 페이지의 로딩 시간을 단축시켜 사이트의 품질을 높일 수 있다.</p>
-<p>다음은 네이버 메인페이지의 스프라이트 이미지이다.<br><img src="https://velog.velcdn.com/images/rjsej12/post/34bfd37f-ea3a-4073-8a76-7c5cfbf8b1fc/image.png"></p>
-<p>이처럼 여러개의 이미지를 하나로 합쳐두고 CSS의 <code>background-position</code>을 이용해 사용하려는 이미지만을 보여 줄 수 있다. 이 때 <code>background-position</code>의 값은 하나씩 position값을 변경해보며 찾을 수 도 있지만 <a href="http://www.spritecow.com/">Sprite Cow</a>와 같은 사이트를 이용 할 수 있다.</p>
-<p>추가적으로 스프라이트 이미지를 만들기 위해 포토샵, 피그마 등으로 에디팅 할 수 도 있지만 <a href="https://www.toptal.com/developers/css/sprite-generator/">CSS Sprites Generator</a>라는 사이트를 이용 가능하다.</p>
-<hr>
-
-<h1 id="참고"><a href="#참고" class="headerlink" title="참고"></a>참고</h1><ul>
-<li><a href="https://creativestudio.kr/1653">https://creativestudio.kr/1653</a></li>
-<li><a href="http://www.tcpschool.com/css/css_basic_imageSprites">http://www.tcpschool.com/css/css_basic_imageSprites</a></li>
-</ul>
-]]></content>
-      <tags>
-        <tag>개발</tag>
-        <tag>CSS</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>IR기법 (Image Replacement)</title>
     <url>/2022/Image-Replacement/</url>
     <content><![CDATA[<h1 id="👀"><a href="#👀" class="headerlink" title="👀"></a>👀</h1><p>WCAG 2.1에 웹 콘텐츠의 접근성을 향상시키기 위해 텍스트 아닌 콘텐츠에 대해 대체 텍스트를 제공해주어야 한다는 지침이 있다. 이미지 역시 텍스트가 아닌 콘텐츠이기 때문에 대체 텍스트를 제공해주어야 하는데, 이는 접근성의 향상 뿐만 아니라 SEO(검색 엔진 최적화)와도 관련이 있어 중요하다.</p>
@@ -286,89 +227,111 @@ for (변수 선언문 또는 할당문; 조건식; 증감식) {
       </tags>
   </entry>
   <entry>
-    <title>[Deep Dive] 객체 리터럴</title>
-    <url>/2022/Modern-Javascript-Deep-Dive-Chapter-10-Summary/</url>
-    <content><![CDATA[<h1 id="객체란"><a href="#객체란" class="headerlink" title="객체란?"></a>객체란?</h1><p>자바스크립트는 객체 기반의 프로그래밍 언어이며, 자바스크립트를 구성하는 거의 모든것이 객체이다.<br>원시 값을 제외한 나머지 값(함수, 배열, 정규 표현식 등)은 모두 객체다.</p>
-<p>원시 타입은 단 하나의 값만 나타내지만 객체타입은 다양한 타입의 값을 하나의 단위로 구성한 복합적인 자료구조다.<br>원시 타입의 값은 변경 불가능한 값이지만 객체 타입의 값은 변경 가능한 값이다.</p>
-<p>객체는 0개 이상의 프로퍼티로 구성된 집합이며, 프로퍼티는 키와 값으로 구성된다.</p>
-<p>자바스크립트에서 사용할 수 있는 모든 값은 프로퍼티 값이 될 수 있다. 자바스크립트의 함수는 일급 객체로 값으로 취급할 수 있다.<br>따라서 함수도 프로퍼티 값으로 사용 가능한데, 프로퍼티 값이 함수일 경우 일반 함수와 구분하기 위해 메서드라 한다.</p>
-<p>이처럼 객체는 프로퍼티와 메서드로 구성된 집합체이며 프로퍼티와 메서드의 역할은 다음과 같다.</p>
-<ul>
-<li>프로퍼티: 객체의 상태를 나타내는 값(data)</li>
-<li>메서드: 프로퍼티(상태 데이터)를 참조하고 조작할 수 있는 동작(behavior)</li>
+    <title>두번째 프로젝트와 커넥to과정을 마치고</title>
+    <url>/2022/After-Second-Project/</url>
+    <content><![CDATA[<h1 id="들어가며"><a href="#들어가며" class="headerlink" title="들어가며"></a>들어가며</h1><p>약 2주동안의 프로젝트가 종료되었다. 벌써 4개월간의 커넥to 과정이 끝났다는게 믿기지 않을 정도로 시간이 너무 빨리 흘러간 것 같다. 프로젝트를 시작하면서 갑자기 허리디스크가 생겨서 프로젝트에 집중하기가 어려웠는데, 그래도 좋은 팀원들 덕분에 잘 마무리한 것 같다. 이번 프로젝트 역시 배운점도 많았고 아쉬운점도 많았는데 회고를 하며 정리해보려고 한다.</p>
+<hr>
+
+<h1 id="프로젝트-DUI"><a href="#프로젝트-DUI" class="headerlink" title="프로젝트 DUI"></a>프로젝트 DUI</h1><p>이번 프로젝트는 주어진 조건이 몇가지가 존재했다.</p>
+<ol>
+<li>바닐라 JS를 사용해 구현한 SPA(Single Page Application)일 것.</li>
+<li>CRUD를 구현할 것.</li>
+<li>Routing 기능을 구현할 것.</li>
+<li>JWT를 사용해 로그인 기능을 구현할 것.</li>
+</ol>
+<p>이 조건들을 만족시킬 프로젝트 주제가 무엇인지 고민하다가, 다른 팀원분이 블로그를 구현하는 것이 어떻겠냐고 제안하셨고 다들 적절하다고 생각해 Draw yoUr Idea 의 줄임말인 DUI라는 이름으로 프로젝트를 진행하게 되었다.</p>
+<p>개발 기간은 2022-12-12 ~ 2022-12-23로 약 2주 동안 진행되었고, 팀원은 총 3명이었다.</p>
+<p>좀 더 자세한 사항은 <a href="https://github.com/rjsej12/public-DUI">https://github.com/rjsej12/public-DUI</a> 에서 확인 가능하다.</p>
+<hr>
+
+<h2 id="KPT"><a href="#KPT" class="headerlink" title="KPT"></a>KPT</h2><h3 id="Keep"><a href="#Keep" class="headerlink" title="Keep"></a>Keep</h3><ul>
+<li><p>이번에도 프로젝트를 시작하기 전에 환경설정을 중요시 여기고 이 부분에 대해 많이 논의 했는데 그 결과 폴더구조가 깔끔하게 구성된것 같아서 만족스러웠다.</p>
+</li>
+<li><p>저번 프로젝트를 진행하면서 다음번엔 꼭 문서화를 잘 해보자 생각했었는데, 만족스러울 만큼은 아니지만 저번보다는 결과물이 좋게 나왔다고 생각되었다.</p>
+</li>
 </ul>
-<p>객체는 프로퍼티와 메서드를 통해 상태와 동작을 하나의 단위로 구조화할 수 있어 유용하다.</p>
-<h2 id="객체-리터럴에-의한-객체-생성"><a href="#객체-리터럴에-의한-객체-생성" class="headerlink" title="객체 리터럴에 의한 객체 생성"></a>객체 리터럴에 의한 객체 생성</h2><p>C++이나 자바와 같은 클래스 기반 객체지향 언어는 클래스를 사전에 정의하고 필요한 시점에 new 연산자와 함께 생성자를 호출하여 인스턴스를 생성하는 방식으로 객체를 생성한다.</p>
-<p>자바스크립트는 프로토타입 기반 객체지향 언어로 클래스 기반 객체지향 언어와는 달리 다양한 객체 생성 방법을 지원한다.</p>
-<ul>
-<li>객체 리터럴</li>
-<li>Object 생성자 함수</li>
-<li>생성자 함수</li>
-<li>Object.create 메서드</li>
-<li>클래스(ES6)</li>
+<h3 id="Problem"><a href="#Problem" class="headerlink" title="Problem"></a>Problem</h3><ul>
+<li><p>프로젝트 시작때부터 갑자기 허리 디스크가 생겨서 프로젝트에 집중하기 어려웠다.</p>
+</li>
+<li><p>이번 프로젝트에서는 History API를 이용해 Routing 기능을 구현했는데, History API를 보완한 Navigation API를 사용해보고 싶다.</p>
+</li>
+<li><p>정확하게 코딩 컨벤션을 설정하고 시작하지 않아 처음에 서로의 코드 구조가 일치하지 않았던게 아쉬웠다.</p>
+</li>
 </ul>
-<p>객체 생성 방법 중에서 가장 일반적이고 간단한 방법은 객체 리터럴을 사용하는 방법이다.<br>객체 리터럴은 중괄호({…}) 내에 0개 이상의 프로퍼티를 정의한다. 자바스크립트 엔진은 변수에 할당되는 시점에 객체 리터럴을 해석해 객체를 생성한다.</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> person = &#123;</span><br><span class="line">  <span class="attr">name</span>: <span class="string">&#x27;rongrong&#x27;</span>,</span><br><span class="line">  <span class="attr">sayHello</span>: <span class="keyword">function</span> (<span class="params"></span>) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`Hello! my name is <span class="subst">$&#123;<span class="variable language_">this</span>.name&#125;</span>.`</span>);</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="keyword">typeof</span> person); <span class="comment">// object</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(person); <span class="comment">// &#123;name: &#x27;rongrong&#x27;, sayHello: f&#125;</span></span><br></pre></td></tr></table></figure>
-
-<p>객체 리터럴의 중괄호는 코드 블록을 의미하지 않는다는것에 주의하자. 코드 블록의 닫는 중괄호 뒤에는 세미콜론을 붙이지 않는다.<br>하지만 객체 리터럴은 값으로 평가되는 표현식으로 객체 리터럴의 닫는 괄호 뒤에는 세미콜론을 붙인다.</p>
-<p>객체 리터럴은 자바스크립트의 유연함과 강력함을 대표하는 객체 생성 방식으로 객체 리터럴에 프로퍼티를 포함시켜 객체를 생성함과 동시에 프로퍼티를 만들 수도 있고, 객체를 생성한 이후에 프로퍼티를 동적으로 추가할 수도 있다.</p>
-<p>그렇다면 프로퍼티에 대해 자세히 알아보자.</p>
-<h2 id="프로퍼티"><a href="#프로퍼티" class="headerlink" title="프로퍼티"></a>프로퍼티</h2><p>객체는 프로퍼티의 집합이며, 프로퍼티는 키와 값으로 구성된다.<br>프로퍼티를 나열할 때는 쉼표로 구분한다. 일반적으로 마지막 프로퍼티 뒤에는 쉼표를 사용하지 않지만 사용해도 괜찮다.</p>
-<p>프로퍼티 키와 프로퍼티 값으로 사용할 수 있는 값은 다음과 같다.</p>
-<ul>
-<li>프로퍼티 키: 빈 문자열을 포함하는 모든 문자열 또는 심벌 값</li>
-<li>프로퍼티 값: 자바스크립트에서 사용할 수 있는 모든 값</li>
+<h3 id="Try"><a href="#Try" class="headerlink" title="Try"></a>Try</h3><ul>
+<li>소통하자! - 프로젝트를 시작하기 전 각자가 사용하길 원하는 기술 스택을 상의하면서 팀원 중 한 분이 tailwind의 편의성을 설명하였고, 빠른 적용에 모두 동의하여 프로젝트의 스타일 프레임워크로 Tailwind CSS를 사용하기로 결정했다. 또한 적극적인 class 이름을 활용해 작은 컴포넌트 단위의 완성된 스타일을 대표하기를 원하셨는데 그 분을 제외한 우리 둘은 정확한 이해를 하지 못했었고 이게 맞는지 고민하며 작업을 수행했고 결과물은 역시 원하는 바와 달랐다. 이전 우아할 프로젝트때는 이해가 안되는 부분이 존재할 때 계속해서 소통하며 이해가 될 때까지 넘어가지 않았었는데, 이번에는 건강 문제를 핑계로 소통에 소홀했던 것 같다. 협업에서 가장 중요한 것이 다른 사람의 생각을 이해하는 것이니 만큼 소통하는데에 있어서 적극적이어야할 필요를 다시 한 번 느꼈다.</li>
 </ul>
-<p>프로퍼티 키는 프로퍼티 값에 접근할 수 있는 이름으로 식별자의 역할을 한다. 하지만 반드시 식별자 네이밍규칙을 따라야 하는 것은 아니다.<br>단, 식별자 네이밍 규칙을 준수하는 프로퍼티 키와 그렇지 않은 키에는 차이가 존재한다.</p>
-<p>심벌 값도 프로퍼티 키로 사용할 수 있지만 일반적으로 문자열을 사용한다. 이때 프로퍼티 키는 문자열이므로 따옴표로 묶어야 한다.<br>하지만 식별자 네이밍 규칙을 준수하는 이름은 따옴표를 생략할 수 있다. 반대로 식별자 네이밍 규칙을 따르지 않는 이름에는 반드시 따옴표를 사용해야 한다.</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> person = &#123;</span><br><span class="line">  <span class="attr">firstName</span>: <span class="string">&#x27;rong&#x27;</span>, <span class="comment">// 식별자 네이밍 규칙을 준수한 프로퍼티 키</span></span><br><span class="line">  <span class="string">&#x27;last-name&#x27;</span>: <span class="string">&#x27;rong&#x27;</span>, <span class="comment">// 식별자 네이밍 규칙을 준수하지 않은 프로퍼티 키</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(person); <span class="comment">// &#123;firstName: &#x27;rong&#x27;, last-name: &#x27;rong&#x27;&#125;</span></span><br></pre></td></tr></table></figure>
+<hr>
 
-<p>프로퍼티 키로 사용한 firstName은 식별자 네이밍 규칙을 준수하므로 따옴표를 생략할 수 있다.<br>하지만 last-name은 식별자 네이밍 규칙을 주수하지 않으므로 따옴표를 생략할 수 없다. 자바스크립트 엔진은 따옴표를 생략한 last-name을 - 연산자가 있는 표현식으로 해석한다.</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> person = &#123;</span><br><span class="line">  <span class="attr">firstName</span>: <span class="string">&#x27;rong&#x27;</span>,</span><br><span class="line">  last-<span class="attr">name</span>: <span class="string">&#x27;rong&#x27;</span>, <span class="comment">// SyntaxError: Unexpected token -</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h1 id="마치며"><a href="#마치며" class="headerlink" title="마치며"></a>마치며</h1><p>이번 프로젝트를 끝으로 약 4개월간의 긴(?) 과정이 종료되었다. 커넥to 과정을 시작할때와 비교해보면 스스로 정말 많이 성장했음을 느끼는것 같다. 단순히 새로운 지식을 배웠기 때문이 아니라, 모르는 부분이 생겼을때 그것을 찾아 나가는 방법과 더 나은 코드를 위해 어떠한 고민을 해야 하는지 또 다른 사람과 협업을 할 때 어떻게 커뮤니케이션 해야 할 지 등 앞으로 개발자로 살아가면서 가져야 할 마인드, 태도가 달라졌다고 느끼기 때문이다. 아직 많이 부족하지만, 이렇게 지속해서 공부해 나간다면 그래도 좋은 개발자가 될 수 있지 않을까 하는 일말의 자신감도 생긴것 같다.</p>
+<p>사실 개발자로의 취직을 준비하면서 가장 걱정되었던 부분은 (많이 고민하고 결정하기는 했지만) ‘내가 지속해서 공부를 잘 할수 있을까?’ 였다. 어릴 때 부터 흥미를 못 느끼는 일에는 집중을 잘 하지 못하던 터라 겉핥기만 했을때는 재미있다 느꼈지만 깊게 공부하게 되었을때도 재미가 유지될지에 대해 의심이 존재했다. 하지만 4개월 동안 느낀 것은 ‘재밌다’였다. 뭐 아직도 깊게 파고든것은 아니라고 할 수 있겠지만, 문제를 만나고 해결하고 결과물을 실제로 볼 수 있는등 여러 부분들이 오랜만에 ‘공부를 해야해서 하는게 아니라 재밌어서 하는 경우도 있었지’라고 생각하게 했다.</p>
+<p>여전히 부족함을 느끼는 만큼, 또 프로젝트를 하면서 vanilla js의 불편함을 느꼈어서 얼른 react와 같은 프레임워크도 공부하고 싶고 vue는 또 뭐가 다를지 등등 배움에 대한 욕구가 생기는 것 같다. 과정이 끝나더라도 열심히 해서 지속적으로 성장할 수 있는 기반을 쌓아야겠다.</p>
+]]></content>
+      <tags>
+        <tag>개발</tag>
+        <tag>회고</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>이미지 스프라이트(Image Sprite)</title>
+    <url>/2022/Image-Sprite/</url>
+    <content><![CDATA[<p>이미지 스프라이트란 여러 개의 이미지를 하나로 합쳐서 관리하는 이미지를 의미한다.</p>
+<p>웹 페이지에 이미지를 사용한다면 웹 브라우저는 해당 이미지의 다운로드를 위해 서버에 요청을 보낸다. 만약 사용된 이미지가 많을 경우 요청 하는 횟수가 많아지므로 웹 페이지의 로딩 시간이 오래 걸리게 된다. 하지만 만약 이미지 스프라이트를 사용한다면 스프라이트 이미지 파일 하나가 여러 이미지를 가지고 있기에 서버 요청 횟수를 줄일 수 있다.</p>
+<p>개인적인 블로그와 같은 일반적인 사이트에서는 굳이 이미지 스프라이트를 사용 할 필요가 없지만, 트래픽이 매우 많거나 많은 사람이 이용하는 검색포털과 같은 사이트에서는 이미지 스프라이트를 사용하여 서버 요청을 줄이고 웹 페이지의 로딩 시간을 단축시켜 사이트의 품질을 높일 수 있다.</p>
+<p>다음은 네이버 메인페이지의 스프라이트 이미지이다.<br><img src="https://velog.velcdn.com/images/rjsej12/post/34bfd37f-ea3a-4073-8a76-7c5cfbf8b1fc/image.png"></p>
+<p>이처럼 여러개의 이미지를 하나로 합쳐두고 CSS의 <code>background-position</code>을 이용해 사용하려는 이미지만을 보여 줄 수 있다. 이 때 <code>background-position</code>의 값은 하나씩 position값을 변경해보며 찾을 수 도 있지만 <a href="http://www.spritecow.com/">Sprite Cow</a>와 같은 사이트를 이용 할 수 있다.</p>
+<p>추가적으로 스프라이트 이미지를 만들기 위해 포토샵, 피그마 등으로 에디팅 할 수 도 있지만 <a href="https://www.toptal.com/developers/css/sprite-generator/">CSS Sprites Generator</a>라는 사이트를 이용 가능하다.</p>
+<hr>
 
-<p>문자열 또는 문자열로 평가할 수 있는 표현식을 사용해 프로퍼티 키를 동적으로 생성 가능하다. 이 경우에는 프로퍼티 키로 사용할 표현식을 대괄호로 묶어야 한다.</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = &#123;&#125;;</span><br><span class="line"><span class="keyword">var</span> key = <span class="string">&#x27;hello&#x27;</span>;</span><br><span class="line"></span><br><span class="line">obj[key] = <span class="string">&#x27;world&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(obj); <span class="comment">// &#123;hello: &#x27;world&#x27;&#125;</span></span><br></pre></td></tr></table></figure>
-
-<p>이미 존재하는 프로퍼티 키를 중복 선언하면 나중에 선언한 프로퍼티가 먼저 선언한 프로퍼티를 덮어쓴다.<br>이때 에러가 발생하지 않으니 주의해야 한다.</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> foo = &#123;</span><br><span class="line">  <span class="attr">name</span>: <span class="string">&#x27;Lee&#x27;</span>,</span><br><span class="line">  <span class="attr">name</span>: <span class="string">&#x27;Kim&#x27;</span>,</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(foo); <span class="comment">// &#123;name: &#x27;Kim&#x27;&#125;</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="메서드"><a href="#메서드" class="headerlink" title="메서드"></a>메서드</h2><p>자바스크립트에서 사용할 수 있는 모든 값은 프로퍼티 값으로 사용할 수 있다고 했다.<br>자바스크립트의 함수는 일급객체로 값으로 취급할 수 있기 때문에 프로퍼티 값으로 사용 가능하다.</p>
-<p>프로퍼티 값이 함수일 경우 일반 함수와 구분하기 위해 메서드라 부르는데 즉 메서드는 객체에 묶여 있는 함수를 의미한다.</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> circle = &#123;</span><br><span class="line">  <span class="attr">radius</span>: <span class="number">5</span>, <span class="comment">// 프로퍼티</span></span><br><span class="line">  <span class="comment">// 원의 지름을 구하는 메서드</span></span><br><span class="line">  <span class="attr">getDiameter</span>: <span class="keyword">function</span> (<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">2</span> * <span class="variable language_">this</span>.<span class="property">radius</span>;</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(circle.<span class="title function_">getDiameter</span>()); <span class="comment">// 10</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="프로퍼티-접근"><a href="#프로퍼티-접근" class="headerlink" title="프로퍼티 접근"></a>프로퍼티 접근</h2><p>프로퍼티에 접근하는 방법은 다음과 같이 두 가지이다.</p>
-<ul>
-<li>마침표 프로퍼티 접근 연산자(.)를 사용하는 마침표 표기법</li>
-<li>대괄호 프로퍼티 접근 연산자([…])를 사용하는 대괄호 표기법</li>
+<h1 id="참고"><a href="#참고" class="headerlink" title="참고"></a>참고</h1><ul>
+<li><a href="https://creativestudio.kr/1653">https://creativestudio.kr/1653</a></li>
+<li><a href="http://www.tcpschool.com/css/css_basic_imageSprites">http://www.tcpschool.com/css/css_basic_imageSprites</a></li>
 </ul>
-<p>프로퍼티 키가 식별자 네이밍 규칙을 준수하는 이름이면 마침표 표기법과 대괄호 표기법을 모두 사용할 수 있다.</p>
-<p>대괄호 표기법을 사용하는 경우 대괄호 프로퍼티 접근 연산자 내부에 지정하는 프로퍼티 키는 반드시 따옴표로 감싼 문자열이어야 한다.<br>대괄호 프로퍼티 접근 연산자 내에 따옴표로 감싸지 않은 이름을 프로퍼티 키로 사용하면 자바스크립트 엔진은 식별자로 해석한다.</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> person = &#123;</span><br><span class="line">  <span class="attr">name</span>: <span class="string">&#x27;rongrong&#x27;</span>,</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(person.<span class="property">name</span>); <span class="comment">// &#x27;rongrong&#x27;</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(person[<span class="string">&#x27;name&#x27;</span>]); <span class="comment">// &#x27;rongrong&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(person[name]); <span class="comment">// ReferenceError: name is not defined</span></span><br></pre></td></tr></table></figure>
+]]></content>
+      <tags>
+        <tag>개발</tag>
+        <tag>CSS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>[Deep Dive] 표현식과 문</title>
+    <url>/2022/Modern-Javascript-Deep-Dive-Chapter-5-Summary/</url>
+    <content><![CDATA[<p>변수에 대해 살펴보면서 지속적으로 값이라는 용어가 등장했다. 표현식과 문에 대해 알아보기 이전에 값이란 무엇인지 알아보자.</p>
+<hr>
 
-<p>위 코드에서 ReferenceError가 발생한 이유는 대괄호 연산자 내의 따옴표로 감싸지 않은 이름, 즉 식별자 name을 평가하기 위해 선언된 name을 찾았지만 찾지 못했기 때문이다.</p>
-<p>객체에 존재하지 않는 프로퍼티에 접근하면 undefined를 반환한다. 이때 ReferenceError가 발생하지 않는데에 주의하자</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> person = &#123;</span><br><span class="line">  <span class="attr">name</span>: <span class="string">&#x27;rongrong&#x27;</span>,</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(person.<span class="property">age</span>); <span class="comment">// undefined</span></span><br></pre></td></tr></table></figure>
+<h1 id="값"><a href="#값" class="headerlink" title="값"></a>값</h1><p>값이란 (표현)식이 평가되어 생성된 결과를 말한다.<br>평가란 식을 해석해서 값을 생성하거나 참조하는 것을 의미한다.</p>
+<p>변수란 하나의 값을 저장하기 위해 확보한 메모리 공간 자체 또는 그 메모리 공간을 식별하기 위해 붙인 이름이였다. 즉 변수에 할당되는 것은 값이다.</p>
+<p>값이란 어떻게 생성할 수 있을까? 가장 기본적인 방법은 리터럴을 사용하는 것이다.</p>
+<hr>
 
-<p>프로퍼티 키가 식별자 네이밍 규칙을 준수하지 않으면 반드시 대괄호 표기법을 사용해야 한다.<br>단 프로퍼티 키가 숫자로 이루어진 문자열인 경우 따옴표를 생략할 수 있다.</p>
-<h2 id="프로퍼티-값-갱신"><a href="#프로퍼티-값-갱신" class="headerlink" title="프로퍼티 값 갱신"></a>프로퍼티 값 갱신</h2><p>이미 존재하는 프로퍼티에 값을 할당하면 프로퍼티 값이 갱신된다</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> person = &#123;</span><br><span class="line">  <span class="attr">name</span>: <span class="string">&#x27;Lee&#x27;</span>,</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">person.<span class="property">name</span> = <span class="string">&#x27;Kim&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(person); <span class="comment">// &#123;name: &quot;Kim&quot;&#125;</span></span><br></pre></td></tr></table></figure>
+<h1 id="리터럴"><a href="#리터럴" class="headerlink" title="리터럴"></a>리터럴</h1><p>리터럴은 사람이 이해할 수 있는 문자 또는 약속된 기호를 사용해 값을 생성하는 표기법이다.</p>
+<p>리터럴은 문자 또는 미리 약속된 기호로 표기한 코드이며 자바스크립트 엔진은 코드가 실행되는 시점인 런타임에 리터럴을 평가해 값을 생성한다.</p>
+<p>리터럴을 사용해 다양한 종류의 값을 생성할 수 있다.</p>
+<h2 id="엔진은-어떻게-리터럴을-구별할까"><a href="#엔진은-어떻게-리터럴을-구별할까" class="headerlink" title="엔진은 어떻게 리터럴을 구별할까?"></a>엔진은 어떻게 리터럴을 구별할까?</h2><p>리터럴은 값을 생성하기 위해 미리 약속한 표기법으로 자바스크립트 엔진 내부에 리터럴을 구분해 값을 생성 할 수 있도록 하드코딩 되어있다.</p>
+<hr>
 
-<h2 id="프로퍼티-동적-생성"><a href="#프로퍼티-동적-생성" class="headerlink" title="프로퍼티 동적 생성"></a>프로퍼티 동적 생성</h2><p>존재하지 않는 프로퍼티에 값을 할당하면 프로퍼티가 동적으로 생성되어 추가되고 프로퍼티 값이 할당된다.</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> person = &#123;</span><br><span class="line">  <span class="attr">name</span>: <span class="string">&#x27;rongrong&#x27;</span>,</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">person.<span class="property">age</span> = <span class="number">25</span>;</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(person); <span class="comment">// &#123;name: &#x27;rongrong&#x27;, age: 25&#125;</span></span><br></pre></td></tr></table></figure>
+<p>리터럴 이외에 값을 생성하는 또 다른 방법에는 무엇이 있을까? 값에 대해 살펴보면서 언급했듯이 표현식이 존재한다.</p>
+<h1 id="표현식"><a href="#표현식" class="headerlink" title="표현식"></a>표현식</h1><p>표현식은 값으로 평가될 수 있는 문이다. 즉 표현식이 평가되면 새로운 값을 생성하거나 값을 참조한다.</p>
+<p>앞서 살펴본 리터럴은 값으로 평가된다. 그러므로 리터럴도 사실 표현식이다.</p>
+<p>표현식은 값으로 평가되는데, 이때 표현식과 표현식이 평가된 값은 동등한 관계이다.</p>
+<p>다음 예시를 살펴보자. 예를들어, 산술 연산자 + 의 좌항과 우항에는 숫자 값이 위치해야 한다. 이 때 표현식이 숫자 값으로 평가될 수 있다면 숫자 값 대신 사용할 수 있다.</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> x = <span class="number">1</span> + <span class="number">2</span>;</span><br><span class="line"></span><br><span class="line">x + <span class="number">3</span>; <span class="comment">// 6</span></span><br></pre></td></tr></table></figure>
 
-<h2 id="프로퍼티-삭제"><a href="#프로퍼티-삭제" class="headerlink" title="프로퍼티 삭제"></a>프로퍼티 삭제</h2><p>delete 연산자는 객체의 프로퍼티를 삭제한다. 이때 delete 연산자의 피연산자는 프로퍼티 값에 접근할 수 있는 표현식이어야 한다.<br>이때 존재하지 않는 프로퍼티를 삭제해도 아무런 에러 없이 무시된다.</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> person = &#123;</span><br><span class="line">  <span class="attr">name</span>: <span class="string">&#x27;rongrong&#x27;</span>,</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">person.<span class="property">age</span> = <span class="number">25</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">delete</span> person.<span class="property">age</span>; <span class="comment">// 프로퍼티 동적 생성 후 삭제</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">delete</span> person.<span class="property">address</span>; <span class="comment">// 존재하지 않는 프로퍼티 삭제, 에러 없이 무시</span></span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(person); <span class="comment">// &#123;name: &#x27;rongrong&#x27;&#125;</span></span><br></pre></td></tr></table></figure>
+<p>위 코드의 x + 3에서 + 연산자의 좌항과 우항에는 숫자 값이 위치해야 한다. 이 때 좌항 x 는 식별자 표현식이다. 즉 x는 할당되어 있는 숫자 값 3 으로 평가된다. 즉 표현식과 표현식이 평가된 값은 동치이며 이처럼 표현식은 다른 표현식의 일부가 되어 새로운 값을 만들어 낼 수 있다.</p>
+<hr>
 
-<h2 id="ES6에서-추가된-객체-리터럴의-확장-기능"><a href="#ES6에서-추가된-객체-리터럴의-확장-기능" class="headerlink" title="ES6에서 추가된 객체 리터럴의 확장 기능"></a>ES6에서 추가된 객체 리터럴의 확장 기능</h2><p>ES6에서는 더욱 간편하고 표현력 있는 객체 리터럴의 확장 기능을 제공한다.</p>
-<h3 id="프로퍼티-축약-표현"><a href="#프로퍼티-축약-표현" class="headerlink" title="프로퍼티 축약 표현"></a>프로퍼티 축약 표현</h3><p>객체 리터럴의 프로퍼티는 프로퍼티 키와 프로퍼티 값으로 구성된다. 프로퍼티 값은 변수에 할당된 값, 즉 식별자 표현식일 수도 있다.</p>
-<p>ES6에서는 프로퍼티 값으로 변수를 사용하는 경우 변수 이름과 프로퍼티 키가 동일한 이름일 때 프로퍼티 키를 생략할 수 있다.<br>이때 프로퍼티 키는 변수 이름으로 자동 생성된다.</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> x = <span class="number">1</span>,</span><br><span class="line">  y = <span class="number">2</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> obj = &#123; x, y &#125;;</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(obj); &#123;<span class="attr">x</span>: <span class="number">1</span>, <span class="attr">y</span>: <span class="number">2</span>&#125;</span><br></pre></td></tr></table></figure>
+<p>앞서 표현식은 값으로 평가될 수 있는 문이라고 했다. 그럼 문이란 무엇일까?</p>
+<h1 id="문"><a href="#문" class="headerlink" title="문"></a>문</h1><p>문은 프로그램을 구성하는 기본 단위이자 최소 실행 단위이다. 문은 여러 토큰으로 구성되는데, 토큰이란 문법적인 의미를 가지며, 문법적으로 더 이상 나눌 수 없는 코드의 기본 요소를 의미한다.</p>
+<p>문을 명령문이라고도 부른다. 문이 실행되면 명령이 실행되고 무슨 일인가가 일어나게 된다.</p>
+<p>문은 선언문, 할당문, 조건문, 반복문등 다양한 종류로 나누어진다.</p>
+<p>세미콜론을 통해 문의 종료를 나타낼 수 있다. 즉 자바스크립트 엔진은 세미콜론으로 문이 종료한 위치를 파악하고 순차적으로 하나씩 문을 실행한다. 단 중괄호로 묶은 코드 블록은 자체 종결성을 가지므로 세미콜론을 붙이지 않는다.</p>
+<p>문의 끝에 붙이는 세미콜론은 옵션이다. 이는 자바스크립트 엔진이 소스코드를 해석하며 문의 끝이라고 예측되는 지점에 세미콜론을 자동으로 삽입하는 ASI를 수행하기 때문이다.</p>
+<hr>
 
-<h3 id="메서드-축약-표현"><a href="#메서드-축약-표현" class="headerlink" title="메서드 축약 표현"></a>메서드 축약 표현</h3><p>ES5에서 메서드를 정의하려면 프로퍼티 값으로 함수를 할당한다.</p>
-<p>ES6에서는 메서드를 정의할 때 function 키워드를 생략한 축약 표현을 사용할 수 있다.</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> obj = &#123;</span><br><span class="line">  <span class="attr">name</span>: <span class="string">&#x27;rongrong&#x27;</span>,</span><br><span class="line">  <span class="title function_">sayHi</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;Hi! &#x27;</span> + <span class="variable language_">this</span>.<span class="property">name</span>);</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">obj.<span class="title function_">sayHi</span>(); <span class="comment">// &#x27;Hi! rongrong&#x27;</span></span><br></pre></td></tr></table></figure>
-
-<p>ES6의 메서드 축약 표현으로 정의한 메서드는 프로퍼티에 할당한 함수와 다르게 동작한다.</p>
+<p>그렇다면 표현식과 문은 어떻게 구별 할 수 있을까? 표현식도 문의 일부니 정확히 말하자면 표현식인 문과 표현식이 아닌 문을 어떻게 구별 할 수 있을까?</p>
+<h1 id="표현식인-문과-표현식이-아닌-문"><a href="#표현식인-문과-표현식이-아닌-문" class="headerlink" title="표현식인 문과 표현식이 아닌 문"></a>표현식인 문과 표현식이 아닌 문</h1><p>표현식인 문은 값으로 평가될 수 있는 문이며, 표현식이 아닌 문은 값으로 평가될 수 없는 문을 말한다. 예를들어, 변수 선언문은 값으로 평가될 수 없으므로 표현식이 아닌 문이다.</p>
+<p>표현식인 문과 표현식이 아닌 문을 구별하는 가장 간단한 방법은 변수에 할당해 보는 것이다.</p>
+<p>변수는 값을 저장하기 위한 메모리 공간이였으므로 변수에 할당할 수 있는 문은 즉 값으로 평가된는 표현식이라고 볼 수 있다.</p>
 ]]></content>
       <tags>
         <tag>개발</tag>
@@ -457,408 +420,6 @@ for (변수 선언문 또는 할당문; 조건식; 증감식) {
       <tags>
         <tag>개발</tag>
         <tag>자바스크립트</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>두번째 프로젝트와 커넥to과정을 마치고</title>
-    <url>/2022/After-Second-Project/</url>
-    <content><![CDATA[<h1 id="들어가며"><a href="#들어가며" class="headerlink" title="들어가며"></a>들어가며</h1><p>약 2주동안의 프로젝트가 종료되었다. 벌써 4개월간의 커넥to 과정이 끝났다는게 믿기지 않을 정도로 시간이 너무 빨리 흘러간 것 같다. 프로젝트를 시작하면서 갑자기 허리디스크가 생겨서 프로젝트에 집중하기가 어려웠는데, 그래도 좋은 팀원들 덕분에 잘 마무리한 것 같다. 이번 프로젝트 역시 배운점도 많았고 아쉬운점도 많았는데 회고를 하며 정리해보려고 한다.</p>
-<hr>
-
-<h1 id="프로젝트-DUI"><a href="#프로젝트-DUI" class="headerlink" title="프로젝트 DUI"></a>프로젝트 DUI</h1><p>이번 프로젝트는 주어진 조건이 몇가지가 존재했다.</p>
-<ol>
-<li>바닐라 JS를 사용해 구현한 SPA(Single Page Application)일 것.</li>
-<li>CRUD를 구현할 것.</li>
-<li>Routing 기능을 구현할 것.</li>
-<li>JWT를 사용해 로그인 기능을 구현할 것.</li>
-</ol>
-<p>이 조건들을 만족시킬 프로젝트 주제가 무엇인지 고민하다가, 다른 팀원분이 블로그를 구현하는 것이 어떻겠냐고 제안하셨고 다들 적절하다고 생각해 Draw yoUr Idea 의 줄임말인 DUI라는 이름으로 프로젝트를 진행하게 되었다.</p>
-<p>개발 기간은 2022-12-12 ~ 2022-12-23로 약 2주 동안 진행되었고, 팀원은 총 3명이었다.</p>
-<p>좀 더 자세한 사항은 <a href="https://github.com/rjsej12/public-DUI">https://github.com/rjsej12/public-DUI</a> 에서 확인 가능하다.</p>
-<hr>
-
-<h2 id="KPT"><a href="#KPT" class="headerlink" title="KPT"></a>KPT</h2><h3 id="Keep"><a href="#Keep" class="headerlink" title="Keep"></a>Keep</h3><ul>
-<li><p>이번에도 프로젝트를 시작하기 전에 환경설정을 중요시 여기고 이 부분에 대해 많이 논의 했는데 그 결과 폴더구조가 깔끔하게 구성된것 같아서 만족스러웠다.</p>
-</li>
-<li><p>저번 프로젝트를 진행하면서 다음번엔 꼭 문서화를 잘 해보자 생각했었는데, 만족스러울 만큼은 아니지만 저번보다는 결과물이 좋게 나왔다고 생각되었다.</p>
-</li>
-</ul>
-<h3 id="Problem"><a href="#Problem" class="headerlink" title="Problem"></a>Problem</h3><ul>
-<li><p>프로젝트 시작때부터 갑자기 허리 디스크가 생겨서 프로젝트에 집중하기 어려웠다.</p>
-</li>
-<li><p>이번 프로젝트에서는 History API를 이용해 Routing 기능을 구현했는데, History API를 보완한 Navigation API를 사용해보고 싶다.</p>
-</li>
-<li><p>정확하게 코딩 컨벤션을 설정하고 시작하지 않아 처음에 서로의 코드 구조가 일치하지 않았던게 아쉬웠다.</p>
-</li>
-</ul>
-<h3 id="Try"><a href="#Try" class="headerlink" title="Try"></a>Try</h3><ul>
-<li>소통하자! - 프로젝트를 시작하기 전 각자가 사용하길 원하는 기술 스택을 상의하면서 팀원 중 한 분이 tailwind의 편의성을 설명하였고, 빠른 적용에 모두 동의하여 프로젝트의 스타일 프레임워크로 Tailwind CSS를 사용하기로 결정했다. 또한 적극적인 class 이름을 활용해 작은 컴포넌트 단위의 완성된 스타일을 대표하기를 원하셨는데 그 분을 제외한 우리 둘은 정확한 이해를 하지 못했었고 이게 맞는지 고민하며 작업을 수행했고 결과물은 역시 원하는 바와 달랐다. 이전 우아할 프로젝트때는 이해가 안되는 부분이 존재할 때 계속해서 소통하며 이해가 될 때까지 넘어가지 않았었는데, 이번에는 건강 문제를 핑계로 소통에 소홀했던 것 같다. 협업에서 가장 중요한 것이 다른 사람의 생각을 이해하는 것이니 만큼 소통하는데에 있어서 적극적이어야할 필요를 다시 한 번 느꼈다.</li>
-</ul>
-<hr>
-
-<h1 id="마치며"><a href="#마치며" class="headerlink" title="마치며"></a>마치며</h1><p>이번 프로젝트를 끝으로 약 4개월간의 긴(?) 과정이 종료되었다. 커넥to 과정을 시작할때와 비교해보면 스스로 정말 많이 성장했음을 느끼는것 같다. 단순히 새로운 지식을 배웠기 때문이 아니라, 모르는 부분이 생겼을때 그것을 찾아 나가는 방법과 더 나은 코드를 위해 어떠한 고민을 해야 하는지 또 다른 사람과 협업을 할 때 어떻게 커뮤니케이션 해야 할 지 등 앞으로 개발자로 살아가면서 가져야 할 마인드, 태도가 달라졌다고 느끼기 때문이다. 아직 많이 부족하지만, 이렇게 지속해서 공부해 나간다면 그래도 좋은 개발자가 될 수 있지 않을까 하는 일말의 자신감도 생긴것 같다.</p>
-<p>사실 개발자로의 취직을 준비하면서 가장 걱정되었던 부분은 (많이 고민하고 결정하기는 했지만) ‘내가 지속해서 공부를 잘 할수 있을까?’ 였다. 어릴 때 부터 흥미를 못 느끼는 일에는 집중을 잘 하지 못하던 터라 겉핥기만 했을때는 재미있다 느꼈지만 깊게 공부하게 되었을때도 재미가 유지될지에 대해 의심이 존재했다. 하지만 4개월 동안 느낀 것은 ‘재밌다’였다. 뭐 아직도 깊게 파고든것은 아니라고 할 수 있겠지만, 문제를 만나고 해결하고 결과물을 실제로 볼 수 있는등 여러 부분들이 오랜만에 ‘공부를 해야해서 하는게 아니라 재밌어서 하는 경우도 있었지’라고 생각하게 했다.</p>
-<p>여전히 부족함을 느끼는 만큼, 또 프로젝트를 하면서 vanilla js의 불편함을 느꼈어서 얼른 react와 같은 프레임워크도 공부하고 싶고 vue는 또 뭐가 다를지 등등 배움에 대한 욕구가 생기는 것 같다. 과정이 끝나더라도 열심히 해서 지속적으로 성장할 수 있는 기반을 쌓아야겠다.</p>
-]]></content>
-      <tags>
-        <tag>개발</tag>
-        <tag>회고</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>[Deep Dive] 원시 값과 객체의 비교</title>
-    <url>/2022/Modern-Javascript-Deep-Dive-Chapter-11-Summary/</url>
-    <content><![CDATA[<h1 id="원시-값-vs-객체-값"><a href="#원시-값-vs-객체-값" class="headerlink" title="원시 값 vs 객체 값"></a>원시 값 vs 객체 값</h1><p>앞서 데이터 타입에서 살펴보았듯이 자바스크립트가 제공하는 데이터타입은 크게 원시 타입과 객체 타입으로 구분할 수 있다.</p>
-<p>데이터 타입을 원시 타입과 객체 타입으로 구분하는 이유는 무엇일까?<br>원시 타입과 객체 타입은 근본적으로 다르다는 의미일 것이다. 원시타입과 객체 타입은 크게 세 가지 측면에서 다르다.</p>
-<ul>
-<li>원시 타입의 값은 변경 불가능한 값이다. 반면 객체(참조) 타입의 값은 변경 가능한 값이다.</li>
-<li>원시 값을 변수에 할당하면 변수(확보된 메모리 공간)에는 실제 값이 저장된다. 반면 객체를 변수에 할당하면 변수에는 참조 값이 저장된다.</li>
-<li>원시 값을 갖는 변수를 다른 변수에 할당하면 원본의 원시 값이 복사되어 전달된다. 이를 값에 의한 전달이라고 한다. 반면 객체를 가리키는 변수를 다른 변수에 할당하면 원본의 참조 값이 복사되어 전달된다. 이를 참조에 의한 전달이라고 한다.</li>
-</ul>
-<p>원시 타입과 객체 타입에 대해 조금 더 자세히 살펴보자</p>
-<h2 id="원시-값"><a href="#원시-값" class="headerlink" title="원시 값"></a>원시 값</h2><h3 id="변경-불가능한-값"><a href="#변경-불가능한-값" class="headerlink" title="변경 불가능한 값"></a>변경 불가능한 값</h3><p>원시 타입의 값은 변경 불가능한 값이다. 다시 말해, 한번 생성된 원시 값은 읽기 전용 값으로 변경할 수 없다.</p>
-<p>값을 변경할 수 없다는 것이 어떤 의미일까? 먼저 변수와 값을 정확히 구분해야 한다.<br>변수란 하나의 값을 저장하기 위해 확보한 메모리 공간 자체 또는 그 메모리 공간을 식별하기 위해 붙인 이름이고, 값이란 변수에 저장된 데이터로 표현식이 평가되어 생성된 결과이다. 값을 변경할 수 없다는 것은 변수에 관한 것이 아닌 값에 대한 진술이다.</p>
-<p>즉 원시 값을 변경할 수 없다는 것은 원시 값 자체를 변경할 수 없다는 것이지 변수 값을 변경할 수 없다는 것이 아니다. 변수 값은 재할당을 통해 언제든지 변경 가능하다. 단 상수는 재할당이 금지된 변수이므로 변수 값을 변경할 수 없다.</p>
-<p>원시 값은 변경 불가능한 값이므로 데이터의 신뢰성을 보장한다.</p>
-<p>변수에서 살펴보았듯이 원시 값을 할당한 변수에 새로운 원시 값을 재할당하면 메모리 공간에 저장되어 있는 재할당 이전의 원시 값을 변경하는 것이 아니라 새로운 메모리 공간을 확보하고 재할당할 값을 저장한 후 변수가 새롭게 재할당한 원시 값을 가리킨다.</p>
-<p>변수가 참조하던 메모리 공간의 주소가 변경된 이유는 변수에 할당된 원시 값이 변경 불가능한 값이기 때문이다.<br>만약 원시 값이 변경 가능한 값이라면 변수에 새로운 원시 값을 재할당했을 때 변수가 가리키던 메모리 공간의 주소를 바꿀 필요 없이 원시 값 자체를 변경하면 될 것이다.</p>
-<p>하지만 원시 값은 불변성을 가지므로 원시 값을 할당한 변수는 재할당 이외에 변수 값을 변경할 수 있는 방법이 없다.</p>
-<h3 id="값에-의한-전달"><a href="#값에-의한-전달" class="headerlink" title="값에 의한 전달"></a>값에 의한 전달</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> score = <span class="number">80</span>;</span><br><span class="line"><span class="keyword">var</span> copy = score;</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(score); <span class="comment">// 80</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(copy); <span class="comment">// 80</span></span><br><span class="line"></span><br><span class="line">score = <span class="number">100</span>;</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(score); <span class="comment">// 100</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(copy); <span class="comment">// ?</span></span><br></pre></td></tr></table></figure>
-
-<p>score 변수에 숫자 값 80을 할당 한 후 copy 변수에 score 변수를 할당했다. 그 후, score 변수에 새로운 숫자 값 100을 재할당하면 copy 변수의 값은 어떻게 될까?</p>
-<p>이 질문은 결국 “변수에 변수를 할당했을 때 무엇이 어떻게 전달되는가?”이다. copy &#x3D; score에서 score는 변수 값 80으로 평가되므로 copy 변수에도 80이 할당된다. 이처럼 변수에 원시 값을 갖는 변수를 할당하면 할당받는 변수(copy)에는 할당되는 변수(score)의 원시 값이 복사되어 전달되는데 이를 값에 의한 전달이라 한다.</p>
-<p>score 변수와 copy 변수는 숫자 값 80을 갖는다는 점은 동일하지만 score 변수와 copy 변수의 값 80은 다른 메모리 공간에 저장된 별개의 값이다.<br>따라서 score변수의 값을 변경하더라도 copy 변수의 값은 어떠한 영향을 주지 않는다. 즉 마지막 <code>console.log(copy)</code>의 결과는 80이다.</p>
-<p>사실 이는 실제 자바스크립트 엔진의 내부 동작과 정확히 일치하지 않을 수 있다. ECMAScript 사양에는 변수를 통해 메모리를 어떻게 관리해야 하는지 명확하게 정의되어 있지 않다. 따라서 실제 자바스크립트 엔진을 구현하는 제조사에 따라 내부 동작은 차이가 있을 수 있다.</p>
-<p>위에서는 변수에 원시 값을 갖는 변수를 할당하면 원시 값이 복사되어 새로운 메모리 공간에 할당한다고 설명했지만, 변수에 원시 값을 갖는 변수를 할당하는 시점에는 두 변수가 같은 원시 값을 참조하다가 어느 한쪽의 변수에 재할당이 이뤄졌을 때 비로소 새로운 메모리 공간에 재할당된 값을 저장하도록 동작할 수도 있다.</p>
-<p>또한 엄격히 말하자면 변수와 같은 식별자는 값이 아니라 메모리 주소를 기억하기에 변수에는 값이 전달되는 것이 아니라 메모리 주소가 전달된다. 따라서 “값에 의한 전달”이라는 용어도 사실 오해가 있을 수 있다.</p>
-<p>결국 “값에 의한 전달”도 사실은 값이 아니라 메모리 주소를 전달한다. 단 전달된 메모리 주소를 통해 메모리 공간에 접근하면 값을 참조할 수 있다.<br>중요한 것은 변수에 원시 값을 갖는 변수를 할당하면 변수 할당 시점이든, 두 변수 중 어느 하나의 변수에 값을 재할당하는 시점이든 결국은 두 변수의 원시 값은 서로 다른 메모리 공간에 저장된 별개의 값이 되어 어느 한쪽에서 재할당을 통해 값을 변경하더라도 서로 간섭할 수 없다는 것이다.</p>
-<h2 id="객체"><a href="#객체" class="headerlink" title="객체"></a>객체</h2><p>객체는 프로퍼티의 개수가 정해져 있지 않으며, 동적으로 추가되고 삭제할 수 있다. 또 프로퍼티의 값에도 제약이 없다.<br>즉 객체는 원시 값과는 다르게 확보해야 할 메모리 공간의 크기를 사전에 정해 둘 수 없다.</p>
-<p>따라서 객체는 원시 값과는 다른 방식으로 동작하도록 설계되어 있다. 원시 값과의 차이를 통해 객체에 대해 이해해보자.</p>
-<h3 id="변경-가능한-값"><a href="#변경-가능한-값" class="headerlink" title="변경 가능한 값"></a>변경 가능한 값</h3><p>객체 타입의 값은 변경 가능한 값이다. 이게 어떤 의미일까? 먼저 변수에 객체를 할당하면 어떤 일이 일어나는지 살펴보자</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> person = &#123;</span><br><span class="line">  <span class="attr">name</span>: <span class="string">&#x27;Lee&#x27;</span>,</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-<p>원시 값을 할당한 변수가 기억하는 메모리 주소를 통해 메모리 공간에 접근하면 원시 값에 접근할 수 있다.<br>즉, 원시 값을 할당한 변수는 원시 값 자체를 값으로 갖는다. 하지만 객체를 할당한 변수가 기억하는 메모리 주소를 통해 메모리 공간에 접근하면 참조 값에 접근할 수 있다. 참조 값은 생성된 객체가 저장된 메모리 공간의 주소이다.</p>
-<p>원시 값을 할당한 변수를 참조하면 메모리에 저장되어 있는 원시 값에 접근한다. 하지만 객체를 할당한 변수를 참조하면 메모리에 저장되어 있는 참조 값을 통해 실제 객체에 접근한다.</p>
-<p>원시 값은 변경 불가능한 값이므로 원시 값을 갖는 변수의 값을 변경하려면 재할당 외에는 방법이 없다. 하지만 객체는 변경 가능한 값이므로 객체를 할당한 변수는 재할당 없이 객체를 직접 변경할 수 있다. 재할당 없이 프로퍼티를 동적으로 추가할 수도 있고 프로퍼티 값을 갱신할 수도 있으며 프로퍼티 자체를 삭제할 수도 있다.</p>
-<p>이때 객체를 할당한 변수에 재할당을 하지 않았으므로 객체를 할당한 변수의 참조 값은 변경되지 않는다.<br>이는 메모리 사용의 효율성과 성능을 위해 어느 정도의 구조적인 단점을 감안한 설계라고 할 수 있다.</p>
-<p>객체는 이러한 구조적 단점에 따른 부작용이 존재한다. 원시 값과는 다르게 여러 개의 식별자가 하나의 객체를 공유할 수 있다는 것이다.</p>
-<h3 id="참조에-의한-전달"><a href="#참조에-의한-전달" class="headerlink" title="참조에 의한 전달"></a>참조에 의한 전달</h3><p>여러 개의 식별자가 하나의 객체를 공유할 수 있다는 것이 무슨 의미인지, 어떤 부작용이 발생하는지 알아보자.</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> person = &#123;</span><br><span class="line">  <span class="attr">name</span>: <span class="string">&#x27;Lee&#x27;</span>;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> copy = person;</span><br></pre></td></tr></table></figure>
-
-<p>객체를 가리키는 변수(원본, person)을 다른 변수(사본, copy)에 할당하면 원본의 참조 값이 복사되어 전달되는데 이를 참조에 의한 전달이라 한다.</p>
-<p>원본 person과 사본 copy는 저장된 메모리 주소는 다르지만 동일한 참조 값을 가지므로 원본 person과 사본 copy 모두 동일한 객체를 가리키게 된다.<br>이것이 두 개의 식별자가 하나의 객체를 공유한다는 것을 의미한다. 따라서 원본 또는 사본 중 어느 한 쪽에서 객체를 변경하면 서로 영향을 주고받는다.</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> person = &#123;</span><br><span class="line">  <span class="attr">name</span>: <span class="string">&#x27;Lee&#x27;</span>,</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> copy = person;</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(copy === person); <span class="comment">// true</span></span><br><span class="line"></span><br><span class="line">copy.<span class="property">name</span> = <span class="string">&#x27;Kim&#x27;</span>;</span><br><span class="line">person.<span class="property">address</span> = <span class="string">&#x27;Seoul&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// copy와 person은 동일한 객체를 가리키므로 서로 영향을 주고 받는다.</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(person); <span class="comment">// &#123;name: &#x27;Kim&#x27;, address: &#x27;Seoul&#x27;&#125;</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(copy); <span class="comment">// &#123;name: &#x27;Kim&#x27;, address: &#x27;Seoul&#x27;&#125;</span></span><br></pre></td></tr></table></figure>
-
-<p>결국 “값에 의한 전달”과 “참조에 의한 전달”은 식별자가 기억하는 메모리 공간에 저장되어 있는 값을 복사해 전달한다는 면에서 동일하다.<br>다만 식별자가 기억하는 메모리 공간, 즉 변수에 저장되어 있는 값이 원시 값이냐 참조 값이냐의 차이만 있을 뿐이다. 따라서 자바스크립트에는 “참조에 의한 전달”은 존재하지 않고 “값에 의한 전달”만이 존재한다고 말할 수 있지만 전달되는 값이 원시 값인지 참조 값인지 구별해 강조하는 의미로 구분해 부른다고 할 수 있다.</p>
-]]></content>
-      <tags>
-        <tag>개발</tag>
-        <tag>자바스크립트</tag>
-        <tag>모던 자바스크립트 Deep Dive</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>[Deep Dive] 타입 변환과 단축 평가</title>
-    <url>/2022/Modern-Javascript-Deep-Dive-Chapter-9-Summary/</url>
-    <content><![CDATA[<h1 id="타입-변환이란"><a href="#타입-변환이란" class="headerlink" title="타입 변환이란?"></a>타입 변환이란?</h1><p>앞서 자바스크립트의 모든 값은 타입이 있음을 알아보았다.<br>값의 타입은 개발자의 의도에 따라 다른 타입으로 변환할 수 있는데 이를 명시적 타입 변환 또는 타입 캐스팅이라 한다.</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> x = <span class="number">10</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 명시적 타입 변환, 숫자 -&gt; 문자열</span></span><br><span class="line"><span class="keyword">var</span> str = x.<span class="title function_">toString</span>();</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="keyword">typeof</span> str, str); <span class="comment">// string 10</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// x 변수의 값이 변경된 것은 아님</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="keyword">typeof</span> x, x); <span class="comment">// number 10</span></span><br></pre></td></tr></table></figure>
-
-<p>개발자의 의도와는 상관없이 표현식을 평가하는 도중 자바스크립트 엔진에 의해 암묵적으로 타입이 자동 변환되기도 한다.<br>이를 암묵적 타입 변환 또는 타입 강제 변환이라 한다.</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> x = <span class="number">10</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 암묵적 타입 변환, 숫자 -&gt; 문자열</span></span><br><span class="line"><span class="keyword">var</span> str = x + <span class="string">&#x27;&#x27;</span>;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="keyword">typeof</span> str, str); <span class="comment">// string 10</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// x 변수의 값이 변경된 것은 아님</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="keyword">typeof</span> x, x); <span class="comment">// number 10</span></span><br></pre></td></tr></table></figure>
-
-<p>예시에서 볼 수 있듯이 명시적 타입 변환이나 암묵적 타입 변환이 기존 원시 값을 직접 변경하는 것은 아니다.<br>원시 값은 변경 불가능한 값으로 변경할 수 없다. 타입 변환이란 기존 원시 값을 사용해 다른 타입의 새로운 원시 값을 생성하는 것이다.</p>
-<p>명시적 타입 변환은 타입을 변경하겠다는 개발자의 의지가 코드에 명백히 드러난다.<br>하지만 암묵적 타입 강제 변환은 자바스크립트 엔진에 의해 암묵적으로, 즉 드러나지 않게 타입이 자동 변환되기 때문에 타입을 변경하겠다는 개발자의 의지가 코드에 명백히 나타나지 않는다.</p>
-<p>따라서 자신이 작성한 코드에서 암묵적 타입 변환이 발생하는지, 발생한다면 어떤 타입의 어떤 값으로 변환되는지 예측 가능해야 한다.<br>만약 타입 변환 결과를 예측하지 못하거나 예측이 결과와 일치하지 않는다면 오류를 생산할 가능성이 높아진다.<br>타입 변환이 어떻게 동작하는지 정확히 이해하고 사용하자.</p>
-<h2 id="암묵적-타입-변환"><a href="#암묵적-타입-변환" class="headerlink" title="암묵적 타입 변환"></a>암묵적 타입 변환</h2><p>표현식을 평가할 때 코드의 문맥메 부합하지 않는 다양한 상황이 발생할 수 있다. 이때 프로그래밍 언어에 따라 에러를 발생시키기도 하지만 자바스크립트는 가급적 에러를 발생시키지 않도록 암묵적 타입 변환을 통해 표현식을 펴가한다.</p>
-<p>암묵적 타입 변환이 발생하면 문자열, 숫자, 불리언과 같은 원시 타입 중 하나로 타입을 자동 변환한다.<br>타입 별로 암묵적 타입 변환이 어떻게 발생하는지 살펴보자.</p>
-<h3 id="문자열-타입으로-변환"><a href="#문자열-타입으로-변환" class="headerlink" title="문자열 타입으로 변환"></a>문자열 타입으로 변환</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="number">1</span> + <span class="string">&#x27;2&#x27;</span>; <span class="comment">// &#x27;12&#x27;</span></span><br></pre></td></tr></table></figure>
-
-<p>위 코드의 + 연산잔느 피연산자 중 하나 이상이 문자열이므로 문자열 연결 연산자로 동작한다.<br>문자열 연결 연산자의 역할은 문자열 값을 만드는 것이다. 따라서 문자열 연결 연산자의 모든 피연산자는 코드의 문맥상 모두 문자열 타입이어야 한다.</p>
-<p>자바스크립트 엔진은 문자열 연결 연산자 표현식을 평가하기 위해 문자열 연결 연산자의 피연산자 중에서 문자열 타입이 아닌 피연산자를 문자열 타입으로 암묵적 타입 변환한다.</p>
-<p>자바스크립트 엔진은 문자열 타입이 아닌 값을 문자열 타입으로 암묵적 타입 변환을 수행할 때 다음과 같이 동작한다.</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 숫자 타입</span></span><br><span class="line"><span class="number">0</span> + <span class="string">&#x27;&#x27;</span> <span class="comment">// &#x27;0&#x27;</span></span><br><span class="line">-<span class="number">0</span> + <span class="string">&#x27;&#x27;</span> <span class="comment">// &#x27;0&#x27;</span></span><br><span class="line"><span class="number">1</span> + <span class="string">&#x27;&#x27;</span> <span class="comment">// &#x27;1&#x27;</span></span><br><span class="line">-<span class="number">1</span> + <span class="string">&#x27;&#x27;</span> <span class="comment">// &#x27;-1&#x27;</span></span><br><span class="line"><span class="title class_">NaN</span> + <span class="string">&#x27;&#x27;</span> <span class="comment">// &#x27;NaN&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 불리언 타입</span></span><br><span class="line"><span class="literal">true</span> + <span class="string">&#x27;&#x27;</span> <span class="comment">// &#x27;true&#x27;</span></span><br><span class="line"><span class="literal">false</span> + <span class="string">&#x27;&#x27;</span> <span class="comment">// &#x27;false&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// null 타입</span></span><br><span class="line"><span class="literal">null</span> + <span class="string">&#x27;&#x27;</span> <span class="comment">// &#x27;null&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// undefined 타입</span></span><br><span class="line"><span class="literal">undefined</span> + <span class="string">&#x27;&#x27;</span> <span class="comment">// &#x27;undefined&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 심벌 타입</span></span><br><span class="line">(<span class="title class_">Symbol</span>()) + <span class="string">&#x27;&#x27;</span> <span class="comment">// TypeError: Cannot convert a Symbol value to a string</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 객체 타입</span></span><br><span class="line">(&#123;&#125;) + <span class="string">&#x27;&#x27;</span> <span class="comment">// &#x27;[object Object]&#x27;</span></span><br><span class="line"><span class="title class_">Math</span> + <span class="string">&#x27;&#x27;</span> <span class="comment">// &#x27;[object Math]&#x27;</span></span><br><span class="line">[] + <span class="string">&#x27;&#x27;</span> <span class="comment">// &#x27;&#x27;</span></span><br><span class="line">[<span class="number">10</span>, <span class="number">20</span>] + <span class="string">&#x27;&#x27;</span> <span class="comment">// &#x27;10,20&#x27;</span></span><br><span class="line">(<span class="keyword">function</span>(<span class="params"></span>)&#123;&#125;) + <span class="string">&#x27;&#x27;</span> <span class="comment">// &#x27;function()&#123;&#125;&#x27;</span></span><br><span class="line"><span class="title class_">Array</span> + <span class="string">&#x27;&#x27;</span> <span class="comment">// &#x27;function Array() &#123; [native code] &#125;&#x27;</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="숫자-타입으로-변환"><a href="#숫자-타입으로-변환" class="headerlink" title="숫자 타입으로 변환"></a>숫자 타입으로 변환</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="number">1</span> - <span class="string">&#x27;1&#x27;</span>; <span class="comment">// 0</span></span><br><span class="line"><span class="number">1</span> * <span class="string">&#x27;10&#x27;</span>; <span class="comment">// 10</span></span><br><span class="line"><span class="number">1</span> / <span class="string">&#x27;one&#x27;</span>; <span class="comment">// NaN</span></span><br></pre></td></tr></table></figure>
-
-<p>위 코드에서 사용한 연산자는 모두 산술 연산자이다.<br>산술 연산자의 역할은 숫자 값을 만드는 것이므로 산술 연산자의 모든 피연산자는 코드 문맥상 모두 숫자 타입이어야 한다.</p>
-<p>자바스크립트 엔진은 산술 연산자 표현식을 평가하기 위해 산술 연산자의 피연산자 중에서 숫자 타입이 아닌 피연산자를 숫자 타입으로 암묵적 타입 변환한다. 이때 피연산자를 숫자 타입으로 변환할 수 없는 경우는 산술 연산을 수행할 수 없으므로 표현식의 평가 결과는 NaN이 된다.</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="string">&#x27;1&#x27;</span> &gt; <span class="number">0</span>; <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
-
-<p>비교 연산자의 역할은 불리언 값을 만드는 것이다. &gt; 비교 연산자는 피연산자의 크기를 비교하므로 모든 피연산자는 코드 문맥상 모두 숫자 타입이어야 한다.<br>자바스크립트 엔진은 비교 연산자의 피연산자 중에서 숫자 타입이 아닌 피연산자를 숫자 타입으로 암묵적 타입 변환한다.</p>
-<p>자바스크립트 엔진은 숫자 타입이 아닌 값을 숫자 타입으로 암묵적 타입 변환을 수행할 때 다음과 같이 동작한다.</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 문자열 타입</span></span><br><span class="line">+<span class="string">&#x27;&#x27;</span> + <span class="comment">// 0</span></span><br><span class="line">  <span class="string">&#x27;0&#x27;</span> + <span class="comment">// 0</span></span><br><span class="line">  <span class="string">&#x27;1&#x27;</span> + <span class="comment">// 1</span></span><br><span class="line">  <span class="string">&#x27;string&#x27;</span> + <span class="comment">// NaN</span></span><br><span class="line">  <span class="comment">// 불리언 타입</span></span><br><span class="line">  <span class="literal">true</span> + <span class="comment">// 1</span></span><br><span class="line">  <span class="literal">false</span> + <span class="comment">// 0</span></span><br><span class="line">  <span class="comment">// null 타입</span></span><br><span class="line">  <span class="literal">null</span> / <span class="number">0</span> +</span><br><span class="line">  <span class="comment">// undefined 타입</span></span><br><span class="line">  <span class="literal">undefined</span> + <span class="comment">// NaN</span></span><br><span class="line">  <span class="comment">// 심벌 타입</span></span><br><span class="line">  <span class="title class_">Symbol</span>() + <span class="comment">// TypeError: Cannot convert a Symbol value to a number</span></span><br><span class="line">  <span class="comment">// 객체 타입</span></span><br><span class="line">  &#123;&#125; + <span class="comment">// NaN</span></span><br><span class="line">  [] + <span class="comment">// 0</span></span><br><span class="line">  [<span class="number">10</span>, <span class="number">20</span>] + <span class="comment">// NaN</span></span><br><span class="line">  <span class="keyword">function</span> (<span class="params"></span>) &#123;&#125;; <span class="comment">// NaN</span></span><br></pre></td></tr></table></figure>
-
-<p>빈 문자열(‘’), 빈 배열([]), null, false는 0으로 true는 1로 변환된다.<br>객체와 빈 배열이 아닌 배열, undefined는 변환되지 않아 NaN이 되는 것에 주의하자.</p>
-<h3 id="불리언-타입으로-변환"><a href="#불리언-타입으로-변환" class="headerlink" title="불리언 타입으로 변환"></a>불리언 타입으로 변환</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> (<span class="string">&#x27;&#x27;</span>) <span class="variable language_">console</span>.<span class="title function_">log</span>(x);</span><br></pre></td></tr></table></figure>
-
-<p>if 문이나 for 문과 같은 제어문 또는 삼항 조건 연산자의 조건식은 불리언 값, 즉 논리적 참과 거짓으로 평가되어야 한느 표현식이다.<br>자바스크립트 엔진은 조건식의 평가 결과를 불리언 타입으로 암묵적 타입 변환한다.</p>
-<p>이때 자바스크립트 엔진은 불리언 타입이 아닌 값을 Truthy 값(참으로 평가되는 값) 또는 Falsy 값(거짓으로 평가되는 값)으로 구분한다.</p>
-<p>false로 평가되는 Falsy 값은 다음과 같다.</p>
-<ul>
-<li>false</li>
-<li>undefined</li>
-<li>null</li>
-<li>0, -0</li>
-<li>NaN</li>
-<li>‘’(빈 문자열)</li>
-</ul>
-<p>Falsy 값 외의 모든 값은 모두 true로 평가되는 Truthy 값이다.</p>
-<h2 id="명시적-타입-변환"><a href="#명시적-타입-변환" class="headerlink" title="명시적 타입 변환"></a>명시적 타입 변환</h2><p>개발자의 의도에 따라 명시적으로 타입을 변경하는 방법은 다양하다.<br>표준 빌트인 생성자 함수(String, Number, Boolean)을 new 연산자 없이 호출하는 방법과 빌트인 메서드를 사용하는 방법, 그리고 앞서 살펴본 암묵적 타입 변환을 이용하는 방법이 있다.</p>
-<h3 id="문자열-타입으로-변환-1"><a href="#문자열-타입으로-변환-1" class="headerlink" title="문자열 타입으로 변환"></a>문자열 타입으로 변환</h3><p>문자열 타입이 아닌 값을 문자열 타입으로 변환하는 방법은 다음과 같다.</p>
-<ul>
-<li>String 생성자 함수를 new 연산자 없이 호출</li>
-<li>Object.prototype.toString 메서드를 사용</li>
-<li>문자열 연결 연산자를 이용</li>
-</ul>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="title class_">String</span>(<span class="number">1</span>); <span class="comment">// &#x27;1&#x27;</span></span><br><span class="line"><span class="title class_">String</span>(<span class="title class_">NaN</span>); <span class="comment">// &#x27;NaN&#x27;</span></span><br><span class="line"><span class="title class_">String</span>(<span class="literal">true</span>); <span class="comment">// &#x27;true&#x27;</span></span><br><span class="line"></span><br><span class="line">(<span class="number">1</span>).<span class="title function_">toString</span>(); <span class="comment">// &#x27;1&#x27;</span></span><br><span class="line"><span class="title class_">NaN</span>.<span class="title function_">toString</span>(); <span class="comment">// &#x27;NaN&#x27;</span></span><br><span class="line"><span class="literal">true</span>.<span class="title function_">toString</span>(); <span class="comment">// &#x27;true&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="number">1</span> + <span class="string">&#x27;&#x27;</span>; <span class="comment">// &#x27;1&#x27;</span></span><br><span class="line"><span class="title class_">NaN</span> + <span class="string">&#x27;&#x27;</span>; <span class="comment">// &#x27;NaN&#x27;</span></span><br><span class="line"><span class="literal">true</span> + <span class="string">&#x27;&#x27;</span>; <span class="comment">// &#x27;true&#x27;</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="숫자-타입으로-변환-1"><a href="#숫자-타입으로-변환-1" class="headerlink" title="숫자 타입으로 변환"></a>숫자 타입으로 변환</h3><p>숫자 타입이 아닌 값을 숫자 타입으로 변환하는 방법은 다음과 같다.</p>
-<ul>
-<li>Number 생성자 함수를 new 연산자 없이 호출</li>
-<li>parseInt, parseFloat 함수를 사용(문자열만 숫자 타입으로 변환 가능)</li>
-<li>+ 단항 산술 연산자를 이용</li>
-<li>* 산술 연산자를 이용</li>
-</ul>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="title class_">Number</span>(<span class="string">&#x27;0&#x27;</span>); <span class="comment">// 0</span></span><br><span class="line"><span class="title class_">Number</span>(<span class="string">&#x27;10.53&#x27;</span>); <span class="comment">// 10.53</span></span><br><span class="line"><span class="title class_">Number</span>(<span class="literal">true</span>); <span class="comment">// 1</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">parseInt</span>(<span class="string">&#x27;0&#x27;</span>); <span class="comment">// 0</span></span><br><span class="line"><span class="built_in">parseFloat</span>(<span class="string">&#x27;10.53&#x27;</span>); <span class="comment">// 10.53</span></span><br><span class="line"></span><br><span class="line">+<span class="string">&#x27;0&#x27;</span>; <span class="comment">// 0</span></span><br><span class="line">+<span class="string">&#x27;10.53&#x27;</span>; <span class="comment">// 10.53</span></span><br><span class="line"><span class="literal">true</span>; <span class="comment">// 1</span></span><br><span class="line"></span><br><span class="line"><span class="string">&#x27;0&#x27;</span> * <span class="number">1</span>; <span class="comment">// 0</span></span><br><span class="line"><span class="string">&#x27;10.53&#x27;</span> * <span class="number">1</span>; <span class="comment">// 10.53</span></span><br><span class="line"><span class="literal">true</span> * <span class="number">1</span>; <span class="comment">// 1</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="불리언-타입으로-변환-1"><a href="#불리언-타입으로-변환-1" class="headerlink" title="불리언 타입으로 변환"></a>불리언 타입으로 변환</h3><p>불리언 타입이 아닌 값을 불리언 타입으로 변환하는 방법은 다음과 같다.</p>
-<ul>
-<li>Boolean 생성자 함수를 new 연산자 없이 호출</li>
-<li>부정 논리 연산자(!)를 두전 사용</li>
-</ul>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="title class_">Boolean</span>(<span class="string">&#x27;x&#x27;</span>); <span class="comment">// true</span></span><br><span class="line"><span class="title class_">Boolean</span>(<span class="string">&#x27;&#x27;</span>); <span class="comment">// false</span></span><br><span class="line"><span class="title class_">Boolean</span>(&#123;&#125;); <span class="comment">// true</span></span><br><span class="line"></span><br><span class="line">!!<span class="string">&#x27;x&#x27;</span>; <span class="comment">// true</span></span><br><span class="line">!!<span class="string">&#x27;&#x27;</span>; <span class="comment">// false</span></span><br><span class="line">!!&#123;&#125;; <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="단축-평가"><a href="#단축-평가" class="headerlink" title="단축 평가"></a>단축 평가</h2><p>이전에 연산자를 공부하면서 논리합(||) 연산자와 논리곱(&amp;&amp;) 연산자에 대해 살펴 본 적이 있다.<br>논리합(||) 또는 논리곱(&amp;&amp;) 연산자 표현식은 언제나 2개의 피연산자 중 한쪽으로 평가되는데 이를 설명하기 위해서는 암묵적 타입 변환을 알아야 한다.<br>앞서 암묵적 타입 변환에 대해 살펴보았으니 이에 대해 알아보자.</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="string">&#x27;Cat&#x27;</span> &amp;&amp; <span class="string">&#x27;Dog&#x27;</span>; <span class="comment">// &#x27;Dog&#x27;</span></span><br></pre></td></tr></table></figure>
-
-<p>논리곱(&amp;&amp;) 연산자는 두 개의 피연산자가 모두 true로 평가될 때 true를 반환한다. 논리곱 연산자는 좌항에서 우항으로 평가가 진행된다.</p>
-<p>첫 번째 피연산자 ‘Cat’은 Truthy 값이므로 true로 평가된다. 하지만 이 시점까지는 위 표현식을 평가할 수 없다.<br>두 번째 피연산자까지 평가해 보아야 위 표현식을 평가할 수 있다. 즉 두 번째 피연산자가 논리곱 연산자 표현식의 평가 결과를 결정한다.<br>이때 논리곱 연산자는 논리 연산의 결과를 결정하는 두 번째 피연산자 문자열 ‘Dog’를 타입 변환 없이 그대로 반환한다.</p>
-<p>논리합(||) 연산자도 논리곱(&amp;&amp;) 연산자와 동일하게 동작한다.</p>
-<p>논리곱(&amp;&amp;) 연산자와 논리합(||) 연산자는 이처럼 논리 연산의 결과를 결정하는 피연산자를 타입 변환하지 않고 그대로 반환한다.<br>이를 단축평가라 한다. 단축 평가는 표현식을 평가하는 도중에 평가 결과가 확정된 경우 나머지 평가 과정을 생략하는 것을 말한다.</p>
-<p>단축 평가를 사용하면 if 문을 대체할 수 있다. 어떤 조건이 Truthy 값일 때 무언가를 해야 한다면 논리곱(&amp;&amp;) 연산자를, 어떤 조건이 Falsy 값일 때 무언가를 해야 한다면 논리합(||) 연산자를 이용할 수 있다.</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> done = <span class="literal">true</span>;</span><br><span class="line"><span class="keyword">var</span> message = <span class="string">&#x27;&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> (done) message = <span class="string">&#x27;완료&#x27;</span>;</span><br><span class="line">message = done &amp;&amp; <span class="string">&#x27;완료&#x27;</span>;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(message); <span class="comment">// 완료</span></span><br></pre></td></tr></table></figure>
-
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> done = <span class="literal">false</span>;</span><br><span class="line"><span class="keyword">var</span> message = <span class="string">&#x27;&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> (done) message = <span class="string">&#x27;미완료&#x27;</span>;</span><br><span class="line">message = done || <span class="string">&#x27;미완료&#x27;</span>;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(message); <span class="comment">// 미완료</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="옵셔널-체이닝-연산자"><a href="#옵셔널-체이닝-연산자" class="headerlink" title="옵셔널 체이닝 연산자"></a>옵셔널 체이닝 연산자</h3><p>ES11에서 도입된 옵셔널 체이닝 연산자 ?.는 좌항의 피연산자가 null 또는 undefined인 경우 undefined를 반환하고, 그렇지 않으면 우항의 프로퍼티 참조를 이어간다.</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> elem = <span class="literal">null</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> value = elem?.<span class="property">value</span>;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(value); <span class="comment">// undefined</span></span><br></pre></td></tr></table></figure>
-
-<p>옵셔널 체이닝 연산자는 객체를 가리키기를 기대하는 변수가 null 또는 undefined가 아닌지 확인하고 프로퍼티를 참조할 때 유용하다.<br>옵셔널 체이닝 연산자가 도입되기 이전에는 논리곱 연산자를 사용한 단축 평가를 통해 변수가 null 또는 undefined인지 확인했다.</p>
-<p>논리곱 연산자는 좌항의 피연산자가 Falsy 값이면 좌항 피연산자를 그대로 반환한다. 좌항 피연산자가 Falsy 값인 0이나 ‘’인 경우도 마찬가지다.<br>하지만 0이나 ‘’은 객체로 평가될 때도 있다. 옵셔널 체이닝 연산자는 좌항 피연산자가 Falsy 값이라도 null 또는 undefined가 아니면 우항의 프로퍼티 참조를 이어간다는 차이점이 있다.</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> str = <span class="string">&#x27;&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> length1 = str &amp;&amp; str.<span class="property">length</span>;</span><br><span class="line"><span class="keyword">var</span> length2 = str?.<span class="property">length</span>;</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(length1); <span class="comment">// &#x27;&#x27;</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(length2); <span class="comment">// 0</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="null-병합-연산자"><a href="#null-병합-연산자" class="headerlink" title="null 병합 연산자"></a>null 병합 연산자</h3><p>ES11에서 도입된 null 병합 연산자 ??는 좌항의 피연산자가 null 또는 undefined인 경우 우항의 피연산자를 반환하고, 그렇지 않으면 좌항의 피연산자를 반환한다.</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> foo = <span class="literal">null</span> ?? <span class="string">&#x27;default string&#x27;</span>;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(foo); <span class="comment">// &#x27;default string&#x27;</span></span><br></pre></td></tr></table></figure>
-
-<p>null 병합 연산자는 변수에 기본값을 설정할 때 유용하다. null 병합 연산자가 도입되기 이전에는 논리합 연산자를 사용한 단축 평가를 통해 변수에 기본값을 설정했다.</p>
-<p>논리합 연산자는 좌항의 피연산자가 Falsy 값이면 우항의 피연산자를 반환한다. 만약 Falsy 값인 0이나 ‘’도 기본값으로 유효하다면 예기치 않은 동작이 발생할 수 있다. 하지만 null 병합 연산자는 좌항의 피연산자가 Falsy 값이라도 null 또는 undefined가 아니면 좌항의 피연산자를 그대로 반환한다는 차이점이 있다.</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> foo1 = <span class="string">&#x27;&#x27;</span> || <span class="string">&#x27;default string&#x27;</span>;</span><br><span class="line"><span class="keyword">var</span> foo2 = <span class="string">&#x27;&#x27;</span> ?? <span class="string">&#x27;default string&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(foo1); <span class="comment">// &#x27;default string&#x27;</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(foo2); <span class="comment">// &#x27;&#x27;</span></span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <tags>
-        <tag>개발</tag>
-        <tag>자바스크립트</tag>
-        <tag>모던 자바스크립트 Deep Dive</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>[Deep Dive] 표현식과 문</title>
-    <url>/2022/Modern-Javascript-Deep-Dive-Chapter-5-Summary/</url>
-    <content><![CDATA[<p>변수에 대해 살펴보면서 지속적으로 값이라는 용어가 등장했다. 표현식과 문에 대해 알아보기 이전에 값이란 무엇인지 알아보자.</p>
-<hr>
-
-<h1 id="값"><a href="#값" class="headerlink" title="값"></a>값</h1><p>값이란 (표현)식이 평가되어 생성된 결과를 말한다.<br>평가란 식을 해석해서 값을 생성하거나 참조하는 것을 의미한다.</p>
-<p>변수란 하나의 값을 저장하기 위해 확보한 메모리 공간 자체 또는 그 메모리 공간을 식별하기 위해 붙인 이름이였다. 즉 변수에 할당되는 것은 값이다.</p>
-<p>값이란 어떻게 생성할 수 있을까? 가장 기본적인 방법은 리터럴을 사용하는 것이다.</p>
-<hr>
-
-<h1 id="리터럴"><a href="#리터럴" class="headerlink" title="리터럴"></a>리터럴</h1><p>리터럴은 사람이 이해할 수 있는 문자 또는 약속된 기호를 사용해 값을 생성하는 표기법이다.</p>
-<p>리터럴은 문자 또는 미리 약속된 기호로 표기한 코드이며 자바스크립트 엔진은 코드가 실행되는 시점인 런타임에 리터럴을 평가해 값을 생성한다.</p>
-<p>리터럴을 사용해 다양한 종류의 값을 생성할 수 있다.</p>
-<h2 id="엔진은-어떻게-리터럴을-구별할까"><a href="#엔진은-어떻게-리터럴을-구별할까" class="headerlink" title="엔진은 어떻게 리터럴을 구별할까?"></a>엔진은 어떻게 리터럴을 구별할까?</h2><p>리터럴은 값을 생성하기 위해 미리 약속한 표기법으로 자바스크립트 엔진 내부에 리터럴을 구분해 값을 생성 할 수 있도록 하드코딩 되어있다.</p>
-<hr>
-
-<p>리터럴 이외에 값을 생성하는 또 다른 방법에는 무엇이 있을까? 값에 대해 살펴보면서 언급했듯이 표현식이 존재한다.</p>
-<h1 id="표현식"><a href="#표현식" class="headerlink" title="표현식"></a>표현식</h1><p>표현식은 값으로 평가될 수 있는 문이다. 즉 표현식이 평가되면 새로운 값을 생성하거나 값을 참조한다.</p>
-<p>앞서 살펴본 리터럴은 값으로 평가된다. 그러므로 리터럴도 사실 표현식이다.</p>
-<p>표현식은 값으로 평가되는데, 이때 표현식과 표현식이 평가된 값은 동등한 관계이다.</p>
-<p>다음 예시를 살펴보자. 예를들어, 산술 연산자 + 의 좌항과 우항에는 숫자 값이 위치해야 한다. 이 때 표현식이 숫자 값으로 평가될 수 있다면 숫자 값 대신 사용할 수 있다.</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> x = <span class="number">1</span> + <span class="number">2</span>;</span><br><span class="line"></span><br><span class="line">x + <span class="number">3</span>; <span class="comment">// 6</span></span><br></pre></td></tr></table></figure>
-
-<p>위 코드의 x + 3에서 + 연산자의 좌항과 우항에는 숫자 값이 위치해야 한다. 이 때 좌항 x 는 식별자 표현식이다. 즉 x는 할당되어 있는 숫자 값 3 으로 평가된다. 즉 표현식과 표현식이 평가된 값은 동치이며 이처럼 표현식은 다른 표현식의 일부가 되어 새로운 값을 만들어 낼 수 있다.</p>
-<hr>
-
-<p>앞서 표현식은 값으로 평가될 수 있는 문이라고 했다. 그럼 문이란 무엇일까?</p>
-<h1 id="문"><a href="#문" class="headerlink" title="문"></a>문</h1><p>문은 프로그램을 구성하는 기본 단위이자 최소 실행 단위이다. 문은 여러 토큰으로 구성되는데, 토큰이란 문법적인 의미를 가지며, 문법적으로 더 이상 나눌 수 없는 코드의 기본 요소를 의미한다.</p>
-<p>문을 명령문이라고도 부른다. 문이 실행되면 명령이 실행되고 무슨 일인가가 일어나게 된다.</p>
-<p>문은 선언문, 할당문, 조건문, 반복문등 다양한 종류로 나누어진다.</p>
-<p>세미콜론을 통해 문의 종료를 나타낼 수 있다. 즉 자바스크립트 엔진은 세미콜론으로 문이 종료한 위치를 파악하고 순차적으로 하나씩 문을 실행한다. 단 중괄호로 묶은 코드 블록은 자체 종결성을 가지므로 세미콜론을 붙이지 않는다.</p>
-<p>문의 끝에 붙이는 세미콜론은 옵션이다. 이는 자바스크립트 엔진이 소스코드를 해석하며 문의 끝이라고 예측되는 지점에 세미콜론을 자동으로 삽입하는 ASI를 수행하기 때문이다.</p>
-<hr>
-
-<p>그렇다면 표현식과 문은 어떻게 구별 할 수 있을까? 표현식도 문의 일부니 정확히 말하자면 표현식인 문과 표현식이 아닌 문을 어떻게 구별 할 수 있을까?</p>
-<h1 id="표현식인-문과-표현식이-아닌-문"><a href="#표현식인-문과-표현식이-아닌-문" class="headerlink" title="표현식인 문과 표현식이 아닌 문"></a>표현식인 문과 표현식이 아닌 문</h1><p>표현식인 문은 값으로 평가될 수 있는 문이며, 표현식이 아닌 문은 값으로 평가될 수 없는 문을 말한다. 예를들어, 변수 선언문은 값으로 평가될 수 없으므로 표현식이 아닌 문이다.</p>
-<p>표현식인 문과 표현식이 아닌 문을 구별하는 가장 간단한 방법은 변수에 할당해 보는 것이다.</p>
-<p>변수는 값을 저장하기 위한 메모리 공간이였으므로 변수에 할당할 수 있는 문은 즉 값으로 평가된는 표현식이라고 볼 수 있다.</p>
-]]></content>
-      <tags>
-        <tag>개발</tag>
-        <tag>자바스크립트</tag>
-        <tag>모던 자바스크립트 Deep Dive</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>백준 Node.js 입출력법</title>
-    <url>/2022/Node-js-input-and-output-in-Baekjoon-Online-Judge/</url>
-    <content><![CDATA[<p>지금까지 leetcode와 프로그래머스를 통해 코딩테스트 공부를 하고 있었는데 leetcode는 영어 해석의, 프로그래머스는 적은 문제수의 단점을 가지고 있어 백준을 통해 코딩테스트 연습을 시작해보았다.</p>
-<p>백준에서는 javascript로 코딩테스트를 준비하기 위해 node.js를 선택해야 했는데 프로그래머스에서는 함수만 작성하면 되었던 반면에 백준에서는 입출력을 직접 해주어야 했다.</p>
-<p>백준에서 node.js로 입력을 받는 방법은 크게 두가지로 readline 모듈을 사용하는 것과 fs 모듈을 사용하는 것이다. fs 모듈의 경우 readline 모듈보다 코드가 간단하고 더 빠르다고 해 fs 모듈의 대해 찾아보았다.</p>
-<hr>
-
-<h1 id="fs"><a href="#fs" class="headerlink" title="fs"></a><strong>fs</strong></h1><p>FileSystem의 약자인 fs 모듈은 파일 처리와 관련된 모듈이다. <a href="https://help.acmicpc.net/">BOJ 도움말</a>에서는 다음과 같은 코드로 fs 모듈을 통한 입력을 소개하고 있다.</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> fs = <span class="built_in">require</span>(<span class="string">&#x27;fs&#x27;</span>);</span><br><span class="line"><span class="keyword">let</span> input = fs.<span class="title function_">readFileSync</span>(<span class="string">&#x27;/dev/stdin&#x27;</span>).<span class="title function_">toString</span>().<span class="title function_">split</span>(<span class="string">&#x27; &#x27;</span>);</span><br><span class="line"><span class="keyword">let</span> a = <span class="built_in">parseInt</span>(input[<span class="number">0</span>]);</span><br><span class="line"><span class="keyword">let</span> b = <span class="built_in">parseInt</span>(input[<span class="number">1</span>]);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(a+b);</span><br></pre></td></tr></table></figure>
-
-<p>하지만 위 코드를 이용할때에도 입력되는 값에 따라 에러가 발생하는 경우가 있어 다양한 방식의 입력법에 대해 정리해 보았다.</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="number">1.</span> 하나의 값을 입력받을 때</span><br><span class="line"><span class="keyword">const</span> fs = <span class="built_in">require</span>(<span class="string">&#x27;fs&#x27;</span>);</span><br><span class="line"><span class="keyword">const</span> input = fs.<span class="title function_">readFileSync</span>(<span class="string">&quot;/dev/stdin&quot;</span>).<span class="title function_">toString</span>().<span class="title function_">trim</span>();</span><br><span class="line"></span><br><span class="line"><span class="number">2.</span> 공백으로 구분된 한 줄의 값들을 입력받을 때</span><br><span class="line"><span class="keyword">const</span> fs = <span class="built_in">require</span>(<span class="string">&#x27;fs&#x27;</span>);</span><br><span class="line"><span class="keyword">const</span> input = fs.<span class="title function_">readFileSync</span>(<span class="string">&quot;/dev/stdin&quot;</span>).<span class="title function_">toString</span>().<span class="title function_">trim</span>().<span class="title function_">split</span>(<span class="string">&quot; &quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="number">3.</span> 여러 줄의 값들을 입력받을 때</span><br><span class="line"><span class="keyword">const</span> fs = <span class="built_in">require</span>(<span class="string">&#x27;fs&#x27;</span>);</span><br><span class="line"><span class="keyword">const</span> input = fs.<span class="title function_">readFileSync</span>(<span class="string">&quot;/dev/stdin&quot;</span>).<span class="title function_">toString</span>().<span class="title function_">trim</span>().<span class="title function_">split</span>(<span class="string">&quot;\n&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="number">4.</span> 첫 번째 줄에 자연수 n을 입력받고, 그 다음줄에 공백으로 구분된 n개의 값들을 입력받을 때</span><br><span class="line"><span class="keyword">const</span> fs = <span class="built_in">require</span>(<span class="string">&#x27;fs&#x27;</span>);</span><br><span class="line"><span class="keyword">const</span> [n, ...arr] = fs.<span class="title function_">readFileSync</span>(<span class="string">&quot;/dev/stdin&quot;</span>).<span class="title function_">toString</span>().<span class="title function_">trim</span>().<span class="title function_">split</span>(<span class="regexp">/\s/</span>);</span><br><span class="line"></span><br><span class="line"><span class="number">5.</span> 첫 번째 줄에 자연수 n을 입력받고, 그 다음줄부터 n개의 줄에 걸쳐 한 줄에 하나의 값을 입력받을 때</span><br><span class="line"><span class="keyword">const</span> fs = <span class="built_in">require</span>(<span class="string">&#x27;fs&#x27;</span>);</span><br><span class="line"><span class="keyword">const</span> [n, ...arr] = fs.<span class="title function_">readFileSync</span>(<span class="string">&quot;/dev/stdin&quot;</span>).<span class="title function_">toString</span>().<span class="title function_">trim</span>().<span class="title function_">split</span>(<span class="string">&quot;\n&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="number">6.</span> 하나의 값 또는 공백으로 구분된 여러 값들을 여러 줄에 걸쳐 뒤죽박죽 섞여서 입력받을 때</span><br><span class="line">  ex) n 입력 - 공백으로 구분된 n개의 값 입력 - m 입력 - 여러 줄에 걸쳐 m개의 값 입력</span><br><span class="line"><span class="keyword">const</span> fs = <span class="built_in">require</span>(<span class="string">&#x27;fs&#x27;</span>);</span><br><span class="line"><span class="keyword">const</span> input = fs.<span class="title function_">readFileSync</span>(<span class="string">&quot;/dev/stdin&quot;</span>).<span class="title function_">toString</span>().<span class="title function_">trim</span>().<span class="title function_">split</span>(<span class="regexp">/\s/</span>);</span><br><span class="line"><span class="keyword">const</span> n = input[<span class="number">0</span>];</span><br><span class="line"><span class="keyword">const</span> n_arr = input.<span class="title function_">slice</span>(<span class="number">1</span>, n+<span class="number">1</span>);</span><br><span class="line"><span class="keyword">const</span> [m, ...m_arr] = input.<span class="title function_">slice</span>(n+<span class="number">1</span>);</span><br></pre></td></tr></table></figure>
-<p>최종 결과 확인을 위해선 <strong>console.log()</strong> 를 통해 값을 출력해주면 된다.</p>
-<hr>
-
-<h2 id="참고"><a href="#참고" class="headerlink" title="참고"></a>참고</h2><p><a href="https://overcome-the-limits.tistory.com/25">[알고리즘] 백준 0.nodejs 입력하기</a><br><a href="https://tesseractjh.tistory.com/39">Node.js로 백준(BOJ) 문제 풀 때 유의할 점들</a></p>
-]]></content>
-      <tags>
-        <tag>개발</tag>
-        <tag>JavaScript</tag>
-        <tag>코딩테스트</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>정규식 Test Method에 대해 새롭게 알게된 점</title>
-    <url>/2023/New-things-I-learned-about-the-regExp-test-method/</url>
-    <content><![CDATA[<h1 id="😱문제발생"><a href="#😱문제발생" class="headerlink" title="😱문제발생"></a>😱문제발생</h1><p>원티드 프리온보딩 프론트엔드 인턴십에 참여하여 1주차 과제를 진행하던 중이었다.<br>1주차 과제는 인턴십에 참여하기 위해 수행했던 사전과제를 동료학습을 통해 리팩토링 하는 것이였고, 나는 팀원들과의 토의로 얻은 Best Practice의 기준을 가지고 Assignment1의 기능 구현을 맡아 코드를 작성하고 있었다.</p>
-<ul>
-<li>Assignment 1<ul>
-<li>회원가입과 로그인 페이지에 이메일과 비밀번호의 유효성 검사기능을 구현해주세요<ul>
-<li>이메일 조건: @ 포함, 비밀번호 조건: 8자 이상</li>
-</ul>
-</li>
-<li>입력된 이메일과 비밀번호가 유효성 검사를 통과하지 못한다면 button에 disabled 속성을 부여해주세요</li>
-</ul>
-</li>
-</ul>
-<p>Assignment 1의 유효성 검증을 구현하기 위해 정규식을 이용하는게 좋을 것 같다라는 의견을 수용해, <code>password: /^.&#123;8,&#125;$/g</code>의 정규식을 통해 코드를 작성하고 정상적으로 동작하는지 확인을 하는데 갑자기 다음과 같은 문제가 발생했다.</p>
-<p><img src="/../images/reg-test-problem.gif" alt="문제"></p>
-<p>8자리의 비밀번호를 입력했을때 error message가 정상적으로 사라지길래 검증이 잘 되는구나 생각했는데, 추가적으로 비밀번호를 입력할때 마다 error message가 생겼다 없어졌다 하는 것이다. 즉 비밀번호를 입력할때마다 정규식으로 검증한 결과가 바뀐다는 것이였는데, 혹시나해서 정규식으로 검증한 결과를 개발자 도구를 통해 살펴보았다.</p>
-<p><img src="/../images/reg-test-console.png" alt="개발자도구로 찍어본 정규식 테스트"></p>
-<p>같은 정규식으로 같은 값을 검사했는데도 그 결과가 계속해서 바뀌는 현상이 일어났는데, 아무리 생각해도 이해가 되지 않아 ChatGPT를 통해 질문을 해 본 결과 다음과 같은 답을 받을 수 있었다.</p>
-<p><img src="/../images/reg-test-gpt.png" alt="ChatGPT 답변"></p>
-<h1 id="😊문제해결"><a href="#😊문제해결" class="headerlink" title="😊문제해결"></a>😊문제해결</h1><p>ChatGPT 답변을 바탕으로 조금 더 이해를 위해 검색을 해보니 <code>RegExp.prototype.test()</code>의 대한 MDN 문서에서 <code>전역 플래그와 test()</code>라는 항목으로 예시를 들어주며 설명을 해주고 있어 왜 이런 현상이 발생했는지 알 수 있었다.</p>
-<p>정규 표현식에 전역 플래그를 설정한 경우, <code>test()</code> 메서드는 정규 표현식의 <code>lastIndex</code>를 업데이트하고 <code>test()</code>을 다시 호출하면 str 검색을 <code>lastIndex</code>부터 계속 진행하는데, <code>lastIndex</code> 속성은 <code>test()</code>가 true를 반환할 때마다 증가하고 test()가 false를 반환할 땐 0으로 초기화되어 결과가 계속해서 바뀌던 것이였다.</p>
-<p><code>exec()</code> 메서드도 <code>test()</code> 메서드처럼 전역 탐색 플래그를 제공한 정규 표현식에서 여러 번 호출하면 이전 일치 이후부터 탐색한다고 하니 정규식을 사용할 때 주의해야 할 것 같다.</p>
-<p>정규식이 정말 유용한것은 알지만 항상 어렵게 느껴지는 것 같다. 그래도 이렇게 정규식에 대해 알아볼 기회가 있을 때 마다 잘 정리해서 능숙해지려고 노력해야겠다!</p>
-<h1 id="참고"><a href="#참고" class="headerlink" title="참고"></a>참고</h1><ul>
-<li><a href="https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/RegExp/test">https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/RegExp/test</a></li>
-</ul>
-]]></content>
-      <tags>
-        <tag>개발</tag>
-        <tag>정규식</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>원티드 프리온보딩 프론트엔드 인턴십 2주차 회고</title>
-    <url>/2023/Retrospect-About-2nd-Week-Of-Wanted-Pre-Onboarding-Frontend-InternShip/</url>
-    <content><![CDATA[<p><img src="/../images/wanted-preonboarding.jpeg" alt="원티드 프리온보딩 프론트엔드 인턴십"></p>
-<h1 id="들어가며"><a href="#들어가며" class="headerlink" title="들어가며"></a>들어가며</h1><p>원티드 프리온보딩 프론트엔드 인턴십의 2주차가 지나갔다. 저번주도 마찬가지였지만 이번주도 너무 빠르게 지나가 버렸다.</p>
-<p>저번주에는 인턴십 기간 동안의 협업 과정에 대한 틀을 만들어야 해서 힘들었다면, 이번 주에는 새로 주어진 과제를 수행하는 것 부터 시작해야 했기 때문에 고민해 볼 부분도 더 많았고 어려웠다.특히 이번 주에는 커리어코칭도 같이 시작되어 이에대한 과제도 추가되어 더 바쁘게 흘러간 것 같다.</p>
-<p>이번 주는 개인적으로 아쉬운 점 보다 좋았던 점이 많았던 일주일이였던것 같아 만족스럽다. 그렇다고 해도 아쉬운 점이 없던 것은 아니니 이 부분들에 대해 얘기해보고자 한다.</p>
-<h1 id="원티드-프리온보딩-프론트엔드-인턴십-2주차-과제"><a href="#원티드-프리온보딩-프론트엔드-인턴십-2주차-과제" class="headerlink" title="원티드 프리온보딩 프론트엔드 인턴십 2주차 과제"></a>원티드 프리온보딩 프론트엔드 인턴십 2주차 과제</h1><h2 id="2023-05-02-과제-발표"><a href="#2023-05-02-과제-발표" class="headerlink" title="2023.05.02 - 과제 발표"></a>2023.05.02 - 과제 발표</h2><p>화요일 5시 <code>React Hook의 심층 활용</code>을 주제로 한 세션이 끝나고 과제의 내용이 발표되었다. 기업과제라 자세한 내용은 서술하기 어렵지만 간단히 정리해 <code>캐싱에 중점을 둔 검색창의 검색어 추천기능 구현</code>을 각자 수행하고, 저번주처럼 팀 별 Best Pratice를 만들고 제출하는 과제였다.</p>
-<p>저번주와는 다르게 일단 각자가 과제를 수행하고 그 후에 Best Pratice에 대한 의견을 나누어야 하기에 시간이 너무 촉박할 것 같았다.<br>시간을 절약하기 위해 일단은 목요일 오전까지 최대한 빠르게 각자 과제를 수행하고, 그 과정에서 중요하게 여겼던 점이나 중요할 것 같은 부분들을 적어 오기로 했다.</p>
-<h2 id="2023-05-02-2023-05-04-개인-과제-수행"><a href="#2023-05-02-2023-05-04-개인-과제-수행" class="headerlink" title="2023.05.02 ~ 2023.05.04 - 개인 과제 수행"></a>2023.05.02 ~ 2023.05.04 - 개인 과제 수행</h2><p>과제를 수행하면서 가장 중요한 부분이 캐싱이었다. 캐싱이 어떤 것인지는 알고 있었지만 캐싱 기능을 제공하는 라이브러리들을(react-query, apollo-client) 사용만 해보았지, 실제로 캐싱 기능이 어떻게 구현되어 있는지 몰랐기에 먼저 캐싱에 대한 고민을 해보았다.</p>
-<p>캐싱을 구현하기 위해서는 fetch해온 data를 저장할 저장소가 필요했고 사용할 수 있는 저장소에는 로컬스토리지, 세션스토리지, 캐시스토리지 등 다양한 저장소가 존재했다. 이름에서부터 캐시스토리지가 가장 적합할 것 같았고, <code>실제로도 캐싱 기능 구현에 캐시스토리지를 많이 활용한다 하니 캐시스토리지를 사용해야겠다</code> 생각했었다.</p>
-<p>그런데 과제의 사용가능한 기술에 필수는 아니지만 Redux가 존재했고, 개인적으로 Redux의 멘탈 모델은 알고있지만 많이 사용해보지 못해 익숙하지 않았고 더욱이 RTK는 사용해본적이 없었기에 <code>Redux를 사용해보며 학습하는 것도 좋겠다</code>라는 생각이 들었다. 또한 아직까지도 Redux를 사용하는 기업이 많기에 Redux 코드에 대한 이해도를 높이는 부수효과를 기대하고 Redux를 사용해보기로 결심했다.</p>
-<p>더 자세한 구현사항들은 <a href="https://github.com/rjsej12/wanted-2nd">github</a>를 통해 확인 가능하다.</p>
-<h2 id="2023-05-04-개인-과제-수행-후-회의"><a href="#2023-05-04-개인-과제-수행-후-회의" class="headerlink" title="2023.05.04 - 개인 과제 수행 후 회의"></a>2023.05.04 - 개인 과제 수행 후 회의</h2><p>그렇게 각자가 과제를 수행한 후 목요일 낮에 모여 첫 회의를 진행했다.<br>한 사람 씩 자기가 수행한 과제의 주요 부분들에 대한 설명을 하며 왜 그런 방식을 택했는지, 어떤 방법이 더 좋은 방법인지에 대한 의견을 나누었다. (ex. 캐싱을 위한 저장소로 어떤 것을 사용했는지 - 로컬스토리지, 캐시스토리지 etc.)</p>
-<p>그렇게 각 기능들에 대한 Best Practice를 정하고 난 후, 모두가 모여서 코드를 작성하기로 했다. 기능 구현의 난이도는 저번보다 높았지만, 코드의 양 자체는 그렇게 많지 않았기 때문이다. 처음에는 상의된 Best Practice에 가장 가깝게 구현한 사람이 코드를 작성하고 있었는데, 중간에 한 팀원분께서 <code>Live Share</code>를 사용해 보자고 의견을 내주셔서 같이 코드를 작성할 수 있었다.</p>
-<h2 id="2023-05-04-2023-05-05-버그-픽스-및-DOCS-작업"><a href="#2023-05-04-2023-05-05-버그-픽스-및-DOCS-작업" class="headerlink" title="2023.05.04 ~ 2023.05.05 - 버그 픽스 및 DOCS 작업"></a>2023.05.04 ~ 2023.05.05 - 버그 픽스 및 DOCS 작업</h2><p>같이 모여서 Best Practice대로 코드를 작성하고 난 후, 실제로 결과물이 잘 동작하는지 확인하던 중 오류가 발생했다. 방향키를 이용해 추천 검색어를 오가는 동작에서, 처음 방향키를 눌렀을 때 포커스가 2번 움직였다… 목요일 거의 밤이 다 되어서 발견한 오류였는데, 다들 낮부터 밤까지 너무 오랜 시간을 집중했던지라 쉽게 해결하지 못했고 다음날까지 고민해보기로 했다.</p>
-<p>그런데 금요일 새벽 4시경 정도 한 팀원분이 오류의 원인을 찾아 그 해결법을 공유해주셨다. 결론적으로 <code>한글의 Composition</code>이 오류의 원인이였는데 작년에 이미 같은 오류를 겪고 해결했던 적이 있음에도 불구하고 떠올리지 못했다는게 반성해야겠다고 생각했다. 또 한번 기록의 중요성에 대해 느꼈고, 새벽까지 해결하지 못한 문제에 대해 탐구하는 팀원분의 자세를 보고 나도 더 몰입하는 자세를 가져야겠다고 다짐했다.</p>
-<p>그 후 금요일 인턴십 세션이 끝난 후 다시 모여 오류 수정에 대한 얘기를 나누고 README.md를 작성하는 시간을 가졌다. 이번에는 많은 팀원분들이 미리 과제를 수행하면서 고민했던 점이나 트러블 슈팅에 관한 부분들을 미리 적어오셔서 더 알찬 README.md를 완성 할 수 있었다.</p>
-<p>자세한 내용에 대해서는 <a href="https://github.com/WANTED-TEAM03/pre-onboarding-10th-2-3">README.md</a>에서 살펴 볼 수 있다.</p>
-<h2 id="KPT"><a href="#KPT" class="headerlink" title="KPT"></a>KPT</h2><p>이번 주 역시 많은 것을 생각해 볼 수 있어 좋았다. 특히 평소 그 원리를 알지 못하고 라이브러리를 이용해 구현하던 캐싱에 대해 자세히 알 수 있었고, 개발자로서 성장하기 위해 어떠한 자세를 가져야 할 지 다시 한 번 생각해 보았던 개인적으로 보람찬 일주일이 된 것 같다.</p>
-<h3 id="Keep"><a href="#Keep" class="headerlink" title="Keep"></a>Keep</h3><ul>
-<li><p>이번 주 역시 만족스러운 README.md 및 기록을 남길 수 있었다! 특히 저번주보다 팀원분들이 적극적으로 참여해 주셨는데, 조금 더 친밀해져서 였을까? 남은 기간동안 더 돈독한 사이가 되어 팀명대로 보람찬 3조가 되면 좋겠다.</p>
-</li>
-<li><p>Live Share 기능을 사용해 같이 코드를 작성해보니 시간을 효율적으로 사용 할 수 있었고, 화면 공유보다 더 코드를 잘 이해할 수 있었던 것 같다. 다음 협업에서도 이 기능을 잘 사용해야겠다.</p>
-</li>
-</ul>
-<h3 id="Problem"><a href="#Problem" class="headerlink" title="Problem"></a>Problem</h3><ul>
-<li>알고 있던 문제였음에도 스스로 해결하지 못한 점이 너무 아쉽다. 해결했다고 해서 대충 머릿속에 남기는 것이 아니라 꼭 기록을 통해 새겨놔야 겠다고 느꼈다. 기록하는것이 귀찮기는 하지만 내 스스로의 성장에 도움이 되는것이니 만큼 성실히 기록해보자!</li>
-</ul>
-<h3 id="Try"><a href="#Try" class="headerlink" title="Try"></a>Try</h3><ul>
-<li>더 열심히 하자! - 이번 기업 과제의 경우 멘토님께서 보통 7시간 정도 기한을 주는 과제라고 하셨었는데 과연 내가 7시간안에 합격할 정도의 결과물을 만들어 낼 수 있었을까 생각해보면 아니라고 답할 수 밖에 없을 것 같다. 아직은 많이 부족한 만큼 더 열심히 생각하고 공부해 실력을 늘려봐야지!</li>
-</ul>
-]]></content>
-      <tags>
-        <tag>개발</tag>
-        <tag>회고</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>원티드 프리온보딩 프론트엔드 인턴십 1주차 회고</title>
-    <url>/2023/Retrospect-About-1st-Week-Of-Wanted-Pre-Onboarding-Frontend-InternShip/</url>
-    <content><![CDATA[<p><img src="/../images/wanted-preonboarding.jpeg" alt="원티드 프리온보딩 프론트엔드 인턴십"></p>
-<h1 id="들어가며"><a href="#들어가며" class="headerlink" title="들어가며"></a>들어가며</h1><p>4주동안 진행되는 원티드 프리온보딩 프론트엔드 인턴십의 1주차가 지나갔다.</p>
-<p>이번 1주차의 프로젝트는 인턴십을 지원하기 위해 수행했던 사전과제를 바탕으로 진행되었기 때문에 수월하기도 했지만 또 한편으로는 처음 팀을 구성하고 조율해야하는 부분들이 있어 어려운 부분들도 존재했다. 특히 단기간 오랜 시간을 집중해야 하는 상황 + 협업을 오랜만에 겪다보니 조금 힘들기도하고 적응이 잘 안되는 부분도 존재했다.</p>
-<p>언제나 그렇듯이 좋았던 부분도 있었고 아쉬운 부분도 있었는데, 앞으로 더 보람있는 3주를 위해 1주차에 대해 회고를 해보려고 한다.</p>
-<h1 id="원티드-프리온보딩-프론트엔드-인턴십-1주차-과제"><a href="#원티드-프리온보딩-프론트엔드-인턴십-1주차-과제" class="headerlink" title="원티드 프리온보딩 프론트엔드 인턴십 1주차 과제"></a>원티드 프리온보딩 프론트엔드 인턴십 1주차 과제</h1><h2 id="2023-04-25-첫-회의"><a href="#2023-04-25-첫-회의" class="headerlink" title="2023.04.25 - 첫 회의"></a>2023.04.25 - 첫 회의</h2><p>이번 프로젝트는 동료학습을 통해서 팀에서 생각한 원티드 프리온보딩 프론트엔드 인턴십 <a href="https://github.com/walking-sunset/selection-task">선발 과제</a>의 Best Pratice를 만들고 제출하는 과제였다.</p>
-<p>Best Practice란 모범사례라는 말로서, 특정 문제를 효과적으로 해결하기 위한 가장 성공적인 해결책 또는 방법론을 의미하는데, 사람들마다 좋은 해결책에 대한 생각이 다를 것이기에 처음 과제를 안내받았을때부터 <code>&#39;아 이거 이미 수행했던 과제를 바탕으로 진행한다고는 해도 쉽지만은 않겠다&#39;</code>라는 생각이 들었다. 특히 이번 과제를 같이 진행하게된 팀원의 수가 총 10명이기에 더욱 그랬다.</p>
-<p>과제를 수행하는 기간이 2023-04-25 ~ 2023-04-28로 총 4일이였기에 아무 준비없이 첫 회의에 들어가면 시간적으로 너무 촉박할것 같아 다음처럼 간단히 첫 회의에서 진행했으면 하는 일에 대한 체크리스트를 만들어 갔다.</p>
-<ul>
-<li>체크리스트<ul>
-<li>자기소개 및 팀장 정하기</li>
-<li>Communication Tool - Discord, slack etc.</li>
-<li>일정 공유 및 정규 회의시간 정하기</li>
-<li>Repository 관리 및 README.md 작성법</li>
-<li>각자가 생각하는 Best Practice란?</li>
-<li>Best Practice 선정 단위 - Assignment, Component etc.</li>
-</ul>
-</li>
-</ul>
-<p>이런 준비덕분(<del>때문</del>)이였을까? 자기소개를 하고 팀장을 정하는 자리에서 팀원분들이 나를 팀장으로 추천해주셨다. 이번 인턴십에서 팀장이라는 역할이 기술적인 리딩을 하는 자리는 아니여서 크게 다를 것은 없었지만, 의견 조율과 같은 부분에서 중심을 잡아야 하지 않을까라는 생각에 부담이 있긴 했다. 그래도 이런 경험을 할 수 있는 기회가 많지도 않고, 또 성장하는데에 도움이 될 것 같아 팀장 자리를 맡기로 했다.</p>
-<p>그 후 준비해간 체크리스트대로 Best Practice에 대해 얘기를 나누었고, 대략적인 선정 기준을 정한 후 다음 회의 일정을 잡게 되었다.</p>
-<h2 id="2023-04-26-두번째-회의"><a href="#2023-04-26-두번째-회의" class="headerlink" title="2023.04.26 - 두번째 회의"></a>2023.04.26 - 두번째 회의</h2><p>두번째 회의에서는 다음과 같은 체크리스트를 만들어가서 회의를 진행했다.</p>
-<ul>
-<li>체크리스트<ul>
-<li>팀명 정하기</li>
-<li>Repository</li>
-<li>프로젝트 세팅</li>
-<li>컨벤션 세팅</li>
-<li>사전과제 Assignment 1-4 리뷰</li>
-<li>과제 진행 방향 및 수행</li>
-</ul>
-</li>
-</ul>
-<p>처음 환경설정을 위해 모두가 모여 어떤 라이브러리를 사용할지 또 팀적으로 정하고 갈 컨벤션들에 대해 논의를 나누고 실제 세팅을 진행했다. 역시나 ESLint, Prettier등의 설정이 한번에 완벽히 되지는 않았고 <code>&#39;아 역시 환경설정이 쉽진 않네&#39;</code>라고 생각이 들었고 더 경험을 쌓아야겠다고 느꼈다.</p>
-<p>또한 다른 팀원분이 Craco라는 (나는 이번에 처음 알게된) 라이브러리를 사용하자고 의견을 제시해 주셨는데, Craco를 사용하는 이유를 알아보며 지금까지 무심코 사용했던 CRA(Create-React-App)의 내부 구조에 대해서도 더 알 수 있었다.</p>
-<p>그 후 Assignment 별로 각자가 생각하는 Best Practice에 대해 얘기를 나누었다. <code>팀원분들마다 어떤 코드가 좋다고 생각하는 이유가 다양했고, 다른 관점들에 대해 듣다보니 코드를 바라보는 시야가 넓어지는것 같아서 좋았다.</code> 아마 이런 점이 동료학습의 가장 큰 장점이 아닐까?</p>
-<p>여튼 각 Assignment마다 특별한 부분이 있기는 했지만 공통적으로 코드의 가독성, 성능 최적화, 유저 편의성이 Best Practice로 선정하는데에 가장 중요하다고 정해졌고 이 세가지 항목을 신경쓰면서 기능을 구현하기로 했다.</p>
-<h2 id="그-후"><a href="#그-후" class="headerlink" title="그 후"></a>그 후</h2><p>두번째 회의 이후로는 회의를 통해 선정한 Best Practice에 따라 Assignment별 담당자가 기능을 구현했고 이를 PR한 내용을 같이 확인하며 코드 리뷰를 진행했다. 더 자세한 내용은 <a href="https://github.com/WANTED-TEAM03/pre-onboarding-10th-1-3#readme">README.md</a>를 통해 확인 가능하다.</p>
-<h2 id="KPT"><a href="#KPT" class="headerlink" title="KPT"></a>KPT</h2><p>과제를 진행하면서 많은 부분들에 대해 생각해 볼 수 있었고, 알게 된 점들도 많아서 좋았다. 하지만 아쉬운 부분도 존재했는데 각 부분을 정리해보고자 한다.</p>
-<h3 id="Keep"><a href="#Keep" class="headerlink" title="Keep"></a>Keep</h3><ul>
-<li>몇번의 프로젝트를 진행하면서 기록의 중요성에 대해 많이 느끼게 되었다. 이번 인턴십에서는 꼭 문서화를 잘 해보자고 생각했는데 뛰어난 팀원분들 덕분에 만족스러운 README.md 및 기록을 남길 수 있었다!</li>
-</ul>
-<h3 id="Problem"><a href="#Problem" class="headerlink" title="Problem"></a>Problem</h3><ul>
-<li><p>Github을 통해 코드를 관리할 때, <code>Issue를 발행하고 그 Issue 번호에 따라 새로운 branch를 생성한 후 코드를 작성하고 develop branch에 병합한 후 마지막에 develop branch를 main branch에 병합하는 전략</code>을 택했다. 그런데 중간에 develop branch에 PR을 날려야 하는데 main branch PR을 날린 것을 제대로 확인하지 못하고 병합을 하는 실수를 2번이나 반복했다. 리뷰 과정의 체크리스트를 만드는등의 실수를 최소화하는 방법을 생각해 봐야 할 것 같다.</p>
-</li>
-<li><p>확실히 10명이나 되는 사람들의 일정이 조율되기는 어려웠다. 의견 공유에는 화상회의와 같은 실시간 소통이 가장 효율적이라고 생각하는데 이게 쉽지만은 않을 것 같다. 이번에는 수행했던 사전과제를 바탕으로 해서 수월했지만 다음부터는 새로운 과제를 수행하고 이를 바탕으로 의견을 나누어야 하는데 <code>Issues, Pull requests</code>등을 조금 더 잘 활용할 방안에 대해 생각해 봐야 할 것 같다.</p>
-</li>
-</ul>
-<h3 id="Try"><a href="#Try" class="headerlink" title="Try"></a>Try</h3><ul>
-<li>더 많은 의견을 공유하자 ! - 이번 인턴십에 참여하면서 가장 중요하게 여겼던 점은 (물론 취업에 도움이 되기에 선택한 것이지만) 성장이다. 특히 평상시에 가지기 어려운 다른 개발자와의 소통을 통해 내가 생각하지 못했던 관점을 알아 가고 싶다고 생각했다. <code>인턴십 기간동안 보람찬 3조가 되자!</code>라는 의미에서 보람삼조라는 팀명을 정했는데, 정말 보람찬 기간으로 만들기 위해 더 많은 의견을 공유하고 배워가야겠다.</li>
-</ul>
-]]></content>
-      <tags>
-        <tag>개발</tag>
-        <tag>회고</tag>
       </tags>
   </entry>
   <entry>
@@ -971,222 +532,6 @@ for (변수 선언문 또는 할당문; 조건식; 증감식) {
       </tags>
   </entry>
   <entry>
-    <title>pageYOffset vs scrollY, scroll() vs scrollTo()</title>
-    <url>/2022/pageYOffset-vs-scrollY-scroll-vs-scrollTo/</url>
-    <content><![CDATA[<h1 id="🤔What-is-Problem"><a href="#🤔What-is-Problem" class="headerlink" title="🤔What is Problem?"></a>🤔What is Problem?</h1><p>페어 프로그래밍을 진행하면서 수직으로 스크롤한 거리에 따라 숨겨진 버튼을 활성화 하고, 스크롤 버튼을 클릭했을 때 맨 위로 스크롤하는 예제를 해결해야했다.</p>
-<p>이를 위해 수직으로 스크롤한 거리를 측정하는 방법과 스크롤을 시키는 방법이 필요해 이에 대해 알아보았는데, 같은 기능을 하는 프로퍼티와 메서드가 중복으로 존재해 어떤것을 사용해야하는지 고민이 되었다.</p>
-<h2 id="Window-pageYOffset-vs-Window-scrollY"><a href="#Window-pageYOffset-vs-Window-scrollY" class="headerlink" title="Window.pageYOffset vs Window.scrollY"></a>Window.pageYOffset vs Window.scrollY</h2><p>먼저 수직으로 스크롤한 거리를 측정하는 방법에는 Window.pageYOffset와 Window.scrollY가 존재했다. MDN에서는 pageYOffset이 scrollY의 다른이름이라고 했지만, 두 프로퍼티에는 브라우저 호환성의 차이가 존재했다.</p>
-<p>일부 오래된 브라우저는 scrollY 대신 pageYOffset만 지원했고 노후 환경을 신경쓰지 않아도 된다면 둘 중 아무거나 사용해도 괜찮지만, 별다른 요구조건이 없다면 하위호환성을 위해 pageYOffset을 사용하는 것이 더 좋은 코드라고 판단했다.</p>
-<h2 id="Window-scroll-vs-Window-scrollTo"><a href="#Window-scroll-vs-Window-scrollTo" class="headerlink" title="Window.scroll() vs Window.scrollTo()"></a>Window.scroll() vs Window.scrollTo()</h2><p>다음으로 맨 위로 스크롤하기 위해서는 Window.scroll() 이나 Window.scrollTo() 메서드를 사용할 수 있었다. 이 두 메서드는 차이 없이 동일해 둘 중 아무거나 사용해도 괜찮았다. 다만 scroll 메서드가 더 먼저 나왔기 때문에 실제로 사용된 코드도 많고 혹여나 버그등이 발생해 검색을 해야한다면 검색 결과도 많아 scroll을 사용하는것이 더 좋을 것이라고 판단했다.</p>
-<p>또 단순히 메서드의 인자로 x-좌표와 y-좌표를 주는것 이외에도 options를 통해 top, left, behavior를 줄 수 있다는 것을 알았다. 특히 behavior: smooth를 사용해 애니메이션을 따로 만들지 않더라도 부드럽게 이동할 수 있는점이 유용해 꼭 기억하자 생각했다.</p>
-<h2 id="참고"><a href="#참고" class="headerlink" title="참고"></a>참고</h2><ul>
-<li><a href="https://developer.mozilla.org/ko/docs/Web/API/Window/pageYOffset">https://developer.mozilla.org/ko/docs/Web/API/Window/pageYOffset</a></li>
-<li><a href="https://developer.mozilla.org/ko/docs/Web/API/Window/scrollY">https://developer.mozilla.org/ko/docs/Web/API/Window/scrollY</a></li>
-<li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/scroll">https://developer.mozilla.org/en-US/docs/Web/API/Window/scroll</a></li>
-<li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/scrollTo">https://developer.mozilla.org/en-US/docs/Web/API/Window/scrollTo</a></li>
-<li><a href="https://stackoverflow.com/questions/1925671/javascript-window-scroll-vs-window-scrollto">https://stackoverflow.com/questions/1925671/javascript-window-scroll-vs-window-scrollto</a></li>
-</ul>
-]]></content>
-      <tags>
-        <tag>JS</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>새로운 컴퓨터로 Hexo 블로그 옮기기</title>
-    <url>/2023/Transfer-hexo-blog-to-new-device/</url>
-    <content><![CDATA[<p>나는 이 블로그를 Hexo라는 프레임워크를 이용해 작년 8월에 만들었었고 나름대로 계속해서 포스팅을 하고 있었다. 그러다 1월 말에 원래 사용하던 Windows 갤럭시북에서 MacOs의 맥북 M1으로 갈아타게 되었는데 깃허브에서 repository를 clone하고 hexo 명령어를 입력해도 작동하지 않는 문제가 생겼다.</p>
-<p>처음부터 블로그를 다시 세팅해야하나 아니면 다른 플랫폼으로 이사를 갈까 고민하며 해결방법을 찾던 중 다음 글을 발견했다. <a href="https://jqxiao.tech/2020/07/17/Transfer-Hexo-Blog-to-New-Device/">Transfer Hexo Blog to New Device</a></p>
-<p>위 블로그 게시글의 내용을 따라 수행하니 맥북에서도 다시 블로그 포스팅을 진행할 수 있게 되었고, 혹시라도 다음에 또 컴퓨터를 바꿀 수 있으니 방법을 정리해두어야겠다고 마음먹었다.</p>
-<h1 id="새로운-branch-만들기"><a href="#새로운-branch-만들기" class="headerlink" title="새로운 branch 만들기"></a>새로운 branch 만들기</h1><ul>
-<li>hexo blog repository를 git clone 한다.</li>
-<li>clone한 repositroy에서 <code>git checkout -b branch명</code>로 새로운 branch를 만든다.</li>
-<li>새로운 branch에서 .git 폴더를 제외한 모든 파일들을 삭제한다.</li>
-<li>원래 사용하던 기기의 hexo blog 폴더를 복사해온다.</li>
-<li>이전 기기의 .git 관련 폴더들은 삭제한다.</li>
-<li>새로운 branch를 Github에 push한다.</li>
-</ul>
-<h1 id="새-기기에-Hexo-설치하기"><a href="#새-기기에-Hexo-설치하기" class="headerlink" title="새 기기에 Hexo 설치하기"></a>새 기기에 Hexo 설치하기</h1><ul>
-<li><code>npm install hexo --save</code>로 Hexo를 설치한다.</li>
-<li><code>npm install hexo-deployer-git --save</code>로 git deployer plugin를 설치한다.</li>
-</ul>
-<h1 id="블로그-Deploy하기"><a href="#블로그-Deploy하기" class="headerlink" title="블로그 Deploy하기"></a>블로그 Deploy하기</h1><ul>
-<li>새로 만든 branch에 .gitigonre 파일을 추가한다.</li>
-<li>.gitignore 파일에 <code>.deploy_git/*</code>과 <code>public/*</code>을 추가한다</li>
-<li><code>hexo clean</code>을 통해 이전 웹페이지를 삭제한다.</li>
-<li><code>hexo generate</code>와 <code>hexo deploy</code>로 새로운 웹페이지를 만들 수 있다.</li>
-</ul>
-<h1 id="무엇이-문제였을까"><a href="#무엇이-문제였을까" class="headerlink" title="무엇이 문제였을까?"></a>무엇이 문제였을까?</h1><p>hexo deploy시 만들어진 정적 웹페이지가 자동으로 Github의 default branch에 push되었던 것이지 hexo를 설치했던 기존 폴더 자체를 Github에 push한것은 아니었기 때문에 git clone을 해도 hexo 명령어가 작동하지 않았다.<br>따라서 새로운 branch에 원본 기기의 폴더를 복사해옴으써 문제를 해결할 수 있었다.</p>
-]]></content>
-      <tags>
-        <tag>개발</tag>
-        <tag>Hexo</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>첫 프로젝트를 마치고</title>
-    <url>/2022/Retrospective-about-my-first-project/</url>
-    <content><![CDATA[<h1 id="들어가며"><a href="#들어가며" class="headerlink" title="들어가며"></a>들어가며</h1><p>약 2주동안 진행했던 프로젝트가 종료되었다. 개발 공부를 시작한지도 얼마 안 되었고 처음으로 해본 프로젝트인지라 2주가 정말 정신없이 지나가버렸다. 배운점도 많았고 아쉬운점도 많았는데 회고를 하며 정리해보려고 한다.</p>
-<p>완성된 결과물은 <a href="https://woowahal-6go5.vercel.app/">https://woowahal-6go5.vercel.app/</a> 에서 확인 가능하다.</p>
-<hr>
-
-<h1 id="프로젝트-우아할"><a href="#프로젝트-우아할" class="headerlink" title="프로젝트 우아할"></a>프로젝트 우아할</h1><p>이전글에서 언급했듯이 우리 팀은 배달의 민족 앱을 웹 페이지로 클론하기로 했다(그래서 팀명도 <strong>우아할</strong>형제들로 정했다).</p>
-<p>개발 기간은 2022-09-19 ~ 2022-09-30로 약 2주 동안 진행되었고, 팀원은 나를 포함해 총 3명이었다.</p>
-<p>프로젝트 기간이나 인원에 비해 배달의 민족이 가지고 있는 콘텐츠가 너무 많아 모든 페이지를 클론 할 수는 없었고 배달의 민족에서 배달하기 까지의 주요 프로세스를 메인,카테고리, 리스트, 디테일, 오더, 장바구니, 결과의 7개 페이지로 나누어 구현해 보았다.</p>
-<p>나는 그 중 메인페이지와 카테고리 페이지를 주로 담당했다.</p>
-<hr>
-
-<h2 id="기술-스택"><a href="#기술-스택" class="headerlink" title="기술 스택"></a>기술 스택</h2><p>페이지를 구현하면서 Figma, Git, npm, HTML, CSS, Sass, JS, Vercel을 이용했다.</p>
-<h3 id="Figma"><a href="#Figma" class="headerlink" title="Figma"></a>Figma</h3><p>구현해야 하는 페이지들의 와이어프레임 및 컴포넌트들을 시각적으로 구성해보기 위해 Figma를 이용했다.</p>
-<p>페이지에서 주사용되는 컬러를 시스템화해서 플러그인을 통해 변수로 쉽게 추출할 수 있었다.</p>
-<p>아직 툴 사용이 미숙해 많은 기능을 활용하지는 못한것 같아 아쉽다</p>
-<h3 id="Git-Github"><a href="#Git-Github" class="headerlink" title="Git, Github"></a>Git, Github</h3><p>프로젝트의 버전관리를 위해 Git을 이용했다. Git flow 전략을 모방해 메인을 제외한 develop, subdev, release 3개의 branch를 만들었다.</p>
-<p>기본적으로 모든 변경사항을 subdev에 push하였고, merge가 잘 완료되면 log를 추가해 develop으로 옮겼다. 최종적으로 public 폴더만 build해 release에 저장했다.</p>
-<h3 id="npm"><a href="#npm" class="headerlink" title="npm"></a>npm</h3><p>개발환경 세팅과 최종적인 프로젝트 파일의 최적화를 위해 npm을 이용했다.</p>
-<p>rimraf, npm-run-all, live-server, sass는 개발환경 세팅을 위해 webpack, postcss는 최적화를 위해 사용해 보았다.</p>
-<h3 id="HTML"><a href="#HTML" class="headerlink" title="HTML"></a>HTML</h3><p>HTML의 경우 시맨틱 마크업을 제일 중요시 여겼는데 먼저 손으로 페이지의 구조를 설계 한 후 코드로 작성했다. 그 후 코드리뷰를 시간을 가져 팀원들끼리 왜 그렇게 코드를 작성했는지, 구조가 논리적인지 설득하는 시간을 가졌다.</p>
-<h3 id="CSS-Sass"><a href="#CSS-Sass" class="headerlink" title="CSS, Sass"></a>CSS, Sass</h3><p>CSS를 효과적으로 사용하기 위해 Sass를 이용했고 이 때 가장 중요시 여긴점은 컨벤션이였다. 기본적으로 BEM 방식을 이용한 Naming과 최대한 구체적인 클래스명을 사용하기로 정했다.</p>
-<hr>
-
-<h2 id="KPT"><a href="#KPT" class="headerlink" title="KPT"></a>KPT</h2><h3 id="Keep"><a href="#Keep" class="headerlink" title="Keep"></a>Keep</h3><ul>
-<li><p>프로젝트를 시작하기 전 환경설정을 중요시 여기고 이 부분에 대해 많이 논의 했는데 그 결과 git 충돌도 거의 없었고 일어난 충돌도 금방 해결 할 수 있었다.</p>
-</li>
-<li><p>1차적인 프로젝트 결과물을 가지고 lighthouse 검사를 통해 부족한 부분을 찾고 개선하기 위해 노력했다. 실질적인 성능 향상을 볼 수 있어서 좋았다.</p>
-</li>
-<li><p>의견충돌이 있을때 그냥 넘어가지 않고 서로를 설득하기 위해 노력했는데 생각에 대한 근거를 찾고 정리해보며 의견을 구체화 시킬 수 있었다.</p>
-</li>
-</ul>
-<h3 id="Problem"><a href="#Problem" class="headerlink" title="Problem"></a>Problem</h3><ul>
-<li><p>Sass 사용의 아쉬움 - Sass 를 사용하기 위해 폴더 구조를 잘 분리한것은 좋았으나 중첩규칙, 변수 이외에는 잘 사용하지 못했다. 특히 중복적으로 사용되는 코드들을 믹스인으로 분리했어야 했는데 그러지 못했다.</p>
-</li>
-<li><p>미숙했던 초반 소통</p>
-</li>
-</ul>
-<h3 id="Try"><a href="#Try" class="headerlink" title="Try"></a>Try</h3><ul>
-<li>문서화의 중요성 - 서로 상의해 결정했던 부분들이나 컴포넌트에 대한 문서들을 남겨 서로 참고할 수 있도록 하자고 말했었지만 실제 프로젝트를 진행하면서 잘 수행되지 못했다. 문서화가 잘 되어 있는 다른 프로젝트 조의 경우 전체적인 프로젝트 상황에 대한 파악이 수월해 보였다. 다음 프로젝트를 진행할 때에는 꼭 문서화에 신경써봐야겠다.</li>
-</ul>
-<hr>
-
-<h1 id="마치며"><a href="#마치며" class="headerlink" title="마치며"></a>마치며</h1><p>첫 프로젝트를 진행하며 많은 것을 배울 수 있어 정말 좋았다. 하지만 역시 머리에 계속해서 남는것은 아쉬운 점들인 것 같다.</p>
-<p>평소 배달의 민족을 많이 사용하면서 이런 기능이 있으면 좋겠다고 생각해 오던것이 있다. 나는 결정장애가 심한 편이라 어떤것을 먹을지, 또 메뉴를 정해도 어디서 시킬지 정말 많이 고민한다. 그래서 카테고리만 선택하면 룰렛이 돌아가듯이 랜덤으로 가게와 메뉴가 선택되면 좋겠다고 생각했다.</p>
-<p>마침 배달의 민족을 웹으로 구현하기로 결정해서 이 기능도 추가해 보려고 했는데 막상 스스로의 자바스크립트 실력도 너무 부족하고 어떤 데이터베이스를 기반으로 정보를 가져와야 할지 아이디어 역시도 너무 구체적이지 않아 쉽지 않았다.</p>
-<p>스스로 많이 부족하다고 느끼는 점이 가장 아쉬웠다.<br>다만 앞으로 3개월 동안 커넥to 과정을 통해 모던 자바스크립트 Deep Dive의 저자이신 이웅모 강사님에게 자바스크립트 강의를 듣게 되었는데, 정말 좋은 기회이니 만큼 열심히 배우고 또 평상시 가지고 있던 아이디어들에 대해서도 구체화해 프로젝트를 리팩토링해봐야 겠다.</p>
-]]></content>
-      <tags>
-        <tag>개발</tag>
-        <tag>회고</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>API란 무엇일까?</title>
-    <url>/2022/What-is-an-API/</url>
-    <content><![CDATA[<p>JavaScript 구현공부를 시작하며 API를 이용하는 일이 많아졌다. API라는 용어에 대해 많이 들어보기도 했고 API가 무엇인지에 대해 대략적으로 알고 있다고 생각했었지만 막상 API에 대해 구체적으로 설명해보려고 하니 표현하기가 어려웠다. 그래서 API에 대해 정리해보면서 정확히 무엇인지 알아보고자 했다.</p>
-<hr>
-
-<h2 id="API"><a href="#API" class="headerlink" title="API"></a>API</h2><p>먼저 API의 정의를 알아보았다. </p>
-<blockquote>
-<p><strong>API</strong>는 Application Programming Inerface의 줄임말로 응용 프로그램에서 사용할 수 있도록 운영체제나 프로그래밍 언어가 제공하는 기능을 제어할 수 있게 만든 인터페이스를 뜻한다. </p>
-</blockquote>
-<p>다른 부분들은 쉽게 이해가 갔지만 인터페이스가 무엇을 말하는지 모호했다. 그럼 인터페이스는 무엇일까?</p>
-<blockquote>
-<p><strong>인터페이스(interface)</strong> 는 컴퓨터 시스템끼리 정보를 교환하는 공유 경계를 의미한다. 터치 스크린과 같은 일부 컴퓨터 하드웨어 장치들은 인터페이스를 통해 데이터를 송수신 할 수 있으며, 마우스나 마이크와 같은 장치들은 오직 시스템에 데이터를 전송만 하는 인터페이스를 제공한다.</p>
-</blockquote>
-<p>쉽게 정리해 인터페이스는 시스템끼리 데이터를 주고받도록 하는 물리적, 가상적인 매개체를 뜻한다.</p>
-<p>조금 더 이해하기 쉽게 실생활에서 예를 들어보면 우리가 자판기를 통해 음료수를 사먹는다라고 할 때 실제 자판기가 어떻게 내부적으로 동작하는지는 몰라도 동전이나 지폐를 넣고 원하는 음료 버튼을 눌러 음료수가 나오게하는 과정을 쉽게 수행한다. 이때 동전과 지폐를 넣고 음료 버튼을 클릭하는등 사물과 사물 또는 사물과 인간 간의 의사소통이 가능하도록하는 물리적, 가상적인 매개체를 인터페이스라고 할 수 있다.</p>
-<p>즉 API는 응용 프로그램 (우리가 만든 앱과 같은 서비스)에서 운영체제나 프로그래밍 언어가 제공하는 기능(지도, 날씨, 페이기능등)을 제어할 수 있게 만든 매개체라고 볼 수 있다.<br>API 문서에는 개발자가 이러한 요청과 응답을 구성하는 방법에 대한 정보가 들어 있어 API를 사용하기 이전에 API 문서를 통해 API의 사용법을 알 수 있다.</p>
-<hr>
-
-<h2 id="API는-어떻게-작동하는가"><a href="#API는-어떻게-작동하는가" class="headerlink" title="API는 어떻게 작동하는가?"></a>API는 어떻게 작동하는가?</h2><blockquote>
-<p>API 아키텍처는 일반적으로 클라이언트와 서버 측면에서 설명된다. 요청을 보내는 애플리케이션을 클라이언트라고 하고 응답을 보내는 애플리케이션을 서버라고 한다. 따라서 날씨 예에서 기상청의 날씨 데이터베이스는 서버이고 모바일 앱은 클라이언트이다. </p>
-</blockquote>
-<p>API가 생성된 시기와 이유에 따라 API는 네 가지 방식으로 작동할 수 있다.</p>
-<p>API라는 단어는 1964년부터 등장하기 시작했다. 이때는 하드웨어 독립성을 위해서 많이 사용되어 졌는데, 예를 들어 서로 다른 하드웨어마다 개발자가 일일이 프로그래밍을 하기보단 HAL이라는 하드웨어 추상화 계층을 통해 한번만 display라는 함수를 작성하고 이를 이용해 각기 다른 모니터에 출력을 쉽게 할수 있었고 이것이 API의 시초라고 할 수 있다.</p>
-<p>1980년대 중반 Mac OS와 Windows가 등장하면서 그래픽이 좋은 컴퓨터가 등장하기 시작했다. 이런 각각의 운영체제에서 동작하는 어플리케이션을 만들기 위해서 운영체제에서 제공하는 API를 이용했다. </p>
-<p>그리고 1990년도 인터넷이 보편적으로 대중화되기 시작하면서 컴퓨터와 컴퓨터 다양한 기기들이 인터넷을 통해서 의사소통을 할 수 있게 되었다. 이때 다양한 기기에서 서버에 있는 데이터를 읽고 쓰기 위해서는 서버에서 제공하는 WEB APIs를 이용해서 처리 할 수 있었다.</p>
-<p>네트워크에서 기기들간에 의사소통 해나가는 규격사항을 HTTP(s)라고 부르며 이런 WEB API를 어떻게 디자인해서 만들건지 정의하는 것이 있다. 예전에는 SOAP(Simple Object Access Protocol)이라는 모든 네트워크 요청과 반응을 XML이라는 데이터 포맷에 저장해 주고 받았다면 요즘에는 REST(Representational State Transfer)이 보편적으로 많이 사용된다.</p>
-<p>REST는 총 4가지로 구성되어 있는데 새로운 데이터를 만들고(POST, create), 읽고(GET, read), 업데이트하고(PUT, update), 삭제(DELETE, delete)할 수 있다. 예를 들어 GET을 이용해 유저에 대한 정보를 요청하면 서버로부터 유저에 대한 데이터를 JSON이라는 포맷을 통해 받아 올 수 있다. 이처럼 서버에서 제공하는 WEB API를 통해 서버에 있는 데이터를 읽어오거나 업데이트 할 수 있다.</p>
-]]></content>
-      <tags>
-        <tag>개발</tag>
-        <tag>용어정리</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>WCAG 2.1 정리</title>
-    <url>/2022/WCAG-2-1-organization/</url>
-    <content><![CDATA[<h1 id="👀-WCAG"><a href="#👀-WCAG" class="headerlink" title="👀 WCAG?"></a>👀 WCAG?</h1><blockquote>
-<ul>
-<li>WCAG는 Web Content Accessibility Guideline의 줄임말로 웹 콘텐츠를 접근성 있게 만들기 위한 권장 표준</li>
-</ul>
-</blockquote>
-<ul>
-<li>이 표준을 준수함을 통해 시각, 청각, 운동장애 등 광범위한 장애에 대한 접근성 있는 콘텐츠를 만들 수 있음</li>
-<li>웹 접근성의 기초를 제공하는 4가지 원칙인 인식의 용이성(Perceivable), 운용의 용이성(Operable), 이해의 용이성(Understandable), 견고성(Robust)에 기반을 두고 있음</li>
-<li>원칙을 기반으로 접근성을 위해 어떠한 목표를 달성해야 하는지에 대한 지침과 또 그 지침에 대한 검증가능한 성공기준을 제시하고 있음</li>
-<li>성공기준은 최저수준인 level A 부터 최고수준인 level AAA까지 3단계로 나누어짐</li>
-</ul>
-<hr>
-
-<h1 id="WCAG-2-0-VS-WCAG-2-1"><a href="#WCAG-2-0-VS-WCAG-2-1" class="headerlink" title="WCAG 2.0 VS WCAG 2.1"></a>WCAG 2.0 VS WCAG 2.1</h1><p>WCAG 2.0 이 만들어졌을때는 주로 데스크탑 환경만을 고려했지만 그 후 모바일 산업의 폭발적인 확장으로 모바일 환경을 필수적으로 고려해야하는 상황이 찾아왔다.</p>
-<p>WCAG 2.1은 WCAG 2.0의 요구사항들을 상속하면서 추가적으로 인지나 학습장애가 있는 사용자, 저시력자, 모바일 기기를 사용하는데 장애가 있는 사용자의 접근성 지침을 개선하는 데 목표를 두고있다.</p>
-<p>즉 WCAG 2.1은 새로운 성공기준, 이를 지원하기 위한 정의, 추가사항을 조직하기 위한 지침, 그리고 준수 절(section)에 대한 몇 가지 사항을 추가하여 WCAG 2.0을 확장한 것이다.</p>
-<hr>
-
-<h2 id="1-인식의-용이성-Perceivable"><a href="#1-인식의-용이성-Perceivable" class="headerlink" title="1. 인식의 용이성(Perceivable)"></a>1. 인식의 용이성(Perceivable)</h2><ul>
-<li>정보와 사용자 인터페이스 요소는 사용자가 인식할 수 있는 방법으로 제시되어야 한다.</li>
-<li>4가지 지침과 그에 대한 29가지 성공기준을 가지고 있다.</li>
-</ul>
-<h3 id="지침-1-1-대체텍스트"><a href="#지침-1-1-대체텍스트" class="headerlink" title="지침 1.1 대체텍스트"></a>지침 1.1 대체텍스트</h3><ul>
-<li><p>텍스트가 아닌 콘텐츠의 경우 목적에 상응하는 대체 텍스트를 제공해야 한다. (ex - img alt속성)</p>
-</li>
-<li><p>단 시력검사, 받아쓰기와 같은 Test나 특정 감각을 위한 악기연주 등 텍스트만으로 그 내용을 설명하기에 애매한 경우 콘텐츠의 용도만을 기술하는 것도 괜찮다.</p>
-</li>
-<li><p>텍스트 아닌 콘텐츠가 순수한 장식이거나, 보이지 않는경우 대체텍스트를 제공하지 않는 편이 합리적이다</p>
-</li>
-</ul>
-<h3 id="지침-1-2-시간기반-미디어"><a href="#지침-1-2-시간기반-미디어" class="headerlink" title="지침 1.2 시간기반 미디어"></a>지침 1.2 시간기반 미디어</h3><ul>
-<li><p>시간기반 미디어에 대한 대체수단을 제공해야 한다</p>
-</li>
-<li><p>달성하기 비교적 쉬운 level A 부터 어려운 level AAA 까지 총 9개의 기준을 가지고 있다.</p>
-</li>
-<li><p>level이 올라갈수록 더 자세하고 많은 정보를 실시간으로 제공하는 것을 기준으로 삼고 있다.</p>
-</li>
-</ul>
-<h3 id="지침-1-3-적응가능"><a href="#지침-1-3-적응가능" class="headerlink" title="지침 1.3 적응가능"></a>지침 1.3 적응가능</h3><ul>
-<li><p>콘텐츠가 정보나 구조의 손실 없이 다른 방법들로 표시될 수 있도록 제작되어야 한다.</p>
-</li>
-<li><p>콘텐츠의 정보, 구조, 관계는 프로그래밍 방식으로 결정되어야 하고 또 콘텐츠가 표시되는 순서가 의미에 영향을 주는 경우 올바른 읽기 순서 역시 프로그래밍 방식으로 결정되어야 한다.</p>
-<blockquote>
-<p>프로그래밍 방식으로 결정된다는 것은 확대기, 음성 인식 소프트웨어와 같은 보조공학을 포함한 user agent(웹 브라우저)가 개발자 제공 데이터로부터 정보를 추출해 사용자에게 다른 형식으로 제공할 수 있음을 뜻한다 - 대체텍스트의 img alt 속성 처럼</p>
-</blockquote>
-</li>
-<li><p>콘텐츠를 이해하고 작동하기 위해 제공된 지시문은 모양, 색상, 크기, 시각적 위치 등 구성요소의 감각적 특성에 전적으로 의존해서는 안 된다.</p>
-</li>
-</ul>
-<h3 id="지침-1-4-식별-가능"><a href="#지침-1-4-식별-가능" class="headerlink" title="지침 1.4 식별 가능"></a>지침 1.4 식별 가능</h3><ul>
-<li><p>색상은 시각적 요소 구별을 위한 유일한 시각적 수단으로만 사용되어서는 안된다.</p>
-</li>
-<li><p>웹 페이지에 있는 오디오를 컨트롤 할수 있어야 하고, 배경음이 낮거나 없어야한다 - 스크린리더 사용자를 위한 항목으로, 스크린리더 사용자는 청각을 통해 정보를 받아들이기 때문에 다른 오디오나 배경음이 지속된다면 콘텐츠를 이용하는데 불편함을 겪을 수 있음.</p>
-</li>
-<li><p>텍스트 이미지 보다는 텍스트를 사용해야 하고, 텍스트의 명도대비, 크기 조정등을 통해 가시성을 높여야한다.</p>
-</li>
-</ul>
-<hr>
-
-<p>추가중…</p>
-<hr>
-
-<h1 id="참고"><a href="#참고" class="headerlink" title="참고"></a>참고</h1><ul>
-<li><a href="https://www.w3.org/TR/WCAG21/">https://www.w3.org/TR/WCAG21/</a></li>
-<li><a href="http://www.kwacc.or.kr/WAI/wcag21/">http://www.kwacc.or.kr/WAI/wcag21/</a></li>
-<li><a href="http://www.websoul.co.kr/accessibility/WA_guide21.asp">http://www.websoul.co.kr/accessibility/WA_guide21.asp</a></li>
-</ul>
-]]></content>
-      <tags>
-        <tag>개발</tag>
-        <tag>WCAG</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>[Deep Dive] 연산자</title>
     <url>/2022/Modern-Javascript-Deep-Dive-Chapter-7-Operator-Summary/</url>
     <content><![CDATA[<h1 id="연산자"><a href="#연산자" class="headerlink" title="연산자"></a>연산자</h1><p>연산자는 하나 이상의 표현식을 대상으로 산술, 할당, 비교, 논리, 타입, 지수 연산 등을 수행해 하나의 값을 만든다.</p>
@@ -1290,6 +635,551 @@ for (변수 선언문 또는 할당문; 조건식; 증감식) {
       </tags>
   </entry>
   <entry>
+    <title>Git-remote-fatal-error-in-commitrefs</title>
+    <url>/2023/Git-remote-fatal-error-in-commitrefs/</url>
+    <content><![CDATA[<h1 id="😱문제발생"><a href="#😱문제발생" class="headerlink" title="😱문제발생"></a>😱문제발생</h1><p>오늘 배운 내용을 간단히 정리하며 TIL을 작성하고 Github에 push하려고 하는데 다음과 같은 오류가 발생했다.</p>
+<p><img src="/../images/git-remote-fatal-error.png" alt="Git Error"></p>
+<p>갑자기 이게 무슨 오류지? 혹시 내가 원격 저장소에서 무슨 작업을 했었나? 생각하며 <code>git pull</code>을 하고 다시 <code>git push</code>를 해도 실패.. 이외에도 여러가지 방법으로 해결을 시도했지만 전부 실패했다.</p>
+<h1 id="😊문제해결"><a href="#😊문제해결" class="headerlink" title="😊문제해결"></a>😊문제해결</h1><p>다시한번 log를 살펴보다가 <code>remote: fatal error in commit_refs</code>를 발견하고 구글링을 해보았더니…</p>
+<blockquote>
+<p>Github의 서버오류로 정상적으로 작동하지 않았던것!</p>
+</blockquote>
+<p>생각보다 너무 허무했지만 앞으로는 같은 문제를 겪어도 당황하지 않을 수 있을것 같다.<br>추가적으로 <a href="https://www.githubstatus.com/">https://www.githubstatus.com</a>를 통해 GitHub site status를 확인 할 수 있다고 하니 앞으로 참고해야겠다.</p>
+<h1 id="참고"><a href="#참고" class="headerlink" title="참고"></a>참고</h1><ul>
+<li><a href="https://stackoverflow.com/questions/37341960/how-do-i-fix-remote-fatal-error-in-commit-refs-errors-trying-to-push-with-git">https://stackoverflow.com/questions/37341960/how-do-i-fix-remote-fatal-error-in-commit-refs-errors-trying-to-push-with-git</a></li>
+</ul>
+]]></content>
+      <tags>
+        <tag>개발</tag>
+        <tag>Git</tag>
+        <tag>Github</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>[Deep Dive] 타입 변환과 단축 평가</title>
+    <url>/2022/Modern-Javascript-Deep-Dive-Chapter-9-Summary/</url>
+    <content><![CDATA[<h1 id="타입-변환이란"><a href="#타입-변환이란" class="headerlink" title="타입 변환이란?"></a>타입 변환이란?</h1><p>앞서 자바스크립트의 모든 값은 타입이 있음을 알아보았다.<br>값의 타입은 개발자의 의도에 따라 다른 타입으로 변환할 수 있는데 이를 명시적 타입 변환 또는 타입 캐스팅이라 한다.</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> x = <span class="number">10</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 명시적 타입 변환, 숫자 -&gt; 문자열</span></span><br><span class="line"><span class="keyword">var</span> str = x.<span class="title function_">toString</span>();</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="keyword">typeof</span> str, str); <span class="comment">// string 10</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// x 변수의 값이 변경된 것은 아님</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="keyword">typeof</span> x, x); <span class="comment">// number 10</span></span><br></pre></td></tr></table></figure>
+
+<p>개발자의 의도와는 상관없이 표현식을 평가하는 도중 자바스크립트 엔진에 의해 암묵적으로 타입이 자동 변환되기도 한다.<br>이를 암묵적 타입 변환 또는 타입 강제 변환이라 한다.</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> x = <span class="number">10</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 암묵적 타입 변환, 숫자 -&gt; 문자열</span></span><br><span class="line"><span class="keyword">var</span> str = x + <span class="string">&#x27;&#x27;</span>;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="keyword">typeof</span> str, str); <span class="comment">// string 10</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// x 변수의 값이 변경된 것은 아님</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="keyword">typeof</span> x, x); <span class="comment">// number 10</span></span><br></pre></td></tr></table></figure>
+
+<p>예시에서 볼 수 있듯이 명시적 타입 변환이나 암묵적 타입 변환이 기존 원시 값을 직접 변경하는 것은 아니다.<br>원시 값은 변경 불가능한 값으로 변경할 수 없다. 타입 변환이란 기존 원시 값을 사용해 다른 타입의 새로운 원시 값을 생성하는 것이다.</p>
+<p>명시적 타입 변환은 타입을 변경하겠다는 개발자의 의지가 코드에 명백히 드러난다.<br>하지만 암묵적 타입 강제 변환은 자바스크립트 엔진에 의해 암묵적으로, 즉 드러나지 않게 타입이 자동 변환되기 때문에 타입을 변경하겠다는 개발자의 의지가 코드에 명백히 나타나지 않는다.</p>
+<p>따라서 자신이 작성한 코드에서 암묵적 타입 변환이 발생하는지, 발생한다면 어떤 타입의 어떤 값으로 변환되는지 예측 가능해야 한다.<br>만약 타입 변환 결과를 예측하지 못하거나 예측이 결과와 일치하지 않는다면 오류를 생산할 가능성이 높아진다.<br>타입 변환이 어떻게 동작하는지 정확히 이해하고 사용하자.</p>
+<h2 id="암묵적-타입-변환"><a href="#암묵적-타입-변환" class="headerlink" title="암묵적 타입 변환"></a>암묵적 타입 변환</h2><p>표현식을 평가할 때 코드의 문맥메 부합하지 않는 다양한 상황이 발생할 수 있다. 이때 프로그래밍 언어에 따라 에러를 발생시키기도 하지만 자바스크립트는 가급적 에러를 발생시키지 않도록 암묵적 타입 변환을 통해 표현식을 펴가한다.</p>
+<p>암묵적 타입 변환이 발생하면 문자열, 숫자, 불리언과 같은 원시 타입 중 하나로 타입을 자동 변환한다.<br>타입 별로 암묵적 타입 변환이 어떻게 발생하는지 살펴보자.</p>
+<h3 id="문자열-타입으로-변환"><a href="#문자열-타입으로-변환" class="headerlink" title="문자열 타입으로 변환"></a>문자열 타입으로 변환</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="number">1</span> + <span class="string">&#x27;2&#x27;</span>; <span class="comment">// &#x27;12&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<p>위 코드의 + 연산잔느 피연산자 중 하나 이상이 문자열이므로 문자열 연결 연산자로 동작한다.<br>문자열 연결 연산자의 역할은 문자열 값을 만드는 것이다. 따라서 문자열 연결 연산자의 모든 피연산자는 코드의 문맥상 모두 문자열 타입이어야 한다.</p>
+<p>자바스크립트 엔진은 문자열 연결 연산자 표현식을 평가하기 위해 문자열 연결 연산자의 피연산자 중에서 문자열 타입이 아닌 피연산자를 문자열 타입으로 암묵적 타입 변환한다.</p>
+<p>자바스크립트 엔진은 문자열 타입이 아닌 값을 문자열 타입으로 암묵적 타입 변환을 수행할 때 다음과 같이 동작한다.</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 숫자 타입</span></span><br><span class="line"><span class="number">0</span> + <span class="string">&#x27;&#x27;</span> <span class="comment">// &#x27;0&#x27;</span></span><br><span class="line">-<span class="number">0</span> + <span class="string">&#x27;&#x27;</span> <span class="comment">// &#x27;0&#x27;</span></span><br><span class="line"><span class="number">1</span> + <span class="string">&#x27;&#x27;</span> <span class="comment">// &#x27;1&#x27;</span></span><br><span class="line">-<span class="number">1</span> + <span class="string">&#x27;&#x27;</span> <span class="comment">// &#x27;-1&#x27;</span></span><br><span class="line"><span class="title class_">NaN</span> + <span class="string">&#x27;&#x27;</span> <span class="comment">// &#x27;NaN&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 불리언 타입</span></span><br><span class="line"><span class="literal">true</span> + <span class="string">&#x27;&#x27;</span> <span class="comment">// &#x27;true&#x27;</span></span><br><span class="line"><span class="literal">false</span> + <span class="string">&#x27;&#x27;</span> <span class="comment">// &#x27;false&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// null 타입</span></span><br><span class="line"><span class="literal">null</span> + <span class="string">&#x27;&#x27;</span> <span class="comment">// &#x27;null&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// undefined 타입</span></span><br><span class="line"><span class="literal">undefined</span> + <span class="string">&#x27;&#x27;</span> <span class="comment">// &#x27;undefined&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 심벌 타입</span></span><br><span class="line">(<span class="title class_">Symbol</span>()) + <span class="string">&#x27;&#x27;</span> <span class="comment">// TypeError: Cannot convert a Symbol value to a string</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 객체 타입</span></span><br><span class="line">(&#123;&#125;) + <span class="string">&#x27;&#x27;</span> <span class="comment">// &#x27;[object Object]&#x27;</span></span><br><span class="line"><span class="title class_">Math</span> + <span class="string">&#x27;&#x27;</span> <span class="comment">// &#x27;[object Math]&#x27;</span></span><br><span class="line">[] + <span class="string">&#x27;&#x27;</span> <span class="comment">// &#x27;&#x27;</span></span><br><span class="line">[<span class="number">10</span>, <span class="number">20</span>] + <span class="string">&#x27;&#x27;</span> <span class="comment">// &#x27;10,20&#x27;</span></span><br><span class="line">(<span class="keyword">function</span>(<span class="params"></span>)&#123;&#125;) + <span class="string">&#x27;&#x27;</span> <span class="comment">// &#x27;function()&#123;&#125;&#x27;</span></span><br><span class="line"><span class="title class_">Array</span> + <span class="string">&#x27;&#x27;</span> <span class="comment">// &#x27;function Array() &#123; [native code] &#125;&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="숫자-타입으로-변환"><a href="#숫자-타입으로-변환" class="headerlink" title="숫자 타입으로 변환"></a>숫자 타입으로 변환</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="number">1</span> - <span class="string">&#x27;1&#x27;</span>; <span class="comment">// 0</span></span><br><span class="line"><span class="number">1</span> * <span class="string">&#x27;10&#x27;</span>; <span class="comment">// 10</span></span><br><span class="line"><span class="number">1</span> / <span class="string">&#x27;one&#x27;</span>; <span class="comment">// NaN</span></span><br></pre></td></tr></table></figure>
+
+<p>위 코드에서 사용한 연산자는 모두 산술 연산자이다.<br>산술 연산자의 역할은 숫자 값을 만드는 것이므로 산술 연산자의 모든 피연산자는 코드 문맥상 모두 숫자 타입이어야 한다.</p>
+<p>자바스크립트 엔진은 산술 연산자 표현식을 평가하기 위해 산술 연산자의 피연산자 중에서 숫자 타입이 아닌 피연산자를 숫자 타입으로 암묵적 타입 변환한다. 이때 피연산자를 숫자 타입으로 변환할 수 없는 경우는 산술 연산을 수행할 수 없으므로 표현식의 평가 결과는 NaN이 된다.</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="string">&#x27;1&#x27;</span> &gt; <span class="number">0</span>; <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
+
+<p>비교 연산자의 역할은 불리언 값을 만드는 것이다. &gt; 비교 연산자는 피연산자의 크기를 비교하므로 모든 피연산자는 코드 문맥상 모두 숫자 타입이어야 한다.<br>자바스크립트 엔진은 비교 연산자의 피연산자 중에서 숫자 타입이 아닌 피연산자를 숫자 타입으로 암묵적 타입 변환한다.</p>
+<p>자바스크립트 엔진은 숫자 타입이 아닌 값을 숫자 타입으로 암묵적 타입 변환을 수행할 때 다음과 같이 동작한다.</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 문자열 타입</span></span><br><span class="line">+<span class="string">&#x27;&#x27;</span> + <span class="comment">// 0</span></span><br><span class="line">  <span class="string">&#x27;0&#x27;</span> + <span class="comment">// 0</span></span><br><span class="line">  <span class="string">&#x27;1&#x27;</span> + <span class="comment">// 1</span></span><br><span class="line">  <span class="string">&#x27;string&#x27;</span> + <span class="comment">// NaN</span></span><br><span class="line">  <span class="comment">// 불리언 타입</span></span><br><span class="line">  <span class="literal">true</span> + <span class="comment">// 1</span></span><br><span class="line">  <span class="literal">false</span> + <span class="comment">// 0</span></span><br><span class="line">  <span class="comment">// null 타입</span></span><br><span class="line">  <span class="literal">null</span> / <span class="number">0</span> +</span><br><span class="line">  <span class="comment">// undefined 타입</span></span><br><span class="line">  <span class="literal">undefined</span> + <span class="comment">// NaN</span></span><br><span class="line">  <span class="comment">// 심벌 타입</span></span><br><span class="line">  <span class="title class_">Symbol</span>() + <span class="comment">// TypeError: Cannot convert a Symbol value to a number</span></span><br><span class="line">  <span class="comment">// 객체 타입</span></span><br><span class="line">  &#123;&#125; + <span class="comment">// NaN</span></span><br><span class="line">  [] + <span class="comment">// 0</span></span><br><span class="line">  [<span class="number">10</span>, <span class="number">20</span>] + <span class="comment">// NaN</span></span><br><span class="line">  <span class="keyword">function</span> (<span class="params"></span>) &#123;&#125;; <span class="comment">// NaN</span></span><br></pre></td></tr></table></figure>
+
+<p>빈 문자열(‘’), 빈 배열([]), null, false는 0으로 true는 1로 변환된다.<br>객체와 빈 배열이 아닌 배열, undefined는 변환되지 않아 NaN이 되는 것에 주의하자.</p>
+<h3 id="불리언-타입으로-변환"><a href="#불리언-타입으로-변환" class="headerlink" title="불리언 타입으로 변환"></a>불리언 타입으로 변환</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> (<span class="string">&#x27;&#x27;</span>) <span class="variable language_">console</span>.<span class="title function_">log</span>(x);</span><br></pre></td></tr></table></figure>
+
+<p>if 문이나 for 문과 같은 제어문 또는 삼항 조건 연산자의 조건식은 불리언 값, 즉 논리적 참과 거짓으로 평가되어야 한느 표현식이다.<br>자바스크립트 엔진은 조건식의 평가 결과를 불리언 타입으로 암묵적 타입 변환한다.</p>
+<p>이때 자바스크립트 엔진은 불리언 타입이 아닌 값을 Truthy 값(참으로 평가되는 값) 또는 Falsy 값(거짓으로 평가되는 값)으로 구분한다.</p>
+<p>false로 평가되는 Falsy 값은 다음과 같다.</p>
+<ul>
+<li>false</li>
+<li>undefined</li>
+<li>null</li>
+<li>0, -0</li>
+<li>NaN</li>
+<li>‘’(빈 문자열)</li>
+</ul>
+<p>Falsy 값 외의 모든 값은 모두 true로 평가되는 Truthy 값이다.</p>
+<h2 id="명시적-타입-변환"><a href="#명시적-타입-변환" class="headerlink" title="명시적 타입 변환"></a>명시적 타입 변환</h2><p>개발자의 의도에 따라 명시적으로 타입을 변경하는 방법은 다양하다.<br>표준 빌트인 생성자 함수(String, Number, Boolean)을 new 연산자 없이 호출하는 방법과 빌트인 메서드를 사용하는 방법, 그리고 앞서 살펴본 암묵적 타입 변환을 이용하는 방법이 있다.</p>
+<h3 id="문자열-타입으로-변환-1"><a href="#문자열-타입으로-변환-1" class="headerlink" title="문자열 타입으로 변환"></a>문자열 타입으로 변환</h3><p>문자열 타입이 아닌 값을 문자열 타입으로 변환하는 방법은 다음과 같다.</p>
+<ul>
+<li>String 생성자 함수를 new 연산자 없이 호출</li>
+<li>Object.prototype.toString 메서드를 사용</li>
+<li>문자열 연결 연산자를 이용</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="title class_">String</span>(<span class="number">1</span>); <span class="comment">// &#x27;1&#x27;</span></span><br><span class="line"><span class="title class_">String</span>(<span class="title class_">NaN</span>); <span class="comment">// &#x27;NaN&#x27;</span></span><br><span class="line"><span class="title class_">String</span>(<span class="literal">true</span>); <span class="comment">// &#x27;true&#x27;</span></span><br><span class="line"></span><br><span class="line">(<span class="number">1</span>).<span class="title function_">toString</span>(); <span class="comment">// &#x27;1&#x27;</span></span><br><span class="line"><span class="title class_">NaN</span>.<span class="title function_">toString</span>(); <span class="comment">// &#x27;NaN&#x27;</span></span><br><span class="line"><span class="literal">true</span>.<span class="title function_">toString</span>(); <span class="comment">// &#x27;true&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="number">1</span> + <span class="string">&#x27;&#x27;</span>; <span class="comment">// &#x27;1&#x27;</span></span><br><span class="line"><span class="title class_">NaN</span> + <span class="string">&#x27;&#x27;</span>; <span class="comment">// &#x27;NaN&#x27;</span></span><br><span class="line"><span class="literal">true</span> + <span class="string">&#x27;&#x27;</span>; <span class="comment">// &#x27;true&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="숫자-타입으로-변환-1"><a href="#숫자-타입으로-변환-1" class="headerlink" title="숫자 타입으로 변환"></a>숫자 타입으로 변환</h3><p>숫자 타입이 아닌 값을 숫자 타입으로 변환하는 방법은 다음과 같다.</p>
+<ul>
+<li>Number 생성자 함수를 new 연산자 없이 호출</li>
+<li>parseInt, parseFloat 함수를 사용(문자열만 숫자 타입으로 변환 가능)</li>
+<li>+ 단항 산술 연산자를 이용</li>
+<li>* 산술 연산자를 이용</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="title class_">Number</span>(<span class="string">&#x27;0&#x27;</span>); <span class="comment">// 0</span></span><br><span class="line"><span class="title class_">Number</span>(<span class="string">&#x27;10.53&#x27;</span>); <span class="comment">// 10.53</span></span><br><span class="line"><span class="title class_">Number</span>(<span class="literal">true</span>); <span class="comment">// 1</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">parseInt</span>(<span class="string">&#x27;0&#x27;</span>); <span class="comment">// 0</span></span><br><span class="line"><span class="built_in">parseFloat</span>(<span class="string">&#x27;10.53&#x27;</span>); <span class="comment">// 10.53</span></span><br><span class="line"></span><br><span class="line">+<span class="string">&#x27;0&#x27;</span>; <span class="comment">// 0</span></span><br><span class="line">+<span class="string">&#x27;10.53&#x27;</span>; <span class="comment">// 10.53</span></span><br><span class="line"><span class="literal">true</span>; <span class="comment">// 1</span></span><br><span class="line"></span><br><span class="line"><span class="string">&#x27;0&#x27;</span> * <span class="number">1</span>; <span class="comment">// 0</span></span><br><span class="line"><span class="string">&#x27;10.53&#x27;</span> * <span class="number">1</span>; <span class="comment">// 10.53</span></span><br><span class="line"><span class="literal">true</span> * <span class="number">1</span>; <span class="comment">// 1</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="불리언-타입으로-변환-1"><a href="#불리언-타입으로-변환-1" class="headerlink" title="불리언 타입으로 변환"></a>불리언 타입으로 변환</h3><p>불리언 타입이 아닌 값을 불리언 타입으로 변환하는 방법은 다음과 같다.</p>
+<ul>
+<li>Boolean 생성자 함수를 new 연산자 없이 호출</li>
+<li>부정 논리 연산자(!)를 두전 사용</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="title class_">Boolean</span>(<span class="string">&#x27;x&#x27;</span>); <span class="comment">// true</span></span><br><span class="line"><span class="title class_">Boolean</span>(<span class="string">&#x27;&#x27;</span>); <span class="comment">// false</span></span><br><span class="line"><span class="title class_">Boolean</span>(&#123;&#125;); <span class="comment">// true</span></span><br><span class="line"></span><br><span class="line">!!<span class="string">&#x27;x&#x27;</span>; <span class="comment">// true</span></span><br><span class="line">!!<span class="string">&#x27;&#x27;</span>; <span class="comment">// false</span></span><br><span class="line">!!&#123;&#125;; <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="단축-평가"><a href="#단축-평가" class="headerlink" title="단축 평가"></a>단축 평가</h2><p>이전에 연산자를 공부하면서 논리합(||) 연산자와 논리곱(&amp;&amp;) 연산자에 대해 살펴 본 적이 있다.<br>논리합(||) 또는 논리곱(&amp;&amp;) 연산자 표현식은 언제나 2개의 피연산자 중 한쪽으로 평가되는데 이를 설명하기 위해서는 암묵적 타입 변환을 알아야 한다.<br>앞서 암묵적 타입 변환에 대해 살펴보았으니 이에 대해 알아보자.</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="string">&#x27;Cat&#x27;</span> &amp;&amp; <span class="string">&#x27;Dog&#x27;</span>; <span class="comment">// &#x27;Dog&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<p>논리곱(&amp;&amp;) 연산자는 두 개의 피연산자가 모두 true로 평가될 때 true를 반환한다. 논리곱 연산자는 좌항에서 우항으로 평가가 진행된다.</p>
+<p>첫 번째 피연산자 ‘Cat’은 Truthy 값이므로 true로 평가된다. 하지만 이 시점까지는 위 표현식을 평가할 수 없다.<br>두 번째 피연산자까지 평가해 보아야 위 표현식을 평가할 수 있다. 즉 두 번째 피연산자가 논리곱 연산자 표현식의 평가 결과를 결정한다.<br>이때 논리곱 연산자는 논리 연산의 결과를 결정하는 두 번째 피연산자 문자열 ‘Dog’를 타입 변환 없이 그대로 반환한다.</p>
+<p>논리합(||) 연산자도 논리곱(&amp;&amp;) 연산자와 동일하게 동작한다.</p>
+<p>논리곱(&amp;&amp;) 연산자와 논리합(||) 연산자는 이처럼 논리 연산의 결과를 결정하는 피연산자를 타입 변환하지 않고 그대로 반환한다.<br>이를 단축평가라 한다. 단축 평가는 표현식을 평가하는 도중에 평가 결과가 확정된 경우 나머지 평가 과정을 생략하는 것을 말한다.</p>
+<p>단축 평가를 사용하면 if 문을 대체할 수 있다. 어떤 조건이 Truthy 값일 때 무언가를 해야 한다면 논리곱(&amp;&amp;) 연산자를, 어떤 조건이 Falsy 값일 때 무언가를 해야 한다면 논리합(||) 연산자를 이용할 수 있다.</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> done = <span class="literal">true</span>;</span><br><span class="line"><span class="keyword">var</span> message = <span class="string">&#x27;&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> (done) message = <span class="string">&#x27;완료&#x27;</span>;</span><br><span class="line">message = done &amp;&amp; <span class="string">&#x27;완료&#x27;</span>;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(message); <span class="comment">// 완료</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> done = <span class="literal">false</span>;</span><br><span class="line"><span class="keyword">var</span> message = <span class="string">&#x27;&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> (done) message = <span class="string">&#x27;미완료&#x27;</span>;</span><br><span class="line">message = done || <span class="string">&#x27;미완료&#x27;</span>;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(message); <span class="comment">// 미완료</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="옵셔널-체이닝-연산자"><a href="#옵셔널-체이닝-연산자" class="headerlink" title="옵셔널 체이닝 연산자"></a>옵셔널 체이닝 연산자</h3><p>ES11에서 도입된 옵셔널 체이닝 연산자 ?.는 좌항의 피연산자가 null 또는 undefined인 경우 undefined를 반환하고, 그렇지 않으면 우항의 프로퍼티 참조를 이어간다.</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> elem = <span class="literal">null</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> value = elem?.<span class="property">value</span>;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(value); <span class="comment">// undefined</span></span><br></pre></td></tr></table></figure>
+
+<p>옵셔널 체이닝 연산자는 객체를 가리키기를 기대하는 변수가 null 또는 undefined가 아닌지 확인하고 프로퍼티를 참조할 때 유용하다.<br>옵셔널 체이닝 연산자가 도입되기 이전에는 논리곱 연산자를 사용한 단축 평가를 통해 변수가 null 또는 undefined인지 확인했다.</p>
+<p>논리곱 연산자는 좌항의 피연산자가 Falsy 값이면 좌항 피연산자를 그대로 반환한다. 좌항 피연산자가 Falsy 값인 0이나 ‘’인 경우도 마찬가지다.<br>하지만 0이나 ‘’은 객체로 평가될 때도 있다. 옵셔널 체이닝 연산자는 좌항 피연산자가 Falsy 값이라도 null 또는 undefined가 아니면 우항의 프로퍼티 참조를 이어간다는 차이점이 있다.</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> str = <span class="string">&#x27;&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> length1 = str &amp;&amp; str.<span class="property">length</span>;</span><br><span class="line"><span class="keyword">var</span> length2 = str?.<span class="property">length</span>;</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(length1); <span class="comment">// &#x27;&#x27;</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(length2); <span class="comment">// 0</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="null-병합-연산자"><a href="#null-병합-연산자" class="headerlink" title="null 병합 연산자"></a>null 병합 연산자</h3><p>ES11에서 도입된 null 병합 연산자 ??는 좌항의 피연산자가 null 또는 undefined인 경우 우항의 피연산자를 반환하고, 그렇지 않으면 좌항의 피연산자를 반환한다.</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> foo = <span class="literal">null</span> ?? <span class="string">&#x27;default string&#x27;</span>;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(foo); <span class="comment">// &#x27;default string&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<p>null 병합 연산자는 변수에 기본값을 설정할 때 유용하다. null 병합 연산자가 도입되기 이전에는 논리합 연산자를 사용한 단축 평가를 통해 변수에 기본값을 설정했다.</p>
+<p>논리합 연산자는 좌항의 피연산자가 Falsy 값이면 우항의 피연산자를 반환한다. 만약 Falsy 값인 0이나 ‘’도 기본값으로 유효하다면 예기치 않은 동작이 발생할 수 있다. 하지만 null 병합 연산자는 좌항의 피연산자가 Falsy 값이라도 null 또는 undefined가 아니면 좌항의 피연산자를 그대로 반환한다는 차이점이 있다.</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> foo1 = <span class="string">&#x27;&#x27;</span> || <span class="string">&#x27;default string&#x27;</span>;</span><br><span class="line"><span class="keyword">var</span> foo2 = <span class="string">&#x27;&#x27;</span> ?? <span class="string">&#x27;default string&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(foo1); <span class="comment">// &#x27;default string&#x27;</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(foo2); <span class="comment">// &#x27;&#x27;</span></span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <tags>
+        <tag>개발</tag>
+        <tag>자바스크립트</tag>
+        <tag>모던 자바스크립트 Deep Dive</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>MDN을 확신하지는 말자.</title>
+    <url>/2022/Don-t-be-sure-of-MDN-always/</url>
+    <content><![CDATA[<p>어제에 이어 position에 대해 공부하면서 position이 absolute인 경우 containing block은 가장 가까운 position이 static이 아닌 부모요소 외에도 다른 조건들이 있다고 해 MDN을 통해 공부를 하던 중 이상하다고 생각되는 점이 생겼다.</p>
+<hr>
+
+<h1 id="👀"><a href="#👀" class="headerlink" title="👀"></a>👀</h1><p><a href="https://developer.mozilla.org/ko/docs/Web/CSS/Containing_block">컨테이닝 블록의 모든것</a>이라는 MDN 문서에서 컨테이닝 블록 식별 항목을 읽어보면 다음과 같이 설명하고 있다. </p>
+<blockquote>
+<p>position 속성이 <strong>absolute</strong>나 <strong>fixed</strong>인 경우, 다음 조건 중 하나를 만족하는 가장 가까운 조상의 내부 여백 영역이 컨테이닝 블록이 될 수도 있습니다.</p>
+</blockquote>
+<ul>
+<li>transform이나 perspective (en-US) 속성이 none이 아님.</li>
+<li>will-change 속성이 transform이나 perspective임.</li>
+<li>filter 속성이 none임. (Firefox에선 will-change가 filter일 때도 적용)</li>
+<li>contain 속성이 paint임.</li>
+</ul>
+<p>각 속성들이 어떤 역할을 하는지 찾아보던 중 filter 속성을 검색해 보았는데 default value가 none임을 알았다. 그러자 다음과 같은 의문이 생겼다.</p>
+<h1 id="🤔"><a href="#🤔" class="headerlink" title="🤔"></a>🤔</h1><p>음 이상한데? filter 속성이 none이면 containing block이 될 수 있고 filter 속성의 default value가 none이면 거의 모든것이 containing block이 될 수 있다는 소리인가? 그건 아닌것 같은데…<br>아 된다가 아니라 될 수도 있다네? 그러면 될 수 있는 조건과 안되는 조건은 무엇이지? </p>
+<p>그러다 [position] (<a href="https://developer.mozilla.org/ko/docs/Web/CSS/position">https://developer.mozilla.org/ko/docs/Web/CSS/position</a>) MDN을 들어가 보니 fixed 항목이 이렇게 나와 있었다.</p>
+<blockquote>
+<p>요소를 일반적인 문서 흐름에서 제거하고, 페이지 레이아웃에 공간도 배정하지 않습니다. 대신 뷰포트의 초기 컨테이닝 블록을 기준으로 삼아 배치합니다. 단, 요소의 조상 중 하나가 transform, perspective, filter 속성 중 어느 하나라도 none이 아니라면 (CSS Transforms 명세 참조) 뷰포트 대신 그 조상을 컨테이닝 블록으로 삼습니다. (perspective와 filter의 경우 브라우저별로 결과가 다름에 유의) 최종 위치는 top, right, bottom, left 값이 지정합니다.</p>
+</blockquote>
+<p>앗 여기에는 filter 속성이 none이 아니라고 되어있네 뭐가 맞는거지? transform이나 perspective가 none이 아니여야 했으니 filter도 none이 아닌게 맞는것 같은데.. 라며 계속 고민하다 같이 공부하시는 분들의 도움을 받아 궁금증을 해결했다.</p>
+<h1 id="✔"><a href="#✔" class="headerlink" title="✔"></a>✔</h1><p>바로 <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Containing_block">영문 MDN 사이트</a>에는 filter 속성이 none이 아니라고 나와있던것! 사이트 번역과정에서 오류가 있었던것이다. </p>
+<blockquote>
+<ul>
+<li>A filter value other than none or a will-change value of filter (only works on Firefox).</li>
+</ul>
+</blockquote>
+<hr>
+
+<p>MDN이 거의 공식문서 혹은 표준처럼 여겨지기는 하지만 번역문서 그리고 원문 역시도 contributor분들에 의해 쓰여지는 것이기 때문에 확신을 하지는 말고 여러 레퍼런스들을 통해 교차검증해야되겠다고 깨달았다.</p>
+]]></content>
+      <tags>
+        <tag>개발</tag>
+        <tag>MDN</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>[Deep Dive] 원시 값과 객체의 비교</title>
+    <url>/2022/Modern-Javascript-Deep-Dive-Chapter-11-Summary/</url>
+    <content><![CDATA[<h1 id="원시-값-vs-객체-값"><a href="#원시-값-vs-객체-값" class="headerlink" title="원시 값 vs 객체 값"></a>원시 값 vs 객체 값</h1><p>앞서 데이터 타입에서 살펴보았듯이 자바스크립트가 제공하는 데이터타입은 크게 원시 타입과 객체 타입으로 구분할 수 있다.</p>
+<p>데이터 타입을 원시 타입과 객체 타입으로 구분하는 이유는 무엇일까?<br>원시 타입과 객체 타입은 근본적으로 다르다는 의미일 것이다. 원시타입과 객체 타입은 크게 세 가지 측면에서 다르다.</p>
+<ul>
+<li>원시 타입의 값은 변경 불가능한 값이다. 반면 객체(참조) 타입의 값은 변경 가능한 값이다.</li>
+<li>원시 값을 변수에 할당하면 변수(확보된 메모리 공간)에는 실제 값이 저장된다. 반면 객체를 변수에 할당하면 변수에는 참조 값이 저장된다.</li>
+<li>원시 값을 갖는 변수를 다른 변수에 할당하면 원본의 원시 값이 복사되어 전달된다. 이를 값에 의한 전달이라고 한다. 반면 객체를 가리키는 변수를 다른 변수에 할당하면 원본의 참조 값이 복사되어 전달된다. 이를 참조에 의한 전달이라고 한다.</li>
+</ul>
+<p>원시 타입과 객체 타입에 대해 조금 더 자세히 살펴보자</p>
+<h2 id="원시-값"><a href="#원시-값" class="headerlink" title="원시 값"></a>원시 값</h2><h3 id="변경-불가능한-값"><a href="#변경-불가능한-값" class="headerlink" title="변경 불가능한 값"></a>변경 불가능한 값</h3><p>원시 타입의 값은 변경 불가능한 값이다. 다시 말해, 한번 생성된 원시 값은 읽기 전용 값으로 변경할 수 없다.</p>
+<p>값을 변경할 수 없다는 것이 어떤 의미일까? 먼저 변수와 값을 정확히 구분해야 한다.<br>변수란 하나의 값을 저장하기 위해 확보한 메모리 공간 자체 또는 그 메모리 공간을 식별하기 위해 붙인 이름이고, 값이란 변수에 저장된 데이터로 표현식이 평가되어 생성된 결과이다. 값을 변경할 수 없다는 것은 변수에 관한 것이 아닌 값에 대한 진술이다.</p>
+<p>즉 원시 값을 변경할 수 없다는 것은 원시 값 자체를 변경할 수 없다는 것이지 변수 값을 변경할 수 없다는 것이 아니다. 변수 값은 재할당을 통해 언제든지 변경 가능하다. 단 상수는 재할당이 금지된 변수이므로 변수 값을 변경할 수 없다.</p>
+<p>원시 값은 변경 불가능한 값이므로 데이터의 신뢰성을 보장한다.</p>
+<p>변수에서 살펴보았듯이 원시 값을 할당한 변수에 새로운 원시 값을 재할당하면 메모리 공간에 저장되어 있는 재할당 이전의 원시 값을 변경하는 것이 아니라 새로운 메모리 공간을 확보하고 재할당할 값을 저장한 후 변수가 새롭게 재할당한 원시 값을 가리킨다.</p>
+<p>변수가 참조하던 메모리 공간의 주소가 변경된 이유는 변수에 할당된 원시 값이 변경 불가능한 값이기 때문이다.<br>만약 원시 값이 변경 가능한 값이라면 변수에 새로운 원시 값을 재할당했을 때 변수가 가리키던 메모리 공간의 주소를 바꿀 필요 없이 원시 값 자체를 변경하면 될 것이다.</p>
+<p>하지만 원시 값은 불변성을 가지므로 원시 값을 할당한 변수는 재할당 이외에 변수 값을 변경할 수 있는 방법이 없다.</p>
+<h3 id="값에-의한-전달"><a href="#값에-의한-전달" class="headerlink" title="값에 의한 전달"></a>값에 의한 전달</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> score = <span class="number">80</span>;</span><br><span class="line"><span class="keyword">var</span> copy = score;</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(score); <span class="comment">// 80</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(copy); <span class="comment">// 80</span></span><br><span class="line"></span><br><span class="line">score = <span class="number">100</span>;</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(score); <span class="comment">// 100</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(copy); <span class="comment">// ?</span></span><br></pre></td></tr></table></figure>
+
+<p>score 변수에 숫자 값 80을 할당 한 후 copy 변수에 score 변수를 할당했다. 그 후, score 변수에 새로운 숫자 값 100을 재할당하면 copy 변수의 값은 어떻게 될까?</p>
+<p>이 질문은 결국 “변수에 변수를 할당했을 때 무엇이 어떻게 전달되는가?”이다. copy &#x3D; score에서 score는 변수 값 80으로 평가되므로 copy 변수에도 80이 할당된다. 이처럼 변수에 원시 값을 갖는 변수를 할당하면 할당받는 변수(copy)에는 할당되는 변수(score)의 원시 값이 복사되어 전달되는데 이를 값에 의한 전달이라 한다.</p>
+<p>score 변수와 copy 변수는 숫자 값 80을 갖는다는 점은 동일하지만 score 변수와 copy 변수의 값 80은 다른 메모리 공간에 저장된 별개의 값이다.<br>따라서 score변수의 값을 변경하더라도 copy 변수의 값은 어떠한 영향을 주지 않는다. 즉 마지막 <code>console.log(copy)</code>의 결과는 80이다.</p>
+<p>사실 이는 실제 자바스크립트 엔진의 내부 동작과 정확히 일치하지 않을 수 있다. ECMAScript 사양에는 변수를 통해 메모리를 어떻게 관리해야 하는지 명확하게 정의되어 있지 않다. 따라서 실제 자바스크립트 엔진을 구현하는 제조사에 따라 내부 동작은 차이가 있을 수 있다.</p>
+<p>위에서는 변수에 원시 값을 갖는 변수를 할당하면 원시 값이 복사되어 새로운 메모리 공간에 할당한다고 설명했지만, 변수에 원시 값을 갖는 변수를 할당하는 시점에는 두 변수가 같은 원시 값을 참조하다가 어느 한쪽의 변수에 재할당이 이뤄졌을 때 비로소 새로운 메모리 공간에 재할당된 값을 저장하도록 동작할 수도 있다.</p>
+<p>또한 엄격히 말하자면 변수와 같은 식별자는 값이 아니라 메모리 주소를 기억하기에 변수에는 값이 전달되는 것이 아니라 메모리 주소가 전달된다. 따라서 “값에 의한 전달”이라는 용어도 사실 오해가 있을 수 있다.</p>
+<p>결국 “값에 의한 전달”도 사실은 값이 아니라 메모리 주소를 전달한다. 단 전달된 메모리 주소를 통해 메모리 공간에 접근하면 값을 참조할 수 있다.<br>중요한 것은 변수에 원시 값을 갖는 변수를 할당하면 변수 할당 시점이든, 두 변수 중 어느 하나의 변수에 값을 재할당하는 시점이든 결국은 두 변수의 원시 값은 서로 다른 메모리 공간에 저장된 별개의 값이 되어 어느 한쪽에서 재할당을 통해 값을 변경하더라도 서로 간섭할 수 없다는 것이다.</p>
+<h2 id="객체"><a href="#객체" class="headerlink" title="객체"></a>객체</h2><p>객체는 프로퍼티의 개수가 정해져 있지 않으며, 동적으로 추가되고 삭제할 수 있다. 또 프로퍼티의 값에도 제약이 없다.<br>즉 객체는 원시 값과는 다르게 확보해야 할 메모리 공간의 크기를 사전에 정해 둘 수 없다.</p>
+<p>따라서 객체는 원시 값과는 다른 방식으로 동작하도록 설계되어 있다. 원시 값과의 차이를 통해 객체에 대해 이해해보자.</p>
+<h3 id="변경-가능한-값"><a href="#변경-가능한-값" class="headerlink" title="변경 가능한 값"></a>변경 가능한 값</h3><p>객체 타입의 값은 변경 가능한 값이다. 이게 어떤 의미일까? 먼저 변수에 객체를 할당하면 어떤 일이 일어나는지 살펴보자</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> person = &#123;</span><br><span class="line">  <span class="attr">name</span>: <span class="string">&#x27;Lee&#x27;</span>,</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>원시 값을 할당한 변수가 기억하는 메모리 주소를 통해 메모리 공간에 접근하면 원시 값에 접근할 수 있다.<br>즉, 원시 값을 할당한 변수는 원시 값 자체를 값으로 갖는다. 하지만 객체를 할당한 변수가 기억하는 메모리 주소를 통해 메모리 공간에 접근하면 참조 값에 접근할 수 있다. 참조 값은 생성된 객체가 저장된 메모리 공간의 주소이다.</p>
+<p>원시 값을 할당한 변수를 참조하면 메모리에 저장되어 있는 원시 값에 접근한다. 하지만 객체를 할당한 변수를 참조하면 메모리에 저장되어 있는 참조 값을 통해 실제 객체에 접근한다.</p>
+<p>원시 값은 변경 불가능한 값이므로 원시 값을 갖는 변수의 값을 변경하려면 재할당 외에는 방법이 없다. 하지만 객체는 변경 가능한 값이므로 객체를 할당한 변수는 재할당 없이 객체를 직접 변경할 수 있다. 재할당 없이 프로퍼티를 동적으로 추가할 수도 있고 프로퍼티 값을 갱신할 수도 있으며 프로퍼티 자체를 삭제할 수도 있다.</p>
+<p>이때 객체를 할당한 변수에 재할당을 하지 않았으므로 객체를 할당한 변수의 참조 값은 변경되지 않는다.<br>이는 메모리 사용의 효율성과 성능을 위해 어느 정도의 구조적인 단점을 감안한 설계라고 할 수 있다.</p>
+<p>객체는 이러한 구조적 단점에 따른 부작용이 존재한다. 원시 값과는 다르게 여러 개의 식별자가 하나의 객체를 공유할 수 있다는 것이다.</p>
+<h3 id="참조에-의한-전달"><a href="#참조에-의한-전달" class="headerlink" title="참조에 의한 전달"></a>참조에 의한 전달</h3><p>여러 개의 식별자가 하나의 객체를 공유할 수 있다는 것이 무슨 의미인지, 어떤 부작용이 발생하는지 알아보자.</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> person = &#123;</span><br><span class="line">  <span class="attr">name</span>: <span class="string">&#x27;Lee&#x27;</span>;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> copy = person;</span><br></pre></td></tr></table></figure>
+
+<p>객체를 가리키는 변수(원본, person)을 다른 변수(사본, copy)에 할당하면 원본의 참조 값이 복사되어 전달되는데 이를 참조에 의한 전달이라 한다.</p>
+<p>원본 person과 사본 copy는 저장된 메모리 주소는 다르지만 동일한 참조 값을 가지므로 원본 person과 사본 copy 모두 동일한 객체를 가리키게 된다.<br>이것이 두 개의 식별자가 하나의 객체를 공유한다는 것을 의미한다. 따라서 원본 또는 사본 중 어느 한 쪽에서 객체를 변경하면 서로 영향을 주고받는다.</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> person = &#123;</span><br><span class="line">  <span class="attr">name</span>: <span class="string">&#x27;Lee&#x27;</span>,</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> copy = person;</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(copy === person); <span class="comment">// true</span></span><br><span class="line"></span><br><span class="line">copy.<span class="property">name</span> = <span class="string">&#x27;Kim&#x27;</span>;</span><br><span class="line">person.<span class="property">address</span> = <span class="string">&#x27;Seoul&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// copy와 person은 동일한 객체를 가리키므로 서로 영향을 주고 받는다.</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(person); <span class="comment">// &#123;name: &#x27;Kim&#x27;, address: &#x27;Seoul&#x27;&#125;</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(copy); <span class="comment">// &#123;name: &#x27;Kim&#x27;, address: &#x27;Seoul&#x27;&#125;</span></span><br></pre></td></tr></table></figure>
+
+<p>결국 “값에 의한 전달”과 “참조에 의한 전달”은 식별자가 기억하는 메모리 공간에 저장되어 있는 값을 복사해 전달한다는 면에서 동일하다.<br>다만 식별자가 기억하는 메모리 공간, 즉 변수에 저장되어 있는 값이 원시 값이냐 참조 값이냐의 차이만 있을 뿐이다. 따라서 자바스크립트에는 “참조에 의한 전달”은 존재하지 않고 “값에 의한 전달”만이 존재한다고 말할 수 있지만 전달되는 값이 원시 값인지 참조 값인지 구별해 강조하는 의미로 구분해 부른다고 할 수 있다.</p>
+]]></content>
+      <tags>
+        <tag>개발</tag>
+        <tag>자바스크립트</tag>
+        <tag>모던 자바스크립트 Deep Dive</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>[Deep Dive] 객체 리터럴</title>
+    <url>/2022/Modern-Javascript-Deep-Dive-Chapter-10-Summary/</url>
+    <content><![CDATA[<h1 id="객체란"><a href="#객체란" class="headerlink" title="객체란?"></a>객체란?</h1><p>자바스크립트는 객체 기반의 프로그래밍 언어이며, 자바스크립트를 구성하는 거의 모든것이 객체이다.<br>원시 값을 제외한 나머지 값(함수, 배열, 정규 표현식 등)은 모두 객체다.</p>
+<p>원시 타입은 단 하나의 값만 나타내지만 객체타입은 다양한 타입의 값을 하나의 단위로 구성한 복합적인 자료구조다.<br>원시 타입의 값은 변경 불가능한 값이지만 객체 타입의 값은 변경 가능한 값이다.</p>
+<p>객체는 0개 이상의 프로퍼티로 구성된 집합이며, 프로퍼티는 키와 값으로 구성된다.</p>
+<p>자바스크립트에서 사용할 수 있는 모든 값은 프로퍼티 값이 될 수 있다. 자바스크립트의 함수는 일급 객체로 값으로 취급할 수 있다.<br>따라서 함수도 프로퍼티 값으로 사용 가능한데, 프로퍼티 값이 함수일 경우 일반 함수와 구분하기 위해 메서드라 한다.</p>
+<p>이처럼 객체는 프로퍼티와 메서드로 구성된 집합체이며 프로퍼티와 메서드의 역할은 다음과 같다.</p>
+<ul>
+<li>프로퍼티: 객체의 상태를 나타내는 값(data)</li>
+<li>메서드: 프로퍼티(상태 데이터)를 참조하고 조작할 수 있는 동작(behavior)</li>
+</ul>
+<p>객체는 프로퍼티와 메서드를 통해 상태와 동작을 하나의 단위로 구조화할 수 있어 유용하다.</p>
+<h2 id="객체-리터럴에-의한-객체-생성"><a href="#객체-리터럴에-의한-객체-생성" class="headerlink" title="객체 리터럴에 의한 객체 생성"></a>객체 리터럴에 의한 객체 생성</h2><p>C++이나 자바와 같은 클래스 기반 객체지향 언어는 클래스를 사전에 정의하고 필요한 시점에 new 연산자와 함께 생성자를 호출하여 인스턴스를 생성하는 방식으로 객체를 생성한다.</p>
+<p>자바스크립트는 프로토타입 기반 객체지향 언어로 클래스 기반 객체지향 언어와는 달리 다양한 객체 생성 방법을 지원한다.</p>
+<ul>
+<li>객체 리터럴</li>
+<li>Object 생성자 함수</li>
+<li>생성자 함수</li>
+<li>Object.create 메서드</li>
+<li>클래스(ES6)</li>
+</ul>
+<p>객체 생성 방법 중에서 가장 일반적이고 간단한 방법은 객체 리터럴을 사용하는 방법이다.<br>객체 리터럴은 중괄호({…}) 내에 0개 이상의 프로퍼티를 정의한다. 자바스크립트 엔진은 변수에 할당되는 시점에 객체 리터럴을 해석해 객체를 생성한다.</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> person = &#123;</span><br><span class="line">  <span class="attr">name</span>: <span class="string">&#x27;rongrong&#x27;</span>,</span><br><span class="line">  <span class="attr">sayHello</span>: <span class="keyword">function</span> (<span class="params"></span>) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`Hello! my name is <span class="subst">$&#123;<span class="variable language_">this</span>.name&#125;</span>.`</span>);</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="keyword">typeof</span> person); <span class="comment">// object</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(person); <span class="comment">// &#123;name: &#x27;rongrong&#x27;, sayHello: f&#125;</span></span><br></pre></td></tr></table></figure>
+
+<p>객체 리터럴의 중괄호는 코드 블록을 의미하지 않는다는것에 주의하자. 코드 블록의 닫는 중괄호 뒤에는 세미콜론을 붙이지 않는다.<br>하지만 객체 리터럴은 값으로 평가되는 표현식으로 객체 리터럴의 닫는 괄호 뒤에는 세미콜론을 붙인다.</p>
+<p>객체 리터럴은 자바스크립트의 유연함과 강력함을 대표하는 객체 생성 방식으로 객체 리터럴에 프로퍼티를 포함시켜 객체를 생성함과 동시에 프로퍼티를 만들 수도 있고, 객체를 생성한 이후에 프로퍼티를 동적으로 추가할 수도 있다.</p>
+<p>그렇다면 프로퍼티에 대해 자세히 알아보자.</p>
+<h2 id="프로퍼티"><a href="#프로퍼티" class="headerlink" title="프로퍼티"></a>프로퍼티</h2><p>객체는 프로퍼티의 집합이며, 프로퍼티는 키와 값으로 구성된다.<br>프로퍼티를 나열할 때는 쉼표로 구분한다. 일반적으로 마지막 프로퍼티 뒤에는 쉼표를 사용하지 않지만 사용해도 괜찮다.</p>
+<p>프로퍼티 키와 프로퍼티 값으로 사용할 수 있는 값은 다음과 같다.</p>
+<ul>
+<li>프로퍼티 키: 빈 문자열을 포함하는 모든 문자열 또는 심벌 값</li>
+<li>프로퍼티 값: 자바스크립트에서 사용할 수 있는 모든 값</li>
+</ul>
+<p>프로퍼티 키는 프로퍼티 값에 접근할 수 있는 이름으로 식별자의 역할을 한다. 하지만 반드시 식별자 네이밍규칙을 따라야 하는 것은 아니다.<br>단, 식별자 네이밍 규칙을 준수하는 프로퍼티 키와 그렇지 않은 키에는 차이가 존재한다.</p>
+<p>심벌 값도 프로퍼티 키로 사용할 수 있지만 일반적으로 문자열을 사용한다. 이때 프로퍼티 키는 문자열이므로 따옴표로 묶어야 한다.<br>하지만 식별자 네이밍 규칙을 준수하는 이름은 따옴표를 생략할 수 있다. 반대로 식별자 네이밍 규칙을 따르지 않는 이름에는 반드시 따옴표를 사용해야 한다.</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> person = &#123;</span><br><span class="line">  <span class="attr">firstName</span>: <span class="string">&#x27;rong&#x27;</span>, <span class="comment">// 식별자 네이밍 규칙을 준수한 프로퍼티 키</span></span><br><span class="line">  <span class="string">&#x27;last-name&#x27;</span>: <span class="string">&#x27;rong&#x27;</span>, <span class="comment">// 식별자 네이밍 규칙을 준수하지 않은 프로퍼티 키</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(person); <span class="comment">// &#123;firstName: &#x27;rong&#x27;, last-name: &#x27;rong&#x27;&#125;</span></span><br></pre></td></tr></table></figure>
+
+<p>프로퍼티 키로 사용한 firstName은 식별자 네이밍 규칙을 준수하므로 따옴표를 생략할 수 있다.<br>하지만 last-name은 식별자 네이밍 규칙을 주수하지 않으므로 따옴표를 생략할 수 없다. 자바스크립트 엔진은 따옴표를 생략한 last-name을 - 연산자가 있는 표현식으로 해석한다.</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> person = &#123;</span><br><span class="line">  <span class="attr">firstName</span>: <span class="string">&#x27;rong&#x27;</span>,</span><br><span class="line">  last-<span class="attr">name</span>: <span class="string">&#x27;rong&#x27;</span>, <span class="comment">// SyntaxError: Unexpected token -</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>문자열 또는 문자열로 평가할 수 있는 표현식을 사용해 프로퍼티 키를 동적으로 생성 가능하다. 이 경우에는 프로퍼티 키로 사용할 표현식을 대괄호로 묶어야 한다.</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = &#123;&#125;;</span><br><span class="line"><span class="keyword">var</span> key = <span class="string">&#x27;hello&#x27;</span>;</span><br><span class="line"></span><br><span class="line">obj[key] = <span class="string">&#x27;world&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(obj); <span class="comment">// &#123;hello: &#x27;world&#x27;&#125;</span></span><br></pre></td></tr></table></figure>
+
+<p>이미 존재하는 프로퍼티 키를 중복 선언하면 나중에 선언한 프로퍼티가 먼저 선언한 프로퍼티를 덮어쓴다.<br>이때 에러가 발생하지 않으니 주의해야 한다.</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> foo = &#123;</span><br><span class="line">  <span class="attr">name</span>: <span class="string">&#x27;Lee&#x27;</span>,</span><br><span class="line">  <span class="attr">name</span>: <span class="string">&#x27;Kim&#x27;</span>,</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(foo); <span class="comment">// &#123;name: &#x27;Kim&#x27;&#125;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="메서드"><a href="#메서드" class="headerlink" title="메서드"></a>메서드</h2><p>자바스크립트에서 사용할 수 있는 모든 값은 프로퍼티 값으로 사용할 수 있다고 했다.<br>자바스크립트의 함수는 일급객체로 값으로 취급할 수 있기 때문에 프로퍼티 값으로 사용 가능하다.</p>
+<p>프로퍼티 값이 함수일 경우 일반 함수와 구분하기 위해 메서드라 부르는데 즉 메서드는 객체에 묶여 있는 함수를 의미한다.</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> circle = &#123;</span><br><span class="line">  <span class="attr">radius</span>: <span class="number">5</span>, <span class="comment">// 프로퍼티</span></span><br><span class="line">  <span class="comment">// 원의 지름을 구하는 메서드</span></span><br><span class="line">  <span class="attr">getDiameter</span>: <span class="keyword">function</span> (<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">2</span> * <span class="variable language_">this</span>.<span class="property">radius</span>;</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(circle.<span class="title function_">getDiameter</span>()); <span class="comment">// 10</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="프로퍼티-접근"><a href="#프로퍼티-접근" class="headerlink" title="프로퍼티 접근"></a>프로퍼티 접근</h2><p>프로퍼티에 접근하는 방법은 다음과 같이 두 가지이다.</p>
+<ul>
+<li>마침표 프로퍼티 접근 연산자(.)를 사용하는 마침표 표기법</li>
+<li>대괄호 프로퍼티 접근 연산자([…])를 사용하는 대괄호 표기법</li>
+</ul>
+<p>프로퍼티 키가 식별자 네이밍 규칙을 준수하는 이름이면 마침표 표기법과 대괄호 표기법을 모두 사용할 수 있다.</p>
+<p>대괄호 표기법을 사용하는 경우 대괄호 프로퍼티 접근 연산자 내부에 지정하는 프로퍼티 키는 반드시 따옴표로 감싼 문자열이어야 한다.<br>대괄호 프로퍼티 접근 연산자 내에 따옴표로 감싸지 않은 이름을 프로퍼티 키로 사용하면 자바스크립트 엔진은 식별자로 해석한다.</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> person = &#123;</span><br><span class="line">  <span class="attr">name</span>: <span class="string">&#x27;rongrong&#x27;</span>,</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(person.<span class="property">name</span>); <span class="comment">// &#x27;rongrong&#x27;</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(person[<span class="string">&#x27;name&#x27;</span>]); <span class="comment">// &#x27;rongrong&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(person[name]); <span class="comment">// ReferenceError: name is not defined</span></span><br></pre></td></tr></table></figure>
+
+<p>위 코드에서 ReferenceError가 발생한 이유는 대괄호 연산자 내의 따옴표로 감싸지 않은 이름, 즉 식별자 name을 평가하기 위해 선언된 name을 찾았지만 찾지 못했기 때문이다.</p>
+<p>객체에 존재하지 않는 프로퍼티에 접근하면 undefined를 반환한다. 이때 ReferenceError가 발생하지 않는데에 주의하자</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> person = &#123;</span><br><span class="line">  <span class="attr">name</span>: <span class="string">&#x27;rongrong&#x27;</span>,</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(person.<span class="property">age</span>); <span class="comment">// undefined</span></span><br></pre></td></tr></table></figure>
+
+<p>프로퍼티 키가 식별자 네이밍 규칙을 준수하지 않으면 반드시 대괄호 표기법을 사용해야 한다.<br>단 프로퍼티 키가 숫자로 이루어진 문자열인 경우 따옴표를 생략할 수 있다.</p>
+<h2 id="프로퍼티-값-갱신"><a href="#프로퍼티-값-갱신" class="headerlink" title="프로퍼티 값 갱신"></a>프로퍼티 값 갱신</h2><p>이미 존재하는 프로퍼티에 값을 할당하면 프로퍼티 값이 갱신된다</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> person = &#123;</span><br><span class="line">  <span class="attr">name</span>: <span class="string">&#x27;Lee&#x27;</span>,</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">person.<span class="property">name</span> = <span class="string">&#x27;Kim&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(person); <span class="comment">// &#123;name: &quot;Kim&quot;&#125;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="프로퍼티-동적-생성"><a href="#프로퍼티-동적-생성" class="headerlink" title="프로퍼티 동적 생성"></a>프로퍼티 동적 생성</h2><p>존재하지 않는 프로퍼티에 값을 할당하면 프로퍼티가 동적으로 생성되어 추가되고 프로퍼티 값이 할당된다.</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> person = &#123;</span><br><span class="line">  <span class="attr">name</span>: <span class="string">&#x27;rongrong&#x27;</span>,</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">person.<span class="property">age</span> = <span class="number">25</span>;</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(person); <span class="comment">// &#123;name: &#x27;rongrong&#x27;, age: 25&#125;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="프로퍼티-삭제"><a href="#프로퍼티-삭제" class="headerlink" title="프로퍼티 삭제"></a>프로퍼티 삭제</h2><p>delete 연산자는 객체의 프로퍼티를 삭제한다. 이때 delete 연산자의 피연산자는 프로퍼티 값에 접근할 수 있는 표현식이어야 한다.<br>이때 존재하지 않는 프로퍼티를 삭제해도 아무런 에러 없이 무시된다.</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> person = &#123;</span><br><span class="line">  <span class="attr">name</span>: <span class="string">&#x27;rongrong&#x27;</span>,</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">person.<span class="property">age</span> = <span class="number">25</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">delete</span> person.<span class="property">age</span>; <span class="comment">// 프로퍼티 동적 생성 후 삭제</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">delete</span> person.<span class="property">address</span>; <span class="comment">// 존재하지 않는 프로퍼티 삭제, 에러 없이 무시</span></span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(person); <span class="comment">// &#123;name: &#x27;rongrong&#x27;&#125;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="ES6에서-추가된-객체-리터럴의-확장-기능"><a href="#ES6에서-추가된-객체-리터럴의-확장-기능" class="headerlink" title="ES6에서 추가된 객체 리터럴의 확장 기능"></a>ES6에서 추가된 객체 리터럴의 확장 기능</h2><p>ES6에서는 더욱 간편하고 표현력 있는 객체 리터럴의 확장 기능을 제공한다.</p>
+<h3 id="프로퍼티-축약-표현"><a href="#프로퍼티-축약-표현" class="headerlink" title="프로퍼티 축약 표현"></a>프로퍼티 축약 표현</h3><p>객체 리터럴의 프로퍼티는 프로퍼티 키와 프로퍼티 값으로 구성된다. 프로퍼티 값은 변수에 할당된 값, 즉 식별자 표현식일 수도 있다.</p>
+<p>ES6에서는 프로퍼티 값으로 변수를 사용하는 경우 변수 이름과 프로퍼티 키가 동일한 이름일 때 프로퍼티 키를 생략할 수 있다.<br>이때 프로퍼티 키는 변수 이름으로 자동 생성된다.</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> x = <span class="number">1</span>,</span><br><span class="line">  y = <span class="number">2</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> obj = &#123; x, y &#125;;</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(obj); &#123;<span class="attr">x</span>: <span class="number">1</span>, <span class="attr">y</span>: <span class="number">2</span>&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="메서드-축약-표현"><a href="#메서드-축약-표현" class="headerlink" title="메서드 축약 표현"></a>메서드 축약 표현</h3><p>ES5에서 메서드를 정의하려면 프로퍼티 값으로 함수를 할당한다.</p>
+<p>ES6에서는 메서드를 정의할 때 function 키워드를 생략한 축약 표현을 사용할 수 있다.</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> obj = &#123;</span><br><span class="line">  <span class="attr">name</span>: <span class="string">&#x27;rongrong&#x27;</span>,</span><br><span class="line">  <span class="title function_">sayHi</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;Hi! &#x27;</span> + <span class="variable language_">this</span>.<span class="property">name</span>);</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">obj.<span class="title function_">sayHi</span>(); <span class="comment">// &#x27;Hi! rongrong&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<p>ES6의 메서드 축약 표현으로 정의한 메서드는 프로퍼티에 할당한 함수와 다르게 동작한다.</p>
+]]></content>
+      <tags>
+        <tag>개발</tag>
+        <tag>자바스크립트</tag>
+        <tag>모던 자바스크립트 Deep Dive</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>원티드 프리온보딩 프론트엔드 인턴십 1주차 회고</title>
+    <url>/2023/Retrospect-About-1st-Week-Of-Wanted-Pre-Onboarding-Frontend-InternShip/</url>
+    <content><![CDATA[<p><img src="/../images/wanted-preonboarding.jpeg" alt="원티드 프리온보딩 프론트엔드 인턴십"></p>
+<h1 id="들어가며"><a href="#들어가며" class="headerlink" title="들어가며"></a>들어가며</h1><p>4주동안 진행되는 원티드 프리온보딩 프론트엔드 인턴십의 1주차가 지나갔다.</p>
+<p>이번 1주차의 프로젝트는 인턴십을 지원하기 위해 수행했던 사전과제를 바탕으로 진행되었기 때문에 수월하기도 했지만 또 한편으로는 처음 팀을 구성하고 조율해야하는 부분들이 있어 어려운 부분들도 존재했다. 특히 단기간 오랜 시간을 집중해야 하는 상황 + 협업을 오랜만에 겪다보니 조금 힘들기도하고 적응이 잘 안되는 부분도 존재했다.</p>
+<p>언제나 그렇듯이 좋았던 부분도 있었고 아쉬운 부분도 있었는데, 앞으로 더 보람있는 3주를 위해 1주차에 대해 회고를 해보려고 한다.</p>
+<h1 id="원티드-프리온보딩-프론트엔드-인턴십-1주차-과제"><a href="#원티드-프리온보딩-프론트엔드-인턴십-1주차-과제" class="headerlink" title="원티드 프리온보딩 프론트엔드 인턴십 1주차 과제"></a>원티드 프리온보딩 프론트엔드 인턴십 1주차 과제</h1><h2 id="2023-04-25-첫-회의"><a href="#2023-04-25-첫-회의" class="headerlink" title="2023.04.25 - 첫 회의"></a>2023.04.25 - 첫 회의</h2><p>이번 프로젝트는 동료학습을 통해서 팀에서 생각한 원티드 프리온보딩 프론트엔드 인턴십 <a href="https://github.com/walking-sunset/selection-task">선발 과제</a>의 Best Pratice를 만들고 제출하는 과제였다.</p>
+<p>Best Practice란 모범사례라는 말로서, 특정 문제를 효과적으로 해결하기 위한 가장 성공적인 해결책 또는 방법론을 의미하는데, 사람들마다 좋은 해결책에 대한 생각이 다를 것이기에 처음 과제를 안내받았을때부터 <code>&#39;아 이거 이미 수행했던 과제를 바탕으로 진행한다고는 해도 쉽지만은 않겠다&#39;</code>라는 생각이 들었다. 특히 이번 과제를 같이 진행하게된 팀원의 수가 총 10명이기에 더욱 그랬다.</p>
+<p>과제를 수행하는 기간이 2023-04-25 ~ 2023-04-28로 총 4일이였기에 아무 준비없이 첫 회의에 들어가면 시간적으로 너무 촉박할것 같아 다음처럼 간단히 첫 회의에서 진행했으면 하는 일에 대한 체크리스트를 만들어 갔다.</p>
+<ul>
+<li>체크리스트<ul>
+<li>자기소개 및 팀장 정하기</li>
+<li>Communication Tool - Discord, slack etc.</li>
+<li>일정 공유 및 정규 회의시간 정하기</li>
+<li>Repository 관리 및 README.md 작성법</li>
+<li>각자가 생각하는 Best Practice란?</li>
+<li>Best Practice 선정 단위 - Assignment, Component etc.</li>
+</ul>
+</li>
+</ul>
+<p>이런 준비덕분(<del>때문</del>)이였을까? 자기소개를 하고 팀장을 정하는 자리에서 팀원분들이 나를 팀장으로 추천해주셨다. 이번 인턴십에서 팀장이라는 역할이 기술적인 리딩을 하는 자리는 아니여서 크게 다를 것은 없었지만, 의견 조율과 같은 부분에서 중심을 잡아야 하지 않을까라는 생각에 부담이 있긴 했다. 그래도 이런 경험을 할 수 있는 기회가 많지도 않고, 또 성장하는데에 도움이 될 것 같아 팀장 자리를 맡기로 했다.</p>
+<p>그 후 준비해간 체크리스트대로 Best Practice에 대해 얘기를 나누었고, 대략적인 선정 기준을 정한 후 다음 회의 일정을 잡게 되었다.</p>
+<h2 id="2023-04-26-두번째-회의"><a href="#2023-04-26-두번째-회의" class="headerlink" title="2023.04.26 - 두번째 회의"></a>2023.04.26 - 두번째 회의</h2><p>두번째 회의에서는 다음과 같은 체크리스트를 만들어가서 회의를 진행했다.</p>
+<ul>
+<li>체크리스트<ul>
+<li>팀명 정하기</li>
+<li>Repository</li>
+<li>프로젝트 세팅</li>
+<li>컨벤션 세팅</li>
+<li>사전과제 Assignment 1-4 리뷰</li>
+<li>과제 진행 방향 및 수행</li>
+</ul>
+</li>
+</ul>
+<p>처음 환경설정을 위해 모두가 모여 어떤 라이브러리를 사용할지 또 팀적으로 정하고 갈 컨벤션들에 대해 논의를 나누고 실제 세팅을 진행했다. 역시나 ESLint, Prettier등의 설정이 한번에 완벽히 되지는 않았고 <code>&#39;아 역시 환경설정이 쉽진 않네&#39;</code>라고 생각이 들었고 더 경험을 쌓아야겠다고 느꼈다.</p>
+<p>또한 다른 팀원분이 Craco라는 (나는 이번에 처음 알게된) 라이브러리를 사용하자고 의견을 제시해 주셨는데, Craco를 사용하는 이유를 알아보며 지금까지 무심코 사용했던 CRA(Create-React-App)의 내부 구조에 대해서도 더 알 수 있었다.</p>
+<p>그 후 Assignment 별로 각자가 생각하는 Best Practice에 대해 얘기를 나누었다. <code>팀원분들마다 어떤 코드가 좋다고 생각하는 이유가 다양했고, 다른 관점들에 대해 듣다보니 코드를 바라보는 시야가 넓어지는것 같아서 좋았다.</code> 아마 이런 점이 동료학습의 가장 큰 장점이 아닐까?</p>
+<p>여튼 각 Assignment마다 특별한 부분이 있기는 했지만 공통적으로 코드의 가독성, 성능 최적화, 유저 편의성이 Best Practice로 선정하는데에 가장 중요하다고 정해졌고 이 세가지 항목을 신경쓰면서 기능을 구현하기로 했다.</p>
+<h2 id="그-후"><a href="#그-후" class="headerlink" title="그 후"></a>그 후</h2><p>두번째 회의 이후로는 회의를 통해 선정한 Best Practice에 따라 Assignment별 담당자가 기능을 구현했고 이를 PR한 내용을 같이 확인하며 코드 리뷰를 진행했다. 더 자세한 내용은 <a href="https://github.com/WANTED-TEAM03/pre-onboarding-10th-1-3#readme">README.md</a>를 통해 확인 가능하다.</p>
+<h2 id="KPT"><a href="#KPT" class="headerlink" title="KPT"></a>KPT</h2><p>과제를 진행하면서 많은 부분들에 대해 생각해 볼 수 있었고, 알게 된 점들도 많아서 좋았다. 하지만 아쉬운 부분도 존재했는데 각 부분을 정리해보고자 한다.</p>
+<h3 id="Keep"><a href="#Keep" class="headerlink" title="Keep"></a>Keep</h3><ul>
+<li>몇번의 프로젝트를 진행하면서 기록의 중요성에 대해 많이 느끼게 되었다. 이번 인턴십에서는 꼭 문서화를 잘 해보자고 생각했는데 뛰어난 팀원분들 덕분에 만족스러운 README.md 및 기록을 남길 수 있었다!</li>
+</ul>
+<h3 id="Problem"><a href="#Problem" class="headerlink" title="Problem"></a>Problem</h3><ul>
+<li><p>Github을 통해 코드를 관리할 때, <code>Issue를 발행하고 그 Issue 번호에 따라 새로운 branch를 생성한 후 코드를 작성하고 develop branch에 병합한 후 마지막에 develop branch를 main branch에 병합하는 전략</code>을 택했다. 그런데 중간에 develop branch에 PR을 날려야 하는데 main branch PR을 날린 것을 제대로 확인하지 못하고 병합을 하는 실수를 2번이나 반복했다. 리뷰 과정의 체크리스트를 만드는등의 실수를 최소화하는 방법을 생각해 봐야 할 것 같다.</p>
+</li>
+<li><p>확실히 10명이나 되는 사람들의 일정이 조율되기는 어려웠다. 의견 공유에는 화상회의와 같은 실시간 소통이 가장 효율적이라고 생각하는데 이게 쉽지만은 않을 것 같다. 이번에는 수행했던 사전과제를 바탕으로 해서 수월했지만 다음부터는 새로운 과제를 수행하고 이를 바탕으로 의견을 나누어야 하는데 <code>Issues, Pull requests</code>등을 조금 더 잘 활용할 방안에 대해 생각해 봐야 할 것 같다.</p>
+</li>
+</ul>
+<h3 id="Try"><a href="#Try" class="headerlink" title="Try"></a>Try</h3><ul>
+<li>더 많은 의견을 공유하자 ! - 이번 인턴십에 참여하면서 가장 중요하게 여겼던 점은 (물론 취업에 도움이 되기에 선택한 것이지만) 성장이다. 특히 평상시에 가지기 어려운 다른 개발자와의 소통을 통해 내가 생각하지 못했던 관점을 알아 가고 싶다고 생각했다. <code>인턴십 기간동안 보람찬 3조가 되자!</code>라는 의미에서 보람삼조라는 팀명을 정했는데, 정말 보람찬 기간으로 만들기 위해 더 많은 의견을 공유하고 배워가야겠다.</li>
+</ul>
+]]></content>
+      <tags>
+        <tag>개발</tag>
+        <tag>회고</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>백준 Node.js 입출력법</title>
+    <url>/2022/Node-js-input-and-output-in-Baekjoon-Online-Judge/</url>
+    <content><![CDATA[<p>지금까지 leetcode와 프로그래머스를 통해 코딩테스트 공부를 하고 있었는데 leetcode는 영어 해석의, 프로그래머스는 적은 문제수의 단점을 가지고 있어 백준을 통해 코딩테스트 연습을 시작해보았다.</p>
+<p>백준에서는 javascript로 코딩테스트를 준비하기 위해 node.js를 선택해야 했는데 프로그래머스에서는 함수만 작성하면 되었던 반면에 백준에서는 입출력을 직접 해주어야 했다.</p>
+<p>백준에서 node.js로 입력을 받는 방법은 크게 두가지로 readline 모듈을 사용하는 것과 fs 모듈을 사용하는 것이다. fs 모듈의 경우 readline 모듈보다 코드가 간단하고 더 빠르다고 해 fs 모듈의 대해 찾아보았다.</p>
+<hr>
+
+<h1 id="fs"><a href="#fs" class="headerlink" title="fs"></a><strong>fs</strong></h1><p>FileSystem의 약자인 fs 모듈은 파일 처리와 관련된 모듈이다. <a href="https://help.acmicpc.net/">BOJ 도움말</a>에서는 다음과 같은 코드로 fs 모듈을 통한 입력을 소개하고 있다.</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> fs = <span class="built_in">require</span>(<span class="string">&#x27;fs&#x27;</span>);</span><br><span class="line"><span class="keyword">let</span> input = fs.<span class="title function_">readFileSync</span>(<span class="string">&#x27;/dev/stdin&#x27;</span>).<span class="title function_">toString</span>().<span class="title function_">split</span>(<span class="string">&#x27; &#x27;</span>);</span><br><span class="line"><span class="keyword">let</span> a = <span class="built_in">parseInt</span>(input[<span class="number">0</span>]);</span><br><span class="line"><span class="keyword">let</span> b = <span class="built_in">parseInt</span>(input[<span class="number">1</span>]);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(a+b);</span><br></pre></td></tr></table></figure>
+
+<p>하지만 위 코드를 이용할때에도 입력되는 값에 따라 에러가 발생하는 경우가 있어 다양한 방식의 입력법에 대해 정리해 보았다.</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="number">1.</span> 하나의 값을 입력받을 때</span><br><span class="line"><span class="keyword">const</span> fs = <span class="built_in">require</span>(<span class="string">&#x27;fs&#x27;</span>);</span><br><span class="line"><span class="keyword">const</span> input = fs.<span class="title function_">readFileSync</span>(<span class="string">&quot;/dev/stdin&quot;</span>).<span class="title function_">toString</span>().<span class="title function_">trim</span>();</span><br><span class="line"></span><br><span class="line"><span class="number">2.</span> 공백으로 구분된 한 줄의 값들을 입력받을 때</span><br><span class="line"><span class="keyword">const</span> fs = <span class="built_in">require</span>(<span class="string">&#x27;fs&#x27;</span>);</span><br><span class="line"><span class="keyword">const</span> input = fs.<span class="title function_">readFileSync</span>(<span class="string">&quot;/dev/stdin&quot;</span>).<span class="title function_">toString</span>().<span class="title function_">trim</span>().<span class="title function_">split</span>(<span class="string">&quot; &quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="number">3.</span> 여러 줄의 값들을 입력받을 때</span><br><span class="line"><span class="keyword">const</span> fs = <span class="built_in">require</span>(<span class="string">&#x27;fs&#x27;</span>);</span><br><span class="line"><span class="keyword">const</span> input = fs.<span class="title function_">readFileSync</span>(<span class="string">&quot;/dev/stdin&quot;</span>).<span class="title function_">toString</span>().<span class="title function_">trim</span>().<span class="title function_">split</span>(<span class="string">&quot;\n&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="number">4.</span> 첫 번째 줄에 자연수 n을 입력받고, 그 다음줄에 공백으로 구분된 n개의 값들을 입력받을 때</span><br><span class="line"><span class="keyword">const</span> fs = <span class="built_in">require</span>(<span class="string">&#x27;fs&#x27;</span>);</span><br><span class="line"><span class="keyword">const</span> [n, ...arr] = fs.<span class="title function_">readFileSync</span>(<span class="string">&quot;/dev/stdin&quot;</span>).<span class="title function_">toString</span>().<span class="title function_">trim</span>().<span class="title function_">split</span>(<span class="regexp">/\s/</span>);</span><br><span class="line"></span><br><span class="line"><span class="number">5.</span> 첫 번째 줄에 자연수 n을 입력받고, 그 다음줄부터 n개의 줄에 걸쳐 한 줄에 하나의 값을 입력받을 때</span><br><span class="line"><span class="keyword">const</span> fs = <span class="built_in">require</span>(<span class="string">&#x27;fs&#x27;</span>);</span><br><span class="line"><span class="keyword">const</span> [n, ...arr] = fs.<span class="title function_">readFileSync</span>(<span class="string">&quot;/dev/stdin&quot;</span>).<span class="title function_">toString</span>().<span class="title function_">trim</span>().<span class="title function_">split</span>(<span class="string">&quot;\n&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="number">6.</span> 하나의 값 또는 공백으로 구분된 여러 값들을 여러 줄에 걸쳐 뒤죽박죽 섞여서 입력받을 때</span><br><span class="line">  ex) n 입력 - 공백으로 구분된 n개의 값 입력 - m 입력 - 여러 줄에 걸쳐 m개의 값 입력</span><br><span class="line"><span class="keyword">const</span> fs = <span class="built_in">require</span>(<span class="string">&#x27;fs&#x27;</span>);</span><br><span class="line"><span class="keyword">const</span> input = fs.<span class="title function_">readFileSync</span>(<span class="string">&quot;/dev/stdin&quot;</span>).<span class="title function_">toString</span>().<span class="title function_">trim</span>().<span class="title function_">split</span>(<span class="regexp">/\s/</span>);</span><br><span class="line"><span class="keyword">const</span> n = input[<span class="number">0</span>];</span><br><span class="line"><span class="keyword">const</span> n_arr = input.<span class="title function_">slice</span>(<span class="number">1</span>, n+<span class="number">1</span>);</span><br><span class="line"><span class="keyword">const</span> [m, ...m_arr] = input.<span class="title function_">slice</span>(n+<span class="number">1</span>);</span><br></pre></td></tr></table></figure>
+<p>최종 결과 확인을 위해선 <strong>console.log()</strong> 를 통해 값을 출력해주면 된다.</p>
+<hr>
+
+<h2 id="참고"><a href="#참고" class="headerlink" title="참고"></a>참고</h2><p><a href="https://overcome-the-limits.tistory.com/25">[알고리즘] 백준 0.nodejs 입력하기</a><br><a href="https://tesseractjh.tistory.com/39">Node.js로 백준(BOJ) 문제 풀 때 유의할 점들</a></p>
+]]></content>
+      <tags>
+        <tag>개발</tag>
+        <tag>JavaScript</tag>
+        <tag>코딩테스트</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>첫 프로젝트를 마치고</title>
+    <url>/2022/Retrospective-about-my-first-project/</url>
+    <content><![CDATA[<h1 id="들어가며"><a href="#들어가며" class="headerlink" title="들어가며"></a>들어가며</h1><p>약 2주동안 진행했던 프로젝트가 종료되었다. 개발 공부를 시작한지도 얼마 안 되었고 처음으로 해본 프로젝트인지라 2주가 정말 정신없이 지나가버렸다. 배운점도 많았고 아쉬운점도 많았는데 회고를 하며 정리해보려고 한다.</p>
+<p>완성된 결과물은 <a href="https://woowahal-6go5.vercel.app/">https://woowahal-6go5.vercel.app/</a> 에서 확인 가능하다.</p>
+<hr>
+
+<h1 id="프로젝트-우아할"><a href="#프로젝트-우아할" class="headerlink" title="프로젝트 우아할"></a>프로젝트 우아할</h1><p>이전글에서 언급했듯이 우리 팀은 배달의 민족 앱을 웹 페이지로 클론하기로 했다(그래서 팀명도 <strong>우아할</strong>형제들로 정했다).</p>
+<p>개발 기간은 2022-09-19 ~ 2022-09-30로 약 2주 동안 진행되었고, 팀원은 나를 포함해 총 3명이었다.</p>
+<p>프로젝트 기간이나 인원에 비해 배달의 민족이 가지고 있는 콘텐츠가 너무 많아 모든 페이지를 클론 할 수는 없었고 배달의 민족에서 배달하기 까지의 주요 프로세스를 메인,카테고리, 리스트, 디테일, 오더, 장바구니, 결과의 7개 페이지로 나누어 구현해 보았다.</p>
+<p>나는 그 중 메인페이지와 카테고리 페이지를 주로 담당했다.</p>
+<hr>
+
+<h2 id="기술-스택"><a href="#기술-스택" class="headerlink" title="기술 스택"></a>기술 스택</h2><p>페이지를 구현하면서 Figma, Git, npm, HTML, CSS, Sass, JS, Vercel을 이용했다.</p>
+<h3 id="Figma"><a href="#Figma" class="headerlink" title="Figma"></a>Figma</h3><p>구현해야 하는 페이지들의 와이어프레임 및 컴포넌트들을 시각적으로 구성해보기 위해 Figma를 이용했다.</p>
+<p>페이지에서 주사용되는 컬러를 시스템화해서 플러그인을 통해 변수로 쉽게 추출할 수 있었다.</p>
+<p>아직 툴 사용이 미숙해 많은 기능을 활용하지는 못한것 같아 아쉽다</p>
+<h3 id="Git-Github"><a href="#Git-Github" class="headerlink" title="Git, Github"></a>Git, Github</h3><p>프로젝트의 버전관리를 위해 Git을 이용했다. Git flow 전략을 모방해 메인을 제외한 develop, subdev, release 3개의 branch를 만들었다.</p>
+<p>기본적으로 모든 변경사항을 subdev에 push하였고, merge가 잘 완료되면 log를 추가해 develop으로 옮겼다. 최종적으로 public 폴더만 build해 release에 저장했다.</p>
+<h3 id="npm"><a href="#npm" class="headerlink" title="npm"></a>npm</h3><p>개발환경 세팅과 최종적인 프로젝트 파일의 최적화를 위해 npm을 이용했다.</p>
+<p>rimraf, npm-run-all, live-server, sass는 개발환경 세팅을 위해 webpack, postcss는 최적화를 위해 사용해 보았다.</p>
+<h3 id="HTML"><a href="#HTML" class="headerlink" title="HTML"></a>HTML</h3><p>HTML의 경우 시맨틱 마크업을 제일 중요시 여겼는데 먼저 손으로 페이지의 구조를 설계 한 후 코드로 작성했다. 그 후 코드리뷰를 시간을 가져 팀원들끼리 왜 그렇게 코드를 작성했는지, 구조가 논리적인지 설득하는 시간을 가졌다.</p>
+<h3 id="CSS-Sass"><a href="#CSS-Sass" class="headerlink" title="CSS, Sass"></a>CSS, Sass</h3><p>CSS를 효과적으로 사용하기 위해 Sass를 이용했고 이 때 가장 중요시 여긴점은 컨벤션이였다. 기본적으로 BEM 방식을 이용한 Naming과 최대한 구체적인 클래스명을 사용하기로 정했다.</p>
+<hr>
+
+<h2 id="KPT"><a href="#KPT" class="headerlink" title="KPT"></a>KPT</h2><h3 id="Keep"><a href="#Keep" class="headerlink" title="Keep"></a>Keep</h3><ul>
+<li><p>프로젝트를 시작하기 전 환경설정을 중요시 여기고 이 부분에 대해 많이 논의 했는데 그 결과 git 충돌도 거의 없었고 일어난 충돌도 금방 해결 할 수 있었다.</p>
+</li>
+<li><p>1차적인 프로젝트 결과물을 가지고 lighthouse 검사를 통해 부족한 부분을 찾고 개선하기 위해 노력했다. 실질적인 성능 향상을 볼 수 있어서 좋았다.</p>
+</li>
+<li><p>의견충돌이 있을때 그냥 넘어가지 않고 서로를 설득하기 위해 노력했는데 생각에 대한 근거를 찾고 정리해보며 의견을 구체화 시킬 수 있었다.</p>
+</li>
+</ul>
+<h3 id="Problem"><a href="#Problem" class="headerlink" title="Problem"></a>Problem</h3><ul>
+<li><p>Sass 사용의 아쉬움 - Sass 를 사용하기 위해 폴더 구조를 잘 분리한것은 좋았으나 중첩규칙, 변수 이외에는 잘 사용하지 못했다. 특히 중복적으로 사용되는 코드들을 믹스인으로 분리했어야 했는데 그러지 못했다.</p>
+</li>
+<li><p>미숙했던 초반 소통</p>
+</li>
+</ul>
+<h3 id="Try"><a href="#Try" class="headerlink" title="Try"></a>Try</h3><ul>
+<li>문서화의 중요성 - 서로 상의해 결정했던 부분들이나 컴포넌트에 대한 문서들을 남겨 서로 참고할 수 있도록 하자고 말했었지만 실제 프로젝트를 진행하면서 잘 수행되지 못했다. 문서화가 잘 되어 있는 다른 프로젝트 조의 경우 전체적인 프로젝트 상황에 대한 파악이 수월해 보였다. 다음 프로젝트를 진행할 때에는 꼭 문서화에 신경써봐야겠다.</li>
+</ul>
+<hr>
+
+<h1 id="마치며"><a href="#마치며" class="headerlink" title="마치며"></a>마치며</h1><p>첫 프로젝트를 진행하며 많은 것을 배울 수 있어 정말 좋았다. 하지만 역시 머리에 계속해서 남는것은 아쉬운 점들인 것 같다.</p>
+<p>평소 배달의 민족을 많이 사용하면서 이런 기능이 있으면 좋겠다고 생각해 오던것이 있다. 나는 결정장애가 심한 편이라 어떤것을 먹을지, 또 메뉴를 정해도 어디서 시킬지 정말 많이 고민한다. 그래서 카테고리만 선택하면 룰렛이 돌아가듯이 랜덤으로 가게와 메뉴가 선택되면 좋겠다고 생각했다.</p>
+<p>마침 배달의 민족을 웹으로 구현하기로 결정해서 이 기능도 추가해 보려고 했는데 막상 스스로의 자바스크립트 실력도 너무 부족하고 어떤 데이터베이스를 기반으로 정보를 가져와야 할지 아이디어 역시도 너무 구체적이지 않아 쉽지 않았다.</p>
+<p>스스로 많이 부족하다고 느끼는 점이 가장 아쉬웠다.<br>다만 앞으로 3개월 동안 커넥to 과정을 통해 모던 자바스크립트 Deep Dive의 저자이신 이웅모 강사님에게 자바스크립트 강의를 듣게 되었는데, 정말 좋은 기회이니 만큼 열심히 배우고 또 평상시 가지고 있던 아이디어들에 대해서도 구체화해 프로젝트를 리팩토링해봐야 겠다.</p>
+]]></content>
+      <tags>
+        <tag>개발</tag>
+        <tag>회고</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>정규식 Test Method에 대해 새롭게 알게된 점</title>
+    <url>/2023/New-things-I-learned-about-the-regExp-test-method/</url>
+    <content><![CDATA[<h1 id="😱문제발생"><a href="#😱문제발생" class="headerlink" title="😱문제발생"></a>😱문제발생</h1><p>원티드 프리온보딩 프론트엔드 인턴십에 참여하여 1주차 과제를 진행하던 중이었다.<br>1주차 과제는 인턴십에 참여하기 위해 수행했던 사전과제를 동료학습을 통해 리팩토링 하는 것이였고, 나는 팀원들과의 토의로 얻은 Best Practice의 기준을 가지고 Assignment1의 기능 구현을 맡아 코드를 작성하고 있었다.</p>
+<ul>
+<li>Assignment 1<ul>
+<li>회원가입과 로그인 페이지에 이메일과 비밀번호의 유효성 검사기능을 구현해주세요<ul>
+<li>이메일 조건: @ 포함, 비밀번호 조건: 8자 이상</li>
+</ul>
+</li>
+<li>입력된 이메일과 비밀번호가 유효성 검사를 통과하지 못한다면 button에 disabled 속성을 부여해주세요</li>
+</ul>
+</li>
+</ul>
+<p>Assignment 1의 유효성 검증을 구현하기 위해 정규식을 이용하는게 좋을 것 같다라는 의견을 수용해, <code>password: /^.&#123;8,&#125;$/g</code>의 정규식을 통해 코드를 작성하고 정상적으로 동작하는지 확인을 하는데 갑자기 다음과 같은 문제가 발생했다.</p>
+<p><img src="/../images/reg-test-problem.gif" alt="문제"></p>
+<p>8자리의 비밀번호를 입력했을때 error message가 정상적으로 사라지길래 검증이 잘 되는구나 생각했는데, 추가적으로 비밀번호를 입력할때 마다 error message가 생겼다 없어졌다 하는 것이다. 즉 비밀번호를 입력할때마다 정규식으로 검증한 결과가 바뀐다는 것이였는데, 혹시나해서 정규식으로 검증한 결과를 개발자 도구를 통해 살펴보았다.</p>
+<p><img src="/../images/reg-test-console.png" alt="개발자도구로 찍어본 정규식 테스트"></p>
+<p>같은 정규식으로 같은 값을 검사했는데도 그 결과가 계속해서 바뀌는 현상이 일어났는데, 아무리 생각해도 이해가 되지 않아 ChatGPT를 통해 질문을 해 본 결과 다음과 같은 답을 받을 수 있었다.</p>
+<p><img src="/../images/reg-test-gpt.png" alt="ChatGPT 답변"></p>
+<h1 id="😊문제해결"><a href="#😊문제해결" class="headerlink" title="😊문제해결"></a>😊문제해결</h1><p>ChatGPT 답변을 바탕으로 조금 더 이해를 위해 검색을 해보니 <code>RegExp.prototype.test()</code>의 대한 MDN 문서에서 <code>전역 플래그와 test()</code>라는 항목으로 예시를 들어주며 설명을 해주고 있어 왜 이런 현상이 발생했는지 알 수 있었다.</p>
+<p>정규 표현식에 전역 플래그를 설정한 경우, <code>test()</code> 메서드는 정규 표현식의 <code>lastIndex</code>를 업데이트하고 <code>test()</code>을 다시 호출하면 str 검색을 <code>lastIndex</code>부터 계속 진행하는데, <code>lastIndex</code> 속성은 <code>test()</code>가 true를 반환할 때마다 증가하고 test()가 false를 반환할 땐 0으로 초기화되어 결과가 계속해서 바뀌던 것이였다.</p>
+<p><code>exec()</code> 메서드도 <code>test()</code> 메서드처럼 전역 탐색 플래그를 제공한 정규 표현식에서 여러 번 호출하면 이전 일치 이후부터 탐색한다고 하니 정규식을 사용할 때 주의해야 할 것 같다.</p>
+<p>정규식이 정말 유용한것은 알지만 항상 어렵게 느껴지는 것 같다. 그래도 이렇게 정규식에 대해 알아볼 기회가 있을 때 마다 잘 정리해서 능숙해지려고 노력해야겠다!</p>
+<h1 id="참고"><a href="#참고" class="headerlink" title="참고"></a>참고</h1><ul>
+<li><a href="https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/RegExp/test">https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/RegExp/test</a></li>
+</ul>
+]]></content>
+      <tags>
+        <tag>개발</tag>
+        <tag>정규식</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>원티드 프리온보딩 프론트엔드 인턴십 2주차 회고</title>
+    <url>/2023/Retrospect-About-2nd-Week-Of-Wanted-Pre-Onboarding-Frontend-InternShip/</url>
+    <content><![CDATA[<p><img src="/../images/wanted-preonboarding.jpeg" alt="원티드 프리온보딩 프론트엔드 인턴십"></p>
+<h1 id="들어가며"><a href="#들어가며" class="headerlink" title="들어가며"></a>들어가며</h1><p>원티드 프리온보딩 프론트엔드 인턴십의 2주차가 지나갔다. 저번주도 마찬가지였지만 이번주도 너무 빠르게 지나가 버렸다.</p>
+<p>저번주에는 인턴십 기간 동안의 협업 과정에 대한 틀을 만들어야 해서 힘들었다면, 이번 주에는 새로 주어진 과제를 수행하는 것 부터 시작해야 했기 때문에 고민해 볼 부분도 더 많았고 어려웠다.특히 이번 주에는 커리어코칭도 같이 시작되어 이에대한 과제도 추가되어 더 바쁘게 흘러간 것 같다.</p>
+<p>이번 주는 개인적으로 아쉬운 점 보다 좋았던 점이 많았던 일주일이였던것 같아 만족스럽다. 그렇다고 해도 아쉬운 점이 없던 것은 아니니 이 부분들에 대해 얘기해보고자 한다.</p>
+<h1 id="원티드-프리온보딩-프론트엔드-인턴십-2주차-과제"><a href="#원티드-프리온보딩-프론트엔드-인턴십-2주차-과제" class="headerlink" title="원티드 프리온보딩 프론트엔드 인턴십 2주차 과제"></a>원티드 프리온보딩 프론트엔드 인턴십 2주차 과제</h1><h2 id="2023-05-02-과제-발표"><a href="#2023-05-02-과제-발표" class="headerlink" title="2023.05.02 - 과제 발표"></a>2023.05.02 - 과제 발표</h2><p>화요일 5시 <code>React Hook의 심층 활용</code>을 주제로 한 세션이 끝나고 과제의 내용이 발표되었다. 기업과제라 자세한 내용은 서술하기 어렵지만 간단히 정리해 <code>캐싱에 중점을 둔 검색창의 검색어 추천기능 구현</code>을 각자 수행하고, 저번주처럼 팀 별 Best Pratice를 만들고 제출하는 과제였다.</p>
+<p>저번주와는 다르게 일단 각자가 과제를 수행하고 그 후에 Best Pratice에 대한 의견을 나누어야 하기에 시간이 너무 촉박할 것 같았다.<br>시간을 절약하기 위해 일단은 목요일 오전까지 최대한 빠르게 각자 과제를 수행하고, 그 과정에서 중요하게 여겼던 점이나 중요할 것 같은 부분들을 적어 오기로 했다.</p>
+<h2 id="2023-05-02-2023-05-04-개인-과제-수행"><a href="#2023-05-02-2023-05-04-개인-과제-수행" class="headerlink" title="2023.05.02 ~ 2023.05.04 - 개인 과제 수행"></a>2023.05.02 ~ 2023.05.04 - 개인 과제 수행</h2><p>과제를 수행하면서 가장 중요한 부분이 캐싱이었다. 캐싱이 어떤 것인지는 알고 있었지만 캐싱 기능을 제공하는 라이브러리들을(react-query, apollo-client) 사용만 해보았지, 실제로 캐싱 기능이 어떻게 구현되어 있는지 몰랐기에 먼저 캐싱에 대한 고민을 해보았다.</p>
+<p>캐싱을 구현하기 위해서는 fetch해온 data를 저장할 저장소가 필요했고 사용할 수 있는 저장소에는 로컬스토리지, 세션스토리지, 캐시스토리지 등 다양한 저장소가 존재했다. 이름에서부터 캐시스토리지가 가장 적합할 것 같았고, <code>실제로도 캐싱 기능 구현에 캐시스토리지를 많이 활용한다 하니 캐시스토리지를 사용해야겠다</code> 생각했었다.</p>
+<p>그런데 과제의 사용가능한 기술에 필수는 아니지만 Redux가 존재했고, 개인적으로 Redux의 멘탈 모델은 알고있지만 많이 사용해보지 못해 익숙하지 않았고 더욱이 RTK는 사용해본적이 없었기에 <code>Redux를 사용해보며 학습하는 것도 좋겠다</code>라는 생각이 들었다. 또한 아직까지도 Redux를 사용하는 기업이 많기에 Redux 코드에 대한 이해도를 높이는 부수효과를 기대하고 Redux를 사용해보기로 결심했다.</p>
+<p>더 자세한 구현사항들은 <a href="https://github.com/rjsej12/wanted-2nd">github</a>를 통해 확인 가능하다.</p>
+<h2 id="2023-05-04-개인-과제-수행-후-회의"><a href="#2023-05-04-개인-과제-수행-후-회의" class="headerlink" title="2023.05.04 - 개인 과제 수행 후 회의"></a>2023.05.04 - 개인 과제 수행 후 회의</h2><p>그렇게 각자가 과제를 수행한 후 목요일 낮에 모여 첫 회의를 진행했다.<br>한 사람 씩 자기가 수행한 과제의 주요 부분들에 대한 설명을 하며 왜 그런 방식을 택했는지, 어떤 방법이 더 좋은 방법인지에 대한 의견을 나누었다. (ex. 캐싱을 위한 저장소로 어떤 것을 사용했는지 - 로컬스토리지, 캐시스토리지 etc.)</p>
+<p>그렇게 각 기능들에 대한 Best Practice를 정하고 난 후, 모두가 모여서 코드를 작성하기로 했다. 기능 구현의 난이도는 저번보다 높았지만, 코드의 양 자체는 그렇게 많지 않았기 때문이다. 처음에는 상의된 Best Practice에 가장 가깝게 구현한 사람이 코드를 작성하고 있었는데, 중간에 한 팀원분께서 <code>Live Share</code>를 사용해 보자고 의견을 내주셔서 같이 코드를 작성할 수 있었다.</p>
+<h2 id="2023-05-04-2023-05-05-버그-픽스-및-DOCS-작업"><a href="#2023-05-04-2023-05-05-버그-픽스-및-DOCS-작업" class="headerlink" title="2023.05.04 ~ 2023.05.05 - 버그 픽스 및 DOCS 작업"></a>2023.05.04 ~ 2023.05.05 - 버그 픽스 및 DOCS 작업</h2><p>같이 모여서 Best Practice대로 코드를 작성하고 난 후, 실제로 결과물이 잘 동작하는지 확인하던 중 오류가 발생했다. 방향키를 이용해 추천 검색어를 오가는 동작에서, 처음 방향키를 눌렀을 때 포커스가 2번 움직였다… 목요일 거의 밤이 다 되어서 발견한 오류였는데, 다들 낮부터 밤까지 너무 오랜 시간을 집중했던지라 쉽게 해결하지 못했고 다음날까지 고민해보기로 했다.</p>
+<p>그런데 금요일 새벽 4시경 정도 한 팀원분이 오류의 원인을 찾아 그 해결법을 공유해주셨다. 결론적으로 <code>한글의 Composition</code>이 오류의 원인이였는데 작년에 이미 같은 오류를 겪고 해결했던 적이 있음에도 불구하고 떠올리지 못했다는게 반성해야겠다고 생각했다. 또 한번 기록의 중요성에 대해 느꼈고, 새벽까지 해결하지 못한 문제에 대해 탐구하는 팀원분의 자세를 보고 나도 더 몰입하는 자세를 가져야겠다고 다짐했다.</p>
+<p>그 후 금요일 인턴십 세션이 끝난 후 다시 모여 오류 수정에 대한 얘기를 나누고 README.md를 작성하는 시간을 가졌다. 이번에는 많은 팀원분들이 미리 과제를 수행하면서 고민했던 점이나 트러블 슈팅에 관한 부분들을 미리 적어오셔서 더 알찬 README.md를 완성 할 수 있었다.</p>
+<p>자세한 내용에 대해서는 <a href="https://github.com/WANTED-TEAM03/pre-onboarding-10th-2-3">README.md</a>에서 살펴 볼 수 있다.</p>
+<h2 id="KPT"><a href="#KPT" class="headerlink" title="KPT"></a>KPT</h2><p>이번 주 역시 많은 것을 생각해 볼 수 있어 좋았다. 특히 평소 그 원리를 알지 못하고 라이브러리를 이용해 구현하던 캐싱에 대해 자세히 알 수 있었고, 개발자로서 성장하기 위해 어떠한 자세를 가져야 할 지 다시 한 번 생각해 보았던 개인적으로 보람찬 일주일이 된 것 같다.</p>
+<h3 id="Keep"><a href="#Keep" class="headerlink" title="Keep"></a>Keep</h3><ul>
+<li><p>이번 주 역시 만족스러운 README.md 및 기록을 남길 수 있었다! 특히 저번주보다 팀원분들이 적극적으로 참여해 주셨는데, 조금 더 친밀해져서 였을까? 남은 기간동안 더 돈독한 사이가 되어 팀명대로 보람찬 3조가 되면 좋겠다.</p>
+</li>
+<li><p>Live Share 기능을 사용해 같이 코드를 작성해보니 시간을 효율적으로 사용 할 수 있었고, 화면 공유보다 더 코드를 잘 이해할 수 있었던 것 같다. 다음 협업에서도 이 기능을 잘 사용해야겠다.</p>
+</li>
+</ul>
+<h3 id="Problem"><a href="#Problem" class="headerlink" title="Problem"></a>Problem</h3><ul>
+<li>알고 있던 문제였음에도 스스로 해결하지 못한 점이 너무 아쉽다. 해결했다고 해서 대충 머릿속에 남기는 것이 아니라 꼭 기록을 통해 새겨놔야 겠다고 느꼈다. 기록하는것이 귀찮기는 하지만 내 스스로의 성장에 도움이 되는것이니 만큼 성실히 기록해보자!</li>
+</ul>
+<h3 id="Try"><a href="#Try" class="headerlink" title="Try"></a>Try</h3><ul>
+<li>더 열심히 하자! - 이번 기업 과제의 경우 멘토님께서 보통 7시간 정도 기한을 주는 과제라고 하셨었는데 과연 내가 7시간안에 합격할 정도의 결과물을 만들어 낼 수 있었을까 생각해보면 아니라고 답할 수 밖에 없을 것 같다. 아직은 많이 부족한 만큼 더 열심히 생각하고 공부해 실력을 늘려봐야지!</li>
+</ul>
+]]></content>
+      <tags>
+        <tag>개발</tag>
+        <tag>회고</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>새로운 컴퓨터로 Hexo 블로그 옮기기</title>
+    <url>/2023/Transfer-hexo-blog-to-new-device/</url>
+    <content><![CDATA[<p>나는 이 블로그를 Hexo라는 프레임워크를 이용해 작년 8월에 만들었었고 나름대로 계속해서 포스팅을 하고 있었다. 그러다 1월 말에 원래 사용하던 Windows 갤럭시북에서 MacOs의 맥북 M1으로 갈아타게 되었는데 깃허브에서 repository를 clone하고 hexo 명령어를 입력해도 작동하지 않는 문제가 생겼다.</p>
+<p>처음부터 블로그를 다시 세팅해야하나 아니면 다른 플랫폼으로 이사를 갈까 고민하며 해결방법을 찾던 중 다음 글을 발견했다. <a href="https://jqxiao.tech/2020/07/17/Transfer-Hexo-Blog-to-New-Device/">Transfer Hexo Blog to New Device</a></p>
+<p>위 블로그 게시글의 내용을 따라 수행하니 맥북에서도 다시 블로그 포스팅을 진행할 수 있게 되었고, 혹시라도 다음에 또 컴퓨터를 바꿀 수 있으니 방법을 정리해두어야겠다고 마음먹었다.</p>
+<h1 id="새로운-branch-만들기"><a href="#새로운-branch-만들기" class="headerlink" title="새로운 branch 만들기"></a>새로운 branch 만들기</h1><ul>
+<li>hexo blog repository를 git clone 한다.</li>
+<li>clone한 repositroy에서 <code>git checkout -b branch명</code>로 새로운 branch를 만든다.</li>
+<li>새로운 branch에서 .git 폴더를 제외한 모든 파일들을 삭제한다.</li>
+<li>원래 사용하던 기기의 hexo blog 폴더를 복사해온다.</li>
+<li>이전 기기의 .git 관련 폴더들은 삭제한다.</li>
+<li>새로운 branch를 Github에 push한다.</li>
+</ul>
+<h1 id="새-기기에-Hexo-설치하기"><a href="#새-기기에-Hexo-설치하기" class="headerlink" title="새 기기에 Hexo 설치하기"></a>새 기기에 Hexo 설치하기</h1><ul>
+<li><code>npm install hexo --save</code>로 Hexo를 설치한다.</li>
+<li><code>npm install hexo-deployer-git --save</code>로 git deployer plugin를 설치한다.</li>
+</ul>
+<h1 id="블로그-Deploy하기"><a href="#블로그-Deploy하기" class="headerlink" title="블로그 Deploy하기"></a>블로그 Deploy하기</h1><ul>
+<li>새로 만든 branch에 .gitigonre 파일을 추가한다.</li>
+<li>.gitignore 파일에 <code>.deploy_git/*</code>과 <code>public/*</code>을 추가한다</li>
+<li><code>hexo clean</code>을 통해 이전 웹페이지를 삭제한다.</li>
+<li><code>hexo generate</code>와 <code>hexo deploy</code>로 새로운 웹페이지를 만들 수 있다.</li>
+</ul>
+<h1 id="무엇이-문제였을까"><a href="#무엇이-문제였을까" class="headerlink" title="무엇이 문제였을까?"></a>무엇이 문제였을까?</h1><p>hexo deploy시 만들어진 정적 웹페이지가 자동으로 Github의 default branch에 push되었던 것이지 hexo를 설치했던 기존 폴더 자체를 Github에 push한것은 아니었기 때문에 git clone을 해도 hexo 명령어가 작동하지 않았다.<br>따라서 새로운 branch에 원본 기기의 폴더를 복사해옴으써 문제를 해결할 수 있었다.</p>
+]]></content>
+      <tags>
+        <tag>개발</tag>
+        <tag>Hexo</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Sass Basic</title>
     <url>/2022/Sass-Basic/</url>
     <content><![CDATA[<h1 id="Sass"><a href="#Sass" class="headerlink" title="Sass?"></a>Sass?</h1><p>CSS를 사용해 웹 애플리케이션 스타일을 관리하는 것은 애플리케이션 규모가 커지고 복잡해질수록 매우 어렵다.</p>
@@ -1381,6 +1271,137 @@ for (변수 선언문 또는 할당문; 조건식; 증감식) {
       <tags>
         <tag>개발</tag>
         <tag>Sass</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>API란 무엇일까?</title>
+    <url>/2022/What-is-an-API/</url>
+    <content><![CDATA[<p>JavaScript 구현공부를 시작하며 API를 이용하는 일이 많아졌다. API라는 용어에 대해 많이 들어보기도 했고 API가 무엇인지에 대해 대략적으로 알고 있다고 생각했었지만 막상 API에 대해 구체적으로 설명해보려고 하니 표현하기가 어려웠다. 그래서 API에 대해 정리해보면서 정확히 무엇인지 알아보고자 했다.</p>
+<hr>
+
+<h2 id="API"><a href="#API" class="headerlink" title="API"></a>API</h2><p>먼저 API의 정의를 알아보았다. </p>
+<blockquote>
+<p><strong>API</strong>는 Application Programming Inerface의 줄임말로 응용 프로그램에서 사용할 수 있도록 운영체제나 프로그래밍 언어가 제공하는 기능을 제어할 수 있게 만든 인터페이스를 뜻한다. </p>
+</blockquote>
+<p>다른 부분들은 쉽게 이해가 갔지만 인터페이스가 무엇을 말하는지 모호했다. 그럼 인터페이스는 무엇일까?</p>
+<blockquote>
+<p><strong>인터페이스(interface)</strong> 는 컴퓨터 시스템끼리 정보를 교환하는 공유 경계를 의미한다. 터치 스크린과 같은 일부 컴퓨터 하드웨어 장치들은 인터페이스를 통해 데이터를 송수신 할 수 있으며, 마우스나 마이크와 같은 장치들은 오직 시스템에 데이터를 전송만 하는 인터페이스를 제공한다.</p>
+</blockquote>
+<p>쉽게 정리해 인터페이스는 시스템끼리 데이터를 주고받도록 하는 물리적, 가상적인 매개체를 뜻한다.</p>
+<p>조금 더 이해하기 쉽게 실생활에서 예를 들어보면 우리가 자판기를 통해 음료수를 사먹는다라고 할 때 실제 자판기가 어떻게 내부적으로 동작하는지는 몰라도 동전이나 지폐를 넣고 원하는 음료 버튼을 눌러 음료수가 나오게하는 과정을 쉽게 수행한다. 이때 동전과 지폐를 넣고 음료 버튼을 클릭하는등 사물과 사물 또는 사물과 인간 간의 의사소통이 가능하도록하는 물리적, 가상적인 매개체를 인터페이스라고 할 수 있다.</p>
+<p>즉 API는 응용 프로그램 (우리가 만든 앱과 같은 서비스)에서 운영체제나 프로그래밍 언어가 제공하는 기능(지도, 날씨, 페이기능등)을 제어할 수 있게 만든 매개체라고 볼 수 있다.<br>API 문서에는 개발자가 이러한 요청과 응답을 구성하는 방법에 대한 정보가 들어 있어 API를 사용하기 이전에 API 문서를 통해 API의 사용법을 알 수 있다.</p>
+<hr>
+
+<h2 id="API는-어떻게-작동하는가"><a href="#API는-어떻게-작동하는가" class="headerlink" title="API는 어떻게 작동하는가?"></a>API는 어떻게 작동하는가?</h2><blockquote>
+<p>API 아키텍처는 일반적으로 클라이언트와 서버 측면에서 설명된다. 요청을 보내는 애플리케이션을 클라이언트라고 하고 응답을 보내는 애플리케이션을 서버라고 한다. 따라서 날씨 예에서 기상청의 날씨 데이터베이스는 서버이고 모바일 앱은 클라이언트이다. </p>
+</blockquote>
+<p>API가 생성된 시기와 이유에 따라 API는 네 가지 방식으로 작동할 수 있다.</p>
+<p>API라는 단어는 1964년부터 등장하기 시작했다. 이때는 하드웨어 독립성을 위해서 많이 사용되어 졌는데, 예를 들어 서로 다른 하드웨어마다 개발자가 일일이 프로그래밍을 하기보단 HAL이라는 하드웨어 추상화 계층을 통해 한번만 display라는 함수를 작성하고 이를 이용해 각기 다른 모니터에 출력을 쉽게 할수 있었고 이것이 API의 시초라고 할 수 있다.</p>
+<p>1980년대 중반 Mac OS와 Windows가 등장하면서 그래픽이 좋은 컴퓨터가 등장하기 시작했다. 이런 각각의 운영체제에서 동작하는 어플리케이션을 만들기 위해서 운영체제에서 제공하는 API를 이용했다. </p>
+<p>그리고 1990년도 인터넷이 보편적으로 대중화되기 시작하면서 컴퓨터와 컴퓨터 다양한 기기들이 인터넷을 통해서 의사소통을 할 수 있게 되었다. 이때 다양한 기기에서 서버에 있는 데이터를 읽고 쓰기 위해서는 서버에서 제공하는 WEB APIs를 이용해서 처리 할 수 있었다.</p>
+<p>네트워크에서 기기들간에 의사소통 해나가는 규격사항을 HTTP(s)라고 부르며 이런 WEB API를 어떻게 디자인해서 만들건지 정의하는 것이 있다. 예전에는 SOAP(Simple Object Access Protocol)이라는 모든 네트워크 요청과 반응을 XML이라는 데이터 포맷에 저장해 주고 받았다면 요즘에는 REST(Representational State Transfer)이 보편적으로 많이 사용된다.</p>
+<p>REST는 총 4가지로 구성되어 있는데 새로운 데이터를 만들고(POST, create), 읽고(GET, read), 업데이트하고(PUT, update), 삭제(DELETE, delete)할 수 있다. 예를 들어 GET을 이용해 유저에 대한 정보를 요청하면 서버로부터 유저에 대한 데이터를 JSON이라는 포맷을 통해 받아 올 수 있다. 이처럼 서버에서 제공하는 WEB API를 통해 서버에 있는 데이터를 읽어오거나 업데이트 할 수 있다.</p>
+]]></content>
+      <tags>
+        <tag>개발</tag>
+        <tag>용어정리</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>pageYOffset vs scrollY, scroll() vs scrollTo()</title>
+    <url>/2022/pageYOffset-vs-scrollY-scroll-vs-scrollTo/</url>
+    <content><![CDATA[<h1 id="🤔What-is-Problem"><a href="#🤔What-is-Problem" class="headerlink" title="🤔What is Problem?"></a>🤔What is Problem?</h1><p>페어 프로그래밍을 진행하면서 수직으로 스크롤한 거리에 따라 숨겨진 버튼을 활성화 하고, 스크롤 버튼을 클릭했을 때 맨 위로 스크롤하는 예제를 해결해야했다.</p>
+<p>이를 위해 수직으로 스크롤한 거리를 측정하는 방법과 스크롤을 시키는 방법이 필요해 이에 대해 알아보았는데, 같은 기능을 하는 프로퍼티와 메서드가 중복으로 존재해 어떤것을 사용해야하는지 고민이 되었다.</p>
+<h2 id="Window-pageYOffset-vs-Window-scrollY"><a href="#Window-pageYOffset-vs-Window-scrollY" class="headerlink" title="Window.pageYOffset vs Window.scrollY"></a>Window.pageYOffset vs Window.scrollY</h2><p>먼저 수직으로 스크롤한 거리를 측정하는 방법에는 Window.pageYOffset와 Window.scrollY가 존재했다. MDN에서는 pageYOffset이 scrollY의 다른이름이라고 했지만, 두 프로퍼티에는 브라우저 호환성의 차이가 존재했다.</p>
+<p>일부 오래된 브라우저는 scrollY 대신 pageYOffset만 지원했고 노후 환경을 신경쓰지 않아도 된다면 둘 중 아무거나 사용해도 괜찮지만, 별다른 요구조건이 없다면 하위호환성을 위해 pageYOffset을 사용하는 것이 더 좋은 코드라고 판단했다.</p>
+<h2 id="Window-scroll-vs-Window-scrollTo"><a href="#Window-scroll-vs-Window-scrollTo" class="headerlink" title="Window.scroll() vs Window.scrollTo()"></a>Window.scroll() vs Window.scrollTo()</h2><p>다음으로 맨 위로 스크롤하기 위해서는 Window.scroll() 이나 Window.scrollTo() 메서드를 사용할 수 있었다. 이 두 메서드는 차이 없이 동일해 둘 중 아무거나 사용해도 괜찮았다. 다만 scroll 메서드가 더 먼저 나왔기 때문에 실제로 사용된 코드도 많고 혹여나 버그등이 발생해 검색을 해야한다면 검색 결과도 많아 scroll을 사용하는것이 더 좋을 것이라고 판단했다.</p>
+<p>또 단순히 메서드의 인자로 x-좌표와 y-좌표를 주는것 이외에도 options를 통해 top, left, behavior를 줄 수 있다는 것을 알았다. 특히 behavior: smooth를 사용해 애니메이션을 따로 만들지 않더라도 부드럽게 이동할 수 있는점이 유용해 꼭 기억하자 생각했다.</p>
+<h2 id="참고"><a href="#참고" class="headerlink" title="참고"></a>참고</h2><ul>
+<li><a href="https://developer.mozilla.org/ko/docs/Web/API/Window/pageYOffset">https://developer.mozilla.org/ko/docs/Web/API/Window/pageYOffset</a></li>
+<li><a href="https://developer.mozilla.org/ko/docs/Web/API/Window/scrollY">https://developer.mozilla.org/ko/docs/Web/API/Window/scrollY</a></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/scroll">https://developer.mozilla.org/en-US/docs/Web/API/Window/scroll</a></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/scrollTo">https://developer.mozilla.org/en-US/docs/Web/API/Window/scrollTo</a></li>
+<li><a href="https://stackoverflow.com/questions/1925671/javascript-window-scroll-vs-window-scrollto">https://stackoverflow.com/questions/1925671/javascript-window-scroll-vs-window-scrollto</a></li>
+</ul>
+]]></content>
+      <tags>
+        <tag>JS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>WCAG 2.1 정리</title>
+    <url>/2022/WCAG-2-1-organization/</url>
+    <content><![CDATA[<h1 id="👀-WCAG"><a href="#👀-WCAG" class="headerlink" title="👀 WCAG?"></a>👀 WCAG?</h1><blockquote>
+<ul>
+<li>WCAG는 Web Content Accessibility Guideline의 줄임말로 웹 콘텐츠를 접근성 있게 만들기 위한 권장 표준</li>
+</ul>
+</blockquote>
+<ul>
+<li>이 표준을 준수함을 통해 시각, 청각, 운동장애 등 광범위한 장애에 대한 접근성 있는 콘텐츠를 만들 수 있음</li>
+<li>웹 접근성의 기초를 제공하는 4가지 원칙인 인식의 용이성(Perceivable), 운용의 용이성(Operable), 이해의 용이성(Understandable), 견고성(Robust)에 기반을 두고 있음</li>
+<li>원칙을 기반으로 접근성을 위해 어떠한 목표를 달성해야 하는지에 대한 지침과 또 그 지침에 대한 검증가능한 성공기준을 제시하고 있음</li>
+<li>성공기준은 최저수준인 level A 부터 최고수준인 level AAA까지 3단계로 나누어짐</li>
+</ul>
+<hr>
+
+<h1 id="WCAG-2-0-VS-WCAG-2-1"><a href="#WCAG-2-0-VS-WCAG-2-1" class="headerlink" title="WCAG 2.0 VS WCAG 2.1"></a>WCAG 2.0 VS WCAG 2.1</h1><p>WCAG 2.0 이 만들어졌을때는 주로 데스크탑 환경만을 고려했지만 그 후 모바일 산업의 폭발적인 확장으로 모바일 환경을 필수적으로 고려해야하는 상황이 찾아왔다.</p>
+<p>WCAG 2.1은 WCAG 2.0의 요구사항들을 상속하면서 추가적으로 인지나 학습장애가 있는 사용자, 저시력자, 모바일 기기를 사용하는데 장애가 있는 사용자의 접근성 지침을 개선하는 데 목표를 두고있다.</p>
+<p>즉 WCAG 2.1은 새로운 성공기준, 이를 지원하기 위한 정의, 추가사항을 조직하기 위한 지침, 그리고 준수 절(section)에 대한 몇 가지 사항을 추가하여 WCAG 2.0을 확장한 것이다.</p>
+<hr>
+
+<h2 id="1-인식의-용이성-Perceivable"><a href="#1-인식의-용이성-Perceivable" class="headerlink" title="1. 인식의 용이성(Perceivable)"></a>1. 인식의 용이성(Perceivable)</h2><ul>
+<li>정보와 사용자 인터페이스 요소는 사용자가 인식할 수 있는 방법으로 제시되어야 한다.</li>
+<li>4가지 지침과 그에 대한 29가지 성공기준을 가지고 있다.</li>
+</ul>
+<h3 id="지침-1-1-대체텍스트"><a href="#지침-1-1-대체텍스트" class="headerlink" title="지침 1.1 대체텍스트"></a>지침 1.1 대체텍스트</h3><ul>
+<li><p>텍스트가 아닌 콘텐츠의 경우 목적에 상응하는 대체 텍스트를 제공해야 한다. (ex - img alt속성)</p>
+</li>
+<li><p>단 시력검사, 받아쓰기와 같은 Test나 특정 감각을 위한 악기연주 등 텍스트만으로 그 내용을 설명하기에 애매한 경우 콘텐츠의 용도만을 기술하는 것도 괜찮다.</p>
+</li>
+<li><p>텍스트 아닌 콘텐츠가 순수한 장식이거나, 보이지 않는경우 대체텍스트를 제공하지 않는 편이 합리적이다</p>
+</li>
+</ul>
+<h3 id="지침-1-2-시간기반-미디어"><a href="#지침-1-2-시간기반-미디어" class="headerlink" title="지침 1.2 시간기반 미디어"></a>지침 1.2 시간기반 미디어</h3><ul>
+<li><p>시간기반 미디어에 대한 대체수단을 제공해야 한다</p>
+</li>
+<li><p>달성하기 비교적 쉬운 level A 부터 어려운 level AAA 까지 총 9개의 기준을 가지고 있다.</p>
+</li>
+<li><p>level이 올라갈수록 더 자세하고 많은 정보를 실시간으로 제공하는 것을 기준으로 삼고 있다.</p>
+</li>
+</ul>
+<h3 id="지침-1-3-적응가능"><a href="#지침-1-3-적응가능" class="headerlink" title="지침 1.3 적응가능"></a>지침 1.3 적응가능</h3><ul>
+<li><p>콘텐츠가 정보나 구조의 손실 없이 다른 방법들로 표시될 수 있도록 제작되어야 한다.</p>
+</li>
+<li><p>콘텐츠의 정보, 구조, 관계는 프로그래밍 방식으로 결정되어야 하고 또 콘텐츠가 표시되는 순서가 의미에 영향을 주는 경우 올바른 읽기 순서 역시 프로그래밍 방식으로 결정되어야 한다.</p>
+<blockquote>
+<p>프로그래밍 방식으로 결정된다는 것은 확대기, 음성 인식 소프트웨어와 같은 보조공학을 포함한 user agent(웹 브라우저)가 개발자 제공 데이터로부터 정보를 추출해 사용자에게 다른 형식으로 제공할 수 있음을 뜻한다 - 대체텍스트의 img alt 속성 처럼</p>
+</blockquote>
+</li>
+<li><p>콘텐츠를 이해하고 작동하기 위해 제공된 지시문은 모양, 색상, 크기, 시각적 위치 등 구성요소의 감각적 특성에 전적으로 의존해서는 안 된다.</p>
+</li>
+</ul>
+<h3 id="지침-1-4-식별-가능"><a href="#지침-1-4-식별-가능" class="headerlink" title="지침 1.4 식별 가능"></a>지침 1.4 식별 가능</h3><ul>
+<li><p>색상은 시각적 요소 구별을 위한 유일한 시각적 수단으로만 사용되어서는 안된다.</p>
+</li>
+<li><p>웹 페이지에 있는 오디오를 컨트롤 할수 있어야 하고, 배경음이 낮거나 없어야한다 - 스크린리더 사용자를 위한 항목으로, 스크린리더 사용자는 청각을 통해 정보를 받아들이기 때문에 다른 오디오나 배경음이 지속된다면 콘텐츠를 이용하는데 불편함을 겪을 수 있음.</p>
+</li>
+<li><p>텍스트 이미지 보다는 텍스트를 사용해야 하고, 텍스트의 명도대비, 크기 조정등을 통해 가시성을 높여야한다.</p>
+</li>
+</ul>
+<hr>
+
+<p>추가중…</p>
+<hr>
+
+<h1 id="참고"><a href="#참고" class="headerlink" title="참고"></a>참고</h1><ul>
+<li><a href="https://www.w3.org/TR/WCAG21/">https://www.w3.org/TR/WCAG21/</a></li>
+<li><a href="http://www.kwacc.or.kr/WAI/wcag21/">http://www.kwacc.or.kr/WAI/wcag21/</a></li>
+<li><a href="http://www.websoul.co.kr/accessibility/WA_guide21.asp">http://www.websoul.co.kr/accessibility/WA_guide21.asp</a></li>
+</ul>
+]]></content>
+      <tags>
+        <tag>개발</tag>
+        <tag>WCAG</tag>
       </tags>
   </entry>
 </search>
