@@ -75,6 +75,27 @@
       </tags>
   </entry>
   <entry>
+    <title>이미지 스프라이트(Image Sprite)</title>
+    <url>/2022/Image-Sprite/</url>
+    <content><![CDATA[<p>이미지 스프라이트란 여러 개의 이미지를 하나로 합쳐서 관리하는 이미지를 의미한다.</p>
+<p>웹 페이지에 이미지를 사용한다면 웹 브라우저는 해당 이미지의 다운로드를 위해 서버에 요청을 보낸다. 만약 사용된 이미지가 많을 경우 요청 하는 횟수가 많아지므로 웹 페이지의 로딩 시간이 오래 걸리게 된다. 하지만 만약 이미지 스프라이트를 사용한다면 스프라이트 이미지 파일 하나가 여러 이미지를 가지고 있기에 서버 요청 횟수를 줄일 수 있다.</p>
+<p>개인적인 블로그와 같은 일반적인 사이트에서는 굳이 이미지 스프라이트를 사용 할 필요가 없지만, 트래픽이 매우 많거나 많은 사람이 이용하는 검색포털과 같은 사이트에서는 이미지 스프라이트를 사용하여 서버 요청을 줄이고 웹 페이지의 로딩 시간을 단축시켜 사이트의 품질을 높일 수 있다.</p>
+<p>다음은 네이버 메인페이지의 스프라이트 이미지이다.<br><img src="https://velog.velcdn.com/images/rjsej12/post/34bfd37f-ea3a-4073-8a76-7c5cfbf8b1fc/image.png"></p>
+<p>이처럼 여러개의 이미지를 하나로 합쳐두고 CSS의 <code>background-position</code>을 이용해 사용하려는 이미지만을 보여 줄 수 있다. 이 때 <code>background-position</code>의 값은 하나씩 position값을 변경해보며 찾을 수 도 있지만 <a href="http://www.spritecow.com/">Sprite Cow</a>와 같은 사이트를 이용 할 수 있다.</p>
+<p>추가적으로 스프라이트 이미지를 만들기 위해 포토샵, 피그마 등으로 에디팅 할 수 도 있지만 <a href="https://www.toptal.com/developers/css/sprite-generator/">CSS Sprites Generator</a>라는 사이트를 이용 가능하다.</p>
+<hr>
+
+<h1 id="참고"><a href="#참고" class="headerlink" title="참고"></a>참고</h1><ul>
+<li><a href="https://creativestudio.kr/1653">https://creativestudio.kr/1653</a></li>
+<li><a href="http://www.tcpschool.com/css/css_basic_imageSprites">http://www.tcpschool.com/css/css_basic_imageSprites</a></li>
+</ul>
+]]></content>
+      <tags>
+        <tag>개발</tag>
+        <tag>CSS</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>MDN을 확신하지는 말자.</title>
     <url>/2022/Don-t-be-sure-of-MDN-always/</url>
     <content><![CDATA[<p>어제에 이어 position에 대해 공부하면서 position이 absolute인 경우 containing block은 가장 가까운 position이 static이 아닌 부모요소 외에도 다른 조건들이 있다고 해 MDN을 통해 공부를 하던 중 이상하다고 생각되는 점이 생겼다.</p>
@@ -113,24 +134,80 @@
       </tags>
   </entry>
   <entry>
-    <title>이미지 스프라이트(Image Sprite)</title>
-    <url>/2022/Image-Sprite/</url>
-    <content><![CDATA[<p>이미지 스프라이트란 여러 개의 이미지를 하나로 합쳐서 관리하는 이미지를 의미한다.</p>
-<p>웹 페이지에 이미지를 사용한다면 웹 브라우저는 해당 이미지의 다운로드를 위해 서버에 요청을 보낸다. 만약 사용된 이미지가 많을 경우 요청 하는 횟수가 많아지므로 웹 페이지의 로딩 시간이 오래 걸리게 된다. 하지만 만약 이미지 스프라이트를 사용한다면 스프라이트 이미지 파일 하나가 여러 이미지를 가지고 있기에 서버 요청 횟수를 줄일 수 있다.</p>
-<p>개인적인 블로그와 같은 일반적인 사이트에서는 굳이 이미지 스프라이트를 사용 할 필요가 없지만, 트래픽이 매우 많거나 많은 사람이 이용하는 검색포털과 같은 사이트에서는 이미지 스프라이트를 사용하여 서버 요청을 줄이고 웹 페이지의 로딩 시간을 단축시켜 사이트의 품질을 높일 수 있다.</p>
-<p>다음은 네이버 메인페이지의 스프라이트 이미지이다.<br><img src="https://velog.velcdn.com/images/rjsej12/post/34bfd37f-ea3a-4073-8a76-7c5cfbf8b1fc/image.png"></p>
-<p>이처럼 여러개의 이미지를 하나로 합쳐두고 CSS의 <code>background-position</code>을 이용해 사용하려는 이미지만을 보여 줄 수 있다. 이 때 <code>background-position</code>의 값은 하나씩 position값을 변경해보며 찾을 수 도 있지만 <a href="http://www.spritecow.com/">Sprite Cow</a>와 같은 사이트를 이용 할 수 있다.</p>
-<p>추가적으로 스프라이트 이미지를 만들기 위해 포토샵, 피그마 등으로 에디팅 할 수 도 있지만 <a href="https://www.toptal.com/developers/css/sprite-generator/">CSS Sprites Generator</a>라는 사이트를 이용 가능하다.</p>
+    <title>IR기법 (Image Replacement)</title>
+    <url>/2022/Image-Replacement/</url>
+    <content><![CDATA[<h1 id="👀"><a href="#👀" class="headerlink" title="👀"></a>👀</h1><p>WCAG 2.1에 웹 콘텐츠의 접근성을 향상시키기 위해 텍스트 아닌 콘텐츠에 대해 대체 텍스트를 제공해주어야 한다는 지침이 있다. 이미지 역시 텍스트가 아닌 콘텐츠이기 때문에 대체 텍스트를 제공해주어야 하는데, 이는 접근성의 향상 뿐만 아니라 SEO(검색 엔진 최적화)와도 관련이 있어 중요하다.</p>
+<p>이렇게 사용자에게 대체 텍스트를 제공하는 것을 IR(Image Replacement)이라고 하는데, HTML의 요소를 사용할 경우 alt 속성을 통해 대체 텍스트를 제공하는것이 일반적이다.</p>
+<p>하지만 CSS를 이용해 background-image를 넣는 경우도 많기에 어떻게 대체 텍스트를 제공하는지 정리해보자.</p>
+<hr>
+
+<h1 id="😒-visibility-hidden-display-none"><a href="#😒-visibility-hidden-display-none" class="headerlink" title="😒 visibility: hidden, display: none"></a>😒 visibility: hidden, display: none</h1><p>먼저 IR기법으로 잘못 사용되고 있는 대표적인 예가 있는데 visibility: hidden과 display: none이다.</p>
+<p>이 두 방법은 모두 적용된 요소가 화면에서 보이지 않게 하기 때문에 스크린리더 사용자를 위한 텍스트를 제공하기 위해 사용되는 경우를 발견할 수 있다. 하지만 이 두 방법은 스크린리더에서도 읽지 않는것을 원칙으로 한다.</p>
+<p>IR기법의 목표는 대체 텍스트를 시각적으는 숨기지만 스크린 리더 사용자는 읽을 수 있어야 하기 때문에 이 두가지 방법은 옳지 않다.</p>
+<hr>
+
+<h1 id="😊-올바른-IR-기법"><a href="#😊-올바른-IR-기법" class="headerlink" title="😊 올바른 IR 기법"></a>😊 올바른 IR 기법</h1><h2 id="Phark-Method"><a href="#Phark-Method" class="headerlink" title="Phark Method"></a>Phark Method</h2><ul>
+<li><p>가장 널리 사용되는 방법으로 이미지로 대체할 엘리먼트에 배경이미지를 설정하고 글자는 text-indent를 이용하여 화면 바깥으로 빼내어 보이지 않게 하는 방법이다.</p>
+</li>
+<li><p>의미있는 이미지의 대체 텍스트를 제공하는 경우에 사용한다.</p>
+</li>
+<li><p>Text-indent 속성은 사용하기 간편하지만 단점 또한 존재한다. 만약 이미지가 제대로 로드되지 않으면 텍스트가 보이지 않기 때문에 스크린리더 사용자가 아닌 경우 이미지를 설명하는 텍스트를 보고 콘텐츠의 내용을 확인 할 수 없다. 또한, 웹페이지에 text-indent 스타일 속성이 적용된 요소가 많으면 성능 저하를 불러올 수 있다.</p>
+</li>
+</ul>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.ir_pm</span>&#123;</span><br><span class="line"><span class="attribute">width</span>: <span class="number">995px</span>;</span><br><span class="line"><span class="attribute">height</span>: <span class="number">1441px</span>;</span><br><span class="line"><span class="attribute">text-indent</span>: -<span class="number">9999px</span>;</span><br><span class="line"><span class="attribute">background</span> : <span class="built_in">url</span>(<span class="string">&quot;rocketgril_poster.jpg&quot;</span>) no-repeat;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Dwyer-Method"><a href="#Dwyer-Method" class="headerlink" title="Dwyer Method"></a>Dwyer Method</h2><ul>
+<li><p>이미지로 대체할 엘리먼트에 배경이미지를 설정하고 글자는 span태그로 감싼 후 width와 height를 각각 0으로 하여 넘치는 글자를 숨기는 방법이다.</p>
+</li>
+<li><p>추가적인 tag를 사용하고, Phark Method와 마찬가지로 이미지가 제대로 로드되지 않으면 텍스트가 보이지 않아 콘텐츠 내용 확인이 어렵다는 단점이 존재한다.</p>
+</li>
+</ul>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.ir_dm</span>&#123;</span><br><span class="line"><span class="attribute">width</span>: <span class="number">995px</span>;</span><br><span class="line"><span class="attribute">height</span>: <span class="number">1441px</span>;</span><br><span class="line"><span class="attribute">background</span> : <span class="built_in">url</span>(<span class="string">&quot;rocketgril_poster.jpg&quot;</span>) no-repeat;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.ir_dm</span> <span class="selector-tag">span</span>&#123;</span><br><span class="line"><span class="attribute">display</span> :block;</span><br><span class="line"><span class="attribute">overflow</span>: hidden;</span><br><span class="line"><span class="attribute">width</span>: <span class="number">0px</span>;</span><br><span class="line"><span class="attribute">height</span>: <span class="number">0px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="WA-IR"><a href="#WA-IR" class="headerlink" title="WA IR"></a>WA IR</h2><ul>
+<li><p>접근성 및 UX(User Experience) 향상을 위한 화면읽기프로그램 활용 기법으로 권장되는 방법이다.</p>
+</li>
+<li><p>의미있는 이미지의 대체 텍스트로 이미지가 없어도 대체 텍스트를 보여주고자 할 때 사용한다.</p>
+</li>
+<li><p>이미지로 대체할 엘리먼트에 배경이미지를 설정하고 글자는 span 태그로 감싼 후 z-index:-1을 이용하여 배치순서를 뒤로 보내어 화면에 안보이게 처리한다.</p>
+</li>
+<li><p>만약 브라우저에서 CSS를 끄거나, 웹 페이지에 적용된 CSS가 정상적으로 로드되지 않을 때 숨겨진 텍스트가 화면에 출력된다. 또한, position 속성을 사용하기 때문에 성능에 영향을 줄 수 있다.</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.ir_wa</span>&#123;</span><br><span class="line"><span class="attribute">width</span>: <span class="number">995px</span>;</span><br><span class="line"><span class="attribute">height</span>: <span class="number">1441px</span>;</span><br><span class="line"><span class="attribute">background</span> : <span class="built_in">url</span>(<span class="string">&quot;rockegril_poster.jpg&quot;</span>) no-repeat;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.ir_wa</span> <span class="selector-tag">span</span>&#123;</span><br><span class="line"><span class="attribute">display</span>:block;</span><br><span class="line"><span class="attribute">position</span>:relative;</span><br><span class="line"><span class="attribute">z-index</span>:-<span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<p>이 외에도 CSS의 위치 속성과 overflow: hidden을 사용하는 방법, 자바스크립트를 이용하여 이미지로 대체할 엘리먼트의 텍스트를 img태그로 교체하는 방법등 다양한 방법이 존재한다.</p>
 <hr>
 
 <h1 id="참고"><a href="#참고" class="headerlink" title="참고"></a>참고</h1><ul>
-<li><a href="https://creativestudio.kr/1653">https://creativestudio.kr/1653</a></li>
-<li><a href="http://www.tcpschool.com/css/css_basic_imageSprites">http://www.tcpschool.com/css/css_basic_imageSprites</a></li>
+<li><a href="https://m.blog.naver.com/eirene100999/221686480420">https://m.blog.naver.com/eirene100999/221686480420</a></li>
+<li><a href="https://nuli.navercorp.com/community/article/1132804?email=true">https://nuli.navercorp.com/community/article/1132804?email=true</a></li>
+<li><a href="https://alonehistory.tistory.com/14">https://alonehistory.tistory.com/14</a></li>
 </ul>
 ]]></content>
       <tags>
         <tag>개발</tag>
         <tag>CSS</tag>
+        <tag>IR</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>[Github] remote: fatal error in commit_refs</title>
+    <url>/2023/Git-remote-fatal-error-in-commitrefs/</url>
+    <content><![CDATA[<h1 id="😱-문제발생"><a href="#😱-문제발생" class="headerlink" title="😱 문제발생"></a>😱 문제발생</h1><p>오늘 배운 내용을 간단히 정리하며 TIL을 작성하고 Github에 push하려고 하는데 다음과 같은 오류가 발생했다.</p>
+<p><img src="/../images/git-remote-fatal-error.png" alt="Git Error"></p>
+<p>갑자기 이게 무슨 오류지? 혹시 내가 원격 저장소에서 무슨 작업을 했었나? 생각하며 <code>git pull</code>을 하고 다시 <code>git push</code>를 해도 실패.. 이외에도 여러가지 방법으로 해결을 시도했지만 전부 실패했다.</p>
+<h1 id="😊-문제해결"><a href="#😊-문제해결" class="headerlink" title="😊 문제해결"></a>😊 문제해결</h1><p>다시한번 log를 살펴보다가 <code>remote: fatal error in commit_refs</code>를 발견하고 구글링을 해보았더니…</p>
+<blockquote>
+<p>Github의 서버오류로 정상적으로 작동하지 않았던것!</p>
+</blockquote>
+<p>생각보다 너무 허무했지만 앞으로는 같은 문제를 겪어도 당황하지 않을 수 있을것 같다.<br>추가적으로 <a href="https://www.githubstatus.com/">https://www.githubstatus.com</a>를 통해 GitHub site status를 확인 할 수 있다고 하니 앞으로 참고해야겠다.</p>
+<h1 id="참고"><a href="#참고" class="headerlink" title="참고"></a>참고</h1><ul>
+<li><a href="https://stackoverflow.com/questions/37341960/how-do-i-fix-remote-fatal-error-in-commit-refs-errors-trying-to-push-with-git">https://stackoverflow.com/questions/37341960/how-do-i-fix-remote-fatal-error-in-commit-refs-errors-trying-to-push-with-git</a></li>
+</ul>
+]]></content>
+      <tags>
+        <tag>개발</tag>
+        <tag>Git</tag>
+        <tag>Github</tag>
       </tags>
   </entry>
   <entry>
@@ -178,6 +255,58 @@
 <p>만약 재할당이 불가능해 변수에 저장된 값을 변경할 수 없다면 이를 상수라고 한다. 즉 상수는 단 한번만 할당이 가능한 변수이다.</p>
 <p>만약 변수에 값을 재할당 하면 변수의 값을 이전 값에서 재할당한 값으로 변하게 된다. 이때 메모리에서는 어떤 일이 일어날까? 재할당시에는 메모리 공간에서 이전 값을 지우고 새로운 값을 할당하는것이 아닌 변수가 새로운 메모리 공간을 확보하고 그 공간에 새로운 값을 저장하게 된다.</p>
 <p>이 때 이전 값이 들어 있던 메모리 공간은 어떤 식별자와도 연결되어 있지 않으므로 불필요한 값이 된다.<br>이 경우 가비지 콜렉터에 의해서 메모리에서 자동 해제되지만 언저 해제될지 예측은 불가능하다.</p>
+]]></content>
+      <tags>
+        <tag>개발</tag>
+        <tag>자바스크립트</tag>
+        <tag>모던 자바스크립트 Deep Dive</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>[Deep Dive] 원시 값과 객체의 비교</title>
+    <url>/2022/Modern-Javascript-Deep-Dive-Chapter-11-Summary/</url>
+    <content><![CDATA[<h1 id="원시-값-vs-객체-값"><a href="#원시-값-vs-객체-값" class="headerlink" title="원시 값 vs 객체 값"></a>원시 값 vs 객체 값</h1><p>앞서 데이터 타입에서 살펴보았듯이 자바스크립트가 제공하는 데이터타입은 크게 원시 타입과 객체 타입으로 구분할 수 있다.</p>
+<p>데이터 타입을 원시 타입과 객체 타입으로 구분하는 이유는 무엇일까?<br>원시 타입과 객체 타입은 근본적으로 다르다는 의미일 것이다. 원시타입과 객체 타입은 크게 세 가지 측면에서 다르다.</p>
+<ul>
+<li>원시 타입의 값은 변경 불가능한 값이다. 반면 객체(참조) 타입의 값은 변경 가능한 값이다.</li>
+<li>원시 값을 변수에 할당하면 변수(확보된 메모리 공간)에는 실제 값이 저장된다. 반면 객체를 변수에 할당하면 변수에는 참조 값이 저장된다.</li>
+<li>원시 값을 갖는 변수를 다른 변수에 할당하면 원본의 원시 값이 복사되어 전달된다. 이를 값에 의한 전달이라고 한다. 반면 객체를 가리키는 변수를 다른 변수에 할당하면 원본의 참조 값이 복사되어 전달된다. 이를 참조에 의한 전달이라고 한다.</li>
+</ul>
+<p>원시 타입과 객체 타입에 대해 조금 더 자세히 살펴보자</p>
+<h2 id="원시-값"><a href="#원시-값" class="headerlink" title="원시 값"></a>원시 값</h2><h3 id="변경-불가능한-값"><a href="#변경-불가능한-값" class="headerlink" title="변경 불가능한 값"></a>변경 불가능한 값</h3><p>원시 타입의 값은 변경 불가능한 값이다. 다시 말해, 한번 생성된 원시 값은 읽기 전용 값으로 변경할 수 없다.</p>
+<p>값을 변경할 수 없다는 것이 어떤 의미일까? 먼저 변수와 값을 정확히 구분해야 한다.<br>변수란 하나의 값을 저장하기 위해 확보한 메모리 공간 자체 또는 그 메모리 공간을 식별하기 위해 붙인 이름이고, 값이란 변수에 저장된 데이터로 표현식이 평가되어 생성된 결과이다. 값을 변경할 수 없다는 것은 변수에 관한 것이 아닌 값에 대한 진술이다.</p>
+<p>즉 원시 값을 변경할 수 없다는 것은 원시 값 자체를 변경할 수 없다는 것이지 변수 값을 변경할 수 없다는 것이 아니다. 변수 값은 재할당을 통해 언제든지 변경 가능하다. 단 상수는 재할당이 금지된 변수이므로 변수 값을 변경할 수 없다.</p>
+<p>원시 값은 변경 불가능한 값이므로 데이터의 신뢰성을 보장한다.</p>
+<p>변수에서 살펴보았듯이 원시 값을 할당한 변수에 새로운 원시 값을 재할당하면 메모리 공간에 저장되어 있는 재할당 이전의 원시 값을 변경하는 것이 아니라 새로운 메모리 공간을 확보하고 재할당할 값을 저장한 후 변수가 새롭게 재할당한 원시 값을 가리킨다.</p>
+<p>변수가 참조하던 메모리 공간의 주소가 변경된 이유는 변수에 할당된 원시 값이 변경 불가능한 값이기 때문이다.<br>만약 원시 값이 변경 가능한 값이라면 변수에 새로운 원시 값을 재할당했을 때 변수가 가리키던 메모리 공간의 주소를 바꿀 필요 없이 원시 값 자체를 변경하면 될 것이다.</p>
+<p>하지만 원시 값은 불변성을 가지므로 원시 값을 할당한 변수는 재할당 이외에 변수 값을 변경할 수 있는 방법이 없다.</p>
+<h3 id="값에-의한-전달"><a href="#값에-의한-전달" class="headerlink" title="값에 의한 전달"></a>값에 의한 전달</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> score = <span class="number">80</span>;</span><br><span class="line"><span class="keyword">var</span> copy = score;</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(score); <span class="comment">// 80</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(copy); <span class="comment">// 80</span></span><br><span class="line"></span><br><span class="line">score = <span class="number">100</span>;</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(score); <span class="comment">// 100</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(copy); <span class="comment">// ?</span></span><br></pre></td></tr></table></figure>
+
+<p>score 변수에 숫자 값 80을 할당 한 후 copy 변수에 score 변수를 할당했다. 그 후, score 변수에 새로운 숫자 값 100을 재할당하면 copy 변수의 값은 어떻게 될까?</p>
+<p>이 질문은 결국 “변수에 변수를 할당했을 때 무엇이 어떻게 전달되는가?”이다. copy &#x3D; score에서 score는 변수 값 80으로 평가되므로 copy 변수에도 80이 할당된다. 이처럼 변수에 원시 값을 갖는 변수를 할당하면 할당받는 변수(copy)에는 할당되는 변수(score)의 원시 값이 복사되어 전달되는데 이를 값에 의한 전달이라 한다.</p>
+<p>score 변수와 copy 변수는 숫자 값 80을 갖는다는 점은 동일하지만 score 변수와 copy 변수의 값 80은 다른 메모리 공간에 저장된 별개의 값이다.<br>따라서 score변수의 값을 변경하더라도 copy 변수의 값은 어떠한 영향을 주지 않는다. 즉 마지막 <code>console.log(copy)</code>의 결과는 80이다.</p>
+<p>사실 이는 실제 자바스크립트 엔진의 내부 동작과 정확히 일치하지 않을 수 있다. ECMAScript 사양에는 변수를 통해 메모리를 어떻게 관리해야 하는지 명확하게 정의되어 있지 않다. 따라서 실제 자바스크립트 엔진을 구현하는 제조사에 따라 내부 동작은 차이가 있을 수 있다.</p>
+<p>위에서는 변수에 원시 값을 갖는 변수를 할당하면 원시 값이 복사되어 새로운 메모리 공간에 할당한다고 설명했지만, 변수에 원시 값을 갖는 변수를 할당하는 시점에는 두 변수가 같은 원시 값을 참조하다가 어느 한쪽의 변수에 재할당이 이뤄졌을 때 비로소 새로운 메모리 공간에 재할당된 값을 저장하도록 동작할 수도 있다.</p>
+<p>또한 엄격히 말하자면 변수와 같은 식별자는 값이 아니라 메모리 주소를 기억하기에 변수에는 값이 전달되는 것이 아니라 메모리 주소가 전달된다. 따라서 “값에 의한 전달”이라는 용어도 사실 오해가 있을 수 있다.</p>
+<p>결국 “값에 의한 전달”도 사실은 값이 아니라 메모리 주소를 전달한다. 단 전달된 메모리 주소를 통해 메모리 공간에 접근하면 값을 참조할 수 있다.<br>중요한 것은 변수에 원시 값을 갖는 변수를 할당하면 변수 할당 시점이든, 두 변수 중 어느 하나의 변수에 값을 재할당하는 시점이든 결국은 두 변수의 원시 값은 서로 다른 메모리 공간에 저장된 별개의 값이 되어 어느 한쪽에서 재할당을 통해 값을 변경하더라도 서로 간섭할 수 없다는 것이다.</p>
+<h2 id="객체"><a href="#객체" class="headerlink" title="객체"></a>객체</h2><p>객체는 프로퍼티의 개수가 정해져 있지 않으며, 동적으로 추가되고 삭제할 수 있다. 또 프로퍼티의 값에도 제약이 없다.<br>즉 객체는 원시 값과는 다르게 확보해야 할 메모리 공간의 크기를 사전에 정해 둘 수 없다.</p>
+<p>따라서 객체는 원시 값과는 다른 방식으로 동작하도록 설계되어 있다. 원시 값과의 차이를 통해 객체에 대해 이해해보자.</p>
+<h3 id="변경-가능한-값"><a href="#변경-가능한-값" class="headerlink" title="변경 가능한 값"></a>변경 가능한 값</h3><p>객체 타입의 값은 변경 가능한 값이다. 이게 어떤 의미일까? 먼저 변수에 객체를 할당하면 어떤 일이 일어나는지 살펴보자</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> person = &#123;</span><br><span class="line">  <span class="attr">name</span>: <span class="string">&#x27;Lee&#x27;</span>,</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>원시 값을 할당한 변수가 기억하는 메모리 주소를 통해 메모리 공간에 접근하면 원시 값에 접근할 수 있다.<br>즉, 원시 값을 할당한 변수는 원시 값 자체를 값으로 갖는다. 하지만 객체를 할당한 변수가 기억하는 메모리 주소를 통해 메모리 공간에 접근하면 참조 값에 접근할 수 있다. 참조 값은 생성된 객체가 저장된 메모리 공간의 주소이다.</p>
+<p>원시 값을 할당한 변수를 참조하면 메모리에 저장되어 있는 원시 값에 접근한다. 하지만 객체를 할당한 변수를 참조하면 메모리에 저장되어 있는 참조 값을 통해 실제 객체에 접근한다.</p>
+<p>원시 값은 변경 불가능한 값이므로 원시 값을 갖는 변수의 값을 변경하려면 재할당 외에는 방법이 없다. 하지만 객체는 변경 가능한 값이므로 객체를 할당한 변수는 재할당 없이 객체를 직접 변경할 수 있다. 재할당 없이 프로퍼티를 동적으로 추가할 수도 있고 프로퍼티 값을 갱신할 수도 있으며 프로퍼티 자체를 삭제할 수도 있다.</p>
+<p>이때 객체를 할당한 변수에 재할당을 하지 않았으므로 객체를 할당한 변수의 참조 값은 변경되지 않는다.<br>이는 메모리 사용의 효율성과 성능을 위해 어느 정도의 구조적인 단점을 감안한 설계라고 할 수 있다.</p>
+<p>객체는 이러한 구조적 단점에 따른 부작용이 존재한다. 원시 값과는 다르게 여러 개의 식별자가 하나의 객체를 공유할 수 있다는 것이다.</p>
+<h3 id="참조에-의한-전달"><a href="#참조에-의한-전달" class="headerlink" title="참조에 의한 전달"></a>참조에 의한 전달</h3><p>여러 개의 식별자가 하나의 객체를 공유할 수 있다는 것이 무슨 의미인지, 어떤 부작용이 발생하는지 알아보자.</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> person = &#123;</span><br><span class="line">  <span class="attr">name</span>: <span class="string">&#x27;Lee&#x27;</span>;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> copy = person;</span><br></pre></td></tr></table></figure>
+
+<p>객체를 가리키는 변수(원본, person)을 다른 변수(사본, copy)에 할당하면 원본의 참조 값이 복사되어 전달되는데 이를 참조에 의한 전달이라 한다.</p>
+<p>원본 person과 사본 copy는 저장된 메모리 주소는 다르지만 동일한 참조 값을 가지므로 원본 person과 사본 copy 모두 동일한 객체를 가리키게 된다.<br>이것이 두 개의 식별자가 하나의 객체를 공유한다는 것을 의미한다. 따라서 원본 또는 사본 중 어느 한 쪽에서 객체를 변경하면 서로 영향을 주고받는다.</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> person = &#123;</span><br><span class="line">  <span class="attr">name</span>: <span class="string">&#x27;Lee&#x27;</span>,</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> copy = person;</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(copy === person); <span class="comment">// true</span></span><br><span class="line"></span><br><span class="line">copy.<span class="property">name</span> = <span class="string">&#x27;Kim&#x27;</span>;</span><br><span class="line">person.<span class="property">address</span> = <span class="string">&#x27;Seoul&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// copy와 person은 동일한 객체를 가리키므로 서로 영향을 주고 받는다.</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(person); <span class="comment">// &#123;name: &#x27;Kim&#x27;, address: &#x27;Seoul&#x27;&#125;</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(copy); <span class="comment">// &#123;name: &#x27;Kim&#x27;, address: &#x27;Seoul&#x27;&#125;</span></span><br></pre></td></tr></table></figure>
+
+<p>결국 “값에 의한 전달”과 “참조에 의한 전달”은 식별자가 기억하는 메모리 공간에 저장되어 있는 값을 복사해 전달한다는 면에서 동일하다.<br>다만 식별자가 기억하는 메모리 공간, 즉 변수에 저장되어 있는 값이 원시 값이냐 참조 값이냐의 차이만 있을 뿐이다. 따라서 자바스크립트에는 “참조에 의한 전달”은 존재하지 않고 “값에 의한 전달”만이 존재한다고 말할 수 있지만 전달되는 값이 원시 값인지 참조 값인지 구별해 강조하는 의미로 구분해 부른다고 할 수 있다.</p>
 ]]></content>
       <tags>
         <tag>개발</tag>
@@ -266,271 +395,6 @@
       <tags>
         <tag>개발</tag>
         <tag>자바스크립트</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>[Deep Dive] 제어문</title>
-    <url>/2022/Modern-JavaScript-Deep-Dive-Chapter-8-Control-Flow-Statement/</url>
-    <content><![CDATA[<h1 id="제어문"><a href="#제어문" class="headerlink" title="제어문"></a>제어문</h1><p>제어문은 조건에 따라 코드 블록을 실행(조건문)하거나 반복 실행(반복문)할 때 사용한다.<br>일반적으로 코드는 위에서 아래 방향으로 순차적으로 실행된다.<br>제어문을 사용하면 코드의 실행 흐름을 인위적으로 제어할 수 있다.</p>
-<p>하지만 코드의 실행 순서가 변경되는 것은 코드의 흐름을 혼란스럽게 만들어 가독성을 해치는 단점이 있다.<br>가독성이 좋지 않은 코드는 오류를 발생시키는 원인이 되므로 forEach, map, filter, reduce 같은 고차 함수를 사용한 함수형 프로그래밍 기법에서는 제어문의 사용을 억제하여 복잡성을 해결하려고 노력한다.</p>
-<p>하지만 제어문을 바르게 이해하는 것은 코딩 스킬에 많은 영향을 준다.<br>특히 for 문은 매우 중요하므로 확실히 살펴보도록 하자.</p>
-<h2 id="블록문"><a href="#블록문" class="headerlink" title="블록문"></a>블록문</h2><p>블록문은 0개 이상의 문을 중괄호로 묶은 것으로, 코드 블록 또는 블록이라고 부르기도 한다.<br>자바스크립트는 블록문을 하나의 실행 단위로 취급한다.<br>블록문은 단독으로 사용 가능하나 일반적으로 제어문이나 함수를 정의할 때 사용한다.</p>
-<p>문의 끝에는 세미콜론을 붙이는 것이 일반적이나 블록문은 자체 종결성을 갖기 때문에 블록문의 끝에는 세미콜론을 붙이지 않는다.</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 블록문</span></span><br><span class="line">&#123;</span><br><span class="line">  <span class="keyword">var</span> foo = <span class="number">10</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 제어문</span></span><br><span class="line"><span class="keyword">var</span> x = <span class="number">1</span>;</span><br><span class="line"><span class="keyword">if</span> (x &lt; <span class="number">10</span>) &#123;</span><br><span class="line">  x++;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 함수 선언문</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">sum</span>(<span class="params">a, b</span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> a + b;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="조건문"><a href="#조건문" class="headerlink" title="조건문"></a>조건문</h2><p>조건문은 주어진 조건식의 평가 결과에 따라 코드 블록의 실행을 결정한다.<br>조건식은 불리언 값으로 평가될 수 있는 표현식이다.</p>
-<p>자바스크립트는 if…else 문과 switch 문의 두 가지 조건문을 제공한다.</p>
-<h3 id="if…else-문"><a href="#if…else-문" class="headerlink" title="if…else 문"></a>if…else 문</h3><p>if…else 문은 주어진 조건식의 평가 결과에 따라 실행할 코드 블록을 결정한다.<br>조건식의 평가 결과가 true일 경우 if 문의 코드 블록이 실행되고 false일 경우 else 문의 코드 블록이 실행된다.</p>
-<pre>
-if (조건식) {
-  // 조건식이 참이면 이 코드 블록이 실행
-} else {
-  // 조건식이 거짓이면 이 코드 블록이 실행
-}
-</pre>
-
-<p>if 문의 조건식은 불리언 값으로 평가되어야 한다. 만약 if 문의 조건식이 불리언 값이 아닌 값으로 평가되면 자바스크립트 엔진에 의해 암묵적으로 불리언 값으로 강제 변환되어 실행할 코드 블록을 결정한다.</p>
-<p>만약 코드 블록 내의 문이 하나라면 중괄호를 생략할 수 있다.</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> num = <span class="number">2</span>;</span><br><span class="line"><span class="keyword">var</span> kind;</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> (num &gt; <span class="number">0</span>) kind = <span class="string">&#x27;양수&#x27;</span>;</span><br><span class="line"><span class="keyword">else</span> <span class="keyword">if</span> (num &lt; <span class="number">0</span>) kind = <span class="string">&#x27;음수&#x27;</span>;</span><br><span class="line"><span class="keyword">else</span> kind = <span class="string">&#x27;영&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(kind); <span class="comment">// 양수</span></span><br></pre></td></tr></table></figure>
-
-<p>대부분의 if…else 문은 삼항 조건 연산자로 바꿔 쓸 수 있다.<br>연산자에서도 살펴보았듯이 조건에 따라 단순히 값을 결정하여 변수에 할당하는 경우 if…else 문보다 삼항 조건 연산자를 사용하는 편이 가독성이 좋다.<br>하지만 조건에 따라 실행해야 할 내용이 복잡하여 여러 줄의 문이 필요하다면 if…else 문을 사용하는 편이 가독성이 좋다.</p>
-<h3 id="switch-문"><a href="#switch-문" class="headerlink" title="switch 문"></a>switch 문</h3><p>switch 문은 주어진 표현식을 평가하여 그 값과 일치하는 표현식을 갖는 case 문으로 실행 흐름을 옮긴다.<br>case 문은 상황을 의미하는 표현식을 지정하고 콜론으로 마친다. 그리고 그 뒤에 실행할 문들을 위치시킨다.</p>
-<p>switch 문의 표현식과 일치하는 case 문이 없다면 실행 순서는 default 문으로 이동한다. default 문은 선택사항이다.</p>
-<pre>
-switch (표현식) {
- case 표현식1:
-  switch 문의 표현식과 표현식 1이 일치하면 실행될 문;
-  break;
- case 표현식2:
-  switch 문의 표현식과 표현식 2가 일치하면 실행될 문;
-  break;
- default:
-  switch 문의 표현식과 일치하는 case 문이 없을 때 실행될 문;
-}
-</pre>
-
-<p>if…else 문의 조건식은 불리언 값으로 평가되어야 하지만 switch 문의 표현식은 불리언 값보다는 문자열이나 숫자 값인 경우가 많다.<br>즉 switch 문은 논리적 참, 거짓보다는 다양한 상황(case)에 따라 실행할 코드 블록을 결정할 때 사용한다.</p>
-<p>swtich 문은 case, default, break 등 다양한 키워드를 사용해야 하고 폴스루가 발생한느 등 문법도 복잡하다.<br>따라서 C 언어를 기반으로 하는 프로그래밍 언어는 대부분 switch 문을 지원하지만 파이썬과 같이 switch 문ㅇ을 지원하지 않는 프로그래밍 언어도 있다.</p>
-<p>만약 if…else 문으로 해결할 수 있다면 switch 문보다 if…else 문을 사용하는 편이 좋다.<br>하지만 조건이 너무 많아 if…else 문보다 switch 문을 사용했을 때 가독성이 더 좋다면 switch문을 사용하는 편이 좋다.</p>
-<h2 id="반복문"><a href="#반복문" class="headerlink" title="반복문"></a>반복문</h2><p>반복문은 조건식의 평가 결과가 참인 경우 코드 블록을 실행한다. 그 후 조건식을 다시 평가하여 여전히 참인 경우 코드 블록을 다시 실행한다.<br>이는 조건식이 거짓일 때까지 반복된다.</p>
-<p>자바스크립트는 for 문, while 문, do…while 문의 세 가지 반복문을 제공한다</p>
-<h3 id="for-문"><a href="#for-문" class="headerlink" title="for 문"></a>for 문</h3><p>for 문은 조건식이 거짓으로 평가될 때까지 코드 블록을 반복 실행한다. 가장 일반적으로 사용되는 for 문의 형태는 다음과 같다.</p>
-<pre>
-for (변수 선언문 또는 할당문; 조건식; 증감식) {
- 조건식이 참인 경우 반복 실행될 문;
-}
-</pre>
-
-<p>for 문은 매우 중요하므로 어떻게 동작하는지 많은 연습을 통해 확실히 이해해야 한다.</p>
-<p>for 문의 변수 선언문, 조건식, 증감식은 모두 옵션이므로 반드시 사용할 필요는 없다. 단, 어떤 식도 선언하지 않으면 무한루프가 된다.</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span> (;;) &#123;...&#125; <span class="comment">// 무한루프</span></span><br></pre></td></tr></table></figure>
-
-<p>for 문 내에 for 문을 중첩해 사용할 수 있다. 이를 중첩 for 문이라 한다. 다음은 두 개의 주사위를 던졌을 때 두 눈의 합이 6이 되는 모든 경우의 수를 출력하기 위해 이중 중첩 for 문을 사용한 예다.</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">1</span>; i &lt;= <span class="number">6</span>; i++) &#123;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">var</span> j = <span class="number">1</span>; j &lt;= <span class="number">6</span>; j++) &#123;</span><br><span class="line">    <span class="keyword">if</span> (i + j === <span class="number">6</span>) <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`[<span class="subst">$&#123;i&#125;</span>, <span class="subst">$&#123;j&#125;</span>]`</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// [1, 5] [2, 4] [3, 3] [4, 2] [5, 1]</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="while-문"><a href="#while-문" class="headerlink" title="while 문"></a>while 문</h3><p>while 문은 주어진 조건식의 평가 결과가 참이면 코드 블록을 계속해서 반복 실행한다.<br>for 문은 반복 횟수가 명확할 때 주로 사용하고 while 문은 반복 횟수가 불명확할 때 주로 사용한다.</p>
-<p>while 문은 조건문의 평가 결과가 거짓이 되면 코드 블록을 실행하지 않고 종료한다. 만약 조건식의 평가 결과가 불리언 값이 아니면 불리언 값으로 강제 변환하여 논리적 참, 거짓을 구별한다.</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> count = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span> (count &lt; <span class="number">3</span>) &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(count); <span class="comment">// 0 1 2</span></span><br><span class="line">  count++;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>조건식의 평가 결과가 언제나 참이면 무한루프가 된다.<br>무한루프에서 탈출하기 위해서는 코드 블록 내에 if 문으로 탈출 조건을 만들고 break 문으로 코드 블록을 탈출한다.</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> count = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 무한루프</span></span><br><span class="line"><span class="keyword">while</span> (<span class="literal">true</span>) &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(count); <span class="comment">// 0 1 2</span></span><br><span class="line">  count++;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">if</span> (count === <span class="number">3</span>) <span class="keyword">break</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="do…while-문"><a href="#do…while-문" class="headerlink" title="do…while 문"></a>do…while 문</h3><p>do…while 문은 코드 블록을 먼저 실행하고 조건식을 평가한다. 따라서 코드 블록은 무조건 한 번 이상 실행된다.</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> count = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">do</span> &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(count); <span class="comment">// 0 1 2</span></span><br><span class="line">  count++;</span><br><span class="line">&#125; <span class="keyword">while</span> (count &lt; <span class="number">3</span>);</span><br></pre></td></tr></table></figure>
-
-<h2 id="break-문"><a href="#break-문" class="headerlink" title="break 문"></a>break 문</h2><p>switch 문과 while 문에서 살펴보았듯이 break 문은 코드 블록을 탈출한다.<br>더 정확히 말하자면 레이블 문, 반복문 또는 switch 문의 코드 블록을 탈출한다. 레이블 문, 반복문, switch 문의 코드 블록 외에 break 문을 사용하면 SyntaxError가 발생한다.</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> (<span class="literal">true</span>) &#123;</span><br><span class="line">  <span class="keyword">break</span>; <span class="comment">// Uncaught SyntaxError: Illegal break statement</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>참고로 레이블 문은 식별자가 붙은 문을 말한다.<br>레이블 문은 프로그램의 실행 순서를 제어하는데 사용한다. 사실 switch 문의 case 문과 default 문 역시 레이블 문이다.<br>레이블 문을 탈출하려면 break 문에 레이블 식별자를 지정한다.</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="attr">foo</span>: &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="number">1</span>);</span><br><span class="line">  <span class="keyword">break</span> foo;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="number">2</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;Done!&#x27;</span>);</span><br><span class="line"><span class="comment">// 1</span></span><br><span class="line"><span class="comment">// Done!</span></span><br></pre></td></tr></table></figure>
-
-<p>레이블 문을 사용하면 프로그램의 흐름이 복잡해져서 가독성이 나빠지고 오류를 발생시킬 가능성이 높아지기 때문에 일반적으로 권장하지 않는다.</p>
-</blockquote>
-<h2 id="continue-문"><a href="#continue-문" class="headerlink" title="continue 문"></a>continue 문</h2><p>continue 문은 반복문의 코드 블록 실행을 현 지점에서 중단하고 반복문의 증감식으로 실행 흐름을 이동시킨다.<br>break 문처럼 반복문을 탈출하지는 않는다.</p>
-<p>다음은 문자열에서 특정 문자의 개수를 세는 예다.</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> string = <span class="string">&#x27;Hello World.&#x27;</span>;</span><br><span class="line"><span class="keyword">var</span> search = <span class="string">&#x27;l&#x27;</span>;</span><br><span class="line"><span class="keyword">var</span> count = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; string.<span class="property">length</span>; i++) &#123;</span><br><span class="line">  <span class="keyword">if</span> (string[i] !== search) <span class="keyword">continue</span>; <span class="comment">// &#x27;l&#x27;이 아니면 현 지점에서 실행을 중단하고 반복문의 증감식으로 이동한다.</span></span><br><span class="line">  count++; <span class="comment">// continue 문이 실행되면 이 문은 실행되지 않는다.</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(count); <span class="comment">// 3</span></span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <tags>
-        <tag>개발</tag>
-        <tag>자바스크립트</tag>
-        <tag>모던 자바스크립트 Deep Dive</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>IR기법 (Image Replacement)</title>
-    <url>/2022/Image-Replacement/</url>
-    <content><![CDATA[<h1 id="👀"><a href="#👀" class="headerlink" title="👀"></a>👀</h1><p>WCAG 2.1에 웹 콘텐츠의 접근성을 향상시키기 위해 텍스트 아닌 콘텐츠에 대해 대체 텍스트를 제공해주어야 한다는 지침이 있다. 이미지 역시 텍스트가 아닌 콘텐츠이기 때문에 대체 텍스트를 제공해주어야 하는데, 이는 접근성의 향상 뿐만 아니라 SEO(검색 엔진 최적화)와도 관련이 있어 중요하다.</p>
-<p>이렇게 사용자에게 대체 텍스트를 제공하는 것을 IR(Image Replacement)이라고 하는데, HTML의 요소를 사용할 경우 alt 속성을 통해 대체 텍스트를 제공하는것이 일반적이다.</p>
-<p>하지만 CSS를 이용해 background-image를 넣는 경우도 많기에 어떻게 대체 텍스트를 제공하는지 정리해보자.</p>
-<hr>
-
-<h1 id="😒-visibility-hidden-display-none"><a href="#😒-visibility-hidden-display-none" class="headerlink" title="😒 visibility: hidden, display: none"></a>😒 visibility: hidden, display: none</h1><p>먼저 IR기법으로 잘못 사용되고 있는 대표적인 예가 있는데 visibility: hidden과 display: none이다.</p>
-<p>이 두 방법은 모두 적용된 요소가 화면에서 보이지 않게 하기 때문에 스크린리더 사용자를 위한 텍스트를 제공하기 위해 사용되는 경우를 발견할 수 있다. 하지만 이 두 방법은 스크린리더에서도 읽지 않는것을 원칙으로 한다.</p>
-<p>IR기법의 목표는 대체 텍스트를 시각적으는 숨기지만 스크린 리더 사용자는 읽을 수 있어야 하기 때문에 이 두가지 방법은 옳지 않다.</p>
-<hr>
-
-<h1 id="😊-올바른-IR-기법"><a href="#😊-올바른-IR-기법" class="headerlink" title="😊 올바른 IR 기법"></a>😊 올바른 IR 기법</h1><h2 id="Phark-Method"><a href="#Phark-Method" class="headerlink" title="Phark Method"></a>Phark Method</h2><ul>
-<li><p>가장 널리 사용되는 방법으로 이미지로 대체할 엘리먼트에 배경이미지를 설정하고 글자는 text-indent를 이용하여 화면 바깥으로 빼내어 보이지 않게 하는 방법이다.</p>
-</li>
-<li><p>의미있는 이미지의 대체 텍스트를 제공하는 경우에 사용한다.</p>
-</li>
-<li><p>Text-indent 속성은 사용하기 간편하지만 단점 또한 존재한다. 만약 이미지가 제대로 로드되지 않으면 텍스트가 보이지 않기 때문에 스크린리더 사용자가 아닌 경우 이미지를 설명하는 텍스트를 보고 콘텐츠의 내용을 확인 할 수 없다. 또한, 웹페이지에 text-indent 스타일 속성이 적용된 요소가 많으면 성능 저하를 불러올 수 있다.</p>
-</li>
-</ul>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.ir_pm</span>&#123;</span><br><span class="line"><span class="attribute">width</span>: <span class="number">995px</span>;</span><br><span class="line"><span class="attribute">height</span>: <span class="number">1441px</span>;</span><br><span class="line"><span class="attribute">text-indent</span>: -<span class="number">9999px</span>;</span><br><span class="line"><span class="attribute">background</span> : <span class="built_in">url</span>(<span class="string">&quot;rocketgril_poster.jpg&quot;</span>) no-repeat;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="Dwyer-Method"><a href="#Dwyer-Method" class="headerlink" title="Dwyer Method"></a>Dwyer Method</h2><ul>
-<li><p>이미지로 대체할 엘리먼트에 배경이미지를 설정하고 글자는 span태그로 감싼 후 width와 height를 각각 0으로 하여 넘치는 글자를 숨기는 방법이다.</p>
-</li>
-<li><p>추가적인 tag를 사용하고, Phark Method와 마찬가지로 이미지가 제대로 로드되지 않으면 텍스트가 보이지 않아 콘텐츠 내용 확인이 어렵다는 단점이 존재한다.</p>
-</li>
-</ul>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.ir_dm</span>&#123;</span><br><span class="line"><span class="attribute">width</span>: <span class="number">995px</span>;</span><br><span class="line"><span class="attribute">height</span>: <span class="number">1441px</span>;</span><br><span class="line"><span class="attribute">background</span> : <span class="built_in">url</span>(<span class="string">&quot;rocketgril_poster.jpg&quot;</span>) no-repeat;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.ir_dm</span> <span class="selector-tag">span</span>&#123;</span><br><span class="line"><span class="attribute">display</span> :block;</span><br><span class="line"><span class="attribute">overflow</span>: hidden;</span><br><span class="line"><span class="attribute">width</span>: <span class="number">0px</span>;</span><br><span class="line"><span class="attribute">height</span>: <span class="number">0px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="WA-IR"><a href="#WA-IR" class="headerlink" title="WA IR"></a>WA IR</h2><ul>
-<li><p>접근성 및 UX(User Experience) 향상을 위한 화면읽기프로그램 활용 기법으로 권장되는 방법이다.</p>
-</li>
-<li><p>의미있는 이미지의 대체 텍스트로 이미지가 없어도 대체 텍스트를 보여주고자 할 때 사용한다.</p>
-</li>
-<li><p>이미지로 대체할 엘리먼트에 배경이미지를 설정하고 글자는 span 태그로 감싼 후 z-index:-1을 이용하여 배치순서를 뒤로 보내어 화면에 안보이게 처리한다.</p>
-</li>
-<li><p>만약 브라우저에서 CSS를 끄거나, 웹 페이지에 적용된 CSS가 정상적으로 로드되지 않을 때 숨겨진 텍스트가 화면에 출력된다. 또한, position 속성을 사용하기 때문에 성능에 영향을 줄 수 있다.</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.ir_wa</span>&#123;</span><br><span class="line"><span class="attribute">width</span>: <span class="number">995px</span>;</span><br><span class="line"><span class="attribute">height</span>: <span class="number">1441px</span>;</span><br><span class="line"><span class="attribute">background</span> : <span class="built_in">url</span>(<span class="string">&quot;rockegril_poster.jpg&quot;</span>) no-repeat;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.ir_wa</span> <span class="selector-tag">span</span>&#123;</span><br><span class="line"><span class="attribute">display</span>:block;</span><br><span class="line"><span class="attribute">position</span>:relative;</span><br><span class="line"><span class="attribute">z-index</span>:-<span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
-</ul>
-<p>이 외에도 CSS의 위치 속성과 overflow: hidden을 사용하는 방법, 자바스크립트를 이용하여 이미지로 대체할 엘리먼트의 텍스트를 img태그로 교체하는 방법등 다양한 방법이 존재한다.</p>
-<hr>
-
-<h1 id="참고"><a href="#참고" class="headerlink" title="참고"></a>참고</h1><ul>
-<li><a href="https://m.blog.naver.com/eirene100999/221686480420">https://m.blog.naver.com/eirene100999/221686480420</a></li>
-<li><a href="https://nuli.navercorp.com/community/article/1132804?email=true">https://nuli.navercorp.com/community/article/1132804?email=true</a></li>
-<li><a href="https://alonehistory.tistory.com/14">https://alonehistory.tistory.com/14</a></li>
-</ul>
-]]></content>
-      <tags>
-        <tag>개발</tag>
-        <tag>CSS</tag>
-        <tag>IR</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>[Github] remote: fatal error in commit_refs</title>
-    <url>/2023/Git-remote-fatal-error-in-commitrefs/</url>
-    <content><![CDATA[<h1 id="😱문제발생"><a href="#😱문제발생" class="headerlink" title="😱문제발생"></a>😱문제발생</h1><p>오늘 배운 내용을 간단히 정리하며 TIL을 작성하고 Github에 push하려고 하는데 다음과 같은 오류가 발생했다.</p>
-<p><img src="/../images/git-remote-fatal-error.png" alt="Git Error"></p>
-<p>갑자기 이게 무슨 오류지? 혹시 내가 원격 저장소에서 무슨 작업을 했었나? 생각하며 <code>git pull</code>을 하고 다시 <code>git push</code>를 해도 실패.. 이외에도 여러가지 방법으로 해결을 시도했지만 전부 실패했다.</p>
-<h1 id="😊문제해결"><a href="#😊문제해결" class="headerlink" title="😊문제해결"></a>😊문제해결</h1><p>다시한번 log를 살펴보다가 <code>remote: fatal error in commit_refs</code>를 발견하고 구글링을 해보았더니…</p>
-<blockquote>
-<p>Github의 서버오류로 정상적으로 작동하지 않았던것!</p>
-</blockquote>
-<p>생각보다 너무 허무했지만 앞으로는 같은 문제를 겪어도 당황하지 않을 수 있을것 같다.<br>추가적으로 <a href="https://www.githubstatus.com/">https://www.githubstatus.com</a>를 통해 GitHub site status를 확인 할 수 있다고 하니 앞으로 참고해야겠다.</p>
-<h1 id="참고"><a href="#참고" class="headerlink" title="참고"></a>참고</h1><ul>
-<li><a href="https://stackoverflow.com/questions/37341960/how-do-i-fix-remote-fatal-error-in-commit-refs-errors-trying-to-push-with-git">https://stackoverflow.com/questions/37341960/how-do-i-fix-remote-fatal-error-in-commit-refs-errors-trying-to-push-with-git</a></li>
-</ul>
-]]></content>
-      <tags>
-        <tag>개발</tag>
-        <tag>Git</tag>
-        <tag>Github</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>[Deep Dive] 원시 값과 객체의 비교</title>
-    <url>/2022/Modern-Javascript-Deep-Dive-Chapter-11-Summary/</url>
-    <content><![CDATA[<h1 id="원시-값-vs-객체-값"><a href="#원시-값-vs-객체-값" class="headerlink" title="원시 값 vs 객체 값"></a>원시 값 vs 객체 값</h1><p>앞서 데이터 타입에서 살펴보았듯이 자바스크립트가 제공하는 데이터타입은 크게 원시 타입과 객체 타입으로 구분할 수 있다.</p>
-<p>데이터 타입을 원시 타입과 객체 타입으로 구분하는 이유는 무엇일까?<br>원시 타입과 객체 타입은 근본적으로 다르다는 의미일 것이다. 원시타입과 객체 타입은 크게 세 가지 측면에서 다르다.</p>
-<ul>
-<li>원시 타입의 값은 변경 불가능한 값이다. 반면 객체(참조) 타입의 값은 변경 가능한 값이다.</li>
-<li>원시 값을 변수에 할당하면 변수(확보된 메모리 공간)에는 실제 값이 저장된다. 반면 객체를 변수에 할당하면 변수에는 참조 값이 저장된다.</li>
-<li>원시 값을 갖는 변수를 다른 변수에 할당하면 원본의 원시 값이 복사되어 전달된다. 이를 값에 의한 전달이라고 한다. 반면 객체를 가리키는 변수를 다른 변수에 할당하면 원본의 참조 값이 복사되어 전달된다. 이를 참조에 의한 전달이라고 한다.</li>
-</ul>
-<p>원시 타입과 객체 타입에 대해 조금 더 자세히 살펴보자</p>
-<h2 id="원시-값"><a href="#원시-값" class="headerlink" title="원시 값"></a>원시 값</h2><h3 id="변경-불가능한-값"><a href="#변경-불가능한-값" class="headerlink" title="변경 불가능한 값"></a>변경 불가능한 값</h3><p>원시 타입의 값은 변경 불가능한 값이다. 다시 말해, 한번 생성된 원시 값은 읽기 전용 값으로 변경할 수 없다.</p>
-<p>값을 변경할 수 없다는 것이 어떤 의미일까? 먼저 변수와 값을 정확히 구분해야 한다.<br>변수란 하나의 값을 저장하기 위해 확보한 메모리 공간 자체 또는 그 메모리 공간을 식별하기 위해 붙인 이름이고, 값이란 변수에 저장된 데이터로 표현식이 평가되어 생성된 결과이다. 값을 변경할 수 없다는 것은 변수에 관한 것이 아닌 값에 대한 진술이다.</p>
-<p>즉 원시 값을 변경할 수 없다는 것은 원시 값 자체를 변경할 수 없다는 것이지 변수 값을 변경할 수 없다는 것이 아니다. 변수 값은 재할당을 통해 언제든지 변경 가능하다. 단 상수는 재할당이 금지된 변수이므로 변수 값을 변경할 수 없다.</p>
-<p>원시 값은 변경 불가능한 값이므로 데이터의 신뢰성을 보장한다.</p>
-<p>변수에서 살펴보았듯이 원시 값을 할당한 변수에 새로운 원시 값을 재할당하면 메모리 공간에 저장되어 있는 재할당 이전의 원시 값을 변경하는 것이 아니라 새로운 메모리 공간을 확보하고 재할당할 값을 저장한 후 변수가 새롭게 재할당한 원시 값을 가리킨다.</p>
-<p>변수가 참조하던 메모리 공간의 주소가 변경된 이유는 변수에 할당된 원시 값이 변경 불가능한 값이기 때문이다.<br>만약 원시 값이 변경 가능한 값이라면 변수에 새로운 원시 값을 재할당했을 때 변수가 가리키던 메모리 공간의 주소를 바꿀 필요 없이 원시 값 자체를 변경하면 될 것이다.</p>
-<p>하지만 원시 값은 불변성을 가지므로 원시 값을 할당한 변수는 재할당 이외에 변수 값을 변경할 수 있는 방법이 없다.</p>
-<h3 id="값에-의한-전달"><a href="#값에-의한-전달" class="headerlink" title="값에 의한 전달"></a>값에 의한 전달</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> score = <span class="number">80</span>;</span><br><span class="line"><span class="keyword">var</span> copy = score;</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(score); <span class="comment">// 80</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(copy); <span class="comment">// 80</span></span><br><span class="line"></span><br><span class="line">score = <span class="number">100</span>;</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(score); <span class="comment">// 100</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(copy); <span class="comment">// ?</span></span><br></pre></td></tr></table></figure>
-
-<p>score 변수에 숫자 값 80을 할당 한 후 copy 변수에 score 변수를 할당했다. 그 후, score 변수에 새로운 숫자 값 100을 재할당하면 copy 변수의 값은 어떻게 될까?</p>
-<p>이 질문은 결국 “변수에 변수를 할당했을 때 무엇이 어떻게 전달되는가?”이다. copy &#x3D; score에서 score는 변수 값 80으로 평가되므로 copy 변수에도 80이 할당된다. 이처럼 변수에 원시 값을 갖는 변수를 할당하면 할당받는 변수(copy)에는 할당되는 변수(score)의 원시 값이 복사되어 전달되는데 이를 값에 의한 전달이라 한다.</p>
-<p>score 변수와 copy 변수는 숫자 값 80을 갖는다는 점은 동일하지만 score 변수와 copy 변수의 값 80은 다른 메모리 공간에 저장된 별개의 값이다.<br>따라서 score변수의 값을 변경하더라도 copy 변수의 값은 어떠한 영향을 주지 않는다. 즉 마지막 <code>console.log(copy)</code>의 결과는 80이다.</p>
-<p>사실 이는 실제 자바스크립트 엔진의 내부 동작과 정확히 일치하지 않을 수 있다. ECMAScript 사양에는 변수를 통해 메모리를 어떻게 관리해야 하는지 명확하게 정의되어 있지 않다. 따라서 실제 자바스크립트 엔진을 구현하는 제조사에 따라 내부 동작은 차이가 있을 수 있다.</p>
-<p>위에서는 변수에 원시 값을 갖는 변수를 할당하면 원시 값이 복사되어 새로운 메모리 공간에 할당한다고 설명했지만, 변수에 원시 값을 갖는 변수를 할당하는 시점에는 두 변수가 같은 원시 값을 참조하다가 어느 한쪽의 변수에 재할당이 이뤄졌을 때 비로소 새로운 메모리 공간에 재할당된 값을 저장하도록 동작할 수도 있다.</p>
-<p>또한 엄격히 말하자면 변수와 같은 식별자는 값이 아니라 메모리 주소를 기억하기에 변수에는 값이 전달되는 것이 아니라 메모리 주소가 전달된다. 따라서 “값에 의한 전달”이라는 용어도 사실 오해가 있을 수 있다.</p>
-<p>결국 “값에 의한 전달”도 사실은 값이 아니라 메모리 주소를 전달한다. 단 전달된 메모리 주소를 통해 메모리 공간에 접근하면 값을 참조할 수 있다.<br>중요한 것은 변수에 원시 값을 갖는 변수를 할당하면 변수 할당 시점이든, 두 변수 중 어느 하나의 변수에 값을 재할당하는 시점이든 결국은 두 변수의 원시 값은 서로 다른 메모리 공간에 저장된 별개의 값이 되어 어느 한쪽에서 재할당을 통해 값을 변경하더라도 서로 간섭할 수 없다는 것이다.</p>
-<h2 id="객체"><a href="#객체" class="headerlink" title="객체"></a>객체</h2><p>객체는 프로퍼티의 개수가 정해져 있지 않으며, 동적으로 추가되고 삭제할 수 있다. 또 프로퍼티의 값에도 제약이 없다.<br>즉 객체는 원시 값과는 다르게 확보해야 할 메모리 공간의 크기를 사전에 정해 둘 수 없다.</p>
-<p>따라서 객체는 원시 값과는 다른 방식으로 동작하도록 설계되어 있다. 원시 값과의 차이를 통해 객체에 대해 이해해보자.</p>
-<h3 id="변경-가능한-값"><a href="#변경-가능한-값" class="headerlink" title="변경 가능한 값"></a>변경 가능한 값</h3><p>객체 타입의 값은 변경 가능한 값이다. 이게 어떤 의미일까? 먼저 변수에 객체를 할당하면 어떤 일이 일어나는지 살펴보자</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> person = &#123;</span><br><span class="line">  <span class="attr">name</span>: <span class="string">&#x27;Lee&#x27;</span>,</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-<p>원시 값을 할당한 변수가 기억하는 메모리 주소를 통해 메모리 공간에 접근하면 원시 값에 접근할 수 있다.<br>즉, 원시 값을 할당한 변수는 원시 값 자체를 값으로 갖는다. 하지만 객체를 할당한 변수가 기억하는 메모리 주소를 통해 메모리 공간에 접근하면 참조 값에 접근할 수 있다. 참조 값은 생성된 객체가 저장된 메모리 공간의 주소이다.</p>
-<p>원시 값을 할당한 변수를 참조하면 메모리에 저장되어 있는 원시 값에 접근한다. 하지만 객체를 할당한 변수를 참조하면 메모리에 저장되어 있는 참조 값을 통해 실제 객체에 접근한다.</p>
-<p>원시 값은 변경 불가능한 값이므로 원시 값을 갖는 변수의 값을 변경하려면 재할당 외에는 방법이 없다. 하지만 객체는 변경 가능한 값이므로 객체를 할당한 변수는 재할당 없이 객체를 직접 변경할 수 있다. 재할당 없이 프로퍼티를 동적으로 추가할 수도 있고 프로퍼티 값을 갱신할 수도 있으며 프로퍼티 자체를 삭제할 수도 있다.</p>
-<p>이때 객체를 할당한 변수에 재할당을 하지 않았으므로 객체를 할당한 변수의 참조 값은 변경되지 않는다.<br>이는 메모리 사용의 효율성과 성능을 위해 어느 정도의 구조적인 단점을 감안한 설계라고 할 수 있다.</p>
-<p>객체는 이러한 구조적 단점에 따른 부작용이 존재한다. 원시 값과는 다르게 여러 개의 식별자가 하나의 객체를 공유할 수 있다는 것이다.</p>
-<h3 id="참조에-의한-전달"><a href="#참조에-의한-전달" class="headerlink" title="참조에 의한 전달"></a>참조에 의한 전달</h3><p>여러 개의 식별자가 하나의 객체를 공유할 수 있다는 것이 무슨 의미인지, 어떤 부작용이 발생하는지 알아보자.</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> person = &#123;</span><br><span class="line">  <span class="attr">name</span>: <span class="string">&#x27;Lee&#x27;</span>;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> copy = person;</span><br></pre></td></tr></table></figure>
-
-<p>객체를 가리키는 변수(원본, person)을 다른 변수(사본, copy)에 할당하면 원본의 참조 값이 복사되어 전달되는데 이를 참조에 의한 전달이라 한다.</p>
-<p>원본 person과 사본 copy는 저장된 메모리 주소는 다르지만 동일한 참조 값을 가지므로 원본 person과 사본 copy 모두 동일한 객체를 가리키게 된다.<br>이것이 두 개의 식별자가 하나의 객체를 공유한다는 것을 의미한다. 따라서 원본 또는 사본 중 어느 한 쪽에서 객체를 변경하면 서로 영향을 주고받는다.</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> person = &#123;</span><br><span class="line">  <span class="attr">name</span>: <span class="string">&#x27;Lee&#x27;</span>,</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> copy = person;</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(copy === person); <span class="comment">// true</span></span><br><span class="line"></span><br><span class="line">copy.<span class="property">name</span> = <span class="string">&#x27;Kim&#x27;</span>;</span><br><span class="line">person.<span class="property">address</span> = <span class="string">&#x27;Seoul&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// copy와 person은 동일한 객체를 가리키므로 서로 영향을 주고 받는다.</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(person); <span class="comment">// &#123;name: &#x27;Kim&#x27;, address: &#x27;Seoul&#x27;&#125;</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(copy); <span class="comment">// &#123;name: &#x27;Kim&#x27;, address: &#x27;Seoul&#x27;&#125;</span></span><br></pre></td></tr></table></figure>
-
-<p>결국 “값에 의한 전달”과 “참조에 의한 전달”은 식별자가 기억하는 메모리 공간에 저장되어 있는 값을 복사해 전달한다는 면에서 동일하다.<br>다만 식별자가 기억하는 메모리 공간, 즉 변수에 저장되어 있는 값이 원시 값이냐 참조 값이냐의 차이만 있을 뿐이다. 따라서 자바스크립트에는 “참조에 의한 전달”은 존재하지 않고 “값에 의한 전달”만이 존재한다고 말할 수 있지만 전달되는 값이 원시 값인지 참조 값인지 구별해 강조하는 의미로 구분해 부른다고 할 수 있다.</p>
-]]></content>
-      <tags>
-        <tag>개발</tag>
-        <tag>자바스크립트</tag>
-        <tag>모던 자바스크립트 Deep Dive</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>[Deep Dive] 표현식과 문</title>
-    <url>/2022/Modern-Javascript-Deep-Dive-Chapter-5-Summary/</url>
-    <content><![CDATA[<p>변수에 대해 살펴보면서 지속적으로 값이라는 용어가 등장했다. 표현식과 문에 대해 알아보기 이전에 값이란 무엇인지 알아보자.</p>
-<hr>
-
-<h1 id="값"><a href="#값" class="headerlink" title="값"></a>값</h1><p>값이란 (표현)식이 평가되어 생성된 결과를 말한다.<br>평가란 식을 해석해서 값을 생성하거나 참조하는 것을 의미한다.</p>
-<p>변수란 하나의 값을 저장하기 위해 확보한 메모리 공간 자체 또는 그 메모리 공간을 식별하기 위해 붙인 이름이였다. 즉 변수에 할당되는 것은 값이다.</p>
-<p>값이란 어떻게 생성할 수 있을까? 가장 기본적인 방법은 리터럴을 사용하는 것이다.</p>
-<hr>
-
-<h1 id="리터럴"><a href="#리터럴" class="headerlink" title="리터럴"></a>리터럴</h1><p>리터럴은 사람이 이해할 수 있는 문자 또는 약속된 기호를 사용해 값을 생성하는 표기법이다.</p>
-<p>리터럴은 문자 또는 미리 약속된 기호로 표기한 코드이며 자바스크립트 엔진은 코드가 실행되는 시점인 런타임에 리터럴을 평가해 값을 생성한다.</p>
-<p>리터럴을 사용해 다양한 종류의 값을 생성할 수 있다.</p>
-<h2 id="엔진은-어떻게-리터럴을-구별할까"><a href="#엔진은-어떻게-리터럴을-구별할까" class="headerlink" title="엔진은 어떻게 리터럴을 구별할까?"></a>엔진은 어떻게 리터럴을 구별할까?</h2><p>리터럴은 값을 생성하기 위해 미리 약속한 표기법으로 자바스크립트 엔진 내부에 리터럴을 구분해 값을 생성 할 수 있도록 하드코딩 되어있다.</p>
-<hr>
-
-<p>리터럴 이외에 값을 생성하는 또 다른 방법에는 무엇이 있을까? 값에 대해 살펴보면서 언급했듯이 표현식이 존재한다.</p>
-<h1 id="표현식"><a href="#표현식" class="headerlink" title="표현식"></a>표현식</h1><p>표현식은 값으로 평가될 수 있는 문이다. 즉 표현식이 평가되면 새로운 값을 생성하거나 값을 참조한다.</p>
-<p>앞서 살펴본 리터럴은 값으로 평가된다. 그러므로 리터럴도 사실 표현식이다.</p>
-<p>표현식은 값으로 평가되는데, 이때 표현식과 표현식이 평가된 값은 동등한 관계이다.</p>
-<p>다음 예시를 살펴보자. 예를들어, 산술 연산자 + 의 좌항과 우항에는 숫자 값이 위치해야 한다. 이 때 표현식이 숫자 값으로 평가될 수 있다면 숫자 값 대신 사용할 수 있다.</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> x = <span class="number">1</span> + <span class="number">2</span>;</span><br><span class="line"></span><br><span class="line">x + <span class="number">3</span>; <span class="comment">// 6</span></span><br></pre></td></tr></table></figure>
-
-<p>위 코드의 x + 3에서 + 연산자의 좌항과 우항에는 숫자 값이 위치해야 한다. 이 때 좌항 x 는 식별자 표현식이다. 즉 x는 할당되어 있는 숫자 값 3 으로 평가된다. 즉 표현식과 표현식이 평가된 값은 동치이며 이처럼 표현식은 다른 표현식의 일부가 되어 새로운 값을 만들어 낼 수 있다.</p>
-<hr>
-
-<p>앞서 표현식은 값으로 평가될 수 있는 문이라고 했다. 그럼 문이란 무엇일까?</p>
-<h1 id="문"><a href="#문" class="headerlink" title="문"></a>문</h1><p>문은 프로그램을 구성하는 기본 단위이자 최소 실행 단위이다. 문은 여러 토큰으로 구성되는데, 토큰이란 문법적인 의미를 가지며, 문법적으로 더 이상 나눌 수 없는 코드의 기본 요소를 의미한다.</p>
-<p>문을 명령문이라고도 부른다. 문이 실행되면 명령이 실행되고 무슨 일인가가 일어나게 된다.</p>
-<p>문은 선언문, 할당문, 조건문, 반복문등 다양한 종류로 나누어진다.</p>
-<p>세미콜론을 통해 문의 종료를 나타낼 수 있다. 즉 자바스크립트 엔진은 세미콜론으로 문이 종료한 위치를 파악하고 순차적으로 하나씩 문을 실행한다. 단 중괄호로 묶은 코드 블록은 자체 종결성을 가지므로 세미콜론을 붙이지 않는다.</p>
-<p>문의 끝에 붙이는 세미콜론은 옵션이다. 이는 자바스크립트 엔진이 소스코드를 해석하며 문의 끝이라고 예측되는 지점에 세미콜론을 자동으로 삽입하는 ASI를 수행하기 때문이다.</p>
-<hr>
-
-<p>그렇다면 표현식과 문은 어떻게 구별 할 수 있을까? 표현식도 문의 일부니 정확히 말하자면 표현식인 문과 표현식이 아닌 문을 어떻게 구별 할 수 있을까?</p>
-<h1 id="표현식인-문과-표현식이-아닌-문"><a href="#표현식인-문과-표현식이-아닌-문" class="headerlink" title="표현식인 문과 표현식이 아닌 문"></a>표현식인 문과 표현식이 아닌 문</h1><p>표현식인 문은 값으로 평가될 수 있는 문이며, 표현식이 아닌 문은 값으로 평가될 수 없는 문을 말한다. 예를들어, 변수 선언문은 값으로 평가될 수 없으므로 표현식이 아닌 문이다.</p>
-<p>표현식인 문과 표현식이 아닌 문을 구별하는 가장 간단한 방법은 변수에 할당해 보는 것이다.</p>
-<p>변수는 값을 저장하기 위한 메모리 공간이였으므로 변수에 할당할 수 있는 문은 즉 값으로 평가된는 표현식이라고 볼 수 있다.</p>
-]]></content>
-      <tags>
-        <tag>개발</tag>
-        <tag>자바스크립트</tag>
-        <tag>모던 자바스크립트 Deep Dive</tag>
       </tags>
   </entry>
   <entry>
@@ -625,106 +489,196 @@ for (변수 선언문 또는 할당문; 조건식; 증감식) {
       </tags>
   </entry>
   <entry>
-    <title>[Deep Dive] 연산자</title>
-    <url>/2022/Modern-Javascript-Deep-Dive-Chapter-7-Operator-Summary/</url>
-    <content><![CDATA[<h1 id="연산자"><a href="#연산자" class="headerlink" title="연산자"></a>연산자</h1><p>연산자는 하나 이상의 표현식을 대상으로 산술, 할당, 비교, 논리, 타입, 지수 연산 등을 수행해 하나의 값을 만든다.</p>
-<p>이 때 연산의 대상을 피연산자라 한다. 피연산자는 값으로 평가될 수 있는 표현식이어야 한다.<br>그리고 피연산자와 연산자의 조합으로 이뤄진 연산자 표현식도 값으로 평가될 수 있는 표현식이다.</p>
-<p>자바스크립트가 제공하는 다양한 연산자에 대해 살펴보자.</p>
-<h2 id="산술-연산자"><a href="#산술-연산자" class="headerlink" title="산술 연산자"></a>산술 연산자</h2><p>산술 연산자는 피연산자를 대상으로 수학적 계산을 수행해 새로운 숫자 값을 만든다.<br>산술 연산이 불가능한 경우, NaN을 반환한다.</p>
-<p>산술 연산자는 피연산자의 개수에 따라 이항 산술 연산자와 단항 산술 연산자로 구분할 수 있다.</p>
-<h3 id="이항-산술-연산자"><a href="#이항-산술-연산자" class="headerlink" title="이항 산술 연산자"></a>이항 산술 연산자</h3><p>이항 산술 연산자는 2개의 피연산자를 산술 연산하여 숫자 값을 만든다.</p>
-<p>모든 이항 산술 연산자는 피연산자의 값을 변경하는 부수효과가 없다.</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="number">5</span> + <span class="number">2</span>; <span class="comment">// 7</span></span><br><span class="line"><span class="number">5</span> - <span class="number">2</span>; <span class="comment">// 3</span></span><br><span class="line"><span class="number">5</span> * <span class="number">2</span>; <span class="comment">// 10</span></span><br><span class="line"><span class="number">5</span> / <span class="number">2</span>; <span class="comment">// 2.5</span></span><br><span class="line"><span class="number">5</span> % <span class="number">2</span>; <span class="comment">// 1</span></span><br></pre></td></tr></table></figure>
+    <title>[Deep Dive] 제어문</title>
+    <url>/2022/Modern-JavaScript-Deep-Dive-Chapter-8-Control-Flow-Statement/</url>
+    <content><![CDATA[<h1 id="제어문"><a href="#제어문" class="headerlink" title="제어문"></a>제어문</h1><p>제어문은 조건에 따라 코드 블록을 실행(조건문)하거나 반복 실행(반복문)할 때 사용한다.<br>일반적으로 코드는 위에서 아래 방향으로 순차적으로 실행된다.<br>제어문을 사용하면 코드의 실행 흐름을 인위적으로 제어할 수 있다.</p>
+<p>하지만 코드의 실행 순서가 변경되는 것은 코드의 흐름을 혼란스럽게 만들어 가독성을 해치는 단점이 있다.<br>가독성이 좋지 않은 코드는 오류를 발생시키는 원인이 되므로 forEach, map, filter, reduce 같은 고차 함수를 사용한 함수형 프로그래밍 기법에서는 제어문의 사용을 억제하여 복잡성을 해결하려고 노력한다.</p>
+<p>하지만 제어문을 바르게 이해하는 것은 코딩 스킬에 많은 영향을 준다.<br>특히 for 문은 매우 중요하므로 확실히 살펴보도록 하자.</p>
+<h2 id="블록문"><a href="#블록문" class="headerlink" title="블록문"></a>블록문</h2><p>블록문은 0개 이상의 문을 중괄호로 묶은 것으로, 코드 블록 또는 블록이라고 부르기도 한다.<br>자바스크립트는 블록문을 하나의 실행 단위로 취급한다.<br>블록문은 단독으로 사용 가능하나 일반적으로 제어문이나 함수를 정의할 때 사용한다.</p>
+<p>문의 끝에는 세미콜론을 붙이는 것이 일반적이나 블록문은 자체 종결성을 갖기 때문에 블록문의 끝에는 세미콜론을 붙이지 않는다.</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 블록문</span></span><br><span class="line">&#123;</span><br><span class="line">  <span class="keyword">var</span> foo = <span class="number">10</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 제어문</span></span><br><span class="line"><span class="keyword">var</span> x = <span class="number">1</span>;</span><br><span class="line"><span class="keyword">if</span> (x &lt; <span class="number">10</span>) &#123;</span><br><span class="line">  x++;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 함수 선언문</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">sum</span>(<span class="params">a, b</span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> a + b;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<h3 id="단항-산술-연산자"><a href="#단항-산술-연산자" class="headerlink" title="단항 산술 연산자"></a>단항 산술 연산자</h3><p>단항 산술 연산자는 1개의 피연산자를 산술 연산하여 숫자 값을 만든다.</p>
-<p>이 때 증가&#x2F;감소(++&#x2F;–) 연산자는 피연산자의 값을 변경한느 부수 효과가 있어 주의해야 한다.<br>즉 증가&#x2F;감소 연산을 하면 피연산자의 값을 변경하는 암묵적 할당이 이뤄진다.</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> x = <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">x++; <span class="comment">// x = x + 1;</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(x); <span class="comment">// 2</span></span><br><span class="line"></span><br><span class="line">x--; <span class="comment">// x = x - 1;</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(x); <span class="comment">// 1</span></span><br></pre></td></tr></table></figure>
+<h2 id="조건문"><a href="#조건문" class="headerlink" title="조건문"></a>조건문</h2><p>조건문은 주어진 조건식의 평가 결과에 따라 코드 블록의 실행을 결정한다.<br>조건식은 불리언 값으로 평가될 수 있는 표현식이다.</p>
+<p>자바스크립트는 if…else 문과 switch 문의 두 가지 조건문을 제공한다.</p>
+<h3 id="if…else-문"><a href="#if…else-문" class="headerlink" title="if…else 문"></a>if…else 문</h3><p>if…else 문은 주어진 조건식의 평가 결과에 따라 실행할 코드 블록을 결정한다.<br>조건식의 평가 결과가 true일 경우 if 문의 코드 블록이 실행되고 false일 경우 else 문의 코드 블록이 실행된다.</p>
+<pre>
+if (조건식) {
+  // 조건식이 참이면 이 코드 블록이 실행
+} else {
+  // 조건식이 거짓이면 이 코드 블록이 실행
+}
+</pre>
 
-<p>또한 증가&#x2F;감소 연산자는 위치에 따라 선 할당후 연산이 이루어지는지, 연산이 수행되고 할당이 이루어지는지 다르므로 주의해야 한다.</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> x = <span class="number">5</span>,</span><br><span class="line">  result;</span><br><span class="line"></span><br><span class="line">result = x++; <span class="comment">// 선할당 후증가</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(result, x); <span class="comment">// 5 6</span></span><br><span class="line"></span><br><span class="line">result = ++x; <span class="comment">// 선증가 후할당</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(result, x); <span class="comment">// 7 7</span></span><br><span class="line"></span><br><span class="line">result = x--; <span class="comment">// 선할당 후감소</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(result, x); <span class="comment">// 7 6</span></span><br><span class="line"></span><br><span class="line">result = --x; <span class="comment">// 선감소 후할당</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(result, x); <span class="comment">// 5 5</span></span><br></pre></td></tr></table></figure>
+<p>if 문의 조건식은 불리언 값으로 평가되어야 한다. 만약 if 문의 조건식이 불리언 값이 아닌 값으로 평가되면 자바스크립트 엔진에 의해 암묵적으로 불리언 값으로 강제 변환되어 실행할 코드 블록을 결정한다.</p>
+<p>만약 코드 블록 내의 문이 하나라면 중괄호를 생략할 수 있다.</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> num = <span class="number">2</span>;</span><br><span class="line"><span class="keyword">var</span> kind;</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> (num &gt; <span class="number">0</span>) kind = <span class="string">&#x27;양수&#x27;</span>;</span><br><span class="line"><span class="keyword">else</span> <span class="keyword">if</span> (num &lt; <span class="number">0</span>) kind = <span class="string">&#x27;음수&#x27;</span>;</span><br><span class="line"><span class="keyword">else</span> kind = <span class="string">&#x27;영&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(kind); <span class="comment">// 양수</span></span><br></pre></td></tr></table></figure>
 
-<p>+ 단항 연산자는 피연산자에 어떠한 효과도 없다.<br>다만 숫자 타입이 아닌 피연산자에 + 단항 연산자를 사용하면 피연산자를 숫자 타입으로 변환하여 반환한다.<br>이때 피연산자를 변경하는 것은 아니고 숫자 타입으로 변환한 값을 생성해서 반환한다. 즉 부수 효과가 없다.</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> x = <span class="string">&#x27;1&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(+x); <span class="comment">// 1</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(x); <span class="comment">// &quot;1&quot;</span></span><br></pre></td></tr></table></figure>
+<p>대부분의 if…else 문은 삼항 조건 연산자로 바꿔 쓸 수 있다.<br>연산자에서도 살펴보았듯이 조건에 따라 단순히 값을 결정하여 변수에 할당하는 경우 if…else 문보다 삼항 조건 연산자를 사용하는 편이 가독성이 좋다.<br>하지만 조건에 따라 실행해야 할 내용이 복잡하여 여러 줄의 문이 필요하다면 if…else 문을 사용하는 편이 가독성이 좋다.</p>
+<h3 id="switch-문"><a href="#switch-문" class="headerlink" title="switch 문"></a>switch 문</h3><p>switch 문은 주어진 표현식을 평가하여 그 값과 일치하는 표현식을 갖는 case 문으로 실행 흐름을 옮긴다.<br>case 문은 상황을 의미하는 표현식을 지정하고 콜론으로 마친다. 그리고 그 뒤에 실행할 문들을 위치시킨다.</p>
+<p>switch 문의 표현식과 일치하는 case 문이 없다면 실행 순서는 default 문으로 이동한다. default 문은 선택사항이다.</p>
+<pre>
+switch (표현식) {
+ case 표현식1:
+  switch 문의 표현식과 표현식 1이 일치하면 실행될 문;
+  break;
+ case 표현식2:
+  switch 문의 표현식과 표현식 2가 일치하면 실행될 문;
+  break;
+ default:
+  switch 문의 표현식과 일치하는 case 문이 없을 때 실행될 문;
+}
+</pre>
 
-<p>- 단항 연산자는 피연산자에 부호를 반전한 값을 반환한다.<br>+ 단항 연산자와 마찬가지로 숫자타입이 아닌 피연산자에 사용하면 피연산자를 숫자 타입으로 변환하여 반환한다.<br>이때 피연산자를 변경하는 것은 아니고 숫자 타입으로 변환한 값을 생성해서 반환한다. 즉 부수 효과가 없다.</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">-(-<span class="number">10</span>); <span class="comment">// 10 (부호 반전)</span></span><br><span class="line">-<span class="literal">true</span>; <span class="comment">// -1 (타입 변환)</span></span><br></pre></td></tr></table></figure>
+<p>if…else 문의 조건식은 불리언 값으로 평가되어야 하지만 switch 문의 표현식은 불리언 값보다는 문자열이나 숫자 값인 경우가 많다.<br>즉 switch 문은 논리적 참, 거짓보다는 다양한 상황(case)에 따라 실행할 코드 블록을 결정할 때 사용한다.</p>
+<p>swtich 문은 case, default, break 등 다양한 키워드를 사용해야 하고 폴스루가 발생한느 등 문법도 복잡하다.<br>따라서 C 언어를 기반으로 하는 프로그래밍 언어는 대부분 switch 문을 지원하지만 파이썬과 같이 switch 문ㅇ을 지원하지 않는 프로그래밍 언어도 있다.</p>
+<p>만약 if…else 문으로 해결할 수 있다면 switch 문보다 if…else 문을 사용하는 편이 좋다.<br>하지만 조건이 너무 많아 if…else 문보다 switch 문을 사용했을 때 가독성이 더 좋다면 switch문을 사용하는 편이 좋다.</p>
+<h2 id="반복문"><a href="#반복문" class="headerlink" title="반복문"></a>반복문</h2><p>반복문은 조건식의 평가 결과가 참인 경우 코드 블록을 실행한다. 그 후 조건식을 다시 평가하여 여전히 참인 경우 코드 블록을 다시 실행한다.<br>이는 조건식이 거짓일 때까지 반복된다.</p>
+<p>자바스크립트는 for 문, while 문, do…while 문의 세 가지 반복문을 제공한다</p>
+<h3 id="for-문"><a href="#for-문" class="headerlink" title="for 문"></a>for 문</h3><p>for 문은 조건식이 거짓으로 평가될 때까지 코드 블록을 반복 실행한다. 가장 일반적으로 사용되는 for 문의 형태는 다음과 같다.</p>
+<pre>
+for (변수 선언문 또는 할당문; 조건식; 증감식) {
+ 조건식이 참인 경우 반복 실행될 문;
+}
+</pre>
 
-<h3 id="문자열-연결-연산자"><a href="#문자열-연결-연산자" class="headerlink" title="문자열 연결 연산자"></a>문자열 연결 연산자</h3><p>+ 연산자는 피연산자 중 하나 이상이 문자열인 경우 문자열 연결 연산자로 동작한다.<br>그 외의 경우는 산술 연산자로 동작한다.</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 문자열 연결 연산자</span></span><br><span class="line"><span class="string">&#x27;1&#x27;</span> + <span class="number">2</span>; <span class="comment">// &quot;12&quot;</span></span><br><span class="line"><span class="number">2</span> + <span class="string">&#x27;1&#x27;</span>; <span class="comment">// &quot;12&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 산술 연산자</span></span><br><span class="line"><span class="number">1</span> + <span class="number">2</span>; <span class="comment">// 3</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 타입 변환이 일어나는 경우</span></span><br><span class="line"><span class="number">1</span> + <span class="literal">true</span>; <span class="comment">// 2</span></span><br><span class="line"><span class="number">1</span> + <span class="literal">undefined</span>; <span class="comment">// NaN</span></span><br></pre></td></tr></table></figure>
+<p>for 문은 매우 중요하므로 어떻게 동작하는지 많은 연습을 통해 확실히 이해해야 한다.</p>
+<p>for 문의 변수 선언문, 조건식, 증감식은 모두 옵션이므로 반드시 사용할 필요는 없다. 단, 어떤 식도 선언하지 않으면 무한루프가 된다.</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span> (;;) &#123;...&#125; <span class="comment">// 무한루프</span></span><br></pre></td></tr></table></figure>
 
-<p>이 때 주목할 점은 개발자의 의도와는 상관 없이 자바스크립트 엔진에 의해 암묵적으로 타입이 자동 변환되기도 한다는 것이다.<br>1 + true를 연산하면 자바스크립트 엔진은 암묵적으로 불리언 타입 값인 true를 숫자 탕비인 1로 강제로 변환한 후 연산을 수행한다.</p>
-<p>이를 암묵적 타입 변환이라고 한다. 앞서 살펴본 +&#x2F;- 단항 연산자도 암묵적 타입 변환이 발생한 것이다</p>
-<h2 id="할당-연산자"><a href="#할당-연산자" class="headerlink" title="할당 연산자"></a>할당 연산자</h2><p>할당 연산자는 우항에 있는 피연산자의 평가 결과를 좌항에 있는 변수에 할당한다.<br>할당 연산자는 좌항의 변수에 값을 할당하므로 변수 값이 변하는 부수 효과가 존재한다.</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> x;</span><br><span class="line"></span><br><span class="line">x = <span class="number">10</span>;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(x); <span class="comment">// 10</span></span><br><span class="line"></span><br><span class="line">x += <span class="number">5</span>; <span class="comment">// x = x + 5;</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(x); <span class="comment">// 15</span></span><br><span class="line"></span><br><span class="line">x -= <span class="number">5</span>; <span class="comment">// x = x - 5;</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(x); <span class="comment">// 10</span></span><br><span class="line"></span><br><span class="line">x *= <span class="number">5</span>; <span class="comment">// x = x * 5;</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(x); <span class="comment">// 50</span></span><br><span class="line"></span><br><span class="line">x /= <span class="number">5</span>; <span class="comment">// x = x / 5;</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(x); <span class="comment">// 10</span></span><br><span class="line"></span><br><span class="line">x %= <span class="number">5</span>; <span class="comment">// x = x % 5;</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(x); <span class="comment">// 0</span></span><br></pre></td></tr></table></figure>
+<p>for 문 내에 for 문을 중첩해 사용할 수 있다. 이를 중첩 for 문이라 한다. 다음은 두 개의 주사위를 던졌을 때 두 눈의 합이 6이 되는 모든 경우의 수를 출력하기 위해 이중 중첩 for 문을 사용한 예다.</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">1</span>; i &lt;= <span class="number">6</span>; i++) &#123;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">var</span> j = <span class="number">1</span>; j &lt;= <span class="number">6</span>; j++) &#123;</span><br><span class="line">    <span class="keyword">if</span> (i + j === <span class="number">6</span>) <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`[<span class="subst">$&#123;i&#125;</span>, <span class="subst">$&#123;j&#125;</span>]`</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// [1, 5] [2, 4] [3, 3] [4, 2] [5, 1]</span></span><br></pre></td></tr></table></figure>
 
-<p>표현식은 값으로 평가 될 수 있는 문이고, 문에는 표현식인 문과 표현식이 아닌 문이 존재한다.<br>그렇다면 할당문은 표현식인 문일까, 표현식이 아닌 문일까?</p>
-<p>할당문은 변수에 값을 할당하는 부수 효과만 있을 뿐 값으로 평가되지 않을 것처럼 보인다.<br>하지만 할당문은 값으로 평가되는 표현식인 문으로서 할당된 값으로 평가된다. 즉 변수에 할당할 수 있다.<br>이러한 특징을 활용해 여러 변수에 동일한 값을 연쇄 할당할 수 있다.</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> a, b, c;</span><br><span class="line"></span><br><span class="line">a = b = c = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(a, b, c); <span class="comment">// 0 0 0</span></span><br></pre></td></tr></table></figure>
+<h3 id="while-문"><a href="#while-문" class="headerlink" title="while 문"></a>while 문</h3><p>while 문은 주어진 조건식의 평가 결과가 참이면 코드 블록을 계속해서 반복 실행한다.<br>for 문은 반복 횟수가 명확할 때 주로 사용하고 while 문은 반복 횟수가 불명확할 때 주로 사용한다.</p>
+<p>while 문은 조건문의 평가 결과가 거짓이 되면 코드 블록을 실행하지 않고 종료한다. 만약 조건식의 평가 결과가 불리언 값이 아니면 불리언 값으로 강제 변환하여 논리적 참, 거짓을 구별한다.</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> count = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span> (count &lt; <span class="number">3</span>) &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(count); <span class="comment">// 0 1 2</span></span><br><span class="line">  count++;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<h2 id="비교-연산자"><a href="#비교-연산자" class="headerlink" title="비교 연산자"></a>비교 연산자</h2><p>비교 연산자는 좌항과 우항의 피연산자를 비교한 다음 그 결과를 불리언 값으로 반환한다.<br>비교 연산자는 if 문이나 for 문과 같은 제어문의 조건식에서 주로 사용한다.</p>
-<h3 id="동등-x2F-일치-비교-연산자"><a href="#동등-x2F-일치-비교-연산자" class="headerlink" title="동등&#x2F;일치 비교 연산자"></a>동등&#x2F;일치 비교 연산자</h3><p>동등 비교 연산자와 일치 비교 연산자는 좌항과 우항의 피연산자가 같은 값으로 평가되는지 비교해 불리언 값을 반환한다.<br>하지만 비교하는 엄격성의 정도가 다르다.</p>
-<p>동등 비교(&#x3D;&#x3D;) 연산자는 좌항과 우항의 피연산자를 비교할 때 먼저 암묵적 타입 변환을 통해 타입을 일치시킨 후 같은 값인지 비교한다.<br>다시 말해 동등 비교 연산자는 좌항과 우항의 피연산자가 타입은 다르더라도 암묵적 타입 변환 후에 같은 값일 수 있다면 true를 반환한다.</p>
-<p>동등 비교 연산자는 편리한 경우도 있지만 결과를 예측하기 어렵고 실수하기 쉬우므로 사용하지 않는 편이 좋다.</p>
-<p>반면 일치 비교(&#x3D;&#x3D;&#x3D;) 연산자는 좌항과 우항의 피연산자가 타입도 같고 값도 같은 경우에 한하여 true를 반환한다. 따라서 일치 비교 연산자는 예측하기 쉽다.</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="number">5</span> == <span class="number">5</span>; <span class="comment">// true</span></span><br><span class="line"><span class="number">5</span> == <span class="string">&#x27;5&#x27;</span>; <span class="comment">// true (암묵적 타입 변환)</span></span><br><span class="line"></span><br><span class="line"><span class="number">5</span> === <span class="number">5</span>; <span class="comment">// true</span></span><br><span class="line"><span class="number">5</span> === <span class="string">&#x27;5&#x27;</span>; <span class="comment">// false (타입 변환 X)</span></span><br></pre></td></tr></table></figure>
+<p>조건식의 평가 결과가 언제나 참이면 무한루프가 된다.<br>무한루프에서 탈출하기 위해서는 코드 블록 내에 if 문으로 탈출 조건을 만들고 break 문으로 코드 블록을 탈출한다.</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> count = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 무한루프</span></span><br><span class="line"><span class="keyword">while</span> (<span class="literal">true</span>) &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(count); <span class="comment">// 0 1 2</span></span><br><span class="line">  count++;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">if</span> (count === <span class="number">3</span>) <span class="keyword">break</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>일치 비교 연산자에서 주의할 것은 NaN이다.</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="title class_">NaN</span> === <span class="title class_">NaN</span>; <span class="comment">// false</span></span><br></pre></td></tr></table></figure>
+<h3 id="do…while-문"><a href="#do…while-문" class="headerlink" title="do…while 문"></a>do…while 문</h3><p>do…while 문은 코드 블록을 먼저 실행하고 조건식을 평가한다. 따라서 코드 블록은 무조건 한 번 이상 실행된다.</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> count = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">do</span> &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(count); <span class="comment">// 0 1 2</span></span><br><span class="line">  count++;</span><br><span class="line">&#125; <span class="keyword">while</span> (count &lt; <span class="number">3</span>);</span><br></pre></td></tr></table></figure>
 
-<p>NaN은 자신과 일치하지 않는 유일한 값이다. 숫자가 NaN인지 조사하기 위해서는 빌트인 함수 Number.isNaN을 사용한다.</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="title class_">Number</span>.<span class="built_in">isNaN</span>(<span class="title class_">NaN</span>); <span class="comment">// true</span></span><br><span class="line"><span class="title class_">Number</span>.<span class="built_in">isNaN</span>(<span class="number">10</span>); <span class="comment">// false</span></span><br></pre></td></tr></table></figure>
+<h2 id="break-문"><a href="#break-문" class="headerlink" title="break 문"></a>break 문</h2><p>switch 문과 while 문에서 살펴보았듯이 break 문은 코드 블록을 탈출한다.<br>더 정확히 말하자면 레이블 문, 반복문 또는 switch 문의 코드 블록을 탈출한다. 레이블 문, 반복문, switch 문의 코드 블록 외에 break 문을 사용하면 SyntaxError가 발생한다.</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> (<span class="literal">true</span>) &#123;</span><br><span class="line">  <span class="keyword">break</span>; <span class="comment">// Uncaught SyntaxError: Illegal break statement</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <blockquote>
-<p>ES6에서 도입된 Object.is 메서드를 이용하면 예측 가능한 정확한 비교 결과를 얻을 수 있다.</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">-<span class="number">0</span> === +<span class="number">0</span>; <span class="comment">// true</span></span><br><span class="line"><span class="title class_">Object</span>.<span class="title function_">is</span>(-<span class="number">0</span>, +<span class="number">0</span>); <span class="comment">// false</span></span><br><span class="line"></span><br><span class="line"><span class="title class_">NaN</span> === <span class="title class_">NaN</span>; <span class="comment">// false</span></span><br><span class="line"><span class="title class_">Object</span>.<span class="title function_">is</span>(<span class="title class_">NaN</span>, <span class="title class_">NaN</span>); <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
+<p>참고로 레이블 문은 식별자가 붙은 문을 말한다.<br>레이블 문은 프로그램의 실행 순서를 제어하는데 사용한다. 사실 switch 문의 case 문과 default 문 역시 레이블 문이다.<br>레이블 문을 탈출하려면 break 문에 레이블 식별자를 지정한다.</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="attr">foo</span>: &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="number">1</span>);</span><br><span class="line">  <span class="keyword">break</span> foo;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="number">2</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;Done!&#x27;</span>);</span><br><span class="line"><span class="comment">// 1</span></span><br><span class="line"><span class="comment">// Done!</span></span><br></pre></td></tr></table></figure>
+
+<p>레이블 문을 사용하면 프로그램의 흐름이 복잡해져서 가독성이 나빠지고 오류를 발생시킬 가능성이 높아지기 때문에 일반적으로 권장하지 않는다.</p>
 </blockquote>
-<p>부동등 비교 연산자(!&#x3D;)와 불일치 비교 연산자(!&#x3D;&#x3D;)는 각각 동등 비교(&#x3D;&#x3D;) 연산자와 일치 비교(&#x3D;&#x3D;&#x3D;) 연산자의 반대 개념이다.</p>
-<h3 id="대소-관계-비교-연산자"><a href="#대소-관계-비교-연산자" class="headerlink" title="대소 관계 비교 연산자"></a>대소 관계 비교 연산자</h3><p>대소 관계 비교 연산자는 피연산자의 크기를 비교하여 불리언 값을 반환한다.</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="number">5</span> &gt; <span class="number">0</span>; <span class="comment">// true</span></span><br><span class="line"><span class="number">5</span> &gt; <span class="number">5</span>; <span class="comment">// false</span></span><br><span class="line"><span class="number">5</span> &gt;= <span class="number">5</span>; <span class="comment">// true</span></span><br><span class="line"><span class="number">5</span> &lt;= <span class="number">5</span>; <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="삼항-조건-연산자"><a href="#삼항-조건-연산자" class="headerlink" title="삼항 조건 연산자"></a>삼항 조건 연산자</h2><p>삼항 조건 연산자는 조건식의 평가 결과에 따라 반환할 값을 결정한다.<br>자바스크립트의 유일한 삼항 연산자이며, 부수 효과는 없다.</p>
-<p>삼항 조건 연산자의 표현식은 다음과 같다.</p>
-<blockquote>
-<p>조건식 ? 조건식이 true일 때 반환할 값 : 조건식이 false일 때 반환할 값</p>
-</blockquote>
-<p>삼항 조건 연산자는 첫 번째 피연산자가 true로 평가되면 두 번째 피연산자를 반환하고, 첫 번째 피연산자가 false로 평가되면 세 번째 피연산자를 반환한다.<br>즉 삼항 조건 연산자는 두 번째 피연산자 또는 세 번째 피연산자로 평가되는 표현식이다.</p>
-<p>삼항 조건 연산자는 if…else 문을 사용해도 유사하게 처리 가능하다. 하지만 삼항 조건 연산자 표현식은 값처럼 사용할 수 있는 반면 if…else 문은 값처럼 사용할 수 없다는 차이가 있다.</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> x = <span class="number">10</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> result1 = x % <span class="number">2</span> ? <span class="string">&#x27;홀수&#x27;</span> : <span class="string">&#x27;짝수&#x27;</span>;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(result1); <span class="comment">// 짝수</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> result2 = <span class="keyword">if</span> (x % <span class="number">2</span>) &#123; result2 = <span class="string">&#x27;홀수&#x27;</span>; &#125; <span class="keyword">else</span> &#123; result2 = <span class="string">&#x27;짝수&#x27;</span>; &#125;; <span class="comment">// SyntaxError: Unexpected token if</span></span><br></pre></td></tr></table></figure>
-
-<p>조건에 따라 어떤 값을 결정해야 한다면 if…else 문보다 삼항 조건 연산자 표현식을 사용하는 편이 유리하다.<br>하지만 조건에 따라 수행해야 할 문이 하나가 아니리 여러 개라면 if…else 문의 가독성이 더 좋다.</p>
-<h2 id="논리-연산자"><a href="#논리-연산자" class="headerlink" title="논리 연산자"></a>논리 연산자</h2><p>논리 연산자는 우항과 좌항의 피연산자(부정 논리 연산자의 경우 우항의 피연산자)를 논리 연산 한다.</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 논리합(||) 연산자</span></span><br><span class="line"><span class="literal">true</span> || <span class="literal">true</span>; <span class="comment">// true</span></span><br><span class="line"><span class="literal">true</span> || <span class="literal">false</span>; <span class="comment">// true</span></span><br><span class="line"><span class="literal">false</span> || <span class="literal">true</span>; <span class="comment">// true</span></span><br><span class="line"><span class="literal">false</span> || <span class="literal">false</span>; <span class="comment">// false</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 논리곱(&amp;&amp;) 연산자</span></span><br><span class="line"><span class="literal">true</span> &amp;&amp; <span class="literal">true</span>; <span class="comment">// true</span></span><br><span class="line"><span class="literal">true</span> &amp;&amp; <span class="literal">false</span>; <span class="comment">// false</span></span><br><span class="line"><span class="literal">false</span> &amp;&amp; <span class="literal">true</span>; <span class="comment">// false</span></span><br><span class="line"><span class="literal">false</span> &amp;&amp; <span class="literal">false</span>; <span class="comment">// false</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 논리 부정(!) 연산자</span></span><br><span class="line">!<span class="literal">true</span>; <span class="comment">// false</span></span><br><span class="line">!<span class="literal">false</span>; <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
-
-<p>논리 부정(!) 연산자는 언제나 불리언 값을 반환한다. 단 피연산자가 반드시 불리언 값일 필요는 없다.<br>피연산자가 불리언 값이 아니라면 불리언 타입으로 암묵적 타입 변환된다.</p>
-<h2 id="쉼표-연산자"><a href="#쉼표-연산자" class="headerlink" title="쉼표 연산자"></a>쉼표 연산자</h2><p>쉼표(,) 연산자는 왼쪽 피연산자부터 차레대로 피연산자를 평가하고 마지막 피연산자의 평가가 끝나면 마지막 피연산자의 평가 결과를 반환한다.</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> x, y, z;</span><br><span class="line"></span><br><span class="line">x = <span class="number">1</span>, y = <span class="number">2</span>, z = <span class="number">3</span>; <span class="comment">// 3</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="그룹-연산자"><a href="#그룹-연산자" class="headerlink" title="그룹 연산자"></a>그룹 연산자</h2><p>소괄호(())로 피연산자를 감싸는 그룹 연산자는 자신의 피연산자인 표현식을 가장 먼저 평가한다. 따라서 그룹 연산자를 사용하면 연산자의 우선순위를 조절할 수 있다. 그룹 연산자는 연산자 우선순위가 가장 높다.</p>
-<h2 id="typeof-연산자"><a href="#typeof-연산자" class="headerlink" title="typeof 연산자"></a>typeof 연산자</h2><p>typeof 연산자는 피연산자의 데이터 타입을 문자열로 반환한다.<br>typeof 연산자는 “number”, “bigint”, “string”, “boolean”, “undefined”, “symbol”, “object”, “function” 중 하나를 반환한다.<br>typeof 연산자가 반환하는 문자열이 데이터 타입과 정확히 일치하지는 않는다.</p>
-<p>typeof 연산자로 null 값을 연산해 보면 “null”이 아닌 “object”를 반환하는데 이는 하위 호환성을 위해 수정되지 않고 있는 버그이다.<br>따라서 값이 null 타입인지 확인할 때는 typeof 연산자가 아닌 일치(&#x3D;&#x3D;&#x3D;) 연산자를 사용해야 한다.</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> foo = <span class="literal">null</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">typeof</span> foo === <span class="literal">null</span>; <span class="comment">// false</span></span><br><span class="line">foo === <span class="literal">null</span>; <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
-
-<p>또한 선언하지 않은 식별자를 typeof 연산자로 연산해 보면 ReferenceError가 발생하지 않고 undefined를 반환하는것도 주의하자.</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">// undeclared 식별자를 선언하지 않았다.</span></span><br><span class="line"><span class="keyword">typeof</span> undeclared; <span class="comment">// undefined</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="지수-연산자"><a href="#지수-연산자" class="headerlink" title="지수 연산자"></a>지수 연산자</h2><p>ES7에서 도입된 지수 연산자는 좌항의 피연산자를 밑으로, 우항의 피연산자를 지수로 거듭 제곱한 숫자 값을 반환한다.</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="number">2</span> ** <span class="number">2</span>; <span class="comment">// 4</span></span><br><span class="line"><span class="number">2</span> * <span class="number">0</span>; <span class="comment">// 1</span></span><br><span class="line"><span class="number">2</span> ** -<span class="number">2</span>; <span class="comment">// 0.25</span></span><br></pre></td></tr></table></figure>
-
-<p>지수 연산자가 도입되기 이전에는 Math.pow 메서드를 사용했다.</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="title class_">Math</span>.<span class="title function_">pow</span>(<span class="number">2</span>, <span class="number">2</span>); <span class="comment">// 4</span></span><br><span class="line"><span class="title class_">Math</span>.<span class="title function_">pow</span>(<span class="number">2</span>, <span class="number">0</span>); <span class="comment">// 1</span></span><br><span class="line"><span class="title class_">Math</span>.<span class="title function_">pow</span>(<span class="number">2</span>, -<span class="number">2</span>); <span class="comment">// 0.25</span></span><br></pre></td></tr></table></figure>
-
-<p>음수를 거듭제곱의 밑으로 사용해 계산하려면 괄호로 묶어주어야 한다.</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">-<span class="number">5</span> ** <span class="number">2</span>;</span><br><span class="line"><span class="comment">// SyntaxError: Unary operator used immediately before exponentiation expression. Parenthesis must be used to disambiguate operator precedence</span></span><br><span class="line"></span><br><span class="line">(-<span class="number">5</span>) ** <span class="number">2</span>; <span class="comment">// 25</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="연산자-우선순위"><a href="#연산자-우선순위" class="headerlink" title="연산자 우선순위"></a>연산자 우선순위</h2><p>연산자 우선순위란 여러 개의 연산자로 이뤄진 문이 실행될 때 연산자가 실행되는 순서를 말한다. 우선순위가 높을수록 먼저 실행된다.</p>
-<p>연산자는 종류가 많아 연산자 우선순위를 모두 기억하기 어렵고 실수하기도 쉽다.<br>따라서 기억해 사용하기 보다는 연산자 우선순위가 높은 그룹 연산자를 사용하여 우선순위를 명시적으로 조절하는 것이 좋다.</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="number">10</span> * (<span class="number">2</span> + <span class="number">3</span>); <span class="comment">// 50</span></span><br></pre></td></tr></table></figure>
+<h2 id="continue-문"><a href="#continue-문" class="headerlink" title="continue 문"></a>continue 문</h2><p>continue 문은 반복문의 코드 블록 실행을 현 지점에서 중단하고 반복문의 증감식으로 실행 흐름을 이동시킨다.<br>break 문처럼 반복문을 탈출하지는 않는다.</p>
+<p>다음은 문자열에서 특정 문자의 개수를 세는 예다.</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> string = <span class="string">&#x27;Hello World.&#x27;</span>;</span><br><span class="line"><span class="keyword">var</span> search = <span class="string">&#x27;l&#x27;</span>;</span><br><span class="line"><span class="keyword">var</span> count = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; string.<span class="property">length</span>; i++) &#123;</span><br><span class="line">  <span class="keyword">if</span> (string[i] !== search) <span class="keyword">continue</span>; <span class="comment">// &#x27;l&#x27;이 아니면 현 지점에서 실행을 중단하고 반복문의 증감식으로 이동한다.</span></span><br><span class="line">  count++; <span class="comment">// continue 문이 실행되면 이 문은 실행되지 않는다.</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(count); <span class="comment">// 3</span></span><br></pre></td></tr></table></figure>
 
 ]]></content>
       <tags>
         <tag>개발</tag>
         <tag>자바스크립트</tag>
         <tag>모던 자바스크립트 Deep Dive</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>[Deep Dive] 표현식과 문</title>
+    <url>/2022/Modern-Javascript-Deep-Dive-Chapter-5-Summary/</url>
+    <content><![CDATA[<p>변수에 대해 살펴보면서 지속적으로 값이라는 용어가 등장했다. 표현식과 문에 대해 알아보기 이전에 값이란 무엇인지 알아보자.</p>
+<hr>
+
+<h1 id="값"><a href="#값" class="headerlink" title="값"></a>값</h1><p>값이란 (표현)식이 평가되어 생성된 결과를 말한다.<br>평가란 식을 해석해서 값을 생성하거나 참조하는 것을 의미한다.</p>
+<p>변수란 하나의 값을 저장하기 위해 확보한 메모리 공간 자체 또는 그 메모리 공간을 식별하기 위해 붙인 이름이였다. 즉 변수에 할당되는 것은 값이다.</p>
+<p>값이란 어떻게 생성할 수 있을까? 가장 기본적인 방법은 리터럴을 사용하는 것이다.</p>
+<hr>
+
+<h1 id="리터럴"><a href="#리터럴" class="headerlink" title="리터럴"></a>리터럴</h1><p>리터럴은 사람이 이해할 수 있는 문자 또는 약속된 기호를 사용해 값을 생성하는 표기법이다.</p>
+<p>리터럴은 문자 또는 미리 약속된 기호로 표기한 코드이며 자바스크립트 엔진은 코드가 실행되는 시점인 런타임에 리터럴을 평가해 값을 생성한다.</p>
+<p>리터럴을 사용해 다양한 종류의 값을 생성할 수 있다.</p>
+<h2 id="엔진은-어떻게-리터럴을-구별할까"><a href="#엔진은-어떻게-리터럴을-구별할까" class="headerlink" title="엔진은 어떻게 리터럴을 구별할까?"></a>엔진은 어떻게 리터럴을 구별할까?</h2><p>리터럴은 값을 생성하기 위해 미리 약속한 표기법으로 자바스크립트 엔진 내부에 리터럴을 구분해 값을 생성 할 수 있도록 하드코딩 되어있다.</p>
+<hr>
+
+<p>리터럴 이외에 값을 생성하는 또 다른 방법에는 무엇이 있을까? 값에 대해 살펴보면서 언급했듯이 표현식이 존재한다.</p>
+<h1 id="표현식"><a href="#표현식" class="headerlink" title="표현식"></a>표현식</h1><p>표현식은 값으로 평가될 수 있는 문이다. 즉 표현식이 평가되면 새로운 값을 생성하거나 값을 참조한다.</p>
+<p>앞서 살펴본 리터럴은 값으로 평가된다. 그러므로 리터럴도 사실 표현식이다.</p>
+<p>표현식은 값으로 평가되는데, 이때 표현식과 표현식이 평가된 값은 동등한 관계이다.</p>
+<p>다음 예시를 살펴보자. 예를들어, 산술 연산자 + 의 좌항과 우항에는 숫자 값이 위치해야 한다. 이 때 표현식이 숫자 값으로 평가될 수 있다면 숫자 값 대신 사용할 수 있다.</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> x = <span class="number">1</span> + <span class="number">2</span>;</span><br><span class="line"></span><br><span class="line">x + <span class="number">3</span>; <span class="comment">// 6</span></span><br></pre></td></tr></table></figure>
+
+<p>위 코드의 x + 3에서 + 연산자의 좌항과 우항에는 숫자 값이 위치해야 한다. 이 때 좌항 x 는 식별자 표현식이다. 즉 x는 할당되어 있는 숫자 값 3 으로 평가된다. 즉 표현식과 표현식이 평가된 값은 동치이며 이처럼 표현식은 다른 표현식의 일부가 되어 새로운 값을 만들어 낼 수 있다.</p>
+<hr>
+
+<p>앞서 표현식은 값으로 평가될 수 있는 문이라고 했다. 그럼 문이란 무엇일까?</p>
+<h1 id="문"><a href="#문" class="headerlink" title="문"></a>문</h1><p>문은 프로그램을 구성하는 기본 단위이자 최소 실행 단위이다. 문은 여러 토큰으로 구성되는데, 토큰이란 문법적인 의미를 가지며, 문법적으로 더 이상 나눌 수 없는 코드의 기본 요소를 의미한다.</p>
+<p>문을 명령문이라고도 부른다. 문이 실행되면 명령이 실행되고 무슨 일인가가 일어나게 된다.</p>
+<p>문은 선언문, 할당문, 조건문, 반복문등 다양한 종류로 나누어진다.</p>
+<p>세미콜론을 통해 문의 종료를 나타낼 수 있다. 즉 자바스크립트 엔진은 세미콜론으로 문이 종료한 위치를 파악하고 순차적으로 하나씩 문을 실행한다. 단 중괄호로 묶은 코드 블록은 자체 종결성을 가지므로 세미콜론을 붙이지 않는다.</p>
+<p>문의 끝에 붙이는 세미콜론은 옵션이다. 이는 자바스크립트 엔진이 소스코드를 해석하며 문의 끝이라고 예측되는 지점에 세미콜론을 자동으로 삽입하는 ASI를 수행하기 때문이다.</p>
+<hr>
+
+<p>그렇다면 표현식과 문은 어떻게 구별 할 수 있을까? 표현식도 문의 일부니 정확히 말하자면 표현식인 문과 표현식이 아닌 문을 어떻게 구별 할 수 있을까?</p>
+<h1 id="표현식인-문과-표현식이-아닌-문"><a href="#표현식인-문과-표현식이-아닌-문" class="headerlink" title="표현식인 문과 표현식이 아닌 문"></a>표현식인 문과 표현식이 아닌 문</h1><p>표현식인 문은 값으로 평가될 수 있는 문이며, 표현식이 아닌 문은 값으로 평가될 수 없는 문을 말한다. 예를들어, 변수 선언문은 값으로 평가될 수 없으므로 표현식이 아닌 문이다.</p>
+<p>표현식인 문과 표현식이 아닌 문을 구별하는 가장 간단한 방법은 변수에 할당해 보는 것이다.</p>
+<p>변수는 값을 저장하기 위한 메모리 공간이였으므로 변수에 할당할 수 있는 문은 즉 값으로 평가된는 표현식이라고 볼 수 있다.</p>
+]]></content>
+      <tags>
+        <tag>개발</tag>
+        <tag>자바스크립트</tag>
+        <tag>모던 자바스크립트 Deep Dive</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>정규식 Test Method에 대해 새롭게 알게된 점</title>
+    <url>/2023/New-things-I-learned-about-the-regExp-test-method/</url>
+    <content><![CDATA[<h1 id="😱-문제발생"><a href="#😱-문제발생" class="headerlink" title="😱 문제발생"></a>😱 문제발생</h1><p>원티드 프리온보딩 프론트엔드 인턴십에 참여하여 1주차 과제를 진행하던 중이었다.<br>1주차 과제는 인턴십에 참여하기 위해 수행했던 사전과제를 동료학습을 통해 리팩토링 하는 것이였고, 나는 팀원들과의 토의로 얻은 Best Practice의 기준을 가지고 Assignment1의 기능 구현을 맡아 코드를 작성하고 있었다.</p>
+<ul>
+<li>Assignment 1<ul>
+<li>회원가입과 로그인 페이지에 이메일과 비밀번호의 유효성 검사기능을 구현해주세요<ul>
+<li>이메일 조건: @ 포함, 비밀번호 조건: 8자 이상</li>
+</ul>
+</li>
+<li>입력된 이메일과 비밀번호가 유효성 검사를 통과하지 못한다면 button에 disabled 속성을 부여해주세요</li>
+</ul>
+</li>
+</ul>
+<p>Assignment 1의 유효성 검증을 구현하기 위해 정규식을 이용하는게 좋을 것 같다라는 의견을 수용해, <code>password: /^.&#123;8,&#125;$/g</code>의 정규식을 통해 코드를 작성하고 정상적으로 동작하는지 확인을 하는데 갑자기 다음과 같은 문제가 발생했다.</p>
+<p><img src="/../images/reg-test-problem.gif" alt="문제"></p>
+<p>8자리의 비밀번호를 입력했을때 error message가 정상적으로 사라지길래 검증이 잘 되는구나 생각했는데, 추가적으로 비밀번호를 입력할때 마다 error message가 생겼다 없어졌다 하는 것이다. 즉 비밀번호를 입력할때마다 정규식으로 검증한 결과가 바뀐다는 것이였는데, 혹시나해서 정규식으로 검증한 결과를 개발자 도구를 통해 살펴보았다.</p>
+<p><img src="/../images/reg-test-console.png" alt="개발자도구로 찍어본 정규식 테스트"></p>
+<p>같은 정규식으로 같은 값을 검사했는데도 그 결과가 계속해서 바뀌는 현상이 일어났는데, 아무리 생각해도 이해가 되지 않아 ChatGPT를 통해 질문을 해 본 결과 다음과 같은 답을 받을 수 있었다.</p>
+<p><img src="/../images/reg-test-gpt.png" alt="ChatGPT 답변"></p>
+<h1 id="😊-문제해결"><a href="#😊-문제해결" class="headerlink" title="😊 문제해결"></a>😊 문제해결</h1><p>ChatGPT 답변을 바탕으로 조금 더 이해를 위해 검색을 해보니 <code>RegExp.prototype.test()</code>의 대한 MDN 문서에서 <code>전역 플래그와 test()</code>라는 항목으로 예시를 들어주며 설명을 해주고 있어 왜 이런 현상이 발생했는지 알 수 있었다.</p>
+<p>정규 표현식에 전역 플래그를 설정한 경우, <code>test()</code> 메서드는 정규 표현식의 <code>lastIndex</code>를 업데이트하고 <code>test()</code>을 다시 호출하면 str 검색을 <code>lastIndex</code>부터 계속 진행하는데, <code>lastIndex</code> 속성은 <code>test()</code>가 true를 반환할 때마다 증가하고 test()가 false를 반환할 땐 0으로 초기화되어 결과가 계속해서 바뀌던 것이였다.</p>
+<p><code>exec()</code> 메서드도 <code>test()</code> 메서드처럼 전역 탐색 플래그를 제공한 정규 표현식에서 여러 번 호출하면 이전 일치 이후부터 탐색한다고 하니 정규식을 사용할 때 주의해야 할 것 같다.</p>
+<p>정규식이 정말 유용한것은 알지만 항상 어렵게 느껴지는 것 같다. 그래도 이렇게 정규식에 대해 알아볼 기회가 있을 때 마다 잘 정리해서 능숙해지려고 노력해야겠다!</p>
+<h1 id="참고"><a href="#참고" class="headerlink" title="참고"></a>참고</h1><ul>
+<li><a href="https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/RegExp/test">https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/RegExp/test</a></li>
+</ul>
+]]></content>
+      <tags>
+        <tag>개발</tag>
+        <tag>정규식</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>백준 Node.js 입출력법</title>
+    <url>/2022/Node-js-input-and-output-in-Baekjoon-Online-Judge/</url>
+    <content><![CDATA[<p>지금까지 leetcode와 프로그래머스를 통해 코딩테스트 공부를 하고 있었는데 leetcode는 영어 해석의, 프로그래머스는 적은 문제수의 단점을 가지고 있어 백준을 통해 코딩테스트 연습을 시작해보았다.</p>
+<p>백준에서는 javascript로 코딩테스트를 준비하기 위해 node.js를 선택해야 했는데 프로그래머스에서는 함수만 작성하면 되었던 반면에 백준에서는 입출력을 직접 해주어야 했다.</p>
+<p>백준에서 node.js로 입력을 받는 방법은 크게 두가지로 readline 모듈을 사용하는 것과 fs 모듈을 사용하는 것이다. fs 모듈의 경우 readline 모듈보다 코드가 간단하고 더 빠르다고 해 fs 모듈의 대해 찾아보았다.</p>
+<hr>
+
+<h1 id="fs"><a href="#fs" class="headerlink" title="fs"></a><strong>fs</strong></h1><p>FileSystem의 약자인 fs 모듈은 파일 처리와 관련된 모듈이다. <a href="https://help.acmicpc.net/">BOJ 도움말</a>에서는 다음과 같은 코드로 fs 모듈을 통한 입력을 소개하고 있다.</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> fs = <span class="built_in">require</span>(<span class="string">&#x27;fs&#x27;</span>);</span><br><span class="line"><span class="keyword">let</span> input = fs.<span class="title function_">readFileSync</span>(<span class="string">&#x27;/dev/stdin&#x27;</span>).<span class="title function_">toString</span>().<span class="title function_">split</span>(<span class="string">&#x27; &#x27;</span>);</span><br><span class="line"><span class="keyword">let</span> a = <span class="built_in">parseInt</span>(input[<span class="number">0</span>]);</span><br><span class="line"><span class="keyword">let</span> b = <span class="built_in">parseInt</span>(input[<span class="number">1</span>]);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(a+b);</span><br></pre></td></tr></table></figure>
+
+<p>하지만 위 코드를 이용할때에도 입력되는 값에 따라 에러가 발생하는 경우가 있어 다양한 방식의 입력법에 대해 정리해 보았다.</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="number">1.</span> 하나의 값을 입력받을 때</span><br><span class="line"><span class="keyword">const</span> fs = <span class="built_in">require</span>(<span class="string">&#x27;fs&#x27;</span>);</span><br><span class="line"><span class="keyword">const</span> input = fs.<span class="title function_">readFileSync</span>(<span class="string">&quot;/dev/stdin&quot;</span>).<span class="title function_">toString</span>().<span class="title function_">trim</span>();</span><br><span class="line"></span><br><span class="line"><span class="number">2.</span> 공백으로 구분된 한 줄의 값들을 입력받을 때</span><br><span class="line"><span class="keyword">const</span> fs = <span class="built_in">require</span>(<span class="string">&#x27;fs&#x27;</span>);</span><br><span class="line"><span class="keyword">const</span> input = fs.<span class="title function_">readFileSync</span>(<span class="string">&quot;/dev/stdin&quot;</span>).<span class="title function_">toString</span>().<span class="title function_">trim</span>().<span class="title function_">split</span>(<span class="string">&quot; &quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="number">3.</span> 여러 줄의 값들을 입력받을 때</span><br><span class="line"><span class="keyword">const</span> fs = <span class="built_in">require</span>(<span class="string">&#x27;fs&#x27;</span>);</span><br><span class="line"><span class="keyword">const</span> input = fs.<span class="title function_">readFileSync</span>(<span class="string">&quot;/dev/stdin&quot;</span>).<span class="title function_">toString</span>().<span class="title function_">trim</span>().<span class="title function_">split</span>(<span class="string">&quot;\n&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="number">4.</span> 첫 번째 줄에 자연수 n을 입력받고, 그 다음줄에 공백으로 구분된 n개의 값들을 입력받을 때</span><br><span class="line"><span class="keyword">const</span> fs = <span class="built_in">require</span>(<span class="string">&#x27;fs&#x27;</span>);</span><br><span class="line"><span class="keyword">const</span> [n, ...arr] = fs.<span class="title function_">readFileSync</span>(<span class="string">&quot;/dev/stdin&quot;</span>).<span class="title function_">toString</span>().<span class="title function_">trim</span>().<span class="title function_">split</span>(<span class="regexp">/\s/</span>);</span><br><span class="line"></span><br><span class="line"><span class="number">5.</span> 첫 번째 줄에 자연수 n을 입력받고, 그 다음줄부터 n개의 줄에 걸쳐 한 줄에 하나의 값을 입력받을 때</span><br><span class="line"><span class="keyword">const</span> fs = <span class="built_in">require</span>(<span class="string">&#x27;fs&#x27;</span>);</span><br><span class="line"><span class="keyword">const</span> [n, ...arr] = fs.<span class="title function_">readFileSync</span>(<span class="string">&quot;/dev/stdin&quot;</span>).<span class="title function_">toString</span>().<span class="title function_">trim</span>().<span class="title function_">split</span>(<span class="string">&quot;\n&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="number">6.</span> 하나의 값 또는 공백으로 구분된 여러 값들을 여러 줄에 걸쳐 뒤죽박죽 섞여서 입력받을 때</span><br><span class="line">  ex) n 입력 - 공백으로 구분된 n개의 값 입력 - m 입력 - 여러 줄에 걸쳐 m개의 값 입력</span><br><span class="line"><span class="keyword">const</span> fs = <span class="built_in">require</span>(<span class="string">&#x27;fs&#x27;</span>);</span><br><span class="line"><span class="keyword">const</span> input = fs.<span class="title function_">readFileSync</span>(<span class="string">&quot;/dev/stdin&quot;</span>).<span class="title function_">toString</span>().<span class="title function_">trim</span>().<span class="title function_">split</span>(<span class="regexp">/\s/</span>);</span><br><span class="line"><span class="keyword">const</span> n = input[<span class="number">0</span>];</span><br><span class="line"><span class="keyword">const</span> n_arr = input.<span class="title function_">slice</span>(<span class="number">1</span>, n+<span class="number">1</span>);</span><br><span class="line"><span class="keyword">const</span> [m, ...m_arr] = input.<span class="title function_">slice</span>(n+<span class="number">1</span>);</span><br></pre></td></tr></table></figure>
+<p>최종 결과 확인을 위해선 <strong>console.log()</strong> 를 통해 값을 출력해주면 된다.</p>
+<hr>
+
+<h2 id="참고"><a href="#참고" class="headerlink" title="참고"></a>참고</h2><p><a href="https://overcome-the-limits.tistory.com/25">[알고리즘] 백준 0.nodejs 입력하기</a><br><a href="https://tesseractjh.tistory.com/39">Node.js로 백준(BOJ) 문제 풀 때 유의할 점들</a></p>
+]]></content>
+      <tags>
+        <tag>개발</tag>
+        <tag>JavaScript</tag>
+        <tag>코딩테스트</tag>
       </tags>
   </entry>
   <entry>
@@ -837,36 +791,144 @@ for (변수 선언문 또는 할당문; 조건식; 증감식) {
       </tags>
   </entry>
   <entry>
-    <title>정규식 Test Method에 대해 새롭게 알게된 점</title>
-    <url>/2023/New-things-I-learned-about-the-regExp-test-method/</url>
-    <content><![CDATA[<h1 id="😱문제발생"><a href="#😱문제발생" class="headerlink" title="😱문제발생"></a>😱문제발생</h1><p>원티드 프리온보딩 프론트엔드 인턴십에 참여하여 1주차 과제를 진행하던 중이었다.<br>1주차 과제는 인턴십에 참여하기 위해 수행했던 사전과제를 동료학습을 통해 리팩토링 하는 것이였고, 나는 팀원들과의 토의로 얻은 Best Practice의 기준을 가지고 Assignment1의 기능 구현을 맡아 코드를 작성하고 있었다.</p>
-<ul>
-<li>Assignment 1<ul>
-<li>회원가입과 로그인 페이지에 이메일과 비밀번호의 유효성 검사기능을 구현해주세요<ul>
-<li>이메일 조건: @ 포함, 비밀번호 조건: 8자 이상</li>
-</ul>
+    <title>원티드 프리온보딩 프론트엔드 인턴십 2주차 회고</title>
+    <url>/2023/Retrospect-About-2nd-Week-Of-Wanted-Pre-Onboarding-Frontend-InternShip/</url>
+    <content><![CDATA[<p><img src="/../images/wanted-preonboarding.jpeg" alt="원티드 프리온보딩 프론트엔드 인턴십"></p>
+<h1 id="들어가며"><a href="#들어가며" class="headerlink" title="들어가며"></a>들어가며</h1><p>원티드 프리온보딩 프론트엔드 인턴십의 2주차가 지나갔다. 저번주도 마찬가지였지만 이번주도 너무 빠르게 지나가 버렸다.</p>
+<p>저번주에는 인턴십 기간 동안의 협업 과정에 대한 틀을 만들어야 해서 힘들었다면, 이번 주에는 새로 주어진 과제를 수행하는 것 부터 시작해야 했기 때문에 고민해 볼 부분도 더 많았고 어려웠다.특히 이번 주에는 커리어코칭도 같이 시작되어 이에대한 과제도 추가되어 더 바쁘게 흘러간 것 같다.</p>
+<p>이번 주는 개인적으로 아쉬운 점 보다 좋았던 점이 많았던 일주일이였던것 같아 만족스럽다. 그렇다고 해도 아쉬운 점이 없던 것은 아니니 이 부분들에 대해 얘기해보고자 한다.</p>
+<h1 id="원티드-프리온보딩-프론트엔드-인턴십-2주차-과제"><a href="#원티드-프리온보딩-프론트엔드-인턴십-2주차-과제" class="headerlink" title="원티드 프리온보딩 프론트엔드 인턴십 2주차 과제"></a>원티드 프리온보딩 프론트엔드 인턴십 2주차 과제</h1><h2 id="2023-05-02-과제-발표"><a href="#2023-05-02-과제-발표" class="headerlink" title="2023.05.02 - 과제 발표"></a>2023.05.02 - 과제 발표</h2><p>화요일 5시 <code>React Hook의 심층 활용</code>을 주제로 한 세션이 끝나고 과제의 내용이 발표되었다. 기업과제라 자세한 내용은 서술하기 어렵지만 간단히 정리해 <code>캐싱에 중점을 둔 검색창의 검색어 추천기능 구현</code>을 각자 수행하고, 저번주처럼 팀 별 Best Pratice를 만들고 제출하는 과제였다.</p>
+<p>저번주와는 다르게 일단 각자가 과제를 수행하고 그 후에 Best Pratice에 대한 의견을 나누어야 하기에 시간이 너무 촉박할 것 같았다.<br>시간을 절약하기 위해 일단은 목요일 오전까지 최대한 빠르게 각자 과제를 수행하고, 그 과정에서 중요하게 여겼던 점이나 중요할 것 같은 부분들을 적어 오기로 했다.</p>
+<h2 id="2023-05-02-2023-05-04-개인-과제-수행"><a href="#2023-05-02-2023-05-04-개인-과제-수행" class="headerlink" title="2023.05.02 ~ 2023.05.04 - 개인 과제 수행"></a>2023.05.02 ~ 2023.05.04 - 개인 과제 수행</h2><p>과제를 수행하면서 가장 중요한 부분이 캐싱이었다. 캐싱이 어떤 것인지는 알고 있었지만 캐싱 기능을 제공하는 라이브러리들을(react-query, apollo-client) 사용만 해보았지, 실제로 캐싱 기능이 어떻게 구현되어 있는지 몰랐기에 먼저 캐싱에 대한 고민을 해보았다.</p>
+<p>캐싱을 구현하기 위해서는 fetch해온 data를 저장할 저장소가 필요했고 사용할 수 있는 저장소에는 로컬스토리지, 세션스토리지, 캐시스토리지 등 다양한 저장소가 존재했다. 이름에서부터 캐시스토리지가 가장 적합할 것 같았고, <code>실제로도 캐싱 기능 구현에 캐시스토리지를 많이 활용한다 하니 캐시스토리지를 사용해야겠다</code> 생각했었다.</p>
+<p>그런데 과제의 사용가능한 기술에 필수는 아니지만 Redux가 존재했고, 개인적으로 Redux의 멘탈 모델은 알고있지만 많이 사용해보지 못해 익숙하지 않았고 더욱이 RTK는 사용해본적이 없었기에 <code>Redux를 사용해보며 학습하는 것도 좋겠다</code>라는 생각이 들었다. 또한 아직까지도 Redux를 사용하는 기업이 많기에 Redux 코드에 대한 이해도를 높이는 부수효과를 기대하고 Redux를 사용해보기로 결심했다.</p>
+<p>더 자세한 구현사항들은 <a href="https://github.com/rjsej12/wanted-2nd">github</a>를 통해 확인 가능하다.</p>
+<h2 id="2023-05-04-개인-과제-수행-후-회의"><a href="#2023-05-04-개인-과제-수행-후-회의" class="headerlink" title="2023.05.04 - 개인 과제 수행 후 회의"></a>2023.05.04 - 개인 과제 수행 후 회의</h2><p>그렇게 각자가 과제를 수행한 후 목요일 낮에 모여 첫 회의를 진행했다.<br>한 사람 씩 자기가 수행한 과제의 주요 부분들에 대한 설명을 하며 왜 그런 방식을 택했는지, 어떤 방법이 더 좋은 방법인지에 대한 의견을 나누었다. (ex. 캐싱을 위한 저장소로 어떤 것을 사용했는지 - 로컬스토리지, 캐시스토리지 etc.)</p>
+<p>그렇게 각 기능들에 대한 Best Practice를 정하고 난 후, 모두가 모여서 코드를 작성하기로 했다. 기능 구현의 난이도는 저번보다 높았지만, 코드의 양 자체는 그렇게 많지 않았기 때문이다. 처음에는 상의된 Best Practice에 가장 가깝게 구현한 사람이 코드를 작성하고 있었는데, 중간에 한 팀원분께서 <code>Live Share</code>를 사용해 보자고 의견을 내주셔서 같이 코드를 작성할 수 있었다.</p>
+<h2 id="2023-05-04-2023-05-05-버그-픽스-및-DOCS-작업"><a href="#2023-05-04-2023-05-05-버그-픽스-및-DOCS-작업" class="headerlink" title="2023.05.04 ~ 2023.05.05 - 버그 픽스 및 DOCS 작업"></a>2023.05.04 ~ 2023.05.05 - 버그 픽스 및 DOCS 작업</h2><p>같이 모여서 Best Practice대로 코드를 작성하고 난 후, 실제로 결과물이 잘 동작하는지 확인하던 중 오류가 발생했다. 방향키를 이용해 추천 검색어를 오가는 동작에서, 처음 방향키를 눌렀을 때 포커스가 2번 움직였다… 목요일 거의 밤이 다 되어서 발견한 오류였는데, 다들 낮부터 밤까지 너무 오랜 시간을 집중했던지라 쉽게 해결하지 못했고 다음날까지 고민해보기로 했다.</p>
+<p>그런데 금요일 새벽 4시경 정도 한 팀원분이 오류의 원인을 찾아 그 해결법을 공유해주셨다. 결론적으로 <code>한글의 Composition</code>이 오류의 원인이였는데 작년에 이미 같은 오류를 겪고 해결했던 적이 있음에도 불구하고 떠올리지 못했다는게 반성해야겠다고 생각했다. 또 한번 기록의 중요성에 대해 느꼈고, 새벽까지 해결하지 못한 문제에 대해 탐구하는 팀원분의 자세를 보고 나도 더 몰입하는 자세를 가져야겠다고 다짐했다.</p>
+<p>그 후 금요일 인턴십 세션이 끝난 후 다시 모여 오류 수정에 대한 얘기를 나누고 README.md를 작성하는 시간을 가졌다. 이번에는 많은 팀원분들이 미리 과제를 수행하면서 고민했던 점이나 트러블 슈팅에 관한 부분들을 미리 적어오셔서 더 알찬 README.md를 완성 할 수 있었다.</p>
+<p>자세한 내용에 대해서는 <a href="https://github.com/WANTED-TEAM03/pre-onboarding-10th-2-3">README.md</a>에서 살펴 볼 수 있다.</p>
+<h2 id="KPT"><a href="#KPT" class="headerlink" title="KPT"></a>KPT</h2><p>이번 주 역시 많은 것을 생각해 볼 수 있어 좋았다. 특히 평소 그 원리를 알지 못하고 라이브러리를 이용해 구현하던 캐싱에 대해 자세히 알 수 있었고, 개발자로서 성장하기 위해 어떠한 자세를 가져야 할 지 다시 한 번 생각해 보았던 개인적으로 보람찬 일주일이 된 것 같다.</p>
+<h3 id="Keep"><a href="#Keep" class="headerlink" title="Keep"></a>Keep</h3><ul>
+<li><p>이번 주 역시 만족스러운 README.md 및 기록을 남길 수 있었다! 특히 저번주보다 팀원분들이 적극적으로 참여해 주셨는데, 조금 더 친밀해져서 였을까? 남은 기간동안 더 돈독한 사이가 되어 팀명대로 보람찬 3조가 되면 좋겠다.</p>
 </li>
-<li>입력된 이메일과 비밀번호가 유효성 검사를 통과하지 못한다면 button에 disabled 속성을 부여해주세요</li>
-</ul>
+<li><p>Live Share 기능을 사용해 같이 코드를 작성해보니 시간을 효율적으로 사용 할 수 있었고, 화면 공유보다 더 코드를 잘 이해할 수 있었던 것 같다. 다음 협업에서도 이 기능을 잘 사용해야겠다.</p>
 </li>
 </ul>
-<p>Assignment 1의 유효성 검증을 구현하기 위해 정규식을 이용하는게 좋을 것 같다라는 의견을 수용해, <code>password: /^.&#123;8,&#125;$/g</code>의 정규식을 통해 코드를 작성하고 정상적으로 동작하는지 확인을 하는데 갑자기 다음과 같은 문제가 발생했다.</p>
-<p><img src="/../images/reg-test-problem.gif" alt="문제"></p>
-<p>8자리의 비밀번호를 입력했을때 error message가 정상적으로 사라지길래 검증이 잘 되는구나 생각했는데, 추가적으로 비밀번호를 입력할때 마다 error message가 생겼다 없어졌다 하는 것이다. 즉 비밀번호를 입력할때마다 정규식으로 검증한 결과가 바뀐다는 것이였는데, 혹시나해서 정규식으로 검증한 결과를 개발자 도구를 통해 살펴보았다.</p>
-<p><img src="/../images/reg-test-console.png" alt="개발자도구로 찍어본 정규식 테스트"></p>
-<p>같은 정규식으로 같은 값을 검사했는데도 그 결과가 계속해서 바뀌는 현상이 일어났는데, 아무리 생각해도 이해가 되지 않아 ChatGPT를 통해 질문을 해 본 결과 다음과 같은 답을 받을 수 있었다.</p>
-<p><img src="/../images/reg-test-gpt.png" alt="ChatGPT 답변"></p>
-<h1 id="😊문제해결"><a href="#😊문제해결" class="headerlink" title="😊문제해결"></a>😊문제해결</h1><p>ChatGPT 답변을 바탕으로 조금 더 이해를 위해 검색을 해보니 <code>RegExp.prototype.test()</code>의 대한 MDN 문서에서 <code>전역 플래그와 test()</code>라는 항목으로 예시를 들어주며 설명을 해주고 있어 왜 이런 현상이 발생했는지 알 수 있었다.</p>
-<p>정규 표현식에 전역 플래그를 설정한 경우, <code>test()</code> 메서드는 정규 표현식의 <code>lastIndex</code>를 업데이트하고 <code>test()</code>을 다시 호출하면 str 검색을 <code>lastIndex</code>부터 계속 진행하는데, <code>lastIndex</code> 속성은 <code>test()</code>가 true를 반환할 때마다 증가하고 test()가 false를 반환할 땐 0으로 초기화되어 결과가 계속해서 바뀌던 것이였다.</p>
-<p><code>exec()</code> 메서드도 <code>test()</code> 메서드처럼 전역 탐색 플래그를 제공한 정규 표현식에서 여러 번 호출하면 이전 일치 이후부터 탐색한다고 하니 정규식을 사용할 때 주의해야 할 것 같다.</p>
-<p>정규식이 정말 유용한것은 알지만 항상 어렵게 느껴지는 것 같다. 그래도 이렇게 정규식에 대해 알아볼 기회가 있을 때 마다 잘 정리해서 능숙해지려고 노력해야겠다!</p>
-<h1 id="참고"><a href="#참고" class="headerlink" title="참고"></a>참고</h1><ul>
-<li><a href="https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/RegExp/test">https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/RegExp/test</a></li>
+<h3 id="Problem"><a href="#Problem" class="headerlink" title="Problem"></a>Problem</h3><ul>
+<li>알고 있던 문제였음에도 스스로 해결하지 못한 점이 너무 아쉽다. 해결했다고 해서 대충 머릿속에 남기는 것이 아니라 꼭 기록을 통해 새겨놔야 겠다고 느꼈다. 기록하는것이 귀찮기는 하지만 내 스스로의 성장에 도움이 되는것이니 만큼 성실히 기록해보자!</li>
+</ul>
+<h3 id="Try"><a href="#Try" class="headerlink" title="Try"></a>Try</h3><ul>
+<li>더 열심히 하자! - 이번 기업 과제의 경우 멘토님께서 보통 7시간 정도 기한을 주는 과제라고 하셨었는데 과연 내가 7시간안에 합격할 정도의 결과물을 만들어 낼 수 있었을까 생각해보면 아니라고 답할 수 밖에 없을 것 같다. 아직은 많이 부족한 만큼 더 열심히 생각하고 공부해 실력을 늘려봐야지!</li>
 </ul>
 ]]></content>
       <tags>
         <tag>개발</tag>
-        <tag>정규식</tag>
+        <tag>회고</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>[Deep Dive] 연산자</title>
+    <url>/2022/Modern-Javascript-Deep-Dive-Chapter-7-Operator-Summary/</url>
+    <content><![CDATA[<h1 id="연산자"><a href="#연산자" class="headerlink" title="연산자"></a>연산자</h1><p>연산자는 하나 이상의 표현식을 대상으로 산술, 할당, 비교, 논리, 타입, 지수 연산 등을 수행해 하나의 값을 만든다.</p>
+<p>이 때 연산의 대상을 피연산자라 한다. 피연산자는 값으로 평가될 수 있는 표현식이어야 한다.<br>그리고 피연산자와 연산자의 조합으로 이뤄진 연산자 표현식도 값으로 평가될 수 있는 표현식이다.</p>
+<p>자바스크립트가 제공하는 다양한 연산자에 대해 살펴보자.</p>
+<h2 id="산술-연산자"><a href="#산술-연산자" class="headerlink" title="산술 연산자"></a>산술 연산자</h2><p>산술 연산자는 피연산자를 대상으로 수학적 계산을 수행해 새로운 숫자 값을 만든다.<br>산술 연산이 불가능한 경우, NaN을 반환한다.</p>
+<p>산술 연산자는 피연산자의 개수에 따라 이항 산술 연산자와 단항 산술 연산자로 구분할 수 있다.</p>
+<h3 id="이항-산술-연산자"><a href="#이항-산술-연산자" class="headerlink" title="이항 산술 연산자"></a>이항 산술 연산자</h3><p>이항 산술 연산자는 2개의 피연산자를 산술 연산하여 숫자 값을 만든다.</p>
+<p>모든 이항 산술 연산자는 피연산자의 값을 변경하는 부수효과가 없다.</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="number">5</span> + <span class="number">2</span>; <span class="comment">// 7</span></span><br><span class="line"><span class="number">5</span> - <span class="number">2</span>; <span class="comment">// 3</span></span><br><span class="line"><span class="number">5</span> * <span class="number">2</span>; <span class="comment">// 10</span></span><br><span class="line"><span class="number">5</span> / <span class="number">2</span>; <span class="comment">// 2.5</span></span><br><span class="line"><span class="number">5</span> % <span class="number">2</span>; <span class="comment">// 1</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="단항-산술-연산자"><a href="#단항-산술-연산자" class="headerlink" title="단항 산술 연산자"></a>단항 산술 연산자</h3><p>단항 산술 연산자는 1개의 피연산자를 산술 연산하여 숫자 값을 만든다.</p>
+<p>이 때 증가&#x2F;감소(++&#x2F;–) 연산자는 피연산자의 값을 변경한느 부수 효과가 있어 주의해야 한다.<br>즉 증가&#x2F;감소 연산을 하면 피연산자의 값을 변경하는 암묵적 할당이 이뤄진다.</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> x = <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">x++; <span class="comment">// x = x + 1;</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(x); <span class="comment">// 2</span></span><br><span class="line"></span><br><span class="line">x--; <span class="comment">// x = x - 1;</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(x); <span class="comment">// 1</span></span><br></pre></td></tr></table></figure>
+
+<p>또한 증가&#x2F;감소 연산자는 위치에 따라 선 할당후 연산이 이루어지는지, 연산이 수행되고 할당이 이루어지는지 다르므로 주의해야 한다.</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> x = <span class="number">5</span>,</span><br><span class="line">  result;</span><br><span class="line"></span><br><span class="line">result = x++; <span class="comment">// 선할당 후증가</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(result, x); <span class="comment">// 5 6</span></span><br><span class="line"></span><br><span class="line">result = ++x; <span class="comment">// 선증가 후할당</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(result, x); <span class="comment">// 7 7</span></span><br><span class="line"></span><br><span class="line">result = x--; <span class="comment">// 선할당 후감소</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(result, x); <span class="comment">// 7 6</span></span><br><span class="line"></span><br><span class="line">result = --x; <span class="comment">// 선감소 후할당</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(result, x); <span class="comment">// 5 5</span></span><br></pre></td></tr></table></figure>
+
+<p>+ 단항 연산자는 피연산자에 어떠한 효과도 없다.<br>다만 숫자 타입이 아닌 피연산자에 + 단항 연산자를 사용하면 피연산자를 숫자 타입으로 변환하여 반환한다.<br>이때 피연산자를 변경하는 것은 아니고 숫자 타입으로 변환한 값을 생성해서 반환한다. 즉 부수 효과가 없다.</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> x = <span class="string">&#x27;1&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(+x); <span class="comment">// 1</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(x); <span class="comment">// &quot;1&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>- 단항 연산자는 피연산자에 부호를 반전한 값을 반환한다.<br>+ 단항 연산자와 마찬가지로 숫자타입이 아닌 피연산자에 사용하면 피연산자를 숫자 타입으로 변환하여 반환한다.<br>이때 피연산자를 변경하는 것은 아니고 숫자 타입으로 변환한 값을 생성해서 반환한다. 즉 부수 효과가 없다.</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">-(-<span class="number">10</span>); <span class="comment">// 10 (부호 반전)</span></span><br><span class="line">-<span class="literal">true</span>; <span class="comment">// -1 (타입 변환)</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="문자열-연결-연산자"><a href="#문자열-연결-연산자" class="headerlink" title="문자열 연결 연산자"></a>문자열 연결 연산자</h3><p>+ 연산자는 피연산자 중 하나 이상이 문자열인 경우 문자열 연결 연산자로 동작한다.<br>그 외의 경우는 산술 연산자로 동작한다.</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 문자열 연결 연산자</span></span><br><span class="line"><span class="string">&#x27;1&#x27;</span> + <span class="number">2</span>; <span class="comment">// &quot;12&quot;</span></span><br><span class="line"><span class="number">2</span> + <span class="string">&#x27;1&#x27;</span>; <span class="comment">// &quot;12&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 산술 연산자</span></span><br><span class="line"><span class="number">1</span> + <span class="number">2</span>; <span class="comment">// 3</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 타입 변환이 일어나는 경우</span></span><br><span class="line"><span class="number">1</span> + <span class="literal">true</span>; <span class="comment">// 2</span></span><br><span class="line"><span class="number">1</span> + <span class="literal">undefined</span>; <span class="comment">// NaN</span></span><br></pre></td></tr></table></figure>
+
+<p>이 때 주목할 점은 개발자의 의도와는 상관 없이 자바스크립트 엔진에 의해 암묵적으로 타입이 자동 변환되기도 한다는 것이다.<br>1 + true를 연산하면 자바스크립트 엔진은 암묵적으로 불리언 타입 값인 true를 숫자 탕비인 1로 강제로 변환한 후 연산을 수행한다.</p>
+<p>이를 암묵적 타입 변환이라고 한다. 앞서 살펴본 +&#x2F;- 단항 연산자도 암묵적 타입 변환이 발생한 것이다</p>
+<h2 id="할당-연산자"><a href="#할당-연산자" class="headerlink" title="할당 연산자"></a>할당 연산자</h2><p>할당 연산자는 우항에 있는 피연산자의 평가 결과를 좌항에 있는 변수에 할당한다.<br>할당 연산자는 좌항의 변수에 값을 할당하므로 변수 값이 변하는 부수 효과가 존재한다.</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> x;</span><br><span class="line"></span><br><span class="line">x = <span class="number">10</span>;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(x); <span class="comment">// 10</span></span><br><span class="line"></span><br><span class="line">x += <span class="number">5</span>; <span class="comment">// x = x + 5;</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(x); <span class="comment">// 15</span></span><br><span class="line"></span><br><span class="line">x -= <span class="number">5</span>; <span class="comment">// x = x - 5;</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(x); <span class="comment">// 10</span></span><br><span class="line"></span><br><span class="line">x *= <span class="number">5</span>; <span class="comment">// x = x * 5;</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(x); <span class="comment">// 50</span></span><br><span class="line"></span><br><span class="line">x /= <span class="number">5</span>; <span class="comment">// x = x / 5;</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(x); <span class="comment">// 10</span></span><br><span class="line"></span><br><span class="line">x %= <span class="number">5</span>; <span class="comment">// x = x % 5;</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(x); <span class="comment">// 0</span></span><br></pre></td></tr></table></figure>
+
+<p>표현식은 값으로 평가 될 수 있는 문이고, 문에는 표현식인 문과 표현식이 아닌 문이 존재한다.<br>그렇다면 할당문은 표현식인 문일까, 표현식이 아닌 문일까?</p>
+<p>할당문은 변수에 값을 할당하는 부수 효과만 있을 뿐 값으로 평가되지 않을 것처럼 보인다.<br>하지만 할당문은 값으로 평가되는 표현식인 문으로서 할당된 값으로 평가된다. 즉 변수에 할당할 수 있다.<br>이러한 특징을 활용해 여러 변수에 동일한 값을 연쇄 할당할 수 있다.</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> a, b, c;</span><br><span class="line"></span><br><span class="line">a = b = c = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(a, b, c); <span class="comment">// 0 0 0</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="비교-연산자"><a href="#비교-연산자" class="headerlink" title="비교 연산자"></a>비교 연산자</h2><p>비교 연산자는 좌항과 우항의 피연산자를 비교한 다음 그 결과를 불리언 값으로 반환한다.<br>비교 연산자는 if 문이나 for 문과 같은 제어문의 조건식에서 주로 사용한다.</p>
+<h3 id="동등-x2F-일치-비교-연산자"><a href="#동등-x2F-일치-비교-연산자" class="headerlink" title="동등&#x2F;일치 비교 연산자"></a>동등&#x2F;일치 비교 연산자</h3><p>동등 비교 연산자와 일치 비교 연산자는 좌항과 우항의 피연산자가 같은 값으로 평가되는지 비교해 불리언 값을 반환한다.<br>하지만 비교하는 엄격성의 정도가 다르다.</p>
+<p>동등 비교(&#x3D;&#x3D;) 연산자는 좌항과 우항의 피연산자를 비교할 때 먼저 암묵적 타입 변환을 통해 타입을 일치시킨 후 같은 값인지 비교한다.<br>다시 말해 동등 비교 연산자는 좌항과 우항의 피연산자가 타입은 다르더라도 암묵적 타입 변환 후에 같은 값일 수 있다면 true를 반환한다.</p>
+<p>동등 비교 연산자는 편리한 경우도 있지만 결과를 예측하기 어렵고 실수하기 쉬우므로 사용하지 않는 편이 좋다.</p>
+<p>반면 일치 비교(&#x3D;&#x3D;&#x3D;) 연산자는 좌항과 우항의 피연산자가 타입도 같고 값도 같은 경우에 한하여 true를 반환한다. 따라서 일치 비교 연산자는 예측하기 쉽다.</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="number">5</span> == <span class="number">5</span>; <span class="comment">// true</span></span><br><span class="line"><span class="number">5</span> == <span class="string">&#x27;5&#x27;</span>; <span class="comment">// true (암묵적 타입 변환)</span></span><br><span class="line"></span><br><span class="line"><span class="number">5</span> === <span class="number">5</span>; <span class="comment">// true</span></span><br><span class="line"><span class="number">5</span> === <span class="string">&#x27;5&#x27;</span>; <span class="comment">// false (타입 변환 X)</span></span><br></pre></td></tr></table></figure>
+
+<p>일치 비교 연산자에서 주의할 것은 NaN이다.</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="title class_">NaN</span> === <span class="title class_">NaN</span>; <span class="comment">// false</span></span><br></pre></td></tr></table></figure>
+
+<p>NaN은 자신과 일치하지 않는 유일한 값이다. 숫자가 NaN인지 조사하기 위해서는 빌트인 함수 Number.isNaN을 사용한다.</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="title class_">Number</span>.<span class="built_in">isNaN</span>(<span class="title class_">NaN</span>); <span class="comment">// true</span></span><br><span class="line"><span class="title class_">Number</span>.<span class="built_in">isNaN</span>(<span class="number">10</span>); <span class="comment">// false</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>ES6에서 도입된 Object.is 메서드를 이용하면 예측 가능한 정확한 비교 결과를 얻을 수 있다.</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">-<span class="number">0</span> === +<span class="number">0</span>; <span class="comment">// true</span></span><br><span class="line"><span class="title class_">Object</span>.<span class="title function_">is</span>(-<span class="number">0</span>, +<span class="number">0</span>); <span class="comment">// false</span></span><br><span class="line"></span><br><span class="line"><span class="title class_">NaN</span> === <span class="title class_">NaN</span>; <span class="comment">// false</span></span><br><span class="line"><span class="title class_">Object</span>.<span class="title function_">is</span>(<span class="title class_">NaN</span>, <span class="title class_">NaN</span>); <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
+</blockquote>
+<p>부동등 비교 연산자(!&#x3D;)와 불일치 비교 연산자(!&#x3D;&#x3D;)는 각각 동등 비교(&#x3D;&#x3D;) 연산자와 일치 비교(&#x3D;&#x3D;&#x3D;) 연산자의 반대 개념이다.</p>
+<h3 id="대소-관계-비교-연산자"><a href="#대소-관계-비교-연산자" class="headerlink" title="대소 관계 비교 연산자"></a>대소 관계 비교 연산자</h3><p>대소 관계 비교 연산자는 피연산자의 크기를 비교하여 불리언 값을 반환한다.</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="number">5</span> &gt; <span class="number">0</span>; <span class="comment">// true</span></span><br><span class="line"><span class="number">5</span> &gt; <span class="number">5</span>; <span class="comment">// false</span></span><br><span class="line"><span class="number">5</span> &gt;= <span class="number">5</span>; <span class="comment">// true</span></span><br><span class="line"><span class="number">5</span> &lt;= <span class="number">5</span>; <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="삼항-조건-연산자"><a href="#삼항-조건-연산자" class="headerlink" title="삼항 조건 연산자"></a>삼항 조건 연산자</h2><p>삼항 조건 연산자는 조건식의 평가 결과에 따라 반환할 값을 결정한다.<br>자바스크립트의 유일한 삼항 연산자이며, 부수 효과는 없다.</p>
+<p>삼항 조건 연산자의 표현식은 다음과 같다.</p>
+<blockquote>
+<p>조건식 ? 조건식이 true일 때 반환할 값 : 조건식이 false일 때 반환할 값</p>
+</blockquote>
+<p>삼항 조건 연산자는 첫 번째 피연산자가 true로 평가되면 두 번째 피연산자를 반환하고, 첫 번째 피연산자가 false로 평가되면 세 번째 피연산자를 반환한다.<br>즉 삼항 조건 연산자는 두 번째 피연산자 또는 세 번째 피연산자로 평가되는 표현식이다.</p>
+<p>삼항 조건 연산자는 if…else 문을 사용해도 유사하게 처리 가능하다. 하지만 삼항 조건 연산자 표현식은 값처럼 사용할 수 있는 반면 if…else 문은 값처럼 사용할 수 없다는 차이가 있다.</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> x = <span class="number">10</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> result1 = x % <span class="number">2</span> ? <span class="string">&#x27;홀수&#x27;</span> : <span class="string">&#x27;짝수&#x27;</span>;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(result1); <span class="comment">// 짝수</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> result2 = <span class="keyword">if</span> (x % <span class="number">2</span>) &#123; result2 = <span class="string">&#x27;홀수&#x27;</span>; &#125; <span class="keyword">else</span> &#123; result2 = <span class="string">&#x27;짝수&#x27;</span>; &#125;; <span class="comment">// SyntaxError: Unexpected token if</span></span><br></pre></td></tr></table></figure>
+
+<p>조건에 따라 어떤 값을 결정해야 한다면 if…else 문보다 삼항 조건 연산자 표현식을 사용하는 편이 유리하다.<br>하지만 조건에 따라 수행해야 할 문이 하나가 아니리 여러 개라면 if…else 문의 가독성이 더 좋다.</p>
+<h2 id="논리-연산자"><a href="#논리-연산자" class="headerlink" title="논리 연산자"></a>논리 연산자</h2><p>논리 연산자는 우항과 좌항의 피연산자(부정 논리 연산자의 경우 우항의 피연산자)를 논리 연산 한다.</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 논리합(||) 연산자</span></span><br><span class="line"><span class="literal">true</span> || <span class="literal">true</span>; <span class="comment">// true</span></span><br><span class="line"><span class="literal">true</span> || <span class="literal">false</span>; <span class="comment">// true</span></span><br><span class="line"><span class="literal">false</span> || <span class="literal">true</span>; <span class="comment">// true</span></span><br><span class="line"><span class="literal">false</span> || <span class="literal">false</span>; <span class="comment">// false</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 논리곱(&amp;&amp;) 연산자</span></span><br><span class="line"><span class="literal">true</span> &amp;&amp; <span class="literal">true</span>; <span class="comment">// true</span></span><br><span class="line"><span class="literal">true</span> &amp;&amp; <span class="literal">false</span>; <span class="comment">// false</span></span><br><span class="line"><span class="literal">false</span> &amp;&amp; <span class="literal">true</span>; <span class="comment">// false</span></span><br><span class="line"><span class="literal">false</span> &amp;&amp; <span class="literal">false</span>; <span class="comment">// false</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 논리 부정(!) 연산자</span></span><br><span class="line">!<span class="literal">true</span>; <span class="comment">// false</span></span><br><span class="line">!<span class="literal">false</span>; <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
+
+<p>논리 부정(!) 연산자는 언제나 불리언 값을 반환한다. 단 피연산자가 반드시 불리언 값일 필요는 없다.<br>피연산자가 불리언 값이 아니라면 불리언 타입으로 암묵적 타입 변환된다.</p>
+<h2 id="쉼표-연산자"><a href="#쉼표-연산자" class="headerlink" title="쉼표 연산자"></a>쉼표 연산자</h2><p>쉼표(,) 연산자는 왼쪽 피연산자부터 차레대로 피연산자를 평가하고 마지막 피연산자의 평가가 끝나면 마지막 피연산자의 평가 결과를 반환한다.</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> x, y, z;</span><br><span class="line"></span><br><span class="line">x = <span class="number">1</span>, y = <span class="number">2</span>, z = <span class="number">3</span>; <span class="comment">// 3</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="그룹-연산자"><a href="#그룹-연산자" class="headerlink" title="그룹 연산자"></a>그룹 연산자</h2><p>소괄호(())로 피연산자를 감싸는 그룹 연산자는 자신의 피연산자인 표현식을 가장 먼저 평가한다. 따라서 그룹 연산자를 사용하면 연산자의 우선순위를 조절할 수 있다. 그룹 연산자는 연산자 우선순위가 가장 높다.</p>
+<h2 id="typeof-연산자"><a href="#typeof-연산자" class="headerlink" title="typeof 연산자"></a>typeof 연산자</h2><p>typeof 연산자는 피연산자의 데이터 타입을 문자열로 반환한다.<br>typeof 연산자는 “number”, “bigint”, “string”, “boolean”, “undefined”, “symbol”, “object”, “function” 중 하나를 반환한다.<br>typeof 연산자가 반환하는 문자열이 데이터 타입과 정확히 일치하지는 않는다.</p>
+<p>typeof 연산자로 null 값을 연산해 보면 “null”이 아닌 “object”를 반환하는데 이는 하위 호환성을 위해 수정되지 않고 있는 버그이다.<br>따라서 값이 null 타입인지 확인할 때는 typeof 연산자가 아닌 일치(&#x3D;&#x3D;&#x3D;) 연산자를 사용해야 한다.</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> foo = <span class="literal">null</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">typeof</span> foo === <span class="literal">null</span>; <span class="comment">// false</span></span><br><span class="line">foo === <span class="literal">null</span>; <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
+
+<p>또한 선언하지 않은 식별자를 typeof 연산자로 연산해 보면 ReferenceError가 발생하지 않고 undefined를 반환하는것도 주의하자.</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">// undeclared 식별자를 선언하지 않았다.</span></span><br><span class="line"><span class="keyword">typeof</span> undeclared; <span class="comment">// undefined</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="지수-연산자"><a href="#지수-연산자" class="headerlink" title="지수 연산자"></a>지수 연산자</h2><p>ES7에서 도입된 지수 연산자는 좌항의 피연산자를 밑으로, 우항의 피연산자를 지수로 거듭 제곱한 숫자 값을 반환한다.</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="number">2</span> ** <span class="number">2</span>; <span class="comment">// 4</span></span><br><span class="line"><span class="number">2</span> * <span class="number">0</span>; <span class="comment">// 1</span></span><br><span class="line"><span class="number">2</span> ** -<span class="number">2</span>; <span class="comment">// 0.25</span></span><br></pre></td></tr></table></figure>
+
+<p>지수 연산자가 도입되기 이전에는 Math.pow 메서드를 사용했다.</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="title class_">Math</span>.<span class="title function_">pow</span>(<span class="number">2</span>, <span class="number">2</span>); <span class="comment">// 4</span></span><br><span class="line"><span class="title class_">Math</span>.<span class="title function_">pow</span>(<span class="number">2</span>, <span class="number">0</span>); <span class="comment">// 1</span></span><br><span class="line"><span class="title class_">Math</span>.<span class="title function_">pow</span>(<span class="number">2</span>, -<span class="number">2</span>); <span class="comment">// 0.25</span></span><br></pre></td></tr></table></figure>
+
+<p>음수를 거듭제곱의 밑으로 사용해 계산하려면 괄호로 묶어주어야 한다.</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">-<span class="number">5</span> ** <span class="number">2</span>;</span><br><span class="line"><span class="comment">// SyntaxError: Unary operator used immediately before exponentiation expression. Parenthesis must be used to disambiguate operator precedence</span></span><br><span class="line"></span><br><span class="line">(-<span class="number">5</span>) ** <span class="number">2</span>; <span class="comment">// 25</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="연산자-우선순위"><a href="#연산자-우선순위" class="headerlink" title="연산자 우선순위"></a>연산자 우선순위</h2><p>연산자 우선순위란 여러 개의 연산자로 이뤄진 문이 실행될 때 연산자가 실행되는 순서를 말한다. 우선순위가 높을수록 먼저 실행된다.</p>
+<p>연산자는 종류가 많아 연산자 우선순위를 모두 기억하기 어렵고 실수하기도 쉽다.<br>따라서 기억해 사용하기 보다는 연산자 우선순위가 높은 그룹 연산자를 사용하여 우선순위를 명시적으로 조절하는 것이 좋다.</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="number">10</span> * (<span class="number">2</span> + <span class="number">3</span>); <span class="comment">// 50</span></span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <tags>
+        <tag>개발</tag>
+        <tag>자바스크립트</tag>
+        <tag>모던 자바스크립트 Deep Dive</tag>
       </tags>
   </entry>
   <entry>
@@ -974,96 +1036,57 @@ for (변수 선언문 또는 할당문; 조건식; 증감식) {
       </tags>
   </entry>
   <entry>
-    <title>백준 Node.js 입출력법</title>
-    <url>/2022/Node-js-input-and-output-in-Baekjoon-Online-Judge/</url>
-    <content><![CDATA[<p>지금까지 leetcode와 프로그래머스를 통해 코딩테스트 공부를 하고 있었는데 leetcode는 영어 해석의, 프로그래머스는 적은 문제수의 단점을 가지고 있어 백준을 통해 코딩테스트 연습을 시작해보았다.</p>
-<p>백준에서는 javascript로 코딩테스트를 준비하기 위해 node.js를 선택해야 했는데 프로그래머스에서는 함수만 작성하면 되었던 반면에 백준에서는 입출력을 직접 해주어야 했다.</p>
-<p>백준에서 node.js로 입력을 받는 방법은 크게 두가지로 readline 모듈을 사용하는 것과 fs 모듈을 사용하는 것이다. fs 모듈의 경우 readline 모듈보다 코드가 간단하고 더 빠르다고 해 fs 모듈의 대해 찾아보았다.</p>
+    <title>첫 프로젝트를 마치고</title>
+    <url>/2022/Retrospective-about-my-first-project/</url>
+    <content><![CDATA[<h1 id="들어가며"><a href="#들어가며" class="headerlink" title="들어가며"></a>들어가며</h1><p>약 2주동안 진행했던 프로젝트가 종료되었다. 개발 공부를 시작한지도 얼마 안 되었고 처음으로 해본 프로젝트인지라 2주가 정말 정신없이 지나가버렸다. 배운점도 많았고 아쉬운점도 많았는데 회고를 하며 정리해보려고 한다.</p>
+<p>완성된 결과물은 <a href="https://woowahal-6go5.vercel.app/">https://woowahal-6go5.vercel.app/</a> 에서 확인 가능하다.</p>
 <hr>
 
-<h1 id="fs"><a href="#fs" class="headerlink" title="fs"></a><strong>fs</strong></h1><p>FileSystem의 약자인 fs 모듈은 파일 처리와 관련된 모듈이다. <a href="https://help.acmicpc.net/">BOJ 도움말</a>에서는 다음과 같은 코드로 fs 모듈을 통한 입력을 소개하고 있다.</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> fs = <span class="built_in">require</span>(<span class="string">&#x27;fs&#x27;</span>);</span><br><span class="line"><span class="keyword">let</span> input = fs.<span class="title function_">readFileSync</span>(<span class="string">&#x27;/dev/stdin&#x27;</span>).<span class="title function_">toString</span>().<span class="title function_">split</span>(<span class="string">&#x27; &#x27;</span>);</span><br><span class="line"><span class="keyword">let</span> a = <span class="built_in">parseInt</span>(input[<span class="number">0</span>]);</span><br><span class="line"><span class="keyword">let</span> b = <span class="built_in">parseInt</span>(input[<span class="number">1</span>]);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(a+b);</span><br></pre></td></tr></table></figure>
-
-<p>하지만 위 코드를 이용할때에도 입력되는 값에 따라 에러가 발생하는 경우가 있어 다양한 방식의 입력법에 대해 정리해 보았다.</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="number">1.</span> 하나의 값을 입력받을 때</span><br><span class="line"><span class="keyword">const</span> fs = <span class="built_in">require</span>(<span class="string">&#x27;fs&#x27;</span>);</span><br><span class="line"><span class="keyword">const</span> input = fs.<span class="title function_">readFileSync</span>(<span class="string">&quot;/dev/stdin&quot;</span>).<span class="title function_">toString</span>().<span class="title function_">trim</span>();</span><br><span class="line"></span><br><span class="line"><span class="number">2.</span> 공백으로 구분된 한 줄의 값들을 입력받을 때</span><br><span class="line"><span class="keyword">const</span> fs = <span class="built_in">require</span>(<span class="string">&#x27;fs&#x27;</span>);</span><br><span class="line"><span class="keyword">const</span> input = fs.<span class="title function_">readFileSync</span>(<span class="string">&quot;/dev/stdin&quot;</span>).<span class="title function_">toString</span>().<span class="title function_">trim</span>().<span class="title function_">split</span>(<span class="string">&quot; &quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="number">3.</span> 여러 줄의 값들을 입력받을 때</span><br><span class="line"><span class="keyword">const</span> fs = <span class="built_in">require</span>(<span class="string">&#x27;fs&#x27;</span>);</span><br><span class="line"><span class="keyword">const</span> input = fs.<span class="title function_">readFileSync</span>(<span class="string">&quot;/dev/stdin&quot;</span>).<span class="title function_">toString</span>().<span class="title function_">trim</span>().<span class="title function_">split</span>(<span class="string">&quot;\n&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="number">4.</span> 첫 번째 줄에 자연수 n을 입력받고, 그 다음줄에 공백으로 구분된 n개의 값들을 입력받을 때</span><br><span class="line"><span class="keyword">const</span> fs = <span class="built_in">require</span>(<span class="string">&#x27;fs&#x27;</span>);</span><br><span class="line"><span class="keyword">const</span> [n, ...arr] = fs.<span class="title function_">readFileSync</span>(<span class="string">&quot;/dev/stdin&quot;</span>).<span class="title function_">toString</span>().<span class="title function_">trim</span>().<span class="title function_">split</span>(<span class="regexp">/\s/</span>);</span><br><span class="line"></span><br><span class="line"><span class="number">5.</span> 첫 번째 줄에 자연수 n을 입력받고, 그 다음줄부터 n개의 줄에 걸쳐 한 줄에 하나의 값을 입력받을 때</span><br><span class="line"><span class="keyword">const</span> fs = <span class="built_in">require</span>(<span class="string">&#x27;fs&#x27;</span>);</span><br><span class="line"><span class="keyword">const</span> [n, ...arr] = fs.<span class="title function_">readFileSync</span>(<span class="string">&quot;/dev/stdin&quot;</span>).<span class="title function_">toString</span>().<span class="title function_">trim</span>().<span class="title function_">split</span>(<span class="string">&quot;\n&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="number">6.</span> 하나의 값 또는 공백으로 구분된 여러 값들을 여러 줄에 걸쳐 뒤죽박죽 섞여서 입력받을 때</span><br><span class="line">  ex) n 입력 - 공백으로 구분된 n개의 값 입력 - m 입력 - 여러 줄에 걸쳐 m개의 값 입력</span><br><span class="line"><span class="keyword">const</span> fs = <span class="built_in">require</span>(<span class="string">&#x27;fs&#x27;</span>);</span><br><span class="line"><span class="keyword">const</span> input = fs.<span class="title function_">readFileSync</span>(<span class="string">&quot;/dev/stdin&quot;</span>).<span class="title function_">toString</span>().<span class="title function_">trim</span>().<span class="title function_">split</span>(<span class="regexp">/\s/</span>);</span><br><span class="line"><span class="keyword">const</span> n = input[<span class="number">0</span>];</span><br><span class="line"><span class="keyword">const</span> n_arr = input.<span class="title function_">slice</span>(<span class="number">1</span>, n+<span class="number">1</span>);</span><br><span class="line"><span class="keyword">const</span> [m, ...m_arr] = input.<span class="title function_">slice</span>(n+<span class="number">1</span>);</span><br></pre></td></tr></table></figure>
-<p>최종 결과 확인을 위해선 <strong>console.log()</strong> 를 통해 값을 출력해주면 된다.</p>
+<h1 id="프로젝트-우아할"><a href="#프로젝트-우아할" class="headerlink" title="프로젝트 우아할"></a>프로젝트 우아할</h1><p>이전글에서 언급했듯이 우리 팀은 배달의 민족 앱을 웹 페이지로 클론하기로 했다(그래서 팀명도 <strong>우아할</strong>형제들로 정했다).</p>
+<p>개발 기간은 2022-09-19 ~ 2022-09-30로 약 2주 동안 진행되었고, 팀원은 나를 포함해 총 3명이었다.</p>
+<p>프로젝트 기간이나 인원에 비해 배달의 민족이 가지고 있는 콘텐츠가 너무 많아 모든 페이지를 클론 할 수는 없었고 배달의 민족에서 배달하기 까지의 주요 프로세스를 메인,카테고리, 리스트, 디테일, 오더, 장바구니, 결과의 7개 페이지로 나누어 구현해 보았다.</p>
+<p>나는 그 중 메인페이지와 카테고리 페이지를 주로 담당했다.</p>
 <hr>
 
-<h2 id="참고"><a href="#참고" class="headerlink" title="참고"></a>참고</h2><p><a href="https://overcome-the-limits.tistory.com/25">[알고리즘] 백준 0.nodejs 입력하기</a><br><a href="https://tesseractjh.tistory.com/39">Node.js로 백준(BOJ) 문제 풀 때 유의할 점들</a></p>
-]]></content>
-      <tags>
-        <tag>개발</tag>
-        <tag>JavaScript</tag>
-        <tag>코딩테스트</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>원티드 프리온보딩 프론트엔드 인턴십 2주차 회고</title>
-    <url>/2023/Retrospect-About-2nd-Week-Of-Wanted-Pre-Onboarding-Frontend-InternShip/</url>
-    <content><![CDATA[<p><img src="/../images/wanted-preonboarding.jpeg" alt="원티드 프리온보딩 프론트엔드 인턴십"></p>
-<h1 id="들어가며"><a href="#들어가며" class="headerlink" title="들어가며"></a>들어가며</h1><p>원티드 프리온보딩 프론트엔드 인턴십의 2주차가 지나갔다. 저번주도 마찬가지였지만 이번주도 너무 빠르게 지나가 버렸다.</p>
-<p>저번주에는 인턴십 기간 동안의 협업 과정에 대한 틀을 만들어야 해서 힘들었다면, 이번 주에는 새로 주어진 과제를 수행하는 것 부터 시작해야 했기 때문에 고민해 볼 부분도 더 많았고 어려웠다.특히 이번 주에는 커리어코칭도 같이 시작되어 이에대한 과제도 추가되어 더 바쁘게 흘러간 것 같다.</p>
-<p>이번 주는 개인적으로 아쉬운 점 보다 좋았던 점이 많았던 일주일이였던것 같아 만족스럽다. 그렇다고 해도 아쉬운 점이 없던 것은 아니니 이 부분들에 대해 얘기해보고자 한다.</p>
-<h1 id="원티드-프리온보딩-프론트엔드-인턴십-2주차-과제"><a href="#원티드-프리온보딩-프론트엔드-인턴십-2주차-과제" class="headerlink" title="원티드 프리온보딩 프론트엔드 인턴십 2주차 과제"></a>원티드 프리온보딩 프론트엔드 인턴십 2주차 과제</h1><h2 id="2023-05-02-과제-발표"><a href="#2023-05-02-과제-발표" class="headerlink" title="2023.05.02 - 과제 발표"></a>2023.05.02 - 과제 발표</h2><p>화요일 5시 <code>React Hook의 심층 활용</code>을 주제로 한 세션이 끝나고 과제의 내용이 발표되었다. 기업과제라 자세한 내용은 서술하기 어렵지만 간단히 정리해 <code>캐싱에 중점을 둔 검색창의 검색어 추천기능 구현</code>을 각자 수행하고, 저번주처럼 팀 별 Best Pratice를 만들고 제출하는 과제였다.</p>
-<p>저번주와는 다르게 일단 각자가 과제를 수행하고 그 후에 Best Pratice에 대한 의견을 나누어야 하기에 시간이 너무 촉박할 것 같았다.<br>시간을 절약하기 위해 일단은 목요일 오전까지 최대한 빠르게 각자 과제를 수행하고, 그 과정에서 중요하게 여겼던 점이나 중요할 것 같은 부분들을 적어 오기로 했다.</p>
-<h2 id="2023-05-02-2023-05-04-개인-과제-수행"><a href="#2023-05-02-2023-05-04-개인-과제-수행" class="headerlink" title="2023.05.02 ~ 2023.05.04 - 개인 과제 수행"></a>2023.05.02 ~ 2023.05.04 - 개인 과제 수행</h2><p>과제를 수행하면서 가장 중요한 부분이 캐싱이었다. 캐싱이 어떤 것인지는 알고 있었지만 캐싱 기능을 제공하는 라이브러리들을(react-query, apollo-client) 사용만 해보았지, 실제로 캐싱 기능이 어떻게 구현되어 있는지 몰랐기에 먼저 캐싱에 대한 고민을 해보았다.</p>
-<p>캐싱을 구현하기 위해서는 fetch해온 data를 저장할 저장소가 필요했고 사용할 수 있는 저장소에는 로컬스토리지, 세션스토리지, 캐시스토리지 등 다양한 저장소가 존재했다. 이름에서부터 캐시스토리지가 가장 적합할 것 같았고, <code>실제로도 캐싱 기능 구현에 캐시스토리지를 많이 활용한다 하니 캐시스토리지를 사용해야겠다</code> 생각했었다.</p>
-<p>그런데 과제의 사용가능한 기술에 필수는 아니지만 Redux가 존재했고, 개인적으로 Redux의 멘탈 모델은 알고있지만 많이 사용해보지 못해 익숙하지 않았고 더욱이 RTK는 사용해본적이 없었기에 <code>Redux를 사용해보며 학습하는 것도 좋겠다</code>라는 생각이 들었다. 또한 아직까지도 Redux를 사용하는 기업이 많기에 Redux 코드에 대한 이해도를 높이는 부수효과를 기대하고 Redux를 사용해보기로 결심했다.</p>
-<p>더 자세한 구현사항들은 <a href="https://github.com/rjsej12/wanted-2nd">github</a>를 통해 확인 가능하다.</p>
-<h2 id="2023-05-04-개인-과제-수행-후-회의"><a href="#2023-05-04-개인-과제-수행-후-회의" class="headerlink" title="2023.05.04 - 개인 과제 수행 후 회의"></a>2023.05.04 - 개인 과제 수행 후 회의</h2><p>그렇게 각자가 과제를 수행한 후 목요일 낮에 모여 첫 회의를 진행했다.<br>한 사람 씩 자기가 수행한 과제의 주요 부분들에 대한 설명을 하며 왜 그런 방식을 택했는지, 어떤 방법이 더 좋은 방법인지에 대한 의견을 나누었다. (ex. 캐싱을 위한 저장소로 어떤 것을 사용했는지 - 로컬스토리지, 캐시스토리지 etc.)</p>
-<p>그렇게 각 기능들에 대한 Best Practice를 정하고 난 후, 모두가 모여서 코드를 작성하기로 했다. 기능 구현의 난이도는 저번보다 높았지만, 코드의 양 자체는 그렇게 많지 않았기 때문이다. 처음에는 상의된 Best Practice에 가장 가깝게 구현한 사람이 코드를 작성하고 있었는데, 중간에 한 팀원분께서 <code>Live Share</code>를 사용해 보자고 의견을 내주셔서 같이 코드를 작성할 수 있었다.</p>
-<h2 id="2023-05-04-2023-05-05-버그-픽스-및-DOCS-작업"><a href="#2023-05-04-2023-05-05-버그-픽스-및-DOCS-작업" class="headerlink" title="2023.05.04 ~ 2023.05.05 - 버그 픽스 및 DOCS 작업"></a>2023.05.04 ~ 2023.05.05 - 버그 픽스 및 DOCS 작업</h2><p>같이 모여서 Best Practice대로 코드를 작성하고 난 후, 실제로 결과물이 잘 동작하는지 확인하던 중 오류가 발생했다. 방향키를 이용해 추천 검색어를 오가는 동작에서, 처음 방향키를 눌렀을 때 포커스가 2번 움직였다… 목요일 거의 밤이 다 되어서 발견한 오류였는데, 다들 낮부터 밤까지 너무 오랜 시간을 집중했던지라 쉽게 해결하지 못했고 다음날까지 고민해보기로 했다.</p>
-<p>그런데 금요일 새벽 4시경 정도 한 팀원분이 오류의 원인을 찾아 그 해결법을 공유해주셨다. 결론적으로 <code>한글의 Composition</code>이 오류의 원인이였는데 작년에 이미 같은 오류를 겪고 해결했던 적이 있음에도 불구하고 떠올리지 못했다는게 반성해야겠다고 생각했다. 또 한번 기록의 중요성에 대해 느꼈고, 새벽까지 해결하지 못한 문제에 대해 탐구하는 팀원분의 자세를 보고 나도 더 몰입하는 자세를 가져야겠다고 다짐했다.</p>
-<p>그 후 금요일 인턴십 세션이 끝난 후 다시 모여 오류 수정에 대한 얘기를 나누고 README.md를 작성하는 시간을 가졌다. 이번에는 많은 팀원분들이 미리 과제를 수행하면서 고민했던 점이나 트러블 슈팅에 관한 부분들을 미리 적어오셔서 더 알찬 README.md를 완성 할 수 있었다.</p>
-<p>자세한 내용에 대해서는 <a href="https://github.com/WANTED-TEAM03/pre-onboarding-10th-2-3">README.md</a>에서 살펴 볼 수 있다.</p>
-<h2 id="KPT"><a href="#KPT" class="headerlink" title="KPT"></a>KPT</h2><p>이번 주 역시 많은 것을 생각해 볼 수 있어 좋았다. 특히 평소 그 원리를 알지 못하고 라이브러리를 이용해 구현하던 캐싱에 대해 자세히 알 수 있었고, 개발자로서 성장하기 위해 어떠한 자세를 가져야 할 지 다시 한 번 생각해 보았던 개인적으로 보람찬 일주일이 된 것 같다.</p>
-<h3 id="Keep"><a href="#Keep" class="headerlink" title="Keep"></a>Keep</h3><ul>
-<li><p>이번 주 역시 만족스러운 README.md 및 기록을 남길 수 있었다! 특히 저번주보다 팀원분들이 적극적으로 참여해 주셨는데, 조금 더 친밀해져서 였을까? 남은 기간동안 더 돈독한 사이가 되어 팀명대로 보람찬 3조가 되면 좋겠다.</p>
+<h2 id="기술-스택"><a href="#기술-스택" class="headerlink" title="기술 스택"></a>기술 스택</h2><p>페이지를 구현하면서 Figma, Git, npm, HTML, CSS, Sass, JS, Vercel을 이용했다.</p>
+<h3 id="Figma"><a href="#Figma" class="headerlink" title="Figma"></a>Figma</h3><p>구현해야 하는 페이지들의 와이어프레임 및 컴포넌트들을 시각적으로 구성해보기 위해 Figma를 이용했다.</p>
+<p>페이지에서 주사용되는 컬러를 시스템화해서 플러그인을 통해 변수로 쉽게 추출할 수 있었다.</p>
+<p>아직 툴 사용이 미숙해 많은 기능을 활용하지는 못한것 같아 아쉽다</p>
+<h3 id="Git-Github"><a href="#Git-Github" class="headerlink" title="Git, Github"></a>Git, Github</h3><p>프로젝트의 버전관리를 위해 Git을 이용했다. Git flow 전략을 모방해 메인을 제외한 develop, subdev, release 3개의 branch를 만들었다.</p>
+<p>기본적으로 모든 변경사항을 subdev에 push하였고, merge가 잘 완료되면 log를 추가해 develop으로 옮겼다. 최종적으로 public 폴더만 build해 release에 저장했다.</p>
+<h3 id="npm"><a href="#npm" class="headerlink" title="npm"></a>npm</h3><p>개발환경 세팅과 최종적인 프로젝트 파일의 최적화를 위해 npm을 이용했다.</p>
+<p>rimraf, npm-run-all, live-server, sass는 개발환경 세팅을 위해 webpack, postcss는 최적화를 위해 사용해 보았다.</p>
+<h3 id="HTML"><a href="#HTML" class="headerlink" title="HTML"></a>HTML</h3><p>HTML의 경우 시맨틱 마크업을 제일 중요시 여겼는데 먼저 손으로 페이지의 구조를 설계 한 후 코드로 작성했다. 그 후 코드리뷰를 시간을 가져 팀원들끼리 왜 그렇게 코드를 작성했는지, 구조가 논리적인지 설득하는 시간을 가졌다.</p>
+<h3 id="CSS-Sass"><a href="#CSS-Sass" class="headerlink" title="CSS, Sass"></a>CSS, Sass</h3><p>CSS를 효과적으로 사용하기 위해 Sass를 이용했고 이 때 가장 중요시 여긴점은 컨벤션이였다. 기본적으로 BEM 방식을 이용한 Naming과 최대한 구체적인 클래스명을 사용하기로 정했다.</p>
+<hr>
+
+<h2 id="KPT"><a href="#KPT" class="headerlink" title="KPT"></a>KPT</h2><h3 id="Keep"><a href="#Keep" class="headerlink" title="Keep"></a>Keep</h3><ul>
+<li><p>프로젝트를 시작하기 전 환경설정을 중요시 여기고 이 부분에 대해 많이 논의 했는데 그 결과 git 충돌도 거의 없었고 일어난 충돌도 금방 해결 할 수 있었다.</p>
 </li>
-<li><p>Live Share 기능을 사용해 같이 코드를 작성해보니 시간을 효율적으로 사용 할 수 있었고, 화면 공유보다 더 코드를 잘 이해할 수 있었던 것 같다. 다음 협업에서도 이 기능을 잘 사용해야겠다.</p>
+<li><p>1차적인 프로젝트 결과물을 가지고 lighthouse 검사를 통해 부족한 부분을 찾고 개선하기 위해 노력했다. 실질적인 성능 향상을 볼 수 있어서 좋았다.</p>
+</li>
+<li><p>의견충돌이 있을때 그냥 넘어가지 않고 서로를 설득하기 위해 노력했는데 생각에 대한 근거를 찾고 정리해보며 의견을 구체화 시킬 수 있었다.</p>
 </li>
 </ul>
 <h3 id="Problem"><a href="#Problem" class="headerlink" title="Problem"></a>Problem</h3><ul>
-<li>알고 있던 문제였음에도 스스로 해결하지 못한 점이 너무 아쉽다. 해결했다고 해서 대충 머릿속에 남기는 것이 아니라 꼭 기록을 통해 새겨놔야 겠다고 느꼈다. 기록하는것이 귀찮기는 하지만 내 스스로의 성장에 도움이 되는것이니 만큼 성실히 기록해보자!</li>
+<li><p>Sass 사용의 아쉬움 - Sass 를 사용하기 위해 폴더 구조를 잘 분리한것은 좋았으나 중첩규칙, 변수 이외에는 잘 사용하지 못했다. 특히 중복적으로 사용되는 코드들을 믹스인으로 분리했어야 했는데 그러지 못했다.</p>
+</li>
+<li><p>미숙했던 초반 소통</p>
+</li>
 </ul>
 <h3 id="Try"><a href="#Try" class="headerlink" title="Try"></a>Try</h3><ul>
-<li>더 열심히 하자! - 이번 기업 과제의 경우 멘토님께서 보통 7시간 정도 기한을 주는 과제라고 하셨었는데 과연 내가 7시간안에 합격할 정도의 결과물을 만들어 낼 수 있었을까 생각해보면 아니라고 답할 수 밖에 없을 것 같다. 아직은 많이 부족한 만큼 더 열심히 생각하고 공부해 실력을 늘려봐야지!</li>
+<li>문서화의 중요성 - 서로 상의해 결정했던 부분들이나 컴포넌트에 대한 문서들을 남겨 서로 참고할 수 있도록 하자고 말했었지만 실제 프로젝트를 진행하면서 잘 수행되지 못했다. 문서화가 잘 되어 있는 다른 프로젝트 조의 경우 전체적인 프로젝트 상황에 대한 파악이 수월해 보였다. 다음 프로젝트를 진행할 때에는 꼭 문서화에 신경써봐야겠다.</li>
 </ul>
+<hr>
+
+<h1 id="마치며"><a href="#마치며" class="headerlink" title="마치며"></a>마치며</h1><p>첫 프로젝트를 진행하며 많은 것을 배울 수 있어 정말 좋았다. 하지만 역시 머리에 계속해서 남는것은 아쉬운 점들인 것 같다.</p>
+<p>평소 배달의 민족을 많이 사용하면서 이런 기능이 있으면 좋겠다고 생각해 오던것이 있다. 나는 결정장애가 심한 편이라 어떤것을 먹을지, 또 메뉴를 정해도 어디서 시킬지 정말 많이 고민한다. 그래서 카테고리만 선택하면 룰렛이 돌아가듯이 랜덤으로 가게와 메뉴가 선택되면 좋겠다고 생각했다.</p>
+<p>마침 배달의 민족을 웹으로 구현하기로 결정해서 이 기능도 추가해 보려고 했는데 막상 스스로의 자바스크립트 실력도 너무 부족하고 어떤 데이터베이스를 기반으로 정보를 가져와야 할지 아이디어 역시도 너무 구체적이지 않아 쉽지 않았다.</p>
+<p>스스로 많이 부족하다고 느끼는 점이 가장 아쉬웠다.<br>다만 앞으로 3개월 동안 커넥to 과정을 통해 모던 자바스크립트 Deep Dive의 저자이신 이웅모 강사님에게 자바스크립트 강의를 듣게 되었는데, 정말 좋은 기회이니 만큼 열심히 배우고 또 평상시 가지고 있던 아이디어들에 대해서도 구체화해 프로젝트를 리팩토링해봐야 겠다.</p>
 ]]></content>
       <tags>
         <tag>개발</tag>
         <tag>회고</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>새로운 컴퓨터로 Hexo 블로그 옮기기</title>
-    <url>/2023/Transfer-hexo-blog-to-new-device/</url>
-    <content><![CDATA[<p>나는 이 블로그를 Hexo라는 프레임워크를 이용해 작년 8월에 만들었었고 나름대로 계속해서 포스팅을 하고 있었다. 그러다 1월 말에 원래 사용하던 Windows 갤럭시북에서 MacOs의 맥북 M1으로 갈아타게 되었는데 깃허브에서 repository를 clone하고 hexo 명령어를 입력해도 작동하지 않는 문제가 생겼다.</p>
-<p>처음부터 블로그를 다시 세팅해야하나 아니면 다른 플랫폼으로 이사를 갈까 고민하며 해결방법을 찾던 중 다음 글을 발견했다. <a href="https://jqxiao.tech/2020/07/17/Transfer-Hexo-Blog-to-New-Device/">Transfer Hexo Blog to New Device</a></p>
-<p>위 블로그 게시글의 내용을 따라 수행하니 맥북에서도 다시 블로그 포스팅을 진행할 수 있게 되었고, 혹시라도 다음에 또 컴퓨터를 바꿀 수 있으니 방법을 정리해두어야겠다고 마음먹었다.</p>
-<h1 id="새로운-branch-만들기"><a href="#새로운-branch-만들기" class="headerlink" title="새로운 branch 만들기"></a>새로운 branch 만들기</h1><ul>
-<li>hexo blog repository를 git clone 한다.</li>
-<li>clone한 repositroy에서 <code>git checkout -b branch명</code>로 새로운 branch를 만든다.</li>
-<li>새로운 branch에서 .git 폴더를 제외한 모든 파일들을 삭제한다.</li>
-<li>원래 사용하던 기기의 hexo blog 폴더를 복사해온다.</li>
-<li>이전 기기의 .git 관련 폴더들은 삭제한다.</li>
-<li>새로운 branch를 Github에 push한다.</li>
-</ul>
-<h1 id="새-기기에-Hexo-설치하기"><a href="#새-기기에-Hexo-설치하기" class="headerlink" title="새 기기에 Hexo 설치하기"></a>새 기기에 Hexo 설치하기</h1><ul>
-<li><code>npm install hexo --save</code>로 Hexo를 설치한다.</li>
-<li><code>npm install hexo-deployer-git --save</code>로 git deployer plugin를 설치한다.</li>
-</ul>
-<h1 id="블로그-Deploy하기"><a href="#블로그-Deploy하기" class="headerlink" title="블로그 Deploy하기"></a>블로그 Deploy하기</h1><ul>
-<li>새로 만든 branch에 .gitigonre 파일을 추가한다.</li>
-<li>.gitignore 파일에 <code>.deploy_git/*</code>과 <code>public/*</code>을 추가한다</li>
-<li><code>hexo clean</code>을 통해 이전 웹페이지를 삭제한다.</li>
-<li><code>hexo generate</code>와 <code>hexo deploy</code>로 새로운 웹페이지를 만들 수 있다.</li>
-</ul>
-<h1 id="무엇이-문제였을까"><a href="#무엇이-문제였을까" class="headerlink" title="무엇이 문제였을까?"></a>무엇이 문제였을까?</h1><p>hexo deploy시 만들어진 정적 웹페이지가 자동으로 Github의 default branch에 push되었던 것이지 hexo를 설치했던 기존 폴더 자체를 Github에 push한것은 아니었기 때문에 git clone을 해도 hexo 명령어가 작동하지 않았다.<br>따라서 새로운 branch에 원본 기기의 폴더를 복사해옴으써 문제를 해결할 수 있었다.</p>
-]]></content>
-      <tags>
-        <tag>개발</tag>
-        <tag>Hexo</tag>
       </tags>
   </entry>
   <entry>
@@ -1161,115 +1184,6 @@ for (변수 선언문 또는 할당문; 조건식; 증감식) {
       </tags>
   </entry>
   <entry>
-    <title>pageYOffset vs scrollY, scroll() vs scrollTo()</title>
-    <url>/2022/pageYOffset-vs-scrollY-scroll-vs-scrollTo/</url>
-    <content><![CDATA[<h1 id="🤔What-is-Problem"><a href="#🤔What-is-Problem" class="headerlink" title="🤔What is Problem?"></a>🤔What is Problem?</h1><p>페어 프로그래밍을 진행하면서 수직으로 스크롤한 거리에 따라 숨겨진 버튼을 활성화 하고, 스크롤 버튼을 클릭했을 때 맨 위로 스크롤하는 예제를 해결해야했다.</p>
-<p>이를 위해 수직으로 스크롤한 거리를 측정하는 방법과 스크롤을 시키는 방법이 필요해 이에 대해 알아보았는데, 같은 기능을 하는 프로퍼티와 메서드가 중복으로 존재해 어떤것을 사용해야하는지 고민이 되었다.</p>
-<h2 id="Window-pageYOffset-vs-Window-scrollY"><a href="#Window-pageYOffset-vs-Window-scrollY" class="headerlink" title="Window.pageYOffset vs Window.scrollY"></a>Window.pageYOffset vs Window.scrollY</h2><p>먼저 수직으로 스크롤한 거리를 측정하는 방법에는 Window.pageYOffset와 Window.scrollY가 존재했다. MDN에서는 pageYOffset이 scrollY의 다른이름이라고 했지만, 두 프로퍼티에는 브라우저 호환성의 차이가 존재했다.</p>
-<p>일부 오래된 브라우저는 scrollY 대신 pageYOffset만 지원했고 노후 환경을 신경쓰지 않아도 된다면 둘 중 아무거나 사용해도 괜찮지만, 별다른 요구조건이 없다면 하위호환성을 위해 pageYOffset을 사용하는 것이 더 좋은 코드라고 판단했다.</p>
-<h2 id="Window-scroll-vs-Window-scrollTo"><a href="#Window-scroll-vs-Window-scrollTo" class="headerlink" title="Window.scroll() vs Window.scrollTo()"></a>Window.scroll() vs Window.scrollTo()</h2><p>다음으로 맨 위로 스크롤하기 위해서는 Window.scroll() 이나 Window.scrollTo() 메서드를 사용할 수 있었다. 이 두 메서드는 차이 없이 동일해 둘 중 아무거나 사용해도 괜찮았다. 다만 scroll 메서드가 더 먼저 나왔기 때문에 실제로 사용된 코드도 많고 혹여나 버그등이 발생해 검색을 해야한다면 검색 결과도 많아 scroll을 사용하는것이 더 좋을 것이라고 판단했다.</p>
-<p>또 단순히 메서드의 인자로 x-좌표와 y-좌표를 주는것 이외에도 options를 통해 top, left, behavior를 줄 수 있다는 것을 알았다. 특히 behavior: smooth를 사용해 애니메이션을 따로 만들지 않더라도 부드럽게 이동할 수 있는점이 유용해 꼭 기억하자 생각했다.</p>
-<h2 id="참고"><a href="#참고" class="headerlink" title="참고"></a>참고</h2><ul>
-<li><a href="https://developer.mozilla.org/ko/docs/Web/API/Window/pageYOffset">https://developer.mozilla.org/ko/docs/Web/API/Window/pageYOffset</a></li>
-<li><a href="https://developer.mozilla.org/ko/docs/Web/API/Window/scrollY">https://developer.mozilla.org/ko/docs/Web/API/Window/scrollY</a></li>
-<li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/scroll">https://developer.mozilla.org/en-US/docs/Web/API/Window/scroll</a></li>
-<li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/scrollTo">https://developer.mozilla.org/en-US/docs/Web/API/Window/scrollTo</a></li>
-<li><a href="https://stackoverflow.com/questions/1925671/javascript-window-scroll-vs-window-scrollto">https://stackoverflow.com/questions/1925671/javascript-window-scroll-vs-window-scrollto</a></li>
-</ul>
-]]></content>
-      <tags>
-        <tag>JS</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>첫 프로젝트를 마치고</title>
-    <url>/2022/Retrospective-about-my-first-project/</url>
-    <content><![CDATA[<h1 id="들어가며"><a href="#들어가며" class="headerlink" title="들어가며"></a>들어가며</h1><p>약 2주동안 진행했던 프로젝트가 종료되었다. 개발 공부를 시작한지도 얼마 안 되었고 처음으로 해본 프로젝트인지라 2주가 정말 정신없이 지나가버렸다. 배운점도 많았고 아쉬운점도 많았는데 회고를 하며 정리해보려고 한다.</p>
-<p>완성된 결과물은 <a href="https://woowahal-6go5.vercel.app/">https://woowahal-6go5.vercel.app/</a> 에서 확인 가능하다.</p>
-<hr>
-
-<h1 id="프로젝트-우아할"><a href="#프로젝트-우아할" class="headerlink" title="프로젝트 우아할"></a>프로젝트 우아할</h1><p>이전글에서 언급했듯이 우리 팀은 배달의 민족 앱을 웹 페이지로 클론하기로 했다(그래서 팀명도 <strong>우아할</strong>형제들로 정했다).</p>
-<p>개발 기간은 2022-09-19 ~ 2022-09-30로 약 2주 동안 진행되었고, 팀원은 나를 포함해 총 3명이었다.</p>
-<p>프로젝트 기간이나 인원에 비해 배달의 민족이 가지고 있는 콘텐츠가 너무 많아 모든 페이지를 클론 할 수는 없었고 배달의 민족에서 배달하기 까지의 주요 프로세스를 메인,카테고리, 리스트, 디테일, 오더, 장바구니, 결과의 7개 페이지로 나누어 구현해 보았다.</p>
-<p>나는 그 중 메인페이지와 카테고리 페이지를 주로 담당했다.</p>
-<hr>
-
-<h2 id="기술-스택"><a href="#기술-스택" class="headerlink" title="기술 스택"></a>기술 스택</h2><p>페이지를 구현하면서 Figma, Git, npm, HTML, CSS, Sass, JS, Vercel을 이용했다.</p>
-<h3 id="Figma"><a href="#Figma" class="headerlink" title="Figma"></a>Figma</h3><p>구현해야 하는 페이지들의 와이어프레임 및 컴포넌트들을 시각적으로 구성해보기 위해 Figma를 이용했다.</p>
-<p>페이지에서 주사용되는 컬러를 시스템화해서 플러그인을 통해 변수로 쉽게 추출할 수 있었다.</p>
-<p>아직 툴 사용이 미숙해 많은 기능을 활용하지는 못한것 같아 아쉽다</p>
-<h3 id="Git-Github"><a href="#Git-Github" class="headerlink" title="Git, Github"></a>Git, Github</h3><p>프로젝트의 버전관리를 위해 Git을 이용했다. Git flow 전략을 모방해 메인을 제외한 develop, subdev, release 3개의 branch를 만들었다.</p>
-<p>기본적으로 모든 변경사항을 subdev에 push하였고, merge가 잘 완료되면 log를 추가해 develop으로 옮겼다. 최종적으로 public 폴더만 build해 release에 저장했다.</p>
-<h3 id="npm"><a href="#npm" class="headerlink" title="npm"></a>npm</h3><p>개발환경 세팅과 최종적인 프로젝트 파일의 최적화를 위해 npm을 이용했다.</p>
-<p>rimraf, npm-run-all, live-server, sass는 개발환경 세팅을 위해 webpack, postcss는 최적화를 위해 사용해 보았다.</p>
-<h3 id="HTML"><a href="#HTML" class="headerlink" title="HTML"></a>HTML</h3><p>HTML의 경우 시맨틱 마크업을 제일 중요시 여겼는데 먼저 손으로 페이지의 구조를 설계 한 후 코드로 작성했다. 그 후 코드리뷰를 시간을 가져 팀원들끼리 왜 그렇게 코드를 작성했는지, 구조가 논리적인지 설득하는 시간을 가졌다.</p>
-<h3 id="CSS-Sass"><a href="#CSS-Sass" class="headerlink" title="CSS, Sass"></a>CSS, Sass</h3><p>CSS를 효과적으로 사용하기 위해 Sass를 이용했고 이 때 가장 중요시 여긴점은 컨벤션이였다. 기본적으로 BEM 방식을 이용한 Naming과 최대한 구체적인 클래스명을 사용하기로 정했다.</p>
-<hr>
-
-<h2 id="KPT"><a href="#KPT" class="headerlink" title="KPT"></a>KPT</h2><h3 id="Keep"><a href="#Keep" class="headerlink" title="Keep"></a>Keep</h3><ul>
-<li><p>프로젝트를 시작하기 전 환경설정을 중요시 여기고 이 부분에 대해 많이 논의 했는데 그 결과 git 충돌도 거의 없었고 일어난 충돌도 금방 해결 할 수 있었다.</p>
-</li>
-<li><p>1차적인 프로젝트 결과물을 가지고 lighthouse 검사를 통해 부족한 부분을 찾고 개선하기 위해 노력했다. 실질적인 성능 향상을 볼 수 있어서 좋았다.</p>
-</li>
-<li><p>의견충돌이 있을때 그냥 넘어가지 않고 서로를 설득하기 위해 노력했는데 생각에 대한 근거를 찾고 정리해보며 의견을 구체화 시킬 수 있었다.</p>
-</li>
-</ul>
-<h3 id="Problem"><a href="#Problem" class="headerlink" title="Problem"></a>Problem</h3><ul>
-<li><p>Sass 사용의 아쉬움 - Sass 를 사용하기 위해 폴더 구조를 잘 분리한것은 좋았으나 중첩규칙, 변수 이외에는 잘 사용하지 못했다. 특히 중복적으로 사용되는 코드들을 믹스인으로 분리했어야 했는데 그러지 못했다.</p>
-</li>
-<li><p>미숙했던 초반 소통</p>
-</li>
-</ul>
-<h3 id="Try"><a href="#Try" class="headerlink" title="Try"></a>Try</h3><ul>
-<li>문서화의 중요성 - 서로 상의해 결정했던 부분들이나 컴포넌트에 대한 문서들을 남겨 서로 참고할 수 있도록 하자고 말했었지만 실제 프로젝트를 진행하면서 잘 수행되지 못했다. 문서화가 잘 되어 있는 다른 프로젝트 조의 경우 전체적인 프로젝트 상황에 대한 파악이 수월해 보였다. 다음 프로젝트를 진행할 때에는 꼭 문서화에 신경써봐야겠다.</li>
-</ul>
-<hr>
-
-<h1 id="마치며"><a href="#마치며" class="headerlink" title="마치며"></a>마치며</h1><p>첫 프로젝트를 진행하며 많은 것을 배울 수 있어 정말 좋았다. 하지만 역시 머리에 계속해서 남는것은 아쉬운 점들인 것 같다.</p>
-<p>평소 배달의 민족을 많이 사용하면서 이런 기능이 있으면 좋겠다고 생각해 오던것이 있다. 나는 결정장애가 심한 편이라 어떤것을 먹을지, 또 메뉴를 정해도 어디서 시킬지 정말 많이 고민한다. 그래서 카테고리만 선택하면 룰렛이 돌아가듯이 랜덤으로 가게와 메뉴가 선택되면 좋겠다고 생각했다.</p>
-<p>마침 배달의 민족을 웹으로 구현하기로 결정해서 이 기능도 추가해 보려고 했는데 막상 스스로의 자바스크립트 실력도 너무 부족하고 어떤 데이터베이스를 기반으로 정보를 가져와야 할지 아이디어 역시도 너무 구체적이지 않아 쉽지 않았다.</p>
-<p>스스로 많이 부족하다고 느끼는 점이 가장 아쉬웠다.<br>다만 앞으로 3개월 동안 커넥to 과정을 통해 모던 자바스크립트 Deep Dive의 저자이신 이웅모 강사님에게 자바스크립트 강의를 듣게 되었는데, 정말 좋은 기회이니 만큼 열심히 배우고 또 평상시 가지고 있던 아이디어들에 대해서도 구체화해 프로젝트를 리팩토링해봐야 겠다.</p>
-]]></content>
-      <tags>
-        <tag>개발</tag>
-        <tag>회고</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>API란 무엇일까?</title>
-    <url>/2022/What-is-an-API/</url>
-    <content><![CDATA[<p>JavaScript 구현공부를 시작하며 API를 이용하는 일이 많아졌다. API라는 용어에 대해 많이 들어보기도 했고 API가 무엇인지에 대해 대략적으로 알고 있다고 생각했었지만 막상 API에 대해 구체적으로 설명해보려고 하니 표현하기가 어려웠다. 그래서 API에 대해 정리해보면서 정확히 무엇인지 알아보고자 했다.</p>
-<hr>
-
-<h2 id="API"><a href="#API" class="headerlink" title="API"></a>API</h2><p>먼저 API의 정의를 알아보았다. </p>
-<blockquote>
-<p><strong>API</strong>는 Application Programming Inerface의 줄임말로 응용 프로그램에서 사용할 수 있도록 운영체제나 프로그래밍 언어가 제공하는 기능을 제어할 수 있게 만든 인터페이스를 뜻한다. </p>
-</blockquote>
-<p>다른 부분들은 쉽게 이해가 갔지만 인터페이스가 무엇을 말하는지 모호했다. 그럼 인터페이스는 무엇일까?</p>
-<blockquote>
-<p><strong>인터페이스(interface)</strong> 는 컴퓨터 시스템끼리 정보를 교환하는 공유 경계를 의미한다. 터치 스크린과 같은 일부 컴퓨터 하드웨어 장치들은 인터페이스를 통해 데이터를 송수신 할 수 있으며, 마우스나 마이크와 같은 장치들은 오직 시스템에 데이터를 전송만 하는 인터페이스를 제공한다.</p>
-</blockquote>
-<p>쉽게 정리해 인터페이스는 시스템끼리 데이터를 주고받도록 하는 물리적, 가상적인 매개체를 뜻한다.</p>
-<p>조금 더 이해하기 쉽게 실생활에서 예를 들어보면 우리가 자판기를 통해 음료수를 사먹는다라고 할 때 실제 자판기가 어떻게 내부적으로 동작하는지는 몰라도 동전이나 지폐를 넣고 원하는 음료 버튼을 눌러 음료수가 나오게하는 과정을 쉽게 수행한다. 이때 동전과 지폐를 넣고 음료 버튼을 클릭하는등 사물과 사물 또는 사물과 인간 간의 의사소통이 가능하도록하는 물리적, 가상적인 매개체를 인터페이스라고 할 수 있다.</p>
-<p>즉 API는 응용 프로그램 (우리가 만든 앱과 같은 서비스)에서 운영체제나 프로그래밍 언어가 제공하는 기능(지도, 날씨, 페이기능등)을 제어할 수 있게 만든 매개체라고 볼 수 있다.<br>API 문서에는 개발자가 이러한 요청과 응답을 구성하는 방법에 대한 정보가 들어 있어 API를 사용하기 이전에 API 문서를 통해 API의 사용법을 알 수 있다.</p>
-<hr>
-
-<h2 id="API는-어떻게-작동하는가"><a href="#API는-어떻게-작동하는가" class="headerlink" title="API는 어떻게 작동하는가?"></a>API는 어떻게 작동하는가?</h2><blockquote>
-<p>API 아키텍처는 일반적으로 클라이언트와 서버 측면에서 설명된다. 요청을 보내는 애플리케이션을 클라이언트라고 하고 응답을 보내는 애플리케이션을 서버라고 한다. 따라서 날씨 예에서 기상청의 날씨 데이터베이스는 서버이고 모바일 앱은 클라이언트이다. </p>
-</blockquote>
-<p>API가 생성된 시기와 이유에 따라 API는 네 가지 방식으로 작동할 수 있다.</p>
-<p>API라는 단어는 1964년부터 등장하기 시작했다. 이때는 하드웨어 독립성을 위해서 많이 사용되어 졌는데, 예를 들어 서로 다른 하드웨어마다 개발자가 일일이 프로그래밍을 하기보단 HAL이라는 하드웨어 추상화 계층을 통해 한번만 display라는 함수를 작성하고 이를 이용해 각기 다른 모니터에 출력을 쉽게 할수 있었고 이것이 API의 시초라고 할 수 있다.</p>
-<p>1980년대 중반 Mac OS와 Windows가 등장하면서 그래픽이 좋은 컴퓨터가 등장하기 시작했다. 이런 각각의 운영체제에서 동작하는 어플리케이션을 만들기 위해서 운영체제에서 제공하는 API를 이용했다. </p>
-<p>그리고 1990년도 인터넷이 보편적으로 대중화되기 시작하면서 컴퓨터와 컴퓨터 다양한 기기들이 인터넷을 통해서 의사소통을 할 수 있게 되었다. 이때 다양한 기기에서 서버에 있는 데이터를 읽고 쓰기 위해서는 서버에서 제공하는 WEB APIs를 이용해서 처리 할 수 있었다.</p>
-<p>네트워크에서 기기들간에 의사소통 해나가는 규격사항을 HTTP(s)라고 부르며 이런 WEB API를 어떻게 디자인해서 만들건지 정의하는 것이 있다. 예전에는 SOAP(Simple Object Access Protocol)이라는 모든 네트워크 요청과 반응을 XML이라는 데이터 포맷에 저장해 주고 받았다면 요즘에는 REST(Representational State Transfer)이 보편적으로 많이 사용된다.</p>
-<p>REST는 총 4가지로 구성되어 있는데 새로운 데이터를 만들고(POST, create), 읽고(GET, read), 업데이트하고(PUT, update), 삭제(DELETE, delete)할 수 있다. 예를 들어 GET을 이용해 유저에 대한 정보를 요청하면 서버로부터 유저에 대한 데이터를 JSON이라는 포맷을 통해 받아 올 수 있다. 이처럼 서버에서 제공하는 WEB API를 통해 서버에 있는 데이터를 읽어오거나 업데이트 할 수 있다.</p>
-]]></content>
-      <tags>
-        <tag>개발</tag>
-        <tag>용어정리</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>원티드 프리온보딩 프론트엔드 인턴십 1주차 회고</title>
     <url>/2023/Retrospect-About-1st-Week-Of-Wanted-Pre-Onboarding-Frontend-InternShip/</url>
     <content><![CDATA[<p><img src="/../images/wanted-preonboarding.jpeg" alt="원티드 프리온보딩 프론트엔드 인턴십"></p>
@@ -1326,6 +1240,37 @@ for (변수 선언문 또는 할당문; 조건식; 증감식) {
       <tags>
         <tag>개발</tag>
         <tag>회고</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>새로운 컴퓨터로 Hexo 블로그 옮기기</title>
+    <url>/2023/Transfer-hexo-blog-to-new-device/</url>
+    <content><![CDATA[<p>나는 이 블로그를 Hexo라는 프레임워크를 이용해 작년 8월에 만들었었고 나름대로 계속해서 포스팅을 하고 있었다. 그러다 1월 말에 원래 사용하던 Windows 갤럭시북에서 MacOs의 맥북 M1으로 갈아타게 되었는데 깃허브에서 repository를 clone하고 hexo 명령어를 입력해도 작동하지 않는 문제가 생겼다.</p>
+<p>처음부터 블로그를 다시 세팅해야하나 아니면 다른 플랫폼으로 이사를 갈까 고민하며 해결방법을 찾던 중 다음 글을 발견했다. <a href="https://jqxiao.tech/2020/07/17/Transfer-Hexo-Blog-to-New-Device/">Transfer Hexo Blog to New Device</a></p>
+<p>위 블로그 게시글의 내용을 따라 수행하니 맥북에서도 다시 블로그 포스팅을 진행할 수 있게 되었고, 혹시라도 다음에 또 컴퓨터를 바꿀 수 있으니 방법을 정리해두어야겠다고 마음먹었다.</p>
+<h1 id="새로운-branch-만들기"><a href="#새로운-branch-만들기" class="headerlink" title="새로운 branch 만들기"></a>새로운 branch 만들기</h1><ul>
+<li>hexo blog repository를 git clone 한다.</li>
+<li>clone한 repositroy에서 <code>git checkout -b branch명</code>로 새로운 branch를 만든다.</li>
+<li>새로운 branch에서 .git 폴더를 제외한 모든 파일들을 삭제한다.</li>
+<li>원래 사용하던 기기의 hexo blog 폴더를 복사해온다.</li>
+<li>이전 기기의 .git 관련 폴더들은 삭제한다.</li>
+<li>새로운 branch를 Github에 push한다.</li>
+</ul>
+<h1 id="새-기기에-Hexo-설치하기"><a href="#새-기기에-Hexo-설치하기" class="headerlink" title="새 기기에 Hexo 설치하기"></a>새 기기에 Hexo 설치하기</h1><ul>
+<li><code>npm install hexo --save</code>로 Hexo를 설치한다.</li>
+<li><code>npm install hexo-deployer-git --save</code>로 git deployer plugin를 설치한다.</li>
+</ul>
+<h1 id="블로그-Deploy하기"><a href="#블로그-Deploy하기" class="headerlink" title="블로그 Deploy하기"></a>블로그 Deploy하기</h1><ul>
+<li>새로 만든 branch에 .gitigonre 파일을 추가한다.</li>
+<li>.gitignore 파일에 <code>.deploy_git/*</code>과 <code>public/*</code>을 추가한다</li>
+<li><code>hexo clean</code>을 통해 이전 웹페이지를 삭제한다.</li>
+<li><code>hexo generate</code>와 <code>hexo deploy</code>로 새로운 웹페이지를 만들 수 있다.</li>
+</ul>
+<h1 id="무엇이-문제였을까"><a href="#무엇이-문제였을까" class="headerlink" title="무엇이 문제였을까?"></a>무엇이 문제였을까?</h1><p>hexo deploy시 만들어진 정적 웹페이지가 자동으로 Github의 default branch에 push되었던 것이지 hexo를 설치했던 기존 폴더 자체를 Github에 push한것은 아니었기 때문에 git clone을 해도 hexo 명령어가 작동하지 않았다.<br>따라서 새로운 branch에 원본 기기의 폴더를 복사해옴으써 문제를 해결할 수 있었다.</p>
+]]></content>
+      <tags>
+        <tag>개발</tag>
+        <tag>Hexo</tag>
       </tags>
   </entry>
   <entry>
@@ -1402,6 +1347,61 @@ for (변수 선언문 또는 할당문; 조건식; 증감식) {
       <tags>
         <tag>개발</tag>
         <tag>WCAG</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>pageYOffset vs scrollY, scroll() vs scrollTo()</title>
+    <url>/2022/pageYOffset-vs-scrollY-scroll-vs-scrollTo/</url>
+    <content><![CDATA[<h1 id="🤔What-is-Problem"><a href="#🤔What-is-Problem" class="headerlink" title="🤔What is Problem?"></a>🤔What is Problem?</h1><p>페어 프로그래밍을 진행하면서 수직으로 스크롤한 거리에 따라 숨겨진 버튼을 활성화 하고, 스크롤 버튼을 클릭했을 때 맨 위로 스크롤하는 예제를 해결해야했다.</p>
+<p>이를 위해 수직으로 스크롤한 거리를 측정하는 방법과 스크롤을 시키는 방법이 필요해 이에 대해 알아보았는데, 같은 기능을 하는 프로퍼티와 메서드가 중복으로 존재해 어떤것을 사용해야하는지 고민이 되었다.</p>
+<h2 id="Window-pageYOffset-vs-Window-scrollY"><a href="#Window-pageYOffset-vs-Window-scrollY" class="headerlink" title="Window.pageYOffset vs Window.scrollY"></a>Window.pageYOffset vs Window.scrollY</h2><p>먼저 수직으로 스크롤한 거리를 측정하는 방법에는 Window.pageYOffset와 Window.scrollY가 존재했다. MDN에서는 pageYOffset이 scrollY의 다른이름이라고 했지만, 두 프로퍼티에는 브라우저 호환성의 차이가 존재했다.</p>
+<p>일부 오래된 브라우저는 scrollY 대신 pageYOffset만 지원했고 노후 환경을 신경쓰지 않아도 된다면 둘 중 아무거나 사용해도 괜찮지만, 별다른 요구조건이 없다면 하위호환성을 위해 pageYOffset을 사용하는 것이 더 좋은 코드라고 판단했다.</p>
+<h2 id="Window-scroll-vs-Window-scrollTo"><a href="#Window-scroll-vs-Window-scrollTo" class="headerlink" title="Window.scroll() vs Window.scrollTo()"></a>Window.scroll() vs Window.scrollTo()</h2><p>다음으로 맨 위로 스크롤하기 위해서는 Window.scroll() 이나 Window.scrollTo() 메서드를 사용할 수 있었다. 이 두 메서드는 차이 없이 동일해 둘 중 아무거나 사용해도 괜찮았다. 다만 scroll 메서드가 더 먼저 나왔기 때문에 실제로 사용된 코드도 많고 혹여나 버그등이 발생해 검색을 해야한다면 검색 결과도 많아 scroll을 사용하는것이 더 좋을 것이라고 판단했다.</p>
+<p>또 단순히 메서드의 인자로 x-좌표와 y-좌표를 주는것 이외에도 options를 통해 top, left, behavior를 줄 수 있다는 것을 알았다. 특히 behavior: smooth를 사용해 애니메이션을 따로 만들지 않더라도 부드럽게 이동할 수 있는점이 유용해 꼭 기억하자 생각했다.</p>
+<h2 id="참고"><a href="#참고" class="headerlink" title="참고"></a>참고</h2><ul>
+<li><a href="https://developer.mozilla.org/ko/docs/Web/API/Window/pageYOffset">https://developer.mozilla.org/ko/docs/Web/API/Window/pageYOffset</a></li>
+<li><a href="https://developer.mozilla.org/ko/docs/Web/API/Window/scrollY">https://developer.mozilla.org/ko/docs/Web/API/Window/scrollY</a></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/scroll">https://developer.mozilla.org/en-US/docs/Web/API/Window/scroll</a></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/scrollTo">https://developer.mozilla.org/en-US/docs/Web/API/Window/scrollTo</a></li>
+<li><a href="https://stackoverflow.com/questions/1925671/javascript-window-scroll-vs-window-scrollto">https://stackoverflow.com/questions/1925671/javascript-window-scroll-vs-window-scrollto</a></li>
+</ul>
+]]></content>
+      <tags>
+        <tag>JS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>API란 무엇일까?</title>
+    <url>/2022/What-is-an-API/</url>
+    <content><![CDATA[<p>JavaScript 구현공부를 시작하며 API를 이용하는 일이 많아졌다. API라는 용어에 대해 많이 들어보기도 했고 API가 무엇인지에 대해 대략적으로 알고 있다고 생각했었지만 막상 API에 대해 구체적으로 설명해보려고 하니 표현하기가 어려웠다. 그래서 API에 대해 정리해보면서 정확히 무엇인지 알아보고자 했다.</p>
+<hr>
+
+<h2 id="API"><a href="#API" class="headerlink" title="API"></a>API</h2><p>먼저 API의 정의를 알아보았다. </p>
+<blockquote>
+<p><strong>API</strong>는 Application Programming Inerface의 줄임말로 응용 프로그램에서 사용할 수 있도록 운영체제나 프로그래밍 언어가 제공하는 기능을 제어할 수 있게 만든 인터페이스를 뜻한다. </p>
+</blockquote>
+<p>다른 부분들은 쉽게 이해가 갔지만 인터페이스가 무엇을 말하는지 모호했다. 그럼 인터페이스는 무엇일까?</p>
+<blockquote>
+<p><strong>인터페이스(interface)</strong> 는 컴퓨터 시스템끼리 정보를 교환하는 공유 경계를 의미한다. 터치 스크린과 같은 일부 컴퓨터 하드웨어 장치들은 인터페이스를 통해 데이터를 송수신 할 수 있으며, 마우스나 마이크와 같은 장치들은 오직 시스템에 데이터를 전송만 하는 인터페이스를 제공한다.</p>
+</blockquote>
+<p>쉽게 정리해 인터페이스는 시스템끼리 데이터를 주고받도록 하는 물리적, 가상적인 매개체를 뜻한다.</p>
+<p>조금 더 이해하기 쉽게 실생활에서 예를 들어보면 우리가 자판기를 통해 음료수를 사먹는다라고 할 때 실제 자판기가 어떻게 내부적으로 동작하는지는 몰라도 동전이나 지폐를 넣고 원하는 음료 버튼을 눌러 음료수가 나오게하는 과정을 쉽게 수행한다. 이때 동전과 지폐를 넣고 음료 버튼을 클릭하는등 사물과 사물 또는 사물과 인간 간의 의사소통이 가능하도록하는 물리적, 가상적인 매개체를 인터페이스라고 할 수 있다.</p>
+<p>즉 API는 응용 프로그램 (우리가 만든 앱과 같은 서비스)에서 운영체제나 프로그래밍 언어가 제공하는 기능(지도, 날씨, 페이기능등)을 제어할 수 있게 만든 매개체라고 볼 수 있다.<br>API 문서에는 개발자가 이러한 요청과 응답을 구성하는 방법에 대한 정보가 들어 있어 API를 사용하기 이전에 API 문서를 통해 API의 사용법을 알 수 있다.</p>
+<hr>
+
+<h2 id="API는-어떻게-작동하는가"><a href="#API는-어떻게-작동하는가" class="headerlink" title="API는 어떻게 작동하는가?"></a>API는 어떻게 작동하는가?</h2><blockquote>
+<p>API 아키텍처는 일반적으로 클라이언트와 서버 측면에서 설명된다. 요청을 보내는 애플리케이션을 클라이언트라고 하고 응답을 보내는 애플리케이션을 서버라고 한다. 따라서 날씨 예에서 기상청의 날씨 데이터베이스는 서버이고 모바일 앱은 클라이언트이다. </p>
+</blockquote>
+<p>API가 생성된 시기와 이유에 따라 API는 네 가지 방식으로 작동할 수 있다.</p>
+<p>API라는 단어는 1964년부터 등장하기 시작했다. 이때는 하드웨어 독립성을 위해서 많이 사용되어 졌는데, 예를 들어 서로 다른 하드웨어마다 개발자가 일일이 프로그래밍을 하기보단 HAL이라는 하드웨어 추상화 계층을 통해 한번만 display라는 함수를 작성하고 이를 이용해 각기 다른 모니터에 출력을 쉽게 할수 있었고 이것이 API의 시초라고 할 수 있다.</p>
+<p>1980년대 중반 Mac OS와 Windows가 등장하면서 그래픽이 좋은 컴퓨터가 등장하기 시작했다. 이런 각각의 운영체제에서 동작하는 어플리케이션을 만들기 위해서 운영체제에서 제공하는 API를 이용했다. </p>
+<p>그리고 1990년도 인터넷이 보편적으로 대중화되기 시작하면서 컴퓨터와 컴퓨터 다양한 기기들이 인터넷을 통해서 의사소통을 할 수 있게 되었다. 이때 다양한 기기에서 서버에 있는 데이터를 읽고 쓰기 위해서는 서버에서 제공하는 WEB APIs를 이용해서 처리 할 수 있었다.</p>
+<p>네트워크에서 기기들간에 의사소통 해나가는 규격사항을 HTTP(s)라고 부르며 이런 WEB API를 어떻게 디자인해서 만들건지 정의하는 것이 있다. 예전에는 SOAP(Simple Object Access Protocol)이라는 모든 네트워크 요청과 반응을 XML이라는 데이터 포맷에 저장해 주고 받았다면 요즘에는 REST(Representational State Transfer)이 보편적으로 많이 사용된다.</p>
+<p>REST는 총 4가지로 구성되어 있는데 새로운 데이터를 만들고(POST, create), 읽고(GET, read), 업데이트하고(PUT, update), 삭제(DELETE, delete)할 수 있다. 예를 들어 GET을 이용해 유저에 대한 정보를 요청하면 서버로부터 유저에 대한 데이터를 JSON이라는 포맷을 통해 받아 올 수 있다. 이처럼 서버에서 제공하는 WEB API를 통해 서버에 있는 데이터를 읽어오거나 업데이트 할 수 있다.</p>
+]]></content>
+      <tags>
+        <tag>개발</tag>
+        <tag>용어정리</tag>
       </tags>
   </entry>
 </search>
