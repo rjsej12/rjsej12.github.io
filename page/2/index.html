@@ -154,7 +154,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">30</span>
+          <span class="site-state-item-count">31</span>
           <span class="site-state-item-name">포스트</span>
         </a>
       </div>
@@ -189,6 +189,151 @@
 
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://rjsej12.github.io/2023/Sorting-Algorithm-Summary/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="rongrong">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="롱롱의 일기장">
+      <meta itemprop="description" content="주니어 개발자 롱롱의 성장일기">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 롱롱의 일기장">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2023/Sorting-Algorithm-Summary/" class="post-title-link" itemprop="url">정렬 알고리즘 요약정리</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">작성일</span>
+
+      <time title="Post created: 2023-05-24 13:27:02" itemprop="dateCreated datePublished" datetime="2023-05-24T13:27:02+09:00">2023-05-24</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Updated at: 2023-05-25 10:43:49" itemprop="dateModified" datetime="2023-05-25T10:43:49+09:00">2023-05-25</time>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2023/Sorting-Algorithm-Summary/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2023/Sorting-Algorithm-Summary/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="😂-들어가며"><a href="#😂-들어가며" class="headerlink" title="😂 들어가며"></a>😂 들어가며</h1><p>기술면접을 대비하기 위해 공부를 하던중, 정렬 알고리즘에 관한 질문이 있었는데 쉽게 답변하지 못했다. 분명 코딩테스트 준비를 하면서 여러가지 정렬 알고리즘에 대해 살펴보고 구현해보았었는데 기록으로 남겨두지 않으니 휘발된 것 같다. 이번 기회에 기본적인 정렬 알고리즘들에 대해 정리해보고자 한다.</p>
+<h1 id="정렬-알고리즘"><a href="#정렬-알고리즘" class="headerlink" title="정렬 알고리즘?"></a>정렬 알고리즘?</h1><p>먼저 정렬 알고리즘이란 목록 안에 저장된 요소들을 특정한 순서대로 재배치하는 알고리즘을 뜻한다.<br>효율적인 정렬을 위해 정렬 알고리즘이 필요하다고 할 수 있다.<br>정렬시 고려할 사항으로는 시간 복잡도, 메모리 사용량, 안정성(safety가 아니라 stable -&gt; 데이터의 순서가 바뀌지 않느냐 여부 문제) 등이 있다.</p>
+<p>모든경우에 대해 최선의 정답을 내는 알고리즘은 없으므로 정렬 알고리즘의 특성에 대해 잘 알아두고 적절한 상황에 맞는 알고리즘을 택해야한다.</p>
+<p>기초적인 정렬 알고리즘 5개에 대해 살펴보자.</p>
+<h2 id="버블-정렬-Bubble-Sort"><a href="#버블-정렬-Bubble-Sort" class="headerlink" title="버블 정렬(Bubble Sort)"></a>버블 정렬(Bubble Sort)</h2><p>버블정렬은 서로 인접해 있는 요소 간의 대소 비교를 통해 정렬한다.<br>버블 정렬은 정렬 알고리즘 중 가장 단순한 알고리즘으로, 단순한 만큼 비효율적이다.<br>시간 복잡도가 최고, 평균, 최악 모두<code>O(n^2)</code>이며 공간복잡도는 하나의 배열만 사용하므로 <code>O(n)</code>이다.<br>동작 방식은 인접한 두 요소간의 대소 비교를 진행한다.</p>
+<center>
+
+<p><img src="/../images/sort/bubble.gif" alt="Bubble Sort"></p>
+</center>
+
+<p>이를 코드로 구현하면 다음과 같다.</p>
+<p>배열의 요소 개수만큼 반복하면서, 각 반복시 인접 요소를 비교해 바꾸어주는것이다. 반복시마다 가장 큰 요소는 마지막에 위치하게 되므로 제외하면서 반복한다.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="title function_">swap</span> = (<span class="params">arr, i, j</span>) =&gt; &#123;</span><br><span class="line">	[arr[i], arr[j]] = [arr[j], arr[i]];</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="title function_">bubbleSort</span> = (<span class="params">arr</span>) =&gt; &#123;</span><br><span class="line">	<span class="keyword">const</span> sortedArr = [...arr];</span><br><span class="line">	<span class="keyword">const</span> len = sortedArr.<span class="property">length</span>;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; len; i++) &#123;</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">let</span> j = <span class="number">0</span>; j &lt; len - i - <span class="number">1</span>; j++) &#123;</span><br><span class="line">			<span class="keyword">if</span> (sortedArr[j] &gt; sortedArr[j + <span class="number">1</span>]) <span class="title function_">swap</span>(sortedArr, j, j + <span class="number">1</span>);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> sortedArr;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h2 id="삽입-정렬-Insertion-Sort"><a href="#삽입-정렬-Insertion-Sort" class="headerlink" title="삽입 정렬(Insertion Sort)"></a>삽입 정렬(Insertion Sort)</h2><p>삽입 정렬이란 정렬을 진행할 원소의 index보다 낮은 곳에 있는 원소들을 탐색하며 알맞은 위치에 삽입해주는 정렬 알고리즘이다.<br>알고리즘이 동작하는 동안 계속해서 정렬이 진행되므로 반드시 맨 왼쪽 index까지 탐색하지 않아도 된다는 장점이 있다.<br>모두 정렬되어 있는 Optimal한 경우 모든 원소가 한 번씩만 비교되므로 <code>O(n)</code>의 시간 복잡도를 가지며 공간복잡도는 하나의 배열만 사용하므로 <code>O(n)</code>이다.</p>
+<center>
+
+<p><img src="/../images/sort/insertion.gif" alt="Insertion Sort"></p>
+</center>
+
+<p>이를 코드로 구현하면 다음과 같다.</p>
+<p>첫 번째 for문은 정렬할 원소를 차례대로 선택하는 것이며, 두 번째 for문은 정렬할 원소보다 아래 인덱스에 있는 요소와 비교하는 것이다.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="title function_">swap</span> = (<span class="params">arr, i, j</span>) =&gt; &#123;</span><br><span class="line">	[arr[i], arr[j]] = [arr[j], arr[i]];</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="title function_">insertionSort</span> = (<span class="params">arr</span>) =&gt; &#123;</span><br><span class="line">	<span class="keyword">const</span> <span class="title class_">SortedArr</span> = [...arr];</span><br><span class="line">	<span class="keyword">const</span> len = <span class="title class_">SortedArr</span>.<span class="property">length</span>;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">1</span>; i &lt; len; i++) &#123;</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">let</span> j = i; j &gt;= <span class="number">0</span>; j--) &#123;</span><br><span class="line">			<span class="keyword">if</span> (<span class="title class_">SortedArr</span>[j - <span class="number">1</span>] &gt; <span class="title class_">SortedArr</span>[j]) <span class="title function_">swap</span>(<span class="title class_">SortedArr</span>, j - <span class="number">1</span>, j);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> <span class="title class_">SortedArr</span>;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h2 id="선택-정렬-Selection-Sort"><a href="#선택-정렬-Selection-Sort" class="headerlink" title="선택 정렬(Selection Sort)"></a>선택 정렬(Selection Sort)</h2><p>선택 정렬이란 배열에서 최소값을 반복적으로 찾아 정렬하는 알고리즘이다.<br>시간복잡도 최선, 평균, 최악 모두 <code>O(n^2)</code>에 해당하는 비효율적인 알고리즘으로 정렬 여부와 상관없이 모든 경우의 수를 전부 확인한다.</p>
+<center>
+
+<p><img src="/../images/sort/selection.gif" alt="Selection Sort"></p>
+</center>
+
+<p>이를 코드로 구현하면 다음과 같다.<br>배열에서 최소값을 찾아 맨 앞의 값과 바꾼다. 바꿔준 맨 앞 값을 제외하고 같은 방법을 반복한다.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="title function_">swap</span> = (<span class="params">arr, i, j</span>) =&gt; &#123;</span><br><span class="line">	[arr[i], arr[j]] = [arr[j], arr[i]];</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="title function_">selectionSort</span> = (<span class="params">arr</span>) =&gt; &#123;</span><br><span class="line">	<span class="keyword">const</span> <span class="title class_">SortedArr</span> = [...arr];</span><br><span class="line">	<span class="keyword">const</span> len = <span class="title class_">SortedArr</span>.<span class="property">length</span>;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; len; i++) &#123;</span><br><span class="line">		<span class="keyword">let</span> min = i;</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">let</span> j = i + <span class="number">1</span>; j &lt; len; j++) &#123;</span><br><span class="line">			<span class="keyword">if</span> (<span class="title class_">SortedArr</span>[min] &gt; <span class="title class_">SortedArr</span>[j]) min = j;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="title function_">swap</span>(<span class="title class_">SortedArr</span>, i, min);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> <span class="title class_">SortedArr</span>;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>덧붙여 선택 정렬은 크게 2가지로 최소 선택 정렬과, 최대 선택 정렬이 있다.<br>최소 선택 정렬은 위처럼 오름차순으로 정렬하는 것이고 최대 선택 정렬은 내림차순으로 정렬하는 것이다.</p>
+<h2 id="퀵-정렬-Quick-Sort"><a href="#퀵-정렬-Quick-Sort" class="headerlink" title="퀵 정렬 (Quick Sort)"></a>퀵 정렬 (Quick Sort)</h2><p>퀵 정렬은 분할정복법과 재귀를 사용해 정렬하는 알고리즘이다. 파이썬이나 자바에서 언어에서 자체 내장되어 있는 정렬 알고리즘도 퀵 정렬을 기반으로 한다.<br>시간 복잡도의 경우 최선과 평균일 때 <code>O(nlogn)</code>이며 최악의 경우에는 <code>O(n^2)</code>이다.<br>공간 복잡도의 경우 정렬된 원소를 담을 배열이 하나 필요로 하므로 <code>O(n)</code>이다.</p>
+<center>
+
+<p><img src="/../images/sort/quick.gif" alt="Quick Sort"></p>
+</center>
+
+<p>퀵 정렬에는 피봇(Pivot)이라는 개념이 사용된다. 피봇은 한 마디로 정렬 될 기준 원소를 뜻한다.<br>피봇 선택 방법에 따라 퀵 정렬의 성능이 달라지는데 최적의 피봇 선택이 어려워 보통 배열의 첫 번째 값이나 중앙 값을 선택한다.</p>
+<p>퀵 정렬의 동작방식은 다음과 같다. 가령 예를 들어 배열 [29, 10, 14, 37, 1, 40]이 있고, 피봇을 임의로 29를 선택했다 가정하자.<br>이후 4를 기준으로 작은 것은 왼쪽으로 큰 것은 오른쪽으로 보내 [10, 14, 1] &lt; 29 &lt; [37, 40]을 생성한다.<br>다시 왼쪽에서부터 임의의 피봇 10을 설정하여 [1] &lt; 10 &lt; [14]를 생성하고 오른쪽에선 임의의 피봇 37을 설정하여 37 &lt; [40]으로 나눈다.<br>만약 배열의 길이가 1이라면 정렬이 완료된 것이므로 분할된 배열을 합쳐준다.</p>
+<p>이를 코드로 구현하면 다음과 같다.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="title function_">quickSort</span> = (<span class="params">arr</span>) =&gt; &#123;</span><br><span class="line">	<span class="keyword">if</span> (arr.<span class="property">length</span> === <span class="number">0</span>) <span class="keyword">return</span> [];</span><br><span class="line"></span><br><span class="line">	<span class="keyword">const</span> pivot = arr[<span class="number">0</span>];</span><br><span class="line">	<span class="keyword">const</span> left = [];</span><br><span class="line">	<span class="keyword">const</span> right = [];</span><br><span class="line"></span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">1</span>; i &lt; arr.<span class="property">length</span>; i++) &#123;</span><br><span class="line">		<span class="keyword">if</span> (arr[i] &lt; pivot) left.<span class="title function_">push</span>(arr[i]);</span><br><span class="line">		<span class="keyword">else</span> right.<span class="title function_">push</span>(arr[i]);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> <span class="title function_">quickSort</span>(left).<span class="title function_">concat</span>(pivot, <span class="title function_">quickSort</span>(right));</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h2 id="병합-정렬-Merge-Sort"><a href="#병합-정렬-Merge-Sort" class="headerlink" title="병합 정렬(Merge Sort)"></a>병합 정렬(Merge Sort)</h2><p>병합 정렬은 분할정복과 재귀 알고리즘을 사용하는 정렬 알고리즘이다.<br>시간 복잡도의 경우 최선, 평균, 최악 모두 <code>O(nlogn)</code>이며 공간 복잡도의 경우 정렬된 원소를 담을 배열이 하나 필요로 하므로 <code>O(n)</code>이다.<br>.</p>
+<center>
+
+<p><img src="/../images/sort/merge.gif" alt="Merge Sort"></p>
+</center>
+
+<p>퀵 정렬과 함께 두 개의 알고리즘이 사용된다는 측면에서 공통점을 가진다.<br>그러나 퀵 정렬이 피봇 선택후 피봇을 기준으로 대소를 비교하는 반면, 병합 정렬은 배열의 요소가 하나일때까지 이분할 한 다음, 대소관계에 따라 재배열 하며 원래 크기의 배열로 병합한다.<br>예를 들어 배열 [29, 10, 14, 37, 1, 40]이 있을 때, 첫 번째로 [29, 10, 14]와 [37, 1, 40]으로 분리한다.<br>두 번째로 [29, 10], [14], [37, 1], [40]으로 나눈다.<br>세 번째로 [29], [10], [14], [37], [1], [40]으로 나눈다.<br>이렇게 모든 원소가 분리되면 대소 관계를 고려하여 병합 과정을 거친다.<br>첫 번째로 [10, 29], [14], [1, 37], [40]이 되며, 두 번째는 [10, 14, 29], [1, 37, 40]이 된다.<br>마지막으로 하나의 배열로 병합되면서 [1, 10, 14, 29, 37, 40]와 같이 정렬이 완료된다.</p>
+<p>이를 코드로 구현하면 다음과 같다.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="title function_">merge</span> = (<span class="params">left, right</span>) =&gt; &#123;</span><br><span class="line">	<span class="keyword">const</span> result = [];</span><br><span class="line">	<span class="keyword">while</span> (left.<span class="property">length</span> !== <span class="number">0</span> &amp;&amp; right.<span class="property">length</span> !== <span class="number">0</span>) &#123;</span><br><span class="line">		<span class="keyword">if</span> (left[<span class="number">0</span>] &lt; right[<span class="number">0</span>]) result.<span class="title function_">push</span>(left.<span class="title function_">shift</span>());</span><br><span class="line">		<span class="keyword">else</span> result.<span class="title function_">push</span>(right.<span class="title function_">shift</span>());</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> [...result, ...left, ...right];</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="title function_">mergeSort</span> = (<span class="params">arr</span>) =&gt; &#123;</span><br><span class="line">	<span class="keyword">if</span> (arr.<span class="property">length</span> === <span class="number">1</span>) <span class="keyword">return</span> arr;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">const</span> middleIndex = <span class="title class_">Math</span>.<span class="title function_">ceil</span>(arr.<span class="property">length</span> / <span class="number">2</span>);</span><br><span class="line">	<span class="keyword">const</span> left = arr.<span class="title function_">slice</span>(<span class="number">0</span>, middleIndex);</span><br><span class="line">	<span class="keyword">const</span> right = arr.<span class="title function_">slice</span>(middleIndex);</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> <span class="title function_">merge</span>(<span class="title function_">mergeSort</span>(left), <span class="title function_">mergeSort</span>(right));</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h1 id="마치며"><a href="#마치며" class="headerlink" title="마치며"></a>마치며</h1><p>위에서 정리한 5가지의 정렬 방법 외에도 힙 정렬, 팀 정렬등 정말 많은 정렬 방법이 존재한다.<br>모든 정렬 방법을 다 탐구하고 외우기는 어렵지만 적절한 자료구조와 알고리즘을 활용해야 좋은 코드를 작성할 수 있는 만큼 꾸준히 CS 공부를 해야겠다🔥</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -400,120 +545,8 @@
 
 
 
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://rjsej12.github.io/2023/Retrospect-About-2nd-Week-Of-Wanted-Pre-Onboarding-Frontend-InternShip/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="rongrong">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="롱롱의 일기장">
-      <meta itemprop="description" content="주니어 개발자 롱롱의 성장일기">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 롱롱의 일기장">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2023/Retrospect-About-2nd-Week-Of-Wanted-Pre-Onboarding-Frontend-InternShip/" class="post-title-link" itemprop="url">원티드 프리온보딩 프론트엔드 인턴십 2주차 회고</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">작성일</span>
-      
-
-      <time title="Post created: 2023-05-08 22:05:13 / Updated at: 22:05:48" itemprop="dateCreated datePublished" datetime="2023-05-08T22:05:13+09:00">2023-05-08</time>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/2023/Retrospect-About-2nd-Week-Of-Wanted-Pre-Onboarding-Frontend-InternShip/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2023/Retrospect-About-2nd-Week-Of-Wanted-Pre-Onboarding-Frontend-InternShip/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p><img src="/../images/wanted-preonboarding.jpeg" alt="원티드 프리온보딩 프론트엔드 인턴십"></p>
-<h1 id="들어가며"><a href="#들어가며" class="headerlink" title="들어가며"></a>들어가며</h1><p>원티드 프리온보딩 프론트엔드 인턴십의 2주차가 지나갔다. 저번주도 마찬가지였지만 이번주도 너무 빠르게 지나가 버렸다.</p>
-<p>저번주에는 인턴십 기간 동안의 협업 과정에 대한 틀을 만들어야 해서 힘들었다면, 이번 주에는 새로 주어진 과제를 수행하는 것 부터 시작해야 했기 때문에 고민해 볼 부분도 더 많았고 어려웠다.특히 이번 주에는 커리어코칭도 같이 시작되어 이에대한 과제도 추가되어 더 바쁘게 흘러간 것 같다.</p>
-<p>이번 주는 개인적으로 아쉬운 점 보다 좋았던 점이 많았던 일주일이였던것 같아 만족스럽다. 그렇다고 해도 아쉬운 점이 없던 것은 아니니 이 부분들에 대해 얘기해보고자 한다.</p>
-<h1 id="원티드-프리온보딩-프론트엔드-인턴십-2주차-과제"><a href="#원티드-프리온보딩-프론트엔드-인턴십-2주차-과제" class="headerlink" title="원티드 프리온보딩 프론트엔드 인턴십 2주차 과제"></a>원티드 프리온보딩 프론트엔드 인턴십 2주차 과제</h1><h2 id="2023-05-02-과제-발표"><a href="#2023-05-02-과제-발표" class="headerlink" title="2023.05.02 - 과제 발표"></a>2023.05.02 - 과제 발표</h2><p>화요일 5시 <code>React Hook의 심층 활용</code>을 주제로 한 세션이 끝나고 과제의 내용이 발표되었다. 기업과제라 자세한 내용은 서술하기 어렵지만 간단히 정리해 <code>캐싱에 중점을 둔 검색창의 검색어 추천기능 구현</code>을 각자 수행하고, 저번주처럼 팀 별 Best Pratice를 만들고 제출하는 과제였다.</p>
-<p>저번주와는 다르게 일단 각자가 과제를 수행하고 그 후에 Best Pratice에 대한 의견을 나누어야 하기에 시간이 너무 촉박할 것 같았다.<br>시간을 절약하기 위해 일단은 목요일 오전까지 최대한 빠르게 각자 과제를 수행하고, 그 과정에서 중요하게 여겼던 점이나 중요할 것 같은 부분들을 적어 오기로 했다.</p>
-<h2 id="2023-05-02-2023-05-04-개인-과제-수행"><a href="#2023-05-02-2023-05-04-개인-과제-수행" class="headerlink" title="2023.05.02 ~ 2023.05.04 - 개인 과제 수행"></a>2023.05.02 ~ 2023.05.04 - 개인 과제 수행</h2><p>과제를 수행하면서 가장 중요한 부분이 캐싱이었다. 캐싱이 어떤 것인지는 알고 있었지만 캐싱 기능을 제공하는 라이브러리들을(react-query, apollo-client) 사용만 해보았지, 실제로 캐싱 기능이 어떻게 구현되어 있는지 몰랐기에 먼저 캐싱에 대한 고민을 해보았다.</p>
-<p>캐싱을 구현하기 위해서는 fetch해온 data를 저장할 저장소가 필요했고 사용할 수 있는 저장소에는 로컬스토리지, 세션스토리지, 캐시스토리지 등 다양한 저장소가 존재했다. 이름에서부터 캐시스토리지가 가장 적합할 것 같았고, <code>실제로도 캐싱 기능 구현에 캐시스토리지를 많이 활용한다 하니 캐시스토리지를 사용해야겠다</code> 생각했었다.</p>
-<p>그런데 과제의 사용가능한 기술에 필수는 아니지만 Redux가 존재했고, 개인적으로 Redux의 멘탈 모델은 알고있지만 많이 사용해보지 못해 익숙하지 않았고 더욱이 RTK는 사용해본적이 없었기에 <code>Redux를 사용해보며 학습하는 것도 좋겠다</code>라는 생각이 들었다. 또한 아직까지도 Redux를 사용하는 기업이 많기에 Redux 코드에 대한 이해도를 높이는 부수효과를 기대하고 Redux를 사용해보기로 결심했다.</p>
-<p>더 자세한 구현사항들은 <a target="_blank" rel="noopener" href="https://github.com/rjsej12/wanted-2nd">github</a>를 통해 확인 가능하다.</p>
-<h2 id="2023-05-04-개인-과제-수행-후-회의"><a href="#2023-05-04-개인-과제-수행-후-회의" class="headerlink" title="2023.05.04 - 개인 과제 수행 후 회의"></a>2023.05.04 - 개인 과제 수행 후 회의</h2><p>그렇게 각자가 과제를 수행한 후 목요일 낮에 모여 첫 회의를 진행했다.<br>한 사람 씩 자기가 수행한 과제의 주요 부분들에 대한 설명을 하며 왜 그런 방식을 택했는지, 어떤 방법이 더 좋은 방법인지에 대한 의견을 나누었다. (ex. 캐싱을 위한 저장소로 어떤 것을 사용했는지 - 로컬스토리지, 캐시스토리지 etc.)</p>
-<p>그렇게 각 기능들에 대한 Best Practice를 정하고 난 후, 모두가 모여서 코드를 작성하기로 했다. 기능 구현의 난이도는 저번보다 높았지만, 코드의 양 자체는 그렇게 많지 않았기 때문이다. 처음에는 상의된 Best Practice에 가장 가깝게 구현한 사람이 코드를 작성하고 있었는데, 중간에 한 팀원분께서 <code>Live Share</code>를 사용해 보자고 의견을 내주셔서 같이 코드를 작성할 수 있었다.</p>
-<h2 id="2023-05-04-2023-05-05-버그-픽스-및-DOCS-작업"><a href="#2023-05-04-2023-05-05-버그-픽스-및-DOCS-작업" class="headerlink" title="2023.05.04 ~ 2023.05.05 - 버그 픽스 및 DOCS 작업"></a>2023.05.04 ~ 2023.05.05 - 버그 픽스 및 DOCS 작업</h2><p>같이 모여서 Best Practice대로 코드를 작성하고 난 후, 실제로 결과물이 잘 동작하는지 확인하던 중 오류가 발생했다. 방향키를 이용해 추천 검색어를 오가는 동작에서, 처음 방향키를 눌렀을 때 포커스가 2번 움직였다… 목요일 거의 밤이 다 되어서 발견한 오류였는데, 다들 낮부터 밤까지 너무 오랜 시간을 집중했던지라 쉽게 해결하지 못했고 다음날까지 고민해보기로 했다.</p>
-<p>그런데 금요일 새벽 4시경 정도 한 팀원분이 오류의 원인을 찾아 그 해결법을 공유해주셨다. 결론적으로 <code>한글의 Composition</code>이 오류의 원인이였는데 작년에 이미 같은 오류를 겪고 해결했던 적이 있음에도 불구하고 떠올리지 못했다는게 반성해야겠다고 생각했다. 또 한번 기록의 중요성에 대해 느꼈고, 새벽까지 해결하지 못한 문제에 대해 탐구하는 팀원분의 자세를 보고 나도 더 몰입하는 자세를 가져야겠다고 다짐했다.</p>
-<p>그 후 금요일 인턴십 세션이 끝난 후 다시 모여 오류 수정에 대한 얘기를 나누고 README.md를 작성하는 시간을 가졌다. 이번에는 많은 팀원분들이 미리 과제를 수행하면서 고민했던 점이나 트러블 슈팅에 관한 부분들을 미리 적어오셔서 더 알찬 README.md를 완성 할 수 있었다.</p>
-<p>자세한 내용에 대해서는 <a target="_blank" rel="noopener" href="https://github.com/WANTED-TEAM03/pre-onboarding-10th-2-3">README.md</a>에서 살펴 볼 수 있다.</p>
-<h2 id="KPT"><a href="#KPT" class="headerlink" title="KPT"></a>KPT</h2><p>이번 주 역시 많은 것을 생각해 볼 수 있어 좋았다. 특히 평소 그 원리를 알지 못하고 라이브러리를 이용해 구현하던 캐싱에 대해 자세히 알 수 있었고, 개발자로서 성장하기 위해 어떠한 자세를 가져야 할 지 다시 한 번 생각해 보았던 개인적으로 보람찬 일주일이 된 것 같다.</p>
-<h3 id="Keep"><a href="#Keep" class="headerlink" title="Keep"></a>Keep</h3><ul>
-<li><p>이번 주 역시 만족스러운 README.md 및 기록을 남길 수 있었다! 특히 저번주보다 팀원분들이 적극적으로 참여해 주셨는데, 조금 더 친밀해져서 였을까? 남은 기간동안 더 돈독한 사이가 되어 팀명대로 보람찬 3조가 되면 좋겠다.</p>
-</li>
-<li><p>Live Share 기능을 사용해 같이 코드를 작성해보니 시간을 효율적으로 사용 할 수 있었고, 화면 공유보다 더 코드를 잘 이해할 수 있었던 것 같다. 다음 협업에서도 이 기능을 잘 사용해야겠다.</p>
-</li>
-</ul>
-<h3 id="Problem"><a href="#Problem" class="headerlink" title="Problem"></a>Problem</h3><ul>
-<li>알고 있던 문제였음에도 스스로 해결하지 못한 점이 너무 아쉽다. 해결했다고 해서 대충 머릿속에 남기는 것이 아니라 꼭 기록을 통해 새겨놔야 겠다고 느꼈다. 기록하는것이 귀찮기는 하지만 내 스스로의 성장에 도움이 되는것이니 만큼 성실히 기록해보자!</li>
-</ul>
-<h3 id="Try"><a href="#Try" class="headerlink" title="Try"></a>Try</h3><ul>
-<li>더 열심히 하자! - 이번 기업 과제의 경우 멘토님께서 보통 7시간 정도 기한을 주는 과제라고 하셨었는데 과연 내가 7시간안에 합격할 정도의 결과물을 만들어 낼 수 있었을까 생각해보면 아니라고 답할 수 밖에 없을 것 같다. 아직은 많이 부족한 만큼 더 열심히 생각하고 공부해 실력을 늘려봐야지!</li>
-</ul>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left" aria-label="이전 페이지"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/10/">10</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right" aria-label="다음 페이지"></i></a>
+    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left" aria-label="이전 페이지"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/11/">11</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right" aria-label="다음 페이지"></i></a>
   </nav>
 
 </div>
