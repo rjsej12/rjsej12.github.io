@@ -29,7 +29,7 @@
 <meta property="og:description" content="들어가며면접을 진행하면서 CS관련 질문들을 받게 되었다. 대체로 잘 대답을 했지만 자료구조와 데이터베이스의 용어를 혼용해서 설명하는 실수도 했고, 관계형 데이터베이스를 연결형이라고 말하는 실수도 있었다. 근본적으로 CS지식 특히 데이터베이스에 대한 지식이 부족했기에 발생한 문제여서 데이터베이스에 대해 정리해봐야겠다고 생각했다. 데이터베이스란?데이터베이스를">
 <meta property="og:locale" content="ko_KR">
 <meta property="article:published_time" content="2023-06-10T12:23:24.000Z">
-<meta property="article:modified_time" content="2023-06-10T12:49:18.820Z">
+<meta property="article:modified_time" content="2023-06-10T19:35:21.859Z">
 <meta property="article:author" content="rongrong">
 <meta property="article:tag" content="용어정리">
 <meta name="twitter:card" content="summary">
@@ -231,9 +231,15 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">작성일</span>
-      
 
-      <time title="Post created: 2023-06-10 21:23:24 / Updated at: 21:49:18" itemprop="dateCreated datePublished" datetime="2023-06-10T21:23:24+09:00">2023-06-10</time>
+      <time title="Post created: 2023-06-10 21:23:24" itemprop="dateCreated datePublished" datetime="2023-06-10T21:23:24+09:00">2023-06-10</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Updated at: 2023-06-11 04:35:21" itemprop="dateModified" datetime="2023-06-11T04:35:21+09:00">2023-06-11</time>
     </span>
 
   
@@ -278,19 +284,19 @@
 </ol>
 <h2 id="DBMS-Database-Management-System"><a href="#DBMS-Database-Management-System" class="headerlink" title="DBMS(Database Management System)"></a>DBMS(Database Management System)</h2><p>이런 데이터베이스를 관리하고 운영하는 소프트웨어를 DBMS(Database Management System)라고 한다.</p>
 <p>DBMS에는 관계형(Relational), 키-값형(KV store), 객체형(Object), 문서형(Document), 컬럼 패밀리형(Column Family) 등이 존재한다.</p>
-<p>특히 관계형 DBMS가 가장 일반적으로 사용되며, 이때 사용되는 표준 언어를 SQL(Structured Query Language)이라 한다.<br>관계형 DBMS를 SQL, 비-관계형 데이터베이스는 NoSQL이라고 부르기도 한다.</p>
+<p>특히 관계형 DBMS가 가장 일반적으로 사용되며, 이때 사용되는 표준 언어를 SQL(Structured Query Language)이라 한다. 관계형 DBMS를 SQL, 비-관계형 데이터베이스는 NoSQL이라고 부르기도 한다.</p>
 <p>간단하게 SQL방식과 NoSQL방식(대표적으로 문서형)에 대해 알아보자.</p>
 <h3 id="SQL-방식"><a href="#SQL-방식" class="headerlink" title="SQL 방식"></a>SQL 방식</h3><p>SQL 방식은 데이터들을 엑셀과 비슷한 <strong>표에 정리</strong>해두는 방식이다.</p>
-<p>SQL 방식은 NoSQL방식과달리 각각의 <strong>표 사이에 관계성을 부여</strong> 할 수 있다.<br>관계성을 부여할 수 있기 때문에 mapping해주는 툴로 **<code>ORM(Object Relation Mapping)</code>**을 사용한다.</p>
+<p>SQL 방식은 NoSQL방식과달리 각각의 <strong>표 사이에 관계성을 부여</strong> 할 수 있다.<br>관계성을 부여할 수 있기 때문에 mapping해주는 툴로 <code>ORM(Object Relation Mapping)</code>을 사용한다.</p>
 <p>이러한 SQL방식을 사용하는 데이터베이스에는 대표적으로 Oracle, MySQL, Postgres가 있다.</p>
 <h3 id="NoSQL-방식-문서형"><a href="#NoSQL-방식-문서형" class="headerlink" title="NoSQL 방식(문서형)"></a>NoSQL 방식(문서형)</h3><p>NoSQL 방식은 <strong>서류 봉투</strong>에 document를 모아두는 방식이다.</p>
-<p>NoSQL에서는 서류 봉투를 <strong>컬렉션</strong>이라고 부르며, 통신을 도와주는 툴로는 **<code>ODM(Object Document Mapping)</code>**을 사용한다.</p>
+<p>NoSQL에서는 서류 봉투를 <strong>컬렉션</strong>이라고 부르며, 통신을 도와주는 툴로는 <code>ODM(Object Document Mapping)</code>을 사용한다.</p>
 <p>NoSQL 방식을 사용하는 데이터베이스에는 대표적으로 MongoDB와 FireBase가 있다.</p>
 <h1 id="마치며"><a href="#마치며" class="headerlink" title="마치며"></a>마치며</h1><p>정말 간단하게 데이터베이스에 대해 정리해보았다.<br>이 정도만 면접에서 대답했어도 좋았을텐데 너무 공부가 부족했던게 아닐까 싶다.<br>연차가 쌓일수록 더욱 CS지식이 중요해진다고들 하는데, 비전공자인 만큼 더 열심히 해야할 것 같다.</p>
 <h1 id="참고"><a href="#참고" class="headerlink" title="참고"></a>참고</h1><ul>
 <li><a target="_blank" rel="noopener" href="http://www.tcpschool.com/mysql/DB">http://www.tcpschool.com/mysql/DB</a></li>
-<li><a target="_blank" rel="noopener" href="https://hongong.hanbit.co.kr/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4-%EC%9D%B4%ED%95%B4%ED%95%98%EA%B8%B0-databasedb-dbms-sql%EC%9D%98-%EA%B0%9C%EB%85%90/">https://hongong.hanbit.co.kr/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4-%EC%9D%B4%ED%95%B4%ED%95%98%EA%B8%B0-databasedb-dbms-sql%EC%9D%98-%EA%B0%9C%EB%85%90/</a></li>
 <li><a target="_blank" rel="noopener" href="https://namu.wiki/w/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4#s-5.1">https://namu.wiki/w/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4#s-5.1</a></li>
+<li><a target="_blank" rel="noopener" href="https://hongong.hanbit.co.kr/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4-%EC%9D%B4%ED%95%B4%ED%95%98%EA%B8%B0-databasedb-dbms-sql%EC%9D%98-%EA%B0%9C%EB%85%90/">https://hongong.hanbit.co.kr/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4-%EC%9D%B4%ED%95%B4%ED%95%98%EA%B8%B0-databasedb-dbms-sql%EC%9D%98-%EA%B0%9C%EB%85%90/</a></li>
 </ul>
 
     </div>
