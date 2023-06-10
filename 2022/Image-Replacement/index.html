@@ -29,9 +29,8 @@
 <meta property="og:description" content="👀WCAG 2.1에 웹 콘텐츠의 접근성을 향상시키기 위해 텍스트 아닌 콘텐츠에 대해 대체 텍스트를 제공해주어야 한다는 지침이 있다. 이미지 역시 텍스트가 아닌 콘텐츠이기 때문에 대체 텍스트를 제공해주어야 하는데, 이는 접근성의 향상 뿐만 아니라 SEO(검색 엔진 최적화)와도 관련이 있어 중요하다. 이렇게 사용자에게 대체 텍스트를 제공하는 것을 IR(Ima">
 <meta property="og:locale" content="ko_KR">
 <meta property="article:published_time" content="2022-09-07T13:21:22.000Z">
-<meta property="article:modified_time" content="2023-03-21T19:17:24.418Z">
+<meta property="article:modified_time" content="2023-06-10T12:24:13.662Z">
 <meta property="article:author" content="rongrong">
-<meta property="article:tag" content="개발">
 <meta property="article:tag" content="CSS">
 <meta property="article:tag" content="IR">
 <meta name="twitter:card" content="summary">
@@ -160,13 +159,13 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">31</span>
+          <span class="site-state-item-count">32</span>
           <span class="site-state-item-name">포스트</span>
         </a>
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">21</span>
+        <span class="site-state-item-count">18</span>
         <span class="site-state-item-name">태그</span></a>
       </div>
   </nav>
@@ -241,7 +240,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">Edited on</span>
-      <time title="Updated at: 2023-03-22 04:17:24" itemprop="dateModified" datetime="2023-03-22T04:17:24+09:00">2023-03-22</time>
+      <time title="Updated at: 2023-06-10 21:24:13" itemprop="dateModified" datetime="2023-06-10T21:24:13+09:00">2023-06-10</time>
     </span>
 
   
@@ -286,7 +285,7 @@
 <li><p>Text-indent 속성은 사용하기 간편하지만 단점 또한 존재한다. 만약 이미지가 제대로 로드되지 않으면 텍스트가 보이지 않기 때문에 스크린리더 사용자가 아닌 경우 이미지를 설명하는 텍스트를 보고 콘텐츠의 내용을 확인 할 수 없다. 또한, 웹페이지에 text-indent 스타일 속성이 적용된 요소가 많으면 성능 저하를 불러올 수 있다.</p>
 </li>
 </ul>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.ir_pm</span>&#123;</span><br><span class="line"><span class="attribute">width</span>: <span class="number">995px</span>;</span><br><span class="line"><span class="attribute">height</span>: <span class="number">1441px</span>;</span><br><span class="line"><span class="attribute">text-indent</span>: -<span class="number">9999px</span>;</span><br><span class="line"><span class="attribute">background</span> : <span class="built_in">url</span>(<span class="string">&quot;rocketgril_poster.jpg&quot;</span>) no-repeat;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.ir_pm</span> &#123;</span><br><span class="line">	<span class="attribute">width</span>: <span class="number">995px</span>;</span><br><span class="line">	<span class="attribute">height</span>: <span class="number">1441px</span>;</span><br><span class="line">	<span class="attribute">text-indent</span>: -<span class="number">9999px</span>;</span><br><span class="line">	<span class="attribute">background</span>: <span class="built_in">url</span>(<span class="string">&#x27;rocketgril_poster.jpg&#x27;</span>) no-repeat;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <h2 id="Dwyer-Method"><a href="#Dwyer-Method" class="headerlink" title="Dwyer Method"></a>Dwyer Method</h2><ul>
 <li><p>이미지로 대체할 엘리먼트에 배경이미지를 설정하고 글자는 span태그로 감싼 후 width와 height를 각각 0으로 하여 넘치는 글자를 숨기는 방법이다.</p>
@@ -294,7 +293,7 @@
 <li><p>추가적인 tag를 사용하고, Phark Method와 마찬가지로 이미지가 제대로 로드되지 않으면 텍스트가 보이지 않아 콘텐츠 내용 확인이 어렵다는 단점이 존재한다.</p>
 </li>
 </ul>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.ir_dm</span>&#123;</span><br><span class="line"><span class="attribute">width</span>: <span class="number">995px</span>;</span><br><span class="line"><span class="attribute">height</span>: <span class="number">1441px</span>;</span><br><span class="line"><span class="attribute">background</span> : <span class="built_in">url</span>(<span class="string">&quot;rocketgril_poster.jpg&quot;</span>) no-repeat;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.ir_dm</span> <span class="selector-tag">span</span>&#123;</span><br><span class="line"><span class="attribute">display</span> :block;</span><br><span class="line"><span class="attribute">overflow</span>: hidden;</span><br><span class="line"><span class="attribute">width</span>: <span class="number">0px</span>;</span><br><span class="line"><span class="attribute">height</span>: <span class="number">0px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.ir_dm</span> &#123;</span><br><span class="line">	<span class="attribute">width</span>: <span class="number">995px</span>;</span><br><span class="line">	<span class="attribute">height</span>: <span class="number">1441px</span>;</span><br><span class="line">	<span class="attribute">background</span>: <span class="built_in">url</span>(<span class="string">&#x27;rocketgril_poster.jpg&#x27;</span>) no-repeat;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.ir_dm</span> <span class="selector-tag">span</span> &#123;</span><br><span class="line">	<span class="attribute">display</span>: block;</span><br><span class="line">	<span class="attribute">overflow</span>: hidden;</span><br><span class="line">	<span class="attribute">width</span>: <span class="number">0px</span>;</span><br><span class="line">	<span class="attribute">height</span>: <span class="number">0px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <h2 id="WA-IR"><a href="#WA-IR" class="headerlink" title="WA IR"></a>WA IR</h2><ul>
 <li><p>접근성 및 UX(User Experience) 향상을 위한 화면읽기프로그램 활용 기법으로 권장되는 방법이다.</p>
@@ -304,8 +303,10 @@
 <li><p>이미지로 대체할 엘리먼트에 배경이미지를 설정하고 글자는 span 태그로 감싼 후 z-index:-1을 이용하여 배치순서를 뒤로 보내어 화면에 안보이게 처리한다.</p>
 </li>
 <li><p>만약 브라우저에서 CSS를 끄거나, 웹 페이지에 적용된 CSS가 정상적으로 로드되지 않을 때 숨겨진 텍스트가 화면에 출력된다. 또한, position 속성을 사용하기 때문에 성능에 영향을 줄 수 있다.</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.ir_wa</span>&#123;</span><br><span class="line"><span class="attribute">width</span>: <span class="number">995px</span>;</span><br><span class="line"><span class="attribute">height</span>: <span class="number">1441px</span>;</span><br><span class="line"><span class="attribute">background</span> : <span class="built_in">url</span>(<span class="string">&quot;rockegril_poster.jpg&quot;</span>) no-repeat;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.ir_wa</span> <span class="selector-tag">span</span>&#123;</span><br><span class="line"><span class="attribute">display</span>:block;</span><br><span class="line"><span class="attribute">position</span>:relative;</span><br><span class="line"><span class="attribute">z-index</span>:-<span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</li>
 </ul>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.ir_wa</span> &#123;</span><br><span class="line">	<span class="attribute">width</span>: <span class="number">995px</span>;</span><br><span class="line">	<span class="attribute">height</span>: <span class="number">1441px</span>;</span><br><span class="line">	<span class="attribute">background</span>: <span class="built_in">url</span>(<span class="string">&#x27;rockegril_poster.jpg&#x27;</span>) no-repeat;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.ir_wa</span> <span class="selector-tag">span</span> &#123;</span><br><span class="line">	<span class="attribute">display</span>: block;</span><br><span class="line">	<span class="attribute">position</span>: relative;</span><br><span class="line">	<span class="attribute">z-index</span>: -<span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <p>이 외에도 CSS의 위치 속성과 overflow: hidden을 사용하는 방법, 자바스크립트를 이용하여 이미지로 대체할 엘리먼트의 텍스트를 img태그로 교체하는 방법등 다양한 방법이 존재한다.</p>
 <hr>
 
@@ -323,7 +324,6 @@
 
     <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/%EA%B0%9C%EB%B0%9C/" rel="tag"># 개발</a>
               <a href="/tags/CSS/" rel="tag"># CSS</a>
               <a href="/tags/IR/" rel="tag"># IR</a>
           </div>

@@ -29,9 +29,8 @@
 <meta property="og:description" content="타입 변환이란?앞서 자바스크립트의 모든 값은 타입이 있음을 알아보았다.값의 타입은 개발자의 의도에 따라 다른 타입으로 변환할 수 있는데 이를 명시적 타입 변환 또는 타입 캐스팅이라 한다. 12345678var x &#x3D; 10;&#x2F;&#x2F; 명시적 타입 변환, 숫자 -&gt; 문자열var str &#x3D; x.toString();console.log(typeof str, str">
 <meta property="og:locale" content="ko_KR">
 <meta property="article:published_time" content="2022-10-21T11:19:55.000Z">
-<meta property="article:modified_time" content="2023-03-21T19:17:24.421Z">
+<meta property="article:modified_time" content="2023-06-10T12:24:37.899Z">
 <meta property="article:author" content="rongrong">
-<meta property="article:tag" content="개발">
 <meta property="article:tag" content="자바스크립트">
 <meta property="article:tag" content="모던 자바스크립트 Deep Dive">
 <meta name="twitter:card" content="summary">
@@ -160,13 +159,13 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">31</span>
+          <span class="site-state-item-count">32</span>
           <span class="site-state-item-name">포스트</span>
         </a>
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">21</span>
+        <span class="site-state-item-count">18</span>
         <span class="site-state-item-name">태그</span></a>
       </div>
   </nav>
@@ -241,7 +240,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">Edited on</span>
-      <time title="Updated at: 2023-03-22 04:17:24" itemprop="dateModified" datetime="2023-03-22T04:17:24+09:00">2023-03-22</time>
+      <time title="Updated at: 2023-06-10 21:24:37" itemprop="dateModified" datetime="2023-06-10T21:24:37+09:00">2023-06-10</time>
     </span>
 
   
@@ -294,7 +293,7 @@
 
 <p>비교 연산자의 역할은 불리언 값을 만드는 것이다. &gt; 비교 연산자는 피연산자의 크기를 비교하므로 모든 피연산자는 코드 문맥상 모두 숫자 타입이어야 한다.<br>자바스크립트 엔진은 비교 연산자의 피연산자 중에서 숫자 타입이 아닌 피연산자를 숫자 타입으로 암묵적 타입 변환한다.</p>
 <p>자바스크립트 엔진은 숫자 타입이 아닌 값을 숫자 타입으로 암묵적 타입 변환을 수행할 때 다음과 같이 동작한다.</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 문자열 타입</span></span><br><span class="line">+<span class="string">&#x27;&#x27;</span> + <span class="comment">// 0</span></span><br><span class="line">  <span class="string">&#x27;0&#x27;</span> + <span class="comment">// 0</span></span><br><span class="line">  <span class="string">&#x27;1&#x27;</span> + <span class="comment">// 1</span></span><br><span class="line">  <span class="string">&#x27;string&#x27;</span> + <span class="comment">// NaN</span></span><br><span class="line">  <span class="comment">// 불리언 타입</span></span><br><span class="line">  <span class="literal">true</span> + <span class="comment">// 1</span></span><br><span class="line">  <span class="literal">false</span> + <span class="comment">// 0</span></span><br><span class="line">  <span class="comment">// null 타입</span></span><br><span class="line">  <span class="literal">null</span> / <span class="number">0</span> +</span><br><span class="line">  <span class="comment">// undefined 타입</span></span><br><span class="line">  <span class="literal">undefined</span> + <span class="comment">// NaN</span></span><br><span class="line">  <span class="comment">// 심벌 타입</span></span><br><span class="line">  <span class="title class_">Symbol</span>() + <span class="comment">// TypeError: Cannot convert a Symbol value to a number</span></span><br><span class="line">  <span class="comment">// 객체 타입</span></span><br><span class="line">  &#123;&#125; + <span class="comment">// NaN</span></span><br><span class="line">  [] + <span class="comment">// 0</span></span><br><span class="line">  [<span class="number">10</span>, <span class="number">20</span>] + <span class="comment">// NaN</span></span><br><span class="line">  <span class="keyword">function</span> (<span class="params"></span>) &#123;&#125;; <span class="comment">// NaN</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 문자열 타입</span></span><br><span class="line">+<span class="string">&#x27;&#x27;</span> + <span class="comment">// 0</span></span><br><span class="line">	<span class="string">&#x27;0&#x27;</span> + <span class="comment">// 0</span></span><br><span class="line">	<span class="string">&#x27;1&#x27;</span> + <span class="comment">// 1</span></span><br><span class="line">	<span class="string">&#x27;string&#x27;</span> + <span class="comment">// NaN</span></span><br><span class="line">	<span class="comment">// 불리언 타입</span></span><br><span class="line">	<span class="literal">true</span> + <span class="comment">// 1</span></span><br><span class="line">	<span class="literal">false</span> + <span class="comment">// 0</span></span><br><span class="line">	<span class="comment">// null 타입</span></span><br><span class="line">	<span class="literal">null</span> / <span class="number">0</span> +</span><br><span class="line">	<span class="comment">// undefined 타입</span></span><br><span class="line">	<span class="literal">undefined</span> + <span class="comment">// NaN</span></span><br><span class="line">	<span class="comment">// 심벌 타입</span></span><br><span class="line">	<span class="title class_">Symbol</span>() + <span class="comment">// TypeError: Cannot convert a Symbol value to a number</span></span><br><span class="line">	<span class="comment">// 객체 타입</span></span><br><span class="line">	&#123;&#125; + <span class="comment">// NaN</span></span><br><span class="line">	[] + <span class="comment">// 0</span></span><br><span class="line">	[<span class="number">10</span>, <span class="number">20</span>] + <span class="comment">// NaN</span></span><br><span class="line">	<span class="keyword">function</span> (<span class="params"></span>) &#123;&#125;; <span class="comment">// NaN</span></span><br></pre></td></tr></table></figure>
 
 <p>빈 문자열(‘’), 빈 배열([]), null, false는 0으로 true는 1로 변환된다.<br>객체와 빈 배열이 아닌 배열, undefined는 변환되지 않아 NaN이 되는 것에 주의하자.</p>
 <h3 id="불리언-타입으로-변환"><a href="#불리언-타입으로-변환" class="headerlink" title="불리언 타입으로 변환"></a>불리언 타입으로 변환</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (<span class="string">&#x27;&#x27;</span>) <span class="variable language_">console</span>.<span class="title function_">log</span>(x);</span><br></pre></td></tr></table></figure>
@@ -362,7 +361,6 @@
 <p>논리합 연산자는 좌항의 피연산자가 Falsy 값이면 우항의 피연산자를 반환한다. 만약 Falsy 값인 0이나 ‘’도 기본값으로 유효하다면 예기치 않은 동작이 발생할 수 있다. 하지만 null 병합 연산자는 좌항의 피연산자가 Falsy 값이라도 null 또는 undefined가 아니면 좌항의 피연산자를 그대로 반환한다는 차이점이 있다.</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> foo1 = <span class="string">&#x27;&#x27;</span> || <span class="string">&#x27;default string&#x27;</span>;</span><br><span class="line"><span class="keyword">var</span> foo2 = <span class="string">&#x27;&#x27;</span> ?? <span class="string">&#x27;default string&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(foo1); <span class="comment">// &#x27;default string&#x27;</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(foo2); <span class="comment">// &#x27;&#x27;</span></span><br></pre></td></tr></table></figure>
 
-
     </div>
 
     
@@ -371,7 +369,6 @@
 
     <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/%EA%B0%9C%EB%B0%9C/" rel="tag"># 개발</a>
               <a href="/tags/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8/" rel="tag"># 자바스크립트</a>
               <a href="/tags/%EB%AA%A8%EB%8D%98-%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-Deep-Dive/" rel="tag"># 모던 자바스크립트 Deep Dive</a>
           </div>
